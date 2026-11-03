@@ -1,12 +1,22 @@
 # ICML v2.4.0 — Cómo probarlo y subirlo
 
-Este ZIP es el repositorio **completo**, con su Git intacto (`.git`, `.gitignore`, `.gitattributes`, `.github/`): código,
-datos, referencias, la entrega de agosto de 2026 y sus gráficos. Las pruebas se revisan y se deshacen con Git.
+Este paquete es el repositorio **completo**, con su Git intacto (historial, etiquetas, `.gitignore`, `.gitattributes`,
+`.github/`): código, datos, referencias, la entrega de agosto de 2026 y sus gráficos. Las pruebas se revisan y se deshacen con Git.
+
+## Restaurar el paquete
+
+```
+git clone ICML_v2.4.0.bundle ICML
+cd ICML
+```
+
+(`ICML_v2.4.0.bundle` es un único archivo de Git; el `clone` crea la carpeta `ICML` con todo y con su historial y sus
+etiquetas `v2.4.0` y `v2.4.0.dev0`. Si el `clone` avisa de que `origin` apunta al bundle, no importa: más abajo se cambia.)
 
 ## 0. Instalar (una vez)
 
 1. Instalar **Python 3.12**.
-2. Descomprimir el ZIP y entrar a la carpeta `ICML`.
+2. Haber restaurado el paquete (arriba) y estar dentro de la carpeta `ICML`.
 3. Ejecutar el instalador (necesita internet y unos minutos; crea `.venv` con las versiones exactas):
    * Linux o Mac: `./INSTALAR_LINUX_MAC.sh`
    * Windows: doble clic en `INSTALAR_WINDOWS.bat`
@@ -83,7 +93,7 @@ git restore datos && git clean -fd datos/3_salida   # volver exactamente al esta
 4. Subir:
 
    ```
-   git remote add origin https://github.com/jaimevera1107/colombian-labor-market.git    # si ya existe: git remote set-url origin <url>
+   git remote set-url origin https://github.com/jaimevera1107/colombian-labor-market.git    # (el clone dejó origin apuntando al bundle)
    git branch -M main
    git push --force -u origin main
    git push origin v2.4.0

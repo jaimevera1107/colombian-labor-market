@@ -7,7 +7,7 @@ name = "icml-colombia"
 version = "2.4.0"
 description = "Reconstruction of subnational labor market indicators for Colombia (ICML 2.0)."
 readme = "README.md"
-requires-python = ">=3.11,<3.14"
+requires-python = ">=3.11,<3.16"
 authors = [{ name = "Jaime A. Vera-Jaramillo" }]
 license = "MIT"
 license-files = ["LICENSE"]

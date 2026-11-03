@@ -5,7 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 PYEXE=""
-for V in python3.12 python3.13 python3.11 python3; do
+for V in python3.12 python3.13 python3.14 python3.11 python3; do
     if command -v "$V" >/dev/null 2>&1; then
         PYEXE="$V"; break
     fi

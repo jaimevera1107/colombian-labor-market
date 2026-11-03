@@ -282,12 +282,14 @@ def run(root: Path, output: Path) -> dict:
     if status!='PASS':
         raise ValueError(f'Source comparison failed: {comparisons}')
     output.parent.mkdir(parents=True,exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix='.icml_h31_',dir=output.parent) as tmp:
+    with tempfile.TemporaryDirectory(prefix='.icml_h31_',dir=output.parent,ignore_cleanup_errors=True) as tmp:
         stage=Path(tmp)
         write_h32_csv(stage/'senales_historicas_23_y_donantes.csv',historical_rebuilt)
         _write_csv(stage/f'proxies_anuales_ventanas_{vintage_suffix()}.csv',actual['proxies'])
         _write_csv(stage/'official_geih_annual.csv',actual['annual'])
         _write_csv(stage/'indicadores_externos_1993_2003.csv',actual['macro'])
         (stage/'H31_AUDITORIA.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-        os.rename(stage,output)
+        # os.rename fails on Windows if the target exists or across devices; shutil.move is cross-platform.
+        import shutil as _shutil
+        _shutil.move(str(stage), str(output))
     return summary

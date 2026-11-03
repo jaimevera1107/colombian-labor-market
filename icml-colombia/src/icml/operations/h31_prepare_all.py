@@ -19,7 +19,7 @@ def run(root: Path, output: Path) -> dict:
     if root==output or root in output.parents:
         raise ValueError('Staging must be outside frozen checkpoint')
     output.parent.mkdir(parents=True,exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix='.icml_excel_stage_',dir=output.parent) as temp:
+    with tempfile.TemporaryDirectory(prefix='.icml_excel_stage_',dir=output.parent,ignore_cleanup_errors=True) as temp:
         stage=Path(temp)
         one=h29(root,stage/'h29',verify=True)
         two=h31(root,stage/'h31')
@@ -33,5 +33,7 @@ def run(root: Path, output: Path) -> dict:
         if status!='PASS':raise ValueError('One or more Excel generators failed')
         (stage/'PREPARACION_UNIFICADA_H31.json').write_text(
             json.dumps(summary,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-        os.rename(stage,output)
+        # os.rename fails on Windows if the target exists or across devices; shutil.move is cross-platform.
+        import shutil as _shutil
+        _shutil.move(str(stage), str(output))
     return summary

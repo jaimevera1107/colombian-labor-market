@@ -57,7 +57,10 @@ def add_commands(commands: argparse._SubParsersAction) -> None:
         description="Agrega el mes nuevo a la base vigente. Los años cubiertos por el anexo departamental quedan congelados.",
     )
     common(actualizar)
-    actualizar.add_argument("--hasta", metavar="AAAA-MM", help="Último mes a incluir; los anexos posteriores se ignoran")
+    actualizar.add_argument(
+        "--hasta", "--mes", dest="hasta", metavar="AAAA-MM",
+        help="Mes a incluir (por ejemplo 2026-07); los anexos posteriores se ignoran. --mes es lo mismo que --hasta",
+    )
     actualizar.add_argument("--simulacro", action="store_true", help="Solo mostrar qué haría, sin calcular")
     actualizar.add_argument("--sin-sencillo", action="store_true", help="No crear los archivos sencillos")
 

@@ -311,3 +311,11 @@ def test_the_commands_are_registered_in_the_main_program():
         assert parser.parse_args([command]).command == command
     parsed = parser.parse_args(["consolidar", "--desde-cero", "--hasta", "2026-07", "--si"])
     assert parsed.desde_cero and parsed.hasta == "2026-07" and parsed.si
+
+
+def test_actualizar_accepts_mes_as_the_month_to_include():
+    from icml.cli import _build_parser
+
+    parsed = _build_parser().parse_args(["actualizar", "--mes", "2026-08", "--simulacro"])
+    assert parsed.hasta == "2026-08" and parsed.simulacro
+    assert _build_parser().parse_args(["actualizar", "--hasta", "2026-08"]).hasta == "2026-08"

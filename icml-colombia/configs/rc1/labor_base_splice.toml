@@ -6,7 +6,7 @@
 # break_month and rebuilds every labor level from the (unchanged) rates, so every
 # identity and every rate is preserved. Months from break_month on are untouched.
 #
-# SUPERSEDED (v2.4.0.dev0) by labor_reconstruction: a PET drawn as a straight line that ends at the official value of
+# SUPERSEDED (v2.4.0) by labor_reconstruction: a PET drawn as a straight line that ends at the official value of
 # the first GEIH month already closes this seam, and running both would move the start of the line. The two are
 # mutually exclusive (the run raises if both are enabled). Kept for reference and for reproducing v2.3.0.
 #

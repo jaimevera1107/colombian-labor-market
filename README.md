@@ -3,12 +3,14 @@
 Repositorio: <https://github.com/jaimevera1107/colombian-labor-market>
 
 Series mensuales de mercado laboral, informalidad y empleo por sector para los 33 territorios de Colombia, desde
-1993-01, en dos universos (**censo**: territorio completo; **GEIH**: lo que la GEIH representa). Versión **2.4.0.dev0**,
+1993-01, en dos universos (**censo**: territorio completo; **GEIH**: lo que la GEIH representa). Versión **2.4.0**,
 corte vigente **2026-08**. Son resultados de investigación, no estadísticas oficiales.
 
 **En una frase:** se dejan los dos Excel del DANE de cada mes en una carpeta, se corre `actualizar` y se recoge la entrega.
 
 ## Los comandos
+
+> Para probar el proyecto paso a paso (reconstruir con julio, actualizar con agosto, graficar) y luego subirlo a GitHub: **`PRUEBAS.md`**.
 
 Se ejecutan **desde la carpeta del proyecto**. El atajo `icml` no necesita activar el entorno:
 

@@ -1,4 +1,4 @@
-## 2.4.0.dev0 — PET lineal y componentes de 1993-2000 restaurados (cambio metodológico)
+## 2.4.0 — PET lineal y componentes de 1993-2000 restaurados (cambio metodológico)
 
 Restaura dos propiedades de la reconstrucción histórica que se perdieron al migrar las etapas, según la estimación
 nacional original (`1 - Estimación Nacional.ipynb`). **Reescribe la historia anterior a 2001-01** de las tres bases, de

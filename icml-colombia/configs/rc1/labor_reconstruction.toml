@@ -6,7 +6,7 @@
 # pattern. Every accounting identity holds exactly; from splice_month on the national series do not change and the
 # territories only change in their PET, population and inactive.
 #
-# ADOPTED (v2.4.0.dev0): a methodological change, not part of the equivalence refactor. It supersedes labor_base_splice (do not
+# ADOPTED (v2.4.0): a methodological change, not part of the equivalence refactor. It supersedes labor_base_splice (do not
 # enable both). Set enabled = false to reproduce the previous vintage exactly.
 [labor_reconstruction]
 enabled = true

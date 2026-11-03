@@ -320,10 +320,10 @@ def run(sources: Path, nationals: Path, recent: Path, ilo: Path, out: Path) -> d
     (out/'audit').mkdir()
     generated={}
     target=out/'candidates/national_informality_1993_2026_experimental.csv'
-    products.to_csv(target,index=False)
+    products.to_csv(target,index=False,lineterminator='\n')
     generated[str(target.relative_to(out))]=_sha256(target)
     for key,df in audits.items():
-        p=out/f'audit/{key}.csv';df.to_csv(p,index=False)
+        p=out/f'audit/{key}.csv';df.to_csv(p,index=False,lineterminator='\n')
         generated[str(p.relative_to(out))]=_sha256(p)
     hashes={key:_sha256(path) for key,path in [
         ('source_observations_csv',sources),('nacionales_frozen_csv',nationals),

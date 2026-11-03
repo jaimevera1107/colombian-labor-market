@@ -115,8 +115,8 @@ def _run_impl(features_folder:Path,output:Path,max_folds_per_definition:int=5,
                       key=lambda key:float(scores.loc[key,'p90_group_mape_pct']))
     output.mkdir(parents=True)
     report=pd.DataFrame(eval_rows)
-    report.to_csv(output/'05_urban_cross_validation.csv',index=False,float_format='%.10g')
-    pd.DataFrame(prediction_rows).to_csv(output/'05_heldout_urban_predictions.csv',index=False,float_format='%.10g')
+    report.to_csv(output/'05_urban_cross_validation.csv',index=False,float_format='%.10g',lineterminator='\n')
+    pd.DataFrame(prediction_rows).to_csv(output/'05_heldout_urban_predictions.csv',index=False,float_format='%.10g',lineterminator='\n')
     # Fit artifact from 2007–2019 OR 2021–2025, strictly disjoint definitions.
     fit_meta={}
     dept=pd.read_csv(features_folder/'04_prediction_full_fit_33_departments.csv',
@@ -154,7 +154,7 @@ def _run_impl(features_folder:Path,output:Path,max_folds_per_definition:int=5,
     # as a usable product: 2020 candidate explicitly masked.
     results.loc[results.year==2020,['candidate_rate_provisional',
              'candidate_informal_people_provisional','candidate_formal_people_provisional']]=np.nan
-    results.to_csv(output/'05_department_predictions_EXPERIMENTAL.csv',index=False,float_format='%.12g')
+    results.to_csv(output/'05_department_predictions_EXPERIMENTAL.csv',index=False,float_format='%.12g',lineterminator='\n')
     # Extrapolation risk: standardized department covariate values far from
     # training city sample, across all 92 input dimensions.
     drift=[]
@@ -166,9 +166,9 @@ def _run_impl(features_folder:Path,output:Path,max_folds_per_definition:int=5,
         drift.append({'definition':definition,'percent_rows_any_abs_z_gt_4':float(100*np.mean((z>4).any(axis=1))),
                       'percent_cells_abs_z_gt_4':float(100*np.mean(z>4)),
                       'max_abs_z':float(np.nanmax(z))})
-    pd.DataFrame(drift).to_csv(output/'05_transfer_feature_drift.csv',index=False)
+    pd.DataFrame(drift).to_csv(output/'05_transfer_feature_drift.csv',index=False,lineterminator='\n')
     summary=report.groupby(['definition','model'],as_index=False)[['mae_pp','rmse_pp','p90_group_mape_pct']].mean()
-    summary.to_csv(output/'05_cv_summary.csv',index=False,float_format='%.10g')
+    summary.to_csv(output/'05_cv_summary.csv',index=False,float_format='%.10g',lineterminator='\n')
     manifest={'experiment':PROTOCOL,'status':'EXPERIMENTAL_NOT_CERTIFIED',
           'strata_models':best_loss,'model_metadata':fit_meta,'cross_validation_folds':len(report.fold_id.unique()),
           'label_warning':'Latent urban rates, not observed monthly outcomes',

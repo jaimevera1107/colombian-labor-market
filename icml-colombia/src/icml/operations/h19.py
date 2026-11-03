@@ -274,12 +274,12 @@ def stage_update(previous: Path, candidate: Path, output: Path, keys: Sequence[s
                "new_rows": len(introduced), "canonical_published": False,
                "comparability_scope": "full candidate supplied by external pipeline"}
     _new_directory(output)
-    report.changes.to_csv(output / "19_cambios_por_celda.csv", index=False)
+    report.changes.to_csv(output / "19_cambios_por_celda.csv", index=False,lineterminator='\n')
     json_write(output / "19_actualizacion_auditoria.json", summary)
     if blocked is None:
         staged = b.copy()
         staged["revision_state"] = revision_state(b.period, new_policy)
-        staged.sort_values(list(keys)).to_csv(output / "19_candidato_con_estados.csv", index=False)
+        staged.sort_values(list(keys)).to_csv(output / "19_candidato_con_estados.csv", index=False,lineterminator='\n')
         summary["staged_sha256"] = sha256(output / "19_candidato_con_estados.csv")
         json_write(output / "19_actualizacion_auditoria.json", summary)
     return summary

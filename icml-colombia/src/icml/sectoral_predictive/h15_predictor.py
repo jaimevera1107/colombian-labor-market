@@ -264,7 +264,7 @@ def run(root:Path,trees:int=160):
     assert not p33.duplicated(['model','dep_code','year','sector_code']).any()
     if (inp/'12_pesos_anuales_completo_H12.csv').is_file():
         diag=diagnose_anchor_feasibility(p33,root)
-        diag.to_csv(out/'15_diagnostico_factibilidad_margenes.csv',index=False)
+        diag.to_csv(out/'15_diagnostico_factibilidad_margenes.csv',index=False,lineterminator='\n')
     files={'15_predicciones_oof.csv':oof,'15_comparacion_pareada_h13.csv':c,
            '15_metricas_modelos.csv':s,'15_error_por_departamento.csv':dep,
            '15_error_por_rama.csv':branch,'15_pareos_por_departamento.csv':paired,
@@ -274,7 +274,7 @@ def run(root:Path,trees:int=160):
            '15_extrapolacion_fuera_soporte.csv':support,
            '15_sensibilidad_modelos_sin_anclas.csv':disagreement,
            '15_diferencias_pareadas_bootstrap.csv':paired_stats}
-    for fn,d in files.items():d.to_csv(out/fn,index=False,float_format='%.12g')
+    for fn,d in files.items():d.to_csv(out/fn,index=False,float_format='%.12g',lineterminator='\n')
     gate={'status':'BLOCKED_FOR_CANONICAL_PUBLICATION',
       'reasons':['NO_FULL_ORIGINAL_38_FEATURES_AND_URBAN_DONOR_PIPELINE',
                  'DIFFERENT_UNIVERSES_DANE_ANNUAL_VS_ICML_FULL',

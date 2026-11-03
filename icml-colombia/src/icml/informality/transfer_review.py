@@ -210,7 +210,7 @@ def run(features_dir:Path, sequential_dir:Path,mlp_dir:Path,output:Path)->dict:
            'rural_proxy_feasibility':rural,'ridge_shared_rates_cv':cv_ridge,
            'urban_model_cv_comparison':comparisons,'ridge_shared_rates_department_candidate':ridge,
            'national_closure_intervention_frontier':closure}
-    for key,d in files.items():d.to_csv(output/f'06_{key}.csv',index=False,float_format='%.12g')
+    for key,d in files.items():d.to_csv(output/f'06_{key}.csv',index=False,float_format='%.12g',lineterminator='\n')
     summary={'status':'EXPERIMENTAL_NOT_CERTIFIED',
             'month_count':len(targets),'department_rows':len(dept),
             'urban_employed_greater_than_department_rows':int(dratio.invalid_city_subregion_assumption.sum()),

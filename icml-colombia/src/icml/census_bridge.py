@@ -21,7 +21,7 @@ TOL = 1e-5
 
 
 def _csv(frame: pd.DataFrame, path: Path) -> None:
-    frame.to_csv(path, index=False, encoding="utf-8-sig", float_format="%.17g")
+    frame.to_csv(path, index=False, encoding="utf-8-sig", float_format="%.17g",lineterminator='\n')
 
 
 def _check_identity(frame: pd.DataFrame, suffix: str = "") -> None:

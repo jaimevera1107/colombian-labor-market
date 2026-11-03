@@ -312,12 +312,12 @@ def run(*, observations_csv: Path, totals_csv: Path,
             raise ValueError('Produced incomplete/inconsistent 14-group monthly candidate')
     else:
         gap=pd.Series(dtype=float)
-    cf.to_csv(output/'10_candidatos_14_ramas_SOLO_MESES_CON_MICRODATOS.csv',index=False,float_format='%.10f')
+    cf.to_csv(output/'10_candidatos_14_ramas_SOLO_MESES_CON_MICRODATOS.csv',index=False,float_format='%.10f',lineterminator='\n')
     aud=pd.DataFrame(audit).fillna('')
-    aud.to_csv(output/'10_auditoria_disponibilidad_desagregacion.csv',index=False,float_format='%.10f')
+    aud.to_csv(output/'10_auditoria_disponibilidad_desagregacion.csv',index=False,float_format='%.10f',lineterminator='\n')
     cov=pd.DataFrame(_catalog_coverage())
     cov.loc[cov.period.isin(splits),'sectoral_reconstruction_status']='14_GROUP_ESTIMATE_FROM_OFFICIAL_MONTHLY_TOTAL_AND_WEIGHTED_MICRODATA'
-    cov.to_csv(output/'10_matriz_cobertura_1993_2026.csv',index=False)
+    cov.to_csv(output/'10_matriz_cobertura_1993_2026.csv',index=False,lineterminator='\n')
     summary={'month_count_official_13':len(totals),'month_count_validated_14_estimated':len(splits),
        'months_without_14_split':len(totals)-len(splits),'rows_14_candidates':len(cf),
        'max_monthly_closure_residual_persons':float(gap.abs().max()) if len(gap) else None,

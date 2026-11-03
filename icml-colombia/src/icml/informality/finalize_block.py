@@ -440,7 +440,7 @@ def run(root:Path, output:Path, *,gap_method='interpolated',splice:RegimeSplice|
        ('13_ciudades_serie_anual.csv',annual_cities),
        ('13_departamentos_serie_anual.csv',annual_dept),
        ('13_nacionales_serie_anual.csv',annual_national)):
-        data.to_csv(output/filename,index=False,float_format='%.12g')
+        data.to_csv(output/filename,index=False,float_format='%.12g',lineterminator='\n')
     (output/'13_resumen.json').write_text(json.dumps(qual_report,ensure_ascii=False,indent=2),encoding='utf-8')
     files=sorted(x for x in output.iterdir() if x.is_file())
     (output/'manifest.json').write_text(json.dumps({'version':'2.2.13.dev0',

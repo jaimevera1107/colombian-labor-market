@@ -362,8 +362,8 @@ def monthly_reconciliation(root,annual,month_info,output,save=True):
  qa=pd.DataFrame(audit)
  if len(ret)!=N_MONTHS*33*15:raise AssertionError('No hay cobertura completa')
  if save:
-  ret.to_csv(output/'16_matriz_mensual_1993_2026_EXPERIMENTAL.csv',index=False,float_format='%.12g')
-  qa.to_csv(output/'16_auditoria_margenes_mensuales.csv',index=False)
+  ret.to_csv(output/'16_matriz_mensual_1993_2026_EXPERIMENTAL.csv',index=False,float_format='%.12g',lineterminator='\n')
+  qa.to_csv(output/'16_auditoria_margenes_mensuales.csv',index=False,lineterminator='\n')
  return ret,qa
 
 
@@ -394,10 +394,10 @@ def backcast_sensitivity(root,annual,output):
  baseline=d[d.backcast_scenario=='SEMIVIDA_12_ANIOS'][['period','dep_code','sector_code','share']].rename(columns={'share':'baseline_share'})
  d=d.merge(baseline,on=['period','dep_code','sector_code'],validate='many_to_one')
  d['abs_change_pp_vs_12years']=100*(d.share-d.baseline_share).abs()
- d.to_csv(output/'16_sensibilidad_retropolacion.csv',index=False)
+ d.to_csv(output/'16_sensibilidad_retropolacion.csv',index=False,lineterminator='\n')
  resumen=d.groupby(['period','backcast_scenario'],as_index=False).agg(
    max_abs_change_pp=('abs_change_pp_vs_12years','max'),mean_abs_change_pp=('abs_change_pp_vs_12years','mean'))
- resumen.to_csv(output/'16_sensibilidad_retropolacion_resumen.csv',index=False)
+ resumen.to_csv(output/'16_sensibilidad_retropolacion_resumen.csv',index=False,lineterminator='\n')
  return resumen
 
 def annual_observation_audit(root,monthly,annual):
@@ -421,16 +421,16 @@ def main(root):
  annual,labor=load_labor_features(root)
  features,observed,gdp_cols=training_panel(root,annual)
  oof=logo(observed,gdp_cols);scores_file,scores,bydep,alpha,alpha_grid=evaluate(oof,root)
- oof.to_csv(out/'16_original38_vs_37_logo.csv',index=False)
- scores_file.to_csv(out/'16_validacion_pareada_celdas.csv',index=False)
- scores.to_csv(out/'16_metricas_predictor.csv',index=False)
- bydep.to_csv(out/'16_metricas_departamentos.csv',index=False)
+ oof.to_csv(out/'16_original38_vs_37_logo.csv',index=False,lineterminator='\n')
+ scores_file.to_csv(out/'16_validacion_pareada_celdas.csv',index=False,lineterminator='\n')
+ scores.to_csv(out/'16_metricas_predictor.csv',index=False,lineterminator='\n')
+ bydep.to_csv(out/'16_metricas_departamentos.csv',index=False,lineterminator='\n')
  eligible=scores[scores.test_protocol=='LOGO_2015_2024'].sort_values(['mae_pp','model'])
  chosen=str(eligible.iloc[0]['model'])
  # No elegir un estimador comparándolo con el año 2025 reservado.
  candidate=annual_candidates(root,features,observed,gdp_cols,chosen,alpha)
  anchored=annual_target_table(root,candidate)
- anchored.to_csv(out/'16_candidatos_anuales_2015_2025.csv',index=False)
+ anchored.to_csv(out/'16_candidatos_anuales_2015_2025.csv',index=False,lineterminator='\n')
  monthly,qa=monthly_reconciliation(root,anchored,labor,out)
  sens=backcast_sensitivity(root,anchored,out)
  # Evaluación externa ANTES del anclaje: no confundir con ajuste a referencias.
@@ -441,14 +441,15 @@ def main(root):
                  on=['year','sector_code'],suffixes=('','_ref'),validate='one_to_one')
  bgpre['abs_error_pp']=100*(bgpre.share_model-bgpre.obs_share_ref).abs()
  bgpre[['year','sector_code','share_model','obs_share_ref','abs_error_pp']].to_csv(
-       out/'16_bogota_evaluacion_independiente_PRE_ANCLA.csv',index=False)
+       out/'16_bogota_evaluacion_independiente_PRE_ANCLA.csv',index=False,
+                lineterminator='\n')
  check=annual_observation_audit(root,monthly,anchored)
- check.to_csv(out/'16_auditoria_anclas_GEIH_anuales.csv',index=False)
+ check.to_csv(out/'16_auditoria_anclas_GEIH_anuales.csv',index=False,lineterminator='\n')
  flags=check.groupby('year',as_index=False).agg(mae_pp=('error_abs_pp','mean'),max_pp=('error_abs_pp','max'))
- flags.to_csv(out/'16_error_anual_geih.csv',index=False)
+ flags.to_csv(out/'16_error_anual_geih.csv',index=False,lineterminator='\n')
  feature_info=pd.DataFrame({'feature':predictor_feature_names(gdp_cols,True),
                             'original38_component':[x.startswith('original_') for x in predictor_feature_names(gdp_cols,True)]})
- feature_info.to_csv(out/'16_inventario_variables.csv',index=False)
+ feature_info.to_csv(out/'16_inventario_variables.csv',index=False,lineterminator='\n')
  quality={'checkpoint':'ICML_2_2_18','status':'EXPERIMENTAL_NOT_CANONICAL',
   'trained_labels':'2015_2024','holdout_labels':'2025_not_used_in_any_fit',
   'chosen_by':'LOGO_2015_2024_only_not_nested_model_selection','chosen_model':chosen,

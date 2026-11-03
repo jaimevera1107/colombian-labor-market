@@ -249,7 +249,7 @@ def run(closure_root:Path, labor_path:Path, national_path:Path, output:Path,
     paths={'10_calibrated_all_candidates_EXPERIMENTAL.csv':df,
            '10_monthly_metrics.csv':m,'10_temporal_comparisons.csv':t,
            '10_method_summary.csv':summary,'10_gate.csv':a}
-    for name,data in paths.items():data.to_csv(output/name,index=False,float_format='%.12g')
+    for name,data in paths.items():data.to_csv(output/name,index=False,float_format='%.12g',lineterminator='\n')
     meta={'status':'EXPERIMENTAL_NOT_CANONICAL','methods':list(variants),
           'candidates':list(candidates),'source_files':{
             'labor':_hash(labor_path),'national_informality':_hash(national_path),

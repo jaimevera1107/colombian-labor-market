@@ -288,6 +288,6 @@ def run(*,historic_csv:Path,recent_monthly_csv:Path,recent_totals_csv:Path,
         ('10_auditoria_margenes_2001_2015.csv',controls),
         ('10_sensibilidad_historica_escenarios_pp.csv',pivot),
         ('10_cobertura_temporal_1993_2026_CON_EVIDENCIA.csv',coverage)]:
-        df.to_csv(output/name,index=False,encoding='utf-8-sig',float_format='%.12g')
+        df.to_csv(output/name,index=False,encoding='utf-8-sig',float_format='%.12g',lineterminator='\n')
     (output/'10_puerta_empalme.json').write_text(json.dumps(audit,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     return audit

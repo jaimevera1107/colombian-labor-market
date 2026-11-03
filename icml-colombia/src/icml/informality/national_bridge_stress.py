@@ -343,7 +343,7 @@ def run(*,labor_path:Path,national_labor_path:Path,source_path:Path, recent_path
                     ('11_territorial_sensitivity.csv',pd.DataFrame(sensitivity)),
                     ('11_pseudogap_postclosure_summary.csv',pgs),
                     ('11_quality_gate.csv',gate)]:
-        df.to_csv(output/name,index=False,float_format='%.12g')
+        df.to_csv(output/name,index=False,float_format='%.12g',lineterminator='\n')
     summary={'status':'EXPERIMENTAL_NOT_CANONICAL',
        'reference':'ICML 2.2.9 frozen employed and KL calibration',
        'scenarios':scenarios.scenario.unique().tolist(),

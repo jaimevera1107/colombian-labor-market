@@ -289,31 +289,32 @@ def run(priors_csv: Path, national_csv: Path, covariates_csv: Path,
                     geih_input=g[j],geih_sum=level_g[j].sum(),geih_residual=level_g[j].sum()-g[j]))
     out=pd.concat(outputs,ignore_index=True)
     audit=pd.DataFrame(diag); margins=pd.DataFrame(margin); row_audit=pd.DataFrame(rows)
-    out.to_csv(output/'13_matriz_depto_sector_1993_2026_RECONCILIADA_EXPERIMENTAL.csv',index=False,float_format='%.14g')
-    audit.to_csv(output/'13_auditoria_ajustes_y_convergencia.csv',index=False,float_format='%.14g')
-    margins.to_csv(output/'13_auditoria_margenes_nacionales.csv',index=False,float_format='%.14g')
-    row_audit.to_csv(output/'13_auditoria_cierre_departamental.csv',index=False,float_format='%.14g')
+    out.to_csv(output/'13_matriz_depto_sector_1993_2026_RECONCILIADA_EXPERIMENTAL.csv',index=False,float_format='%.14g',lineterminator='\n')
+    audit.to_csv(output/'13_auditoria_ajustes_y_convergencia.csv',index=False,float_format='%.14g',lineterminator='\n')
+    margins.to_csv(output/'13_auditoria_margenes_nacionales.csv',index=False,float_format='%.14g',lineterminator='\n')
+    row_audit.to_csv(output/'13_auditoria_cierre_departamental.csv',index=False,float_format='%.14g',lineterminator='\n')
     by_scenario=audit.groupby('scenario',sort=False).agg(
          max_abs_correction_pp=('max_abs_correction_pp','max'),
          mean_abs_correction_pp=('mean_abs_correction_pp','mean'),
          max_full_error_persons=('max_full_national_error_persons','max'),
          max_geih_error_persons=('max_geih_national_error_persons','max'),
          max_iterations=('iterations','max')).reset_index()
-    by_scenario.to_csv(output/'13_sensibilidad_escenarios.csv',index=False,float_format='%.14g')
+    by_scenario.to_csv(output/'13_sensibilidad_escenarios.csv',index=False,float_format='%.14g',lineterminator='\n')
     if full_only_matrices:
         pd.concat(full_only_matrices,ignore_index=True).to_csv(
             output/'13_matriz_alternativa_solo_cierre_completo_2001_2026.csv',
-            index=False,float_format='%.14g')
+            index=False,float_format='%.14g',
+                lineterminator='\n')
     full_only_comparison=pd.DataFrame(full_only_comparison)
-    full_only_comparison.to_csv(output/'13_comparacion_cierre_completo_vs_conjunto.csv',index=False,float_format='%.14g')
+    full_only_comparison.to_csv(output/'13_comparacion_cierre_completo_vs_conjunto.csv',index=False,float_format='%.14g',lineterminator='\n')
     covariate_labels=cov[['period','dep_code','territory_name','rural_fraction']]
     biggest=out.iloc[np.argsort(-out.adjustment_pp.abs().to_numpy())[:100]].merge(
         covariate_labels,on=['period','dep_code'],validate='many_to_one')
-    biggest.to_csv(output/'13_ajustes_mayores_puntuales.csv',index=False,float_format='%.14g')
+    biggest.to_csv(output/'13_ajustes_mayores_puntuales.csv',index=False,float_format='%.14g',lineterminator='\n')
     per_department_sector=out.groupby(['scenario','dep_code','sector_code'],sort=True).agg(
         max_abs_correction_pp=('adjustment_pp',lambda x: float(np.abs(x).max())),
         mean_abs_correction_pp=('adjustment_pp',lambda x: float(np.abs(x).mean()))).reset_index()
-    per_department_sector.to_csv(output/'13_concentracion_ajustes_depto_sector.csv',index=False,float_format='%.14g')
+    per_department_sector.to_csv(output/'13_concentracion_ajustes_depto_sector.csv',index=False,float_format='%.14g',lineterminator='\n')
     sha={name:hashlib.sha256(Path(path).read_bytes()).hexdigest() for name,path in [
       ('h12_priors',priors_csv),('national_composition',national_csv),
       ('departmental_covariates',covariates_csv),('universe_audit',universe_csv)]}

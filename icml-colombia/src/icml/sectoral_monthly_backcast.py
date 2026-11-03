@@ -237,7 +237,7 @@ def run(*, rolling_csv: str|Path, recent_csv: str|Path, totals_csv: str|Path,
       '11_fidelidad_ventanas_3m_por_universo.csv':aud,
       '11_residuales_por_sector_y_ventana.csv':pd.DataFrame(audit_sector),
     }
-    for filename,frame in reports.items():frame.to_csv(dest/filename,index=False,float_format='%.12g',encoding='utf-8')
+    for filename,frame in reports.items():frame.to_csv(dest/filename,index=False,float_format='%.12g',encoding='utf-8',lineterminator='\n')
     information={
        'status':'H11_COMPUTATIONAL_CANDIDATE__NOT_CANONICAL',
        'historical_months_estimated':162,'recent_2015_months_boundary':3,

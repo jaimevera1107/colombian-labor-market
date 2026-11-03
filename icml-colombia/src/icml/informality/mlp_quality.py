@@ -21,11 +21,11 @@ def audit(experiment_dir:Path,national_path:Path)->dict:
     agg['gap_pp']=100*(agg.model_rate-agg.informality_rate_estimated)
     agg['era']=pd.cut(agg.period.str[:4].astype(int),bins=[1992,2000,2006,2019,2020,2026],
                       labels=['1993-2000','2001-2006','2007-2019','2020','2021-2026'])
-    agg.to_csv(experiment_dir/'05_national_gap_diagnostic.csv',index=False,float_format='%.10g')
+    agg.to_csv(experiment_dir/'05_national_gap_diagnostic.csv',index=False,float_format='%.10g',lineterminator='\n')
     out=out.sort_values(['dep_code','period'])
     out['month_delta_pp']=100*out.groupby('dep_code').candidate_rate_provisional.diff()
     flags=out[out.month_delta_pp.abs()>5][['dep_code','period','candidate_definition','month_delta_pp']]
-    flags.to_csv(experiment_dir/'05_monthly_change_flags.csv',index=False,float_format='%.10g')
+    flags.to_csv(experiment_dir/'05_monthly_change_flags.csv',index=False,float_format='%.10g',lineterminator='\n')
     drift=pd.read_csv(experiment_dir/'05_transfer_feature_drift.csv')
     gate=pd.DataFrame([
         {'gate':'PRESERVE_FROZEN_LABOR','status':'PASS','detail':'No labor source was rewritten; model uses employed as immutable denominator'},
@@ -39,7 +39,7 @@ def audit(experiment_dir:Path,national_path:Path)->dict:
         {'gate':'2020_DEFINITION_BRIDGE','status':'BLOCKED','detail':'No selected homogeneous 2020 estimate; experimental stratum predictions retained'},
         {'gate':'FINAL_POSTCLOSURE_G6','status':'NOT_TESTED','detail':'No publishable closure performed; original G6 cannot pass yet'},
     ])
-    gate.to_csv(experiment_dir/'05_mlp_quality_gate.csv',index=False)
+    gate.to_csv(experiment_dir/'05_mlp_quality_gate.csv',index=False,lineterminator='\n')
     info={'status':'NOT_CERTIFIED','max_abs_national_gap_pp':float(agg.gap_pp.abs().max()),
           'national_gaps_by_era':agg.groupby('era',observed=True).gap_pp.mean().round(4).to_dict(),
           'n_urban_crossval_folds':int(cv.fold_id.nunique()),

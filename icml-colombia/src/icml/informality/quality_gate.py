@@ -236,7 +236,7 @@ def audit(candidate:Path,cities_labor:Path,nationals_labor:Path,output:Path,
         artifacts['comparacion_nacional_2_2_1_vs_2_2_2.csv']=comparison.drop(columns=['_merge'])
     # Actualizar las puertas tras el contraste de vintages, si se solicitó.
     artifacts['auditoria_puertas.csv']=pd.DataFrame(checks)
-    for name,df in artifacts.items(): df.to_csv(output/name,index=False,encoding='utf-8-sig')
+    for name,df in artifacts.items(): df.to_csv(output/name,index=False,encoding='utf-8-sig',lineterminator='\n')
     if any(_hash(Path(p))!=h for p,h in inputs.items()): raise RuntimeError('Algún insumo fue modificado')
     report={'status':status,'version':'2.2.3.dev0-quality-only','source_candidate':'2.2.2.dev0',
         'audit_scope':'13_ciudades_nacional_23_ciudades_variables_MLP_departamentos',

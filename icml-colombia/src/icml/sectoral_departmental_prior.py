@@ -222,11 +222,12 @@ def run(departments_csv:Path, nationals_csv:Path, population_csv:Path,
     if geih_mismatch.loc[geih_mismatch.index>='2001-01'].any():
         raise ValueError('Unexpected post-2000 GEIH universe employment mismatch')
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
-    national.to_csv(output/'12_composicion_nacional_unificada_1993_2026.csv',index=False)
+    national.to_csv(output/'12_composicion_nacional_unificada_1993_2026.csv',index=False,lineterminator='\n')
     cov[['period','dep_code','territory_name','employed','employed_represented',
          'source','rural_fraction','national_employment_weighted_rural_fraction',
          'rural_fraction_centered','factor_employed','factor_is_assumed']].to_csv(
-             output/'12_covalidadores_departamentales.csv',index=False)
+             output/'12_covalidadores_departamentales.csv',index=False,
+                lineterminator='\n')
     all_shares=[];audits=[];margins=[]
     nq=national.pivot(index='period',columns='sector_code',values='sector_share').reindex(columns=SECTORS)
     for scenario in SCENARIOS:
@@ -268,11 +269,11 @@ def run(departments_csv:Path, nationals_csv:Path, population_csv:Path,
         margins_sec['h13_status']='NOT_RECONCILED_TO_SECTOR_MARGINS_H13_PENDING'
         margins.append(margins_sec)
     output_prior=pd.concat(all_shares,ignore_index=True)
-    output_prior.to_csv(output/'12_candidatos_depto_sector_1993_2026_NO_CANONICOS.csv',index=False,float_format='%.12g')
+    output_prior.to_csv(output/'12_candidatos_depto_sector_1993_2026_NO_CANONICOS.csv',index=False,float_format='%.12g',lineterminator='\n')
     check=pd.concat(audits,ignore_index=True)
-    check.to_csv(output/'12_auditoria_cierre_filas.csv',index=False)
+    check.to_csv(output/'12_auditoria_cierre_filas.csv',index=False,lineterminator='\n')
     margin=pd.concat(margins,ignore_index=True)
-    margin.to_csv(output/'12_brechas_margenes_nacionales_PRE_H13.csv',index=False)
+    margin.to_csv(output/'12_brechas_margenes_nacionales_PRE_H13.csv',index=False,lineterminator='\n')
     universe=pd.DataFrame({'period':full.index,'full_dept_sum':full.to_numpy(),
           'full_national_icml':nf.reindex(full.index).to_numpy(),
           'geih_dept_sum':repre.reindex(full.index).to_numpy(),
@@ -282,11 +283,11 @@ def run(departments_csv:Path, nationals_csv:Path, population_csv:Path,
     universe['geih_status']=np.where(universe.period<'2001-01',
             'NO_DEPARTMENTAL_GEIH_IDENTIFICATION_PRE2001',
             'REPRESENTED_TOTAL_RECONCILED')
-    universe.to_csv(output/'12_auditoria_universos.csv',index=False)
+    universe.to_csv(output/'12_auditoria_universos.csv',index=False,lineterminator='\n')
     by_scenario=margin.groupby('scenario').agg(max_abs_full_gap_pp=(
                  'full_prior_gap_pp_of_national_employed',lambda x:float(x.abs().max())),
                  mean_abs_full_gap_pp=('full_prior_gap_pp_of_national_employed',lambda x:float(x.abs().mean()))).reset_index()
-    by_scenario.to_csv(output/'12_sensibilidad_escenarios_resumen.csv',index=False)
+    by_scenario.to_csv(output/'12_sensibilidad_escenarios_resumen.csv',index=False,lineterminator='\n')
     metadata={
        'version':'H12_2_2_18_EXPERIMENTAL_1','status':'EXPERIMENTAL_PRIOR_NOT_SECTOR_LABELS',
        'months':int(cov.period.nunique()),'departments':int(cov.dep_code.nunique()),

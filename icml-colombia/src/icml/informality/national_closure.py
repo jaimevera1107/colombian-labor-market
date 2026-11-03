@@ -198,8 +198,9 @@ def run(department_path: Path, prior_path: Path, national_path: Path,
                                       allow_missing_months=allow_missing_months)
     output_dir.mkdir(parents=True,exist_ok=True)
     calibrated.to_csv(output_dir/"08_department_informality_CALIBRATION_EXPERIMENTAL.csv",
-                      index=False,float_format="%.12g")
-    audit.to_csv(output_dir/"08_national_closure_audit.csv",index=False,float_format="%.12g")
+                      index=False,float_format="%.12g",
+                lineterminator='\n')
+    audit.to_csv(output_dir/"08_national_closure_audit.csv",index=False,float_format="%.12g",lineterminator='\n')
     summary = {
        "status":"COUNTERFACTUAL_NOT_CANONICAL",
        "method":"legacy_share_allocation_adapted_to_bounded_dual_margin_kl",

@@ -148,12 +148,12 @@ def run(old_path,new_path,output):
     data['value_status']=np.where(data.occupied_thousands.eq(0), 'ZERO_SENTINEL_POSSIBLE_MISSING', 'USABLE_OBSERVATION')
     data['eligible_for_training']=data.value_status.eq('USABLE_OBSERVATION')
     output.mkdir(parents=True)
-    data.to_csv(output/'informality_source_observations.csv',index=False)
+    data.to_csv(output/'informality_source_observations.csv',index=False,lineterminator='\n')
     overlap=methodology_overlap_diagnostics(data)
-    overlap.to_csv(output/'methodology_overlap_2021.csv',index=False)
+    overlap.to_csv(output/'methodology_overlap_2021.csv',index=False,lineterminator='\n')
     coverage=data.groupby(['source','definition','domain']).agg(observations=('period_end','size'),
        concepts=('concept','nunique'),earliest=('period_start','min'),latest=('period_end','max')).reset_index()
-    coverage.to_csv(output/'source_coverage.csv',index=False)
+    coverage.to_csv(output/'source_coverage.csv',index=False,lineterminator='\n')
     report={'status':'OFFICIAL_ROLLING_3MO_OBSERVATIONS_NO_BRIDGE_NO_DEPARTMENT_MODEL',
             'new_input_reader':reader_backend,'n_observations':len(data),'old_observations':len(prev),'new_observations':len(new),
             'n_duplicates':0,'overlap_observations':len(overlap),

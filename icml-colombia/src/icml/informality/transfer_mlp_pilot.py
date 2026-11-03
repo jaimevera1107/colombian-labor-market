@@ -68,9 +68,9 @@ def run(features_dir:Path, sequential_dir:Path,output:Path,
     closure=quality_shift_report(prediction,targets,rate_col='candidate_rate_provisional',
                                 model='residual_mlp_shared_rates_19')
     output.mkdir(parents=True,exist_ok=True)
-    pd.DataFrame(rows).to_csv(output/'07_pilot_spatial_cv.csv',index=False,float_format='%.12g')
-    prediction.to_csv(output/'07_pilot_department_predictions_EXPERIMENTAL.csv',index=False,float_format='%.12g')
-    closure.to_csv(output/'07_pilot_national_gap_and_closure_DIAGNOSTIC.csv',index=False,float_format='%.12g')
+    pd.DataFrame(rows).to_csv(output/'07_pilot_spatial_cv.csv',index=False,float_format='%.12g',lineterminator='\n')
+    prediction.to_csv(output/'07_pilot_department_predictions_EXPERIMENTAL.csv',index=False,float_format='%.12g',lineterminator='\n')
+    closure.to_csv(output/'07_pilot_national_gap_and_closure_DIAGNOSTIC.csv',index=False,float_format='%.12g',lineterminator='\n')
     report={'status':'PILOT_NOT_CERTIFIED','epochs_cap':epochs,'n_folds':len(rows),
             'features':list(TRANSFER_STABLE_FEATURES),
             'cv':pd.DataFrame(rows).groupby('definition').mae_pp.mean().to_dict(),

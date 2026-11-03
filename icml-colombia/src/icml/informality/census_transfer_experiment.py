@@ -33,7 +33,7 @@ def sha(path: Path) -> str:
 
 
 def _write(df: pd.DataFrame, path: Path) -> None:
-    df.to_csv(path, index=False, encoding='utf-8-sig', float_format='%.12g')
+    df.to_csv(path, index=False, encoding='utf-8-sig', float_format='%.12g',lineterminator='\n')
 
 
 def _joined_frame(predictors: pd.DataFrame, bridge: pd.DataFrame,

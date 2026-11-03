@@ -241,7 +241,7 @@ def run(cities_path:Path,departments_path:Path,nationals_path:Path,
 
     def write(name:str,df:pd.DataFrame)->None:
         path=output/name
-        df.to_csv(path,index=False,encoding='utf-8-sig',float_format='%.12g')
+        df.to_csv(path,index=False,encoding='utf-8-sig',float_format='%.12g',lineterminator='\n')
         saved[name]=_hash(path)
     write('04_training_cities_all_history.csv',model_safe(city_data))
     write('04_training_cities_eligible_weak.csv',model_safe(city_data[city_data.eligible_weak_training]))

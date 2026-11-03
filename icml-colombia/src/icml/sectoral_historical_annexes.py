@@ -190,7 +190,7 @@ def run(output:Path, recent_monthly:Path, annex_csv:Path|None=None,
         ('10_anclas_historicas_CON_TRAZABILIDAD.csv',verified),
         ('10_solapamientos_homologados.csv',overlap),
         ('10_cobertura_sectorial_1993_2026.csv',matrix)]:
-        dataframe.to_csv(output/fname,index=False,encoding='utf-8-sig',float_format='%.10f')
+        dataframe.to_csv(output/fname,index=False,encoding='utf-8-sig',float_format='%.10f',lineterminator='\n')
     summary={'stage':'H10_HISTORICAL_ANNEX_INVENTORY_AND_STRICT_INGESTION',
              'reference_index':DANE_INDEX,'published_annex_entries_2007_2014':int(len(idx)),
              'historic_numeric_observations_received':int(len(verified)),

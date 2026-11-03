@@ -223,7 +223,7 @@ def run(closure_root: Path, labor_path: Path, national_path: Path,
         "09_dual_margin_incremental_effect.csv":pd.DataFrame(dual_margin),
     }
     for filename,df in tables.items():
-        df.to_csv(out/filename,index=False,float_format="%.12g")
+        df.to_csv(out/filename,index=False,float_format="%.12g",lineterminator='\n')
     fmonth=tables["09_monthly_intervention_and_rank.csv"]
     yearly = fmonth.copy()
     yearly["year"] = yearly.period.str[:4].astype(int)
@@ -231,7 +231,7 @@ def run(closure_root: Path, labor_path: Path, national_path: Path,
         months=("period","size"), mean_intervention_pp=("weighted_abs_intervention_pp","mean"),
         maximum_intervention_pp=("max_intervention_pp","max"),
         minimum_rank_spearman=("spearman_rank_pre_post","min"))
-    yearly.to_csv(out/"09_annual_summary.csv",index=False,float_format="%.12g")
+    yearly.to_csv(out/"09_annual_summary.csv",index=False,float_format="%.12g",lineterminator='\n')
     fddual=tables["09_dual_margin_incremental_effect.csv"]
     fdiff=tables["09_pairwise_postclosure.csv"]
     summary={"protocol":"icml-2.2.8-postclosure-readonly",

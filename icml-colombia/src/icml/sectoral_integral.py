@@ -135,7 +135,7 @@ def export_experimental(bundle_root: Path, output_root: Path) -> dict:
     )
     national['source_status']='H11_NATIONAL_COMPOSITION_EXPERIMENTAL_OR_ASSUMED_SPLIT'
     national['publication_status']='NO_CANONICAL'
-    national.to_csv(dest/'sectorial_nacional_1993_2026_EXPERIMENTAL.csv',index=False,float_format='%.12g')
+    national.to_csv(dest/'sectorial_nacional_1993_2026_EXPERIMENTAL.csv',index=False,float_format='%.12g',lineterminator='\n')
     metadata={**audit,'source_panel_sha256':sha256(source),
         'export_panel_sha256':sha256(target),
         'national_export_rows':len(national),

@@ -72,7 +72,7 @@ def _check_rates(arr: np.ndarray, where: str) -> np.ndarray:
 
 
 def _write(df: pd.DataFrame, output: Path, name: str) -> None:
-    df.to_csv(output/name, index=False, encoding='utf-8-sig', float_format='%.12g')
+    df.to_csv(output/name, index=False, encoding='utf-8-sig', float_format='%.12g',lineterminator='\n')
 
 
 def _win_match(x: pd.DataFrame, source: pd.DataFrame, codes: set[int], definition: str) -> pd.DataFrame:

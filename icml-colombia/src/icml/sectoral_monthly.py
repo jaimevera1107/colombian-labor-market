@@ -238,12 +238,12 @@ def run(workbook: Path | None, national: Path, output: Path,
     else:
         raise ValueError('Provide --workbook or both normalized CSV source files')
     comparison = compare_monthly_domains(totals, Path(national))
-    monthly.to_csv(output/'10_observaciones_oficiales_mensuales_13_grupos.csv',index=False,float_format='%.10f')
-    totals.to_csv(output/'10_totales_oficiales_mensuales.csv',index=False,float_format='%.10f')
-    comparison.to_csv(output/'10_comparacion_mensual_universos.csv',index=False,float_format='%.10f')
+    monthly.to_csv(output/'10_observaciones_oficiales_mensuales_13_grupos.csv',index=False,float_format='%.10f',lineterminator='\n')
+    totals.to_csv(output/'10_totales_oficiales_mensuales.csv',index=False,float_format='%.10f',lineterminator='\n')
+    comparison.to_csv(output/'10_comparacion_mensual_universos.csv',index=False,float_format='%.10f',lineterminator='\n')
     if legacy_path is not None:
         window_audit = audit_legacy_moving_windows(totals, legacy_path)
-        window_audit.to_csv(output/'10_auditoria_trimestres_NO_anclas_mensuales.csv',index=False,float_format='%.10f')
+        window_audit.to_csv(output/'10_auditoria_trimestres_NO_anclas_mensuales.csv',index=False,float_format='%.10f',lineterminator='\n')
         catalog['legacy_window_comparison_records'] = len(window_audit)
         catalog['legacy_invalid_monthly_mae_pct'] = float(window_audit.incorrect_month_end_comparison_pct.abs().mean())
         catalog['legacy_correct_window_mae_persons'] = float(window_audit.correct_window_validation_difference_persons.abs().mean())

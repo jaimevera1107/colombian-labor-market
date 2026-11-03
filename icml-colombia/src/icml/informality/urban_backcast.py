@@ -531,7 +531,7 @@ def run(source_path:Path,city_path:Path,national_path:Path,recent_path:Path,
                'auditoria_saltos_informalidad.csv':discontinuities,
                'auditoria_tradeoff_fidelidad_suavidad.csv':fidelity_tradeoff}
     for name,table in artifacts.items():
-        table.to_csv(output/name,index=False,encoding='utf-8-sig')
+        table.to_csv(output/name,index=False,encoding='utf-8-sig',lineterminator='\n')
     report={'status':'EXPERIMENTAL_NOT_CANONICAL',
         'method':'DANE_URBAN_FIRST_BACKCAST_HISTORICAL_DEFINITION_BRIDGE',
         'urban_rows':int(len(urban)),'urban_territories':int(urban.city_code.nunique()),

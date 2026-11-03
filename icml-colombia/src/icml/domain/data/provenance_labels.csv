@@ -1,0 +1,30 @@
+legacy_label,category,is_provisional,description
+geih_observado,observed,false,Monthly GEIH value published by DANE.
+RECONSTRUIDO_PET_LINEALIZADA_1993_2000,anchored_reconstruction,false,National 1993-2000 months constrained to spliced annual anchors; working age linearized.
+RECONSTRUIDO_ESTACIONAL_063,anchored_reconstruction,false,National 1993-2000 months constrained to spliced annual anchors with transferred seasonality.
+reconstruido,anchored_reconstruction,false,National 1993-2000 Chow-Lin months constrained to spliced annual anchors.
+2007_2020_GEIH_URBANA_ANUAL,anchored_reconstruction,false,Urban monthly path constrained to official GEIH annual values.
+2007_2020_ANCLA_URBANA_DONANTE,anchored_reconstruction,false,Urban monthly path from a frozen donor and constrained to annual anchors.
+2007_2020_BOGOTA_DONANTE_ESCALADO,donor_estimate,false,Urban path scaled from the Bogotá donor.
+1993_2000_RETROPOLACION_NACIONAL_ESTACIONAL_063,unanchored_reconstruction,false,Urban 1993-2000 retropolation from the seasonal national series.
+1993_2006_RETROPOLACION_NACIONAL,unanchored_reconstruction,false,Urban 1993-2006 retropolation from the national series.
+1993_2006_NACIONAL_HOMOLOGO,unanchored_reconstruction,false,Urban path homologated to the national series.
+GEIH_32_CIUDADES_LATENTE_RESTRICCIONES_VENTANAS_12M,latent_from_windows,false,Latent monthly value inferred from 12-month rolling windows.
+GEIH_32_CIUDADES_LATENTE_PROVISIONAL_2026,latent_from_windows,true,Latent monthly value with incomplete windows (provisional).
+CUNDINAMARCA_SINTETICA_BOGOTA_PATRON_ANCLAS_PROPIAS,synthetic,false,Synthetic Cundinamarca urban signal with own anchors.
+CUNDINAMARCA_SINTETICA_PROVISIONAL_2026,synthetic,true,Synthetic Cundinamarca urban signal (provisional).
+RECONSTRUCCION_CON_ANCLA_ANUAL,anchored_reconstruction,false,Departmental monthly path constrained to official annual anchors.
+RECONSTRUCCION_RETROPOLADA_SIN_ANCLA_ANUAL,unanchored_reconstruction,false,Departmental retropolation without annual anchors.
+PREDICCION_TERRITORIO_SIN_ANCLA,predicted,false,Model prediction for a territory without official anchors.
+PREDICCION_EXTRAPOLADA_SIN_ANCLA,predicted,false,Model extrapolation outside the anchored period.
+PREDICCION_PROVISIONAL_2026,predicted,true,Provisional model prediction for the current year.
+ESTIMADO_RETROPOLADO,donor_estimate,false,Recipient city 2007-2014: donor trajectory rescaled to the recipient level.
+ESTIMADO_RETROPOLADO_REGULARIZADO,donor_estimate,false,Recipient city 2015-2020: donor trajectory with bounded seam regularization.
+PROXY_VENTANAS_NO_ANUAL,observed,false,Annual aggregate of published 12-month rolling windows (not a calendar year).
+PROXY_2026_PROVISIONAL,observed,true,Aggregate of the 12-month windows published so far in the current year.
+2021_2024_ANCLA_DEPARTAMENTAL_CON_PERFIL_MENSUAL_INFERIDO,synthetic,false,Synthetic Cundinamarca signal: departmental anchors with an inferred monthly profile.
+ANCLA_OFICIAL_DEPARTAMENTAL_2021_2024_CONCILIADA,synthetic,false,Synthetic Cundinamarca annual value at an official departmental anchor (reconciled).
+ESTIMADO_BOGOTA_PATRON_ESCALADO,synthetic,false,Synthetic Cundinamarca annual value from the scaled Bogotá pattern.
+INFERIDO_NACIONAL_SIN_ANCLA_DEPARTAMENTAL,unanchored_reconstruction,false,Departmental 1993-2006 months linked to the national series (no departmental anchor).
+CHOW_LIN_063_CON_ANCLA_OFICIAL_ANUAL,anchored_reconstruction,false,Departmental 2007-2025 Chow-Lin months constrained to official annual anchors.
+INFERIDO_NACIONAL_ESTACIONAL_063_SIN_ANCLA_DEPARTAMENTAL,unanchored_reconstruction,false,Departmental 1993-2000 labor components linked to the seasonal national series.

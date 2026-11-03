@@ -1,0 +1,552 @@
+{
+  "package": "ICML_CORE_H36_COMPLEMENTO_RC1_H11_CENSO",
+  "base_package": "ICML_CORE_H36.zip",
+  "catalog": "icml-colombia/configs/golden/rc1_catalog.toml",
+  "catalog_artifact_ids": 102,
+  "catalog_unique_files": 101,
+  "catalog_sha256_match": 102,
+  "directories": {
+    "validacion/rc1_original": 101,
+    "research/sectoral/h11/inputs": 5,
+    "insumos/censo_original": 1
+  },
+  "file_count": 107,
+  "total_uncompressed_bytes": 157513920,
+  "files": [
+    {
+      "path": "validacion/rc1_original/fases/01_nacional/config/metodologia_nacional.json",
+      "bytes": 756,
+      "sha256": "3d0640da4bd78fca7f790d72412e3af7f9ff16de1bb491660cf2c82fa926991d"
+    },
+    {
+      "path": "validacion/rc1_original/fases/01_nacional/data/historico/indicadores_mensuales_1993_2003.csv",
+      "bytes": 24522,
+      "sha256": "ec0503916a346d4b3fd18049663973ec6d9a1f2cd472049aeb002b0a2fef7e15"
+    },
+    {
+      "path": "validacion/rc1_original/fases/01_nacional/data/historico/official_geih_annual.csv",
+      "bytes": 2229,
+      "sha256": "ca9143d73a32fefee357a1150ce9761b4e2010215903a6f1af1732d7732623fc"
+    },
+    {
+      "path": "validacion/rc1_original/fases/01_nacional/data/historico/source_enh_annual.csv",
+      "bytes": 1462,
+      "sha256": "72a39aca24b93bcdd2a949e32a465cb085f62574ee3cb398f6de4e611807bd22"
+    },
+    {
+      "path": "validacion/rc1_original/fases/01_nacional/experimentos/03_con_visualizacion_integrada/anclas_anuales.csv",
+      "bytes": 1343,
+      "sha256": "5deb6526ca3d8294d395a3473a48e769e2d0692d41a738e040c181d6168bcc5f"
+    },
+    {
+      "path": "validacion/rc1_original/fases/01_nacional/experimentos/03_con_visualizacion_integrada/exports/visualizacion/06_tablas/serie_combinada_con_procedencia.csv",
+      "bytes": 54642,
+      "sha256": "94f2b0201cac5084997d5ce630e74166da80b153d502ebb4e887c4db51609785"
+    },
+    {
+      "path": "validacion/rc1_original/fases/01_nacional/experimentos/03_con_visualizacion_integrada/series_mensuales.csv",
+      "bytes": 15896,
+      "sha256": "b707cd89527fae243a15e1391728c3749f94ef74178553a57762c5810492a820"
+    },
+    {
+      "path": "validacion/rc1_original/fases/01_nacional/experimentos/04_conciliacion_contable_063/anclas_conciliadas.csv",
+      "bytes": 1232,
+      "sha256": "bb96dc64af5092c6819b230c1689a4505cbd779c1acdfe3f17980c4d7e5aeff6"
+    },
+    {
+      "path": "validacion/rc1_original/fases/01_nacional/experimentos/04_conciliacion_contable_063/series_mensuales_conciliadas.csv",
+      "bytes": 15742,
+      "sha256": "f908f9f9a0916ab32df45f0a2595f5fb138d71d7782c69438474efe652e6e64c"
+    },
+    {
+      "path": "validacion/rc1_original/fases/01_nacional/experimentos/08_estacionalidad_063_v04_componentes/nacional_1993_2003_estacional_conciliado.csv",
+      "bytes": 16688,
+      "sha256": "bf1ec4afd606ce3400151bfa86478563ec7c53d5ed89d27d4010d89890d4e86d"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/config/cundinamarca_25_donante_congelado.json",
+      "bytes": 739,
+      "sha256": "8ec852f61d3423f049c3cd181dead1449f27b7c1c7ea8930280e3da02b7132c5"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/datos/donantes_congelados_referencia.csv",
+      "bytes": 697,
+      "sha256": "ef039646930f25298fa5030a5d59d2d9a34d31f5c762a01499a55d1e0a091c2b"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/datos/proxies_anuales_ventanas_2026_06.csv",
+      "bytes": 24472,
+      "sha256": "249b3a7ab67d206449378d9826e71527529d324c7b1e4ccc909e31fbd9662fe0"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/datos/proxies_anuales_ventanas_2026_08.csv",
+      "bytes": 24458,
+      "sha256": "16451ee2c3c61c308c528eaadb388a6162774b87980b5c969a55859f8fa4cd38"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/datos/senales_historicas_23_y_donantes.csv",
+      "bytes": 73503,
+      "sha256": "bed64e54d103de4e07ffb46f7657b6061cd5e5fce6d8ec614c73ffe0bc6418ef"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/estudios/04_donantes_agregados_respaldo/fuentes/Anexo GEIH Agosto 2026.xlsx",
+      "bytes": 3692971,
+      "sha256": "ade9b213c799e967c121091438a53617f3a3ab8d85d311f5cada08e2461473d9"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/auditoria_anclas_2007_2020.csv",
+      "bytes": 379705,
+      "sha256": "2eaf3a0c2ce17e28d65a3acc4014fa3cf48e2e27999b6c2a17448dd222ec48e8"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/auditoria_puente_2006_2007.csv",
+      "bytes": 24500,
+      "sha256": "0241fc00b7dfedcd93cd486fc0db0895707a81380b8ab0303e781a0a8ce7b503"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/ciudades_32_mensual_1993_2020.csv",
+      "bytes": 1752762,
+      "sha256": "311d17ecafd442ab40ba3d87263a3ae4d036a8465214da9428a4777d7f9acfa5"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_anclas_oficiales_inalteradas.csv",
+      "bytes": 305,
+      "sha256": "e96c5df6ef0062ff26e2ad04c86b35f5764a616671a618e4c3c813c7a57d51ad"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_anual_2007_2024.csv",
+      "bytes": 4631,
+      "sha256": "dd61960ee9f4d2fe8f151402a12f2543dd20ccba69e18dabf2cd92dd2b19b539"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_calibracion_bogota_2021_2024.csv",
+      "bytes": 980,
+      "sha256": "531c53ad6b28edd142b9e7e14e239b2a6f876d8317f16a74e30fbf53967a6546"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_empalme_nacional_2007.csv",
+      "bytes": 335,
+      "sha256": "aba32a8a9df7991a322c9a3ee1c295672c5c694aa28a5f113193098cbedeae19"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_senales_sin_conciliar.csv",
+      "bytes": 46905,
+      "sha256": "da36abfcc780fb4eed34cb1293bd0e78ab4551ee5852263fa7e33b5f78b3a4a1"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_urbana_sintetica_mensual_1993_2024.csv",
+      "bytes": 92785,
+      "sha256": "dfff9a8037310d548fb758966c015f697f47626776844ca0ba71a59dd6b35a8d"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/factores_empalme_2007.csv",
+      "bytes": 29480,
+      "sha256": "f5595005f3570206683121fa8ce15d6e7fefaf460f83dcb5dab468a7f6c4e7e6"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/referencias_urbanas_2021_2026_sin_alterar.csv",
+      "bytes": 24256,
+      "sha256": "69d9c49b45b4320f29cb78a6fb8336ef28d9115a541cc3b81ad85200b53d76fb"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/seis_indicadores_sin_conciliar_1993_2020.csv",
+      "bytes": 1752684,
+      "sha256": "70834e22686d441814c34e6ac8912dbb6d1d7619d23601349b072c5813f31c03"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/senales_urbanas_33_incluye_cundinamarca_sintetica_1993_2020.csv",
+      "bytes": 2127155,
+      "sha256": "d168b10db3ec39b972cbe69224c157f272bc113d0c320b3d4d50d0c051505a62"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/validacion_retrospectiva_23_ciudades.csv",
+      "bytes": 30560,
+      "sha256": "f5316e2c2911616156c0ad1d08f24c850617b4b54dcc3b85b5c7a7e716e68c84"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/results/catalogo_pareto_nueve_propuesto.csv",
+      "bytes": 2832,
+      "sha256": "00a5ef3e5f5ae343db83a771ad8fdd82d5d69b6f7f7f1b14d3a4065c38848660"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/results/cierre/auditoria_9_ciudades.csv",
+      "bytes": 2324,
+      "sha256": "0f109a26b340082ebbb69972b300cf91824adcd4027410bede310c5e9422f095"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/results/cierre/panel_ciudades_cerrado_2007_2026.csv",
+      "bytes": 28264,
+      "sha256": "c349dd3c3cd693d7e6bdfd08cbffbc2ccc94a2212717d3986d34c033688d0234"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/results/evaluacion_207_alternativas.csv",
+      "bytes": 150928,
+      "sha256": "450e16cf1c5430c97172af7d1e90883743e2631a6557a2ae692293a870823233"
+    },
+    {
+      "path": "validacion/rc1_original/fases/02_ciudades/results/validacion_23_ciudades_6_reglas.csv",
+      "bytes": 28510,
+      "sha256": "6eb3e7b861cc3622d1090077a6c020b47a19c7dc8ebe0d30da68ac98c228d024"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/auditoria/correcciones_anclas.csv",
+      "bytes": 127555,
+      "sha256": "98057f2906d729b25a467e2a703f4bef7e768bb768f09c3cb6b9541c63ead64a"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/auditoria/diagnostico_chow_lin.csv",
+      "bytes": 12871,
+      "sha256": "ad8cd4fb730b1e5f7ff7ebddf47d9aea5cb452eaf944a44334e3d49b66ae7b32"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/auditoria/poblacion_geih_vs_proyeccion.csv",
+      "bytes": 46558,
+      "sha256": "c39730d20dfcb398abc3ed15c3177e55a14702f78a239ca9830c4fc746ea92f3"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/fuentes/anclas_laborales_23_originales.csv",
+      "bytes": 34352,
+      "sha256": "aba418777d9c42c7ce87837d8f9af5c2d3cdb724d4b83a3268cc2405b7c11bcf"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/fuentes/proyeccion_poblacional_33_anual.csv",
+      "bytes": 48190,
+      "sha256": "5a634ce0de1be3e2c20c66465e9dfdf0cdc28a5988168216fa44efdb6fea1772"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/outputs/anclas_laborales_23_conciliadas.csv",
+      "bytes": 35277,
+      "sha256": "1b7c80974f540e6fe3e9806c67e48d5b10b0df18533c1924ac0139791f2bd732"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/outputs/departamentos_23_mensual_1993_2025.csv",
+      "bytes": 1587035,
+      "sha256": "37b0860436242a0f8e8ec457a536406e3a7ac304d91e0d99cb5824165135b021"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/auditoria_empalme_2006_2007.csv",
+      "bytes": 12078,
+      "sha256": "5d3e99e96930358a8885eba77822068aa46390eeb4e860c8780bbeed416dc6fb"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/calibracion_poblacion_y_puentes.csv",
+      "bytes": 2274,
+      "sha256": "1ef0cc4c647d871b888d72cfc374f64e456cbcdaddc43b7135b20d7a9cbc7ff1"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/cundinamarca_inactivos_perfil_rho.csv",
+      "bytes": 7556,
+      "sha256": "84ec00f7d6406fdf1c43e404fc7d452b3e77df57075a4fcc80d8f86691981eef"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/cundinamarca_inactivos_rho_sensibilidad.csv",
+      "bytes": 14556,
+      "sha256": "2ae85e11f06a6b57e6b657ac0446ca9028022a2ad50832e95a6ea90c718ed574"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/validacion_retrospectiva_senales_poblacion.csv",
+      "bytes": 3704,
+      "sha256": "01c4ca6839a2037dc0557cd9c5d68b5221cacbd2002fbf42c92773717779a9ee"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/outputs/departamentos_23_mensual_1993_2025_revisado.csv",
+      "bytes": 1581766,
+      "sha256": "c595a4887699fbf1cb994a7435b01722919e8abd3f5d1f4e406ff05706afbcb6"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/fuentes/Anexo_GEIH_Departamentos_2025.xls",
+      "bytes": 1230848,
+      "sha256": "159372274a790e9189f1de9738b8a888e5c42bf8430ec098d04b6380f0975fa2"
+    },
+    {
+      "path": "validacion/rc1_original/fases/03_departamentos/fuentes/proyecciones_poblacion_original.csv",
+      "bytes": 195732,
+      "sha256": "263aa63d00de5ae356b98079dcf97e7361eaf157efabcbe7f7ff9f6de519b246"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/auditoria/cambios_departamentales_por_unidad.csv",
+      "bytes": 1168,
+      "sha256": "97d0784ed93f8e1caf81889e082fec8e25a22b4c6032c2746ada244691df2d71"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/auditoria/cambios_urbanos_por_unidad.csv",
+      "bytes": 2764,
+      "sha256": "59b1a9f6bbe0322ce8aed6fd2da3fbc9f9e7a26f70f1f35869c841800a57c55d"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/auditoria/transferencia_seis_senales.csv",
+      "bytes": 10611,
+      "sha256": "ead5860e9d9a7fa7f52de7129a575fc154c278ad91c06c600347e9d73fe42603"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/outputs/departamentos_23_mensual_1993_2025.csv",
+      "bytes": 1615370,
+      "sha256": "b69c4354c60802d05f0e8add079c55e3eef4139a9db1ebc1457e1031bb363436"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/outputs/nacional_mensual_1993_2026_08.csv",
+      "bytes": 41255,
+      "sha256": "e2546ab9c7a07272b522d6452e62a7f2525e65970e79c2f53009ec3839a0362c"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/outputs/senales_urbanas_33_mensual_1993_2020.csv",
+      "bytes": 2176334,
+      "sha256": "560260e791a8c0389769a335b85eb79ed6d7036f3bc249b0e49142013a26be04"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/auditoria/control_ventanas_por_ciudad.csv",
+      "bytes": 27451,
+      "sha256": "4b3c3403d9b9847dfaea7e3377552402c959af9b9066c8eeff79509413de2586"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/auditoria/cundinamarca_anclas_propias.csv",
+      "bytes": 2011,
+      "sha256": "c56042105287b3b40d954a21ece7c4905c58e1fae8d0a2429bc730eca3cfb3f6"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/auditoria/ventanas_oficiales_vs_reconstruidas.csv",
+      "bytes": 926280,
+      "sha256": "d895e25cfe09dd637f45ce7d9436c268119a3d6337bcfca0fcc5b0ad10e0aa73"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/outputs/base_predictora_33_1993_2026_08_CANDIDATA.csv",
+      "bytes": 3531379,
+      "sha256": "13f74abbfe323a0732c1bb4ba727fb76d56b8dec24587812bc9cb61c8190e163"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/outputs/senales_urbanas_33_mensual_1993_2026_08.csv",
+      "bytes": 2537256,
+      "sha256": "bf1dea1580031deaab7fe4e42fb591458ed4f7824776a1f9dc9935e9d000c57c"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/outputs/tramo_inferido_33_2021_2026_08.csv",
+      "bytes": 456239,
+      "sha256": "38aec99493cbdbb86217989f2968b7bd08f7c81b6e86da75ab04ab33ea623116"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/03_regularizacion_urbana_33_2026_08/outputs/base_predictora_33_1993_2026_08_ESTRICTA_CANDIDATA.csv",
+      "bytes": 3531393,
+      "sha256": "907a3aec3e0492b5ef9a12858e2e96811d97c1cb9bd52bfacb1e79a30490d770"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/03_regularizacion_urbana_33_2026_08/outputs/senales_urbanas_33_mensual_1993_2026_08_ESTRICTAS_CANDIDATO.csv",
+      "bytes": 2537263,
+      "sha256": "563926d8c8e2507feaaef6bccf10af61bd8c6a0f9c6bfceb32504f62702cbe16"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/04_filtro_calidad_urbana_33_2026_08/auditoria/decision_calidad_33_senales.csv",
+      "bytes": 4367,
+      "sha256": "d9d30af9a6c53df04e0faed84ca001879e5a38a9782f5834c60f7780a662ae39"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/04_filtro_calidad_urbana_33_2026_08/auditoria/reproduccion_detallada_57_ventanas_32_ciudades.csv",
+      "bytes": 208636,
+      "sha256": "391dafc78bae215263cbd8e59fbb9c52f391004ab1b83b3d3e762b33b1e651ff"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/04_filtro_calidad_urbana_33_2026_08/outputs/base_predictora_33_1993_2026_08_FILTRO_CALIDAD_CANDIDATA.csv",
+      "bytes": 3531392,
+      "sha256": "c959e20eefbe698f36af719d73195ea47bcb137c7a7968d9f39217f4b9e4a52b"
+    },
+    {
+      "path": "validacion/rc1_original/fases/04_integracion/experimentos/04_filtro_calidad_urbana_33_2026_08/outputs/senales_urbanas_33_1993_2026_08_FILTRO_CALIDAD_CANDIDATA.csv",
+      "bytes": 2537287,
+      "sha256": "aa71497ff832d2cddf8f844237c6ad37f8cbe26b9aa21c56841f5e07a8779719"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/auditoria/comparacion_estricta_vs_filtrada.csv",
+      "bytes": 569,
+      "sha256": "deb691754de6a8aea78bcdabca633cb95536afcd9b088a373c8e052d100ba31a"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/auditoria/seleccion_k_referencia.csv",
+      "bytes": 121,
+      "sha256": "033c2880b429b1ec57fcc3cee5d81f85b01586ec97c13099fc224a1258f14a39"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/cv/particiones_y_procedencia.json",
+      "bytes": 8501,
+      "sha256": "2b78d5478f4b9ededf2531e065d870fb3f77b0b90f0e4efa97559ab06db7d286"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/outputs/clusters_referencia_exploratoria.csv",
+      "bytes": 461,
+      "sha256": "fd47132187f10c1a922d8781dedcb62b0036a61bb54fe1abf0d1f8e092f7ea5b"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/outputs/features_laborales_33_1993_2026_08.csv",
+      "bytes": 13855459,
+      "sha256": "fc6fbefc8f3041e61563d891d21e5859befe0a2d7bd631612935d5120db87461"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/outputs/features_laborales_33_1993_2026_08_ESTRICTA.csv",
+      "bytes": 13855393,
+      "sha256": "2a9e7b18771a2becb05838db181d22df68254f448d940d4861e267506024caca"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/outputs/objetivos_laborales_departamentales_33_1993_2026_08.csv",
+      "bytes": 2969336,
+      "sha256": "824cef1a796aa4c60412d08909a37bed3992fc219ac08a8ba42a2f24c25ab638"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/agrupaciones_reentrenadas_por_fold.csv",
+      "bytes": 32130,
+      "sha256": "2b31567bc0cc0ef7f0d75a6ef76e8f6bfb95f0be0fa98b015e432fb6dc4dc248"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/comparacion_metricas.csv",
+      "bytes": 2735,
+      "sha256": "418fa0d40e9d01aaf7fbc29d119063f1a42394144a34dec6d2d3aead41481607"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/decision_modelo.csv",
+      "bytes": 343,
+      "sha256": "a0b69d473a18de119e7300f4fdc96c56342603e7467040f5f80fea478e7e6cff"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/errores_por_territorio_fold.csv",
+      "bytes": 90597,
+      "sha256": "7197e5ba9deef2076241925de4c289cd3a487f21c712b545d846f055ff9b1076"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/predicciones_oof_15_folds.csv",
+      "bytes": 9994880,
+      "sha256": "fb62fd5e9ece654a0f399e484b3adce0f02d9d34a84fdbe8774c686ea4df7373"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/models/agrupaciones_finales_reentrenadas.csv",
+      "bytes": 961,
+      "sha256": "062161920cb9e34a41542b2054b7dfc2c31d5f42f25c93785f9f45970a753ca8"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/outputs/predicciones_departamentales_33_1993_2026_08_EXPERIMENTAL.csv",
+      "bytes": 9200829,
+      "sha256": "519c674a2f3b65df57e57d695d0a5082d126fbb8b05bb6bced86ef3a325c9d84"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/comparacion_108_postcierre.csv",
+      "bytes": 41903,
+      "sha256": "e70c6d25192fc8607d0b8b76a1a78685d424d486d1bb9aecc2edefad6f480f62"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/decision_postcierre_comun.csv",
+      "bytes": 2310,
+      "sha256": "6e72f340ada097fba57824082212f15c4eb784f517f34dff26ca8100f78d87cc"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/errores_pareados_departamento.csv",
+      "bytes": 7412,
+      "sha256": "b0a6c40b4428a4fbef14ae03a9c9d1b98a5986a857780c246f932e7922917a70"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/evaluacion_anual_completa.csv",
+      "bytes": 11912767,
+      "sha256": "235d7bb094e54f56ea7c639f20e9c01bf346adac31e1ce58e615ade21d4e9b65"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/sensibilidad_panel_hibrido_vs_ward.csv",
+      "bytes": 3076793,
+      "sha256": "dbabd427b4c96239ce7cea2a48660880ab67645ba93011fdaf22dba6d752de9c"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/inputs/objetivos_test.csv",
+      "bytes": 995864,
+      "sha256": "198900e26225cf0c094caaceedd5890ac7a2899680d854326ee4df498de62fb0"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/inputs/poblacion_proyeccion.csv",
+      "bytes": 243379,
+      "sha256": "0f4d54e9f8309146a9f9fe597ba6731ead4931364fa5c2ded7cefca2f7a43d9b"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/outputs/panel_alternativo_xgb_ward_33.csv",
+      "bytes": 7641907,
+      "sha256": "075550ba8cea5904d16146759d2e306fce5a88dea8ba4d35b7bf88abacb8922b"
+    },
+    {
+      "path": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/outputs/panel_departamental_33_1993_2026_08_CANDIDATO.csv",
+      "bytes": 7852906,
+      "sha256": "32f5f0fdd52bb14a036f676d98558350903c84ff41f25d07e8356d57e6def1a5"
+    },
+    {
+      "path": "validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/anclas_437_comparacion_hibrido.csv",
+      "bytes": 137819,
+      "sha256": "ebcd39fb0ecc24c8908447d0fcedd603b927511993d0727744fa2cc413380a4c"
+    },
+    {
+      "path": "validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/anclas_437_comparacion_ward.csv",
+      "bytes": 137569,
+      "sha256": "de1e271320863e2d4ade3d366c0a82edcb32253713206bdbb7b5f612cbf5b0bd"
+    },
+    {
+      "path": "validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/conciliacion_nacional_6_magnitudes_hibrido.csv",
+      "bytes": 112232,
+      "sha256": "9fb8042329b1b88afe51bc49b8c3b203c218f4a5ad683436f19ce7573b4e477e"
+    },
+    {
+      "path": "validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/conciliacion_nacional_6_magnitudes_ward.csv",
+      "bytes": 112304,
+      "sha256": "33f8cc3eb68f6be2f23637b89ec9b70a2c1adb7dd7df1d5ce8702846a34bbc9d"
+    },
+    {
+      "path": "validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/diagnostico_suavidad_hibrido.csv",
+      "bytes": 9382,
+      "sha256": "d8efbfd5985e9757039330f206b45084f306c66ef4fb9cf8e399e2ecdb597ccd"
+    },
+    {
+      "path": "validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/diagnostico_suavidad_ward.csv",
+      "bytes": 9385,
+      "sha256": "f1e636fe3099bb0ffce255aed533866b6fcdbe6b7716ca2fbea730e7ffa14f92"
+    },
+    {
+      "path": "validacion/rc1_original/fases/06_cierre_jerarquico/outputs/nacional_pet_lineal_1993_2026_08.csv",
+      "bytes": 42571,
+      "sha256": "2ef4ef7419fa7856a12817672481ee1e08a3876834f207badc326aca786b4890"
+    },
+    {
+      "path": "validacion/rc1_original/fases/06_cierre_jerarquico/outputs/panel_33_conciliado_hibrido_1993_2026_08.csv",
+      "bytes": 11724057,
+      "sha256": "484eee4a7836f0274bfcd962461431926022dc558ad56bcd5e1225e2d468353a"
+    },
+    {
+      "path": "validacion/rc1_original/fases/06_cierre_jerarquico/outputs/panel_33_conciliado_ward_1993_2026_08.csv",
+      "bytes": 11713479,
+      "sha256": "f263940fde69a183af9050a032bf9d6458f8235bb9ffb7e0b3e6538503c0c991"
+    },
+    {
+      "path": "validacion/rc1_original/fases/06_cierre_jerarquico/outputs/panel_33_ward_pet_lineal_1993_2026_08.csv",
+      "bytes": 12042068,
+      "sha256": "5c67168c72b3a17ab5b5b0bfa9a0ef1f2da4aa0324256460ef42ec4badc8a468"
+    },
+    {
+      "path": "research/sectoral/h11/inputs/11_crosswalk_ENH_4_grupos_a_15_ramas_CIIU4.csv",
+      "bytes": 2572,
+      "sha256": "5a9b9009c66e0cbadfb21c138b5c30abe7de6a5560f053d6de010bab94eb0807"
+    },
+    {
+      "path": "research/sectoral/h11/inputs/Ind_empleo_1958_2018.xlsx",
+      "bytes": 62356,
+      "sha256": "72a560a4777122b946e0c326001428448434235e167afc8a034da729227953ad"
+    },
+    {
+      "path": "research/sectoral/h11/inputs/dane_4_ramas_anuales_vintages.csv",
+      "bytes": 4169,
+      "sha256": "b99b6624d8f4d6393b2c799d13daa16568e4e51d05b094789ec6caa40b483788"
+    },
+    {
+      "path": "research/sectoral/h11/inputs/h11_link_2001_07_FULL.csv",
+      "bytes": 945,
+      "sha256": "41dc356919fd92c66f42cea2b432a7d19a77ca10d17a06fe8c772c3f1d67c35d"
+    },
+    {
+      "path": "research/sectoral/h11/inputs/totales_icml_1993_2001.csv",
+      "bytes": 8851,
+      "sha256": "0b6cb4e7fbbac35a6168e4e79d228acb2c094ff34d5de7d5ca566b728a2b06a0"
+    },
+    {
+      "path": "insumos/censo_original/CNPV-2018-Poblacion-Ajustada-por-Cobertura.xls",
+      "bytes": 556544,
+      "sha256": "a8efb9e801564faa004e01e4a685d42087592a899c4a59c2237f0808260ec8c1"
+    }
+  ]
+}

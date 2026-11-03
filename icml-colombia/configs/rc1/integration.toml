@@ -1,0 +1,66 @@
+# Integration stage configuration reproducing RC1.
+
+[integration.sources]
+geih_monthly_annex = "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-08.xlsx"
+
+[integration.propagation]
+history_start = "1993-01"
+history_end = "2000-12"
+anchor_year = 2007
+overlap_end = "2003-12"
+
+[integration.windows]
+sheet_name = "Año_móvil_32_ciudades"
+first_window_end = "2021-12"
+n_windows = 57
+block_marker = "Concepto"
+block_end_marker = "Fuerza de trabajo potencial"
+scale_factor = 1000.0
+
+[integration.windows.concepts]
+"Población total" = "population"
+"Población en edad de trabajar (PET)" = "working_age"
+"Fuerza de trabajo" = "labor_force"
+"Población ocupada" = "employed"
+"Población desocupada" = "unemployed"
+"Población fuera de la fuerza de trabajo" = "inactive"
+
+[integration.latent_fit]
+first_month = "2021-01"
+last_month = "2026-08"
+smoothness_weight = 0.65
+bridge_weight = 0.12
+relative_floor = 0.10
+solver_tolerance = 1e-12
+solver_max_iterations = 900
+
+[integration.synthetic]
+recipient_code = 25
+donor_code = 11
+recipient_name = "Cundinamarca — señal urbana sintética"
+anchor_first_year = 2021
+anchor_last_year = 2025
+
+[integration.targets]
+anchored_first_year = 2007
+anchored_last_year = 2025
+
+[integration.regularization]
+max_monthly_ratio = 2.0
+relative_floor = 0.10
+tolerance_margin = 0.0025
+strict_cap_buffer = 0.0075
+cap_bisection_steps = 27
+flexible_codes = [91, 94, 97]
+max_flexible_window_tolerance = 0.021
+flexible_cap_buffer = 0.015
+flexible_cap_lower = 1.0001
+flexible_bisection_steps = 22
+prior_weight = 0.80
+incumbent_weight = 0.30
+first_difference_weight = 0.70
+second_difference_weight = 0.45
+exact_solver_tolerance = 1e-11
+exact_solver_max_iterations = 500
+soft_solver_tolerance = 1e-10
+soft_solver_max_iterations = 400

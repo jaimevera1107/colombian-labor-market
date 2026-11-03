@@ -1,0 +1,11 @@
+# Experimental DANE-only informal employment. All values are methodological
+# assumptions, not estimated DANE parameters. Require own vintage if altered.
+[informality.sequential]
+old_window_lambda = 0.025
+new_window_lambda = 0.012
+national_proxy_strength = 0.5
+national_change_weight = 0.7
+unemployment_gap_weight = 0.3
+donor_unemployment_weight = 0.35
+cluster_reference_k = 4
+cluster_seed = 20261031

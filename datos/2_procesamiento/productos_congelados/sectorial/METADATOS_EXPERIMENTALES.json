@@ -1,0 +1,19 @@
+{
+  "status": "EXPERIMENTAL_NOT_CANONICAL",
+  "can_publish": false,
+  "months": 404,
+  "departments": 33,
+  "sectors": 15,
+  "cells": 199980,
+  "max_share_error": 1.2501111257279263e-11,
+  "max_department_full_error_persons": 2.8440263122320175e-05,
+  "max_department_represented_error_persons": 2.8440263122320175e-05,
+  "max_national_sector_error_persons": 6.49038702249527e-06,
+  "input_output_sha256_verified": true,
+  "source_panel_sha256": "fd65d43b1eceda180a811c4e20e4cd56d2ad3bfaf2389163e1adc1dff9f09ebe",
+  "export_panel_sha256": "fd65d43b1eceda180a811c4e20e4cd56d2ad3bfaf2389163e1adc1dff9f09ebe",
+  "national_export_rows": 6060,
+  "represented_national_is_department_proxy_not_dane_official": true,
+  "city_level_sectorial_not_available": true,
+  "no_canonical_data_modified": true
+}

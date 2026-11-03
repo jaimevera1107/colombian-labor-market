@@ -1,0 +1,49 @@
+# Hierarchical reconciliation and PET linearization reproducing RC1.
+
+[reconciliation.hierarchical]
+working_age_strength = 750.0
+population_strength = 700.0
+employed_strength = 14.0
+unemployed_strength = 40.0
+ipf_max_iterations = 3000
+ipf_tolerance = 1e-9
+ipf_check_every = 10
+ipf_floor = 1e-8
+# Audit thresholds, in persons. They gate the closure; they do not change any
+# computed value. 1e-3 persons (one thousandth of a person) is the level at
+# which a difference is worth an alarm: the July 2026 replay missed the old
+# 1e-4 anchor gate by 0.000131 persons on a population of millions
+# (relative error ~3e-11), which is solver accuracy, not a methodological issue.
+national_tolerance_persons = 1e-3
+joint_tolerance_persons = 1e-3
+anchor_tolerance_persons = 1e-3
+rounded_anchor_tolerance_persons = 1.001
+anchor_first_year = 2007
+anchor_last_year = 2025
+
+[reconciliation.linearization]
+history_start = "1993-01"
+history_end = "2000-12"
+national_strength = 200.0
+territorial_strength = 200.0
+boundary_months = 2
+
+[reconciliation.product]
+# ADR-006: Ward is the operational model of the published departmental
+# product (tail-risk preference); the hybrid is kept as an alternative.
+operational_model = "reference"
+
+[reconciliation.representativeness]
+# Candidate design (not RC1): whole-territory departments with
+# representativeness factors; see icml.reconciliation.representativeness.
+fully_urban_codes = [11]
+partial_codes = [81, 85, 86, 88, 91, 94, 95, 97, 99]
+capitals_in_national_from = "2014-01"
+excluded_donor_codes = [25]
+population_strength = 700.0
+employed_strength = 14.0
+unemployed_strength = 40.0
+inactive_strength = 750.0
+joint_tolerance_persons = 1e-3
+reconcile_from = "2001-01"
+population_from_projection_before = "2001-01"

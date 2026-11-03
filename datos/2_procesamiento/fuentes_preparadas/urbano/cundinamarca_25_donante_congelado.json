@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "recipient_code": 25,
+  "donor_code": 11,
+  "recipient": "Cundinamarca — señal urbana sintética",
+  "donor": "Bogotá D.C.",
+  "calibration_years": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "source_sha256": "bed64e54d103de4e07ffb46f7657b6061cd5e5fce6d8ec614c73ffe0bc6418ef",
+  "ratio_by_variable": {
+    "employed": 0.4106870814620659,
+    "unemployed": 0.4415852185971053,
+    "inactive": 0.4539700349745093,
+    "pea": 0.4148398786357165,
+    "pet": 0.4273365691842465,
+    "population": 0.4499290203535667
+  },
+  "status": "CONGELADO_BASE_EXPERIMENTAL",
+  "update_policy": "Cambio de donante, anclas o razones exige nueva versión metodológica y aprobación; nunca en actualización mensual"
+}

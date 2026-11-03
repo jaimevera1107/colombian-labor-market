@@ -1,0 +1,65 @@
+# Departmental stage configuration reproducing RC1 (B1_v03 + B1_v04).
+
+[departmental.sources]
+annex = "datos/1_ingesta/geih_departamentos/geih_departamentos_2025.xlsx"
+population_projections = "datos/2_procesamiento/fuentes_preparadas/departamental/proyecciones_poblacion_original.csv"
+
+[departmental.annex]
+sheet_name = "Departamentos anual"
+block_marker = "concepto"
+marker_search_columns = 4
+title_search_rows = 5
+year_search_rows = 2
+published_unit_persons = 1000.0
+first_year = 2007
+last_year = 2025
+# DANE codes of the territories published in the annex (Bogotá is not).
+anchored_codes = [5, 8, 13, 15, 17, 18, 19, 20, 23, 25, 27, 41, 44, 47, 50,
+                  52, 54, 63, 66, 68, 70, 73, 76]
+missing_markers = ["", "-", "...", "…", "n.d.", "N.D.", "NA", "N/A"]
+title_prefix_pattern = '^departamento (?:de|del)\s+'
+
+[departmental.annex.aliases]
+"bogota" = 11
+
+[departmental.annex.concepts]
+population = '^poblacion total$'
+working_age = '^poblacion en edad de trabajar(?: \(pet\))?$'
+labor_force = '^fuerza de trabajo(?: \(ft\))?$'
+employed = '^poblacion ocupada$'
+unemployed = '^poblacion desocupada$'
+inactive = '^poblacion fuera de la fuerza de trabajo$'
+participation_rate = '^tasa global de participacion(?: \(tgp\))?$'
+employment_rate = '^tasa de ocupacion(?: \(to\))?$'
+unemployment_rate = '^tasa de desocupacion(?: \(td\))?$'
+
+[departmental.anchors]
+max_closure_change_persons = 2.01
+projection_area_type = "Total"
+
+[departmental.reconstruction]
+start_period = "1993-01"
+anchor_start_period = "2007-01"
+end_period = "2025-12"
+method = "chow-lin-maxlog"
+include_intercept = true
+splice_overlap_months = 12
+anchor_tolerance_persons = 1e-4
+
+[departmental.population]
+calibration_year = 2007
+backcast_start_year = 1993
+backcast_end_year = 2006
+holdout_calibration_start = 2013
+holdout_calibration_end = 2017
+holdout_evaluation_start = 2007
+holdout_evaluation_end = 2012
+anchor_tolerance_persons = 1e-4
+demographic_tolerance_persons = 1e-5
+link_quantiles = [0.95, 0.99]
+large_link_change = 0.2
+
+[departmental.rho_sensitivity]
+territory_code = 25
+quantity = "inactive"
+competing_rho = 0.989

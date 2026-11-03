@@ -1,0 +1,37 @@
+[
+  {
+    "original_archive": "ICML_2_0_Proyecto_Actualizado_Consolidado_v1.0.0-rc2(2).zip",
+    "original_path": "Proyecto/fases/02_ciudades/docs/02_ESTUDIO_PARETO_EVIDENCIA.md",
+    "local_copy": "02_ESTUDIO_PARETO_EVIDENCIA.md",
+    "sha256": "2bd7e2c5a9d4f8a8d462bf93fcb02cf305c2aa84a22c819a261046f6f14bfdd7",
+    "status": "documentation_or_historical_audit_only; do not import legacy code"
+  },
+  {
+    "original_archive": "ICML_2_0_Proyecto_Actualizado_Consolidado_v1.0.0-rc2(2).zip",
+    "original_path": "Proyecto/fases/02_ciudades/docs/INFORME_PARETO_DONANTES.md",
+    "local_copy": "INFORME_PARETO_DONANTES.md",
+    "sha256": "e93bca5bd6bc642349784da16e9f85c0a5387528c0b0f8d4efde94e255744fa6",
+    "status": "documentation_or_historical_audit_only; do not import legacy code"
+  },
+  {
+    "original_archive": "ICML_2_0_Proyecto_Actualizado_Consolidado_v1.0.0-rc2(2).zip",
+    "original_path": "Proyecto/fases/02_ciudades/estudios/04_donantes_agregados_respaldo/ESTUDIO_RESPALDO_AGREGADOS.md",
+    "local_copy": "ESTUDIO_RESPALDO_AGREGADOS.md",
+    "sha256": "9ae236ea94ac94540411e8566aea90a2bc5479dcb559098648c28bf124ef009f",
+    "status": "documentation_or_historical_audit_only; do not import legacy code"
+  },
+  {
+    "original_archive": "ICML_2_0_Proyecto_Actualizado_Consolidado_v1.0.0-rc2(2).zip",
+    "original_path": "Proyecto/fases/02_ciudades/results/catalogo_pareto_nueve_propuesto.csv",
+    "local_copy": "catalogo_pareto_nueve_propuesto.csv",
+    "sha256": "00a5ef3e5f5ae343db83a771ad8fdd82d5d69b6f7f7f1b14d3a4065c38848660",
+    "status": "documentation_or_historical_audit_only; do not import legacy code"
+  },
+  {
+    "original_archive": "ICML_2_0_Proyecto_Actualizado_Consolidado_v1.0.0-rc2(2).zip",
+    "original_path": "Proyecto/fases/02_ciudades/results/evaluacion_207_alternativas.csv",
+    "local_copy": "evaluacion_207_alternativas.csv",
+    "sha256": "450e16cf1c5430c97172af7d1e90883743e2631a6557a2ae692293a870823233",
+    "status": "documentation_or_historical_audit_only; do not import legacy code"
+  }
+]

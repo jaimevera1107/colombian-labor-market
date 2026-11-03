@@ -1,0 +1,20 @@
+# Splice of the working-age population (PET) share of the labor products.
+#
+# In January 2001 the reconstruction of 1993-2000 (ENH) and the GEIH-based months
+# disagree on the share of the population that is of working age: it steps up
+# about 1.6 points in one month. Enabling this shifts that share before
+# break_month and rebuilds every labor level from the (unchanged) rates, so every
+# identity and every rate is preserved. Months from break_month on are untouched.
+#
+# SUPERSEDED (v2.4.0.dev0) by labor_reconstruction: a PET drawn as a straight line that ends at the official value of
+# the first GEIH month already closes this seam, and running both would move the start of the line. The two are
+# mutually exclusive (the run raises if both are enabled). Kept for reference and for reproducing v2.3.0.
+#
+# Was ADOPTED in v2.3.0.dev0: a methodological change, not part of the equivalence refactor. It
+# changes closed history (1993-2000), so the vintage is recomputed in total mode.
+# Set enabled = false to reproduce the frozen August 2026 vintage exactly.
+[labor_base_splice]
+enabled = false
+break_month = "2001-01"
+window_months = 24
+city_break = "pooled"   # one common break for all cities; "own" = one per city

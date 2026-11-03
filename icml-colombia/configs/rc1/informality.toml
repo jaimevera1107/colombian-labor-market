@@ -1,0 +1,11 @@
+# Hito 5: snapshot of original DANE informality annex extraction.
+# Frozen source CSV is derived from the verified March 2021 XLS and Aug 2026 XLSX.
+[informality]
+snapshot_sha256 = "d4413b08c8b4b5dbd75c9af144b39fa5e2e57815bfe9396bfc48ef4156bbd70d"
+expected_observations = 6580
+expected_new_national_windows = 66
+expected_possible_missing_zeros = 110
+source_identity_tolerance_persons = 1.1
+benchmark_window_tolerance_persons = 1.1
+latent_window_tolerance_persons = 0.0001
+reference_type = "rolling_3_month_mean"

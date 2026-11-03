@@ -1,0 +1,34 @@
+dane_code,name,is_capital_district
+5,Antioquia,false
+8,Atlántico,false
+11,Bogotá D.C.,true
+13,Bolívar,false
+15,Boyacá,false
+17,Caldas,false
+18,Caquetá,false
+19,Cauca,false
+20,Cesar,false
+23,Córdoba,false
+25,Cundinamarca,false
+27,Chocó,false
+41,Huila,false
+44,La Guajira,false
+47,Magdalena,false
+50,Meta,false
+52,Nariño,false
+54,Norte de Santander,false
+63,Quindío,false
+66,Risaralda,false
+68,Santander,false
+70,Sucre,false
+73,Tolima,false
+76,Valle del Cauca,false
+81,Arauca,false
+85,Casanare,false
+86,Putumayo,false
+88,San Andrés y Providencia,false
+91,Amazonas,false
+94,Guainía,false
+95,Guaviare,false
+97,Vaupés,false
+99,Vichada,false

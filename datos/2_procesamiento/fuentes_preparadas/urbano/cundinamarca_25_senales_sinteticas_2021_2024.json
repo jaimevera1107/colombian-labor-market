@@ -1,0 +1,39 @@
+{
+  "schema": "icml.urban.synthetic.cundinamarca.2021-2024.v1",
+  "source_sha256": "bed64e54d103de4e07ffb46f7657b6061cd5e5fce6d8ec614c73ffe0bc6418ef",
+  "purpose": "Preserve the 24 historical synthetic calibration values. Not official city GEIH observations; not selected Pareto donors.",
+  "values": {
+    "2021": {
+      "employed": 1436234.0,
+      "inactive": 892246.0,
+      "pea": 1739209.0,
+      "pet": 2631455.0,
+      "population": 3399764.0,
+      "unemployed": 302975.0
+    },
+    "2022": {
+      "employed": 1608162.0,
+      "inactive": 878202.0,
+      "pea": 1842356.0,
+      "pet": 2720557.0,
+      "population": 3506156.0,
+      "unemployed": 234193.0
+    },
+    "2023": {
+      "employed": 1667838.0,
+      "inactive": 933466.0,
+      "pea": 1869966.0,
+      "pet": 2803431.0,
+      "population": 3606498.0,
+      "unemployed": 202128.0
+    },
+    "2024": {
+      "employed": 1711836.0,
+      "inactive": 974184.0,
+      "pea": 1914037.0,
+      "pet": 2888221.0,
+      "population": 3701540.0,
+      "unemployed": 202201.0
+    }
+  }
+}

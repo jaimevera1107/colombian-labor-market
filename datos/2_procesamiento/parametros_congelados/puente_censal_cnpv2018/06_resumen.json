@@ -1,0 +1,20 @@
+{
+  "status": "CENSUS_ANCHOR_PASS_LABOR_MODEL_SELECTION_PENDING",
+  "territorial_rows": 13332,
+  "months": 404,
+  "partial_departments": 9,
+  "full_population_2018": 48261920.63488261,
+  "nine_cnpv_population": 1448215.0,
+  "nine_cnpv_capitals": 412527.0,
+  "prior_nine_geih_2018": 427395.6984507195,
+  "new_nine_geih_2018": 412527.0,
+  "geih_national_population_delta_2018": -14868.698450725526,
+  "max_restore_error": 2.9103830456733704e-11,
+  "census_only_not_new_labor_truth": true,
+  "input_sha256": {
+    "departamentos.csv": "99847e18d4e1d3c37b8aaa280823c42a246e269eea4c8a9435e1cc78717c8fea",
+    "ciudades.csv": "773ebcfb4fa4288f10744b8912c1c03244179d17e2cce8a8926123a66d7e9405",
+    "nacionales.csv": "fc003be8875716ef19e49a3a7d1a3898998e3e0d7a120421498a60eb4a8f362f",
+    "cnpv_2018_capitales_ajustado.csv": "3a1139f70c69bc937e747138eecb350eb0085cf38fb0c2e2f24d6243c33a0827"
+  }
+}

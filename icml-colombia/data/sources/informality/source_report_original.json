@@ -1,0 +1,19 @@
+{
+  "status": "OFFICIAL_ROLLING_3MO_OBSERVATIONS_NO_BRIDGE_NO_DEPARTMENT_MODEL",
+  "n_observations": 6580,
+  "old_observations": 4732,
+  "new_observations": 1848,
+  "n_duplicates": 0,
+  "overlap_observations": 28,
+  "zero_sentinel_possible_missing": 110,
+  "valid_observations": 6470,
+  "overlap_national_differences_pp": [
+    -3.155
+  ],
+  "max_employment_identity_error_thousands": 0.0010000000020227162,
+  "warning": "Old size-of-enterprise and nonpensioned proxy are NOT same estimand as new GEIH informal employment.",
+  "input_sha256": {
+    "Anexo GEIH Informalidad Marzo 2021.xls": "451907808e5636044f69c401aea9a3924a2949cdd18cc30141685afc6b7bcfdb",
+    "Anexo GEIH Informalidad Agosto 2026.xlsx": "3da594e046a2c67deeeaaaed1bd0d0f81f243ea48429be6481ca426044d28ffc"
+  }
+}

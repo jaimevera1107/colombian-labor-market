@@ -1,0 +1,73 @@
+# National stage configuration reproducing RC1.
+# Source paths are relative to the sources root passed on the command line;
+# the RC1 golden folder uses the legacy layout below.
+
+[national.sources]
+enh_annual = "datos/2_procesamiento/fuentes_preparadas/nacional/source_enh_annual.csv"
+geih_annual = "datos/2_procesamiento/fuentes_preparadas/nacional/official_geih_annual.csv"
+monthly_indicators = "datos/2_procesamiento/fuentes_preparadas/nacional/indicadores_mensuales_1993_2003.csv"
+geih_monthly_annex = "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-08.xlsx"
+
+[national.geih_annex]
+sheet_name = "Total nacional"
+region = "Total Nacional"
+start_period = "2001-01"
+block_marker = "Concepto"
+block_end_marker = "Fuerza de trabajo potencial"
+value_decimals = 4
+scale_factor = 1000.0
+
+[national.geih_annex.concepts]
+"Población total" = "population"
+"Población en edad de trabajar (PET)" = "working_age"
+"Fuerza de trabajo" = "labor_force"
+"Población ocupada" = "employed"
+"Población desocupada" = "unemployed"
+"Población fuera de la fuerza de trabajo" = "inactive"
+
+[national.splice]
+method = "ratio"
+overlap_periods = 2
+
+[national.disaggregation]
+method = "chow-lin-maxlog"
+include_intercept = true
+truncated_rho = 0.0
+
+[national.disaggregation.indicators]
+employed = ["real_value_unit_uvr"]
+labor_force = ["consumer_price_index"]
+working_age = ["consumer_price_index"]
+population = ["consumer_price_index"]
+inactive = ["producer_price_index"]
+unemployed = ["consumer_price_index"]
+
+[national.disaggregation_quality]
+max_annual_identity_error_persons = 1.0
+max_monthly_identity_error_persons = 1.0
+reject_rho_boundary = true
+
+[national.combination]
+history_provenance = "anchored_reconstruction"
+
+[national.reconciliation]
+historical_end = 2000
+anchor_relative_sigma = 0.05
+minimum_anchor_sigma_persons = 10000.0
+max_observed_rounding_persons = 1.0
+max_annual_relative_shift = 0.10
+max_monthly_relative_shift = 0.15
+max_added_bridge_log_shift = 0.02
+
+[national.seasonality]
+history_start = 1993
+history_end = 2000
+template_from = 2004
+template_through = 2019
+strength = 0.5
+seasonal_window = 13
+trend_window = 19
+ipf_tolerance = 2e-7
+ipf_max_iterations = 10000
+max_relative_monthly_intervention = 0.15
+max_added_splice_log = 0.06

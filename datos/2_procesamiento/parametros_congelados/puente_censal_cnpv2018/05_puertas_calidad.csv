@@ -1,0 +1,11 @@
+﻿gate,passed,status,detail
+cnpv_2018_nueve_totales,True,PASS,Departamental population 2018 reproduces CNPV adjusted (shared anchor)
+cnpv_2018_cabecera_representado,True,PASS,Nine capital cabeceras match census adjusted as 2018 annual means
+poblacion_total_no_alterada,True,PASS,Original whole-department levels and employment preserved
+identidades_y_aditividad,True,PASS,All domains satisfy employed+unemployed=LF and LF+inactive=WA; complement exact
+GEIH_2001_2013_nueve_fuera,True,PASS,Capital exclusions retained until inclusion in GEIH represented universe
+GEIH_nacional_original_no_redefinido,False,WARNING,Revised GEIH national differs slightly from frozen DANE reference; cannot impose both exact margins with zero adjustments elsewhere
+identificacion_inversa_pre2014,False,BLOCKED,Represented GEIH alone cannot reconstruct excluded nine departments; complement is required
+2018_concordancia_externa_geih_nacional_exacta,False,WARNING,Census geography anchor and frozen GEIH national totals differ; reconcile only with explicit source-consistent margin
+proveniencia_historica,True,PASS,"1993-2000 proxy, 2001-2013 GEIH exclusions, 2014 onward represented capitals distinguished"
+validacion_laboral_independiente,False,BLOCKED,"Census validates population, not reconstructed employment or unemployment"

@@ -1,0 +1,11 @@
+# Ningún archivo se transforma al descargar ni al subir: los hashes de los datos dependen de los bytes exactos.
+# (Sin esta línea, Git en Windows convertiría los saltos de línea de los CSV y las pruebas de integridad fallarían.)
+# Cada archivo se guarda con los saltos de línea que debe tener: LF en los .sh y CRLF en los .bat.
+* -text
+
+# Binarios
+*.xlsx binary
+*.xls  binary
+*.whl  binary
+*.zip  binary
+*.pt   binary

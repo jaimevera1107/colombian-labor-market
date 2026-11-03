@@ -1,0 +1,1694 @@
+{
+  "schema": "icml.layout_migration.v1",
+  "files_moved": 241,
+  "deleted": 0,
+  "entries": [
+    {
+      "old": "censo/puente_v001/01_ancla_cnpv_2018_nueve.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/puente_censal_cnpv2018/01_ancla_cnpv_2018_nueve.csv",
+      "sha256": "87cf7ac55d400ce56b00379ced4edf8fc19c59a376258da478e255ac8aac7a5a",
+      "bytes": 1656,
+      "rule": "censo/puente_v001/**"
+    },
+    {
+      "old": "censo/puente_v001/02_puente_dos_universos_33_territorios.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/puente_censal_cnpv2018/02_puente_dos_universos_33_territorios.csv",
+      "sha256": "cfc63ff3c295f63d58ee58a9c9e2d59fc2051f4433e4579d0fa7daae808ccb20",
+      "bytes": 11543192,
+      "rule": "censo/puente_v001/**"
+    },
+    {
+      "old": "censo/puente_v001/03_nacionales_censo_y_geih.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/puente_censal_cnpv2018/03_nacionales_censo_y_geih.csv",
+      "sha256": "ea7fca4c191e70fb2bcf565e328916020779e42c94ae832ee1f0418cc1a3a7bc",
+      "bytes": 302611,
+      "rule": "censo/puente_v001/**"
+    },
+    {
+      "old": "censo/puente_v001/04_comparacion_direccion_transferencia.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/puente_censal_cnpv2018/04_comparacion_direccion_transferencia.csv",
+      "sha256": "e1404e4b283cde86b89b1e33af1799bbca72301f7323fa2d8dae13f13ca9b1c8",
+      "bytes": 2259,
+      "rule": "censo/puente_v001/**"
+    },
+    {
+      "old": "censo/puente_v001/05_puertas_calidad.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/puente_censal_cnpv2018/05_puertas_calidad.csv",
+      "sha256": "282718506ba043835609eb87058e2025db8b41b82a79c43658567f61094b5870",
+      "bytes": 1311,
+      "rule": "censo/puente_v001/**"
+    },
+    {
+      "old": "censo/puente_v001/06_resumen.json",
+      "new": "datos/2_procesamiento/parametros_congelados/puente_censal_cnpv2018/06_resumen.json",
+      "sha256": "bd271a40b56cc69806dddde1b4de22ae848abe463da4a8d302e481678d9b1be6",
+      "bytes": 890,
+      "rule": "censo/puente_v001/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/anclas_437_comparacion_hibrido.csv",
+      "new": "legacy/validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/anclas_437_comparacion_hibrido.csv",
+      "sha256": "ebcd39fb0ecc24c8908447d0fcedd603b927511993d0727744fa2cc413380a4c",
+      "bytes": 137819,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/anclas_437_comparacion_ward.csv",
+      "new": "legacy/validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/anclas_437_comparacion_ward.csv",
+      "sha256": "de1e271320863e2d4ade3d366c0a82edcb32253713206bdbb7b5f612cbf5b0bd",
+      "bytes": 137569,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/conciliacion_nacional_6_magnitudes_hibrido.csv",
+      "new": "legacy/validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/conciliacion_nacional_6_magnitudes_hibrido.csv",
+      "sha256": "9fb8042329b1b88afe51bc49b8c3b203c218f4a5ad683436f19ce7573b4e477e",
+      "bytes": 112232,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/conciliacion_nacional_6_magnitudes_ward.csv",
+      "new": "legacy/validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/conciliacion_nacional_6_magnitudes_ward.csv",
+      "sha256": "33f8cc3eb68f6be2f23637b89ec9b70a2c1adb7dd7df1d5ce8702846a34bbc9d",
+      "bytes": 112304,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/diagnostico_suavidad_hibrido.csv",
+      "new": "legacy/validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/diagnostico_suavidad_hibrido.csv",
+      "sha256": "d8efbfd5985e9757039330f206b45084f306c66ef4fb9cf8e399e2ecdb597ccd",
+      "bytes": 9382,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/diagnostico_suavidad_ward.csv",
+      "new": "legacy/validacion/rc1_original/fases/06_cierre_jerarquico/auditoria/diagnostico_suavidad_ward.csv",
+      "sha256": "f1e636fe3099bb0ffce255aed533866b6fcdbe6b7716ca2fbea730e7ffa14f92",
+      "bytes": 9385,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/06_cierre_jerarquico/outputs/nacional_pet_lineal_1993_2026_08.csv",
+      "new": "legacy/validacion/rc1_original/fases/06_cierre_jerarquico/outputs/nacional_pet_lineal_1993_2026_08.csv",
+      "sha256": "2ef4ef7419fa7856a12817672481ee1e08a3876834f207badc326aca786b4890",
+      "bytes": 42571,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/06_cierre_jerarquico/outputs/panel_33_conciliado_hibrido_1993_2026_08.csv",
+      "new": "legacy/validacion/rc1_original/fases/06_cierre_jerarquico/outputs/panel_33_conciliado_hibrido_1993_2026_08.csv",
+      "sha256": "484eee4a7836f0274bfcd962461431926022dc558ad56bcd5e1225e2d468353a",
+      "bytes": 11724057,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/06_cierre_jerarquico/outputs/panel_33_conciliado_ward_1993_2026_08.csv",
+      "new": "legacy/validacion/rc1_original/fases/06_cierre_jerarquico/outputs/panel_33_conciliado_ward_1993_2026_08.csv",
+      "sha256": "f263940fde69a183af9050a032bf9d6458f8235bb9ffb7e0b3e6538503c0c991",
+      "bytes": 11713479,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/06_cierre_jerarquico/outputs/panel_33_ward_pet_lineal_1993_2026_08.csv",
+      "new": "legacy/validacion/rc1_original/fases/06_cierre_jerarquico/outputs/panel_33_ward_pet_lineal_1993_2026_08.csv",
+      "sha256": "5c67168c72b3a17ab5b5b0bfa9a0ef1f2da4aa0324256460ef42ec4badc8a468",
+      "bytes": 12042068,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/01_nacional/experimentos/03_con_visualizacion_integrada/anclas_anuales.csv",
+      "new": "legacy/validacion/rc1_original/fases/01_nacional/experimentos/03_con_visualizacion_integrada/anclas_anuales.csv",
+      "sha256": "5deb6526ca3d8294d395a3473a48e769e2d0692d41a738e040c181d6168bcc5f",
+      "bytes": 1343,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/01_nacional/experimentos/03_con_visualizacion_integrada/series_mensuales.csv",
+      "new": "legacy/validacion/rc1_original/fases/01_nacional/experimentos/03_con_visualizacion_integrada/series_mensuales.csv",
+      "sha256": "b707cd89527fae243a15e1391728c3749f94ef74178553a57762c5810492a820",
+      "bytes": 15896,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/01_nacional/experimentos/03_con_visualizacion_integrada/exports/visualizacion/06_tablas/serie_combinada_con_procedencia.csv",
+      "new": "legacy/validacion/rc1_original/fases/01_nacional/experimentos/03_con_visualizacion_integrada/exports/visualizacion/06_tablas/serie_combinada_con_procedencia.csv",
+      "sha256": "94f2b0201cac5084997d5ce630e74166da80b153d502ebb4e887c4db51609785",
+      "bytes": 54642,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/01_nacional/experimentos/04_conciliacion_contable_063/anclas_conciliadas.csv",
+      "new": "legacy/validacion/rc1_original/fases/01_nacional/experimentos/04_conciliacion_contable_063/anclas_conciliadas.csv",
+      "sha256": "bb96dc64af5092c6819b230c1689a4505cbd779c1acdfe3f17980c4d7e5aeff6",
+      "bytes": 1232,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/01_nacional/experimentos/04_conciliacion_contable_063/series_mensuales_conciliadas.csv",
+      "new": "legacy/validacion/rc1_original/fases/01_nacional/experimentos/04_conciliacion_contable_063/series_mensuales_conciliadas.csv",
+      "sha256": "f908f9f9a0916ab32df45f0a2595f5fb138d71d7782c69438474efe652e6e64c",
+      "bytes": 15742,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/01_nacional/experimentos/08_estacionalidad_063_v04_componentes/nacional_1993_2003_estacional_conciliado.csv",
+      "new": "legacy/validacion/rc1_original/fases/01_nacional/experimentos/08_estacionalidad_063_v04_componentes/nacional_1993_2003_estacional_conciliado.csv",
+      "sha256": "bf1ec4afd606ce3400151bfa86478563ec7c53d5ed89d27d4010d89890d4e86d",
+      "bytes": 16688,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/01_nacional/config/metodologia_nacional.json",
+      "new": "legacy/validacion/rc1_original/fases/01_nacional/config/metodologia_nacional.json",
+      "sha256": "3d0640da4bd78fca7f790d72412e3af7f9ff16de1bb491660cf2c82fa926991d",
+      "bytes": 756,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/01_nacional/data/historico/indicadores_mensuales_1993_2003.csv",
+      "new": "legacy/validacion/rc1_original/fases/01_nacional/data/historico/indicadores_mensuales_1993_2003.csv",
+      "sha256": "ec0503916a346d4b3fd18049663973ec6d9a1f2cd472049aeb002b0a2fef7e15",
+      "bytes": 24522,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/01_nacional/data/historico/official_geih_annual.csv",
+      "new": "legacy/validacion/rc1_original/fases/01_nacional/data/historico/official_geih_annual.csv",
+      "sha256": "ca9143d73a32fefee357a1150ce9761b4e2010215903a6f1af1732d7732623fc",
+      "bytes": 2229,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/01_nacional/data/historico/source_enh_annual.csv",
+      "new": "legacy/validacion/rc1_original/fases/01_nacional/data/historico/source_enh_annual.csv",
+      "sha256": "72a39aca24b93bcdd2a949e32a465cb085f62574ee3cb398f6de4e611807bd22",
+      "bytes": 1462,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/auditoria_empalme_2006_2007.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/auditoria_empalme_2006_2007.csv",
+      "sha256": "5d3e99e96930358a8885eba77822068aa46390eeb4e860c8780bbeed416dc6fb",
+      "bytes": 12078,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/calibracion_poblacion_y_puentes.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/calibracion_poblacion_y_puentes.csv",
+      "sha256": "1ef0cc4c647d871b888d72cfc374f64e456cbcdaddc43b7135b20d7a9cbc7ff1",
+      "bytes": 2274,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/cundinamarca_inactivos_perfil_rho.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/cundinamarca_inactivos_perfil_rho.csv",
+      "sha256": "84ec00f7d6406fdf1c43e404fc7d452b3e77df57075a4fcc80d8f86691981eef",
+      "bytes": 7556,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/cundinamarca_inactivos_rho_sensibilidad.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/cundinamarca_inactivos_rho_sensibilidad.csv",
+      "sha256": "2ae85e11f06a6b57e6b657ac0446ca9028022a2ad50832e95a6ea90c718ed574",
+      "bytes": 14556,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/validacion_retrospectiva_senales_poblacion.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/auditoria/validacion_retrospectiva_senales_poblacion.csv",
+      "sha256": "01c4ca6839a2037dc0557cd9c5d68b5221cacbd2002fbf42c92773717779a9ee",
+      "bytes": 3704,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/outputs/departamentos_23_mensual_1993_2025_revisado.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v04_revision/outputs/departamentos_23_mensual_1993_2025_revisado.csv",
+      "sha256": "c595a4887699fbf1cb994a7435b01722919e8abd3f5d1f4e406ff05706afbcb6",
+      "bytes": 1581766,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/auditoria/correcciones_anclas.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/auditoria/correcciones_anclas.csv",
+      "sha256": "98057f2906d729b25a467e2a703f4bef7e768bb768f09c3cb6b9541c63ead64a",
+      "bytes": 127555,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/auditoria/diagnostico_chow_lin.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/auditoria/diagnostico_chow_lin.csv",
+      "sha256": "ad8cd4fb730b1e5f7ff7ebddf47d9aea5cb452eaf944a44334e3d49b66ae7b32",
+      "bytes": 12871,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/auditoria/poblacion_geih_vs_proyeccion.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/auditoria/poblacion_geih_vs_proyeccion.csv",
+      "sha256": "c39730d20dfcb398abc3ed15c3177e55a14702f78a239ca9830c4fc746ea92f3",
+      "bytes": 46558,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/outputs/anclas_laborales_23_conciliadas.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/outputs/anclas_laborales_23_conciliadas.csv",
+      "sha256": "1b7c80974f540e6fe3e9806c67e48d5b10b0df18533c1924ac0139791f2bd732",
+      "bytes": 35277,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/outputs/departamentos_23_mensual_1993_2025.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/outputs/departamentos_23_mensual_1993_2025.csv",
+      "sha256": "37b0860436242a0f8e8ec457a536406e3a7ac304d91e0d99cb5824165135b021",
+      "bytes": 1587035,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/fuentes/anclas_laborales_23_originales.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/fuentes/anclas_laborales_23_originales.csv",
+      "sha256": "aba418777d9c42c7ce87837d8f9af5c2d3cdb724d4b83a3268cc2405b7c11bcf",
+      "bytes": 34352,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/fuentes/proyeccion_poblacional_33_anual.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/experimentos/2026_10_31_B1_v03/fuentes/proyeccion_poblacional_33_anual.csv",
+      "sha256": "5a634ce0de1be3e2c20c66465e9dfdf0cdc28a5988168216fa44efdb6fea1772",
+      "bytes": 48190,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/fuentes/Anexo_GEIH_Departamentos_2025.xls",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/fuentes/Anexo_GEIH_Departamentos_2025.xls",
+      "sha256": "159372274a790e9189f1de9738b8a888e5c42bf8430ec098d04b6380f0975fa2",
+      "bytes": 1230848,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/03_departamentos/fuentes/proyecciones_poblacion_original.csv",
+      "new": "legacy/validacion/rc1_original/fases/03_departamentos/fuentes/proyecciones_poblacion_original.csv",
+      "sha256": "263aa63d00de5ae356b98079dcf97e7361eaf157efabcbe7f7ff9f6de519b246",
+      "bytes": 195732,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/auditoria_anclas_2007_2020.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/auditoria_anclas_2007_2020.csv",
+      "sha256": "2eaf3a0c2ce17e28d65a3acc4014fa3cf48e2e27999b6c2a17448dd222ec48e8",
+      "bytes": 379705,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/auditoria_puente_2006_2007.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/auditoria_puente_2006_2007.csv",
+      "sha256": "0241fc00b7dfedcd93cd486fc0db0895707a81380b8ab0303e781a0a8ce7b503",
+      "bytes": 24500,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/ciudades_32_mensual_1993_2020.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/ciudades_32_mensual_1993_2020.csv",
+      "sha256": "311d17ecafd442ab40ba3d87263a3ae4d036a8465214da9428a4777d7f9acfa5",
+      "bytes": 1752762,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_anclas_oficiales_inalteradas.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_anclas_oficiales_inalteradas.csv",
+      "sha256": "e96c5df6ef0062ff26e2ad04c86b35f5764a616671a618e4c3c813c7a57d51ad",
+      "bytes": 305,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_anual_2007_2024.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_anual_2007_2024.csv",
+      "sha256": "dd61960ee9f4d2fe8f151402a12f2543dd20ccba69e18dabf2cd92dd2b19b539",
+      "bytes": 4631,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_calibracion_bogota_2021_2024.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_calibracion_bogota_2021_2024.csv",
+      "sha256": "531c53ad6b28edd142b9e7e14e239b2a6f876d8317f16a74e30fbf53967a6546",
+      "bytes": 980,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_empalme_nacional_2007.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_empalme_nacional_2007.csv",
+      "sha256": "aba32a8a9df7991a322c9a3ee1c295672c5c694aa28a5f113193098cbedeae19",
+      "bytes": 335,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_senales_sin_conciliar.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_senales_sin_conciliar.csv",
+      "sha256": "da36abfcc780fb4eed34cb1293bd0e78ab4551ee5852263fa7e33b5f78b3a4a1",
+      "bytes": 46905,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_urbana_sintetica_mensual_1993_2024.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/cundinamarca_25_urbana_sintetica_mensual_1993_2024.csv",
+      "sha256": "dfff9a8037310d548fb758966c015f697f47626776844ca0ba71a59dd6b35a8d",
+      "bytes": 92785,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/factores_empalme_2007.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/factores_empalme_2007.csv",
+      "sha256": "f5595005f3570206683121fa8ce15d6e7fefaf460f83dcb5dab468a7f6c4e7e6",
+      "bytes": 29480,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/referencias_urbanas_2021_2026_sin_alterar.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/referencias_urbanas_2021_2026_sin_alterar.csv",
+      "sha256": "69d9c49b45b4320f29cb78a6fb8336ef28d9115a541cc3b81ad85200b53d76fb",
+      "bytes": 24256,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/seis_indicadores_sin_conciliar_1993_2020.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/seis_indicadores_sin_conciliar_1993_2020.csv",
+      "sha256": "70834e22686d441814c34e6ac8912dbb6d1d7619d23601349b072c5813f31c03",
+      "bytes": 1752684,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/senales_urbanas_33_incluye_cundinamarca_sintetica_1993_2020.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/senales_urbanas_33_incluye_cundinamarca_sintetica_1993_2020.csv",
+      "sha256": "d168b10db3ec39b972cbe69224c157f272bc113d0c320b3d4d50d0c051505a62",
+      "bytes": 2127155,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/validacion_retrospectiva_23_ciudades.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/experimentos/05_retropolacion_nacional_1993/validacion_retrospectiva_23_ciudades.csv",
+      "sha256": "f5316e2c2911616156c0ad1d08f24c850617b4b54dcc3b85b5c7a7e716e68c84",
+      "bytes": 30560,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/config/cundinamarca_25_donante_congelado.json",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/config/cundinamarca_25_donante_congelado.json",
+      "sha256": "8ec852f61d3423f049c3cd181dead1449f27b7c1c7ea8930280e3da02b7132c5",
+      "bytes": 739,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/estudios/04_donantes_agregados_respaldo/fuentes/Anexo GEIH Agosto 2026.xlsx",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/estudios/04_donantes_agregados_respaldo/fuentes/Anexo GEIH Agosto 2026.xlsx",
+      "sha256": "ade9b213c799e967c121091438a53617f3a3ab8d85d311f5cada08e2461473d9",
+      "bytes": 3692971,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/results/catalogo_pareto_nueve_propuesto.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/results/catalogo_pareto_nueve_propuesto.csv",
+      "sha256": "00a5ef3e5f5ae343db83a771ad8fdd82d5d69b6f7f7f1b14d3a4065c38848660",
+      "bytes": 2832,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/results/evaluacion_207_alternativas.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/results/evaluacion_207_alternativas.csv",
+      "sha256": "450e16cf1c5430c97172af7d1e90883743e2631a6557a2ae692293a870823233",
+      "bytes": 150928,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/results/validacion_23_ciudades_6_reglas.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/results/validacion_23_ciudades_6_reglas.csv",
+      "sha256": "6eb3e7b861cc3622d1090077a6c020b47a19c7dc8ebe0d30da68ac98c228d024",
+      "bytes": 28510,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/results/cierre/auditoria_9_ciudades.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/results/cierre/auditoria_9_ciudades.csv",
+      "sha256": "0f109a26b340082ebbb69972b300cf91824adcd4027410bede310c5e9422f095",
+      "bytes": 2324,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/results/cierre/panel_ciudades_cerrado_2007_2026.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/results/cierre/panel_ciudades_cerrado_2007_2026.csv",
+      "sha256": "c349dd3c3cd693d7e6bdfd08cbffbc2ccc94a2212717d3986d34c033688d0234",
+      "bytes": 28264,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/datos/donantes_congelados_referencia.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/datos/donantes_congelados_referencia.csv",
+      "sha256": "ef039646930f25298fa5030a5d59d2d9a34d31f5c762a01499a55d1e0a091c2b",
+      "bytes": 697,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/datos/proxies_anuales_ventanas_2026_06.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/datos/proxies_anuales_ventanas_2026_06.csv",
+      "sha256": "249b3a7ab67d206449378d9826e71527529d324c7b1e4ccc909e31fbd9662fe0",
+      "bytes": 24472,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/datos/proxies_anuales_ventanas_2026_08.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/datos/proxies_anuales_ventanas_2026_08.csv",
+      "sha256": "16451ee2c3c61c308c528eaadb388a6162774b87980b5c969a55859f8fa4cd38",
+      "bytes": 24458,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/02_ciudades/datos/senales_historicas_23_y_donantes.csv",
+      "new": "legacy/validacion/rc1_original/fases/02_ciudades/datos/senales_historicas_23_y_donantes.csv",
+      "sha256": "bed64e54d103de4e07ffb46f7657b6061cd5e5fce6d8ec614c73ffe0bc6418ef",
+      "bytes": 73503,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/agrupaciones_reentrenadas_por_fold.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/agrupaciones_reentrenadas_por_fold.csv",
+      "sha256": "2b31567bc0cc0ef7f0d75a6ef76e8f6bfb95f0be0fa98b015e432fb6dc4dc248",
+      "bytes": 32130,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/comparacion_metricas.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/comparacion_metricas.csv",
+      "sha256": "418fa0d40e9d01aaf7fbc29d119063f1a42394144a34dec6d2d3aead41481607",
+      "bytes": 2735,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/decision_modelo.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/decision_modelo.csv",
+      "sha256": "a0b69d473a18de119e7300f4fdc96c56342603e7467040f5f80fea478e7e6cff",
+      "bytes": 343,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/errores_por_territorio_fold.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/errores_por_territorio_fold.csv",
+      "sha256": "7197e5ba9deef2076241925de4c289cd3a487f21c712b545d846f055ff9b1076",
+      "bytes": 90597,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/predicciones_oof_15_folds.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/auditoria/predicciones_oof_15_folds.csv",
+      "sha256": "fb62fd5e9ece654a0f399e484b3adce0f02d9d34a84fdbe8774c686ea4df7373",
+      "bytes": 9994880,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/outputs/predicciones_departamentales_33_1993_2026_08_EXPERIMENTAL.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/outputs/predicciones_departamentales_33_1993_2026_08_EXPERIMENTAL.csv",
+      "sha256": "519c674a2f3b65df57e57d695d0a5082d126fbb8b05bb6bced86ef3a325c9d84",
+      "bytes": 9200829,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/models/agrupaciones_finales_reentrenadas.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_03_entrenamiento/models/agrupaciones_finales_reentrenadas.csv",
+      "sha256": "062161920cb9e34a41542b2054b7dfc2c31d5f42f25c93785f9f45970a753ca8",
+      "bytes": 961,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/comparacion_108_postcierre.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/comparacion_108_postcierre.csv",
+      "sha256": "e70c6d25192fc8607d0b8b76a1a78685d424d486d1bb9aecc2edefad6f480f62",
+      "bytes": 41903,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/decision_postcierre_comun.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/decision_postcierre_comun.csv",
+      "sha256": "6e72f340ada097fba57824082212f15c4eb784f517f34dff26ca8100f78d87cc",
+      "bytes": 2310,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/errores_pareados_departamento.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/errores_pareados_departamento.csv",
+      "sha256": "b0a6c40b4428a4fbef14ae03a9c9d1b98a5986a857780c246f932e7922917a70",
+      "bytes": 7412,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/evaluacion_anual_completa.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/evaluacion_anual_completa.csv",
+      "sha256": "235d7bb094e54f56ea7c639f20e9c01bf346adac31e1ce58e615ade21d4e9b65",
+      "bytes": 11912767,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/sensibilidad_panel_hibrido_vs_ward.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/auditoria/sensibilidad_panel_hibrido_vs_ward.csv",
+      "sha256": "dbabd427b4c96239ce7cea2a48660880ab67645ba93011fdaf22dba6d752de9c",
+      "bytes": 3076793,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/outputs/panel_alternativo_xgb_ward_33.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/outputs/panel_alternativo_xgb_ward_33.csv",
+      "sha256": "075550ba8cea5904d16146759d2e306fce5a88dea8ba4d35b7bf88abacb8922b",
+      "bytes": 7641907,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/outputs/panel_departamental_33_1993_2026_08_CANDIDATO.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/outputs/panel_departamental_33_1993_2026_08_CANDIDATO.csv",
+      "sha256": "32f5f0fdd52bb14a036f676d98558350903c84ff41f25d07e8356d57e6def1a5",
+      "bytes": 7852906,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/inputs/objetivos_test.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/inputs/objetivos_test.csv",
+      "sha256": "198900e26225cf0c094caaceedd5890ac7a2899680d854326ee4df498de62fb0",
+      "bytes": 995864,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/inputs/poblacion_proyeccion.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_04_seleccion_y_postajuste/inputs/poblacion_proyeccion.csv",
+      "sha256": "0f4d54e9f8309146a9f9fe597ba6731ead4931364fa5c2ded7cefca2f7a43d9b",
+      "bytes": 243379,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/auditoria/comparacion_estricta_vs_filtrada.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_02_preparacion/auditoria/comparacion_estricta_vs_filtrada.csv",
+      "sha256": "deb691754de6a8aea78bcdabca633cb95536afcd9b088a373c8e052d100ba31a",
+      "bytes": 569,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/auditoria/seleccion_k_referencia.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_02_preparacion/auditoria/seleccion_k_referencia.csv",
+      "sha256": "033c2880b429b1ec57fcc3cee5d81f85b01586ec97c13099fc224a1258f14a39",
+      "bytes": 121,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/outputs/clusters_referencia_exploratoria.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_02_preparacion/outputs/clusters_referencia_exploratoria.csv",
+      "sha256": "fd47132187f10c1a922d8781dedcb62b0036a61bb54fe1abf0d1f8e092f7ea5b",
+      "bytes": 461,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/outputs/features_laborales_33_1993_2026_08.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_02_preparacion/outputs/features_laborales_33_1993_2026_08.csv",
+      "sha256": "fc6fbefc8f3041e61563d891d21e5859befe0a2d7bd631612935d5120db87461",
+      "bytes": 13855459,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/outputs/features_laborales_33_1993_2026_08_ESTRICTA.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_02_preparacion/outputs/features_laborales_33_1993_2026_08_ESTRICTA.csv",
+      "sha256": "2a9e7b18771a2becb05838db181d22df68254f448d940d4861e267506024caca",
+      "bytes": 13855393,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/outputs/objetivos_laborales_departamentales_33_1993_2026_08.csv",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_02_preparacion/outputs/objetivos_laborales_departamentales_33_1993_2026_08.csv",
+      "sha256": "824cef1a796aa4c60412d08909a37bed3992fc219ac08a8ba42a2f24c25ab638",
+      "bytes": 2969336,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/05_modelado/hito_02_preparacion/cv/particiones_y_procedencia.json",
+      "new": "legacy/validacion/rc1_original/fases/05_modelado/hito_02_preparacion/cv/particiones_y_procedencia.json",
+      "sha256": "2b78d5478f4b9ededf2531e065d870fb3f77b0b90f0e4efa97559ab06db7d286",
+      "bytes": 8501,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/auditoria/control_ventanas_por_ciudad.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/auditoria/control_ventanas_por_ciudad.csv",
+      "sha256": "4b3c3403d9b9847dfaea7e3377552402c959af9b9066c8eeff79509413de2586",
+      "bytes": 27451,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/auditoria/cundinamarca_anclas_propias.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/auditoria/cundinamarca_anclas_propias.csv",
+      "sha256": "c56042105287b3b40d954a21ece7c4905c58e1fae8d0a2429bc730eca3cfb3f6",
+      "bytes": 2011,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/auditoria/ventanas_oficiales_vs_reconstruidas.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/auditoria/ventanas_oficiales_vs_reconstruidas.csv",
+      "sha256": "d895e25cfe09dd637f45ce7d9436c268119a3d6337bcfca0fcc5b0ad10e0aa73",
+      "bytes": 926280,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/outputs/base_predictora_33_1993_2026_08_CANDIDATA.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/outputs/base_predictora_33_1993_2026_08_CANDIDATA.csv",
+      "sha256": "13f74abbfe323a0732c1bb4ba727fb76d56b8dec24587812bc9cb61c8190e163",
+      "bytes": 3531379,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/outputs/senales_urbanas_33_mensual_1993_2026_08.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/outputs/senales_urbanas_33_mensual_1993_2026_08.csv",
+      "sha256": "bf1dea1580031deaab7fe4e42fb591458ed4f7824776a1f9dc9935e9d000c57c",
+      "bytes": 2537256,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/outputs/tramo_inferido_33_2021_2026_08.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/02_panel_urbano_33_2026_08/outputs/tramo_inferido_33_2021_2026_08.csv",
+      "sha256": "38aec99493cbdbb86217989f2968b7bd08f7c81b6e86da75ab04ab33ea623116",
+      "bytes": 456239,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/auditoria/cambios_departamentales_por_unidad.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/auditoria/cambios_departamentales_por_unidad.csv",
+      "sha256": "97d0784ed93f8e1caf81889e082fec8e25a22b4c6032c2746ada244691df2d71",
+      "bytes": 1168,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/auditoria/cambios_urbanos_por_unidad.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/auditoria/cambios_urbanos_por_unidad.csv",
+      "sha256": "59b1a9f6bbe0322ce8aed6fd2da3fbc9f9e7a26f70f1f35869c841800a57c55d",
+      "bytes": 2764,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/auditoria/transferencia_seis_senales.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/auditoria/transferencia_seis_senales.csv",
+      "sha256": "ead5860e9d9a7fa7f52de7129a575fc154c278ad91c06c600347e9d73fe42603",
+      "bytes": 10611,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/outputs/departamentos_23_mensual_1993_2025.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/outputs/departamentos_23_mensual_1993_2025.csv",
+      "sha256": "b69c4354c60802d05f0e8add079c55e3eef4139a9db1ebc1457e1031bb363436",
+      "bytes": 1615370,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/outputs/nacional_mensual_1993_2026_08.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/outputs/nacional_mensual_1993_2026_08.csv",
+      "sha256": "e2546ab9c7a07272b522d6452e62a7f2525e65970e79c2f53009ec3839a0362c",
+      "bytes": 41255,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/outputs/senales_urbanas_33_mensual_1993_2020.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/01_propagacion_estacional_1993_2000/outputs/senales_urbanas_33_mensual_1993_2020.csv",
+      "sha256": "560260e791a8c0389769a335b85eb79ed6d7036f3bc249b0e49142013a26be04",
+      "bytes": 2176334,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/03_regularizacion_urbana_33_2026_08/outputs/base_predictora_33_1993_2026_08_ESTRICTA_CANDIDATA.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/03_regularizacion_urbana_33_2026_08/outputs/base_predictora_33_1993_2026_08_ESTRICTA_CANDIDATA.csv",
+      "sha256": "907a3aec3e0492b5ef9a12858e2e96811d97c1cb9bd52bfacb1e79a30490d770",
+      "bytes": 3531393,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/03_regularizacion_urbana_33_2026_08/outputs/senales_urbanas_33_mensual_1993_2026_08_ESTRICTAS_CANDIDATO.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/03_regularizacion_urbana_33_2026_08/outputs/senales_urbanas_33_mensual_1993_2026_08_ESTRICTAS_CANDIDATO.csv",
+      "sha256": "563926d8c8e2507feaaef6bccf10af61bd8c6a0f9c6bfceb32504f62702cbe16",
+      "bytes": 2537263,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/04_filtro_calidad_urbana_33_2026_08/auditoria/decision_calidad_33_senales.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/04_filtro_calidad_urbana_33_2026_08/auditoria/decision_calidad_33_senales.csv",
+      "sha256": "d9d30af9a6c53df04e0faed84ca001879e5a38a9782f5834c60f7780a662ae39",
+      "bytes": 4367,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/04_filtro_calidad_urbana_33_2026_08/auditoria/reproduccion_detallada_57_ventanas_32_ciudades.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/04_filtro_calidad_urbana_33_2026_08/auditoria/reproduccion_detallada_57_ventanas_32_ciudades.csv",
+      "sha256": "391dafc78bae215263cbd8e59fbb9c52f391004ab1b83b3d3e762b33b1e651ff",
+      "bytes": 208636,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/04_filtro_calidad_urbana_33_2026_08/outputs/base_predictora_33_1993_2026_08_FILTRO_CALIDAD_CANDIDATA.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/04_filtro_calidad_urbana_33_2026_08/outputs/base_predictora_33_1993_2026_08_FILTRO_CALIDAD_CANDIDATA.csv",
+      "sha256": "c959e20eefbe698f36af719d73195ea47bcb137c7a7968d9f39217f4b9e4a52b",
+      "bytes": 3531392,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "validacion/rc1_original/fases/04_integracion/experimentos/04_filtro_calidad_urbana_33_2026_08/outputs/senales_urbanas_33_1993_2026_08_FILTRO_CALIDAD_CANDIDATA.csv",
+      "new": "legacy/validacion/rc1_original/fases/04_integracion/experimentos/04_filtro_calidad_urbana_33_2026_08/outputs/senales_urbanas_33_1993_2026_08_FILTRO_CALIDAD_CANDIDATA.csv",
+      "sha256": "aa71497ff832d2cddf8f844237c6ad37f8cbe26b9aa21c56841f5e07a8779719",
+      "bytes": 2537287,
+      "rule": "validacion/**"
+    },
+    {
+      "old": "research/sectoral/h16/LEER_PRIMERO_H16.md",
+      "new": "datos/2_procesamiento/sectorial_h16/LEER_PRIMERO_H16.md",
+      "sha256": "198a93e3d2c513b3aeb5d16a84c25798c484b45f134c6e1d40349b06db0286c4",
+      "bytes": 10819,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/src/h15_predictor.py",
+      "new": "legacy/research_h16_src_copia/h15_predictor.py",
+      "sha256": "333adbc1d2ccd78ecfc3602a7b2e9a7abee4e94a83b3c4855236fae18072d739",
+      "bytes": 19688,
+      "rule": "research/sectoral/h16/src/**"
+    },
+    {
+      "old": "research/sectoral/h16/src/h16_integracion.py",
+      "new": "legacy/research_h16_src_copia/h16_integracion.py",
+      "sha256": "0992cb37a38beded0d3acff3a69679d5ce3cbd4e31622bd2dd374c08a5a7aa53",
+      "bytes": 31354,
+      "rule": "research/sectoral/h16/src/**"
+    },
+    {
+      "old": "research/sectoral/h16/src/hito4_reference.py",
+      "new": "legacy/research_h16_src_copia/hito4_reference.py",
+      "sha256": "3c205017b912305f7713c6b2a8d5c31f638b6e3bae8297b6c30a443617a463ab",
+      "bytes": 17939,
+      "rule": "research/sectoral/h16/src/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_auditoria_anclas_GEIH_anuales.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_auditoria_anclas_GEIH_anuales.csv",
+      "sha256": "2ac0707404272c65642bcd22ee83d50c80fd69cf5021f62ccc287b0ea0931af2",
+      "bytes": 553219,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_auditoria_margenes_mensuales.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_auditoria_margenes_mensuales.csv",
+      "sha256": "4d468c3f4c364bcbb4f9ac3cbb9318987eb25f9efed9deb59e6eda3d6bcadd3c",
+      "bytes": 34525,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_bogota_evaluacion_independiente_PRE_ANCLA.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_bogota_evaluacion_independiente_PRE_ANCLA.csv",
+      "sha256": "21e014c327355fbf2d28e14c4dc53d33861d2ec805f0c844c00f1b7ce291ab88",
+      "bytes": 9348,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_candidatos_anuales_2015_2025.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_candidatos_anuales_2015_2025.csv",
+      "sha256": "d5d144bfc3cd5159b6305fffabc66be5bac6ff6025779c80365222688019aebd",
+      "bytes": 776169,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_error_anual_geih.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_error_anual_geih.csv",
+      "sha256": "654ac9e41df4977f70ad572f9ddc560c4478b1f26976c181dab74ccd25647a76",
+      "bytes": 494,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_inventario_variables.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_inventario_variables.csv",
+      "sha256": "711c9a7740749dafbd34c7b2ee53e28c6da913832b1524cf07a8ae94fe900eb4",
+      "bytes": 1458,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_manifest_hashes.json",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_manifest_hashes.json",
+      "sha256": "cc1f97ef595e42fdcaca2d6a27b00033c9364f8956801521e1bab194e5ac95ea",
+      "bytes": 2576,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_matriz_mensual_1993_2026_EXPERIMENTAL.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_matriz_mensual_1993_2026_EXPERIMENTAL.csv",
+      "sha256": "fd65d43b1eceda180a811c4e20e4cd56d2ad3bfaf2389163e1adc1dff9f09ebe",
+      "bytes": 34487916,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_metricas_departamentos.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_metricas_departamentos.csv",
+      "sha256": "c9937f67aac278918fe0a4a3e113d6add12e7ed476bbc8f6f149cf9d909147ca",
+      "bytes": 14277,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_metricas_predictor.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_metricas_predictor.csv",
+      "sha256": "d8ff919720dbec780ce0e4f85192d1780a80d7668693ea4d80a9818cb6493442",
+      "bytes": 849,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_original38_vs_37_logo.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_original38_vs_37_logo.csv",
+      "sha256": "274d628c4a7f3d8bb491f6190fe87a25cea0416bc4088220f124eb2c40e8cbd4",
+      "bytes": 957841,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_puerta_calidad.json",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_puerta_calidad.json",
+      "sha256": "1602d3258812671601e77a95c280744c0791187bd828b62af92f07575f9ccc87",
+      "bytes": 4267,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_sensibilidad_retropolacion.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_sensibilidad_retropolacion.csv",
+      "sha256": "cab40766e02b0df8f6d52d618e0f72d939a308ee68a0a73908138f957959d349",
+      "bytes": 871905,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_sensibilidad_retropolacion_resumen.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_sensibilidad_retropolacion_resumen.csv",
+      "sha256": "f10ba58fe84bb9aced31c127e969476db313606ee3cd27b6dbf868b19d41eada",
+      "bytes": 1165,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/outputs/16_validacion_pareada_celdas.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/outputs/16_validacion_pareada_celdas.csv",
+      "sha256": "138e76a7db325f96936dddec12350e14386aee549d532ca462f32ef2bcba9914",
+      "bytes": 1899857,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/inputs/12_composicion_nacional_unificada_1993_2026.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/inputs/12_composicion_nacional_unificada_1993_2026.csv",
+      "sha256": "01858fcea693d00f23963de9c375b743683b680a4dba20026e9998c13c329727",
+      "bytes": 552381,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/inputs/14_referencia_externa_Bogota_DANE_GEIH_2015_2024.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/inputs/14_referencia_externa_Bogota_DANE_GEIH_2015_2024.csv",
+      "sha256": "8f6b38816ccd69fd0707304fbf315efd43926e696a4bce965df8357adfe44aad",
+      "bytes": 14793,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/inputs/15_candidatos_anuales_33_territorios.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/inputs/15_candidatos_anuales_33_territorios.csv",
+      "sha256": "96ed7b59df2e1e0c08b002acbaadc1a61b3c936f95df3096b81115248a25ce18",
+      "bytes": 2970955,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/inputs/15_predicciones_oof.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/inputs/15_predicciones_oof.csv",
+      "sha256": "c2f16fd7a31e64295b57c16da26613de1faf6325b58191cf73d2b802265f8ca2",
+      "bytes": 1311584,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/inputs/departamentos.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/inputs/departamentos.csv",
+      "sha256": "99847e18d4e1d3c37b8aaa280823c42a246e269eea4c8a9435e1cc78717c8fea",
+      "bytes": 5503388,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/inputs/gdp_groups_2005_2024.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/inputs/gdp_groups_2005_2024.csv",
+      "sha256": "e44cf857bdae406e19acecb6c3c204c1826b484a3c6d2deb27595fcec56d32c4",
+      "bytes": 304313,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/inputs/informalidad_departamental_vintage_original_2007_2025.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/inputs/informalidad_departamental_vintage_original_2007_2025.csv",
+      "sha256": "c9c35f3d716bd21724ab15c1d6306498e75c0d46cfec2b5c1857c6b106f6c33d",
+      "bytes": 1982486,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/inputs/official_sectors_2015_2025.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/inputs/official_sectors_2015_2025.csv",
+      "sha256": "65a9d89078d06791c5bff2830015d71847bce969d0e106de7c9b3a76f7aaa39e",
+      "bytes": 120288,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h16/inputs/population_projections.csv",
+      "new": "datos/2_procesamiento/sectorial_h16/inputs/population_projections.csv",
+      "sha256": "263aa63d00de5ae356b98079dcf97e7361eaf157efabcbe7f7ff9f6de519b246",
+      "bytes": 195732,
+      "rule": "research/sectoral/h16/**"
+    },
+    {
+      "old": "research/sectoral/h11/inputs/11_crosswalk_ENH_4_grupos_a_15_ramas_CIIU4.csv",
+      "new": "datos/2_procesamiento/sectorial_h11/inputs/11_crosswalk_ENH_4_grupos_a_15_ramas_CIIU4.csv",
+      "sha256": "5a9b9009c66e0cbadfb21c138b5c30abe7de6a5560f053d6de010bab94eb0807",
+      "bytes": 2572,
+      "rule": "research/sectoral/h11/**"
+    },
+    {
+      "old": "research/sectoral/h11/inputs/Ind_empleo_1958_2018.xlsx",
+      "new": "datos/2_procesamiento/sectorial_h11/inputs/Ind_empleo_1958_2018.xlsx",
+      "sha256": "72a560a4777122b946e0c326001428448434235e167afc8a034da729227953ad",
+      "bytes": 62356,
+      "rule": "research/sectoral/h11/**"
+    },
+    {
+      "old": "research/sectoral/h11/inputs/dane_4_ramas_anuales_vintages.csv",
+      "new": "datos/2_procesamiento/sectorial_h11/inputs/dane_4_ramas_anuales_vintages.csv",
+      "sha256": "b99b6624d8f4d6393b2c799d13daa16568e4e51d05b094789ec6caa40b483788",
+      "bytes": 4169,
+      "rule": "research/sectoral/h11/**"
+    },
+    {
+      "old": "research/sectoral/h11/inputs/h11_link_2001_07_FULL.csv",
+      "new": "datos/2_procesamiento/sectorial_h11/inputs/h11_link_2001_07_FULL.csv",
+      "sha256": "41dc356919fd92c66f42cea2b432a7d19a77ca10d17a06fe8c772c3f1d67c35d",
+      "bytes": 945,
+      "rule": "research/sectoral/h11/**"
+    },
+    {
+      "old": "research/sectoral/h11/inputs/totales_icml_1993_2001.csv",
+      "new": "datos/2_procesamiento/sectorial_h11/inputs/totales_icml_1993_2001.csv",
+      "sha256": "0b6cb4e7fbbac35a6168e4e79d228acb2c094ff34d5de7d5ca566b728a2b06a0",
+      "bytes": 8851,
+      "rule": "research/sectoral/h11/**"
+    },
+    {
+      "old": "insumos/LEER_PRIMERO_INSUMOS.md",
+      "new": "datos/2_procesamiento/catalogos/LEER_PRIMERO_INSUMOS.md",
+      "sha256": "2c1ebf15a1d97aefb3e039ea2a045ee30d99966e6226dbdea4186a04767312d6",
+      "bytes": 4169,
+      "rule": "insumos/LEER_PRIMERO_INSUMOS.md"
+    },
+    {
+      "old": "insumos/catalogo_fuentes.json",
+      "new": "datos/2_procesamiento/catalogos/catalogo_fuentes.json",
+      "sha256": "8700a10b42c21e4e08f102182fcf61b48508963e8a1c0f89e38c8b16e77bcd98",
+      "bytes": 9954,
+      "rule": "insumos/catalogo_fuentes.json"
+    },
+    {
+      "old": "insumos/censo_detalle_municipal_ajustado_nueve.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/censo_derivado/censo_detalle_municipal_ajustado_nueve.csv",
+      "sha256": "116969dddf59b54db8b5f765a91e0a59f3a1eca752c3d45da5ae7cf3e68c883e",
+      "bytes": 4589,
+      "rule": "insumos/*.csv"
+    },
+    {
+      "old": "insumos/cnpv_2018_capitales_ajustado.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/censo_derivado/cnpv_2018_capitales_ajustado.csv",
+      "sha256": "3a1139f70c69bc937e747138eecb350eb0085cf38fb0c2e2f24d6243c33a0827",
+      "bytes": 210,
+      "rule": "insumos/*.csv"
+    },
+    {
+      "old": "insumos/anclas_dane/anclas_dane_agregado_13_areas_2001_2009.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/anclas_dane/anclas_dane_agregado_13_areas_2001_2009.csv",
+      "sha256": "802438db6af861c0f9e8b69709b19bcbe7fdce8295075038b3bb111d110f1a91",
+      "bytes": 6443,
+      "rule": "insumos/anclas_dane/**"
+    },
+    {
+      "old": "insumos/anclas_dane/anclas_dane_ciudades_13_2005_2006.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/anclas_dane/anclas_dane_ciudades_13_2005_2006.csv",
+      "sha256": "a59ad200d504658096c945c02129784f6e364a5dc59f33d9f53453d239c3f99e",
+      "bytes": 9090,
+      "rule": "insumos/anclas_dane/**"
+    },
+    {
+      "old": "insumos/anclas_dane/comparacion_universos_2006.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/anclas_dane/comparacion_universos_2006.csv",
+      "sha256": "fb79f0e810c8ef159967a2fa8b110ad3703c3e56796914f1a1c62fe2b8ec0059",
+      "bytes": 314,
+      "rule": "insumos/anclas_dane/**"
+    },
+    {
+      "old": "insumos/anclas_dane/inventario_coberturas_dane.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/anclas_dane/inventario_coberturas_dane.csv",
+      "sha256": "0bdea12194a87eb34d9b9fc9b79a247e0771a5736db6e5940eddd05657e80360",
+      "bytes": 1630,
+      "rule": "insumos/anclas_dane/**"
+    },
+    {
+      "old": "insumos/laboral/ciudades.csv",
+      "new": "datos/2_procesamiento/productos_congelados/laboral/ciudades.csv",
+      "sha256": "773ebcfb4fa4288f10744b8912c1c03244179d17e2cce8a8926123a66d7e9405",
+      "bytes": 3383305,
+      "rule": "insumos/laboral/**"
+    },
+    {
+      "old": "insumos/laboral/departamentos.csv",
+      "new": "datos/2_procesamiento/productos_congelados/laboral/departamentos.csv",
+      "sha256": "99847e18d4e1d3c37b8aaa280823c42a246e269eea4c8a9435e1cc78717c8fea",
+      "bytes": 5503388,
+      "rule": "insumos/laboral/**"
+    },
+    {
+      "old": "insumos/laboral/nacionales.csv",
+      "new": "datos/2_procesamiento/productos_congelados/laboral/nacionales.csv",
+      "sha256": "fc003be8875716ef19e49a3a7d1a3898998e3e0d7a120421498a60eb4a8f362f",
+      "bytes": 241899,
+      "rule": "insumos/laboral/**"
+    },
+    {
+      "old": "insumos/fuentes/REGISTRO_EXCEL_ORIGINALES_H29.json",
+      "new": "datos/2_procesamiento/catalogos/REGISTRO_EXCEL_ORIGINALES_H29.json",
+      "sha256": "558efb08622fcfef3f4c91c90e651041ea0feda926bcc20ce518b0e055a8e615",
+      "bytes": 15598,
+      "rule": "insumos/fuentes/REGISTRO_EXCEL_ORIGINALES_H29.json"
+    },
+    {
+      "old": "insumos/fuentes/historicas/nacional/indicadores_mensuales_1993_2003.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/nacional/indicadores_mensuales_1993_2003.csv",
+      "sha256": "ec0503916a346d4b3fd18049663973ec6d9a1f2cd472049aeb002b0a2fef7e15",
+      "bytes": 24522,
+      "rule": "insumos/fuentes/historicas/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/nacional/official_geih_annual.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/nacional/official_geih_annual.csv",
+      "sha256": "ca9143d73a32fefee357a1150ce9761b4e2010215903a6f1af1732d7732623fc",
+      "bytes": 2229,
+      "rule": "insumos/fuentes/historicas/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/nacional/source_enh_annual.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/nacional/source_enh_annual.csv",
+      "sha256": "72a39aca24b93bcdd2a949e32a465cb085f62574ee3cb398f6de4e611807bd22",
+      "bytes": 1462,
+      "rule": "insumos/fuentes/historicas/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/departamental/proyecciones_poblacion_original.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/departamental/proyecciones_poblacion_original.csv",
+      "sha256": "263aa63d00de5ae356b98079dcf97e7361eaf157efabcbe7f7ff9f6de519b246",
+      "bytes": 195732,
+      "rule": "insumos/fuentes/historicas/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/urbano/cundinamarca_25_donante_congelado.json",
+      "new": "datos/2_procesamiento/fuentes_preparadas/urbano/cundinamarca_25_donante_congelado.json",
+      "sha256": "8ec852f61d3423f049c3cd181dead1449f27b7c1c7ea8930280e3da02b7132c5",
+      "bytes": 739,
+      "rule": "insumos/fuentes/historicas/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/urbano/cundinamarca_25_senales_sinteticas_2021_2024.json",
+      "new": "datos/2_procesamiento/fuentes_preparadas/urbano/cundinamarca_25_senales_sinteticas_2021_2024.json",
+      "sha256": "936bddf0dd81f15daa8b9f07580cb411376b6362c26b5a647b4b155ab6e71455",
+      "bytes": 1052,
+      "rule": "insumos/fuentes/historicas/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/urbano/donantes_congelados_referencia.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/urbano/donantes_congelados_referencia.csv",
+      "sha256": "ef039646930f25298fa5030a5d59d2d9a34d31f5c762a01499a55d1e0a091c2b",
+      "bytes": 697,
+      "rule": "insumos/fuentes/historicas/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/urbano/donantes_pareto_congelados_h30.json",
+      "new": "datos/2_procesamiento/fuentes_preparadas/urbano/donantes_pareto_congelados_h30.json",
+      "sha256": "fc6a7c4a2ff5212581c71d07ff6478ea8c797f7cc7656c5a41e6fc76aeed11c1",
+      "bytes": 789,
+      "rule": "insumos/fuentes/historicas/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/urbano/proxies_anuales_ventanas_2026_08.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/urbano/proxies_anuales_ventanas_2026_08.csv",
+      "sha256": "16451ee2c3c61c308c528eaadb388a6162774b87980b5c969a55859f8fa4cd38",
+      "bytes": 24458,
+      "rule": "insumos/fuentes/historicas/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/urbano/senales_historicas_23_y_donantes.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/urbano/senales_historicas_23_y_donantes.csv",
+      "sha256": "bed64e54d103de4e07ffb46f7657b6061cd5e5fce6d8ec614c73ffe0bc6418ef",
+      "bytes": 73503,
+      "rule": "insumos/fuentes/historicas/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/auditoria_h30/Departamental and National Population Projections Colombia 1993-2030 (2).xlsx",
+      "new": "datos/2_procesamiento/auditoria_historica_h30/Departamental and National Population Projections Colombia 1993-2030 (2).xlsx",
+      "sha256": "3e4f374dc3b5fa0a4ac768ff60f279bcc50d35dbe86fce4038fb5037c878ba43",
+      "bytes": 115727,
+      "rule": "insumos/fuentes/historicas/auditoria_h30/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/auditoria_h30/Ind_empleo_1958_2018(1).xlsx",
+      "new": "datos/2_procesamiento/auditoria_historica_h30/Ind_empleo_1958_2018(1).xlsx",
+      "sha256": "0f913069d7df0364e22e6b4464e56111e7bd3438db70d3dc39e9db4de8f2a7b5",
+      "bytes": 62401,
+      "rule": "insumos/fuentes/historicas/auditoria_h30/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/auditoria_h30/Indicadores Económicos Externos Mensuales.xlsx",
+      "new": "datos/2_procesamiento/auditoria_historica_h30/Indicadores Económicos Externos Mensuales.xlsx",
+      "sha256": "ce8f207879bed43236a47a5c243127f8a71ac43a2c84b67b98ba4de20fda2f91",
+      "bytes": 39543,
+      "rule": "insumos/fuentes/historicas/auditoria_h30/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/auditoria_h30/MANIFEST.json",
+      "new": "datos/2_procesamiento/auditoria_historica_h30/MANIFEST.json",
+      "sha256": "aee7a92b084e2b5bdba3121533d91035410806ed0a53bd7a4ea56fd69e5f188b",
+      "bytes": 1007,
+      "rule": "insumos/fuentes/historicas/auditoria_h30/**"
+    },
+    {
+      "old": "insumos/fuentes/historicas/auditoria_h30/Reconstruction National Labor Market Colombia 1993-2001.xlsx",
+      "new": "datos/2_procesamiento/auditoria_historica_h30/Reconstruction National Labor Market Colombia 1993-2001.xlsx",
+      "sha256": "d48ccceea3a90e1810a1432981e4d8fbc8808376a887eebbe84474dc42b698d0",
+      "bytes": 32931,
+      "rule": "insumos/fuentes/historicas/auditoria_h30/**"
+    },
+    {
+      "old": "insumos/fuentes/archivo_original/2025/Anexo_GEIH_Departamentos_2025.xls",
+      "new": "legacy/archivo_original_duplicado/2025/Anexo_GEIH_Departamentos_2025.xls",
+      "sha256": "159372274a790e9189f1de9738b8a888e5c42bf8430ec098d04b6380f0975fa2",
+      "bytes": 1230848,
+      "rule": "insumos/fuentes/archivo_original/**"
+    },
+    {
+      "old": "insumos/fuentes/dane/geih_departamentos/2025/Anexo_GEIH_Departamentos_2025.xlsx",
+      "new": "datos/1_ingesta/dane/geih_departamentos/2025/Anexo_GEIH_Departamentos_2025.xlsx",
+      "sha256": "c6e3cd7751d85e26382b72eb5edb947102fd5fbce4d95bf5c1f9e75e76ab5e00",
+      "bytes": 568875,
+      "rule": "insumos/fuentes/dane/**"
+    },
+    {
+      "old": "insumos/fuentes/dane/geih_mercado_laboral/2026-08/Anexo_GEIH_Agosto_2026.xlsx",
+      "new": "datos/1_ingesta/dane/geih_mercado_laboral/2026-08/Anexo_GEIH_Agosto_2026.xlsx",
+      "sha256": "ade9b213c799e967c121091438a53617f3a3ab8d85d311f5cada08e2461473d9",
+      "bytes": 3692971,
+      "rule": "insumos/fuentes/dane/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Producción/ISE 12 Actividades - Diciembre 2025.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Producción/ISE 12 Actividades - Diciembre 2025.xlsx",
+      "sha256": "318d1ec1f777bdafc6090062048cce4971a18c26deb1dc80923aa2dbacbd1c9a",
+      "bytes": 602857,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Producción/PIB Departamental Oferta Anual.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Producción/PIB Departamental Oferta Anual.xlsx",
+      "sha256": "ca002cb0f70ab4992d420f411d6e26e5403ece7ff1c1a7edb27138bc0a0f3b8d",
+      "bytes": 940413,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Producción/PIB Departamentos 2024.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Producción/PIB Departamentos 2024.xlsx",
+      "sha256": "486ed3139a4223b3cf02ec075a3590396be0a8ebaee6f2c1e4910bd7d9891cbb",
+      "bytes": 941125,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anexo GEIH Agosto 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexo GEIH Agosto 2026.xlsx",
+      "sha256": "ade9b213c799e967c121091438a53617f3a3ab8d85d311f5cada08e2461473d9",
+      "bytes": 3692971,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anexo GEIH Departamentos 2024.xls",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexo GEIH Departamentos 2024.xls",
+      "sha256": "7b953c83b805f5599d062fa8d583649a5c923d73a21847913cfe2198f236abe0",
+      "bytes": 1285632,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anexo GEIH Departamentos 2025.xls",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexo GEIH Departamentos 2025.xls",
+      "sha256": "159372274a790e9189f1de9738b8a888e5c42bf8430ec098d04b6380f0975fa2",
+      "bytes": 1230848,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anexo GEIH Departamentos 2025.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexo GEIH Departamentos 2025.xlsx",
+      "sha256": "c6e3cd7751d85e26382b72eb5edb947102fd5fbce4d95bf5c1f9e75e76ab5e00",
+      "bytes": 568875,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anexo GEIH Informalidad Agosto 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexo GEIH Informalidad Agosto 2026.xlsx",
+      "sha256": "3da594e046a2c67deeeaaaed1bd0d0f81f243ea48429be6481ca426044d28ffc",
+      "bytes": 1595993,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anexo GEIH Informalidad Marzo 2021.xls",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexo GEIH Informalidad Marzo 2021.xls",
+      "sha256": "451907808e5636044f69c401aea9a3924a2949cdd18cc30141685afc6b7bcfdb",
+      "bytes": 2089984,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Departamental  and National Population Projections Colombia 1993-2030.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Departamental  and National Population Projections Colombia 1993-2030.xlsx",
+      "sha256": "3e4f374dc3b5fa0a4ac768ff60f279bcc50d35dbe86fce4038fb5037c878ba43",
+      "bytes": 115727,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Departamental and National Population Projections Colombia 1993-2030.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Departamental and National Population Projections Colombia 1993-2030.xlsx",
+      "sha256": "36b3e12c7143ea598097a47c66bee59c3f7f1272f658f0c83c9d93e48c4a61eb",
+      "bytes": 122635,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Ind_empleo_1958_2018.xls",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Ind_empleo_1958_2018.xls",
+      "sha256": "5fcb321c9d347a2c37b74fae9df670d046bc96e5b3ee7ea9a9426adec6b2cbf9",
+      "bytes": 107008,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Reconstrucción ENH Anual 1993-2001.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Reconstrucción ENH Anual 1993-2001.xlsx",
+      "sha256": "48dea3f2eb53aad512bb4e983c57f127a420c9851e6cba9f74482a1daa38d604",
+      "bytes": 35037,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Reconstruction National Labor Market Colombia 1993-2001.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Reconstruction National Labor Market Colombia 1993-2001.xlsx",
+      "sha256": "d48ccceea3a90e1810a1432981e4d8fbc8808376a887eebbe84474dc42b698d0",
+      "bytes": 32931,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Abril 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Abril 2026.xlsx",
+      "sha256": "4292064d37dfa789ee45442135e9d751ab0aaaa317c101107004a3d10deab4da",
+      "bytes": 3576012,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Enero 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Enero 2026.xlsx",
+      "sha256": "f7df301ae5813c897381e0ec40566a586ff056bce08ebea2c73ed03b4f494940",
+      "bytes": 3485687,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Febrero 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Febrero 2026.xlsx",
+      "sha256": "3d74d2fd1687ca90bd4fa0065e5292b8c15752e9ab9d0344748b966328a346d0",
+      "bytes": 3516877,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Abril 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Abril 2026.xlsx",
+      "sha256": "442a8c4ca1516d949ad05e96ffb47b121f98f5a2cb9d6cb07a20335fdcc78ee5",
+      "bytes": 1539596,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Diciembre 2025.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Diciembre 2025.xlsx",
+      "sha256": "361bdd2300f4ed36997e3b9eb17b169c4a634f16da59c30087858958855c98f4",
+      "bytes": 1525506,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Enero 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Enero 2026.xlsx",
+      "sha256": "1d05b5ea20bd1aebd240d28022866c2e268f930d1ba2cf11e3e2f9941da3b320",
+      "bytes": 1538128,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Febrero 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Febrero 2026.xlsx",
+      "sha256": "abf8fe1fed5cd184fcaffcfc5d9e12e5c38d3a5db7ab4d81c39d65beadc9f87d",
+      "bytes": 1549425,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Julio 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Julio 2026.xlsx",
+      "sha256": "e6478d621f6e8e92928ef808cf53635de93c2d408807f5163bce0b5e8ba48b04",
+      "bytes": 1572538,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Junio 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Junio 2026.xlsx",
+      "sha256": "1f1112b993ba9dc1b47245aa999cd31b9a163c9a26f86305af6066cbaba55a84",
+      "bytes": 1559649,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Marzo 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Marzo 2026.xlsx",
+      "sha256": "f68bc10f0f364c6e5119f900ac14879df23a22a0be58e36380e11ee4bafe38a2",
+      "bytes": 1529231,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Mayo 2025.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Mayo 2025.xlsx",
+      "sha256": "440a44ba7fb2598f463bc7b5aa90b7668a86233084d16df9b678b1d9bb4f8de1",
+      "bytes": 1417454,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Mayo 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Mayo 2026.xlsx",
+      "sha256": "43a27fc887f643f2595420118ac5299b9e5c5855b7e0a44560ca1c7712b36c9a",
+      "bytes": 1550694,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Septiembre 2025.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Septiembre 2025.xlsx",
+      "sha256": "401c7972c4dcd05c4b54c0a4b01080248a18c579b9d8a3b72a6a9fdb8062f85e",
+      "bytes": 1490656,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Julio 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Julio 2026.xlsx",
+      "sha256": "af2051954bfbd6fe9455a2d0076aceedfec74f90e1e9c421d4a6cb204aec7cfe",
+      "bytes": 3662567,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Junio 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Junio 2026.xlsx",
+      "sha256": "85a800b97a7bc55d2b7d0bed0cbf21e9662518b524f4cdc369724abce8bf0db1",
+      "bytes": 3631333,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Mayo 2025.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Mayo 2025.xlsx",
+      "sha256": "7772b63712936750285c3f25cb59382061e298c1ffd6c0c647d16b71137613cf",
+      "bytes": 3240452,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Mayo 2026.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Mayo 2026.xlsx",
+      "sha256": "c894509e9ad91824302b2ca689e6de6bfdbe4559378e748dd4cd08610b85514c",
+      "bytes": 3604183,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Septiembre 2025.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Septiembre 2025.xlsx",
+      "sha256": "e7af037e11845ed97cbae625dcffaace7194e0a71dafd17bfc21ff61bfcb115f",
+      "bytes": 3365896,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Economía/Indicadores Económicos Externos Mensuales.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Economía/Indicadores Económicos Externos Mensuales.xlsx",
+      "sha256": "ce8f207879bed43236a47a5c243127f8a71ac43a2c84b67b98ba4de20fda2f91",
+      "bytes": 39543,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Economía/Salarios.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Economía/Salarios.xlsx",
+      "sha256": "26cc4e80a2a03a2b0e3b0fc3b1e8dd11e371df3417d65c885e36f9a43ead1483",
+      "bytes": 9854,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Población/Proyecciones de Población 1993-2004.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Población/Proyecciones de Población 1993-2004.xlsx",
+      "sha256": "600cb7a1d1d2d7c045bf80270bca54f4ca12fd40691da6794f1c633eac15252a",
+      "bytes": 77783,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Población/Proyecciones de Población 2005-2019.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Población/Proyecciones de Población 2005-2019.xlsx",
+      "sha256": "1801d00d96a7a496ad16b76f1ea6ef31204308e39359eaab7bc48079a47f56cf",
+      "bytes": 85745,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/fuentes/excel_originales/Población/Proyecciones de Población 2020-2050.xlsx",
+      "new": "datos/1_ingesta/excel_originales/Población/Proyecciones de Población 2020-2050.xlsx",
+      "sha256": "0c8f36937e28d0b22711941648098a32e4ec20cefa6facf10923ece070f0c213",
+      "bytes": 94483,
+      "rule": "insumos/fuentes/excel_originales/**"
+    },
+    {
+      "old": "insumos/censo_original/CNPV-2018-Poblacion-Ajustada-por-Cobertura.xls",
+      "new": "datos/1_ingesta/censo_original/CNPV-2018-Poblacion-Ajustada-por-Cobertura.xls",
+      "sha256": "a8efb9e801564faa004e01e4a685d42087592a899c4a59c2237f0808260ec8c1",
+      "bytes": 556544,
+      "rule": "insumos/censo_original/**"
+    },
+    {
+      "old": "insumos/demografia/population_projections_legacy.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/demografia/population_projections_legacy.csv",
+      "sha256": "263aa63d00de5ae356b98079dcf97e7361eaf157efabcbe7f7ff9f6de519b246",
+      "bytes": 195732,
+      "rule": "insumos/demografia/**"
+    },
+    {
+      "old": "insumos/sectorial/legacy_sector_national_checks.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/sectorial/legacy_sector_national_checks.csv",
+      "sha256": "ff61b3dd429548e8436cc634d84745f35988b6c73125d54d9a6fac88f7f40fb0",
+      "bytes": 13385,
+      "rule": "insumos/sectorial/**"
+    },
+    {
+      "old": "insumos/sectorial/anexos_historicos/01_observaciones_ramas_2001_2015_trimestres.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/sectorial/anexos_historicos/01_observaciones_ramas_2001_2015_trimestres.csv",
+      "sha256": "18badf9b7b98f469c1c5921b28f36a77cf3499656c110589a10200b40f64d35a",
+      "bytes": 9065150,
+      "rule": "insumos/sectorial/anexos_historicos/**"
+    },
+    {
+      "old": "insumos/sectorial/anexos_historicos/07_totales_laborales_mensuales_misma_vintage.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/sectorial/anexos_historicos/07_totales_laborales_mensuales_misma_vintage.csv",
+      "sha256": "378cc2c14566f737dceabe8661c016cb0dd334317c7009f0bad9b26cd74426ee",
+      "bytes": 18778,
+      "rule": "insumos/sectorial/anexos_historicos/**"
+    },
+    {
+      "old": "insumos/sectorial/anexos_historicos/10_PLANTILLA_EXTRACCION_ANEXO.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/sectorial/anexos_historicos/10_PLANTILLA_EXTRACCION_ANEXO.csv",
+      "sha256": "e08cf4c478762dd7026935cd92e5b4335f03d0a20db460f9c6ef6789a69a0032",
+      "bytes": 189,
+      "rule": "insumos/sectorial/anexos_historicos/**"
+    },
+    {
+      "old": "insumos/sectorial/anexos_historicos/anexo_empleo_dic_15.xls",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexos sectoriales historicos/anexo_empleo_dic_15.xls",
+      "sha256": "5e532c30a9f96df88ded4f3b5ec0fab8e981c9cfcb284840814cf95bdd9d2ada",
+      "bytes": 8747520,
+      "rule": "insumos/sectorial/anexos_historicos/*.xls"
+    },
+    {
+      "old": "insumos/sectorial/anexos_historicos/anexo_empleo_mar_15.xls",
+      "new": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexos sectoriales historicos/anexo_empleo_mar_15.xls",
+      "sha256": "bd808ab6a5f2a1323862e79febfbd3f1151747a4180c04aa52065c0404587aa2",
+      "bytes": 8297984,
+      "rule": "insumos/sectorial/anexos_historicos/*.xls"
+    },
+    {
+      "old": "insumos/informalidad/informality_source_observations.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/informalidad/informality_source_observations.csv",
+      "sha256": "d4413b08c8b4b5dbd75c9af144b39fa5e2e57815bfe9396bfc48ef4156bbd70d",
+      "bytes": 1405745,
+      "rule": "insumos/informalidad/**"
+    },
+    {
+      "old": "insumos/informalidad/national_informality_monthly_2021_2026.csv",
+      "new": "datos/2_procesamiento/fuentes_preparadas/informalidad/national_informality_monthly_2021_2026.csv",
+      "sha256": "f4d5ed92945f40368bcbb35914e2865a51ab46fbdbc8112b1ee045f62d6fcba1",
+      "bytes": 12116,
+      "rule": "insumos/informalidad/**"
+    },
+    {
+      "old": "ENTREGA_H36/H36_RESUMEN_COMPROBADO.json",
+      "new": "legacy/ENTREGA_H36/H36_RESUMEN_COMPROBADO.json",
+      "sha256": "46ec596aaf3a3c3ac372acf4b2123d5049fc36c864ed1b91283b6a427e39f1eb",
+      "bytes": 2691,
+      "rule": "ENTREGA_H36/**"
+    },
+    {
+      "old": "ENTREGA_H36/LEER_PRIMERO_H36.md",
+      "new": "legacy/ENTREGA_H36/LEER_PRIMERO_H36.md",
+      "sha256": "5252785602e12615e7dc2dd88f09bff7fe79befaeea056c85253fd9faf779e29",
+      "bytes": 5685,
+      "rule": "ENTREGA_H36/**"
+    },
+    {
+      "old": "CIERRE_MODELO/PRODUCTOS/METADATOS_EXPERIMENTALES.json",
+      "new": "datos/2_procesamiento/productos_congelados/sectorial/METADATOS_EXPERIMENTALES.json",
+      "sha256": "c3276f740a9fd220da4589489bd2e3268cd6cb013128fc91bc241f009203cf45",
+      "bytes": 794,
+      "rule": "CIERRE_MODELO/PRODUCTOS/**"
+    },
+    {
+      "old": "CIERRE_MODELO/PRODUCTOS/sectorial_departamental_1993_2026_EXPERIMENTAL.csv",
+      "new": "datos/2_procesamiento/productos_congelados/sectorial/sectorial_departamental_1993_2026_EXPERIMENTAL.csv",
+      "sha256": "fd65d43b1eceda180a811c4e20e4cd56d2ad3bfaf2389163e1adc1dff9f09ebe",
+      "bytes": 34487916,
+      "rule": "CIERRE_MODELO/PRODUCTOS/**"
+    },
+    {
+      "old": "CIERRE_MODELO/PRODUCTOS/sectorial_nacional_1993_2026_EXPERIMENTAL.csv",
+      "new": "datos/2_procesamiento/productos_congelados/sectorial/sectorial_nacional_1993_2026_EXPERIMENTAL.csv",
+      "sha256": "a8287b090c31bce1ecb58d03746ed0a736500bd7f198733779e28e927e2a4370",
+      "bytes": 839492,
+      "rule": "CIERRE_MODELO/PRODUCTOS/**"
+    },
+    {
+      "old": "CIERRE_OPERATIVO_H19/19_catalogo_unificado.csv",
+      "new": "datos/2_procesamiento/productos_congelados/catalogo_h19/19_catalogo_unificado.csv",
+      "sha256": "aae65684bbd5495c5dd48c089ecf3d96315771a34cb7c5639129299658dac6d2",
+      "bytes": 2277,
+      "rule": "CIERRE_OPERATIVO_H19/**"
+    },
+    {
+      "old": "informalidad/cierre_integral_v013/13_2020_alternativas_33_departamentos.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_2020_alternativas_33_departamentos.csv",
+      "sha256": "c87a11d44a2a817badef40c97e4020d98f0d00effc648499e32dd143d820367d",
+      "bytes": 46190,
+      "rule": "informalidad/cierre_integral_v013/**"
+    },
+    {
+      "old": "informalidad/cierre_integral_v013/13_auditoria_mensual_de_cierre.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_auditoria_mensual_de_cierre.csv",
+      "sha256": "cdad976139ef30c9fdac2ab2e297df6ec0b47587c7bfb03783a31a2fa04929b0",
+      "bytes": 60779,
+      "rule": "informalidad/cierre_integral_v013/**"
+    },
+    {
+      "old": "informalidad/cierre_integral_v013/13_ciudades_33_1993_2026_RECONSTRUIDAS.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_ciudades_33_1993_2026_RECONSTRUIDAS.csv",
+      "sha256": "5f18a78eed167bd47e70daa4a4c84d502f17fc90d11c3fd08b02f1cfb1e7ba22",
+      "bytes": 3936913,
+      "rule": "informalidad/cierre_integral_v013/**"
+    },
+    {
+      "old": "informalidad/cierre_integral_v013/13_ciudades_serie_anual.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_ciudades_serie_anual.csv",
+      "sha256": "038b7f0aff624840ae2156c6d3469a90288c7e3d02f84fabf1086b2af4a0b99b",
+      "bytes": 85622,
+      "rule": "informalidad/cierre_integral_v013/**"
+    },
+    {
+      "old": "informalidad/cierre_integral_v013/13_departamentos_33_dos_universos_1993_2026_RECONSTRUIDOS.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_departamentos_33_dos_universos_1993_2026_RECONSTRUIDOS.csv",
+      "sha256": "b0f2764c48957d58bd5337da482136b034330ce212e0ea31c9f7f45d8ee9fc23",
+      "bytes": 7324091,
+      "rule": "informalidad/cierre_integral_v013/**"
+    },
+    {
+      "old": "informalidad/cierre_integral_v013/13_departamentos_serie_anual.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_departamentos_serie_anual.csv",
+      "sha256": "327468a337a5fac8ca4e0570c1fc2a929604835b94a6024735e91c6fe5eb498e",
+      "bytes": 72630,
+      "rule": "informalidad/cierre_integral_v013/**"
+    },
+    {
+      "old": "informalidad/cierre_integral_v013/13_nacionales_2_universos_1993_2026_RECONSTRUIDOS.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_nacionales_2_universos_1993_2026_RECONSTRUIDOS.csv",
+      "sha256": "c67799b5af371981c263555c3f7fa160d238edead0bdfb78367e08e57c2435ec",
+      "bytes": 254926,
+      "rule": "informalidad/cierre_integral_v013/**"
+    },
+    {
+      "old": "informalidad/cierre_integral_v013/13_nacionales_serie_anual.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_nacionales_serie_anual.csv",
+      "sha256": "3bd9e6589191aa7c0189d51800b95b122da7a3c2a551238bc9382d4f2e0dc338",
+      "bytes": 5731,
+      "rule": "informalidad/cierre_integral_v013/**"
+    },
+    {
+      "old": "informalidad/cierre_integral_v013/13_puerta_calidad.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_puerta_calidad.csv",
+      "sha256": "ba4b9e20cb4feeeeada4a299aaae84c04cdf144f9e4267ed8abcef650fad1a2a",
+      "bytes": 2174,
+      "rule": "informalidad/cierre_integral_v013/**"
+    },
+    {
+      "old": "informalidad/cierre_integral_v013/13_resumen.json",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_resumen.json",
+      "sha256": "9dfbadbd456313cd1715947a726b205916dd47e6de787ff6359fb86070eec83e",
+      "bytes": 1176,
+      "rule": "informalidad/cierre_integral_v013/**"
+    },
+    {
+      "old": "informalidad/cierre_integral_v013/manifest.json",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/manifest.json",
+      "sha256": "7b916c674c9b7388fc7a464f1a16d53bb26c72d71b97e98c3483a2014aa70918",
+      "bytes": 1169,
+      "rule": "informalidad/cierre_integral_v013/**"
+    },
+    {
+      "old": "informalidad/census_transfer_v012/12_single_mlp_33_department_priors.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/priors_mlp_h9/12_single_mlp_33_department_priors.csv",
+      "sha256": "78c3868e6a7f31292a392141f25edc2a15430befab33693cca8471f75c2eef9c",
+      "bytes": 1789794,
+      "rule": "informalidad/census_transfer_v012/**"
+    },
+    {
+      "old": "informalidad/secuencia_v003/02_nacionales.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_secuencia_h5_h6/02_nacionales.csv",
+      "sha256": "755d78907b0d9a23757b002536f0e5acc26b1fcf118ac9b8578bf86028a47e97",
+      "bytes": 150933,
+      "rule": "informalidad/secuencia_v003/**"
+    },
+    {
+      "old": "informalidad/secuencia_v003/03_ciudades_33.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/informalidad_secuencia_h5_h6/03_ciudades_33.csv",
+      "sha256": "97e3c86c7ca604dd8640c4d1840db69e57569e25bcdb964e3f671f6831a7afd9",
+      "bytes": 1819893,
+      "rule": "informalidad/secuencia_v003/**"
+    },
+    {
+      "old": "informalidad/national_bridge_stress_v011/11_2020_gap_priors_EXPERIMENTAL.csv",
+      "new": "datos/2_procesamiento/parametros_congelados/stress_puente_nacional/11_2020_gap_priors_EXPERIMENTAL.csv",
+      "sha256": "ff21ea32de890bf71719a736eb026d9606670b58daa1fc124fe78ae085fc3cad",
+      "bytes": 200454,
+      "rule": "informalidad/national_bridge_stress_v011/**"
+    },
+    {
+      "old": "_test_quality_run/products/ciudades.csv",
+      "new": "datos/2_procesamiento/productos_congelados/pruebas_calidad/ciudades.csv",
+      "sha256": "773ebcfb4fa4288f10744b8912c1c03244179d17e2cce8a8926123a66d7e9405",
+      "bytes": 3383305,
+      "rule": "_test_quality_run/products/**"
+    },
+    {
+      "old": "_test_quality_run/products/departamentos.csv",
+      "new": "datos/2_procesamiento/productos_congelados/pruebas_calidad/departamentos.csv",
+      "sha256": "99847e18d4e1d3c37b8aaa280823c42a246e269eea4c8a9435e1cc78717c8fea",
+      "bytes": 5503388,
+      "rule": "_test_quality_run/products/**"
+    },
+    {
+      "old": "_test_quality_run/products/nacionales.csv",
+      "new": "datos/2_procesamiento/productos_congelados/pruebas_calidad/nacionales.csv",
+      "sha256": "fc003be8875716ef19e49a3a7d1a3898998e3e0d7a120421498a60eb4a8f362f",
+      "bytes": 241899,
+      "rule": "_test_quality_run/products/**"
+    }
+  ]
+}

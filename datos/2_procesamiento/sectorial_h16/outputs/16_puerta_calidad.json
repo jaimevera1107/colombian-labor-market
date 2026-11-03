@@ -1,0 +1,122 @@
+{
+  "checkpoint": "ICML_2_2_18",
+  "status": "EXPERIMENTAL_NOT_CANONICAL",
+  "trained_labels": "2015_2024",
+  "holdout_labels": "2025_not_used_in_any_fit",
+  "chosen_by": "LOGO_2015_2024_only_not_nested_model_selection",
+  "chosen_model": "ensamble_h15_gdp_xgb38",
+  "ensemble_alpha_xgb": 0.5,
+  "predefined_alpha_grid_logo_mae": {
+    "0.0": 1.235527496169638,
+    "0.25": 1.1762819393805677,
+    "0.5": 1.1582740346295008,
+    "0.75": 1.1826326250286805,
+    "1.0": 1.2481256462815842
+  },
+  "original38_recovered": true,
+  "original38_model_exact_reproduction": false,
+  "informality_source": "ICML_original_vintage_labor_panel_2007_2025_NOT_AS_OF",
+  "n_official_reference_departments": 23,
+  "n_external_bogota_anchor_years": 10,
+  "n_territories_without_any_observed_annual_sector_anchor": 9,
+  "n_months": 404,
+  "n_sectors": 15,
+  "n_departments": 33,
+  "max_monthly_dept_closure_people": 2.927379682660103e-05,
+  "max_monthly_national_closure_people": 2.7939677238464355e-09,
+  "max_adjustment_vs_monthly_prior_pp": 5.700152669735703,
+  "max_backcast_sensitivity_pp_vs_12year_reference": 23.144753800788788,
+  "geih_annual_mae_pp": 0.2034263950386628,
+  "geih_annual_max_pp": 2.973155616616774,
+  "bogota_geih_annual_mae_pp": 0.09239774647705834,
+  "bogota_model_external_pre_anchor_mae_pp": 1.8729468251698864,
+  "official_annual_exactly_imposed": false,
+  "national_complete_monthly_exactly_constrained": true,
+  "geih_represented_national_monthly_not_forced": true,
+  "monthlyized_1993_2014_department_sector_with_assumed_trends": true,
+  "monthlyizing_2015_2025_assumes_within_year_national_cycle": true,
+  "2026_no_gdp_2025_annual_profile_carried_from_2025": true,
+  "pre2001_represented_national_unreconciled": true,
+  "can_publish": false,
+  "critical_limitations": [
+    "Anclas 23 departamentos 2015-2025 de la extracción original sin cotejo final con anexos DANE",
+    "Retroestimación territorial 1993-2014 no identificada directamente",
+    "1980s/1990s sin anclas departamentales sectoriales observadas",
+    "PIB 2015-2024 vintage retrospectivo, no backtest real time",
+    "No se permite cierre exacto simultáneo de márgenes nacionales completos con cuotas anuales GEIH incompatibles",
+    "El empleo de 2026 utiliza perfil territorial de 2025; 2026 no presenta PIB 2025 en insumos",
+    "La informalidad original 2007-2025 se usa como covariable, no como actualización canónica"
+  ],
+  "scores": [
+    {
+      "model": "ensamble_h15_gdp_xgb38",
+      "test_protocol": "LOGO_2015_2024",
+      "mae_pp": 1.1582740346295006,
+      "max_pp": 20.97400540248261,
+      "n": 3220
+    },
+    {
+      "model": "ensamble_h15_gdp_xgb38",
+      "test_protocol": "LOGO_2025_HELD_OUT",
+      "mae_pp": 1.2673400633197929,
+      "max_pp": 17.093562875369475,
+      "n": 322
+    },
+    {
+      "model": "ridge_h15_gdp_baseline",
+      "test_protocol": "LOGO_2015_2024",
+      "mae_pp": 1.2355274961697766,
+      "max_pp": 25.1182881009,
+      "n": 3220
+    },
+    {
+      "model": "ridge_h15_gdp_baseline",
+      "test_protocol": "LOGO_2025_HELD_OUT",
+      "mae_pp": 1.3702497689169686,
+      "max_pp": 23.5955734844,
+      "n": 322
+    },
+    {
+      "model": "ridge_original37_sin_id_gdp",
+      "test_protocol": "LOGO_2015_2024",
+      "mae_pp": 1.2435796549774194,
+      "max_pp": 20.314349474884636,
+      "n": 3220
+    },
+    {
+      "model": "ridge_original37_sin_id_gdp",
+      "test_protocol": "LOGO_2025_HELD_OUT",
+      "mae_pp": 1.329983551710142,
+      "max_pp": 14.552347217878925,
+      "n": 322
+    },
+    {
+      "model": "ridge_original38_gdp",
+      "test_protocol": "LOGO_2015_2024",
+      "mae_pp": 1.2722182773162207,
+      "max_pp": 20.03160812442713,
+      "n": 3220
+    },
+    {
+      "model": "ridge_original38_gdp",
+      "test_protocol": "LOGO_2025_HELD_OUT",
+      "mae_pp": 1.3627917257938984,
+      "max_pp": 14.555978859354003,
+      "n": 322
+    },
+    {
+      "model": "xgb14_original38_gdp",
+      "test_protocol": "LOGO_2015_2024",
+      "mae_pp": 1.2481256462815842,
+      "max_pp": 21.453982416202976,
+      "n": 3220
+    },
+    {
+      "model": "xgb14_original38_gdp",
+      "test_protocol": "LOGO_2025_HELD_OUT",
+      "mae_pp": 1.308731748756986,
+      "max_pp": 14.856854172451389,
+      "n": 322
+    }
+  ]
+}

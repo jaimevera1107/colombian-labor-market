@@ -1,0 +1,12 @@
+# Optional MLP stack (``pip install -e ".[ml]"``) for Python 3.12.
+#
+# Used only by icml.informality.mlp (H9 department priors). The H36
+# delivery does NOT retrain the MLP: its priors are frozen, so these pins
+# are not needed to reproduce the August 2026 products.
+#
+# PROVENANCE: the torch version that produced the original priors is not
+# recorded in the delivery. 2.15.0 (CPU build) is the version the test
+# suite was verified against on 2026-11-02; it is a verification pin, NOT
+# evidence of the original training environment. Install the CPU build with:
+#   pip install torch==2.15.0 --index-url https://download.pytorch.org/whl/cpu
+torch==2.15.0

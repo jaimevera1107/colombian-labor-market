@@ -1,0 +1,135 @@
+{
+  "moved": [
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexo GEIH Departamentos 2024.xls",
+      "new": "datos/1_ingesta/geih_departamentos/geih_departamentos_2024.xls",
+      "sha256": "7b953c83b805f5599d062fa8d583649a5c923d73a21847913cfe2198f236abe0"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexo GEIH Departamentos 2025.xls",
+      "new": "datos/1_ingesta/geih_departamentos/geih_departamentos_2025.xls",
+      "sha256": "159372274a790e9189f1de9738b8a888e5c42bf8430ec098d04b6380f0975fa2"
+    },
+    {
+      "old": "datos/1_ingesta/dane/geih_departamentos/2025/Anexo_GEIH_Departamentos_2025.xlsx",
+      "new": "datos/1_ingesta/geih_departamentos/geih_departamentos_2025.xlsx",
+      "sha256": "c6e3cd7751d85e26382b72eb5edb947102fd5fbce4d95bf5c1f9e75e76ab5e00"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexo GEIH Informalidad Marzo 2021.xls",
+      "new": "datos/1_ingesta/geih_informalidad/geih_informalidad_2021-03.xls",
+      "sha256": "451907808e5636044f69c401aea9a3924a2949cdd18cc30141685afc6b7bcfdb"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Mayo 2025.xlsx",
+      "new": "datos/1_ingesta/geih_informalidad/geih_informalidad_2025-05.xlsx",
+      "sha256": "440a44ba7fb2598f463bc7b5aa90b7668a86233084d16df9b678b1d9bb4f8de1"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Septiembre 2025.xlsx",
+      "new": "datos/1_ingesta/geih_informalidad/geih_informalidad_2025-09.xlsx",
+      "sha256": "401c7972c4dcd05c4b54c0a4b01080248a18c579b9d8a3b72a6a9fdb8062f85e"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Diciembre 2025.xlsx",
+      "new": "datos/1_ingesta/geih_informalidad/geih_informalidad_2025-12.xlsx",
+      "sha256": "361bdd2300f4ed36997e3b9eb17b169c4a634f16da59c30087858958855c98f4"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Enero 2026.xlsx",
+      "new": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-01.xlsx",
+      "sha256": "1d05b5ea20bd1aebd240d28022866c2e268f930d1ba2cf11e3e2f9941da3b320"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Febrero 2026.xlsx",
+      "new": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-02.xlsx",
+      "sha256": "abf8fe1fed5cd184fcaffcfc5d9e12e5c38d3a5db7ab4d81c39d65beadc9f87d"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Marzo 2026.xlsx",
+      "new": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-03.xlsx",
+      "sha256": "f68bc10f0f364c6e5119f900ac14879df23a22a0be58e36380e11ee4bafe38a2"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Abril 2026.xlsx",
+      "new": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-04.xlsx",
+      "sha256": "442a8c4ca1516d949ad05e96ffb47b121f98f5a2cb9d6cb07a20335fdcc78ee5"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Mayo 2026.xlsx",
+      "new": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-05.xlsx",
+      "sha256": "43a27fc887f643f2595420118ac5299b9e5c5855b7e0a44560ca1c7712b36c9a"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Junio 2026.xlsx",
+      "new": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-06.xlsx",
+      "sha256": "1f1112b993ba9dc1b47245aa999cd31b9a163c9a26f86305af6066cbaba55a84"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Informalidad Julio 2026.xlsx",
+      "new": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-07.xlsx",
+      "sha256": "e6478d621f6e8e92928ef808cf53635de93c2d408807f5163bce0b5e8ba48b04"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexo GEIH Informalidad Agosto 2026.xlsx",
+      "new": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-08.xlsx",
+      "sha256": "3da594e046a2c67deeeaaaed1bd0d0f81f243ea48429be6481ca426044d28ffc"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Mayo 2025.xlsx",
+      "new": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2025-05.xlsx",
+      "sha256": "7772b63712936750285c3f25cb59382061e298c1ffd6c0c647d16b71137613cf"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Septiembre 2025.xlsx",
+      "new": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2025-09.xlsx",
+      "sha256": "e7af037e11845ed97cbae625dcffaace7194e0a71dafd17bfc21ff61bfcb115f"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Enero 2026.xlsx",
+      "new": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-01.xlsx",
+      "sha256": "f7df301ae5813c897381e0ec40566a586ff056bce08ebea2c73ed03b4f494940"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Febrero 2026.xlsx",
+      "new": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-02.xlsx",
+      "sha256": "3d74d2fd1687ca90bd4fa0065e5292b8c15752e9ab9d0344748b966328a346d0"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Abril 2026.xlsx",
+      "new": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-04.xlsx",
+      "sha256": "4292064d37dfa789ee45442135e9d751ab0aaaa317c101107004a3d10deab4da"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Mayo 2026.xlsx",
+      "new": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-05.xlsx",
+      "sha256": "c894509e9ad91824302b2ca689e6de6bfdbe4559378e748dd4cd08610b85514c"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Junio 2026.xlsx",
+      "new": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-06.xlsx",
+      "sha256": "85a800b97a7bc55d2b7d0bed0cbf21e9662518b524f4cdc369724abce8bf0db1"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anteriores/Anexo GEIH Julio 2026.xlsx",
+      "new": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-07.xlsx",
+      "sha256": "af2051954bfbd6fe9455a2d0076aceedfec74f90e1e9c421d4a6cb204aec7cfe"
+    },
+    {
+      "old": "datos/1_ingesta/dane/geih_mercado_laboral/2026-08/Anexo_GEIH_Agosto_2026.xlsx",
+      "new": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-08.xlsx",
+      "sha256": "ade9b213c799e967c121091438a53617f3a3ab8d85d311f5cada08e2461473d9"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexo GEIH Departamentos 2025.xlsx",
+      "new": "legacy/ingesta_duplicados/excel_originales/Mercado Laboral/Anexo GEIH Departamentos 2025.xlsx",
+      "sha256": "c6e3cd7751d85e26382b72eb5edb947102fd5fbce4d95bf5c1f9e75e76ab5e00"
+    },
+    {
+      "old": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexo GEIH Agosto 2026.xlsx",
+      "new": "legacy/ingesta_duplicados/excel_originales/Mercado Laboral/Anexo GEIH Agosto 2026.xlsx",
+      "sha256": "ade9b213c799e967c121091438a53617f3a3ab8d85d311f5cada08e2461473d9"
+    }
+  ],
+  "deleted": 0
+}

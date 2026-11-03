@@ -1,0 +1,14 @@
+# Splice of the unobserved informality segment to the first anchored regime.
+#
+# Until 2000-12 the informality rate is a retropolation with no official anchor;
+# from 2001-01 it is anchored to DANE, and the rate steps up about 2.8 points in
+# one month. Enabling this shifts the unobserved segment (before break_month) by
+# a constant estimated at the break; everything from break_month on is untouched.
+#
+# ADOPTED (v2.3.0.dev0): a methodological change, not part of the equivalence refactor. It
+# changes closed history (1993-2000), so the vintage is recomputed in total mode.
+# Set enabled = false to reproduce the frozen August 2026 vintage exactly.
+[regime_splice]
+enabled = true
+break_month = "2001-01"
+window_months = 24

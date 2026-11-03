@@ -1,0 +1,15 @@
+{
+  "version": "2.2.13.dev0",
+  "files_sha256": {
+    "13_2020_alternativas_33_departamentos.csv": "c87a11d44a2a817badef40c97e4020d98f0d00effc648499e32dd143d820367d",
+    "13_auditoria_mensual_de_cierre.csv": "cdad976139ef30c9fdac2ab2e297df6ec0b47587c7bfb03783a31a2fa04929b0",
+    "13_ciudades_33_1993_2026_RECONSTRUIDAS.csv": "5f18a78eed167bd47e70daa4a4c84d502f17fc90d11c3fd08b02f1cfb1e7ba22",
+    "13_ciudades_serie_anual.csv": "038b7f0aff624840ae2156c6d3469a90288c7e3d02f84fabf1086b2af4a0b99b",
+    "13_departamentos_33_dos_universos_1993_2026_RECONSTRUIDOS.csv": "b0f2764c48957d58bd5337da482136b034330ce212e0ea31c9f7f45d8ee9fc23",
+    "13_departamentos_serie_anual.csv": "327468a337a5fac8ca4e0570c1fc2a929604835b94a6024735e91c6fe5eb498e",
+    "13_nacionales_2_universos_1993_2026_RECONSTRUIDOS.csv": "c67799b5af371981c263555c3f7fa160d238edead0bdfb78367e08e57c2435ec",
+    "13_nacionales_serie_anual.csv": "3bd9e6589191aa7c0189d51800b95b122da7a3c2a551238bc9382d4f2e0dc338",
+    "13_puerta_calidad.csv": "ba4b9e20cb4feeeeada4a299aaae84c04cdf144f9e4267ed8abcef650fad1a2a",
+    "13_resumen.json": "9dfbadbd456313cd1715947a726b205916dd47e6de787ff6359fb86070eec83e"
+  }
+}

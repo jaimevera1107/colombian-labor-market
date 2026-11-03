@@ -1,0 +1,35 @@
+control,passed,criticality,metric,status
+complete_33_urban_x_404,True,REQUIRED,13332,PASS
+complete_33_department_x_404,True,REQUIRED,13332,PASS
+complete_two_national_x_404,True,REQUIRED,808,PASS
+no_missing_rates,True,REQUIRED,0,PASS
+urban_people_identity,True,REQUIRED,1.0000541806221008e-05,PASS
+department_people_identity,True,REQUIRED,4.656612873077393e-10,PASS
+geih_people_identity,True,REQUIRED,4.656612873077393e-10,PASS
+full_national_kl_closure,True,REQUIRED,5.587935447692871e-09,PASS
+subset_coverage,True,REQUIRED,0<=geih<=full,PASS
+universe_decomposition,True,REQUIRED,GEIH+outside=full,PASS
+2018_nine_capitals_anchored,True,REQUIRED,2.9103830456733704e-11,PASS
+national_full_population,True,REQUIRED,0.0,PASS
+national_geih_population,True,REQUIRED,0.0,PASS
+national_full_working_age,True,REQUIRED,0.0,PASS
+national_geih_working_age,True,REQUIRED,0.0,PASS
+national_full_labor_force,True,REQUIRED,0.0,PASS
+national_geih_labor_force,True,REQUIRED,0.0,PASS
+national_full_employed,True,REQUIRED,0.0,PASS
+national_geih_employed,True,REQUIRED,0.0,PASS
+national_full_unemployed,True,REQUIRED,0.0,PASS
+national_geih_unemployed,True,REQUIRED,0.0,PASS
+national_full_inactive,True,REQUIRED,0.0,PASS
+national_geih_inactive,True,REQUIRED,0.0,PASS
+PEA_identity_complete,True,REQUIRED,1.0244548320770264e-08,PASS
+PET_identity_complete,True,REQUIRED,1.1175870895385742e-08,PASS
+PEA_identity_geih_,True,REQUIRED,1.0244548320770264e-08,PASS
+PET_identity_geih_,True,REQUIRED,1.1175870895385742e-08,PASS
+2020_retrospective_no_official_claim,True,REQUIRED,12_months,PASS
+pre2021_definition_independently_identified,False,EVIDENCE,historical T5 / new GEIH bridge is a reconstruction,FAIL
+2020_independent_monthly_informal_observations,False,EVIDENCE,2020 inferred via tested pseudogap model,FAIL
+departmental_noncovered_informal_rate_independently_observed,False,EVIDENCE,no observed informal labels in excluded rural complement,FAIL
+geih_national_rate_independent_from_icml,False,EVIDENCE,"GEIH rate is a projected count ratio, not independent observed margin",FAIL
+urban_monthly_jumps_over_5pp,False,DIAGNOSTIC,328,WARNING
+department_monthly_jumps_over_5pp,False,DIAGNOSTIC,4,WARNING

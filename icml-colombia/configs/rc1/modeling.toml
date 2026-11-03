@@ -1,0 +1,81 @@
+# Modeling stage configuration reproducing RC1 (hitos 2, 3 and 4).
+
+[modeling.features]
+seed = 20261031
+training_first_year = 2007
+training_last_year = 2025
+synthetic_code = 25
+safe_division_floor = 1e-8
+lags = [1, 12]
+log_quantities = ["employed", "unemployed", "inactive", "working_age", "population"]
+growth_quantities = ["employed", "unemployed", "population"]
+
+[modeling.clustering]
+profile_first_year = 2007
+profile_variables = [
+  "urban_unemployment_rate", "urban_employment_rate",
+  "urban_participation_rate", "urban_inactivity_rate",
+  "urban_population_to_department_projection",
+  "urban_minus_national_unemployment_pp",
+  "log1p_department_population_projection",
+]
+growth_variables = ["urban_employed", "urban_population"]
+reference_k_min = 2
+reference_k_max = 6
+reference_n_init = 20
+reference_cut_year = 2020
+fold_max_k = 5
+fold_kmeans_n_init = 12
+singleton_penalty = 0.12
+
+[modeling.folds]
+n_groups = 5
+windows = [[2016, 2019], [2019, 2022], [2022, 2025]]
+embargo_years = 1
+
+[modeling.training]
+base_features = [
+  "urban_unemployment_rate", "urban_employment_rate",
+  "urban_participation_rate", "national_unemployment_rate",
+  "urban_minus_national_unemployment_pp",
+  "urban_minus_national_employment_pp",
+  "log1p_department_population_projection",
+  "urban_population_to_department_projection", "urban_employed_yoy_pct",
+  "urban_population_yoy_pct", "month_sin", "month_cos", "year",
+]
+yoy_clip_low = -90.0
+yoy_clip_high = 250.0
+ridge_alpha = 25.0
+selection_mean_weight = 0.75
+selection_worst_weight = 0.25
+selection_reference = "xgb_none"
+
+[modeling.training.xgboost]
+n_estimators = 200
+max_depth = 3
+learning_rate = 0.045
+min_child_weight = 12
+subsample = 0.9
+colsample_bytree = 0.9
+reg_lambda = 8.0
+reg_alpha = 0.05
+objective = "reg:squarederror"
+tree_method = "hist"
+n_jobs = 2
+
+[modeling.selection]
+# Hybrid portfolio declared before evaluation as the challenger.
+candidate = "hibrido_urbano_to_tgp_xgb_td_pet"
+reference_model = "xgb_ward"
+common_postprocessing = "00_cierre_actual"
+reserve_group_prefix = "G5"
+max_worst_increase_pp = 2.0
+max_intervention_pp = 0.75
+max_reserve_mae_increase_pp = 0.25
+bootstrap_replicates = 5000
+bootstrap_seed = 20261031
+bridge_taper_months = 12
+anchor_first_year = 2007
+anchor_last_year = 2025
+closure_iterations = 55
+large_jump = 0.06

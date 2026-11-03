@@ -1,0 +1,17 @@
+# Post-closure territorial transfer evaluation (leave one anchored
+# department out). Reuses the modeling and reconciliation configurations.
+
+[evaluation.transfer]
+modeling_config = "modeling.toml"
+reconciliation_config = "reconciliation.toml"
+# Cundinamarca's synthetic urban signal is calibrated with its own
+# departmental anchors: hiding it would leak the target.
+excluded_codes = [25]
+# Empty list = every anchored department not excluded (leave one out).
+hidden_codes = []
+first_year = 2007
+last_year = 2025
+candidates = ["xgb_ward", "hybrid", "xgb_none", "urban_analog", "national_rates"]
+# rc1 = published closure; the others are the denominator alternatives
+# (see icml.evaluation.closures).
+closures = ["rc1"]

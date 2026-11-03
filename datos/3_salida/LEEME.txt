@@ -1,0 +1,7 @@
+Cada ejecucion de "icml recalcular" crea aqui una carpeta AAAA-MM-DD_HHMMSS_corte-AAAA-MM_modo
+(modo: anclado o total) con universo_censo/ y universo_geih/, cada uno con laboral/, informalidad/ y sectorial/,
+mas MANIFEST.json, VERIFICACION.json e INFORME_RECALCULO_INTEGRAL.json.
+"icml entrega sencillo --carpeta <carpeta>" crea al lado <carpeta>_sencillo con las columnas basicas (CSV y XLSX).
+"python icml-colombia/tools/plots/graficar_entrega.py --carpeta <carpeta>" crea al lado <carpeta>_graficos con tableros y comparativos (opcional).
+La entrega mas reciente es la referencia del proximo recalculo y no se borra. Las anteriores se archivan en
+legacy/entregas_anteriores/ (la de 2.3.0 esta alli, comprimida).

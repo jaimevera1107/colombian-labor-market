@@ -1,0 +1,7 @@
+
+=== Journal Entry 2026-11-03T02:59:54.697188+00:00 ===
+2026-11-03-02-59-54-icml-h36-reorganizacion-recalculo.txt
+[Long working session (Spanish) finishing the ICML (Colombian subnational labor-market indicators) H36 project for a SENA contractor: golden-test certification, single-cutoff refactor, two-universe deliveries, ingesta/procesamiento/salida/legacy reorganization, anchored vs total recalculation, and a July→August 2026 replay. Contains patches, verification numbers, discovered defects, decisions and the open July informality/sectoral blocker.]
+
+
+

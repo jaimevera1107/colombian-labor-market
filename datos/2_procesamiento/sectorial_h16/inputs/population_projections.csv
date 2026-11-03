@@ -1,0 +1,4753 @@
+dep_code,dep_name,year,area_type,population
+05,Antioquia,1993,Cabecera,3165505
+05,Antioquia,1993,Centros Poblados y Rural Disperso,1442369
+05,Antioquia,1993,Total,4607874
+05,Antioquia,1994,Cabecera,3238892
+05,Antioquia,1994,Centros Poblados y Rural Disperso,1440760
+05,Antioquia,1994,Total,4679652
+05,Antioquia,1995,Cabecera,3313698
+05,Antioquia,1995,Centros Poblados y Rural Disperso,1439730
+05,Antioquia,1995,Total,4753428
+05,Antioquia,1996,Cabecera,3389521
+05,Antioquia,1996,Centros Poblados y Rural Disperso,1439096
+05,Antioquia,1996,Total,4828617
+05,Antioquia,1997,Cabecera,3465673
+05,Antioquia,1997,Centros Poblados y Rural Disperso,1438594
+05,Antioquia,1997,Total,4904267
+05,Antioquia,1998,Cabecera,3541450
+05,Antioquia,1998,Centros Poblados y Rural Disperso,1437944
+05,Antioquia,1998,Total,4979394
+05,Antioquia,1999,Cabecera,3616401
+05,Antioquia,1999,Centros Poblados y Rural Disperso,1437017
+05,Antioquia,1999,Total,5053418
+05,Antioquia,2000,Cabecera,3690006
+05,Antioquia,2000,Centros Poblados y Rural Disperso,1435638
+05,Antioquia,2000,Total,5125644
+05,Antioquia,2001,Cabecera,3761889
+05,Antioquia,2001,Centros Poblados y Rural Disperso,1433749
+05,Antioquia,2001,Total,5195638
+05,Antioquia,2002,Cabecera,3832218
+05,Antioquia,2002,Centros Poblados y Rural Disperso,1431449
+05,Antioquia,2002,Total,5263667
+05,Antioquia,2003,Cabecera,3901392
+05,Antioquia,2003,Centros Poblados y Rural Disperso,1428948
+05,Antioquia,2003,Total,5330340
+05,Antioquia,2004,Cabecera,3969758
+05,Antioquia,2004,Centros Poblados y Rural Disperso,1426392
+05,Antioquia,2004,Total,5396150
+05,Antioquia,2005,Cabecera,4037095
+05,Antioquia,2005,Centros Poblados y Rural Disperso,1423748
+05,Antioquia,2005,Total,5460843
+05,Antioquia,2006,Cabecera,4106148
+05,Antioquia,2006,Centros Poblados y Rural Disperso,1421973
+05,Antioquia,2006,Total,5528121
+05,Antioquia,2007,Cabecera,4174826
+05,Antioquia,2007,Centros Poblados y Rural Disperso,1420354
+05,Antioquia,2007,Total,5595180
+05,Antioquia,2008,Cabecera,4243194
+05,Antioquia,2008,Centros Poblados y Rural Disperso,1418905
+05,Antioquia,2008,Total,5662099
+05,Antioquia,2009,Cabecera,4312348
+05,Antioquia,2009,Centros Poblados y Rural Disperso,1418029
+05,Antioquia,2009,Total,5730377
+05,Antioquia,2010,Cabecera,4382447
+05,Antioquia,2010,Centros Poblados y Rural Disperso,1417713
+05,Antioquia,2010,Total,5800160
+05,Antioquia,2011,Cabecera,4451741
+05,Antioquia,2011,Centros Poblados y Rural Disperso,1417450
+05,Antioquia,2011,Total,5869191
+05,Antioquia,2012,Cabecera,4519077
+05,Antioquia,2012,Centros Poblados y Rural Disperso,1416839
+05,Antioquia,2012,Total,5935916
+05,Antioquia,2013,Cabecera,4585022
+05,Antioquia,2013,Centros Poblados y Rural Disperso,1416129
+05,Antioquia,2013,Total,6001151
+05,Antioquia,2014,Cabecera,4651049
+05,Antioquia,2014,Centros Poblados y Rural Disperso,1415757
+05,Antioquia,2014,Total,6066806
+05,Antioquia,2015,Cabecera,4718735
+05,Antioquia,2015,Centros Poblados y Rural Disperso,1416218
+05,Antioquia,2015,Total,6134953
+05,Antioquia,2016,Cabecera,4792540
+05,Antioquia,2016,Centros Poblados y Rural Disperso,1418772
+05,Antioquia,2016,Total,6211312
+05,Antioquia,2017,Cabecera,4873219
+05,Antioquia,2017,Centros Poblados y Rural Disperso,1423624
+05,Antioquia,2017,Total,6296843
+05,Antioquia,2018,Cabecera,4972941
+05,Antioquia,2018,Centros Poblados y Rural Disperso,1434161
+05,Antioquia,2018,Total,6407102
+05,Antioquia,2019,Cabecera,5133738
+05,Antioquia,2019,Centros Poblados y Rural Disperso,1416468
+05,Antioquia,2019,Total,6550206
+05,Antioquia,2020,Cabecera,5250157
+05,Antioquia,2020,Centros Poblados y Rural Disperso,1399244
+05,Antioquia,2020,Total,6649401
+05,Antioquia,2021,Cabecera,5350556
+05,Antioquia,2021,Centros Poblados y Rural Disperso,1375663
+05,Antioquia,2021,Total,6726219
+05,Antioquia,2022,Cabecera,5424921
+05,Antioquia,2022,Centros Poblados y Rural Disperso,1362925
+05,Antioquia,2022,Total,6787846
+05,Antioquia,2023,Cabecera,5494521
+05,Antioquia,2023,Centros Poblados y Rural Disperso,1353839
+05,Antioquia,2023,Total,6848360
+05,Antioquia,2024,Cabecera,5551824
+05,Antioquia,2024,Centros Poblados y Rural Disperso,1351897
+05,Antioquia,2024,Total,6903721
+05,Antioquia,2025,Cabecera,5600952
+05,Antioquia,2025,Centros Poblados y Rural Disperso,1350873
+05,Antioquia,2025,Total,6951825
+05,Antioquia,2026,Cabecera,5643692
+05,Antioquia,2026,Centros Poblados y Rural Disperso,1350625
+05,Antioquia,2026,Total,6994317
+05,Antioquia,2027,Cabecera,5681698
+05,Antioquia,2027,Centros Poblados y Rural Disperso,1351697
+05,Antioquia,2027,Total,7033395
+05,Antioquia,2028,Cabecera,5715714
+05,Antioquia,2028,Centros Poblados y Rural Disperso,1354277
+05,Antioquia,2028,Total,7069991
+05,Antioquia,2029,Cabecera,5746268
+05,Antioquia,2029,Centros Poblados y Rural Disperso,1358617
+05,Antioquia,2029,Total,7104885
+05,Antioquia,2030,Cabecera,5773785
+05,Antioquia,2030,Centros Poblados y Rural Disperso,1364893
+05,Antioquia,2030,Total,7138678
+05,Antioquia,2031,Cabecera,5799053
+05,Antioquia,2031,Centros Poblados y Rural Disperso,1372223
+05,Antioquia,2031,Total,7171276
+05,Antioquia,2032,Cabecera,5822958
+05,Antioquia,2032,Centros Poblados y Rural Disperso,1379324
+05,Antioquia,2032,Total,7202282
+05,Antioquia,2033,Cabecera,5845357
+05,Antioquia,2033,Centros Poblados y Rural Disperso,1386272
+05,Antioquia,2033,Total,7231629
+05,Antioquia,2034,Cabecera,5866126
+05,Antioquia,2034,Centros Poblados y Rural Disperso,1393156
+05,Antioquia,2034,Total,7259282
+05,Antioquia,2035,Cabecera,5885450
+05,Antioquia,2035,Centros Poblados y Rural Disperso,1399760
+05,Antioquia,2035,Total,7285210
+05,Antioquia,2036,Total,7309257
+05,Antioquia,2037,Total,7331280
+05,Antioquia,2038,Total,7351263
+05,Antioquia,2039,Total,7369211
+05,Antioquia,2040,Total,7385129
+05,Antioquia,2041,Total,7399045
+05,Antioquia,2042,Total,7411001
+05,Antioquia,2043,Total,7421042
+05,Antioquia,2044,Total,7429184
+05,Antioquia,2045,Total,7435448
+05,Antioquia,2046,Total,7439880
+05,Antioquia,2047,Total,7442534
+05,Antioquia,2048,Total,7443453
+05,Antioquia,2049,Total,7442657
+05,Antioquia,2050,Total,7440163
+08,Atlántico,1993,Cabecera,1578910
+08,Atlántico,1993,Centros Poblados y Rural Disperso,102660
+08,Atlántico,1993,Total,1681570
+08,Atlántico,1994,Cabecera,1618295
+08,Atlántico,1994,Centros Poblados y Rural Disperso,104476
+08,Atlántico,1994,Total,1722771
+08,Atlántico,1995,Cabecera,1657043
+08,Atlántico,1995,Centros Poblados y Rural Disperso,105985
+08,Atlántico,1995,Total,1763028
+08,Atlántico,1996,Cabecera,1695023
+08,Atlántico,1996,Centros Poblados y Rural Disperso,107138
+08,Atlántico,1996,Total,1802161
+08,Atlántico,1997,Cabecera,1732385
+08,Atlántico,1997,Centros Poblados y Rural Disperso,107937
+08,Atlántico,1997,Total,1840322
+08,Atlántico,1998,Cabecera,1769168
+08,Atlántico,1998,Centros Poblados y Rural Disperso,108438
+08,Atlántico,1998,Total,1877606
+08,Atlántico,1999,Cabecera,1805379
+08,Atlántico,1999,Centros Poblados y Rural Disperso,108689
+08,Atlántico,1999,Total,1914068
+08,Atlántico,2000,Cabecera,1840786
+08,Atlántico,2000,Centros Poblados y Rural Disperso,108831
+08,Atlántico,2000,Total,1949617
+08,Atlántico,2001,Cabecera,1875167
+08,Atlántico,2001,Centros Poblados y Rural Disperso,108979
+08,Atlántico,2001,Total,1984146
+08,Atlántico,2002,Cabecera,1908424
+08,Atlántico,2002,Centros Poblados y Rural Disperso,109224
+08,Atlántico,2002,Total,2017648
+08,Atlántico,2003,Cabecera,1940614
+08,Atlántico,2003,Centros Poblados y Rural Disperso,109652
+08,Atlántico,2003,Total,2050266
+08,Atlántico,2004,Cabecera,1971925
+08,Atlántico,2004,Centros Poblados y Rural Disperso,110273
+08,Atlántico,2004,Total,2082198
+08,Atlántico,2005,Cabecera,2003015
+08,Atlántico,2005,Centros Poblados y Rural Disperso,111121
+08,Atlántico,2005,Total,2114136
+08,Atlántico,2006,Cabecera,2032691
+08,Atlántico,2006,Centros Poblados y Rural Disperso,112108
+08,Atlántico,2006,Total,2144799
+08,Atlántico,2007,Cabecera,2061771
+08,Atlántico,2007,Centros Poblados y Rural Disperso,113217
+08,Atlántico,2007,Total,2174988
+08,Atlántico,2008,Cabecera,2089958
+08,Atlántico,2008,Centros Poblados y Rural Disperso,114406
+08,Atlántico,2008,Total,2204364
+08,Atlántico,2009,Cabecera,2117613
+08,Atlántico,2009,Centros Poblados y Rural Disperso,115661
+08,Atlántico,2009,Total,2233274
+08,Atlántico,2010,Cabecera,2144701
+08,Atlántico,2010,Centros Poblados y Rural Disperso,116955
+08,Atlántico,2010,Total,2261656
+08,Atlántico,2011,Cabecera,2170710
+08,Atlántico,2011,Centros Poblados y Rural Disperso,118237
+08,Atlántico,2011,Total,2288947
+08,Atlántico,2012,Cabecera,2195844
+08,Atlántico,2012,Centros Poblados y Rural Disperso,119517
+08,Atlántico,2012,Total,2315361
+08,Atlántico,2013,Cabecera,2220539
+08,Atlántico,2013,Centros Poblados y Rural Disperso,120796
+08,Atlántico,2013,Total,2341335
+08,Atlántico,2014,Cabecera,2244834
+08,Atlántico,2014,Centros Poblados y Rural Disperso,122065
+08,Atlántico,2014,Total,2366899
+08,Atlántico,2015,Cabecera,2270141
+08,Atlántico,2015,Centros Poblados y Rural Disperso,123416
+08,Atlántico,2015,Total,2393557
+08,Atlántico,2016,Cabecera,2301928
+08,Atlántico,2016,Centros Poblados y Rural Disperso,125118
+08,Atlántico,2016,Total,2427046
+08,Atlántico,2017,Cabecera,2341186
+08,Atlántico,2017,Centros Poblados y Rural Disperso,127243
+08,Atlántico,2017,Total,2468429
+08,Atlántico,2018,Cabecera,2404831
+08,Atlántico,2018,Centros Poblados y Rural Disperso,130686
+08,Atlántico,2018,Total,2535517
+08,Atlántico,2019,Cabecera,2502642
+08,Atlántico,2019,Centros Poblados y Rural Disperso,135509
+08,Atlántico,2019,Total,2638151
+08,Atlántico,2020,Cabecera,2556249
+08,Atlántico,2020,Centros Poblados y Rural Disperso,137416
+08,Atlántico,2020,Total,2693665
+08,Atlántico,2021,Cabecera,2601879
+08,Atlántico,2021,Centros Poblados y Rural Disperso,139123
+08,Atlántico,2021,Total,2741002
+08,Atlántico,2022,Cabecera,2634865
+08,Atlántico,2022,Centros Poblados y Rural Disperso,140093
+08,Atlántico,2022,Total,2774958
+08,Atlántico,2023,Cabecera,2662451
+08,Atlántico,2023,Centros Poblados y Rural Disperso,141114
+08,Atlántico,2023,Total,2803565
+08,Atlántico,2024,Cabecera,2685141
+08,Atlántico,2024,Centros Poblados y Rural Disperso,141983
+08,Atlántico,2024,Total,2827124
+08,Atlántico,2025,Cabecera,2702376
+08,Atlántico,2025,Centros Poblados y Rural Disperso,142793
+08,Atlántico,2025,Total,2845169
+08,Atlántico,2026,Cabecera,2715635
+08,Atlántico,2026,Centros Poblados y Rural Disperso,143504
+08,Atlántico,2026,Total,2859139
+08,Atlántico,2027,Cabecera,2726274
+08,Atlántico,2027,Centros Poblados y Rural Disperso,144242
+08,Atlántico,2027,Total,2870516
+08,Atlántico,2028,Cabecera,2735164
+08,Atlántico,2028,Centros Poblados y Rural Disperso,145041
+08,Atlántico,2028,Total,2880205
+08,Atlántico,2029,Cabecera,2743010
+08,Atlántico,2029,Centros Poblados y Rural Disperso,145951
+08,Atlántico,2029,Total,2888961
+08,Atlántico,2030,Cabecera,2750423
+08,Atlántico,2030,Centros Poblados y Rural Disperso,147000
+08,Atlántico,2030,Total,2897423
+08,Atlántico,2031,Cabecera,2757452
+08,Atlántico,2031,Centros Poblados y Rural Disperso,148143
+08,Atlántico,2031,Total,2905595
+08,Atlántico,2032,Cabecera,2763872
+08,Atlántico,2032,Centros Poblados y Rural Disperso,149293
+08,Atlántico,2032,Total,2913165
+08,Atlántico,2033,Cabecera,2769680
+08,Atlántico,2033,Centros Poblados y Rural Disperso,150439
+08,Atlántico,2033,Total,2920119
+08,Atlántico,2034,Cabecera,2774895
+08,Atlántico,2034,Centros Poblados y Rural Disperso,151582
+08,Atlántico,2034,Total,2926477
+08,Atlántico,2035,Cabecera,2779522
+08,Atlántico,2035,Centros Poblados y Rural Disperso,152749
+08,Atlántico,2035,Total,2932271
+08,Atlántico,2036,Total,2937348
+08,Atlántico,2037,Total,2941562
+08,Atlántico,2038,Total,2944931
+08,Atlántico,2039,Total,2947480
+08,Atlántico,2040,Total,2949193
+08,Atlántico,2041,Total,2950056
+08,Atlántico,2042,Total,2950092
+08,Atlántico,2043,Total,2949327
+08,Atlántico,2044,Total,2947768
+08,Atlántico,2045,Total,2945403
+08,Atlántico,2046,Total,2942251
+08,Atlántico,2047,Total,2938348
+08,Atlántico,2048,Total,2933690
+08,Atlántico,2049,Total,2928280
+08,Atlántico,2050,Total,2922132
+11,"Bogotá, D.C.",1993,Cabecera,5126977
+11,"Bogotá, D.C.",1993,Centros Poblados y Rural Disperso,11256
+11,"Bogotá, D.C.",1993,Total,5138233
+11,"Bogotá, D.C.",1994,Cabecera,5285066
+11,"Bogotá, D.C.",1994,Centros Poblados y Rural Disperso,11642
+11,"Bogotá, D.C.",1994,Total,5296708
+11,"Bogotá, D.C.",1995,Cabecera,5443783
+11,"Bogotá, D.C.",1995,Centros Poblados y Rural Disperso,12036
+11,"Bogotá, D.C.",1995,Total,5455819
+11,"Bogotá, D.C.",1996,Cabecera,5601765
+11,"Bogotá, D.C.",1996,Centros Poblados y Rural Disperso,12438
+11,"Bogotá, D.C.",1996,Total,5614203
+11,"Bogotá, D.C.",1997,Cabecera,5755891
+11,"Bogotá, D.C.",1997,Centros Poblados y Rural Disperso,12847
+11,"Bogotá, D.C.",1997,Total,5768738
+11,"Bogotá, D.C.",1998,Cabecera,5902975
+11,"Bogotá, D.C.",1998,Centros Poblados y Rural Disperso,13255
+11,"Bogotá, D.C.",1998,Total,5916230
+11,"Bogotá, D.C.",1999,Cabecera,6041648
+11,"Bogotá, D.C.",1999,Centros Poblados y Rural Disperso,13655
+11,"Bogotá, D.C.",1999,Total,6055303
+11,"Bogotá, D.C.",2000,Cabecera,6170826
+11,"Bogotá, D.C.",2000,Centros Poblados y Rural Disperso,14054
+11,"Bogotá, D.C.",2000,Total,6184880
+11,"Bogotá, D.C.",2001,Cabecera,6289891
+11,"Bogotá, D.C.",2001,Centros Poblados y Rural Disperso,14471
+11,"Bogotá, D.C.",2001,Total,6304362
+11,"Bogotá, D.C.",2002,Cabecera,6400030
+11,"Bogotá, D.C.",2002,Centros Poblados y Rural Disperso,14874
+11,"Bogotá, D.C.",2002,Total,6414904
+11,"Bogotá, D.C.",2003,Cabecera,6503230
+11,"Bogotá, D.C.",2003,Centros Poblados y Rural Disperso,15298
+11,"Bogotá, D.C.",2003,Total,6518528
+11,"Bogotá, D.C.",2004,Cabecera,6600764
+11,"Bogotá, D.C.",2004,Centros Poblados y Rural Disperso,15749
+11,"Bogotá, D.C.",2004,Total,6616513
+11,"Bogotá, D.C.",2005,Cabecera,6694694
+11,"Bogotá, D.C.",2005,Centros Poblados y Rural Disperso,16216
+11,"Bogotá, D.C.",2005,Total,6710910
+11,"Bogotá, D.C.",2006,Cabecera,6784611
+11,"Bogotá, D.C.",2006,Centros Poblados y Rural Disperso,16732
+11,"Bogotá, D.C.",2006,Total,6801343
+11,"Bogotá, D.C.",2007,Cabecera,6867311
+11,"Bogotá, D.C.",2007,Centros Poblados y Rural Disperso,17258
+11,"Bogotá, D.C.",2007,Total,6884569
+11,"Bogotá, D.C.",2008,Cabecera,6942679
+11,"Bogotá, D.C.",2008,Centros Poblados y Rural Disperso,17833
+11,"Bogotá, D.C.",2008,Total,6960512
+11,"Bogotá, D.C.",2009,Cabecera,7012963
+11,"Bogotá, D.C.",2009,Centros Poblados y Rural Disperso,18436
+11,"Bogotá, D.C.",2009,Total,7031399
+11,"Bogotá, D.C.",2010,Cabecera,7077814
+11,"Bogotá, D.C.",2010,Centros Poblados y Rural Disperso,19072
+11,"Bogotá, D.C.",2010,Total,7096886
+11,"Bogotá, D.C.",2011,Cabecera,7132915
+11,"Bogotá, D.C.",2011,Centros Poblados y Rural Disperso,19741
+11,"Bogotá, D.C.",2011,Total,7152656
+11,"Bogotá, D.C.",2012,Cabecera,7175553
+11,"Bogotá, D.C.",2012,Centros Poblados y Rural Disperso,20427
+11,"Bogotá, D.C.",2012,Total,7195980
+11,"Bogotá, D.C.",2013,Cabecera,7207289
+11,"Bogotá, D.C.",2013,Centros Poblados y Rural Disperso,21138
+11,"Bogotá, D.C.",2013,Total,7228427
+11,"Bogotá, D.C.",2014,Cabecera,7231097
+11,"Bogotá, D.C.",2014,Centros Poblados y Rural Disperso,21852
+11,"Bogotá, D.C.",2014,Total,7252949
+11,"Bogotá, D.C.",2015,Cabecera,7250675
+11,"Bogotá, D.C.",2015,Centros Poblados y Rural Disperso,22590
+11,"Bogotá, D.C.",2015,Total,7273265
+11,"Bogotá, D.C.",2016,Cabecera,7277543
+11,"Bogotá, D.C.",2016,Centros Poblados y Rural Disperso,23375
+11,"Bogotá, D.C.",2016,Total,7300918
+11,"Bogotá, D.C.",2017,Cabecera,7313244
+11,"Bogotá, D.C.",2017,Centros Poblados y Rural Disperso,24205
+11,"Bogotá, D.C.",2017,Total,7337449
+11,"Bogotá, D.C.",2018,Cabecera,7387400
+11,"Bogotá, D.C.",2018,Centros Poblados y Rural Disperso,25166
+11,"Bogotá, D.C.",2018,Total,7412566
+11,"Bogotá, D.C.",2019,Cabecera,7566185
+11,"Bogotá, D.C.",2019,Centros Poblados y Rural Disperso,26686
+11,"Bogotá, D.C.",2019,Total,7592871
+11,"Bogotá, D.C.",2020,Cabecera,7704034
+11,"Bogotá, D.C.",2020,Centros Poblados y Rural Disperso,28127
+11,"Bogotá, D.C.",2020,Total,7732161
+11,"Bogotá, D.C.",2021,Cabecera,7793869
+11,"Bogotá, D.C.",2021,Centros Poblados y Rural Disperso,29465
+11,"Bogotá, D.C.",2021,Total,7823334
+11,"Bogotá, D.C.",2022,Cabecera,7842853
+11,"Bogotá, D.C.",2022,Centros Poblados y Rural Disperso,30463
+11,"Bogotá, D.C.",2022,Total,7873316
+11,"Bogotá, D.C.",2023,Cabecera,7875957
+11,"Bogotá, D.C.",2023,Centros Poblados y Rural Disperso,31324
+11,"Bogotá, D.C.",2023,Total,7907281
+11,"Bogotá, D.C.",2024,Cabecera,7897503
+11,"Bogotá, D.C.",2024,Centros Poblados y Rural Disperso,32036
+11,"Bogotá, D.C.",2024,Total,7929539
+11,"Bogotá, D.C.",2025,Cabecera,7905282
+11,"Bogotá, D.C.",2025,Centros Poblados y Rural Disperso,32616
+11,"Bogotá, D.C.",2025,Total,7937898
+11,"Bogotá, D.C.",2026,Cabecera,7902685
+11,"Bogotá, D.C.",2026,Centros Poblados y Rural Disperso,33069
+11,"Bogotá, D.C.",2026,Total,7935754
+11,"Bogotá, D.C.",2027,Cabecera,7894481
+11,"Bogotá, D.C.",2027,Centros Poblados y Rural Disperso,33410
+11,"Bogotá, D.C.",2027,Total,7927891
+11,"Bogotá, D.C.",2028,Cabecera,7882730
+11,"Bogotá, D.C.",2028,Centros Poblados y Rural Disperso,33639
+11,"Bogotá, D.C.",2028,Total,7916369
+11,"Bogotá, D.C.",2029,Cabecera,7869122
+11,"Bogotá, D.C.",2029,Centros Poblados y Rural Disperso,33788
+11,"Bogotá, D.C.",2029,Total,7902910
+11,"Bogotá, D.C.",2030,Cabecera,7854979
+11,"Bogotá, D.C.",2030,Centros Poblados y Rural Disperso,33859
+11,"Bogotá, D.C.",2030,Total,7888838
+11,"Bogotá, D.C.",2031,Cabecera,7840231
+11,"Bogotá, D.C.",2031,Centros Poblados y Rural Disperso,33872
+11,"Bogotá, D.C.",2031,Total,7874103
+11,"Bogotá, D.C.",2032,Cabecera,7824205
+11,"Bogotá, D.C.",2032,Centros Poblados y Rural Disperso,33881
+11,"Bogotá, D.C.",2032,Total,7858086
+11,"Bogotá, D.C.",2033,Cabecera,7806885
+11,"Bogotá, D.C.",2033,Centros Poblados y Rural Disperso,33872
+11,"Bogotá, D.C.",2033,Total,7840757
+11,"Bogotá, D.C.",2034,Cabecera,7788301
+11,"Bogotá, D.C.",2034,Centros Poblados y Rural Disperso,33844
+11,"Bogotá, D.C.",2034,Total,7822145
+11,"Bogotá, D.C.",2035,Cabecera,7768475
+11,"Bogotá, D.C.",2035,Centros Poblados y Rural Disperso,33822
+11,"Bogotá, D.C.",2035,Total,7802297
+11,"Bogotá, D.C.",2036,Total,7781033
+11,"Bogotá, D.C.",2037,Total,7758141
+11,"Bogotá, D.C.",2038,Total,7733665
+11,"Bogotá, D.C.",2039,Total,7707627
+11,"Bogotá, D.C.",2040,Total,7680042
+11,"Bogotá, D.C.",2041,Total,7650959
+11,"Bogotá, D.C.",2042,Total,7620440
+11,"Bogotá, D.C.",2043,Total,7588563
+11,"Bogotá, D.C.",2044,Total,7555365
+11,"Bogotá, D.C.",2045,Total,7520887
+11,"Bogotá, D.C.",2046,Total,7485228
+11,"Bogotá, D.C.",2047,Total,7448480
+11,"Bogotá, D.C.",2048,Total,7410680
+11,"Bogotá, D.C.",2049,Total,7371877
+11,"Bogotá, D.C.",2050,Total,7332164
+13,Bolívar,1993,Cabecera,988145
+13,Bolívar,1993,Centros Poblados y Rural Disperso,481720
+13,Bolívar,1993,Total,1469865
+13,Bolívar,1994,Cabecera,1020866
+13,Bolívar,1994,Centros Poblados y Rural Disperso,479541
+13,Bolívar,1994,Total,1500407
+13,Bolívar,1995,Cabecera,1052151
+13,Bolívar,1995,Centros Poblados y Rural Disperso,478096
+13,Bolívar,1995,Total,1530247
+13,Bolívar,1996,Cabecera,1097216
+13,Bolívar,1996,Centros Poblados y Rural Disperso,462150
+13,Bolívar,1996,Total,1559366
+13,Bolívar,1997,Cabecera,1132470
+13,Bolívar,1997,Centros Poblados y Rural Disperso,455510
+13,Bolívar,1997,Total,1587980
+13,Bolívar,1998,Cabecera,1170597
+13,Bolívar,1998,Centros Poblados y Rural Disperso,445691
+13,Bolívar,1998,Total,1616288
+13,Bolívar,1999,Cabecera,1204746
+13,Bolívar,1999,Centros Poblados y Rural Disperso,439576
+13,Bolívar,1999,Total,1644322
+13,Bolívar,2000,Cabecera,1229419
+13,Bolívar,2000,Centros Poblados y Rural Disperso,442569
+13,Bolívar,2000,Total,1671988
+13,Bolívar,2001,Cabecera,1252998
+13,Bolívar,2001,Centros Poblados y Rural Disperso,446164
+13,Bolívar,2001,Total,1699162
+13,Bolívar,2002,Cabecera,1275444
+13,Bolívar,2002,Centros Poblados y Rural Disperso,450203
+13,Bolívar,2002,Total,1725647
+13,Bolívar,2003,Cabecera,1296745
+13,Bolívar,2003,Centros Poblados y Rural Disperso,454568
+13,Bolívar,2003,Total,1751313
+13,Bolívar,2004,Cabecera,1317025
+13,Bolívar,2004,Centros Poblados y Rural Disperso,459152
+13,Bolívar,2004,Total,1776177
+13,Bolívar,2005,Cabecera,1336025
+13,Bolívar,2005,Centros Poblados y Rural Disperso,463769
+13,Bolívar,2005,Total,1799794
+13,Bolívar,2006,Cabecera,1354680
+13,Bolívar,2006,Centros Poblados y Rural Disperso,468658
+13,Bolívar,2006,Total,1823338
+13,Bolívar,2007,Cabecera,1372421
+13,Bolívar,2007,Centros Poblados y Rural Disperso,473542
+13,Bolívar,2007,Total,1845963
+13,Bolívar,2008,Cabecera,1389173
+13,Bolívar,2008,Centros Poblados y Rural Disperso,478330
+13,Bolívar,2008,Total,1867503
+13,Bolívar,2009,Cabecera,1411124
+13,Bolívar,2009,Centros Poblados y Rural Disperso,477032
+13,Bolívar,2009,Total,1888156
+13,Bolívar,2010,Cabecera,1426358
+13,Bolívar,2010,Centros Poblados y Rural Disperso,481572
+13,Bolívar,2010,Total,1907930
+13,Bolívar,2011,Cabecera,1440662
+13,Bolívar,2011,Centros Poblados y Rural Disperso,485935
+13,Bolívar,2011,Total,1926597
+13,Bolívar,2012,Cabecera,1454177
+13,Bolívar,2012,Centros Poblados y Rural Disperso,490122
+13,Bolívar,2012,Total,1944299
+13,Bolívar,2013,Cabecera,1467066
+13,Bolívar,2013,Centros Poblados y Rural Disperso,494184
+13,Bolívar,2013,Total,1961250
+13,Bolívar,2014,Cabecera,1479378
+13,Bolívar,2014,Centros Poblados y Rural Disperso,498100
+13,Bolívar,2014,Total,1977478
+13,Bolívar,2015,Cabecera,1491690
+13,Bolívar,2015,Centros Poblados y Rural Disperso,502070
+13,Bolívar,2015,Total,1993760
+13,Bolívar,2016,Cabecera,1506195
+13,Bolívar,2016,Centros Poblados y Rural Disperso,506815
+13,Bolívar,2016,Total,2013010
+13,Bolívar,2017,Cabecera,1523254
+13,Bolívar,2017,Centros Poblados y Rural Disperso,512457
+13,Bolívar,2017,Total,2035711
+13,Bolívar,2018,Cabecera,1549063
+13,Bolívar,2018,Centros Poblados y Rural Disperso,521047
+13,Bolívar,2018,Total,2070110
+13,Bolívar,2019,Cabecera,1587489
+13,Bolívar,2019,Centros Poblados y Rural Disperso,543023
+13,Bolívar,2019,Total,2130512
+13,Bolívar,2020,Cabecera,1606341
+13,Bolívar,2020,Centros Poblados y Rural Disperso,562953
+13,Bolívar,2020,Total,2169294
+13,Bolívar,2021,Cabecera,1624099
+13,Bolívar,2021,Centros Poblados y Rural Disperso,578674
+13,Bolívar,2021,Total,2202773
+13,Bolívar,2022,Cabecera,1635733
+13,Bolívar,2022,Centros Poblados y Rural Disperso,591451
+13,Bolívar,2022,Total,2227184
+13,Bolívar,2023,Cabecera,1644271
+13,Bolívar,2023,Centros Poblados y Rural Disperso,603012
+13,Bolívar,2023,Total,2247283
+13,Bolívar,2024,Cabecera,1651875
+13,Bolívar,2024,Centros Poblados y Rural Disperso,612648
+13,Bolívar,2024,Total,2264523
+13,Bolívar,2025,Cabecera,1657867
+13,Bolívar,2025,Centros Poblados y Rural Disperso,620903
+13,Bolívar,2025,Total,2278770
+13,Bolívar,2026,Cabecera,1662490
+13,Bolívar,2026,Centros Poblados y Rural Disperso,628248
+13,Bolívar,2026,Total,2290738
+13,Bolívar,2027,Cabecera,1666360
+13,Bolívar,2027,Centros Poblados y Rural Disperso,634858
+13,Bolívar,2027,Total,2301218
+13,Bolívar,2028,Cabecera,1669760
+13,Bolívar,2028,Centros Poblados y Rural Disperso,640877
+13,Bolívar,2028,Total,2310637
+13,Bolívar,2029,Cabecera,1672978
+13,Bolívar,2029,Centros Poblados y Rural Disperso,646372
+13,Bolívar,2029,Total,2319350
+13,Bolívar,2030,Cabecera,1676243
+13,Bolívar,2030,Centros Poblados y Rural Disperso,651473
+13,Bolívar,2030,Total,2327716
+13,Bolívar,2031,Cabecera,1679316
+13,Bolívar,2031,Centros Poblados y Rural Disperso,656450
+13,Bolívar,2031,Total,2335766
+13,Bolívar,2032,Cabecera,1681983
+13,Bolívar,2032,Centros Poblados y Rural Disperso,661322
+13,Bolívar,2032,Total,2343305
+13,Bolívar,2033,Cabecera,1684246
+13,Bolívar,2033,Centros Poblados y Rural Disperso,666063
+13,Bolívar,2033,Total,2350309
+13,Bolívar,2034,Cabecera,1686095
+13,Bolívar,2034,Centros Poblados y Rural Disperso,670713
+13,Bolívar,2034,Total,2356808
+13,Bolívar,2035,Cabecera,1687495
+13,Bolívar,2035,Centros Poblados y Rural Disperso,675322
+13,Bolívar,2035,Total,2362817
+13,Bolívar,2036,Total,2368242
+13,Bolívar,2037,Total,2372995
+13,Bolívar,2038,Total,2377090
+13,Bolívar,2039,Total,2380558
+13,Bolívar,2040,Total,2383373
+13,Bolívar,2041,Total,2385520
+13,Bolívar,2042,Total,2387029
+13,Bolívar,2043,Total,2387909
+13,Bolívar,2044,Total,2388144
+13,Bolívar,2045,Total,2387722
+13,Bolívar,2046,Total,2386664
+13,Bolívar,2047,Total,2384987
+13,Bolívar,2048,Total,2382683
+13,Bolívar,2049,Total,2379746
+13,Bolívar,2050,Total,2376170
+15,Boyacá,1993,Cabecera,453026
+15,Boyacá,1993,Centros Poblados y Rural Disperso,629157
+15,Boyacá,1993,Total,1082183
+15,Boyacá,1994,Cabecera,464025
+15,Boyacá,1994,Centros Poblados y Rural Disperso,623594
+15,Boyacá,1994,Total,1087619
+15,Boyacá,1995,Cabecera,475219
+15,Boyacá,1995,Centros Poblados y Rural Disperso,617932
+15,Boyacá,1995,Total,1093151
+15,Boyacá,1996,Cabecera,486542
+15,Boyacá,1996,Centros Poblados y Rural Disperso,612152
+15,Boyacá,1996,Total,1098694
+15,Boyacá,1997,Cabecera,497939
+15,Boyacá,1997,Centros Poblados y Rural Disperso,606256
+15,Boyacá,1997,Total,1104195
+15,Boyacá,1998,Cabecera,509354
+15,Boyacá,1998,Centros Poblados y Rural Disperso,600262
+15,Boyacá,1998,Total,1109616
+15,Boyacá,1999,Cabecera,520709
+15,Boyacá,1999,Centros Poblados y Rural Disperso,594156
+15,Boyacá,1999,Total,1114865
+15,Boyacá,2000,Cabecera,531945
+15,Boyacá,2000,Centros Poblados y Rural Disperso,587959
+15,Boyacá,2000,Total,1119904
+15,Boyacá,2001,Cabecera,543008
+15,Boyacá,2001,Centros Poblados y Rural Disperso,581694
+15,Boyacá,2001,Total,1124702
+15,Boyacá,2002,Cabecera,553872
+15,Boyacá,2002,Centros Poblados y Rural Disperso,575378
+15,Boyacá,2002,Total,1129250
+15,Boyacá,2003,Cabecera,564524
+15,Boyacá,2003,Centros Poblados y Rural Disperso,569094
+15,Boyacá,2003,Total,1133618
+15,Boyacá,2004,Cabecera,574929
+15,Boyacá,2004,Centros Poblados y Rural Disperso,562868
+15,Boyacá,2004,Total,1137797
+15,Boyacá,2005,Cabecera,584485
+15,Boyacá,2005,Centros Poblados y Rural Disperso,556180
+15,Boyacá,2005,Total,1140665
+15,Boyacá,2006,Cabecera,594690
+15,Boyacá,2006,Centros Poblados y Rural Disperso,550535
+15,Boyacá,2006,Total,1145225
+15,Boyacá,2007,Cabecera,604758
+15,Boyacá,2007,Centros Poblados y Rural Disperso,545151
+15,Boyacá,2007,Total,1149909
+15,Boyacá,2008,Cabecera,614688
+15,Boyacá,2008,Centros Poblados y Rural Disperso,540059
+15,Boyacá,2008,Total,1154747
+15,Boyacá,2009,Cabecera,624508
+15,Boyacá,2009,Centros Poblados y Rural Disperso,535342
+15,Boyacá,2009,Total,1159850
+15,Boyacá,2010,Cabecera,634218
+15,Boyacá,2010,Centros Poblados y Rural Disperso,530986
+15,Boyacá,2010,Total,1165204
+15,Boyacá,2011,Cabecera,643722
+15,Boyacá,2011,Centros Poblados y Rural Disperso,526918
+15,Boyacá,2011,Total,1170640
+15,Boyacá,2012,Cabecera,652964
+15,Boyacá,2012,Centros Poblados y Rural Disperso,523105
+15,Boyacá,2012,Total,1176069
+15,Boyacá,2013,Cabecera,661995
+15,Boyacá,2013,Centros Poblados y Rural Disperso,519585
+15,Boyacá,2013,Total,1181580
+15,Boyacá,2014,Cabecera,670836
+15,Boyacá,2014,Centros Poblados y Rural Disperso,516413
+15,Boyacá,2014,Total,1187249
+15,Boyacá,2015,Cabecera,679600
+15,Boyacá,2015,Centros Poblados y Rural Disperso,513606
+15,Boyacá,2015,Total,1193206
+15,Boyacá,2016,Cabecera,688566
+15,Boyacá,2016,Centros Poblados y Rural Disperso,511412
+15,Boyacá,2016,Total,1199978
+15,Boyacá,2017,Cabecera,697814
+15,Boyacá,2017,Centros Poblados y Rural Disperso,509851
+15,Boyacá,2017,Total,1207665
+15,Boyacá,2018,Cabecera,708006
+15,Boyacá,2018,Centros Poblados y Rural Disperso,509370
+15,Boyacá,2018,Total,1217376
+15,Boyacá,2019,Cabecera,722864
+15,Boyacá,2019,Centros Poblados y Rural Disperso,508046
+15,Boyacá,2019,Total,1230910
+15,Boyacá,2020,Cabecera,742548
+15,Boyacá,2020,Centros Poblados y Rural Disperso,514741
+15,Boyacá,2020,Total,1257289
+15,Boyacá,2021,Cabecera,758077
+15,Boyacá,2021,Centros Poblados y Rural Disperso,513562
+15,Boyacá,2021,Total,1271639
+15,Boyacá,2022,Cabecera,772082
+15,Boyacá,2022,Centros Poblados y Rural Disperso,512953
+15,Boyacá,2022,Total,1285035
+15,Boyacá,2023,Cabecera,786220
+15,Boyacá,2023,Centros Poblados y Rural Disperso,512580
+15,Boyacá,2023,Total,1298800
+15,Boyacá,2024,Cabecera,798089
+15,Boyacá,2024,Centros Poblados y Rural Disperso,513894
+15,Boyacá,2024,Total,1311983
+15,Boyacá,2025,Cabecera,808583
+15,Boyacá,2025,Centros Poblados y Rural Disperso,515539
+15,Boyacá,2025,Total,1324122
+15,Boyacá,2026,Cabecera,817954
+15,Boyacá,2026,Centros Poblados y Rural Disperso,517456
+15,Boyacá,2026,Total,1335410
+15,Boyacá,2027,Cabecera,826470
+15,Boyacá,2027,Centros Poblados y Rural Disperso,519694
+15,Boyacá,2027,Total,1346164
+15,Boyacá,2028,Cabecera,834211
+15,Boyacá,2028,Centros Poblados y Rural Disperso,522251
+15,Boyacá,2028,Total,1356462
+15,Boyacá,2029,Cabecera,841137
+15,Boyacá,2029,Centros Poblados y Rural Disperso,525242
+15,Boyacá,2029,Total,1366379
+15,Boyacá,2030,Cabecera,847379
+15,Boyacá,2030,Centros Poblados y Rural Disperso,528608
+15,Boyacá,2030,Total,1375987
+15,Boyacá,2031,Cabecera,853099
+15,Boyacá,2031,Centros Poblados y Rural Disperso,532209
+15,Boyacá,2031,Total,1385308
+15,Boyacá,2032,Cabecera,858548
+15,Boyacá,2032,Centros Poblados y Rural Disperso,535752
+15,Boyacá,2032,Total,1394300
+15,Boyacá,2033,Cabecera,863750
+15,Boyacá,2033,Centros Poblados y Rural Disperso,539183
+15,Boyacá,2033,Total,1402933
+15,Boyacá,2034,Cabecera,868655
+15,Boyacá,2034,Centros Poblados y Rural Disperso,542551
+15,Boyacá,2034,Total,1411206
+15,Boyacá,2035,Cabecera,873284
+15,Boyacá,2035,Centros Poblados y Rural Disperso,545833
+15,Boyacá,2035,Total,1419117
+15,Boyacá,2036,Total,1426651
+15,Boyacá,2037,Total,1433789
+15,Boyacá,2038,Total,1440529
+15,Boyacá,2039,Total,1446876
+15,Boyacá,2040,Total,1452834
+15,Boyacá,2041,Total,1458399
+15,Boyacá,2042,Total,1463577
+15,Boyacá,2043,Total,1468365
+15,Boyacá,2044,Total,1472764
+15,Boyacá,2045,Total,1476767
+15,Boyacá,2046,Total,1480369
+15,Boyacá,2047,Total,1483587
+15,Boyacá,2048,Total,1486423
+15,Boyacá,2049,Total,1488871
+15,Boyacá,2050,Total,1490926
+17,Caldas,1993,Cabecera,634326
+17,Caldas,1993,Centros Poblados y Rural Disperso,359210
+17,Caldas,1993,Total,993536
+17,Caldas,1994,Cabecera,639500
+17,Caldas,1994,Centros Poblados y Rural Disperso,357809
+17,Caldas,1994,Total,997309
+17,Caldas,1995,Cabecera,644630
+17,Caldas,1995,Centros Poblados y Rural Disperso,356047
+17,Caldas,1995,Total,1000677
+17,Caldas,1996,Cabecera,649622
+17,Caldas,1996,Centros Poblados y Rural Disperso,353913
+17,Caldas,1996,Total,1003535
+17,Caldas,1997,Cabecera,654440
+17,Caldas,1997,Centros Poblados y Rural Disperso,351351
+17,Caldas,1997,Total,1005791
+17,Caldas,1998,Cabecera,659020
+17,Caldas,1998,Centros Poblados y Rural Disperso,348362
+17,Caldas,1998,Total,1007382
+17,Caldas,1999,Cabecera,667177
+17,Caldas,1999,Centros Poblados y Rural Disperso,341100
+17,Caldas,1999,Total,1008277
+17,Caldas,2000,Cabecera,671067
+17,Caldas,2000,Centros Poblados y Rural Disperso,337290
+17,Caldas,2000,Total,1008357
+17,Caldas,2001,Cabecera,674538
+17,Caldas,2001,Centros Poblados y Rural Disperso,333022
+17,Caldas,2001,Total,1007560
+17,Caldas,2002,Cabecera,677590
+17,Caldas,2002,Centros Poblados y Rural Disperso,328329
+17,Caldas,2002,Total,1005919
+17,Caldas,2003,Cabecera,680267
+17,Caldas,2003,Centros Poblados y Rural Disperso,323289
+17,Caldas,2003,Total,1003556
+17,Caldas,2004,Cabecera,682610
+17,Caldas,2004,Centros Poblados y Rural Disperso,317971
+17,Caldas,2004,Total,1000581
+17,Caldas,2005,Cabecera,684214
+17,Caldas,2005,Centros Poblados y Rural Disperso,312220
+17,Caldas,2005,Total,996434
+17,Caldas,2006,Cabecera,686580
+17,Caldas,2006,Centros Poblados y Rural Disperso,306757
+17,Caldas,2006,Total,993337
+17,Caldas,2007,Cabecera,689096
+17,Caldas,2007,Centros Poblados y Rural Disperso,301349
+17,Caldas,2007,Total,990445
+17,Caldas,2008,Cabecera,691748
+17,Caldas,2008,Centros Poblados y Rural Disperso,296011
+17,Caldas,2008,Total,987759
+17,Caldas,2009,Cabecera,694772
+17,Caldas,2009,Centros Poblados y Rural Disperso,290868
+17,Caldas,2009,Total,985640
+17,Caldas,2010,Cabecera,698312
+17,Caldas,2010,Centros Poblados y Rural Disperso,285992
+17,Caldas,2010,Total,984304
+17,Caldas,2011,Cabecera,702154
+17,Caldas,2011,Centros Poblados y Rural Disperso,281344
+17,Caldas,2011,Total,983498
+17,Caldas,2012,Cabecera,706069
+17,Caldas,2012,Centros Poblados y Rural Disperso,276835
+17,Caldas,2012,Total,982904
+17,Caldas,2013,Cabecera,710063
+17,Caldas,2013,Centros Poblados y Rural Disperso,272500
+17,Caldas,2013,Total,982563
+17,Caldas,2014,Cabecera,714460
+17,Caldas,2014,Centros Poblados y Rural Disperso,268473
+17,Caldas,2014,Total,982933
+17,Caldas,2015,Cabecera,719487
+17,Caldas,2015,Centros Poblados y Rural Disperso,264873
+17,Caldas,2015,Total,984360
+17,Caldas,2016,Cabecera,725445
+17,Caldas,2016,Centros Poblados y Rural Disperso,261769
+17,Caldas,2016,Total,987214
+17,Caldas,2017,Cabecera,732198
+17,Caldas,2017,Centros Poblados y Rural Disperso,259165
+17,Caldas,2017,Total,991363
+17,Caldas,2018,Cabecera,740865
+17,Caldas,2018,Centros Poblados y Rural Disperso,257390
+17,Caldas,2018,Total,998255
+17,Caldas,2019,Cabecera,755182
+17,Caldas,2019,Centros Poblados y Rural Disperso,253162
+17,Caldas,2019,Total,1008344
+17,Caldas,2020,Cabecera,769688
+17,Caldas,2020,Centros Poblados y Rural Disperso,251747
+17,Caldas,2020,Total,1021435
+17,Caldas,2021,Cabecera,780970
+17,Caldas,2021,Centros Poblados y Rural Disperso,247665
+17,Caldas,2021,Total,1028635
+17,Caldas,2022,Cabecera,790023
+17,Caldas,2022,Centros Poblados y Rural Disperso,244128
+17,Caldas,2022,Total,1034151
+17,Caldas,2023,Cabecera,798911
+17,Caldas,2023,Centros Poblados y Rural Disperso,241373
+17,Caldas,2023,Total,1040284
+17,Caldas,2024,Cabecera,806309
+17,Caldas,2024,Centros Poblados y Rural Disperso,239801
+17,Caldas,2024,Total,1046110
+17,Caldas,2025,Cabecera,812660
+17,Caldas,2025,Centros Poblados y Rural Disperso,238622
+17,Caldas,2025,Total,1051282
+17,Caldas,2026,Cabecera,818170
+17,Caldas,2026,Centros Poblados y Rural Disperso,237755
+17,Caldas,2026,Total,1055925
+17,Caldas,2027,Cabecera,822984
+17,Caldas,2027,Centros Poblados y Rural Disperso,237261
+17,Caldas,2027,Total,1060245
+17,Caldas,2028,Cabecera,827210
+17,Caldas,2028,Centros Poblados y Rural Disperso,237114
+17,Caldas,2028,Total,1064324
+17,Caldas,2029,Cabecera,830858
+17,Caldas,2029,Centros Poblados y Rural Disperso,237360
+17,Caldas,2029,Total,1068218
+17,Caldas,2030,Cabecera,833942
+17,Caldas,2030,Centros Poblados y Rural Disperso,238036
+17,Caldas,2030,Total,1071978
+17,Caldas,2031,Cabecera,836636
+17,Caldas,2031,Centros Poblados y Rural Disperso,238962
+17,Caldas,2031,Total,1075598
+17,Caldas,2032,Cabecera,839176
+17,Caldas,2032,Centros Poblados y Rural Disperso,239847
+17,Caldas,2032,Total,1079023
+17,Caldas,2033,Cabecera,841543
+17,Caldas,2033,Centros Poblados y Rural Disperso,240698
+17,Caldas,2033,Total,1082241
+17,Caldas,2034,Cabecera,843718
+17,Caldas,2034,Centros Poblados y Rural Disperso,241533
+17,Caldas,2034,Total,1085251
+17,Caldas,2035,Cabecera,845689
+17,Caldas,2035,Centros Poblados y Rural Disperso,242349
+17,Caldas,2035,Total,1088038
+17,Caldas,2036,Total,1090575
+17,Caldas,2037,Total,1092847
+17,Caldas,2038,Total,1094856
+17,Caldas,2039,Total,1096595
+17,Caldas,2040,Total,1098062
+17,Caldas,2041,Total,1099257
+17,Caldas,2042,Total,1100185
+17,Caldas,2043,Total,1100852
+17,Caldas,2044,Total,1101268
+17,Caldas,2045,Total,1101438
+17,Caldas,2046,Total,1101369
+17,Caldas,2047,Total,1101074
+17,Caldas,2048,Total,1100556
+17,Caldas,2049,Total,1099812
+17,Caldas,2050,Total,1098853
+18,Caquetá,1993,Cabecera,185915
+18,Caquetá,1993,Centros Poblados y Rural Disperso,137748
+18,Caquetá,1993,Total,323663
+18,Caquetá,1994,Cabecera,189744
+18,Caquetá,1994,Centros Poblados y Rural Disperso,140169
+18,Caquetá,1994,Total,329913
+18,Caquetá,1995,Cabecera,193624
+18,Caquetá,1995,Centros Poblados y Rural Disperso,142294
+18,Caquetá,1995,Total,335918
+18,Caquetá,1996,Cabecera,197637
+18,Caquetá,1996,Centros Poblados y Rural Disperso,144046
+18,Caquetá,1996,Total,341683
+18,Caquetá,1997,Cabecera,201940
+18,Caquetá,1997,Centros Poblados y Rural Disperso,145268
+18,Caquetá,1997,Total,347208
+18,Caquetá,1998,Cabecera,206675
+18,Caquetá,1998,Centros Poblados y Rural Disperso,145786
+18,Caquetá,1998,Total,352461
+18,Caquetá,1999,Cabecera,211972
+18,Caquetá,1999,Centros Poblados y Rural Disperso,145448
+18,Caquetá,1999,Total,357420
+18,Caquetá,2000,Cabecera,217745
+18,Caquetá,2000,Centros Poblados y Rural Disperso,144302
+18,Caquetá,2000,Total,362047
+18,Caquetá,2001,Cabecera,223705
+18,Caquetá,2001,Centros Poblados y Rural Disperso,142623
+18,Caquetá,2001,Total,366328
+18,Caquetá,2002,Cabecera,229383
+18,Caquetá,2002,Centros Poblados y Rural Disperso,140860
+18,Caquetá,2002,Total,370243
+18,Caquetá,2003,Cabecera,234361
+18,Caquetá,2003,Centros Poblados y Rural Disperso,139425
+18,Caquetá,2003,Total,373786
+18,Caquetá,2004,Cabecera,238463
+18,Caquetá,2004,Centros Poblados y Rural Disperso,138504
+18,Caquetá,2004,Total,376967
+18,Caquetá,2005,Cabecera,241379
+18,Caquetá,2005,Centros Poblados y Rural Disperso,137894
+18,Caquetá,2005,Total,379273
+18,Caquetá,2006,Cabecera,243893
+18,Caquetá,2006,Centros Poblados y Rural Disperso,137859
+18,Caquetá,2006,Total,381752
+18,Caquetá,2007,Cabecera,246017
+18,Caquetá,2007,Centros Poblados y Rural Disperso,138120
+18,Caquetá,2007,Total,384137
+18,Caquetá,2008,Cabecera,247823
+18,Caquetá,2008,Centros Poblados y Rural Disperso,138569
+18,Caquetá,2008,Total,386392
+18,Caquetá,2009,Cabecera,249430
+18,Caquetá,2009,Centros Poblados y Rural Disperso,139122
+18,Caquetá,2009,Total,388552
+18,Caquetá,2010,Cabecera,250898
+18,Caquetá,2010,Centros Poblados y Rural Disperso,139747
+18,Caquetá,2010,Total,390645
+18,Caquetá,2011,Cabecera,252241
+18,Caquetá,2011,Centros Poblados y Rural Disperso,140370
+18,Caquetá,2011,Total,392611
+18,Caquetá,2012,Cabecera,253414
+18,Caquetá,2012,Centros Poblados y Rural Disperso,140965
+18,Caquetá,2012,Total,394379
+18,Caquetá,2013,Cabecera,254459
+18,Caquetá,2013,Centros Poblados y Rural Disperso,141488
+18,Caquetá,2013,Total,395947
+18,Caquetá,2014,Cabecera,255391
+18,Caquetá,2014,Centros Poblados y Rural Disperso,141992
+18,Caquetá,2014,Total,397383
+18,Caquetá,2015,Cabecera,256257
+18,Caquetá,2015,Centros Poblados y Rural Disperso,142468
+18,Caquetá,2015,Total,398725
+18,Caquetá,2016,Cabecera,257077
+18,Caquetá,2016,Centros Poblados y Rural Disperso,142906
+18,Caquetá,2016,Total,399983
+18,Caquetá,2017,Cabecera,257795
+18,Caquetá,2017,Centros Poblados y Rural Disperso,143304
+18,Caquetá,2017,Total,401099
+18,Caquetá,2018,Cabecera,258280
+18,Caquetá,2018,Centros Poblados y Rural Disperso,143569
+18,Caquetá,2018,Total,401849
+18,Caquetá,2019,Cabecera,262723
+18,Caquetá,2019,Centros Poblados y Rural Disperso,143419
+18,Caquetá,2019,Total,406142
+18,Caquetá,2020,Cabecera,268652
+18,Caquetá,2020,Centros Poblados y Rural Disperso,145036
+18,Caquetá,2020,Total,413688
+18,Caquetá,2021,Cabecera,272904
+18,Caquetá,2021,Centros Poblados y Rural Disperso,145363
+18,Caquetá,2021,Total,418267
+18,Caquetá,2022,Cabecera,276155
+18,Caquetá,2022,Centros Poblados y Rural Disperso,145642
+18,Caquetá,2022,Total,421797
+18,Caquetá,2023,Cabecera,278964
+18,Caquetá,2023,Centros Poblados y Rural Disperso,146089
+18,Caquetá,2023,Total,425053
+18,Caquetá,2024,Cabecera,281414
+18,Caquetá,2024,Centros Poblados y Rural Disperso,146748
+18,Caquetá,2024,Total,428162
+18,Caquetá,2025,Cabecera,283439
+18,Caquetá,2025,Centros Poblados y Rural Disperso,147445
+18,Caquetá,2025,Total,430884
+18,Caquetá,2026,Cabecera,285050
+18,Caquetá,2026,Centros Poblados y Rural Disperso,148197
+18,Caquetá,2026,Total,433247
+18,Caquetá,2027,Cabecera,286313
+18,Caquetá,2027,Centros Poblados y Rural Disperso,149076
+18,Caquetá,2027,Total,435389
+18,Caquetá,2028,Cabecera,287290
+18,Caquetá,2028,Centros Poblados y Rural Disperso,150036
+18,Caquetá,2028,Total,437326
+18,Caquetá,2029,Cabecera,287910
+18,Caquetá,2029,Centros Poblados y Rural Disperso,151153
+18,Caquetá,2029,Total,439063
+18,Caquetá,2030,Cabecera,288223
+18,Caquetá,2030,Centros Poblados y Rural Disperso,152401
+18,Caquetá,2030,Total,440624
+18,Caquetá,2031,Cabecera,288283
+18,Caquetá,2031,Centros Poblados y Rural Disperso,153741
+18,Caquetá,2031,Total,442024
+18,Caquetá,2032,Cabecera,288272
+18,Caquetá,2032,Centros Poblados y Rural Disperso,154986
+18,Caquetá,2032,Total,443258
+18,Caquetá,2033,Cabecera,288114
+18,Caquetá,2033,Centros Poblados y Rural Disperso,156210
+18,Caquetá,2033,Total,444324
+18,Caquetá,2034,Cabecera,287825
+18,Caquetá,2034,Centros Poblados y Rural Disperso,157394
+18,Caquetá,2034,Total,445219
+18,Caquetá,2035,Cabecera,287422
+18,Caquetá,2035,Centros Poblados y Rural Disperso,158520
+18,Caquetá,2035,Total,445942
+18,Caquetá,2036,Total,446498
+18,Caquetá,2037,Total,446878
+18,Caquetá,2038,Total,447076
+18,Caquetá,2039,Total,447099
+18,Caquetá,2040,Total,446952
+18,Caquetá,2041,Total,446629
+18,Caquetá,2042,Total,446137
+18,Caquetá,2043,Total,445482
+18,Caquetá,2044,Total,444663
+18,Caquetá,2045,Total,443679
+18,Caquetá,2046,Total,442531
+18,Caquetá,2047,Total,441230
+18,Caquetá,2048,Total,439779
+18,Caquetá,2049,Total,438174
+18,Caquetá,2050,Total,436416
+19,Cauca,1993,Cabecera,379656
+19,Cauca,1993,Centros Poblados y Rural Disperso,703154
+19,Cauca,1993,Total,1082810
+19,Cauca,1994,Cabecera,386983
+19,Cauca,1994,Centros Poblados y Rural Disperso,712414
+19,Cauca,1994,Total,1099397
+19,Cauca,1995,Cabecera,393465
+19,Cauca,1995,Centros Poblados y Rural Disperso,722849
+19,Cauca,1995,Total,1116314
+19,Cauca,1996,Cabecera,400030
+19,Cauca,1996,Centros Poblados y Rural Disperso,733407
+19,Cauca,1996,Total,1133437
+19,Cauca,1997,Cabecera,406585
+19,Cauca,1997,Centros Poblados y Rural Disperso,744092
+19,Cauca,1997,Total,1150677
+19,Cauca,1998,Cabecera,417941
+19,Cauca,1998,Centros Poblados y Rural Disperso,750015
+19,Cauca,1998,Total,1167956
+19,Cauca,1999,Cabecera,424470
+19,Cauca,1999,Centros Poblados y Rural Disperso,760732
+19,Cauca,1999,Total,1185202
+19,Cauca,2000,Cabecera,437713
+19,Cauca,2000,Centros Poblados y Rural Disperso,764549
+19,Cauca,2000,Total,1202262
+19,Cauca,2001,Cabecera,449551
+19,Cauca,2001,Centros Poblados y Rural Disperso,769404
+19,Cauca,2001,Total,1218955
+19,Cauca,2002,Cabecera,455735
+19,Cauca,2002,Centros Poblados y Rural Disperso,779453
+19,Cauca,2002,Total,1235188
+19,Cauca,2003,Cabecera,461712
+19,Cauca,2003,Centros Poblados y Rural Disperso,789289
+19,Cauca,2003,Total,1251001
+19,Cauca,2004,Cabecera,467524
+19,Cauca,2004,Centros Poblados y Rural Disperso,798923
+19,Cauca,2004,Total,1266447
+19,Cauca,2005,Cabecera,472996
+19,Cauca,2005,Centros Poblados y Rural Disperso,808056
+19,Cauca,2005,Total,1281052
+19,Cauca,2006,Cabecera,478674
+19,Cauca,2006,Centros Poblados y Rural Disperso,817569
+19,Cauca,2006,Total,1296243
+19,Cauca,2007,Cabecera,484149
+19,Cauca,2007,Centros Poblados y Rural Disperso,826791
+19,Cauca,2007,Total,1310940
+19,Cauca,2008,Cabecera,493846
+19,Cauca,2008,Centros Poblados y Rural Disperso,831237
+19,Cauca,2008,Total,1325083
+19,Cauca,2009,Cabecera,499052
+19,Cauca,2009,Centros Poblados y Rural Disperso,839954
+19,Cauca,2009,Total,1339006
+19,Cauca,2010,Cabecera,504266
+19,Cauca,2010,Centros Poblados y Rural Disperso,848676
+19,Cauca,2010,Total,1352942
+19,Cauca,2011,Cabecera,509433
+19,Cauca,2011,Centros Poblados y Rural Disperso,857325
+19,Cauca,2011,Total,1366758
+19,Cauca,2012,Cabecera,514472
+19,Cauca,2012,Centros Poblados y Rural Disperso,865785
+19,Cauca,2012,Total,1380257
+19,Cauca,2013,Cabecera,519414
+19,Cauca,2013,Centros Poblados y Rural Disperso,874051
+19,Cauca,2013,Total,1393465
+19,Cauca,2014,Cabecera,524361
+19,Cauca,2014,Centros Poblados y Rural Disperso,882374
+19,Cauca,2014,Total,1406735
+19,Cauca,2015,Cabecera,529433
+19,Cauca,2015,Centros Poblados y Rural Disperso,890880
+19,Cauca,2015,Total,1420313
+19,Cauca,2016,Cabecera,534678
+19,Cauca,2016,Centros Poblados y Rural Disperso,899717
+19,Cauca,2016,Total,1434395
+19,Cauca,2017,Cabecera,540059
+19,Cauca,2017,Centros Poblados y Rural Disperso,908778
+19,Cauca,2017,Total,1448837
+19,Cauca,2018,Cabecera,545902
+19,Cauca,2018,Centros Poblados y Rural Disperso,918586
+19,Cauca,2018,Total,1464488
+19,Cauca,2019,Cabecera,546328
+19,Cauca,2019,Centros Poblados y Rural Disperso,932079
+19,Cauca,2019,Total,1478407
+19,Cauca,2020,Cabecera,551920
+19,Cauca,2020,Centros Poblados y Rural Disperso,956141
+19,Cauca,2020,Total,1508061
+19,Cauca,2021,Cabecera,553237
+19,Cauca,2021,Centros Poblados y Rural Disperso,972047
+19,Cauca,2021,Total,1525284
+19,Cauca,2022,Cabecera,554157
+19,Cauca,2022,Centros Poblados y Rural Disperso,987108
+19,Cauca,2022,Total,1541265
+19,Cauca,2023,Cabecera,555626
+19,Cauca,2023,Centros Poblados y Rural Disperso,1002419
+19,Cauca,2023,Total,1558045
+19,Cauca,2024,Cabecera,558270
+19,Cauca,2024,Centros Poblados y Rural Disperso,1016236
+19,Cauca,2024,Total,1574506
+19,Cauca,2025,Cabecera,561251
+19,Cauca,2025,Centros Poblados y Rural Disperso,1028920
+19,Cauca,2025,Total,1590171
+19,Cauca,2026,Cabecera,564311
+19,Cauca,2026,Centros Poblados y Rural Disperso,1040834
+19,Cauca,2026,Total,1605145
+19,Cauca,2027,Cabecera,567480
+19,Cauca,2027,Centros Poblados y Rural Disperso,1052188
+19,Cauca,2027,Total,1619668
+19,Cauca,2028,Cabecera,570699
+19,Cauca,2028,Centros Poblados y Rural Disperso,1063088
+19,Cauca,2028,Total,1633787
+19,Cauca,2029,Cabecera,573997
+19,Cauca,2029,Centros Poblados y Rural Disperso,1073551
+19,Cauca,2029,Total,1647548
+19,Cauca,2030,Cabecera,577458
+19,Cauca,2030,Centros Poblados y Rural Disperso,1083516
+19,Cauca,2030,Total,1660974
+19,Cauca,2031,Cabecera,580800
+19,Cauca,2031,Centros Poblados y Rural Disperso,1093256
+19,Cauca,2031,Total,1674056
+19,Cauca,2032,Cabecera,583998
+19,Cauca,2032,Centros Poblados y Rural Disperso,1102765
+19,Cauca,2032,Total,1686763
+19,Cauca,2033,Cabecera,587030
+19,Cauca,2033,Centros Poblados y Rural Disperso,1112057
+19,Cauca,2033,Total,1699087
+19,Cauca,2034,Cabecera,589914
+19,Cauca,2034,Centros Poblados y Rural Disperso,1121104
+19,Cauca,2034,Total,1711018
+19,Cauca,2035,Cabecera,592657
+19,Cauca,2035,Centros Poblados y Rural Disperso,1129879
+19,Cauca,2035,Total,1722536
+19,Cauca,2036,Total,1733619
+19,Cauca,2037,Total,1744245
+19,Cauca,2038,Total,1754418
+19,Cauca,2039,Total,1764126
+19,Cauca,2040,Total,1773345
+19,Cauca,2041,Total,1782087
+19,Cauca,2042,Total,1790362
+19,Cauca,2043,Total,1798162
+19,Cauca,2044,Total,1805489
+19,Cauca,2045,Total,1812341
+19,Cauca,2046,Total,1818727
+19,Cauca,2047,Total,1824649
+19,Cauca,2048,Total,1830107
+19,Cauca,2049,Total,1835097
+19,Cauca,2050,Total,1839610
+20,Cesar,1993,Cabecera,472038
+20,Cesar,1993,Centros Poblados y Rural Disperso,280843
+20,Cesar,1993,Total,752881
+20,Cesar,1994,Cabecera,483687
+20,Cesar,1994,Centros Poblados y Rural Disperso,287408
+20,Cesar,1994,Total,771095
+20,Cesar,1995,Cabecera,495249
+20,Cesar,1995,Centros Poblados y Rural Disperso,293649
+20,Cesar,1995,Total,788898
+20,Cesar,1996,Cabecera,506855
+20,Cesar,1996,Centros Poblados y Rural Disperso,299445
+20,Cesar,1996,Total,806300
+20,Cesar,1997,Cabecera,518731
+20,Cesar,1997,Centros Poblados y Rural Disperso,304632
+20,Cesar,1997,Total,823363
+20,Cesar,1998,Cabecera,531243
+20,Cesar,1998,Centros Poblados y Rural Disperso,308924
+20,Cesar,1998,Total,840167
+20,Cesar,1999,Cabecera,552907
+20,Cesar,1999,Centros Poblados y Rural Disperso,303802
+20,Cesar,1999,Total,856709
+20,Cesar,2000,Cabecera,568215
+20,Cesar,2000,Centros Poblados y Rural Disperso,304720
+20,Cesar,2000,Total,872935
+20,Cesar,2001,Cabecera,585844
+20,Cesar,2001,Centros Poblados y Rural Disperso,302986
+20,Cesar,2001,Total,888830
+20,Cesar,2002,Cabecera,606226
+20,Cesar,2002,Centros Poblados y Rural Disperso,298166
+20,Cesar,2002,Total,904392
+20,Cesar,2003,Cabecera,629199
+20,Cesar,2003,Centros Poblados y Rural Disperso,290437
+20,Cesar,2003,Total,919636
+20,Cesar,2004,Cabecera,653601
+20,Cesar,2004,Centros Poblados y Rural Disperso,280988
+20,Cesar,2004,Total,934589
+20,Cesar,2005,Cabecera,677273
+20,Cesar,2005,Centros Poblados y Rural Disperso,271474
+20,Cesar,2005,Total,948747
+20,Cesar,2006,Cabecera,699459
+20,Cesar,2006,Centros Poblados y Rural Disperso,263877
+20,Cesar,2006,Total,963336
+20,Cesar,2007,Cabecera,719496
+20,Cesar,2007,Centros Poblados y Rural Disperso,259027
+20,Cesar,2007,Total,978523
+20,Cesar,2008,Cabecera,737427
+20,Cesar,2008,Centros Poblados y Rural Disperso,256829
+20,Cesar,2008,Total,994256
+20,Cesar,2009,Cabecera,753711
+20,Cesar,2009,Centros Poblados y Rural Disperso,256796
+20,Cesar,2009,Total,1010507
+20,Cesar,2010,Cabecera,768778
+20,Cesar,2010,Centros Poblados y Rural Disperso,258311
+20,Cesar,2010,Total,1027089
+20,Cesar,2011,Cabecera,782947
+20,Cesar,2011,Centros Poblados y Rural Disperso,260807
+20,Cesar,2011,Total,1043754
+20,Cesar,2012,Cabecera,796656
+20,Cesar,2012,Centros Poblados y Rural Disperso,264002
+20,Cesar,2012,Total,1060658
+20,Cesar,2013,Cabecera,810343
+20,Cesar,2013,Centros Poblados y Rural Disperso,267690
+20,Cesar,2013,Total,1078033
+20,Cesar,2014,Cabecera,824026
+20,Cesar,2014,Centros Poblados y Rural Disperso,271693
+20,Cesar,2014,Total,1095719
+20,Cesar,2015,Cabecera,838197
+20,Cesar,2015,Centros Poblados y Rural Disperso,276072
+20,Cesar,2015,Total,1114269
+20,Cesar,2016,Cabecera,854921
+20,Cesar,2016,Centros Poblados y Rural Disperso,281378
+20,Cesar,2016,Total,1136299
+20,Cesar,2017,Cabecera,874645
+20,Cesar,2017,Centros Poblados y Rural Disperso,287770
+20,Cesar,2017,Total,1162415
+20,Cesar,2018,Cabecera,903411
+20,Cesar,2018,Centros Poblados y Rural Disperso,297163
+20,Cesar,2018,Total,1200574
+20,Cesar,2019,Cabecera,942129
+20,Cesar,2019,Centros Poblados y Rural Disperso,310269
+20,Cesar,2019,Total,1252398
+20,Cesar,2020,Cabecera,969600
+20,Cesar,2020,Centros Poblados y Rural Disperso,321319
+20,Cesar,2020,Total,1290919
+20,Cesar,2021,Cabecera,992155
+20,Cesar,2021,Centros Poblados y Rural Disperso,330223
+20,Cesar,2021,Total,1322378
+20,Cesar,2022,Cabecera,1010938
+20,Cesar,2022,Centros Poblados y Rural Disperso,338224
+20,Cesar,2022,Total,1349162
+20,Cesar,2023,Cabecera,1028048
+20,Cesar,2023,Centros Poblados y Rural Disperso,345533
+20,Cesar,2023,Total,1373581
+20,Cesar,2024,Cabecera,1043435
+20,Cesar,2024,Centros Poblados y Rural Disperso,352051
+20,Cesar,2024,Total,1395486
+20,Cesar,2025,Cabecera,1056928
+20,Cesar,2025,Centros Poblados y Rural Disperso,357931
+20,Cesar,2025,Total,1414859
+20,Cesar,2026,Cabecera,1069034
+20,Cesar,2026,Centros Poblados y Rural Disperso,363304
+20,Cesar,2026,Total,1432338
+20,Cesar,2027,Cabecera,1080177
+20,Cesar,2027,Centros Poblados y Rural Disperso,368376
+20,Cesar,2027,Total,1448553
+20,Cesar,2028,Cabecera,1090663
+20,Cesar,2028,Centros Poblados y Rural Disperso,373215
+20,Cesar,2028,Total,1463878
+20,Cesar,2029,Cabecera,1100734
+20,Cesar,2029,Centros Poblados y Rural Disperso,377898
+20,Cesar,2029,Total,1478632
+20,Cesar,2030,Cabecera,1110566
+20,Cesar,2030,Centros Poblados y Rural Disperso,382551
+20,Cesar,2030,Total,1493117
+20,Cesar,2031,Cabecera,1120161
+20,Cesar,2031,Centros Poblados y Rural Disperso,387201
+20,Cesar,2031,Total,1507362
+20,Cesar,2032,Cabecera,1129460
+20,Cesar,2032,Centros Poblados y Rural Disperso,391773
+20,Cesar,2032,Total,1521233
+20,Cesar,2033,Cabecera,1138417
+20,Cesar,2033,Centros Poblados y Rural Disperso,396298
+20,Cesar,2033,Total,1534715
+20,Cesar,2034,Cabecera,1147069
+20,Cesar,2034,Centros Poblados y Rural Disperso,400748
+20,Cesar,2034,Total,1547817
+20,Cesar,2035,Cabecera,1155380
+20,Cesar,2035,Centros Poblados y Rural Disperso,405180
+20,Cesar,2035,Total,1560560
+20,Cesar,2036,Total,1572887
+20,Cesar,2037,Total,1584725
+20,Cesar,2038,Total,1596081
+20,Cesar,2039,Total,1606977
+20,Cesar,2040,Total,1617399
+20,Cesar,2041,Total,1627346
+20,Cesar,2042,Total,1636840
+20,Cesar,2043,Total,1645891
+20,Cesar,2044,Total,1654484
+20,Cesar,2045,Total,1662605
+20,Cesar,2046,Total,1670272
+20,Cesar,2047,Total,1677498
+20,Cesar,2048,Total,1684267
+20,Cesar,2049,Total,1690576
+20,Cesar,2050,Total,1696420
+23,Córdoba,1993,Cabecera,623122
+23,Córdoba,1993,Centros Poblados y Rural Disperso,668460
+23,Córdoba,1993,Total,1291582
+23,Córdoba,1994,Cabecera,642951
+23,Córdoba,1994,Centros Poblados y Rural Disperso,669554
+23,Córdoba,1994,Total,1312505
+23,Córdoba,1995,Cabecera,662574
+23,Córdoba,1995,Centros Poblados y Rural Disperso,670859
+23,Córdoba,1995,Total,1333433
+23,Córdoba,1996,Cabecera,681458
+23,Córdoba,1996,Centros Poblados y Rural Disperso,672880
+23,Córdoba,1996,Total,1354338
+23,Córdoba,1997,Cabecera,699287
+23,Córdoba,1997,Centros Poblados y Rural Disperso,675958
+23,Córdoba,1997,Total,1375245
+23,Córdoba,1998,Cabecera,715908
+23,Córdoba,1998,Centros Poblados y Rural Disperso,680249
+23,Córdoba,1998,Total,1396157
+23,Córdoba,1999,Cabecera,731347
+23,Córdoba,1999,Centros Poblados y Rural Disperso,685711
+23,Córdoba,1999,Total,1417058
+23,Córdoba,2000,Cabecera,745726
+23,Córdoba,2000,Centros Poblados y Rural Disperso,692142
+23,Córdoba,2000,Total,1437868
+23,Córdoba,2001,Cabecera,759159
+23,Córdoba,2001,Centros Poblados y Rural Disperso,699365
+23,Córdoba,2001,Total,1458524
+23,Córdoba,2002,Cabecera,771829
+23,Córdoba,2002,Centros Poblados y Rural Disperso,707179
+23,Córdoba,2002,Total,1479008
+23,Córdoba,2003,Cabecera,783897
+23,Córdoba,2003,Centros Poblados y Rural Disperso,715435
+23,Córdoba,2003,Total,1499332
+23,Córdoba,2004,Cabecera,795513
+23,Córdoba,2004,Centros Poblados y Rural Disperso,724015
+23,Córdoba,2004,Total,1519528
+23,Córdoba,2005,Cabecera,806639
+23,Córdoba,2005,Centros Poblados y Rural Disperso,732674
+23,Córdoba,2005,Total,1539313
+23,Córdoba,2006,Cabecera,817805
+23,Córdoba,2006,Centros Poblados y Rural Disperso,741798
+23,Córdoba,2006,Total,1559603
+23,Córdoba,2007,Cabecera,828662
+23,Córdoba,2007,Centros Poblados y Rural Disperso,750895
+23,Córdoba,2007,Total,1579557
+23,Córdoba,2008,Cabecera,839193
+23,Córdoba,2008,Centros Poblados y Rural Disperso,759936
+23,Córdoba,2008,Total,1599129
+23,Córdoba,2009,Cabecera,849487
+23,Córdoba,2009,Centros Poblados y Rural Disperso,768889
+23,Córdoba,2009,Total,1618376
+23,Córdoba,2010,Cabecera,859564
+23,Córdoba,2010,Centros Poblados y Rural Disperso,777746
+23,Córdoba,2010,Total,1637310
+23,Córdoba,2011,Cabecera,869381
+23,Córdoba,2011,Centros Poblados y Rural Disperso,786437
+23,Córdoba,2011,Total,1655818
+23,Córdoba,2012,Cabecera,878935
+23,Córdoba,2012,Centros Poblados y Rural Disperso,794956
+23,Córdoba,2012,Total,1673891
+23,Córdoba,2013,Cabecera,888287
+23,Córdoba,2013,Centros Poblados y Rural Disperso,803322
+23,Córdoba,2013,Total,1691609
+23,Córdoba,2014,Cabecera,897463
+23,Córdoba,2014,Centros Poblados y Rural Disperso,811540
+23,Córdoba,2014,Total,1709003
+23,Córdoba,2015,Cabecera,906561
+23,Córdoba,2015,Centros Poblados y Rural Disperso,819726
+23,Córdoba,2015,Total,1726287
+23,Córdoba,2016,Cabecera,916005
+23,Córdoba,2016,Centros Poblados y Rural Disperso,828249
+23,Córdoba,2016,Total,1744254
+23,Córdoba,2017,Cabecera,925903
+23,Córdoba,2017,Centros Poblados y Rural Disperso,837150
+23,Córdoba,2017,Total,1763053
+23,Córdoba,2018,Cabecera,937319
+23,Córdoba,2018,Centros Poblados y Rural Disperso,847464
+23,Córdoba,2018,Total,1784783
+23,Córdoba,2019,Cabecera,945587
+23,Córdoba,2019,Centros Poblados y Rural Disperso,862852
+23,Córdoba,2019,Total,1808439
+23,Córdoba,2020,Cabecera,957601
+23,Córdoba,2020,Centros Poblados y Rural Disperso,884984
+23,Córdoba,2020,Total,1842585
+23,Córdoba,2021,Cabecera,964198
+23,Córdoba,2021,Centros Poblados y Rural Disperso,900138
+23,Córdoba,2021,Total,1864336
+23,Córdoba,2022,Cabecera,969074
+23,Córdoba,2022,Centros Poblados y Rural Disperso,913137
+23,Córdoba,2022,Total,1882211
+23,Córdoba,2023,Cabecera,973453
+23,Córdoba,2023,Centros Poblados y Rural Disperso,925458
+23,Córdoba,2023,Total,1898911
+23,Córdoba,2024,Cabecera,978040
+23,Córdoba,2024,Centros Poblados y Rural Disperso,936738
+23,Córdoba,2024,Total,1914778
+23,Córdoba,2025,Cabecera,982243
+23,Córdoba,2025,Centros Poblados y Rural Disperso,947093
+23,Córdoba,2025,Total,1929336
+23,Córdoba,2026,Cabecera,986097
+23,Córdoba,2026,Centros Poblados y Rural Disperso,956699
+23,Córdoba,2026,Total,1942796
+23,Córdoba,2027,Cabecera,989718
+23,Córdoba,2027,Centros Poblados y Rural Disperso,965762
+23,Córdoba,2027,Total,1955480
+23,Córdoba,2028,Cabecera,993230
+23,Córdoba,2028,Centros Poblados y Rural Disperso,974269
+23,Córdoba,2028,Total,1967499
+23,Córdoba,2029,Cabecera,996594
+23,Córdoba,2029,Centros Poblados y Rural Disperso,982339
+23,Córdoba,2029,Total,1978933
+23,Córdoba,2030,Cabecera,999873
+23,Córdoba,2030,Centros Poblados y Rural Disperso,990052
+23,Córdoba,2030,Total,1989925
+23,Córdoba,2031,Cabecera,1003019
+23,Córdoba,2031,Centros Poblados y Rural Disperso,997495
+23,Córdoba,2031,Total,2000514
+23,Córdoba,2032,Cabecera,1005860
+23,Córdoba,2032,Centros Poblados y Rural Disperso,1004769
+23,Córdoba,2032,Total,2010629
+23,Córdoba,2033,Cabecera,1008332
+23,Córdoba,2033,Centros Poblados y Rural Disperso,1011911
+23,Córdoba,2033,Total,2020243
+23,Córdoba,2034,Cabecera,1010474
+23,Córdoba,2034,Centros Poblados y Rural Disperso,1018893
+23,Córdoba,2034,Total,2029367
+23,Córdoba,2035,Cabecera,1012312
+23,Córdoba,2035,Centros Poblados y Rural Disperso,1025702
+23,Córdoba,2035,Total,2038014
+23,Córdoba,2036,Total,2046146
+23,Córdoba,2037,Total,2053721
+23,Córdoba,2038,Total,2060743
+23,Córdoba,2039,Total,2067216
+23,Córdoba,2040,Total,2073125
+23,Córdoba,2041,Total,2078467
+23,Córdoba,2042,Total,2083253
+23,Córdoba,2043,Total,2087494
+23,Córdoba,2044,Total,2091177
+23,Córdoba,2045,Total,2094291
+23,Córdoba,2046,Total,2096836
+23,Córdoba,2047,Total,2098816
+23,Córdoba,2048,Total,2100228
+23,Córdoba,2049,Total,2101073
+23,Córdoba,2050,Total,2101344
+25,Cundinamarca,1993,Cabecera,949703
+25,Cundinamarca,1993,Centros Poblados y Rural Disperso,872411
+25,Cundinamarca,1993,Total,1822114
+25,Cundinamarca,1994,Cabecera,957518
+25,Cundinamarca,1994,Centros Poblados y Rural Disperso,850758
+25,Cundinamarca,1994,Total,1808276
+25,Cundinamarca,1995,Cabecera,967454
+25,Cundinamarca,1995,Centros Poblados y Rural Disperso,831179
+25,Cundinamarca,1995,Total,1798633
+25,Cundinamarca,1996,Cabecera,979523
+25,Cundinamarca,1996,Centros Poblados y Rural Disperso,813495
+25,Cundinamarca,1996,Total,1793018
+25,Cundinamarca,1997,Cabecera,993722
+25,Cundinamarca,1997,Centros Poblados y Rural Disperso,797609
+25,Cundinamarca,1997,Total,1791331
+25,Cundinamarca,1998,Cabecera,1010081
+25,Cundinamarca,1998,Centros Poblados y Rural Disperso,783382
+25,Cundinamarca,1998,Total,1793463
+25,Cundinamarca,1999,Cabecera,1028539
+25,Cundinamarca,1999,Centros Poblados y Rural Disperso,770683
+25,Cundinamarca,1999,Total,1799222
+25,Cundinamarca,2000,Cabecera,1049062
+25,Cundinamarca,2000,Centros Poblados y Rural Disperso,759336
+25,Cundinamarca,2000,Total,1808398
+25,Cundinamarca,2001,Cabecera,1071623
+25,Cundinamarca,2001,Centros Poblados y Rural Disperso,749225
+25,Cundinamarca,2001,Total,1820848
+25,Cundinamarca,2002,Cabecera,1096241
+25,Cundinamarca,2002,Centros Poblados y Rural Disperso,740282
+25,Cundinamarca,2002,Total,1836523
+25,Cundinamarca,2003,Cabecera,1123026
+25,Cundinamarca,2003,Centros Poblados y Rural Disperso,732469
+25,Cundinamarca,2003,Total,1855495
+25,Cundinamarca,2004,Cabecera,1152119
+25,Cundinamarca,2004,Centros Poblados y Rural Disperso,725795
+25,Cundinamarca,2004,Total,1877914
+25,Cundinamarca,2005,Cabecera,1183402
+25,Cundinamarca,2005,Centros Poblados y Rural Disperso,720093
+25,Cundinamarca,2005,Total,1903495
+25,Cundinamarca,2006,Cabecera,1219313
+25,Cundinamarca,2006,Centros Poblados y Rural Disperso,716743
+25,Cundinamarca,2006,Total,1936056
+25,Cundinamarca,2007,Cabecera,1259708
+25,Cundinamarca,2007,Centros Poblados y Rural Disperso,715416
+25,Cundinamarca,2007,Total,1975124
+25,Cundinamarca,2008,Cabecera,1304916
+25,Cundinamarca,2008,Centros Poblados y Rural Disperso,716126
+25,Cundinamarca,2008,Total,2021042
+25,Cundinamarca,2009,Cabecera,1355359
+25,Cundinamarca,2009,Centros Poblados y Rural Disperso,718891
+25,Cundinamarca,2009,Total,2074250
+25,Cundinamarca,2010,Cabecera,1411173
+25,Cundinamarca,2010,Centros Poblados y Rural Disperso,723603
+25,Cundinamarca,2010,Total,2134776
+25,Cundinamarca,2011,Cabecera,1472132
+25,Cundinamarca,2011,Centros Poblados y Rural Disperso,729960
+25,Cundinamarca,2011,Total,2202092
+25,Cundinamarca,2012,Cabecera,1538282
+25,Cundinamarca,2012,Centros Poblados y Rural Disperso,737815
+25,Cundinamarca,2012,Total,2276097
+25,Cundinamarca,2013,Cabecera,1610083
+25,Cundinamarca,2013,Centros Poblados y Rural Disperso,747256
+25,Cundinamarca,2013,Total,2357339
+25,Cundinamarca,2014,Cabecera,1687873
+25,Cundinamarca,2014,Centros Poblados y Rural Disperso,758265
+25,Cundinamarca,2014,Total,2446138
+25,Cundinamarca,2015,Cabecera,1772310
+25,Cundinamarca,2015,Centros Poblados y Rural Disperso,771028
+25,Cundinamarca,2015,Total,2543338
+25,Cundinamarca,2016,Cabecera,1865737
+25,Cundinamarca,2016,Centros Poblados y Rural Disperso,786339
+25,Cundinamarca,2016,Total,2652076
+25,Cundinamarca,2017,Cabecera,1968975
+25,Cundinamarca,2017,Centros Poblados y Rural Disperso,804310
+25,Cundinamarca,2017,Total,2773285
+25,Cundinamarca,2018,Cabecera,2090845
+25,Cundinamarca,2018,Centros Poblados y Rural Disperso,828215
+25,Cundinamarca,2018,Total,2919060
+25,Cundinamarca,2019,Cabecera,2250178
+25,Cundinamarca,2019,Centros Poblados y Rural Disperso,835344
+25,Cundinamarca,2019,Total,3085522
+25,Cundinamarca,2020,Cabecera,2316850
+25,Cundinamarca,2020,Centros Poblados y Rural Disperso,831104
+25,Cundinamarca,2020,Total,3147954
+25,Cundinamarca,2021,Cabecera,2412496
+25,Cundinamarca,2021,Centros Poblados y Rural Disperso,821193
+25,Cundinamarca,2021,Total,3233689
+25,Cundinamarca,2022,Cabecera,2511490
+25,Cundinamarca,2022,Centros Poblados y Rural Disperso,823147
+25,Cundinamarca,2022,Total,3334637
+25,Cundinamarca,2023,Cabecera,2616482
+25,Cundinamarca,2023,Centros Poblados y Rural Disperso,828845
+25,Cundinamarca,2023,Total,3445327
+25,Cundinamarca,2024,Cabecera,2712978
+25,Cundinamarca,2024,Centros Poblados y Rural Disperso,840315
+25,Cundinamarca,2024,Total,3553293
+25,Cundinamarca,2025,Cabecera,2804899
+25,Cundinamarca,2025,Centros Poblados y Rural Disperso,852508
+25,Cundinamarca,2025,Total,3657407
+25,Cundinamarca,2026,Cabecera,2893377
+25,Cundinamarca,2026,Centros Poblados y Rural Disperso,865052
+25,Cundinamarca,2026,Total,3758429
+25,Cundinamarca,2027,Cabecera,2979486
+25,Cundinamarca,2027,Centros Poblados y Rural Disperso,877923
+25,Cundinamarca,2027,Total,3857409
+25,Cundinamarca,2028,Cabecera,3063354
+25,Cundinamarca,2028,Centros Poblados y Rural Disperso,891386
+25,Cundinamarca,2028,Total,3954740
+25,Cundinamarca,2029,Cabecera,3145334
+25,Cundinamarca,2029,Centros Poblados y Rural Disperso,905420
+25,Cundinamarca,2029,Total,4050754
+25,Cundinamarca,2030,Cabecera,3225497
+25,Cundinamarca,2030,Centros Poblados y Rural Disperso,920245
+25,Cundinamarca,2030,Total,4145742
+25,Cundinamarca,2031,Cabecera,3304424
+25,Cundinamarca,2031,Centros Poblados y Rural Disperso,935258
+25,Cundinamarca,2031,Total,4239682
+25,Cundinamarca,2032,Cabecera,3382274
+25,Cundinamarca,2032,Centros Poblados y Rural Disperso,950082
+25,Cundinamarca,2032,Total,4332356
+25,Cundinamarca,2033,Cabecera,3459176
+25,Cundinamarca,2033,Centros Poblados y Rural Disperso,964518
+25,Cundinamarca,2033,Total,4423694
+25,Cundinamarca,2034,Cabecera,3535083
+25,Cundinamarca,2034,Centros Poblados y Rural Disperso,978583
+25,Cundinamarca,2034,Total,4513666
+25,Cundinamarca,2035,Cabecera,3609991
+25,Cundinamarca,2035,Centros Poblados y Rural Disperso,992239
+25,Cundinamarca,2035,Total,4602230
+25,Cundinamarca,2036,Total,4689286
+25,Cundinamarca,2037,Total,4774727
+25,Cundinamarca,2038,Total,4858513
+25,Cundinamarca,2039,Total,4940644
+25,Cundinamarca,2040,Total,5021084
+25,Cundinamarca,2041,Total,5099813
+25,Cundinamarca,2042,Total,5176847
+25,Cundinamarca,2043,Total,5252187
+25,Cundinamarca,2044,Total,5325805
+25,Cundinamarca,2045,Total,5397678
+25,Cundinamarca,2046,Total,5467812
+25,Cundinamarca,2047,Total,5536196
+25,Cundinamarca,2048,Total,5602809
+25,Cundinamarca,2049,Total,5667634
+25,Cundinamarca,2050,Total,5730649
+27,Chocó,1993,Cabecera,81632
+27,Chocó,1993,Centros Poblados y Rural Disperso,204366
+27,Chocó,1993,Total,285998
+27,Chocó,1994,Cabecera,89728
+27,Chocó,1994,Centros Poblados y Rural Disperso,204604
+27,Chocó,1994,Total,294332
+27,Chocó,1995,Cabecera,94342
+27,Chocó,1995,Centros Poblados y Rural Disperso,208378
+27,Chocó,1995,Total,302720
+27,Chocó,1996,Cabecera,98815
+27,Chocó,1996,Centros Poblados y Rural Disperso,212410
+27,Chocó,1996,Total,311225
+27,Chocó,1997,Cabecera,103151
+27,Chocó,1997,Centros Poblados y Rural Disperso,216809
+27,Chocó,1997,Total,319960
+27,Chocó,1998,Cabecera,116557
+27,Chocó,1998,Centros Poblados y Rural Disperso,212487
+27,Chocó,1998,Total,329044
+27,Chocó,1999,Cabecera,120953
+27,Chocó,1999,Centros Poblados y Rural Disperso,217540
+27,Chocó,1999,Total,338493
+27,Chocó,2000,Cabecera,138863
+27,Chocó,2000,Centros Poblados y Rural Disperso,209407
+27,Chocó,2000,Total,348270
+27,Chocó,2001,Cabecera,156168
+27,Chocó,2001,Centros Poblados y Rural Disperso,202205
+27,Chocó,2001,Total,358373
+27,Chocó,2002,Cabecera,166106
+27,Chocó,2002,Centros Poblados y Rural Disperso,202712
+27,Chocó,2002,Total,368818
+27,Chocó,2003,Cabecera,171380
+27,Chocó,2003,Centros Poblados y Rural Disperso,208271
+27,Chocó,2003,Total,379651
+27,Chocó,2004,Cabecera,176795
+27,Chocó,2004,Centros Poblados y Rural Disperso,214137
+27,Chocó,2004,Total,390932
+27,Chocó,2005,Cabecera,182359
+27,Chocó,2005,Centros Poblados y Rural Disperso,220350
+27,Chocó,2005,Total,402709
+27,Chocó,2006,Cabecera,187883
+27,Chocó,2006,Centros Poblados y Rural Disperso,226600
+27,Chocó,2006,Total,414483
+27,Chocó,2007,Cabecera,193292
+27,Chocó,2007,Centros Poblados y Rural Disperso,232785
+27,Chocó,2007,Total,426077
+27,Chocó,2008,Cabecera,198557
+27,Chocó,2008,Centros Poblados y Rural Disperso,238877
+27,Chocó,2008,Total,437434
+27,Chocó,2009,Cabecera,203703
+27,Chocó,2009,Centros Poblados y Rural Disperso,244851
+27,Chocó,2009,Total,448554
+27,Chocó,2010,Cabecera,208726
+27,Chocó,2010,Centros Poblados y Rural Disperso,250727
+27,Chocó,2010,Total,459453
+27,Chocó,2011,Cabecera,213609
+27,Chocó,2011,Centros Poblados y Rural Disperso,256478
+27,Chocó,2011,Total,470087
+27,Chocó,2012,Cabecera,218327
+27,Chocó,2012,Centros Poblados y Rural Disperso,262064
+27,Chocó,2012,Total,480391
+27,Chocó,2013,Cabecera,222892
+27,Chocó,2013,Centros Poblados y Rural Disperso,267446
+27,Chocó,2013,Total,490338
+27,Chocó,2014,Cabecera,227282
+27,Chocó,2014,Centros Poblados y Rural Disperso,272664
+27,Chocó,2014,Total,499946
+27,Chocó,2015,Cabecera,231529
+27,Chocó,2015,Centros Poblados y Rural Disperso,277711
+27,Chocó,2015,Total,509240
+27,Chocó,2016,Cabecera,235637
+27,Chocó,2016,Centros Poblados y Rural Disperso,282597
+27,Chocó,2016,Total,518234
+27,Chocó,2017,Cabecera,239569
+27,Chocó,2017,Centros Poblados y Rural Disperso,287319
+27,Chocó,2017,Total,526888
+27,Chocó,2018,Cabecera,243194
+27,Chocó,2018,Centros Poblados y Rural Disperso,291632
+27,Chocó,2018,Total,534826
+27,Chocó,2019,Cabecera,243223
+27,Chocó,2019,Centros Poblados y Rural Disperso,296710
+27,Chocó,2019,Total,539933
+27,Chocó,2020,Cabecera,251171
+27,Chocó,2020,Centros Poblados y Rural Disperso,311216
+27,Chocó,2020,Total,562387
+27,Chocó,2021,Cabecera,253163
+27,Chocó,2021,Centros Poblados y Rural Disperso,320685
+27,Chocó,2021,Total,573848
+27,Chocó,2022,Cabecera,255404
+27,Chocó,2022,Centros Poblados y Rural Disperso,329117
+27,Chocó,2022,Total,584521
+27,Chocó,2023,Cabecera,257328
+27,Chocó,2023,Centros Poblados y Rural Disperso,337810
+27,Chocó,2023,Total,595138
+27,Chocó,2024,Cabecera,259951
+27,Chocó,2024,Centros Poblados y Rural Disperso,345527
+27,Chocó,2024,Total,605478
+27,Chocó,2025,Cabecera,262503
+27,Chocó,2025,Centros Poblados y Rural Disperso,352579
+27,Chocó,2025,Total,615082
+27,Chocó,2026,Cabecera,264856
+27,Chocó,2026,Centros Poblados y Rural Disperso,359184
+27,Chocó,2026,Total,624040
+27,Chocó,2027,Cabecera,266943
+27,Chocó,2027,Centros Poblados y Rural Disperso,365721
+27,Chocó,2027,Total,632664
+27,Chocó,2028,Cabecera,269178
+27,Chocó,2028,Centros Poblados y Rural Disperso,371789
+27,Chocó,2028,Total,640967
+27,Chocó,2029,Cabecera,271372
+27,Chocó,2029,Centros Poblados y Rural Disperso,377601
+27,Chocó,2029,Total,648973
+27,Chocó,2030,Cabecera,273515
+27,Chocó,2030,Centros Poblados y Rural Disperso,383200
+27,Chocó,2030,Total,656715
+27,Chocó,2031,Cabecera,275370
+27,Chocó,2031,Centros Poblados y Rural Disperso,388876
+27,Chocó,2031,Total,664246
+27,Chocó,2032,Cabecera,277329
+27,Chocó,2032,Centros Poblados y Rural Disperso,394241
+27,Chocó,2032,Total,671570
+27,Chocó,2033,Cabecera,279160
+27,Chocó,2033,Centros Poblados y Rural Disperso,399499
+27,Chocó,2033,Total,678659
+27,Chocó,2034,Cabecera,280867
+27,Chocó,2034,Centros Poblados y Rural Disperso,404649
+27,Chocó,2034,Total,685516
+27,Chocó,2035,Cabecera,282169
+27,Chocó,2035,Centros Poblados y Rural Disperso,409978
+27,Chocó,2035,Total,692147
+27,Chocó,2036,Total,698551
+27,Chocó,2037,Total,704730
+27,Chocó,2038,Total,710689
+27,Chocó,2039,Total,716433
+27,Chocó,2040,Total,721948
+27,Chocó,2041,Total,727230
+27,Chocó,2042,Total,732288
+27,Chocó,2043,Total,737127
+27,Chocó,2044,Total,741733
+27,Chocó,2045,Total,746105
+27,Chocó,2046,Total,750250
+27,Chocó,2047,Total,754176
+27,Chocó,2048,Total,757875
+27,Chocó,2049,Total,761350
+27,Chocó,2050,Total,764599
+41,Huila,1993,Cabecera,471944
+41,Huila,1993,Centros Poblados y Rural Disperso,314523
+41,Huila,1993,Total,786467
+41,Huila,1994,Cabecera,481987
+41,Huila,1994,Centros Poblados y Rural Disperso,318382
+41,Huila,1994,Total,800369
+41,Huila,1995,Cabecera,491635
+41,Huila,1995,Centros Poblados y Rural Disperso,322591
+41,Huila,1995,Total,814226
+41,Huila,1996,Cabecera,500934
+41,Huila,1996,Centros Poblados y Rural Disperso,327031
+41,Huila,1996,Total,827965
+41,Huila,1997,Cabecera,509915
+41,Huila,1997,Centros Poblados y Rural Disperso,331649
+41,Huila,1997,Total,841564
+41,Huila,1998,Cabecera,518634
+41,Huila,1998,Centros Poblados y Rural Disperso,336358
+41,Huila,1998,Total,854992
+41,Huila,1999,Cabecera,527082
+41,Huila,1999,Centros Poblados y Rural Disperso,341119
+41,Huila,1999,Total,868201
+41,Huila,2000,Cabecera,535265
+41,Huila,2000,Centros Poblados y Rural Disperso,345860
+41,Huila,2000,Total,881125
+41,Huila,2001,Cabecera,543176
+41,Huila,2001,Centros Poblados y Rural Disperso,350559
+41,Huila,2001,Total,893735
+41,Huila,2002,Cabecera,550877
+41,Huila,2002,Centros Poblados y Rural Disperso,355195
+41,Huila,2002,Total,906072
+41,Huila,2003,Cabecera,558392
+41,Huila,2003,Centros Poblados y Rural Disperso,359806
+41,Huila,2003,Total,918198
+41,Huila,2004,Cabecera,565802
+41,Huila,2004,Centros Poblados y Rural Disperso,364396
+41,Huila,2004,Total,930198
+41,Huila,2005,Cabecera,572915
+41,Huila,2005,Centros Poblados y Rural Disperso,368848
+41,Huila,2005,Total,941763
+41,Huila,2006,Cabecera,580295
+41,Huila,2006,Centros Poblados y Rural Disperso,373481
+41,Huila,2006,Total,953776
+41,Huila,2007,Cabecera,587614
+41,Huila,2007,Centros Poblados y Rural Disperso,378111
+41,Huila,2007,Total,965725
+41,Huila,2008,Cabecera,594824
+41,Huila,2008,Centros Poblados y Rural Disperso,382704
+41,Huila,2008,Total,977528
+41,Huila,2009,Cabecera,602059
+41,Huila,2009,Centros Poblados y Rural Disperso,387316
+41,Huila,2009,Total,989375
+41,Huila,2010,Cabecera,609385
+41,Huila,2010,Centros Poblados y Rural Disperso,391987
+41,Huila,2010,Total,1001372
+41,Huila,2011,Cabecera,616732
+41,Huila,2011,Centros Poblados y Rural Disperso,396686
+41,Huila,2011,Total,1013418
+41,Huila,2012,Cabecera,624020
+41,Huila,2012,Centros Poblados y Rural Disperso,401364
+41,Huila,2012,Total,1025384
+41,Huila,2013,Cabecera,631253
+41,Huila,2013,Centros Poblados y Rural Disperso,405999
+41,Huila,2013,Total,1037252
+41,Huila,2014,Cabecera,638538
+41,Huila,2014,Centros Poblados y Rural Disperso,410677
+41,Huila,2014,Total,1049215
+41,Huila,2015,Cabecera,645963
+41,Huila,2015,Centros Poblados y Rural Disperso,415442
+41,Huila,2015,Total,1061405
+41,Huila,2016,Cabecera,653574
+41,Huila,2016,Centros Poblados y Rural Disperso,420342
+41,Huila,2016,Total,1073916
+41,Huila,2017,Cabecera,661340
+41,Huila,2017,Centros Poblados y Rural Disperso,425314
+41,Huila,2017,Total,1086654
+41,Huila,2018,Cabecera,669697
+41,Huila,2018,Centros Poblados y Rural Disperso,430689
+41,Huila,2018,Total,1100386
+41,Huila,2019,Cabecera,674903
+41,Huila,2019,Centros Poblados y Rural Disperso,436941
+41,Huila,2019,Total,1111844
+41,Huila,2020,Cabecera,687414
+41,Huila,2020,Centros Poblados y Rural Disperso,449497
+41,Huila,2020,Total,1136911
+41,Huila,2021,Cabecera,693584
+41,Huila,2021,Centros Poblados y Rural Disperso,457627
+41,Huila,2021,Total,1151211
+41,Huila,2022,Cabecera,699526
+41,Huila,2022,Centros Poblados y Rural Disperso,464937
+41,Huila,2022,Total,1164463
+41,Huila,2023,Cabecera,705917
+41,Huila,2023,Centros Poblados y Rural Disperso,472536
+41,Huila,2023,Total,1178453
+41,Huila,2024,Cabecera,712640
+41,Huila,2024,Centros Poblados y Rural Disperso,479633
+41,Huila,2024,Total,1192273
+41,Huila,2025,Cabecera,719024
+41,Huila,2025,Centros Poblados y Rural Disperso,486294
+41,Huila,2025,Total,1205318
+41,Huila,2026,Cabecera,725038
+41,Huila,2026,Centros Poblados y Rural Disperso,492633
+41,Huila,2026,Total,1217671
+41,Huila,2027,Cabecera,730852
+41,Huila,2027,Centros Poblados y Rural Disperso,498681
+41,Huila,2027,Total,1229533
+41,Huila,2028,Cabecera,736328
+41,Huila,2028,Centros Poblados y Rural Disperso,504596
+41,Huila,2028,Total,1240924
+41,Huila,2029,Cabecera,741616
+41,Huila,2029,Centros Poblados y Rural Disperso,510241
+41,Huila,2029,Total,1251857
+41,Huila,2030,Cabecera,746681
+41,Huila,2030,Centros Poblados y Rural Disperso,515726
+41,Huila,2030,Total,1262407
+41,Huila,2031,Cabecera,751556
+41,Huila,2031,Centros Poblados y Rural Disperso,521062
+41,Huila,2031,Total,1272618
+41,Huila,2032,Cabecera,756142
+41,Huila,2032,Centros Poblados y Rural Disperso,526321
+41,Huila,2032,Total,1282463
+41,Huila,2033,Cabecera,760408
+41,Huila,2033,Centros Poblados y Rural Disperso,531518
+41,Huila,2033,Total,1291926
+41,Huila,2034,Cabecera,764444
+41,Huila,2034,Centros Poblados y Rural Disperso,536582
+41,Huila,2034,Total,1301026
+41,Huila,2035,Cabecera,768231
+41,Huila,2035,Centros Poblados y Rural Disperso,541544
+41,Huila,2035,Total,1309775
+41,Huila,2036,Total,1318148
+41,Huila,2037,Total,1326117
+41,Huila,2038,Total,1333689
+41,Huila,2039,Total,1340889
+41,Huila,2040,Total,1347699
+41,Huila,2041,Total,1354105
+41,Huila,2042,Total,1360136
+41,Huila,2043,Total,1365807
+41,Huila,2044,Total,1371090
+41,Huila,2045,Total,1375984
+41,Huila,2046,Total,1380511
+41,Huila,2047,Total,1384672
+41,Huila,2048,Total,1388458
+41,Huila,2049,Total,1391865
+41,Huila,2050,Total,1394898
+44,La Guajira,1993,Cabecera,344519
+44,La Guajira,1993,Centros Poblados y Rural Disperso,135649
+44,La Guajira,1993,Total,480168
+44,La Guajira,1994,Cabecera,352864
+44,La Guajira,1994,Centros Poblados y Rural Disperso,139378
+44,La Guajira,1994,Total,492242
+44,La Guajira,1995,Cabecera,361158
+44,La Guajira,1995,Centros Poblados y Rural Disperso,143476
+44,La Guajira,1995,Total,504634
+44,La Guajira,1996,Cabecera,369191
+44,La Guajira,1996,Centros Poblados y Rural Disperso,148161
+44,La Guajira,1996,Total,517352
+44,La Guajira,1997,Cabecera,376605
+44,La Guajira,1997,Centros Poblados y Rural Disperso,153851
+44,La Guajira,1997,Total,530456
+44,La Guajira,1998,Cabecera,382779
+44,La Guajira,1998,Centros Poblados y Rural Disperso,161223
+44,La Guajira,1998,Total,544002
+44,La Guajira,1999,Cabecera,386690
+44,La Guajira,1999,Centros Poblados y Rural Disperso,171303
+44,La Guajira,1999,Total,557993
+44,La Guajira,2000,Cabecera,386988
+44,La Guajira,2000,Centros Poblados y Rural Disperso,185434
+44,La Guajira,2000,Total,572422
+44,La Guajira,2001,Cabecera,382354
+44,La Guajira,2001,Centros Poblados y Rural Disperso,204899
+44,La Guajira,2001,Total,587253
+44,La Guajira,2002,Cabecera,372392
+44,La Guajira,2002,Centros Poblados y Rural Disperso,229790
+44,La Guajira,2002,Total,602182
+44,La Guajira,2003,Cabecera,358858
+44,La Guajira,2003,Centros Poblados y Rural Disperso,258152
+44,La Guajira,2003,Total,617010
+44,La Guajira,2004,Cabecera,345244
+44,La Guajira,2004,Centros Poblados y Rural Disperso,286449
+44,La Guajira,2004,Total,631693
+44,La Guajira,2005,Cabecera,334543
+44,La Guajira,2005,Centros Poblados y Rural Disperso,311175
+44,La Guajira,2005,Total,645718
+44,La Guajira,2006,Cabecera,328886
+44,La Guajira,2006,Centros Poblados y Rural Disperso,331684
+44,La Guajira,2006,Total,660570
+44,La Guajira,2007,Cabecera,327574
+44,La Guajira,2007,Centros Poblados y Rural Disperso,348064
+44,La Guajira,2007,Total,675638
+44,La Guajira,2008,Cabecera,329585
+44,La Guajira,2008,Centros Poblados y Rural Disperso,361508
+44,La Guajira,2008,Total,691093
+44,La Guajira,2009,Cabecera,333888
+44,La Guajira,2009,Centros Poblados y Rural Disperso,373055
+44,La Guajira,2009,Total,706943
+44,La Guajira,2010,Cabecera,339525
+44,La Guajira,2010,Centros Poblados y Rural Disperso,383388
+44,La Guajira,2010,Total,722913
+44,La Guajira,2011,Cabecera,345862
+44,La Guajira,2011,Centros Poblados y Rural Disperso,392881
+44,La Guajira,2011,Total,738743
+44,La Guajira,2012,Cabecera,352643
+44,La Guajira,2012,Centros Poblados y Rural Disperso,401931
+44,La Guajira,2012,Total,754574
+44,La Guajira,2013,Cabecera,359783
+44,La Guajira,2013,Centros Poblados y Rural Disperso,410833
+44,La Guajira,2013,Total,770616
+44,La Guajira,2014,Cabecera,367057
+44,La Guajira,2014,Centros Poblados y Rural Disperso,419561
+44,La Guajira,2014,Total,786618
+44,La Guajira,2015,Cabecera,374627
+44,La Guajira,2015,Centros Poblados y Rural Disperso,428465
+44,La Guajira,2015,Total,803092
+44,La Guajira,2016,Cabecera,383711
+44,La Guajira,2016,Centros Poblados y Rural Disperso,438989
+44,La Guajira,2016,Total,822700
+44,La Guajira,2017,Cabecera,394545
+44,La Guajira,2017,Centros Poblados y Rural Disperso,451467
+44,La Guajira,2017,Total,846012
+44,La Guajira,2018,Cabecera,410636
+44,La Guajira,2018,Centros Poblados y Rural Disperso,469924
+44,La Guajira,2018,Total,880560
+44,La Guajira,2019,Cabecera,445158
+44,La Guajira,2019,Centros Poblados y Rural Disperso,482348
+44,La Guajira,2019,Total,927506
+44,La Guajira,2020,Cabecera,481253
+44,La Guajira,2020,Centros Poblados y Rural Disperso,482814
+44,La Guajira,2020,Total,964067
+44,La Guajira,2021,Cabecera,500332
+44,La Guajira,2021,Centros Poblados y Rural Disperso,492749
+44,La Guajira,2021,Total,993081
+44,La Guajira,2022,Cabecera,515338
+44,La Guajira,2022,Centros Poblados y Rural Disperso,501783
+44,La Guajira,2022,Total,1017121
+44,La Guajira,2023,Cabecera,529039
+44,La Guajira,2023,Centros Poblados y Rural Disperso,509358
+44,La Guajira,2023,Total,1038397
+44,La Guajira,2024,Cabecera,540264
+44,La Guajira,2024,Centros Poblados y Rural Disperso,516988
+44,La Guajira,2024,Total,1057252
+44,La Guajira,2025,Cabecera,550147
+44,La Guajira,2025,Centros Poblados y Rural Disperso,523704
+44,La Guajira,2025,Total,1073851
+44,La Guajira,2026,Cabecera,559005
+44,La Guajira,2026,Centros Poblados y Rural Disperso,529798
+44,La Guajira,2026,Total,1088803
+44,La Guajira,2027,Cabecera,567399
+44,La Guajira,2027,Centros Poblados y Rural Disperso,535348
+44,La Guajira,2027,Total,1102747
+44,La Guajira,2028,Cabecera,575012
+44,La Guajira,2028,Centros Poblados y Rural Disperso,541050
+44,La Guajira,2028,Total,1116062
+44,La Guajira,2029,Cabecera,582266
+44,La Guajira,2029,Centros Poblados y Rural Disperso,546776
+44,La Guajira,2029,Total,1129042
+44,La Guajira,2030,Cabecera,589313
+44,La Guajira,2030,Centros Poblados y Rural Disperso,552684
+44,La Guajira,2030,Total,1141997
+44,La Guajira,2031,Cabecera,596518
+44,La Guajira,2031,Centros Poblados y Rural Disperso,558446
+44,La Guajira,2031,Total,1154964
+44,La Guajira,2032,Cabecera,603341
+44,La Guajira,2032,Centros Poblados y Rural Disperso,564452
+44,La Guajira,2032,Total,1167793
+44,La Guajira,2033,Cabecera,610009
+44,La Guajira,2033,Centros Poblados y Rural Disperso,570451
+44,La Guajira,2033,Total,1180460
+44,La Guajira,2034,Cabecera,616585
+44,La Guajira,2034,Centros Poblados y Rural Disperso,576388
+44,La Guajira,2034,Total,1192973
+44,La Guajira,2035,Cabecera,623351
+44,La Guajira,2035,Centros Poblados y Rural Disperso,582009
+44,La Guajira,2035,Total,1205360
+44,La Guajira,2036,Total,1217550
+44,La Guajira,2037,Total,1229463
+44,La Guajira,2038,Total,1241112
+44,La Guajira,2039,Total,1252518
+44,La Guajira,2040,Total,1263663
+44,La Guajira,2041,Total,1274524
+44,La Guajira,2042,Total,1285123
+44,La Guajira,2043,Total,1295469
+44,La Guajira,2044,Total,1305550
+44,La Guajira,2045,Total,1315350
+44,La Guajira,2046,Total,1324876
+44,La Guajira,2047,Total,1334141
+44,La Guajira,2048,Total,1343136
+44,La Guajira,2049,Total,1351847
+44,La Guajira,2050,Total,1360264
+47,Magdalena,1993,Cabecera,569835
+47,Magdalena,1993,Centros Poblados y Rural Disperso,336944
+47,Magdalena,1993,Total,906779
+47,Magdalena,1994,Cabecera,592047
+47,Magdalena,1994,Centros Poblados y Rural Disperso,328935
+47,Magdalena,1994,Total,920982
+47,Magdalena,1995,Cabecera,612251
+47,Magdalena,1995,Centros Poblados y Rural Disperso,323148
+47,Magdalena,1995,Total,935399
+47,Magdalena,1996,Cabecera,630509
+47,Magdalena,1996,Centros Poblados y Rural Disperso,319567
+47,Magdalena,1996,Total,950076
+47,Magdalena,1997,Cabecera,649788
+47,Magdalena,1997,Centros Poblados y Rural Disperso,315287
+47,Magdalena,1997,Total,965075
+47,Magdalena,1998,Cabecera,665076
+47,Magdalena,1998,Centros Poblados y Rural Disperso,315370
+47,Magdalena,1998,Total,980446
+47,Magdalena,1999,Cabecera,679418
+47,Magdalena,1999,Centros Poblados y Rural Disperso,316792
+47,Magdalena,1999,Total,996210
+47,Magdalena,2000,Cabecera,689046
+47,Magdalena,2000,Centros Poblados y Rural Disperso,323300
+47,Magdalena,2000,Total,1012346
+47,Magdalena,2001,Cabecera,715134
+47,Magdalena,2001,Centros Poblados y Rural Disperso,313677
+47,Magdalena,2001,Total,1028811
+47,Magdalena,2002,Cabecera,728116
+47,Magdalena,2002,Centros Poblados y Rural Disperso,317456
+47,Magdalena,2002,Total,1045572
+47,Magdalena,2003,Cabecera,740959
+47,Magdalena,2003,Centros Poblados y Rural Disperso,321690
+47,Magdalena,2003,Total,1062649
+47,Magdalena,2004,Cabecera,753786
+47,Magdalena,2004,Centros Poblados y Rural Disperso,326290
+47,Magdalena,2004,Total,1080076
+47,Magdalena,2005,Cabecera,766611
+47,Magdalena,2005,Centros Poblados y Rural Disperso,331140
+47,Magdalena,2005,Total,1097751
+47,Magdalena,2006,Cabecera,779711
+47,Magdalena,2006,Centros Poblados y Rural Disperso,336326
+47,Magdalena,2006,Total,1116037
+47,Magdalena,2007,Cabecera,792711
+47,Magdalena,2007,Centros Poblados y Rural Disperso,341586
+47,Magdalena,2007,Total,1134297
+47,Magdalena,2008,Cabecera,805546
+47,Magdalena,2008,Centros Poblados y Rural Disperso,346876
+47,Magdalena,2008,Total,1152422
+47,Magdalena,2009,Cabecera,818228
+47,Magdalena,2009,Centros Poblados y Rural Disperso,352158
+47,Magdalena,2009,Total,1170386
+47,Magdalena,2010,Cabecera,830618
+47,Magdalena,2010,Centros Poblados y Rural Disperso,357382
+47,Magdalena,2010,Total,1188000
+47,Magdalena,2011,Cabecera,842545
+47,Magdalena,2011,Centros Poblados y Rural Disperso,362432
+47,Magdalena,2011,Total,1204977
+47,Magdalena,2012,Cabecera,854091
+47,Magdalena,2012,Centros Poblados y Rural Disperso,367328
+47,Magdalena,2012,Total,1221419
+47,Magdalena,2013,Cabecera,865390
+47,Magdalena,2013,Centros Poblados y Rural Disperso,372153
+47,Magdalena,2013,Total,1237543
+47,Magdalena,2014,Cabecera,876369
+47,Magdalena,2014,Centros Poblados y Rural Disperso,376842
+47,Magdalena,2014,Total,1253211
+47,Magdalena,2015,Cabecera,887420
+47,Magdalena,2015,Centros Poblados y Rural Disperso,381560
+47,Magdalena,2015,Total,1268980
+47,Magdalena,2016,Cabecera,900356
+47,Magdalena,2016,Centros Poblados y Rural Disperso,387106
+47,Magdalena,2016,Total,1287462
+47,Magdalena,2017,Cabecera,915586
+47,Magdalena,2017,Centros Poblados y Rural Disperso,393673
+47,Magdalena,2017,Total,1309259
+47,Magdalena,2018,Cabecera,938320
+47,Magdalena,2018,Centros Poblados y Rural Disperso,403426
+47,Magdalena,2018,Total,1341746
+47,Magdalena,2019,Cabecera,967629
+47,Magdalena,2019,Centros Poblados y Rural Disperso,421203
+47,Magdalena,2019,Total,1388832
+47,Magdalena,2020,Cabecera,987845
+47,Magdalena,2020,Centros Poblados y Rural Disperso,438178
+47,Magdalena,2020,Total,1426023
+47,Magdalena,2021,Cabecera,1001595
+47,Magdalena,2021,Centros Poblados y Rural Disperso,452559
+47,Magdalena,2021,Total,1454154
+47,Magdalena,2022,Cabecera,1011191
+47,Magdalena,2022,Centros Poblados y Rural Disperso,465175
+47,Magdalena,2022,Total,1476366
+47,Magdalena,2023,Cabecera,1019464
+47,Magdalena,2023,Centros Poblados y Rural Disperso,476699
+47,Magdalena,2023,Total,1496163
+47,Magdalena,2024,Cabecera,1026917
+47,Magdalena,2024,Centros Poblados y Rural Disperso,486865
+47,Magdalena,2024,Total,1513782
+47,Magdalena,2025,Cabecera,1033279
+47,Magdalena,2025,Centros Poblados y Rural Disperso,495759
+47,Magdalena,2025,Total,1529038
+47,Magdalena,2026,Cabecera,1038748
+47,Magdalena,2026,Centros Poblados y Rural Disperso,503789
+47,Magdalena,2026,Total,1542537
+47,Magdalena,2027,Cabecera,1044003
+47,Magdalena,2027,Centros Poblados y Rural Disperso,510864
+47,Magdalena,2027,Total,1554867
+47,Magdalena,2028,Cabecera,1048639
+47,Magdalena,2028,Centros Poblados y Rural Disperso,517775
+47,Magdalena,2028,Total,1566414
+47,Magdalena,2029,Cabecera,1053243
+47,Magdalena,2029,Centros Poblados y Rural Disperso,524254
+47,Magdalena,2029,Total,1577497
+47,Magdalena,2030,Cabecera,1057885
+47,Magdalena,2030,Centros Poblados y Rural Disperso,530502
+47,Magdalena,2030,Total,1588387
+47,Magdalena,2031,Cabecera,1062868
+47,Magdalena,2031,Centros Poblados y Rural Disperso,536227
+47,Magdalena,2031,Total,1599095
+47,Magdalena,2032,Cabecera,1067205
+47,Magdalena,2032,Centros Poblados y Rural Disperso,542269
+47,Magdalena,2032,Total,1609474
+47,Magdalena,2033,Cabecera,1071257
+47,Magdalena,2033,Centros Poblados y Rural Disperso,548228
+47,Magdalena,2033,Total,1619485
+47,Magdalena,2034,Cabecera,1075015
+47,Magdalena,2034,Centros Poblados y Rural Disperso,554128
+47,Magdalena,2034,Total,1629143
+47,Magdalena,2035,Cabecera,1078792
+47,Magdalena,2035,Centros Poblados y Rural Disperso,559668
+47,Magdalena,2035,Total,1638460
+47,Magdalena,2036,Total,1647354
+47,Magdalena,2037,Total,1655757
+47,Magdalena,2038,Total,1663678
+47,Magdalena,2039,Total,1671143
+47,Magdalena,2040,Total,1678130
+47,Magdalena,2041,Total,1684630
+47,Magdalena,2042,Total,1690662
+47,Magdalena,2043,Total,1696227
+47,Magdalena,2044,Total,1701316
+47,Magdalena,2045,Total,1705923
+47,Magdalena,2046,Total,1710064
+47,Magdalena,2047,Total,1713751
+47,Magdalena,2048,Total,1716973
+47,Magdalena,2049,Total,1719728
+47,Magdalena,2050,Total,1722017
+50,Meta,1993,Cabecera,366671
+50,Meta,1993,Centros Poblados y Rural Disperso,180015
+50,Meta,1993,Total,546686
+50,Meta,1994,Cabecera,386712
+50,Meta,1994,Centros Poblados y Rural Disperso,179590
+50,Meta,1994,Total,566302
+50,Meta,1995,Cabecera,401979
+50,Meta,1995,Centros Poblados y Rural Disperso,184193
+50,Meta,1995,Total,586172
+50,Meta,1996,Cabecera,418410
+50,Meta,1996,Centros Poblados y Rural Disperso,187844
+50,Meta,1996,Total,606254
+50,Meta,1997,Cabecera,436357
+50,Meta,1997,Centros Poblados y Rural Disperso,190184
+50,Meta,1997,Total,626541
+50,Meta,1998,Cabecera,456063
+50,Meta,1998,Centros Poblados y Rural Disperso,190967
+50,Meta,1998,Total,647030
+50,Meta,1999,Cabecera,477399
+50,Meta,1999,Centros Poblados y Rural Disperso,190285
+50,Meta,1999,Total,667684
+50,Meta,2000,Cabecera,499750
+50,Meta,2000,Centros Poblados y Rural Disperso,188669
+50,Meta,2000,Total,688419
+50,Meta,2001,Cabecera,522187
+50,Meta,2001,Centros Poblados y Rural Disperso,187025
+50,Meta,2001,Total,709212
+50,Meta,2002,Cabecera,543921
+50,Meta,2002,Centros Poblados y Rural Disperso,186148
+50,Meta,2002,Total,730069
+50,Meta,2003,Cabecera,564522
+50,Meta,2003,Centros Poblados y Rural Disperso,186514
+50,Meta,2003,Total,751036
+50,Meta,2004,Cabecera,584043
+50,Meta,2004,Centros Poblados y Rural Disperso,188149
+50,Meta,2004,Total,772192
+50,Meta,2005,Cabecera,602955
+50,Meta,2005,Centros Poblados y Rural Disperso,190966
+50,Meta,2005,Total,793921
+50,Meta,2006,Cabecera,620738
+50,Meta,2006,Centros Poblados y Rural Disperso,194453
+50,Meta,2006,Total,815191
+50,Meta,2007,Cabecera,637665
+50,Meta,2007,Centros Poblados y Rural Disperso,198374
+50,Meta,2007,Total,836039
+50,Meta,2008,Cabecera,653845
+50,Meta,2008,Centros Poblados y Rural Disperso,202540
+50,Meta,2008,Total,856385
+50,Meta,2009,Cabecera,669518
+50,Meta,2009,Centros Poblados y Rural Disperso,206845
+50,Meta,2009,Total,876363
+50,Meta,2010,Cabecera,684802
+50,Meta,2010,Centros Poblados y Rural Disperso,211232
+50,Meta,2010,Total,896034
+50,Meta,2011,Cabecera,699662
+50,Meta,2011,Centros Poblados y Rural Disperso,215615
+50,Meta,2011,Total,915277
+50,Meta,2012,Cabecera,714048
+50,Meta,2012,Centros Poblados y Rural Disperso,219918
+50,Meta,2012,Total,933966
+50,Meta,2013,Cabecera,727971
+50,Meta,2013,Centros Poblados y Rural Disperso,224130
+50,Meta,2013,Total,952101
+50,Meta,2014,Cabecera,741548
+50,Meta,2014,Centros Poblados y Rural Disperso,228260
+50,Meta,2014,Total,969808
+50,Meta,2015,Cabecera,754897
+50,Meta,2015,Centros Poblados y Rural Disperso,232335
+50,Meta,2015,Total,987232
+50,Meta,2016,Cabecera,768213
+50,Meta,2016,Centros Poblados y Rural Disperso,236420
+50,Meta,2016,Total,1004633
+50,Meta,2017,Cabecera,781463
+50,Meta,2017,Centros Poblados y Rural Disperso,240480
+50,Meta,2017,Total,1021943
+50,Meta,2018,Cabecera,795061
+50,Meta,2018,Centros Poblados y Rural Disperso,244661
+50,Meta,2018,Total,1039722
+50,Meta,2019,Cabecera,803166
+50,Meta,2019,Centros Poblados y Rural Disperso,248959
+50,Meta,2019,Total,1052125
+50,Meta,2020,Cabecera,824056
+50,Meta,2020,Centros Poblados y Rural Disperso,257976
+50,Meta,2020,Total,1082032
+50,Meta,2021,Cabecera,835553
+50,Meta,2021,Centros Poblados y Rural Disperso,262551
+50,Meta,2021,Total,1098104
+50,Meta,2022,Cabecera,846615
+50,Meta,2022,Centros Poblados y Rural Disperso,267195
+50,Meta,2022,Total,1113810
+50,Meta,2023,Cabecera,858142
+50,Meta,2023,Centros Poblados y Rural Disperso,271943
+50,Meta,2023,Total,1130085
+50,Meta,2024,Cabecera,869506
+50,Meta,2024,Centros Poblados y Rural Disperso,276260
+50,Meta,2024,Total,1145766
+50,Meta,2025,Cabecera,880077
+50,Meta,2025,Centros Poblados y Rural Disperso,280274
+50,Meta,2025,Total,1160351
+50,Meta,2026,Cabecera,889994
+50,Meta,2026,Centros Poblados y Rural Disperso,284010
+50,Meta,2026,Total,1174004
+50,Meta,2027,Cabecera,899378
+50,Meta,2027,Centros Poblados y Rural Disperso,287733
+50,Meta,2027,Total,1187111
+50,Meta,2028,Cabecera,908518
+50,Meta,2028,Centros Poblados y Rural Disperso,291211
+50,Meta,2028,Total,1199729
+50,Meta,2029,Cabecera,917329
+50,Meta,2029,Centros Poblados y Rural Disperso,294585
+50,Meta,2029,Total,1211914
+50,Meta,2030,Cabecera,925859
+50,Meta,2030,Centros Poblados y Rural Disperso,297876
+50,Meta,2030,Total,1223735
+50,Meta,2031,Cabecera,934020
+50,Meta,2031,Centros Poblados y Rural Disperso,301209
+50,Meta,2031,Total,1235229
+50,Meta,2032,Cabecera,942043
+50,Meta,2032,Centros Poblados y Rural Disperso,304331
+50,Meta,2032,Total,1246374
+50,Meta,2033,Cabecera,949739
+50,Meta,2033,Centros Poblados y Rural Disperso,307419
+50,Meta,2033,Total,1257158
+50,Meta,2034,Cabecera,957118
+50,Meta,2034,Centros Poblados y Rural Disperso,310458
+50,Meta,2034,Total,1267576
+50,Meta,2035,Cabecera,964054
+50,Meta,2035,Centros Poblados y Rural Disperso,313578
+50,Meta,2035,Total,1277632
+50,Meta,2036,Total,1287321
+50,Meta,2037,Total,1296627
+50,Meta,2038,Total,1305561
+50,Meta,2039,Total,1314133
+50,Meta,2040,Total,1322326
+50,Meta,2041,Total,1330132
+50,Meta,2042,Total,1337574
+50,Meta,2043,Total,1344662
+50,Meta,2044,Total,1351378
+50,Meta,2045,Total,1357722
+50,Meta,2046,Total,1363702
+50,Meta,2047,Total,1369318
+50,Meta,2048,Total,1374571
+50,Meta,2049,Total,1379454
+50,Meta,2050,Total,1383966
+52,Nariño,1993,Cabecera,560091
+52,Nariño,1993,Centros Poblados y Rural Disperso,752098
+52,Nariño,1993,Total,1312189
+52,Nariño,1994,Cabecera,571097
+52,Nariño,1994,Centros Poblados y Rural Disperso,759186
+52,Nariño,1994,Total,1330283
+52,Nariño,1995,Cabecera,580496
+52,Nariño,1995,Centros Poblados y Rural Disperso,768087
+52,Nariño,1995,Total,1348583
+52,Nariño,1996,Cabecera,589642
+52,Nariño,1996,Centros Poblados y Rural Disperso,777265
+52,Nariño,1996,Total,1366907
+52,Nariño,1997,Cabecera,598480
+52,Nariño,1997,Centros Poblados y Rural Disperso,786595
+52,Nariño,1997,Total,1385075
+52,Nariño,1998,Cabecera,606978
+52,Nariño,1998,Centros Poblados y Rural Disperso,795916
+52,Nariño,1998,Total,1402894
+52,Nariño,1999,Cabecera,615089
+52,Nariño,1999,Centros Poblados y Rural Disperso,805139
+52,Nariño,1999,Total,1420228
+52,Nariño,2000,Cabecera,626403
+52,Nariño,2000,Centros Poblados y Rural Disperso,810469
+52,Nariño,2000,Total,1436872
+52,Nariño,2001,Cabecera,637171
+52,Nariño,2001,Centros Poblados y Rural Disperso,815542
+52,Nariño,2001,Total,1452713
+52,Nariño,2002,Cabecera,644081
+52,Nariño,2002,Centros Poblados y Rural Disperso,823714
+52,Nariño,2002,Total,1467795
+52,Nariño,2003,Cabecera,650717
+52,Nariño,2003,Centros Poblados y Rural Disperso,831646
+52,Nariño,2003,Total,1482363
+52,Nariño,2004,Cabecera,657195
+52,Nariño,2004,Centros Poblados y Rural Disperso,839531
+52,Nariño,2004,Total,1496726
+52,Nariño,2005,Cabecera,663356
+52,Nariño,2005,Centros Poblados y Rural Disperso,847098
+52,Nariño,2005,Total,1510454
+52,Nariño,2006,Cabecera,669900
+52,Nariño,2006,Centros Poblados y Rural Disperso,855210
+52,Nariño,2006,Total,1525110
+52,Nariño,2007,Cabecera,675753
+52,Nariño,2007,Centros Poblados y Rural Disperso,862501
+52,Nariño,2007,Total,1538254
+52,Nariño,2008,Cabecera,680790
+52,Nariño,2008,Centros Poblados y Rural Disperso,868783
+52,Nariño,2008,Total,1549573
+52,Nariño,2009,Cabecera,685314
+52,Nariño,2009,Centros Poblados y Rural Disperso,874433
+52,Nariño,2009,Total,1559747
+52,Nariño,2010,Cabecera,689593
+52,Nariño,2010,Centros Poblados y Rural Disperso,879820
+52,Nariño,2010,Total,1569413
+52,Nariño,2011,Cabecera,693645
+52,Nariño,2011,Centros Poblados y Rural Disperso,884914
+52,Nariño,2011,Total,1578559
+52,Nariño,2012,Cabecera,697351
+52,Nariño,2012,Centros Poblados y Rural Disperso,889594
+52,Nariño,2012,Total,1586945
+52,Nariño,2013,Cabecera,700622
+52,Nariño,2013,Centros Poblados y Rural Disperso,893732
+52,Nariño,2013,Total,1594354
+52,Nariño,2014,Cabecera,703757
+52,Nariño,2014,Centros Poblados y Rural Disperso,897709
+52,Nariño,2014,Total,1601466
+52,Nariño,2015,Cabecera,706965
+52,Nariño,2015,Centros Poblados y Rural Disperso,901761
+52,Nariño,2015,Total,1608726
+52,Nariño,2016,Cabecera,710068
+52,Nariño,2016,Centros Poblados y Rural Disperso,905699
+52,Nariño,2016,Total,1615767
+52,Nariño,2017,Cabecera,712802
+52,Nariño,2017,Centros Poblados y Rural Disperso,909182
+52,Nariño,2017,Total,1621984
+52,Nariño,2018,Cabecera,716592
+52,Nariño,2018,Centros Poblados y Rural Disperso,914000
+52,Nariño,2018,Total,1630592
+52,Nariño,2019,Cabecera,715004
+52,Nariño,2019,Centros Poblados y Rural Disperso,913977
+52,Nariño,2019,Total,1628981
+52,Nariño,2020,Cabecera,730402
+52,Nariño,2020,Centros Poblados y Rural Disperso,935052
+52,Nariño,2020,Total,1665454
+52,Nariño,2021,Cabecera,736214
+52,Nariño,2021,Centros Poblados y Rural Disperso,942572
+52,Nariño,2021,Total,1678786
+52,Nariño,2022,Cabecera,741411
+52,Nariño,2022,Centros Poblados y Rural Disperso,947591
+52,Nariño,2022,Total,1689002
+52,Nariño,2023,Cabecera,746748
+52,Nariño,2023,Centros Poblados y Rural Disperso,952822
+52,Nariño,2023,Total,1699570
+52,Nariño,2024,Cabecera,752021
+52,Nariño,2024,Centros Poblados y Rural Disperso,957869
+52,Nariño,2024,Total,1709890
+52,Nariño,2025,Cabecera,756828
+52,Nariño,2025,Centros Poblados y Rural Disperso,962453
+52,Nariño,2025,Total,1719281
+52,Nariño,2026,Cabecera,761198
+52,Nariño,2026,Centros Poblados y Rural Disperso,966651
+52,Nariño,2026,Total,1727849
+52,Nariño,2027,Cabecera,765198
+52,Nariño,2027,Centros Poblados y Rural Disperso,970746
+52,Nariño,2027,Total,1735944
+52,Nariño,2028,Cabecera,769084
+52,Nariño,2028,Centros Poblados y Rural Disperso,974518
+52,Nariño,2028,Total,1743602
+52,Nariño,2029,Cabecera,772706
+52,Nariño,2029,Centros Poblados y Rural Disperso,978130
+52,Nariño,2029,Total,1750836
+52,Nariño,2030,Cabecera,776019
+52,Nariño,2030,Centros Poblados y Rural Disperso,981666
+52,Nariño,2030,Total,1757685
+52,Nariño,2031,Cabecera,779056
+52,Nariño,2031,Centros Poblados y Rural Disperso,985110
+52,Nariño,2031,Total,1764166
+52,Nariño,2032,Cabecera,782053
+52,Nariño,2032,Centros Poblados y Rural Disperso,988192
+52,Nariño,2032,Total,1770245
+52,Nariño,2033,Cabecera,784788
+52,Nariño,2033,Centros Poblados y Rural Disperso,991133
+52,Nariño,2033,Total,1775921
+52,Nariño,2034,Cabecera,787336
+52,Nariño,2034,Centros Poblados y Rural Disperso,993859
+52,Nariño,2034,Total,1781195
+52,Nariño,2035,Cabecera,789571
+52,Nariño,2035,Centros Poblados y Rural Disperso,996483
+52,Nariño,2035,Total,1786054
+52,Nariño,2036,Total,1790478
+52,Nariño,2037,Total,1794455
+52,Nariño,2038,Total,1797994
+52,Nariño,2039,Total,1801089
+52,Nariño,2040,Total,1803737
+52,Nariño,2041,Total,1805948
+52,Nariño,2042,Total,1807723
+52,Nariño,2043,Total,1809061
+52,Nariño,2044,Total,1809964
+52,Nariño,2045,Total,1810426
+52,Nariño,2046,Total,1810446
+52,Nariño,2047,Total,1810038
+52,Nariño,2048,Total,1809194
+52,Nariño,2049,Total,1807910
+52,Nariño,2050,Total,1806176
+54,Norte de Santander,1993,Cabecera,777999
+54,Norte de Santander,1993,Centros Poblados y Rural Disperso,306629
+54,Norte de Santander,1993,Total,1084628
+54,Norte de Santander,1994,Cabecera,801566
+54,Norte de Santander,1994,Centros Poblados y Rural Disperso,303896
+54,Norte de Santander,1994,Total,1105462
+54,Norte de Santander,1995,Cabecera,828546
+54,Norte de Santander,1995,Centros Poblados y Rural Disperso,297373
+54,Norte de Santander,1995,Total,1125919
+54,Norte de Santander,1996,Cabecera,854185
+54,Norte de Santander,1996,Centros Poblados y Rural Disperso,291777
+54,Norte de Santander,1996,Total,1145962
+54,Norte de Santander,1997,Cabecera,878225
+54,Norte de Santander,1997,Centros Poblados y Rural Disperso,287280
+54,Norte de Santander,1997,Total,1165505
+54,Norte de Santander,1998,Cabecera,900575
+54,Norte de Santander,1998,Centros Poblados y Rural Disperso,283849
+54,Norte de Santander,1998,Total,1184424
+54,Norte de Santander,1999,Cabecera,921180
+54,Norte de Santander,1999,Centros Poblados y Rural Disperso,281475
+54,Norte de Santander,1999,Total,1202655
+54,Norte de Santander,2000,Cabecera,940089
+54,Norte de Santander,2000,Centros Poblados y Rural Disperso,280010
+54,Norte de Santander,2000,Total,1220099
+54,Norte de Santander,2001,Cabecera,957405
+54,Norte de Santander,2001,Centros Poblados y Rural Disperso,279327
+54,Norte de Santander,2001,Total,1236732
+54,Norte de Santander,2002,Cabecera,973323
+54,Norte de Santander,2002,Centros Poblados y Rural Disperso,279315
+54,Norte de Santander,2002,Total,1252638
+54,Norte de Santander,2003,Cabecera,988128
+54,Norte de Santander,2003,Centros Poblados y Rural Disperso,279876
+54,Norte de Santander,2003,Total,1268004
+54,Norte de Santander,2004,Cabecera,1002069
+54,Norte de Santander,2004,Centros Poblados y Rural Disperso,280933
+54,Norte de Santander,2004,Total,1283002
+54,Norte de Santander,2005,Cabecera,1015290
+54,Norte de Santander,2005,Centros Poblados y Rural Disperso,282359
+54,Norte de Santander,2005,Total,1297649
+54,Norte de Santander,2006,Cabecera,1028188
+54,Norte de Santander,2006,Centros Poblados y Rural Disperso,284169
+54,Norte de Santander,2006,Total,1312357
+54,Norte de Santander,2007,Cabecera,1040305
+54,Norte de Santander,2007,Centros Poblados y Rural Disperso,286129
+54,Norte de Santander,2007,Total,1326434
+54,Norte de Santander,2008,Cabecera,1051533
+54,Norte de Santander,2008,Centros Poblados y Rural Disperso,288149
+54,Norte de Santander,2008,Total,1339682
+54,Norte de Santander,2009,Cabecera,1062035
+54,Norte de Santander,2009,Centros Poblados y Rural Disperso,290196
+54,Norte de Santander,2009,Total,1352231
+54,Norte de Santander,2010,Cabecera,1071702
+54,Norte de Santander,2010,Centros Poblados y Rural Disperso,292187
+54,Norte de Santander,2010,Total,1363889
+54,Norte de Santander,2011,Cabecera,1080229
+54,Norte de Santander,2011,Centros Poblados y Rural Disperso,294025
+54,Norte de Santander,2011,Total,1374254
+54,Norte de Santander,2012,Cabecera,1087964
+54,Norte de Santander,2012,Centros Poblados y Rural Disperso,295741
+54,Norte de Santander,2012,Total,1383705
+54,Norte de Santander,2013,Cabecera,1095269
+54,Norte de Santander,2013,Centros Poblados y Rural Disperso,297439
+54,Norte de Santander,2013,Total,1392708
+54,Norte de Santander,2014,Cabecera,1101991
+54,Norte de Santander,2014,Centros Poblados y Rural Disperso,299024
+54,Norte de Santander,2014,Total,1401015
+54,Norte de Santander,2015,Cabecera,1109106
+54,Norte de Santander,2015,Centros Poblados y Rural Disperso,300794
+54,Norte de Santander,2015,Total,1409900
+54,Norte de Santander,2016,Cabecera,1120904
+54,Norte de Santander,2016,Centros Poblados y Rural Disperso,303857
+54,Norte de Santander,2016,Total,1424761
+54,Norte de Santander,2017,Cabecera,1138292
+54,Norte de Santander,2017,Centros Poblados y Rural Disperso,308456
+54,Norte de Santander,2017,Total,1446748
+54,Norte de Santander,2018,Cabecera,1173712
+54,Norte de Santander,2018,Centros Poblados y Rural Disperso,317977
+54,Norte de Santander,2018,Total,1491689
+54,Norte de Santander,2019,Cabecera,1235476
+54,Norte de Santander,2019,Centros Poblados y Rural Disperso,329886
+54,Norte de Santander,2019,Total,1565362
+54,Norte de Santander,2020,Cabecera,1275646
+54,Norte de Santander,2020,Centros Poblados y Rural Disperso,341563
+54,Norte de Santander,2020,Total,1617209
+54,Norte de Santander,2021,Cabecera,1307684
+54,Norte de Santander,2021,Centros Poblados y Rural Disperso,346657
+54,Norte de Santander,2021,Total,1654341
+54,Norte de Santander,2022,Cabecera,1328451
+54,Norte de Santander,2022,Centros Poblados y Rural Disperso,350524
+54,Norte de Santander,2022,Total,1678975
+54,Norte de Santander,2023,Cabecera,1343079
+54,Norte de Santander,2023,Centros Poblados y Rural Disperso,353661
+54,Norte de Santander,2023,Total,1696740
+54,Norte de Santander,2024,Cabecera,1353250
+54,Norte de Santander,2024,Centros Poblados y Rural Disperso,356320
+54,Norte de Santander,2024,Total,1709570
+54,Norte de Santander,2025,Cabecera,1359676
+54,Norte de Santander,2025,Centros Poblados y Rural Disperso,358316
+54,Norte de Santander,2025,Total,1717992
+54,Norte de Santander,2026,Cabecera,1363322
+54,Norte de Santander,2026,Centros Poblados y Rural Disperso,359976
+54,Norte de Santander,2026,Total,1723298
+54,Norte de Santander,2027,Cabecera,1364973
+54,Norte de Santander,2027,Centros Poblados y Rural Disperso,361757
+54,Norte de Santander,2027,Total,1726730
+54,Norte de Santander,2028,Cabecera,1365641
+54,Norte de Santander,2028,Centros Poblados y Rural Disperso,363473
+54,Norte de Santander,2028,Total,1729114
+54,Norte de Santander,2029,Cabecera,1365650
+54,Norte de Santander,2029,Centros Poblados y Rural Disperso,365494
+54,Norte de Santander,2029,Total,1731144
+54,Norte de Santander,2030,Cabecera,1365486
+54,Norte de Santander,2030,Centros Poblados y Rural Disperso,367882
+54,Norte de Santander,2030,Total,1733368
+54,Norte de Santander,2031,Cabecera,1365029
+54,Norte de Santander,2031,Centros Poblados y Rural Disperso,370708
+54,Norte de Santander,2031,Total,1735737
+54,Norte de Santander,2032,Cabecera,1364606
+54,Norte de Santander,2032,Centros Poblados y Rural Disperso,373366
+54,Norte de Santander,2032,Total,1737972
+54,Norte de Santander,2033,Cabecera,1364053
+54,Norte de Santander,2033,Centros Poblados y Rural Disperso,376004
+54,Norte de Santander,2033,Total,1740057
+54,Norte de Santander,2034,Cabecera,1363345
+54,Norte de Santander,2034,Centros Poblados y Rural Disperso,378652
+54,Norte de Santander,2034,Total,1741997
+54,Norte de Santander,2035,Cabecera,1362295
+54,Norte de Santander,2035,Centros Poblados y Rural Disperso,381505
+54,Norte de Santander,2035,Total,1743800
+54,Norte de Santander,2036,Total,1745338
+54,Norte de Santander,2037,Total,1746489
+54,Norte de Santander,2038,Total,1747254
+54,Norte de Santander,2039,Total,1747648
+54,Norte de Santander,2040,Total,1747658
+54,Norte de Santander,2041,Total,1747270
+54,Norte de Santander,2042,Total,1746497
+54,Norte de Santander,2043,Total,1745352
+54,Norte de Santander,2044,Total,1743837
+54,Norte de Santander,2045,Total,1741938
+54,Norte de Santander,2046,Total,1739659
+54,Norte de Santander,2047,Total,1737011
+54,Norte de Santander,2048,Total,1733997
+54,Norte de Santander,2049,Total,1730610
+54,Norte de Santander,2050,Total,1726846
+63,Quindio,1993,Cabecera,402786
+63,Quindio,1993,Centros Poblados y Rural Disperso,74652
+63,Quindio,1993,Total,477438
+63,Quindio,1994,Cabecera,408526
+63,Quindio,1994,Centros Poblados y Rural Disperso,73276
+63,Quindio,1994,Total,481802
+63,Quindio,1995,Cabecera,414209
+63,Quindio,1995,Centros Poblados y Rural Disperso,71917
+63,Quindio,1995,Total,486126
+63,Quindio,1996,Cabecera,419649
+63,Quindio,1996,Centros Poblados y Rural Disperso,70654
+63,Quindio,1996,Total,490303
+63,Quindio,1997,Cabecera,424710
+63,Quindio,1997,Centros Poblados y Rural Disperso,69522
+63,Quindio,1997,Total,494232
+63,Quindio,1998,Cabecera,429267
+63,Quindio,1998,Centros Poblados y Rural Disperso,68546
+63,Quindio,1998,Total,497813
+63,Quindio,1999,Cabecera,433262
+63,Quindio,1999,Centros Poblados y Rural Disperso,67727
+63,Quindio,1999,Total,500989
+63,Quindio,2000,Cabecera,436599
+63,Quindio,2000,Centros Poblados y Rural Disperso,67068
+63,Quindio,2000,Total,503667
+63,Quindio,2001,Cabecera,439287
+63,Quindio,2001,Centros Poblados y Rural Disperso,66521
+63,Quindio,2001,Total,505808
+63,Quindio,2002,Cabecera,441402
+63,Quindio,2002,Centros Poblados y Rural Disperso,66064
+63,Quindio,2002,Total,507466
+63,Quindio,2003,Cabecera,443074
+63,Quindio,2003,Centros Poblados y Rural Disperso,65734
+63,Quindio,2003,Total,508808
+63,Quindio,2004,Cabecera,444545
+63,Quindio,2004,Centros Poblados y Rural Disperso,65474
+63,Quindio,2004,Total,510019
+63,Quindio,2005,Cabecera,445857
+63,Quindio,2005,Centros Poblados y Rural Disperso,65324
+63,Quindio,2005,Total,511181
+63,Quindio,2006,Cabecera,447333
+63,Quindio,2006,Centros Poblados y Rural Disperso,65256
+63,Quindio,2006,Total,512589
+63,Quindio,2007,Cabecera,448567
+63,Quindio,2007,Centros Poblados y Rural Disperso,65235
+63,Quindio,2007,Total,513802
+63,Quindio,2008,Cabecera,449512
+63,Quindio,2008,Centros Poblados y Rural Disperso,65213
+63,Quindio,2008,Total,514725
+63,Quindio,2009,Cabecera,450559
+63,Quindio,2009,Centros Poblados y Rural Disperso,65246
+63,Quindio,2009,Total,515805
+63,Quindio,2010,Cabecera,451990
+63,Quindio,2010,Centros Poblados y Rural Disperso,65357
+63,Quindio,2010,Total,517347
+63,Quindio,2011,Cabecera,453557
+63,Quindio,2011,Centros Poblados y Rural Disperso,65532
+63,Quindio,2011,Total,519089
+63,Quindio,2012,Cabecera,455012
+63,Quindio,2012,Centros Poblados y Rural Disperso,65685
+63,Quindio,2012,Total,520697
+63,Quindio,2013,Cabecera,456313
+63,Quindio,2013,Centros Poblados y Rural Disperso,65844
+63,Quindio,2013,Total,522157
+63,Quindio,2014,Cabecera,457921
+63,Quindio,2014,Centros Poblados y Rural Disperso,66049
+63,Quindio,2014,Total,523970
+63,Quindio,2015,Cabecera,460144
+63,Quindio,2015,Centros Poblados y Rural Disperso,66340
+63,Quindio,2015,Total,526484
+63,Quindio,2016,Cabecera,463141
+63,Quindio,2016,Centros Poblados y Rural Disperso,66750
+63,Quindio,2016,Total,529891
+63,Quindio,2017,Cabecera,466715
+63,Quindio,2017,Centros Poblados y Rural Disperso,67251
+63,Quindio,2017,Total,533966
+63,Quindio,2018,Cabecera,471910
+63,Quindio,2018,Centros Poblados y Rural Disperso,67994
+63,Quindio,2018,Total,539904
+63,Quindio,2019,Cabecera,480255
+63,Quindio,2019,Centros Poblados y Rural Disperso,67600
+63,Quindio,2019,Total,547855
+63,Quindio,2020,Cabecera,486029
+63,Quindio,2020,Centros Poblados y Rural Disperso,67292
+63,Quindio,2020,Total,553321
+63,Quindio,2021,Cabecera,490442
+63,Quindio,2021,Centros Poblados y Rural Disperso,66657
+63,Quindio,2021,Total,557099
+63,Quindio,2022,Cabecera,492893
+63,Quindio,2022,Centros Poblados y Rural Disperso,66917
+63,Quindio,2022,Total,559810
+63,Quindio,2023,Cabecera,495526
+63,Quindio,2023,Centros Poblados y Rural Disperso,67550
+63,Quindio,2023,Total,563076
+63,Quindio,2024,Cabecera,497785
+63,Quindio,2024,Centros Poblados y Rural Disperso,68263
+63,Quindio,2024,Total,566048
+63,Quindio,2025,Cabecera,499565
+63,Quindio,2025,Centros Poblados y Rural Disperso,68995
+63,Quindio,2025,Total,568560
+63,Quindio,2026,Cabecera,500928
+63,Quindio,2026,Centros Poblados y Rural Disperso,69800
+63,Quindio,2026,Total,570728
+63,Quindio,2027,Cabecera,501991
+63,Quindio,2027,Centros Poblados y Rural Disperso,70728
+63,Quindio,2027,Total,572719
+63,Quindio,2028,Cabecera,502850
+63,Quindio,2028,Centros Poblados y Rural Disperso,71750
+63,Quindio,2028,Total,574600
+63,Quindio,2029,Cabecera,503525
+63,Quindio,2029,Centros Poblados y Rural Disperso,72891
+63,Quindio,2029,Total,576416
+63,Quindio,2030,Cabecera,504039
+63,Quindio,2030,Centros Poblados y Rural Disperso,74160
+63,Quindio,2030,Total,578199
+63,Quindio,2031,Cabecera,504435
+63,Quindio,2031,Centros Poblados y Rural Disperso,75498
+63,Quindio,2031,Total,579933
+63,Quindio,2032,Cabecera,504686
+63,Quindio,2032,Centros Poblados y Rural Disperso,76896
+63,Quindio,2032,Total,581582
+63,Quindio,2033,Cabecera,504797
+63,Quindio,2033,Centros Poblados y Rural Disperso,78335
+63,Quindio,2033,Total,583132
+63,Quindio,2034,Cabecera,504764
+63,Quindio,2034,Centros Poblados y Rural Disperso,79814
+63,Quindio,2034,Total,584578
+63,Quindio,2035,Cabecera,504574
+63,Quindio,2035,Centros Poblados y Rural Disperso,81339
+63,Quindio,2035,Total,585913
+63,Quindio,2036,Total,587124
+63,Quindio,2037,Total,588194
+63,Quindio,2038,Total,589117
+63,Quindio,2039,Total,589892
+63,Quindio,2040,Total,590518
+63,Quindio,2041,Total,590996
+63,Quindio,2042,Total,591332
+63,Quindio,2043,Total,591531
+63,Quindio,2044,Total,591590
+63,Quindio,2045,Total,591509
+63,Quindio,2046,Total,591300
+63,Quindio,2047,Total,590960
+63,Quindio,2048,Total,590484
+63,Quindio,2049,Total,589880
+63,Quindio,2050,Total,589149
+66,Risaralda,1993,Cabecera,558916
+66,Risaralda,1993,Centros Poblados y Rural Disperso,216196
+66,Risaralda,1993,Total,775112
+66,Risaralda,1994,Cabecera,570896
+66,Risaralda,1994,Centros Poblados y Rural Disperso,216107
+66,Risaralda,1994,Total,787003
+66,Risaralda,1995,Cabecera,582617
+66,Risaralda,1995,Centros Poblados y Rural Disperso,216045
+66,Risaralda,1995,Total,798662
+66,Risaralda,1996,Cabecera,593966
+66,Risaralda,1996,Centros Poblados y Rural Disperso,215943
+66,Risaralda,1996,Total,809909
+66,Risaralda,1997,Cabecera,604814
+66,Risaralda,1997,Centros Poblados y Rural Disperso,215780
+66,Risaralda,1997,Total,820594
+66,Risaralda,1998,Cabecera,615012
+66,Risaralda,1998,Centros Poblados y Rural Disperso,215500
+66,Risaralda,1998,Total,830512
+66,Risaralda,1999,Cabecera,624512
+66,Risaralda,1999,Centros Poblados y Rural Disperso,215100
+66,Risaralda,1999,Total,839612
+66,Risaralda,2000,Cabecera,633191
+66,Risaralda,2000,Centros Poblados y Rural Disperso,214556
+66,Risaralda,2000,Total,847747
+66,Risaralda,2001,Cabecera,640996
+66,Risaralda,2001,Centros Poblados y Rural Disperso,213850
+66,Risaralda,2001,Total,854846
+66,Risaralda,2002,Cabecera,648032
+66,Risaralda,2002,Centros Poblados y Rural Disperso,213006
+66,Risaralda,2002,Total,861038
+66,Risaralda,2003,Cabecera,654570
+66,Risaralda,2003,Centros Poblados y Rural Disperso,212158
+66,Risaralda,2003,Total,866728
+66,Risaralda,2004,Cabecera,660967
+66,Risaralda,2004,Centros Poblados y Rural Disperso,211373
+66,Risaralda,2004,Total,872340
+66,Risaralda,2005,Cabecera,667268
+66,Risaralda,2005,Centros Poblados y Rural Disperso,210706
+66,Risaralda,2005,Total,877974
+66,Risaralda,2006,Cabecera,673803
+66,Risaralda,2006,Centros Poblados y Rural Disperso,210218
+66,Risaralda,2006,Total,884021
+66,Risaralda,2007,Cabecera,679735
+66,Risaralda,2007,Centros Poblados y Rural Disperso,209665
+66,Risaralda,2007,Total,889400
+66,Risaralda,2008,Cabecera,684836
+66,Risaralda,2008,Centros Poblados y Rural Disperso,208961
+66,Risaralda,2008,Total,893797
+66,Risaralda,2009,Cabecera,689799
+66,Risaralda,2009,Centros Poblados y Rural Disperso,208327
+66,Risaralda,2009,Total,898126
+66,Risaralda,2010,Cabecera,695098
+66,Risaralda,2010,Centros Poblados y Rural Disperso,207896
+66,Risaralda,2010,Total,902994
+66,Risaralda,2011,Cabecera,700342
+66,Risaralda,2011,Centros Poblados y Rural Disperso,207554
+66,Risaralda,2011,Total,907896
+66,Risaralda,2012,Cabecera,704966
+66,Risaralda,2012,Centros Poblados y Rural Disperso,207121
+66,Risaralda,2012,Total,912087
+66,Risaralda,2013,Cabecera,708847
+66,Risaralda,2013,Centros Poblados y Rural Disperso,206566
+66,Risaralda,2013,Total,915413
+66,Risaralda,2014,Cabecera,712845
+66,Risaralda,2014,Centros Poblados y Rural Disperso,206120
+66,Risaralda,2014,Total,918965
+66,Risaralda,2015,Cabecera,717489
+66,Risaralda,2015,Centros Poblados y Rural Disperso,205954
+66,Risaralda,2015,Total,923443
+66,Risaralda,2016,Cabecera,722943
+66,Risaralda,2016,Centros Poblados y Rural Disperso,206103
+66,Risaralda,2016,Total,929046
+66,Risaralda,2017,Cabecera,728755
+66,Risaralda,2017,Centros Poblados y Rural Disperso,206409
+66,Risaralda,2017,Total,935164
+66,Risaralda,2018,Cabecera,736164
+66,Risaralda,2018,Centros Poblados y Rural Disperso,207237
+66,Risaralda,2018,Total,943401
+66,Risaralda,2019,Cabecera,749533
+66,Risaralda,2019,Centros Poblados y Rural Disperso,202978
+66,Risaralda,2019,Total,952511
+66,Risaralda,2020,Cabecera,762638
+66,Risaralda,2020,Centros Poblados y Rural Disperso,200141
+66,Risaralda,2020,Total,962779
+66,Risaralda,2021,Cabecera,771884
+66,Risaralda,2021,Centros Poblados y Rural Disperso,196403
+66,Risaralda,2021,Total,968287
+66,Risaralda,2022,Cabecera,775780
+66,Risaralda,2022,Centros Poblados y Rural Disperso,194358
+66,Risaralda,2022,Total,970138
+66,Risaralda,2023,Cabecera,779222
+66,Risaralda,2023,Centros Poblados y Rural Disperso,193082
+66,Risaralda,2023,Total,972304
+66,Risaralda,2024,Cabecera,781555
+66,Risaralda,2024,Centros Poblados y Rural Disperso,192324
+66,Risaralda,2024,Total,973879
+66,Risaralda,2025,Cabecera,782966
+66,Risaralda,2025,Centros Poblados y Rural Disperso,191673
+66,Risaralda,2025,Total,974639
+66,Risaralda,2026,Cabecera,783663
+66,Risaralda,2026,Centros Poblados y Rural Disperso,191130
+66,Risaralda,2026,Total,974793
+66,Risaralda,2027,Cabecera,783800
+66,Risaralda,2027,Centros Poblados y Rural Disperso,190819
+66,Risaralda,2027,Total,974619
+66,Risaralda,2028,Cabecera,783488
+66,Risaralda,2028,Centros Poblados y Rural Disperso,190755
+66,Risaralda,2028,Total,974243
+66,Risaralda,2029,Cabecera,782781
+66,Risaralda,2029,Centros Poblados y Rural Disperso,190968
+66,Risaralda,2029,Total,973749
+66,Risaralda,2030,Cabecera,781708
+66,Risaralda,2030,Centros Poblados y Rural Disperso,191505
+66,Risaralda,2030,Total,973213
+66,Risaralda,2031,Cabecera,780415
+66,Risaralda,2031,Centros Poblados y Rural Disperso,192187
+66,Risaralda,2031,Total,972602
+66,Risaralda,2032,Cabecera,778987
+66,Risaralda,2032,Centros Poblados y Rural Disperso,192858
+66,Risaralda,2032,Total,971845
+66,Risaralda,2033,Cabecera,777397
+66,Risaralda,2033,Centros Poblados y Rural Disperso,193533
+66,Risaralda,2033,Total,970930
+66,Risaralda,2034,Cabecera,775685
+66,Risaralda,2034,Centros Poblados y Rural Disperso,194159
+66,Risaralda,2034,Total,969844
+66,Risaralda,2035,Cabecera,773796
+66,Risaralda,2035,Centros Poblados y Rural Disperso,194799
+66,Risaralda,2035,Total,968595
+66,Risaralda,2036,Total,967143
+66,Risaralda,2037,Total,965446
+66,Risaralda,2038,Total,963509
+66,Risaralda,2039,Total,961329
+66,Risaralda,2040,Total,958903
+66,Risaralda,2041,Total,956231
+66,Risaralda,2042,Total,953322
+66,Risaralda,2043,Total,950179
+66,Risaralda,2044,Total,946795
+66,Risaralda,2045,Total,943184
+66,Risaralda,2046,Total,939356
+66,Risaralda,2047,Total,935315
+66,Risaralda,2048,Total,931064
+66,Risaralda,2049,Total,926607
+66,Risaralda,2050,Total,921956
+68,Santander,1993,Cabecera,1027002
+68,Santander,1993,Centros Poblados y Rural Disperso,555986
+68,Santander,1993,Total,1582988
+68,Santander,1994,Cabecera,1054204
+68,Santander,1994,Centros Poblados y Rural Disperso,555171
+68,Santander,1994,Total,1609375
+68,Santander,1995,Cabecera,1081671
+68,Santander,1995,Centros Poblados y Rural Disperso,554394
+68,Santander,1995,Total,1636065
+68,Santander,1996,Cabecera,1109297
+68,Santander,1996,Centros Poblados y Rural Disperso,553658
+68,Santander,1996,Total,1662955
+68,Santander,1997,Cabecera,1136854
+68,Santander,1997,Centros Poblados y Rural Disperso,552843
+68,Santander,1997,Total,1689697
+68,Santander,1998,Cabecera,1164071
+68,Santander,1998,Centros Poblados y Rural Disperso,551856
+68,Santander,1998,Total,1715927
+68,Santander,1999,Cabecera,1190843
+68,Santander,1999,Centros Poblados y Rural Disperso,550661
+68,Santander,1999,Total,1741504
+68,Santander,2000,Cabecera,1217067
+68,Santander,2000,Centros Poblados y Rural Disperso,549255
+68,Santander,2000,Total,1766322
+68,Santander,2001,Cabecera,1242698
+68,Santander,2001,Centros Poblados y Rural Disperso,547640
+68,Santander,2001,Total,1790338
+68,Santander,2002,Cabecera,1267828
+68,Santander,2002,Centros Poblados y Rural Disperso,545894
+68,Santander,2002,Total,1813722
+68,Santander,2003,Cabecera,1292653
+68,Santander,2003,Centros Poblados y Rural Disperso,544111
+68,Santander,2003,Total,1836764
+68,Santander,2004,Cabecera,1317296
+68,Santander,2004,Centros Poblados y Rural Disperso,542369
+68,Santander,2004,Total,1859665
+68,Santander,2005,Cabecera,1341742
+68,Santander,2005,Centros Poblados y Rural Disperso,540633
+68,Santander,2005,Total,1882375
+68,Santander,2006,Cabecera,1366684
+68,Santander,2006,Centros Poblados y Rural Disperso,539246
+68,Santander,2006,Total,1905930
+68,Santander,2007,Cabecera,1391292
+68,Santander,2007,Centros Poblados y Rural Disperso,537828
+68,Santander,2007,Total,1929120
+68,Santander,2008,Cabecera,1415423
+68,Santander,2008,Centros Poblados y Rural Disperso,536374
+68,Santander,2008,Total,1951797
+68,Santander,2009,Cabecera,1439276
+68,Santander,2009,Centros Poblados y Rural Disperso,534950
+68,Santander,2009,Total,1974226
+68,Santander,2010,Cabecera,1462795
+68,Santander,2010,Centros Poblados y Rural Disperso,533557
+68,Santander,2010,Total,1996352
+68,Santander,2011,Cabecera,1485620
+68,Santander,2011,Centros Poblados y Rural Disperso,532060
+68,Santander,2011,Total,2017680
+68,Santander,2012,Cabecera,1507681
+68,Santander,2012,Centros Poblados y Rural Disperso,530441
+68,Santander,2012,Total,2038122
+68,Santander,2013,Cabecera,1529152
+68,Santander,2013,Centros Poblados y Rural Disperso,528800
+68,Santander,2013,Total,2057952
+68,Santander,2014,Cabecera,1550183
+68,Santander,2014,Centros Poblados y Rural Disperso,527165
+68,Santander,2014,Total,2077348
+68,Santander,2015,Cabecera,1571314
+68,Santander,2015,Centros Poblados y Rural Disperso,525755
+68,Santander,2015,Total,2097069
+68,Santander,2016,Cabecera,1594698
+68,Santander,2016,Centros Poblados y Rural Disperso,525256
+68,Santander,2016,Total,2119954
+68,Santander,2017,Cabecera,1620734
+68,Santander,2017,Centros Poblados y Rural Disperso,525762
+68,Santander,2017,Total,2146496
+68,Santander,2018,Cabecera,1655627
+68,Santander,2018,Centros Poblados y Rural Disperso,529210
+68,Santander,2018,Total,2184837
+68,Santander,2019,Cabecera,1704309
+68,Santander,2019,Centros Poblados y Rural Disperso,533278
+68,Santander,2019,Total,2237587
+68,Santander,2020,Cabecera,1744233
+68,Santander,2020,Centros Poblados y Rural Disperso,537975
+68,Santander,2020,Total,2282208
+68,Santander,2021,Cabecera,1777109
+68,Santander,2021,Centros Poblados y Rural Disperso,534988
+68,Santander,2021,Total,2312097
+68,Santander,2022,Cabecera,1802328
+68,Santander,2022,Centros Poblados y Rural Disperso,532910
+68,Santander,2022,Total,2335238
+68,Santander,2023,Cabecera,1826647
+68,Santander,2023,Centros Poblados y Rural Disperso,530480
+68,Santander,2023,Total,2357127
+68,Santander,2024,Cabecera,1847055
+68,Santander,2024,Centros Poblados y Rural Disperso,529681
+68,Santander,2024,Total,2376736
+68,Santander,2025,Cabecera,1864327
+68,Santander,2025,Centros Poblados y Rural Disperso,528887
+68,Santander,2025,Total,2393214
+68,Santander,2026,Cabecera,1879215
+68,Santander,2026,Centros Poblados y Rural Disperso,528104
+68,Santander,2026,Total,2407319
+68,Santander,2027,Cabecera,1892563
+68,Santander,2027,Centros Poblados y Rural Disperso,527423
+68,Santander,2027,Total,2419986
+68,Santander,2028,Cabecera,1904619
+68,Santander,2028,Centros Poblados y Rural Disperso,527061
+68,Santander,2028,Total,2431680
+68,Santander,2029,Cabecera,1915808
+68,Santander,2029,Centros Poblados y Rural Disperso,526972
+68,Santander,2029,Total,2442780
+68,Santander,2030,Cabecera,1926300
+68,Santander,2030,Centros Poblados y Rural Disperso,527274
+68,Santander,2030,Total,2453574
+68,Santander,2031,Cabecera,1936313
+68,Santander,2031,Centros Poblados y Rural Disperso,527737
+68,Santander,2031,Total,2464050
+68,Santander,2032,Cabecera,1945877
+68,Santander,2032,Centros Poblados y Rural Disperso,528183
+68,Santander,2032,Total,2474060
+68,Santander,2033,Cabecera,1954900
+68,Santander,2033,Centros Poblados y Rural Disperso,528683
+68,Santander,2033,Total,2483583
+68,Santander,2034,Cabecera,1963534
+68,Santander,2034,Centros Poblados y Rural Disperso,529074
+68,Santander,2034,Total,2492608
+68,Santander,2035,Cabecera,1971809
+68,Santander,2035,Centros Poblados y Rural Disperso,529324
+68,Santander,2035,Total,2501133
+68,Santander,2036,Total,2509092
+68,Santander,2037,Total,2516402
+68,Santander,2038,Total,2523056
+68,Santander,2039,Total,2529066
+68,Santander,2040,Total,2534424
+68,Santander,2041,Total,2539122
+68,Santander,2042,Total,2543167
+68,Santander,2043,Total,2546569
+68,Santander,2044,Total,2549336
+68,Santander,2045,Total,2551452
+68,Santander,2046,Total,2552918
+68,Santander,2047,Total,2553750
+68,Santander,2048,Total,2553948
+68,Santander,2049,Total,2553514
+68,Santander,2050,Total,2552448
+70,Sucre,1993,Cabecera,415356
+70,Sucre,1993,Centros Poblados y Rural Disperso,255800
+70,Sucre,1993,Total,671156
+70,Sucre,1994,Cabecera,423001
+70,Sucre,1994,Centros Poblados y Rural Disperso,258129
+70,Sucre,1994,Total,681130
+70,Sucre,1995,Cabecera,430159
+70,Sucre,1995,Centros Poblados y Rural Disperso,260692
+70,Sucre,1995,Total,690851
+70,Sucre,1996,Cabecera,436924
+70,Sucre,1996,Centros Poblados y Rural Disperso,263418
+70,Sucre,1996,Total,700342
+70,Sucre,1997,Cabecera,443428
+70,Sucre,1997,Centros Poblados y Rural Disperso,266293
+70,Sucre,1997,Total,709721
+70,Sucre,1998,Cabecera,449789
+70,Sucre,1998,Centros Poblados y Rural Disperso,269332
+70,Sucre,1998,Total,719121
+70,Sucre,1999,Cabecera,455078
+70,Sucre,1999,Centros Poblados y Rural Disperso,273501
+70,Sucre,1999,Total,728579
+70,Sucre,2000,Cabecera,461291
+70,Sucre,2000,Centros Poblados y Rural Disperso,276778
+70,Sucre,2000,Total,738069
+70,Sucre,2001,Cabecera,467436
+70,Sucre,2001,Centros Poblados y Rural Disperso,280120
+70,Sucre,2001,Total,747556
+70,Sucre,2002,Cabecera,473477
+70,Sucre,2002,Centros Poblados y Rural Disperso,283479
+70,Sucre,2002,Total,756956
+70,Sucre,2003,Cabecera,481489
+70,Sucre,2003,Centros Poblados y Rural Disperso,284671
+70,Sucre,2003,Total,766160
+70,Sucre,2004,Cabecera,487216
+70,Sucre,2004,Centros Poblados y Rural Disperso,287908
+70,Sucre,2004,Total,775124
+70,Sucre,2005,Cabecera,492583
+70,Sucre,2005,Centros Poblados y Rural Disperso,290952
+70,Sucre,2005,Total,783535
+70,Sucre,2006,Cabecera,498070
+70,Sucre,2006,Centros Poblados y Rural Disperso,294130
+70,Sucre,2006,Total,792200
+70,Sucre,2007,Cabecera,503555
+70,Sucre,2007,Centros Poblados y Rural Disperso,297293
+70,Sucre,2007,Total,800848
+70,Sucre,2008,Cabecera,508966
+70,Sucre,2008,Centros Poblados y Rural Disperso,300448
+70,Sucre,2008,Total,809414
+70,Sucre,2009,Cabecera,514350
+70,Sucre,2009,Centros Poblados y Rural Disperso,303587
+70,Sucre,2009,Total,817937
+70,Sucre,2010,Cabecera,519701
+70,Sucre,2010,Centros Poblados y Rural Disperso,306710
+70,Sucre,2010,Total,826411
+70,Sucre,2011,Cabecera,524950
+70,Sucre,2011,Centros Poblados y Rural Disperso,309786
+70,Sucre,2011,Total,834736
+70,Sucre,2012,Cabecera,530124
+70,Sucre,2012,Centros Poblados y Rural Disperso,312826
+70,Sucre,2012,Total,842950
+70,Sucre,2013,Cabecera,535295
+70,Sucre,2013,Centros Poblados y Rural Disperso,315862
+70,Sucre,2013,Total,851157
+70,Sucre,2014,Cabecera,540432
+70,Sucre,2014,Centros Poblados y Rural Disperso,318892
+70,Sucre,2014,Total,859324
+70,Sucre,2015,Cabecera,545710
+70,Sucre,2015,Centros Poblados y Rural Disperso,321991
+70,Sucre,2015,Total,867701
+70,Sucre,2016,Cabecera,551816
+70,Sucre,2016,Centros Poblados y Rural Disperso,325581
+70,Sucre,2016,Total,877397
+70,Sucre,2017,Cabecera,558884
+70,Sucre,2017,Centros Poblados y Rural Disperso,329754
+70,Sucre,2017,Total,888638
+70,Sucre,2018,Cabecera,569089
+70,Sucre,2018,Centros Poblados y Rural Disperso,335774
+70,Sucre,2018,Total,904863
+70,Sucre,2019,Cabecera,581298
+70,Sucre,2019,Centros Poblados y Rural Disperso,347686
+70,Sucre,2019,Total,928984
+70,Sucre,2020,Cabecera,590920
+70,Sucre,2020,Centros Poblados y Rural Disperso,359692
+70,Sucre,2020,Total,950612
+70,Sucre,2021,Cabecera,598031
+70,Sucre,2021,Centros Poblados y Rural Disperso,368862
+70,Sucre,2021,Total,966893
+70,Sucre,2022,Cabecera,603687
+70,Sucre,2022,Centros Poblados y Rural Disperso,377255
+70,Sucre,2022,Total,980942
+70,Sucre,2023,Cabecera,608774
+70,Sucre,2023,Centros Poblados y Rural Disperso,385286
+70,Sucre,2023,Total,994060
+70,Sucre,2024,Cabecera,613634
+70,Sucre,2024,Centros Poblados y Rural Disperso,392410
+70,Sucre,2024,Total,1006044
+70,Sucre,2025,Cabecera,618038
+70,Sucre,2025,Centros Poblados y Rural Disperso,398788
+70,Sucre,2025,Total,1016826
+70,Sucre,2026,Cabecera,621988
+70,Sucre,2026,Centros Poblados y Rural Disperso,404681
+70,Sucre,2026,Total,1026669
+70,Sucre,2027,Cabecera,625772
+70,Sucre,2027,Centros Poblados y Rural Disperso,410128
+70,Sucre,2027,Total,1035900
+70,Sucre,2028,Cabecera,629424
+70,Sucre,2028,Centros Poblados y Rural Disperso,415270
+70,Sucre,2028,Total,1044694
+70,Sucre,2029,Cabecera,633043
+70,Sucre,2029,Centros Poblados y Rural Disperso,420136
+70,Sucre,2029,Total,1053179
+70,Sucre,2030,Cabecera,636694
+70,Sucre,2030,Centros Poblados y Rural Disperso,424805
+70,Sucre,2030,Total,1061499
+70,Sucre,2031,Cabecera,640318
+70,Sucre,2031,Centros Poblados y Rural Disperso,429347
+70,Sucre,2031,Total,1069665
+70,Sucre,2032,Cabecera,643789
+70,Sucre,2032,Centros Poblados y Rural Disperso,433812
+70,Sucre,2032,Total,1077601
+70,Sucre,2033,Cabecera,647063
+70,Sucre,2033,Centros Poblados y Rural Disperso,438238
+70,Sucre,2033,Total,1085301
+70,Sucre,2034,Cabecera,650176
+70,Sucre,2034,Centros Poblados y Rural Disperso,442597
+70,Sucre,2034,Total,1092773
+70,Sucre,2035,Cabecera,653104
+70,Sucre,2035,Centros Poblados y Rural Disperso,446914
+70,Sucre,2035,Total,1100018
+70,Sucre,2036,Total,1106999
+70,Sucre,2037,Total,1113685
+70,Sucre,2038,Total,1120085
+70,Sucre,2039,Total,1126198
+70,Sucre,2040,Total,1132015
+70,Sucre,2041,Total,1137538
+70,Sucre,2042,Total,1142783
+70,Sucre,2043,Total,1147750
+70,Sucre,2044,Total,1152426
+70,Sucre,2045,Total,1156801
+70,Sucre,2046,Total,1160884
+70,Sucre,2047,Total,1164678
+70,Sucre,2048,Total,1168177
+70,Sucre,2049,Total,1171380
+70,Sucre,2050,Total,1174282
+73,Tolima,1993,Cabecera,744258
+73,Tolima,1993,Centros Poblados y Rural Disperso,499960
+73,Tolima,1993,Total,1244218
+73,Tolima,1994,Cabecera,755946
+73,Tolima,1994,Centros Poblados y Rural Disperso,495280
+73,Tolima,1994,Total,1251226
+73,Tolima,1995,Cabecera,767171
+73,Tolima,1995,Centros Poblados y Rural Disperso,490773
+73,Tolima,1995,Total,1257944
+73,Tolima,1996,Cabecera,777939
+73,Tolima,1996,Centros Poblados y Rural Disperso,486411
+73,Tolima,1996,Total,1264350
+73,Tolima,1997,Cabecera,788293
+73,Tolima,1997,Centros Poblados y Rural Disperso,482239
+73,Tolima,1997,Total,1270532
+73,Tolima,1998,Cabecera,798284
+73,Tolima,1998,Centros Poblados y Rural Disperso,478258
+73,Tolima,1998,Total,1276542
+73,Tolima,1999,Cabecera,807845
+73,Tolima,1999,Centros Poblados y Rural Disperso,474481
+73,Tolima,1999,Total,1282326
+73,Tolima,2000,Cabecera,816946
+73,Tolima,2000,Centros Poblados y Rural Disperso,470836
+73,Tolima,2000,Total,1287782
+73,Tolima,2001,Cabecera,825540
+73,Tolima,2001,Centros Poblados y Rural Disperso,467275
+73,Tolima,2001,Total,1292815
+73,Tolima,2002,Cabecera,833460
+73,Tolima,2002,Centros Poblados y Rural Disperso,463757
+73,Tolima,2002,Total,1297217
+73,Tolima,2003,Cabecera,840625
+73,Tolima,2003,Centros Poblados y Rural Disperso,460181
+73,Tolima,2003,Total,1300806
+73,Tolima,2004,Cabecera,846967
+73,Tolima,2004,Centros Poblados y Rural Disperso,456531
+73,Tolima,2004,Total,1303498
+73,Tolima,2005,Cabecera,851772
+73,Tolima,2005,Centros Poblados y Rural Disperso,452444
+73,Tolima,2005,Total,1304216
+73,Tolima,2006,Cabecera,857160
+73,Tolima,2006,Centros Poblados y Rural Disperso,449025
+73,Tolima,2006,Total,1306185
+73,Tolima,2007,Cabecera,862189
+73,Tolima,2007,Centros Poblados y Rural Disperso,445761
+73,Tolima,2007,Total,1307950
+73,Tolima,2008,Cabecera,866874
+73,Tolima,2008,Centros Poblados y Rural Disperso,442639
+73,Tolima,2008,Total,1309513
+73,Tolima,2009,Cabecera,871357
+73,Tolima,2009,Centros Poblados y Rural Disperso,439719
+73,Tolima,2009,Total,1311076
+73,Tolima,2010,Cabecera,875727
+73,Tolima,2010,Centros Poblados y Rural Disperso,437041
+73,Tolima,2010,Total,1312768
+73,Tolima,2011,Cabecera,879927
+73,Tolima,2011,Centros Poblados y Rural Disperso,434552
+73,Tolima,2011,Total,1314479
+73,Tolima,2012,Cabecera,883873
+73,Tolima,2012,Centros Poblados y Rural Disperso,432181
+73,Tolima,2012,Total,1316054
+73,Tolima,2013,Cabecera,887563
+73,Tolima,2013,Centros Poblados y Rural Disperso,429944
+73,Tolima,2013,Total,1317507
+73,Tolima,2014,Cabecera,891162
+73,Tolima,2014,Centros Poblados y Rural Disperso,427898
+73,Tolima,2014,Total,1319060
+73,Tolima,2015,Cabecera,894812
+73,Tolima,2015,Centros Poblados y Rural Disperso,426099
+73,Tolima,2015,Total,1320911
+73,Tolima,2016,Cabecera,898714
+73,Tolima,2016,Centros Poblados y Rural Disperso,424609
+73,Tolima,2016,Total,1323323
+73,Tolima,2017,Cabecera,902789
+73,Tolima,2017,Centros Poblados y Rural Disperso,423414
+73,Tolima,2017,Total,1326203
+73,Tolima,2018,Cabecera,907506
+73,Tolima,2018,Centros Poblados y Rural Disperso,422681
+73,Tolima,2018,Total,1330187
+73,Tolima,2019,Cabecera,913544
+73,Tolima,2019,Centros Poblados y Rural Disperso,421769
+73,Tolima,2019,Total,1335313
+73,Tolima,2020,Cabecera,924589
+73,Tolima,2020,Centros Poblados y Rural Disperso,429749
+73,Tolima,2020,Total,1354338
+73,Tolima,2021,Cabecera,932382
+73,Tolima,2021,Centros Poblados y Rural Disperso,429549
+73,Tolima,2021,Total,1361931
+73,Tolima,2022,Cabecera,938727
+73,Tolima,2022,Centros Poblados y Rural Disperso,429075
+73,Tolima,2022,Total,1367802
+73,Tolima,2023,Cabecera,945672
+73,Tolima,2023,Centros Poblados y Rural Disperso,428712
+73,Tolima,2023,Total,1374384
+73,Tolima,2024,Cabecera,951724
+73,Tolima,2024,Centros Poblados y Rural Disperso,429224
+73,Tolima,2024,Total,1380948
+73,Tolima,2025,Cabecera,956963
+73,Tolima,2025,Centros Poblados y Rural Disperso,429863
+73,Tolima,2025,Total,1386826
+73,Tolima,2026,Cabecera,961671
+73,Tolima,2026,Centros Poblados y Rural Disperso,430448
+73,Tolima,2026,Total,1392119
+73,Tolima,2027,Cabecera,966011
+73,Tolima,2027,Centros Poblados y Rural Disperso,431090
+73,Tolima,2027,Total,1397101
+73,Tolima,2028,Cabecera,969866
+73,Tolima,2028,Centros Poblados y Rural Disperso,431935
+73,Tolima,2028,Total,1401801
+73,Tolima,2029,Cabecera,973418
+73,Tolima,2029,Centros Poblados y Rural Disperso,432832
+73,Tolima,2029,Total,1406250
+73,Tolima,2030,Cabecera,976595
+73,Tolima,2030,Centros Poblados y Rural Disperso,433889
+73,Tolima,2030,Total,1410484
+73,Tolima,2031,Cabecera,979514
+73,Tolima,2031,Centros Poblados y Rural Disperso,434983
+73,Tolima,2031,Total,1414497
+73,Tolima,2032,Cabecera,982188
+73,Tolima,2032,Centros Poblados y Rural Disperso,436076
+73,Tolima,2032,Total,1418264
+73,Tolima,2033,Cabecera,984672
+73,Tolima,2033,Centros Poblados y Rural Disperso,437089
+73,Tolima,2033,Total,1421761
+73,Tolima,2034,Cabecera,986913
+73,Tolima,2034,Centros Poblados y Rural Disperso,438061
+73,Tolima,2034,Total,1424974
+73,Tolima,2035,Cabecera,989016
+73,Tolima,2035,Centros Poblados y Rural Disperso,438882
+73,Tolima,2035,Total,1427898
+73,Tolima,2036,Total,1430518
+73,Tolima,2037,Total,1432810
+73,Tolima,2038,Total,1434767
+73,Tolima,2039,Total,1436410
+73,Tolima,2040,Total,1437731
+73,Tolima,2041,Total,1438733
+73,Tolima,2042,Total,1439421
+73,Tolima,2043,Total,1439790
+73,Tolima,2044,Total,1439846
+73,Tolima,2045,Total,1439590
+73,Tolima,2046,Total,1439030
+73,Tolima,2047,Total,1438161
+73,Tolima,2048,Total,1436969
+73,Tolima,2049,Total,1435469
+73,Tolima,2050,Total,1433661
+76,Valle del Cauca,1993,Cabecera,3183210
+76,Valle del Cauca,1993,Centros Poblados y Rural Disperso,581547
+76,Valle del Cauca,1993,Total,3764757
+76,Valle del Cauca,1994,Cabecera,3227688
+76,Valle del Cauca,1994,Centros Poblados y Rural Disperso,583916
+76,Valle del Cauca,1994,Total,3811604
+76,Valle del Cauca,1995,Cabecera,3270411
+76,Valle del Cauca,1995,Centros Poblados y Rural Disperso,587145
+76,Valle del Cauca,1995,Total,3857556
+76,Valle del Cauca,1996,Cabecera,3311244
+76,Valle del Cauca,1996,Centros Poblados y Rural Disperso,590975
+76,Valle del Cauca,1996,Total,3902219
+76,Valle del Cauca,1997,Cabecera,3350012
+76,Valle del Cauca,1997,Centros Poblados y Rural Disperso,595158
+76,Valle del Cauca,1997,Total,3945170
+76,Valle del Cauca,1998,Cabecera,3386371
+76,Valle del Cauca,1998,Centros Poblados y Rural Disperso,599476
+76,Valle del Cauca,1998,Total,3985847
+76,Valle del Cauca,1999,Cabecera,3420291
+76,Valle del Cauca,1999,Centros Poblados y Rural Disperso,603817
+76,Valle del Cauca,1999,Total,4024108
+76,Valle del Cauca,2000,Cabecera,3451331
+76,Valle del Cauca,2000,Centros Poblados y Rural Disperso,608008
+76,Valle del Cauca,2000,Total,4059339
+76,Valle del Cauca,2001,Cabecera,3479305
+76,Valle del Cauca,2001,Centros Poblados y Rural Disperso,611925
+76,Valle del Cauca,2001,Total,4091230
+76,Valle del Cauca,2002,Cabecera,3504726
+76,Valle del Cauca,2002,Centros Poblados y Rural Disperso,615618
+76,Valle del Cauca,2002,Total,4120344
+76,Valle del Cauca,2003,Cabecera,3529001
+76,Valle del Cauca,2003,Centros Poblados y Rural Disperso,619270
+76,Valle del Cauca,2003,Total,4148271
+76,Valle del Cauca,2004,Cabecera,3553612
+76,Valle del Cauca,2004,Centros Poblados y Rural Disperso,623122
+76,Valle del Cauca,2004,Total,4176734
+76,Valle del Cauca,2005,Cabecera,3579635
+76,Valle del Cauca,2005,Centros Poblados y Rural Disperso,627316
+76,Valle del Cauca,2005,Total,4206951
+76,Valle del Cauca,2006,Cabecera,3605414
+76,Valle del Cauca,2006,Centros Poblados y Rural Disperso,631554
+76,Valle del Cauca,2006,Total,4236968
+76,Valle del Cauca,2007,Cabecera,3628032
+76,Valle del Cauca,2007,Centros Poblados y Rural Disperso,635295
+76,Valle del Cauca,2007,Total,4263327
+76,Valle del Cauca,2008,Cabecera,3646090
+76,Valle del Cauca,2008,Centros Poblados y Rural Disperso,638285
+76,Valle del Cauca,2008,Total,4284375
+76,Valle del Cauca,2009,Cabecera,3662599
+76,Valle del Cauca,2009,Centros Poblados y Rural Disperso,641040
+76,Valle del Cauca,2009,Total,4303639
+76,Valle del Cauca,2010,Cabecera,3679800
+76,Valle del Cauca,2010,Centros Poblados y Rural Disperso,643951
+76,Valle del Cauca,2010,Total,4323751
+76,Valle del Cauca,2011,Cabecera,3696363
+76,Valle del Cauca,2011,Centros Poblados y Rural Disperso,646768
+76,Valle del Cauca,2011,Total,4343131
+76,Valle del Cauca,2012,Cabecera,3710159
+76,Valle del Cauca,2012,Centros Poblados y Rural Disperso,649129
+76,Valle del Cauca,2012,Total,4359288
+76,Valle del Cauca,2013,Cabecera,3720434
+76,Valle del Cauca,2013,Centros Poblados y Rural Disperso,650870
+76,Valle del Cauca,2013,Total,4371304
+76,Valle del Cauca,2014,Cabecera,3730435
+76,Valle del Cauca,2014,Centros Poblados y Rural Disperso,652583
+76,Valle del Cauca,2014,Total,4383018
+76,Valle del Cauca,2015,Cabecera,3742514
+76,Valle del Cauca,2015,Centros Poblados y Rural Disperso,654680
+76,Valle del Cauca,2015,Total,4397194
+76,Valle del Cauca,2016,Cabecera,3757319
+76,Valle del Cauca,2016,Centros Poblados y Rural Disperso,657250
+76,Valle del Cauca,2016,Total,4414569
+76,Valle del Cauca,2017,Cabecera,3772643
+76,Valle del Cauca,2017,Centros Poblados y Rural Disperso,659906
+76,Valle del Cauca,2017,Total,4432549
+76,Valle del Cauca,2018,Cabecera,3809542
+76,Valle del Cauca,2018,Centros Poblados y Rural Disperso,666344
+76,Valle del Cauca,2018,Total,4475886
+76,Valle del Cauca,2019,Cabecera,3840356
+76,Valle del Cauca,2019,Centros Poblados y Rural Disperso,666412
+76,Valle del Cauca,2019,Total,4506768
+76,Valle del Cauca,2020,Cabecera,3906328
+76,Valle del Cauca,2020,Centros Poblados y Rural Disperso,676049
+76,Valle del Cauca,2020,Total,4582377
+76,Valle del Cauca,2021,Cabecera,3937232
+76,Valle del Cauca,2021,Centros Poblados y Rural Disperso,676532
+76,Valle del Cauca,2021,Total,4613764
+76,Valle del Cauca,2022,Cabecera,3954741
+76,Valle del Cauca,2022,Centros Poblados y Rural Disperso,671323
+76,Valle del Cauca,2022,Total,4626064
+76,Valle del Cauca,2023,Cabecera,3972260
+76,Valle del Cauca,2023,Centros Poblados y Rural Disperso,665769
+76,Valle del Cauca,2023,Total,4638029
+76,Valle del Cauca,2024,Cabecera,3986159
+76,Valle del Cauca,2024,Centros Poblados y Rural Disperso,661208
+76,Valle del Cauca,2024,Total,4647367
+76,Valle del Cauca,2025,Cabecera,3995831
+76,Valle del Cauca,2025,Centros Poblados y Rural Disperso,656681
+76,Valle del Cauca,2025,Total,4652512
+76,Valle del Cauca,2026,Cabecera,4002306
+76,Valle del Cauca,2026,Centros Poblados y Rural Disperso,652129
+76,Valle del Cauca,2026,Total,4654435
+76,Valle del Cauca,2027,Cabecera,4006898
+76,Valle del Cauca,2027,Centros Poblados y Rural Disperso,647599
+76,Valle del Cauca,2027,Total,4654497
+76,Valle del Cauca,2028,Cabecera,4009994
+76,Valle del Cauca,2028,Centros Poblados y Rural Disperso,643230
+76,Valle del Cauca,2028,Total,4653224
+76,Valle del Cauca,2029,Cabecera,4012013
+76,Valle del Cauca,2029,Centros Poblados y Rural Disperso,639026
+76,Valle del Cauca,2029,Total,4651039
+76,Valle del Cauca,2030,Cabecera,4013254
+76,Valle del Cauca,2030,Centros Poblados y Rural Disperso,635090
+76,Valle del Cauca,2030,Total,4648344
+76,Valle del Cauca,2031,Cabecera,4013782
+76,Valle del Cauca,2031,Centros Poblados y Rural Disperso,631270
+76,Valle del Cauca,2031,Total,4645052
+76,Valle del Cauca,2032,Cabecera,4013441
+76,Valle del Cauca,2032,Centros Poblados y Rural Disperso,627386
+76,Valle del Cauca,2032,Total,4640827
+76,Valle del Cauca,2033,Cabecera,4012193
+76,Valle del Cauca,2033,Centros Poblados y Rural Disperso,623430
+76,Valle del Cauca,2033,Total,4635623
+76,Valle del Cauca,2034,Cabecera,4010101
+76,Valle del Cauca,2034,Centros Poblados y Rural Disperso,619356
+76,Valle del Cauca,2034,Total,4629457
+76,Valle del Cauca,2035,Cabecera,4007109
+76,Valle del Cauca,2035,Centros Poblados y Rural Disperso,615225
+76,Valle del Cauca,2035,Total,4622334
+76,Valle del Cauca,2036,Total,4614095
+76,Valle del Cauca,2037,Total,4604584
+76,Valle del Cauca,2038,Total,4593796
+76,Valle del Cauca,2039,Total,4581744
+76,Valle del Cauca,2040,Total,4568409
+76,Valle del Cauca,2041,Total,4553785
+76,Valle del Cauca,2042,Total,4537908
+76,Valle del Cauca,2043,Total,4520802
+76,Valle del Cauca,2044,Total,4502469
+76,Valle del Cauca,2045,Total,4482916
+76,Valle del Cauca,2046,Total,4462183
+76,Valle del Cauca,2047,Total,4440324
+76,Valle del Cauca,2048,Total,4417360
+76,Valle del Cauca,2049,Total,4393312
+76,Valle del Cauca,2050,Total,4368211
+81,Arauca,1993,Cabecera,125623
+81,Arauca,1993,Centros Poblados y Rural Disperso,69822
+81,Arauca,1993,Total,195445
+81,Arauca,1994,Cabecera,128317
+81,Arauca,1994,Centros Poblados y Rural Disperso,70276
+81,Arauca,1994,Total,198593
+81,Arauca,1995,Cabecera,130839
+81,Arauca,1995,Centros Poblados y Rural Disperso,70768
+81,Arauca,1995,Total,201607
+81,Arauca,1996,Cabecera,133166
+81,Arauca,1996,Centros Poblados y Rural Disperso,71296
+81,Arauca,1996,Total,204462
+81,Arauca,1997,Cabecera,135286
+81,Arauca,1997,Centros Poblados y Rural Disperso,71863
+81,Arauca,1997,Total,207149
+81,Arauca,1998,Cabecera,137207
+81,Arauca,1998,Centros Poblados y Rural Disperso,72447
+81,Arauca,1998,Total,209654
+81,Arauca,1999,Cabecera,138946
+81,Arauca,1999,Centros Poblados y Rural Disperso,73017
+81,Arauca,1999,Total,211963
+81,Arauca,2000,Cabecera,140480
+81,Arauca,2000,Centros Poblados y Rural Disperso,73568
+81,Arauca,2000,Total,214048
+81,Arauca,2001,Cabecera,141817
+81,Arauca,2001,Centros Poblados y Rural Disperso,74082
+81,Arauca,2001,Total,215899
+81,Arauca,2002,Cabecera,142974
+81,Arauca,2002,Centros Poblados y Rural Disperso,74535
+81,Arauca,2002,Total,217509
+81,Arauca,2003,Cabecera,143961
+81,Arauca,2003,Centros Poblados y Rural Disperso,74942
+81,Arauca,2003,Total,218903
+81,Arauca,2004,Cabecera,144802
+81,Arauca,2004,Centros Poblados y Rural Disperso,75313
+81,Arauca,2004,Total,220115
+81,Arauca,2005,Cabecera,145320
+81,Arauca,2005,Centros Poblados y Rural Disperso,75532
+81,Arauca,2005,Total,220852
+81,Arauca,2006,Cabecera,146147
+81,Arauca,2006,Centros Poblados y Rural Disperso,75916
+81,Arauca,2006,Total,222063
+81,Arauca,2007,Cabecera,147085
+81,Arauca,2007,Centros Poblados y Rural Disperso,76368
+81,Arauca,2007,Total,223453
+81,Arauca,2008,Cabecera,148113
+81,Arauca,2008,Centros Poblados y Rural Disperso,76883
+81,Arauca,2008,Total,224996
+81,Arauca,2009,Cabecera,149253
+81,Arauca,2009,Centros Poblados y Rural Disperso,77452
+81,Arauca,2009,Total,226705
+81,Arauca,2010,Cabecera,150455
+81,Arauca,2010,Centros Poblados y Rural Disperso,78058
+81,Arauca,2010,Total,228513
+81,Arauca,2011,Cabecera,151663
+81,Arauca,2011,Centros Poblados y Rural Disperso,78686
+81,Arauca,2011,Total,230349
+81,Arauca,2012,Cabecera,152966
+81,Arauca,2012,Centros Poblados y Rural Disperso,79350
+81,Arauca,2012,Total,232316
+81,Arauca,2013,Cabecera,154423
+81,Arauca,2013,Centros Poblados y Rural Disperso,80106
+81,Arauca,2013,Total,234529
+81,Arauca,2014,Cabecera,156009
+81,Arauca,2014,Centros Poblados y Rural Disperso,80922
+81,Arauca,2014,Total,236931
+81,Arauca,2015,Cabecera,157884
+81,Arauca,2015,Centros Poblados y Rural Disperso,81888
+81,Arauca,2015,Total,239772
+81,Arauca,2016,Cabecera,160796
+81,Arauca,2016,Centros Poblados y Rural Disperso,83410
+81,Arauca,2016,Total,244206
+81,Arauca,2017,Cabecera,164947
+81,Arauca,2017,Centros Poblados y Rural Disperso,85555
+81,Arauca,2017,Total,250502
+81,Arauca,2018,Cabecera,172634
+81,Arauca,2018,Centros Poblados y Rural Disperso,89540
+81,Arauca,2018,Total,262174
+81,Arauca,2019,Cabecera,183856
+81,Arauca,2019,Centros Poblados y Rural Disperso,96253
+81,Arauca,2019,Total,280109
+81,Arauca,2020,Cabecera,189171
+81,Arauca,2020,Centros Poblados y Rural Disperso,102081
+81,Arauca,2020,Total,291252
+81,Arauca,2021,Cabecera,194149
+81,Arauca,2021,Centros Poblados y Rural Disperso,106488
+81,Arauca,2021,Total,300637
+81,Arauca,2022,Cabecera,198159
+81,Arauca,2022,Centros Poblados y Rural Disperso,109469
+81,Arauca,2022,Total,307628
+81,Arauca,2023,Cabecera,201155
+81,Arauca,2023,Centros Poblados y Rural Disperso,111942
+81,Arauca,2023,Total,313097
+81,Arauca,2024,Cabecera,203505
+81,Arauca,2024,Centros Poblados y Rural Disperso,113893
+81,Arauca,2024,Total,317398
+81,Arauca,2025,Cabecera,205266
+81,Arauca,2025,Centros Poblados y Rural Disperso,115457
+81,Arauca,2025,Total,320723
+81,Arauca,2026,Cabecera,206604
+81,Arauca,2026,Centros Poblados y Rural Disperso,116742
+81,Arauca,2026,Total,323346
+81,Arauca,2027,Cabecera,207626
+81,Arauca,2027,Centros Poblados y Rural Disperso,117901
+81,Arauca,2027,Total,325527
+81,Arauca,2028,Cabecera,208560
+81,Arauca,2028,Centros Poblados y Rural Disperso,118880
+81,Arauca,2028,Total,327440
+81,Arauca,2029,Cabecera,209430
+81,Arauca,2029,Centros Poblados y Rural Disperso,119807
+81,Arauca,2029,Total,329237
+81,Arauca,2030,Cabecera,210356
+81,Arauca,2030,Centros Poblados y Rural Disperso,120681
+81,Arauca,2030,Total,331037
+81,Arauca,2031,Cabecera,211220
+81,Arauca,2031,Centros Poblados y Rural Disperso,121621
+81,Arauca,2031,Total,332841
+81,Arauca,2032,Cabecera,212087
+81,Arauca,2032,Centros Poblados y Rural Disperso,122502
+81,Arauca,2032,Total,334589
+81,Arauca,2033,Cabecera,212898
+81,Arauca,2033,Centros Poblados y Rural Disperso,123371
+81,Arauca,2033,Total,336269
+81,Arauca,2034,Cabecera,213648
+81,Arauca,2034,Centros Poblados y Rural Disperso,124245
+81,Arauca,2034,Total,337893
+81,Arauca,2035,Cabecera,214332
+81,Arauca,2035,Centros Poblados y Rural Disperso,125133
+81,Arauca,2035,Total,339465
+81,Arauca,2036,Total,340958
+81,Arauca,2037,Total,342354
+81,Arauca,2038,Total,343655
+81,Arauca,2039,Total,344859
+81,Arauca,2040,Total,345971
+81,Arauca,2041,Total,346993
+81,Arauca,2042,Total,347927
+81,Arauca,2043,Total,348780
+81,Arauca,2044,Total,349545
+81,Arauca,2045,Total,350213
+81,Arauca,2046,Total,350787
+81,Arauca,2047,Total,351278
+81,Arauca,2048,Total,351679
+81,Arauca,2049,Total,351986
+81,Arauca,2050,Total,352194
+85,Casanare,1993,Cabecera,131207
+85,Casanare,1993,Centros Poblados y Rural Disperso,107965
+85,Casanare,1993,Total,239172
+85,Casanare,1994,Cabecera,143798
+85,Casanare,1994,Centros Poblados y Rural Disperso,102140
+85,Casanare,1994,Total,245938
+85,Casanare,1995,Cabecera,155650
+85,Casanare,1995,Centros Poblados y Rural Disperso,97141
+85,Casanare,1995,Total,252791
+85,Casanare,1996,Cabecera,166390
+85,Casanare,1996,Centros Poblados y Rural Disperso,93359
+85,Casanare,1996,Total,259749
+85,Casanare,1997,Cabecera,175943
+85,Casanare,1997,Centros Poblados y Rural Disperso,90872
+85,Casanare,1997,Total,266815
+85,Casanare,1998,Cabecera,184399
+85,Casanare,1998,Centros Poblados y Rural Disperso,89572
+85,Casanare,1998,Total,273971
+85,Casanare,1999,Cabecera,191953
+85,Casanare,1999,Centros Poblados y Rural Disperso,89241
+85,Casanare,1999,Total,281194
+85,Casanare,2000,Cabecera,198818
+85,Casanare,2000,Centros Poblados y Rural Disperso,89629
+85,Casanare,2000,Total,288447
+85,Casanare,2001,Cabecera,205143
+85,Casanare,2001,Centros Poblados y Rural Disperso,90572
+85,Casanare,2001,Total,295715
+85,Casanare,2002,Cabecera,211119
+85,Casanare,2002,Centros Poblados y Rural Disperso,91884
+85,Casanare,2002,Total,303003
+85,Casanare,2003,Cabecera,216821
+85,Casanare,2003,Centros Poblados y Rural Disperso,93494
+85,Casanare,2003,Total,310315
+85,Casanare,2004,Cabecera,222373
+85,Casanare,2004,Centros Poblados y Rural Disperso,95298
+85,Casanare,2004,Total,317671
+85,Casanare,2005,Cabecera,227835
+85,Casanare,2005,Centros Poblados y Rural Disperso,97226
+85,Casanare,2005,Total,325061
+85,Casanare,2006,Cabecera,233306
+85,Casanare,2006,Centros Poblados y Rural Disperso,99275
+85,Casanare,2006,Total,332581
+85,Casanare,2007,Cabecera,238649
+85,Casanare,2007,Centros Poblados y Rural Disperso,101379
+85,Casanare,2007,Total,340028
+85,Casanare,2008,Cabecera,243877
+85,Casanare,2008,Centros Poblados y Rural Disperso,103485
+85,Casanare,2008,Total,347362
+85,Casanare,2009,Cabecera,249035
+85,Casanare,2009,Centros Poblados y Rural Disperso,105586
+85,Casanare,2009,Total,354621
+85,Casanare,2010,Cabecera,254145
+85,Casanare,2010,Centros Poblados y Rural Disperso,107679
+85,Casanare,2010,Total,361824
+85,Casanare,2011,Cabecera,259137
+85,Casanare,2011,Centros Poblados y Rural Disperso,109775
+85,Casanare,2011,Total,368912
+85,Casanare,2012,Cabecera,264041
+85,Casanare,2012,Centros Poblados y Rural Disperso,111831
+85,Casanare,2012,Total,375872
+85,Casanare,2013,Cabecera,268881
+85,Casanare,2013,Centros Poblados y Rural Disperso,113854
+85,Casanare,2013,Total,382735
+85,Casanare,2014,Cabecera,273652
+85,Casanare,2014,Centros Poblados y Rural Disperso,115859
+85,Casanare,2014,Total,389511
+85,Casanare,2015,Cabecera,278433
+85,Casanare,2015,Centros Poblados y Rural Disperso,117887
+85,Casanare,2015,Total,396320
+85,Casanare,2016,Cabecera,283526
+85,Casanare,2016,Centros Poblados y Rural Disperso,120028
+85,Casanare,2016,Total,403554
+85,Casanare,2017,Cabecera,288933
+85,Casanare,2017,Centros Poblados y Rural Disperso,122322
+85,Casanare,2017,Total,411255
+85,Casanare,2018,Cabecera,295434
+85,Casanare,2018,Centros Poblados y Rural Disperso,125070
+85,Casanare,2018,Total,420504
+85,Casanare,2019,Cabecera,303286
+85,Casanare,2019,Centros Poblados y Rural Disperso,125277
+85,Casanare,2019,Total,428563
+85,Casanare,2020,Cabecera,315408
+85,Casanare,2020,Centros Poblados y Rural Disperso,128124
+85,Casanare,2020,Total,443532
+85,Casanare,2021,Cabecera,323586
+85,Casanare,2021,Centros Poblados y Rural Disperso,128512
+85,Casanare,2021,Total,452098
+85,Casanare,2022,Cabecera,330773
+85,Casanare,2022,Centros Poblados y Rural Disperso,129200
+85,Casanare,2022,Total,459973
+85,Casanare,2023,Cabecera,337972
+85,Casanare,2023,Centros Poblados y Rural Disperso,129803
+85,Casanare,2023,Total,467775
+85,Casanare,2024,Cabecera,344587
+85,Casanare,2024,Centros Poblados y Rural Disperso,130557
+85,Casanare,2024,Total,475144
+85,Casanare,2025,Cabecera,350721
+85,Casanare,2025,Centros Poblados y Rural Disperso,131217
+85,Casanare,2025,Total,481938
+85,Casanare,2026,Cabecera,356398
+85,Casanare,2026,Centros Poblados y Rural Disperso,131860
+85,Casanare,2026,Total,488258
+85,Casanare,2027,Cabecera,361777
+85,Casanare,2027,Centros Poblados y Rural Disperso,132474
+85,Casanare,2027,Total,494251
+85,Casanare,2028,Cabecera,366830
+85,Casanare,2028,Centros Poblados y Rural Disperso,133149
+85,Casanare,2028,Total,499979
+85,Casanare,2029,Cabecera,371636
+85,Casanare,2029,Centros Poblados y Rural Disperso,133868
+85,Casanare,2029,Total,505504
+85,Casanare,2030,Cabecera,376204
+85,Casanare,2030,Centros Poblados y Rural Disperso,134686
+85,Casanare,2030,Total,510890
+85,Casanare,2031,Cabecera,380654
+85,Casanare,2031,Centros Poblados y Rural Disperso,135489
+85,Casanare,2031,Total,516143
+85,Casanare,2032,Cabecera,384955
+85,Casanare,2032,Centros Poblados y Rural Disperso,136285
+85,Casanare,2032,Total,521240
+85,Casanare,2033,Cabecera,389134
+85,Casanare,2033,Centros Poblados y Rural Disperso,137036
+85,Casanare,2033,Total,526170
+85,Casanare,2034,Cabecera,393186
+85,Casanare,2034,Centros Poblados y Rural Disperso,137751
+85,Casanare,2034,Total,530937
+85,Casanare,2035,Cabecera,397134
+85,Casanare,2035,Centros Poblados y Rural Disperso,138413
+85,Casanare,2035,Total,535547
+85,Casanare,2036,Total,539985
+85,Casanare,2037,Total,544245
+85,Casanare,2038,Total,548338
+85,Casanare,2039,Total,552256
+85,Casanare,2040,Total,555990
+85,Casanare,2041,Total,559548
+85,Casanare,2042,Total,562931
+85,Casanare,2043,Total,566149
+85,Casanare,2044,Total,569194
+85,Casanare,2045,Total,572059
+85,Casanare,2046,Total,574747
+85,Casanare,2047,Total,577256
+85,Casanare,2048,Total,579591
+85,Casanare,2049,Total,581753
+85,Casanare,2050,Total,583735
+86,Putumayo,1993,Cabecera,61517
+86,Putumayo,1993,Centros Poblados y Rural Disperso,123348
+86,Putumayo,1993,Total,184865
+86,Putumayo,1994,Cabecera,68075
+86,Putumayo,1994,Centros Poblados y Rural Disperso,123409
+86,Putumayo,1994,Total,191484
+86,Putumayo,1995,Cabecera,72800
+86,Putumayo,1995,Centros Poblados y Rural Disperso,125495
+86,Putumayo,1995,Total,198295
+86,Putumayo,1996,Cabecera,77751
+86,Putumayo,1996,Centros Poblados y Rural Disperso,127501
+86,Putumayo,1996,Total,205252
+86,Putumayo,1997,Cabecera,83780
+86,Putumayo,1997,Centros Poblados y Rural Disperso,128517
+86,Putumayo,1997,Total,212297
+86,Putumayo,1998,Cabecera,90780
+86,Putumayo,1998,Centros Poblados y Rural Disperso,128589
+86,Putumayo,1998,Total,219369
+86,Putumayo,1999,Cabecera,98324
+86,Putumayo,1999,Centros Poblados y Rural Disperso,128084
+86,Putumayo,1999,Total,226408
+86,Putumayo,2000,Cabecera,105785
+86,Putumayo,2000,Centros Poblados y Rural Disperso,127575
+86,Putumayo,2000,Total,233360
+86,Putumayo,2001,Cabecera,112634
+86,Putumayo,2001,Centros Poblados y Rural Disperso,127547
+86,Putumayo,2001,Total,240181
+86,Putumayo,2002,Cabecera,118610
+86,Putumayo,2002,Centros Poblados y Rural Disperso,128245
+86,Putumayo,2002,Total,246855
+86,Putumayo,2003,Cabecera,123746
+86,Putumayo,2003,Centros Poblados y Rural Disperso,129655
+86,Putumayo,2003,Total,253401
+86,Putumayo,2004,Cabecera,128202
+86,Putumayo,2004,Centros Poblados y Rural Disperso,131657
+86,Putumayo,2004,Total,259859
+86,Putumayo,2005,Cabecera,132215
+86,Putumayo,2005,Centros Poblados y Rural Disperso,134059
+86,Putumayo,2005,Total,266274
+86,Putumayo,2006,Cabecera,135844
+86,Putumayo,2006,Centros Poblados y Rural Disperso,136680
+86,Putumayo,2006,Total,272524
+86,Putumayo,2007,Cabecera,139267
+86,Putumayo,2007,Centros Poblados y Rural Disperso,139470
+86,Putumayo,2007,Total,278737
+86,Putumayo,2008,Cabecera,142550
+86,Putumayo,2008,Centros Poblados y Rural Disperso,142367
+86,Putumayo,2008,Total,284917
+86,Putumayo,2009,Cabecera,145809
+86,Putumayo,2009,Centros Poblados y Rural Disperso,145390
+86,Putumayo,2009,Total,291199
+86,Putumayo,2010,Cabecera,149078
+86,Putumayo,2010,Centros Poblados y Rural Disperso,148522
+86,Putumayo,2010,Total,297600
+86,Putumayo,2011,Cabecera,152297
+86,Putumayo,2011,Centros Poblados y Rural Disperso,151632
+86,Putumayo,2011,Total,303929
+86,Putumayo,2012,Cabecera,155382
+86,Putumayo,2012,Centros Poblados y Rural Disperso,154645
+86,Putumayo,2012,Total,310027
+86,Putumayo,2013,Cabecera,158356
+86,Putumayo,2013,Centros Poblados y Rural Disperso,157585
+86,Putumayo,2013,Total,315941
+86,Putumayo,2014,Cabecera,161324
+86,Putumayo,2014,Centros Poblados y Rural Disperso,160526
+86,Putumayo,2014,Total,321850
+86,Putumayo,2015,Cabecera,164338
+86,Putumayo,2015,Centros Poblados y Rural Disperso,163518
+86,Putumayo,2015,Total,327856
+86,Putumayo,2016,Cabecera,167500
+86,Putumayo,2016,Centros Poblados y Rural Disperso,166652
+86,Putumayo,2016,Total,334152
+86,Putumayo,2017,Cabecera,170811
+86,Putumayo,2017,Centros Poblados y Rural Disperso,169939
+86,Putumayo,2017,Total,340750
+86,Putumayo,2018,Cabecera,174539
+86,Putumayo,2018,Centros Poblados y Rural Disperso,173643
+86,Putumayo,2018,Total,348182
+86,Putumayo,2019,Cabecera,178490
+86,Putumayo,2019,Centros Poblados y Rural Disperso,175269
+86,Putumayo,2019,Total,353759
+86,Putumayo,2020,Cabecera,185589
+86,Putumayo,2020,Centros Poblados y Rural Disperso,179294
+86,Putumayo,2020,Total,364883
+86,Putumayo,2021,Cabecera,190143
+86,Putumayo,2021,Centros Poblados y Rural Disperso,181070
+86,Putumayo,2021,Total,371213
+86,Putumayo,2022,Cabecera,194348
+86,Putumayo,2022,Centros Poblados y Rural Disperso,182747
+86,Putumayo,2022,Total,377095
+86,Putumayo,2023,Cabecera,198450
+86,Putumayo,2023,Centros Poblados y Rural Disperso,184592
+86,Putumayo,2023,Total,383042
+86,Putumayo,2024,Cabecera,202466
+86,Putumayo,2024,Centros Poblados y Rural Disperso,186250
+86,Putumayo,2024,Total,388716
+86,Putumayo,2025,Cabecera,206247
+86,Putumayo,2025,Centros Poblados y Rural Disperso,187741
+86,Putumayo,2025,Total,393988
+86,Putumayo,2026,Cabecera,209786
+86,Putumayo,2026,Centros Poblados y Rural Disperso,189147
+86,Putumayo,2026,Total,398933
+86,Putumayo,2027,Cabecera,213015
+86,Putumayo,2027,Centros Poblados y Rural Disperso,190659
+86,Putumayo,2027,Total,403674
+86,Putumayo,2028,Cabecera,216301
+86,Putumayo,2028,Centros Poblados y Rural Disperso,191947
+86,Putumayo,2028,Total,408248
+86,Putumayo,2029,Cabecera,219433
+86,Putumayo,2029,Centros Poblados y Rural Disperso,193252
+86,Putumayo,2029,Total,412685
+86,Putumayo,2030,Cabecera,222475
+86,Putumayo,2030,Centros Poblados y Rural Disperso,194545
+86,Putumayo,2030,Total,417020
+86,Putumayo,2031,Cabecera,225265
+86,Putumayo,2031,Centros Poblados y Rural Disperso,195993
+86,Putumayo,2031,Total,421258
+86,Putumayo,2032,Cabecera,228180
+86,Putumayo,2032,Centros Poblados y Rural Disperso,197201
+86,Putumayo,2032,Total,425381
+86,Putumayo,2033,Cabecera,231048
+86,Putumayo,2033,Centros Poblados y Rural Disperso,198335
+86,Putumayo,2033,Total,429383
+86,Putumayo,2034,Cabecera,233905
+86,Putumayo,2034,Centros Poblados y Rural Disperso,199367
+86,Putumayo,2034,Total,433272
+86,Putumayo,2035,Cabecera,236572
+86,Putumayo,2035,Centros Poblados y Rural Disperso,200473
+86,Putumayo,2035,Total,437045
+86,Putumayo,2036,Total,440689
+86,Putumayo,2037,Total,444205
+86,Putumayo,2038,Total,447589
+86,Putumayo,2039,Total,450833
+86,Putumayo,2040,Total,453942
+86,Putumayo,2041,Total,456919
+86,Putumayo,2042,Total,459761
+86,Putumayo,2043,Total,462465
+86,Putumayo,2044,Total,465030
+86,Putumayo,2045,Total,467462
+86,Putumayo,2046,Total,469761
+86,Putumayo,2047,Total,471925
+86,Putumayo,2048,Total,473961
+86,Putumayo,2049,Total,475860
+86,Putumayo,2050,Total,477616
+88,Archipiélago de San Andrés,1993,Cabecera,39742
+88,Archipiélago de San Andrés,1993,Centros Poblados y Rural Disperso,15396
+88,Archipiélago de San Andrés,1993,Total,55138
+88,Archipiélago de San Andrés,1994,Cabecera,40645
+88,Archipiélago de San Andrés,1994,Centros Poblados y Rural Disperso,15736
+88,Archipiélago de San Andrés,1994,Total,56381
+88,Archipiélago de San Andrés,1995,Cabecera,41454
+88,Archipiélago de San Andrés,1995,Centros Poblados y Rural Disperso,16024
+88,Archipiélago de San Andrés,1995,Total,57478
+88,Archipiélago de San Andrés,1996,Cabecera,42146
+88,Archipiélago de San Andrés,1996,Centros Poblados y Rural Disperso,16291
+88,Archipiélago de San Andrés,1996,Total,58437
+88,Archipiélago de San Andrés,1997,Cabecera,42760
+88,Archipiélago de San Andrés,1997,Centros Poblados y Rural Disperso,16503
+88,Archipiélago de San Andrés,1997,Total,59263
+88,Archipiélago de San Andrés,1998,Cabecera,43282
+88,Archipiélago de San Andrés,1998,Centros Poblados y Rural Disperso,16698
+88,Archipiélago de San Andrés,1998,Total,59980
+88,Archipiélago de San Andrés,1999,Cabecera,43742
+88,Archipiélago de San Andrés,1999,Centros Poblados y Rural Disperso,16865
+88,Archipiélago de San Andrés,1999,Total,60607
+88,Archipiélago de San Andrés,2000,Cabecera,44144
+88,Archipiélago de San Andrés,2000,Centros Poblados y Rural Disperso,16988
+88,Archipiélago de San Andrés,2000,Total,61132
+88,Archipiélago de San Andrés,2001,Cabecera,44456
+88,Archipiélago de San Andrés,2001,Centros Poblados y Rural Disperso,17091
+88,Archipiélago de San Andrés,2001,Total,61547
+88,Archipiélago de San Andrés,2002,Cabecera,44694
+88,Archipiélago de San Andrés,2002,Centros Poblados y Rural Disperso,17149
+88,Archipiélago de San Andrés,2002,Total,61843
+88,Archipiélago de San Andrés,2003,Cabecera,44846
+88,Archipiélago de San Andrés,2003,Centros Poblados y Rural Disperso,17194
+88,Archipiélago de San Andrés,2003,Total,62040
+88,Archipiélago de San Andrés,2004,Cabecera,44967
+88,Archipiélago de San Andrés,2004,Centros Poblados y Rural Disperso,17195
+88,Archipiélago de San Andrés,2004,Total,62162
+88,Archipiélago de San Andrés,2005,Cabecera,44953
+88,Archipiélago de San Andrés,2005,Centros Poblados y Rural Disperso,17167
+88,Archipiélago de San Andrés,2005,Total,62120
+88,Archipiélago de San Andrés,2006,Cabecera,44948
+88,Archipiélago de San Andrés,2006,Centros Poblados y Rural Disperso,17138
+88,Archipiélago de San Andrés,2006,Total,62086
+88,Archipiélago de San Andrés,2007,Cabecera,44951
+88,Archipiélago de San Andrés,2007,Centros Poblados y Rural Disperso,17089
+88,Archipiélago de San Andrés,2007,Total,62040
+88,Archipiélago de San Andrés,2008,Cabecera,44924
+88,Archipiélago de San Andrés,2008,Centros Poblados y Rural Disperso,17047
+88,Archipiélago de San Andrés,2008,Total,61971
+88,Archipiélago de San Andrés,2009,Cabecera,44890
+88,Archipiélago de San Andrés,2009,Centros Poblados y Rural Disperso,16985
+88,Archipiélago de San Andrés,2009,Total,61875
+88,Archipiélago de San Andrés,2010,Cabecera,44858
+88,Archipiélago de San Andrés,2010,Centros Poblados y Rural Disperso,16929
+88,Archipiélago de San Andrés,2010,Total,61787
+88,Archipiélago de San Andrés,2011,Cabecera,44838
+88,Archipiélago de San Andrés,2011,Centros Poblados y Rural Disperso,16873
+88,Archipiélago de San Andrés,2011,Total,61711
+88,Archipiélago de San Andrés,2012,Cabecera,44824
+88,Archipiélago de San Andrés,2012,Centros Poblados y Rural Disperso,16809
+88,Archipiélago de San Andrés,2012,Total,61633
+88,Archipiélago de San Andrés,2013,Cabecera,44804
+88,Archipiélago de San Andrés,2013,Centros Poblados y Rural Disperso,16739
+88,Archipiélago de San Andrés,2013,Total,61543
+88,Archipiélago de San Andrés,2014,Cabecera,44789
+88,Archipiélago de San Andrés,2014,Centros Poblados y Rural Disperso,16674
+88,Archipiélago de San Andrés,2014,Total,61463
+88,Archipiélago de San Andrés,2015,Cabecera,44801
+88,Archipiélago de San Andrés,2015,Centros Poblados y Rural Disperso,16605
+88,Archipiélago de San Andrés,2015,Total,61406
+88,Archipiélago de San Andrés,2016,Cabecera,44824
+88,Archipiélago de San Andrés,2016,Centros Poblados y Rural Disperso,16534
+88,Archipiélago de San Andrés,2016,Total,61358
+88,Archipiélago de San Andrés,2017,Cabecera,44846
+88,Archipiélago de San Andrés,2017,Centros Poblados y Rural Disperso,16463
+88,Archipiélago de San Andrés,2017,Total,61309
+88,Archipiélago de San Andrés,2018,Cabecera,44893
+88,Archipiélago de San Andrés,2018,Centros Poblados y Rural Disperso,16387
+88,Archipiélago de San Andrés,2018,Total,61280
+88,Archipiélago de San Andrés,2019,Cabecera,45222
+88,Archipiélago de San Andrés,2019,Centros Poblados y Rural Disperso,17260
+88,Archipiélago de San Andrés,2019,Total,62482
+88,Archipiélago de San Andrés,2020,Cabecera,44308
+88,Archipiélago de San Andrés,2020,Centros Poblados y Rural Disperso,17590
+88,Archipiélago de San Andrés,2020,Total,61898
+88,Archipiélago de San Andrés,2021,Cabecera,44196
+88,Archipiélago de San Andrés,2021,Centros Poblados y Rural Disperso,17963
+88,Archipiélago de San Andrés,2021,Total,62159
+88,Archipiélago de San Andrés,2022,Cabecera,44284
+88,Archipiélago de San Andrés,2022,Centros Poblados y Rural Disperso,17971
+88,Archipiélago de San Andrés,2022,Total,62255
+88,Archipiélago de San Andrés,2023,Cabecera,44409
+88,Archipiélago de San Andrés,2023,Centros Poblados y Rural Disperso,17860
+88,Archipiélago de San Andrés,2023,Total,62269
+88,Archipiélago de San Andrés,2024,Cabecera,44563
+88,Archipiélago de San Andrés,2024,Centros Poblados y Rural Disperso,17686
+88,Archipiélago de San Andrés,2024,Total,62249
+88,Archipiélago de San Andrés,2025,Cabecera,44723
+88,Archipiélago de San Andrés,2025,Centros Poblados y Rural Disperso,17458
+88,Archipiélago de San Andrés,2025,Total,62181
+88,Archipiélago de San Andrés,2026,Cabecera,44869
+88,Archipiélago de San Andrés,2026,Centros Poblados y Rural Disperso,17199
+88,Archipiélago de San Andrés,2026,Total,62068
+88,Archipiélago de San Andrés,2027,Cabecera,45047
+88,Archipiélago de San Andrés,2027,Centros Poblados y Rural Disperso,16880
+88,Archipiélago de San Andrés,2027,Total,61927
+88,Archipiélago de San Andrés,2028,Cabecera,45228
+88,Archipiélago de San Andrés,2028,Centros Poblados y Rural Disperso,16536
+88,Archipiélago de San Andrés,2028,Total,61764
+88,Archipiélago de San Andrés,2029,Cabecera,45427
+88,Archipiélago de San Andrés,2029,Centros Poblados y Rural Disperso,16156
+88,Archipiélago de San Andrés,2029,Total,61583
+88,Archipiélago de San Andrés,2030,Cabecera,45633
+88,Archipiélago de San Andrés,2030,Centros Poblados y Rural Disperso,15747
+88,Archipiélago de San Andrés,2030,Total,61380
+88,Archipiélago de San Andrés,2031,Cabecera,45840
+88,Archipiélago de San Andrés,2031,Centros Poblados y Rural Disperso,15326
+88,Archipiélago de San Andrés,2031,Total,61166
+88,Archipiélago de San Andrés,2032,Cabecera,46037
+88,Archipiélago de San Andrés,2032,Centros Poblados y Rural Disperso,14909
+88,Archipiélago de San Andrés,2032,Total,60946
+88,Archipiélago de San Andrés,2033,Cabecera,46214
+88,Archipiélago de San Andrés,2033,Centros Poblados y Rural Disperso,14498
+88,Archipiélago de San Andrés,2033,Total,60712
+88,Archipiélago de San Andrés,2034,Cabecera,46372
+88,Archipiélago de San Andrés,2034,Centros Poblados y Rural Disperso,14087
+88,Archipiélago de San Andrés,2034,Total,60459
+88,Archipiélago de San Andrés,2035,Cabecera,46505
+88,Archipiélago de San Andrés,2035,Centros Poblados y Rural Disperso,13690
+88,Archipiélago de San Andrés,2035,Total,60195
+88,Archipiélago de San Andrés,2036,Total,59920
+88,Archipiélago de San Andrés,2037,Total,59625
+88,Archipiélago de San Andrés,2038,Total,59314
+88,Archipiélago de San Andrés,2039,Total,58986
+88,Archipiélago de San Andrés,2040,Total,58647
+88,Archipiélago de San Andrés,2041,Total,58298
+88,Archipiélago de San Andrés,2042,Total,57934
+88,Archipiélago de San Andrés,2043,Total,57555
+88,Archipiélago de San Andrés,2044,Total,57159
+88,Archipiélago de San Andrés,2045,Total,56750
+88,Archipiélago de San Andrés,2046,Total,56325
+88,Archipiélago de San Andrés,2047,Total,55883
+88,Archipiélago de San Andrés,2048,Total,55428
+88,Archipiélago de San Andrés,2049,Total,54961
+88,Archipiélago de San Andrés,2050,Total,54483
+91,Amazonas,1993,Cabecera,22517
+91,Amazonas,1993,Centros Poblados y Rural Disperso,22211
+91,Amazonas,1993,Total,44728
+91,Amazonas,1994,Cabecera,23210
+91,Amazonas,1994,Centros Poblados y Rural Disperso,22900
+91,Amazonas,1994,Total,46110
+91,Amazonas,1995,Cabecera,23888
+91,Amazonas,1995,Centros Poblados y Rural Disperso,23567
+91,Amazonas,1995,Total,47455
+91,Amazonas,1996,Cabecera,24537
+91,Amazonas,1996,Centros Poblados y Rural Disperso,24229
+91,Amazonas,1996,Total,48766
+91,Amazonas,1997,Cabecera,25175
+91,Amazonas,1997,Centros Poblados y Rural Disperso,24877
+91,Amazonas,1997,Total,50052
+91,Amazonas,1998,Cabecera,25771
+91,Amazonas,1998,Centros Poblados y Rural Disperso,25526
+91,Amazonas,1998,Total,51297
+91,Amazonas,1999,Cabecera,26364
+91,Amazonas,1999,Centros Poblados y Rural Disperso,26154
+91,Amazonas,1999,Total,52518
+91,Amazonas,2000,Cabecera,26920
+91,Amazonas,2000,Centros Poblados y Rural Disperso,26805
+91,Amazonas,2000,Total,53725
+91,Amazonas,2001,Cabecera,27445
+91,Amazonas,2001,Centros Poblados y Rural Disperso,27466
+91,Amazonas,2001,Total,54911
+91,Amazonas,2002,Cabecera,27950
+91,Amazonas,2002,Centros Poblados y Rural Disperso,28132
+91,Amazonas,2002,Total,56082
+91,Amazonas,2003,Cabecera,28433
+91,Amazonas,2003,Centros Poblados y Rural Disperso,28811
+91,Amazonas,2003,Total,57244
+91,Amazonas,2004,Cabecera,28898
+91,Amazonas,2004,Centros Poblados y Rural Disperso,29516
+91,Amazonas,2004,Total,58414
+91,Amazonas,2005,Cabecera,29341
+91,Amazonas,2005,Centros Poblados y Rural Disperso,30239
+91,Amazonas,2005,Total,59580
+91,Amazonas,2006,Cabecera,29805
+91,Amazonas,2006,Centros Poblados y Rural Disperso,30979
+91,Amazonas,2006,Total,60784
+91,Amazonas,2007,Cabecera,30318
+91,Amazonas,2007,Centros Poblados y Rural Disperso,31710
+91,Amazonas,2007,Total,62028
+91,Amazonas,2008,Cabecera,30841
+91,Amazonas,2008,Centros Poblados y Rural Disperso,32450
+91,Amazonas,2008,Total,63291
+91,Amazonas,2009,Cabecera,31414
+91,Amazonas,2009,Centros Poblados y Rural Disperso,33202
+91,Amazonas,2009,Total,64616
+91,Amazonas,2010,Cabecera,32027
+91,Amazonas,2010,Centros Poblados y Rural Disperso,33964
+91,Amazonas,2010,Total,65991
+91,Amazonas,2011,Cabecera,32655
+91,Amazonas,2011,Centros Poblados y Rural Disperso,34706
+91,Amazonas,2011,Total,67361
+91,Amazonas,2012,Cabecera,33268
+91,Amazonas,2012,Centros Poblados y Rural Disperso,35413
+91,Amazonas,2012,Total,68681
+91,Amazonas,2013,Cabecera,33866
+91,Amazonas,2013,Centros Poblados y Rural Disperso,36087
+91,Amazonas,2013,Total,69953
+91,Amazonas,2014,Cabecera,34464
+91,Amazonas,2014,Centros Poblados y Rural Disperso,36751
+91,Amazonas,2014,Total,71215
+91,Amazonas,2015,Cabecera,35073
+91,Amazonas,2015,Centros Poblados y Rural Disperso,37412
+91,Amazonas,2015,Total,72485
+91,Amazonas,2016,Cabecera,35704
+91,Amazonas,2016,Centros Poblados y Rural Disperso,38086
+91,Amazonas,2016,Total,73790
+91,Amazonas,2017,Cabecera,36330
+91,Amazonas,2017,Centros Poblados y Rural Disperso,38774
+91,Amazonas,2017,Total,75104
+91,Amazonas,2018,Cabecera,37047
+91,Amazonas,2018,Centros Poblados y Rural Disperso,39542
+91,Amazonas,2018,Total,76589
+91,Amazonas,2019,Cabecera,37968
+91,Amazonas,2019,Centros Poblados y Rural Disperso,39785
+91,Amazonas,2019,Total,77753
+91,Amazonas,2020,Cabecera,39835
+91,Amazonas,2020,Centros Poblados y Rural Disperso,40637
+91,Amazonas,2020,Total,80472
+91,Amazonas,2021,Cabecera,41089
+91,Amazonas,2021,Centros Poblados y Rural Disperso,41082
+91,Amazonas,2021,Total,82171
+91,Amazonas,2022,Cabecera,42170
+91,Amazonas,2022,Centros Poblados y Rural Disperso,41520
+91,Amazonas,2022,Total,83690
+91,Amazonas,2023,Cabecera,43220
+91,Amazonas,2023,Centros Poblados y Rural Disperso,41836
+91,Amazonas,2023,Total,85056
+91,Amazonas,2024,Cabecera,44170
+91,Amazonas,2024,Centros Poblados y Rural Disperso,42148
+91,Amazonas,2024,Total,86318
+91,Amazonas,2025,Cabecera,45049
+91,Amazonas,2025,Centros Poblados y Rural Disperso,42431
+91,Amazonas,2025,Total,87480
+91,Amazonas,2026,Cabecera,45879
+91,Amazonas,2026,Centros Poblados y Rural Disperso,42676
+91,Amazonas,2026,Total,88555
+91,Amazonas,2027,Cabecera,46662
+91,Amazonas,2027,Centros Poblados y Rural Disperso,42919
+91,Amazonas,2027,Total,89581
+91,Amazonas,2028,Cabecera,47388
+91,Amazonas,2028,Centros Poblados y Rural Disperso,43172
+91,Amazonas,2028,Total,90560
+91,Amazonas,2029,Cabecera,48076
+91,Amazonas,2029,Centros Poblados y Rural Disperso,43429
+91,Amazonas,2029,Total,91505
+91,Amazonas,2030,Cabecera,48710
+91,Amazonas,2030,Centros Poblados y Rural Disperso,43712
+91,Amazonas,2030,Total,92422
+91,Amazonas,2031,Cabecera,49374
+91,Amazonas,2031,Centros Poblados y Rural Disperso,43942
+91,Amazonas,2031,Total,93316
+91,Amazonas,2032,Cabecera,49963
+91,Amazonas,2032,Centros Poblados y Rural Disperso,44228
+91,Amazonas,2032,Total,94191
+91,Amazonas,2033,Cabecera,50551
+91,Amazonas,2033,Centros Poblados y Rural Disperso,44488
+91,Amazonas,2033,Total,95039
+91,Amazonas,2034,Cabecera,51125
+91,Amazonas,2034,Centros Poblados y Rural Disperso,44736
+91,Amazonas,2034,Total,95861
+91,Amazonas,2035,Cabecera,51688
+91,Amazonas,2035,Centros Poblados y Rural Disperso,44975
+91,Amazonas,2035,Total,96663
+91,Amazonas,2036,Total,97436
+91,Amazonas,2037,Total,98178
+91,Amazonas,2038,Total,98889
+91,Amazonas,2039,Total,99569
+91,Amazonas,2040,Total,100219
+91,Amazonas,2041,Total,100837
+91,Amazonas,2042,Total,101424
+91,Amazonas,2043,Total,101981
+91,Amazonas,2044,Total,102509
+91,Amazonas,2045,Total,103008
+91,Amazonas,2046,Total,103474
+91,Amazonas,2047,Total,103909
+91,Amazonas,2048,Total,104315
+91,Amazonas,2049,Total,104691
+91,Amazonas,2050,Total,105037
+94,Guainía,1993,Cabecera,6626
+94,Guainía,1993,Centros Poblados y Rural Disperso,13038
+94,Guainía,1993,Total,19664
+94,Guainía,1994,Cabecera,7066
+94,Guainía,1994,Centros Poblados y Rural Disperso,13233
+94,Guainía,1994,Total,20299
+94,Guainía,1995,Cabecera,7547
+94,Guainía,1995,Centros Poblados y Rural Disperso,13442
+94,Guainía,1995,Total,20989
+94,Guainía,1996,Cabecera,8082
+94,Guainía,1996,Centros Poblados y Rural Disperso,13660
+94,Guainía,1996,Total,21742
+94,Guainía,1997,Cabecera,8635
+94,Guainía,1997,Centros Poblados y Rural Disperso,13924
+94,Guainía,1997,Total,22559
+94,Guainía,1998,Cabecera,9195
+94,Guainía,1998,Centros Poblados y Rural Disperso,14240
+94,Guainía,1998,Total,23435
+94,Guainía,1999,Cabecera,9759
+94,Guainía,1999,Centros Poblados y Rural Disperso,14600
+94,Guainía,1999,Total,24359
+94,Guainía,2000,Cabecera,10294
+94,Guainía,2000,Centros Poblados y Rural Disperso,15041
+94,Guainía,2000,Total,25335
+94,Guainía,2001,Cabecera,10842
+94,Guainía,2001,Centros Poblados y Rural Disperso,15523
+94,Guainía,2001,Total,26365
+94,Guainía,2002,Cabecera,11367
+94,Guainía,2002,Centros Poblados y Rural Disperso,16059
+94,Guainía,2002,Total,27426
+94,Guainía,2003,Cabecera,11880
+94,Guainía,2003,Centros Poblados y Rural Disperso,16629
+94,Guainía,2003,Total,28509
+94,Guainía,2004,Cabecera,12388
+94,Guainía,2004,Centros Poblados y Rural Disperso,17225
+94,Guainía,2004,Total,29613
+94,Guainía,2005,Cabecera,12884
+94,Guainía,2005,Centros Poblados y Rural Disperso,17847
+94,Guainía,2005,Total,30731
+94,Guainía,2006,Cabecera,13392
+94,Guainía,2006,Centros Poblados y Rural Disperso,18489
+94,Guainía,2006,Total,31881
+94,Guainía,2007,Cabecera,13906
+94,Guainía,2007,Centros Poblados y Rural Disperso,19167
+94,Guainía,2007,Total,33073
+94,Guainía,2008,Cabecera,14434
+94,Guainía,2008,Centros Poblados y Rural Disperso,19860
+94,Guainía,2008,Total,34294
+94,Guainía,2009,Cabecera,14972
+94,Guainía,2009,Centros Poblados y Rural Disperso,20562
+94,Guainía,2009,Total,35534
+94,Guainía,2010,Cabecera,15495
+94,Guainía,2010,Centros Poblados y Rural Disperso,21298
+94,Guainía,2010,Total,36793
+94,Guainía,2011,Cabecera,16035
+94,Guainía,2011,Centros Poblados y Rural Disperso,22037
+94,Guainía,2011,Total,38072
+94,Guainía,2012,Cabecera,16578
+94,Guainía,2012,Centros Poblados y Rural Disperso,22776
+94,Guainía,2012,Total,39354
+94,Guainía,2013,Cabecera,17126
+94,Guainía,2013,Centros Poblados y Rural Disperso,23512
+94,Guainía,2013,Total,40638
+94,Guainía,2014,Cabecera,17673
+94,Guainía,2014,Centros Poblados y Rural Disperso,24273
+94,Guainía,2014,Total,41946
+94,Guainía,2015,Cabecera,18237
+94,Guainía,2015,Centros Poblados y Rural Disperso,25054
+94,Guainía,2015,Total,43291
+94,Guainía,2016,Cabecera,18843
+94,Guainía,2016,Centros Poblados y Rural Disperso,25879
+94,Guainía,2016,Total,44722
+94,Guainía,2017,Cabecera,19486
+94,Guainía,2017,Centros Poblados y Rural Disperso,26764
+94,Guainía,2017,Total,46250
+94,Guainía,2018,Cabecera,20279
+94,Guainía,2018,Centros Poblados y Rural Disperso,27835
+94,Guainía,2018,Total,48114
+94,Guainía,2019,Cabecera,21334
+94,Guainía,2019,Centros Poblados y Rural Disperso,28139
+94,Guainía,2019,Total,49473
+94,Guainía,2020,Cabecera,23575
+94,Guainía,2020,Centros Poblados y Rural Disperso,28431
+94,Guainía,2020,Total,52006
+94,Guainía,2021,Cabecera,24456
+94,Guainía,2021,Centros Poblados y Rural Disperso,29127
+94,Guainía,2021,Total,53583
+94,Guainía,2022,Cabecera,25306
+94,Guainía,2022,Centros Poblados y Rural Disperso,29785
+94,Guainía,2022,Total,55091
+94,Guainía,2023,Cabecera,26161
+94,Guainía,2023,Centros Poblados y Rural Disperso,30390
+94,Guainía,2023,Total,56551
+94,Guainía,2024,Cabecera,26944
+94,Guainía,2024,Centros Poblados y Rural Disperso,30990
+94,Guainía,2024,Total,57934
+94,Guainía,2025,Cabecera,27691
+94,Guainía,2025,Centros Poblados y Rural Disperso,31549
+94,Guainía,2025,Total,59240
+94,Guainía,2026,Cabecera,28380
+94,Guainía,2026,Centros Poblados y Rural Disperso,32113
+94,Guainía,2026,Total,60493
+94,Guainía,2027,Cabecera,29079
+94,Guainía,2027,Centros Poblados y Rural Disperso,32646
+94,Guainía,2027,Total,61725
+94,Guainía,2028,Cabecera,29736
+94,Guainía,2028,Centros Poblados y Rural Disperso,33206
+94,Guainía,2028,Total,62942
+94,Guainía,2029,Cabecera,30328
+94,Guainía,2029,Centros Poblados y Rural Disperso,33819
+94,Guainía,2029,Total,64147
+94,Guainía,2030,Cabecera,30896
+94,Guainía,2030,Centros Poblados y Rural Disperso,34459
+94,Guainía,2030,Total,65355
+94,Guainía,2031,Cabecera,31486
+94,Guainía,2031,Centros Poblados y Rural Disperso,35082
+94,Guainía,2031,Total,66568
+94,Guainía,2032,Cabecera,32050
+94,Guainía,2032,Centros Poblados y Rural Disperso,35725
+94,Guainía,2032,Total,67775
+94,Guainía,2033,Cabecera,32627
+94,Guainía,2033,Centros Poblados y Rural Disperso,36346
+94,Guainía,2033,Total,68973
+94,Guainía,2034,Cabecera,33179
+94,Guainía,2034,Centros Poblados y Rural Disperso,36982
+94,Guainía,2034,Total,70161
+94,Guainía,2035,Cabecera,33761
+94,Guainía,2035,Centros Poblados y Rural Disperso,37578
+94,Guainía,2035,Total,71339
+94,Guainía,2036,Total,72505
+94,Guainía,2037,Total,73655
+94,Guainía,2038,Total,74789
+94,Guainía,2039,Total,75909
+94,Guainía,2040,Total,77012
+94,Guainía,2041,Total,78094
+94,Guainía,2042,Total,79158
+94,Guainía,2043,Total,80207
+94,Guainía,2044,Total,81239
+94,Guainía,2045,Total,82254
+94,Guainía,2046,Total,83251
+94,Guainía,2047,Total,84238
+94,Guainía,2048,Total,85214
+94,Guainía,2049,Total,86173
+94,Guainía,2050,Total,87114
+95,Guaviare,1993,Cabecera,25287
+95,Guaviare,1993,Centros Poblados y Rural Disperso,34744
+95,Guaviare,1993,Total,60031
+95,Guaviare,1994,Cabecera,27453
+95,Guaviare,1994,Centros Poblados y Rural Disperso,34637
+95,Guaviare,1994,Total,62090
+95,Guaviare,1995,Cabecera,29618
+95,Guaviare,1995,Centros Poblados y Rural Disperso,34427
+95,Guaviare,1995,Total,64045
+95,Guaviare,1996,Cabecera,31675
+95,Guaviare,1996,Centros Poblados y Rural Disperso,34185
+95,Guaviare,1996,Total,65860
+95,Guaviare,1997,Cabecera,33551
+95,Guaviare,1997,Centros Poblados y Rural Disperso,33967
+95,Guaviare,1997,Total,67518
+95,Guaviare,1998,Cabecera,35231
+95,Guaviare,1998,Centros Poblados y Rural Disperso,33782
+95,Guaviare,1998,Total,69013
+95,Guaviare,1999,Cabecera,36670
+95,Guaviare,1999,Centros Poblados y Rural Disperso,33659
+95,Guaviare,1999,Total,70329
+95,Guaviare,2000,Cabecera,37881
+95,Guaviare,2000,Centros Poblados y Rural Disperso,33566
+95,Guaviare,2000,Total,71447
+95,Guaviare,2001,Cabecera,38823
+95,Guaviare,2001,Centros Poblados y Rural Disperso,33520
+95,Guaviare,2001,Total,72343
+95,Guaviare,2002,Cabecera,39549
+95,Guaviare,2002,Centros Poblados y Rural Disperso,33457
+95,Guaviare,2002,Total,73006
+95,Guaviare,2003,Cabecera,40071
+95,Guaviare,2003,Centros Poblados y Rural Disperso,33371
+95,Guaviare,2003,Total,73442
+95,Guaviare,2004,Cabecera,40371
+95,Guaviare,2004,Centros Poblados y Rural Disperso,33264
+95,Guaviare,2004,Total,73635
+95,Guaviare,2005,Cabecera,40344
+95,Guaviare,2005,Centros Poblados y Rural Disperso,32952
+95,Guaviare,2005,Total,73296
+95,Guaviare,2006,Cabecera,40280
+95,Guaviare,2006,Centros Poblados y Rural Disperso,32721
+95,Guaviare,2006,Total,73001
+95,Guaviare,2007,Cabecera,40260
+95,Guaviare,2007,Centros Poblados y Rural Disperso,32569
+95,Guaviare,2007,Total,72829
+95,Guaviare,2008,Cabecera,40302
+95,Guaviare,2008,Centros Poblados y Rural Disperso,32484
+95,Guaviare,2008,Total,72786
+95,Guaviare,2009,Cabecera,40404
+95,Guaviare,2009,Centros Poblados y Rural Disperso,32496
+95,Guaviare,2009,Total,72900
+95,Guaviare,2010,Cabecera,40600
+95,Guaviare,2010,Centros Poblados y Rural Disperso,32594
+95,Guaviare,2010,Total,73194
+95,Guaviare,2011,Cabecera,40875
+95,Guaviare,2011,Centros Poblados y Rural Disperso,32777
+95,Guaviare,2011,Total,73652
+95,Guaviare,2012,Cabecera,41242
+95,Guaviare,2012,Centros Poblados y Rural Disperso,33039
+95,Guaviare,2012,Total,74281
+95,Guaviare,2013,Cabecera,41702
+95,Guaviare,2013,Centros Poblados y Rural Disperso,33390
+95,Guaviare,2013,Total,75092
+95,Guaviare,2014,Cabecera,42267
+95,Guaviare,2014,Centros Poblados y Rural Disperso,33834
+95,Guaviare,2014,Total,76101
+95,Guaviare,2015,Cabecera,42956
+95,Guaviare,2015,Centros Poblados y Rural Disperso,34372
+95,Guaviare,2015,Total,77328
+95,Guaviare,2016,Cabecera,43773
+95,Guaviare,2016,Centros Poblados y Rural Disperso,35023
+95,Guaviare,2016,Total,78796
+95,Guaviare,2017,Cabecera,44733
+95,Guaviare,2017,Centros Poblados y Rural Disperso,35774
+95,Guaviare,2017,Total,80507
+95,Guaviare,2018,Cabecera,45991
+95,Guaviare,2018,Centros Poblados y Rural Disperso,36776
+95,Guaviare,2018,Total,82767
+95,Guaviare,2019,Cabecera,47379
+95,Guaviare,2019,Centros Poblados y Rural Disperso,37337
+95,Guaviare,2019,Total,84716
+95,Guaviare,2020,Cabecera,49591
+95,Guaviare,2020,Centros Poblados y Rural Disperso,39459
+95,Guaviare,2020,Total,89050
+95,Guaviare,2021,Cabecera,51222
+95,Guaviare,2021,Centros Poblados y Rural Disperso,40495
+95,Guaviare,2021,Total,91717
+95,Guaviare,2022,Cabecera,52990
+95,Guaviare,2022,Centros Poblados y Rural Disperso,41635
+95,Guaviare,2022,Total,94625
+95,Guaviare,2023,Cabecera,54734
+95,Guaviare,2023,Centros Poblados y Rural Disperso,42882
+95,Guaviare,2023,Total,97616
+95,Guaviare,2024,Cabecera,56402
+95,Guaviare,2024,Centros Poblados y Rural Disperso,44095
+95,Guaviare,2024,Total,100497
+95,Guaviare,2025,Cabecera,57976
+95,Guaviare,2025,Centros Poblados y Rural Disperso,45261
+95,Guaviare,2025,Total,103237
+95,Guaviare,2026,Cabecera,59449
+95,Guaviare,2026,Centros Poblados y Rural Disperso,46406
+95,Guaviare,2026,Total,105855
+95,Guaviare,2027,Cabecera,60815
+95,Guaviare,2027,Centros Poblados y Rural Disperso,47592
+95,Guaviare,2027,Total,108407
+95,Guaviare,2028,Cabecera,62141
+95,Guaviare,2028,Centros Poblados y Rural Disperso,48758
+95,Guaviare,2028,Total,110899
+95,Guaviare,2029,Cabecera,63393
+95,Guaviare,2029,Centros Poblados y Rural Disperso,49942
+95,Guaviare,2029,Total,113335
+95,Guaviare,2030,Cabecera,64574
+95,Guaviare,2030,Centros Poblados y Rural Disperso,51161
+95,Guaviare,2030,Total,115735
+95,Guaviare,2031,Cabecera,65696
+95,Guaviare,2031,Centros Poblados y Rural Disperso,52404
+95,Guaviare,2031,Total,118100
+95,Guaviare,2032,Cabecera,66803
+95,Guaviare,2032,Centros Poblados y Rural Disperso,53623
+95,Guaviare,2032,Total,120426
+95,Guaviare,2033,Cabecera,67879
+95,Guaviare,2033,Centros Poblados y Rural Disperso,54825
+95,Guaviare,2033,Total,122704
+95,Guaviare,2034,Cabecera,68912
+95,Guaviare,2034,Centros Poblados y Rural Disperso,56030
+95,Guaviare,2034,Total,124942
+95,Guaviare,2035,Cabecera,69898
+95,Guaviare,2035,Centros Poblados y Rural Disperso,57243
+95,Guaviare,2035,Total,127141
+95,Guaviare,2036,Total,129291
+95,Guaviare,2037,Total,131399
+95,Guaviare,2038,Total,133469
+95,Guaviare,2039,Total,135492
+95,Guaviare,2040,Total,137466
+95,Guaviare,2041,Total,139398
+95,Guaviare,2042,Total,141296
+95,Guaviare,2043,Total,143151
+95,Guaviare,2044,Total,144957
+95,Guaviare,2045,Total,146724
+95,Guaviare,2046,Total,148458
+95,Guaviare,2047,Total,150157
+95,Guaviare,2048,Total,151813
+95,Guaviare,2049,Total,153431
+95,Guaviare,2050,Total,155021
+97,Vaupés,1993,Cabecera,4115
+97,Vaupés,1993,Centros Poblados y Rural Disperso,11305
+97,Vaupés,1993,Total,15420
+97,Vaupés,1994,Cabecera,4321
+97,Vaupés,1994,Centros Poblados y Rural Disperso,11595
+97,Vaupés,1994,Total,15916
+97,Vaupés,1995,Cabecera,4544
+97,Vaupés,1995,Centros Poblados y Rural Disperso,11885
+97,Vaupés,1995,Total,16429
+97,Vaupés,1996,Cabecera,4768
+97,Vaupés,1996,Centros Poblados y Rural Disperso,12194
+97,Vaupés,1996,Total,16962
+97,Vaupés,1997,Cabecera,5006
+97,Vaupés,1997,Centros Poblados y Rural Disperso,12547
+97,Vaupés,1997,Total,17553
+97,Vaupés,1998,Cabecera,5241
+97,Vaupés,1998,Centros Poblados y Rural Disperso,12986
+97,Vaupés,1998,Total,18227
+97,Vaupés,1999,Cabecera,5520
+97,Vaupés,1999,Centros Poblados y Rural Disperso,13477
+97,Vaupés,1999,Total,18997
+97,Vaupés,2000,Cabecera,5810
+97,Vaupés,2000,Centros Poblados y Rural Disperso,14065
+97,Vaupés,2000,Total,19875
+97,Vaupés,2001,Cabecera,6126
+97,Vaupés,2001,Centros Poblados y Rural Disperso,14724
+97,Vaupés,2001,Total,20850
+97,Vaupés,2002,Cabecera,6457
+97,Vaupés,2002,Centros Poblados y Rural Disperso,15457
+97,Vaupés,2002,Total,21914
+97,Vaupés,2003,Cabecera,6794
+97,Vaupés,2003,Centros Poblados y Rural Disperso,16253
+97,Vaupés,2003,Total,23047
+97,Vaupés,2004,Cabecera,7161
+97,Vaupés,2004,Centros Poblados y Rural Disperso,17075
+97,Vaupés,2004,Total,24236
+97,Vaupés,2005,Cabecera,7525
+97,Vaupés,2005,Centros Poblados y Rural Disperso,17936
+97,Vaupés,2005,Total,25461
+97,Vaupés,2006,Cabecera,7890
+97,Vaupés,2006,Centros Poblados y Rural Disperso,18768
+97,Vaupés,2006,Total,26658
+97,Vaupés,2007,Cabecera,8258
+97,Vaupés,2007,Centros Poblados y Rural Disperso,19623
+97,Vaupés,2007,Total,27881
+97,Vaupés,2008,Cabecera,8621
+97,Vaupés,2008,Centros Poblados y Rural Disperso,20502
+97,Vaupés,2008,Total,29123
+97,Vaupés,2009,Cabecera,9007
+97,Vaupés,2009,Centros Poblados y Rural Disperso,21387
+97,Vaupés,2009,Total,30394
+97,Vaupés,2010,Cabecera,9390
+97,Vaupés,2010,Centros Poblados y Rural Disperso,22287
+97,Vaupés,2010,Total,31677
+97,Vaupés,2011,Cabecera,9759
+97,Vaupés,2011,Centros Poblados y Rural Disperso,23181
+97,Vaupés,2011,Total,32940
+97,Vaupés,2012,Cabecera,10128
+97,Vaupés,2012,Centros Poblados y Rural Disperso,24037
+97,Vaupés,2012,Total,34165
+97,Vaupés,2013,Cabecera,10479
+97,Vaupés,2013,Centros Poblados y Rural Disperso,24874
+97,Vaupés,2013,Total,35353
+97,Vaupés,2014,Cabecera,10815
+97,Vaupés,2014,Centros Poblados y Rural Disperso,25694
+97,Vaupés,2014,Total,36509
+97,Vaupés,2015,Cabecera,11151
+97,Vaupés,2015,Centros Poblados y Rural Disperso,26487
+97,Vaupés,2015,Total,37638
+97,Vaupés,2016,Cabecera,11481
+97,Vaupés,2016,Centros Poblados y Rural Disperso,27256
+97,Vaupés,2016,Total,38737
+97,Vaupés,2017,Cabecera,11802
+97,Vaupés,2017,Centros Poblados y Rural Disperso,28009
+97,Vaupés,2017,Total,39811
+97,Vaupés,2018,Cabecera,12090
+97,Vaupés,2018,Centros Poblados y Rural Disperso,28707
+97,Vaupés,2018,Total,40797
+97,Vaupés,2019,Cabecera,12512
+97,Vaupés,2019,Centros Poblados y Rural Disperso,30209
+97,Vaupés,2019,Total,42721
+97,Vaupés,2020,Cabecera,12482
+97,Vaupés,2020,Centros Poblados y Rural Disperso,30706
+97,Vaupés,2020,Total,43188
+97,Vaupés,2021,Cabecera,12708
+97,Vaupés,2021,Centros Poblados y Rural Disperso,31670
+97,Vaupés,2021,Total,44378
+97,Vaupés,2022,Cabecera,12918
+97,Vaupés,2022,Centros Poblados y Rural Disperso,32661
+97,Vaupés,2022,Total,45579
+97,Vaupés,2023,Cabecera,13139
+97,Vaupés,2023,Centros Poblados y Rural Disperso,33638
+97,Vaupés,2023,Total,46777
+97,Vaupés,2024,Cabecera,13336
+97,Vaupés,2024,Centros Poblados y Rural Disperso,34625
+97,Vaupés,2024,Total,47961
+97,Vaupés,2025,Cabecera,13514
+97,Vaupés,2025,Centros Poblados y Rural Disperso,35628
+97,Vaupés,2025,Total,49142
+97,Vaupés,2026,Cabecera,13679
+97,Vaupés,2026,Centros Poblados y Rural Disperso,36643
+97,Vaupés,2026,Total,50322
+97,Vaupés,2027,Cabecera,13836
+97,Vaupés,2027,Centros Poblados y Rural Disperso,37670
+97,Vaupés,2027,Total,51506
+97,Vaupés,2028,Cabecera,13995
+97,Vaupés,2028,Centros Poblados y Rural Disperso,38699
+97,Vaupés,2028,Total,52694
+97,Vaupés,2029,Cabecera,14132
+97,Vaupés,2029,Centros Poblados y Rural Disperso,39754
+97,Vaupés,2029,Total,53886
+97,Vaupés,2030,Cabecera,14261
+97,Vaupés,2030,Centros Poblados y Rural Disperso,40822
+97,Vaupés,2030,Total,55083
+97,Vaupés,2031,Cabecera,14363
+97,Vaupés,2031,Centros Poblados y Rural Disperso,41919
+97,Vaupés,2031,Total,56282
+97,Vaupés,2032,Cabecera,14458
+97,Vaupés,2032,Centros Poblados y Rural Disperso,43027
+97,Vaupés,2032,Total,57485
+97,Vaupés,2033,Cabecera,14534
+97,Vaupés,2033,Centros Poblados y Rural Disperso,44153
+97,Vaupés,2033,Total,58687
+97,Vaupés,2034,Cabecera,14598
+97,Vaupés,2034,Centros Poblados y Rural Disperso,45285
+97,Vaupés,2034,Total,59883
+97,Vaupés,2035,Cabecera,14637
+97,Vaupés,2035,Centros Poblados y Rural Disperso,46437
+97,Vaupés,2035,Total,61074
+97,Vaupés,2036,Total,62254
+97,Vaupés,2037,Total,63423
+97,Vaupés,2038,Total,64576
+97,Vaupés,2039,Total,65704
+97,Vaupés,2040,Total,66812
+97,Vaupés,2041,Total,67905
+97,Vaupés,2042,Total,68985
+97,Vaupés,2043,Total,70055
+97,Vaupés,2044,Total,71115
+97,Vaupés,2045,Total,72160
+97,Vaupés,2046,Total,73192
+97,Vaupés,2047,Total,74220
+97,Vaupés,2048,Total,75243
+97,Vaupés,2049,Total,76256
+97,Vaupés,2050,Total,77256
+99,Vichada,1993,Cabecera,15956
+99,Vichada,1993,Centros Poblados y Rural Disperso,36994
+99,Vichada,1993,Total,52950
+99,Vichada,1994,Cabecera,16401
+99,Vichada,1994,Centros Poblados y Rural Disperso,38198
+99,Vichada,1994,Total,54599
+99,Vichada,1995,Cabecera,16875
+99,Vichada,1995,Centros Poblados y Rural Disperso,39463
+99,Vichada,1995,Total,56338
+99,Vichada,1996,Cabecera,17360
+99,Vichada,1996,Centros Poblados y Rural Disperso,40813
+99,Vichada,1996,Total,58173
+99,Vichada,1997,Cabecera,17868
+99,Vichada,1997,Centros Poblados y Rural Disperso,42219
+99,Vichada,1997,Total,60087
+99,Vichada,1998,Cabecera,18383
+99,Vichada,1998,Centros Poblados y Rural Disperso,43716
+99,Vichada,1998,Total,62099
+99,Vichada,1999,Cabecera,18918
+99,Vichada,1999,Centros Poblados y Rural Disperso,45277
+99,Vichada,1999,Total,64195
+99,Vichada,2000,Cabecera,19441
+99,Vichada,2000,Centros Poblados y Rural Disperso,46891
+99,Vichada,2000,Total,66332
+99,Vichada,2001,Cabecera,19970
+99,Vichada,2001,Centros Poblados y Rural Disperso,48553
+99,Vichada,2001,Total,68523
+99,Vichada,2002,Cabecera,20489
+99,Vichada,2002,Centros Poblados y Rural Disperso,50274
+99,Vichada,2002,Total,70763
+99,Vichada,2003,Cabecera,20991
+99,Vichada,2003,Centros Poblados y Rural Disperso,52043
+99,Vichada,2003,Total,73034
+99,Vichada,2004,Cabecera,21481
+99,Vichada,2004,Centros Poblados y Rural Disperso,53847
+99,Vichada,2004,Total,75328
+99,Vichada,2005,Cabecera,21961
+99,Vichada,2005,Centros Poblados y Rural Disperso,55683
+99,Vichada,2005,Total,77644
+99,Vichada,2006,Cabecera,22417
+99,Vichada,2006,Centros Poblados y Rural Disperso,57561
+99,Vichada,2006,Total,79978
+99,Vichada,2007,Cabecera,22833
+99,Vichada,2007,Centros Poblados y Rural Disperso,59482
+99,Vichada,2007,Total,82315
+99,Vichada,2008,Cabecera,23238
+99,Vichada,2008,Centros Poblados y Rural Disperso,61415
+99,Vichada,2008,Total,84653
+99,Vichada,2009,Cabecera,23604
+99,Vichada,2009,Centros Poblados y Rural Disperso,63387
+99,Vichada,2009,Total,86991
+99,Vichada,2010,Cabecera,23946
+99,Vichada,2010,Centros Poblados y Rural Disperso,65368
+99,Vichada,2010,Total,89314
+99,Vichada,2011,Cabecera,24247
+99,Vichada,2011,Centros Poblados y Rural Disperso,67355
+99,Vichada,2011,Total,91602
+99,Vichada,2012,Cabecera,24506
+99,Vichada,2012,Centros Poblados y Rural Disperso,69343
+99,Vichada,2012,Total,93849
+99,Vichada,2013,Cabecera,24754
+99,Vichada,2013,Centros Poblados y Rural Disperso,71303
+99,Vichada,2013,Total,96057
+99,Vichada,2014,Cabecera,24951
+99,Vichada,2014,Centros Poblados y Rural Disperso,73277
+99,Vichada,2014,Total,98228
+99,Vichada,2015,Cabecera,25141
+99,Vichada,2015,Centros Poblados y Rural Disperso,75251
+99,Vichada,2015,Total,100392
+99,Vichada,2016,Cabecera,25331
+99,Vichada,2016,Centros Poblados y Rural Disperso,77332
+99,Vichada,2016,Total,102663
+99,Vichada,2017,Cabecera,25537
+99,Vichada,2017,Centros Poblados y Rural Disperso,79522
+99,Vichada,2017,Total,105059
+99,Vichada,2018,Cabecera,25833
+99,Vichada,2018,Centros Poblados y Rural Disperso,81975
+99,Vichada,2018,Total,107808
+99,Vichada,2019,Cabecera,26910
+99,Vichada,2019,Centros Poblados y Rural Disperso,83689
+99,Vichada,2019,Total,110599
+99,Vichada,2020,Cabecera,29106
+99,Vichada,2020,Centros Poblados y Rural Disperso,86090
+99,Vichada,2020,Total,115196
+99,Vichada,2021,Cabecera,29298
+99,Vichada,2021,Centros Poblados y Rural Disperso,88972
+99,Vichada,2021,Total,118270
+99,Vichada,2022,Cabecera,29700
+99,Vichada,2022,Centros Poblados y Rural Disperso,91242
+99,Vichada,2022,Total,120942
+99,Vichada,2023,Cabecera,29940
+99,Vichada,2023,Centros Poblados y Rural Disperso,93364
+99,Vichada,2023,Total,123304
+99,Vichada,2024,Cabecera,30319
+99,Vichada,2024,Centros Poblados y Rural Disperso,95158
+99,Vichada,2024,Total,125477
+99,Vichada,2025,Cabecera,30662
+99,Vichada,2025,Centros Poblados y Rural Disperso,96805
+99,Vichada,2025,Total,127467
+99,Vichada,2026,Cabecera,30969
+99,Vichada,2026,Centros Poblados y Rural Disperso,98335
+99,Vichada,2026,Total,129304
+99,Vichada,2027,Cabecera,31168
+99,Vichada,2027,Centros Poblados y Rural Disperso,99901
+99,Vichada,2027,Total,131069
+99,Vichada,2028,Cabecera,31431
+99,Vichada,2028,Centros Poblados y Rural Disperso,101339
+99,Vichada,2028,Total,132770
+99,Vichada,2029,Cabecera,31677
+99,Vichada,2029,Centros Poblados y Rural Disperso,102744
+99,Vichada,2029,Total,134421
+99,Vichada,2030,Cabecera,31891
+99,Vichada,2030,Centros Poblados y Rural Disperso,104145
+99,Vichada,2030,Total,136036
+99,Vichada,2031,Cabecera,32029
+99,Vichada,2031,Centros Poblados y Rural Disperso,105597
+99,Vichada,2031,Total,137626
+99,Vichada,2032,Cabecera,32238
+99,Vichada,2032,Centros Poblados y Rural Disperso,106944
+99,Vichada,2032,Total,139182
+99,Vichada,2033,Cabecera,32420
+99,Vichada,2033,Centros Poblados y Rural Disperso,108264
+99,Vichada,2033,Total,140684
+99,Vichada,2034,Cabecera,32579
+99,Vichada,2034,Centros Poblados y Rural Disperso,109556
+99,Vichada,2034,Total,142135
+99,Vichada,2035,Cabecera,32659
+99,Vichada,2035,Centros Poblados y Rural Disperso,110879
+99,Vichada,2035,Total,143538
+99,Vichada,2036,Total,144886
+99,Vichada,2037,Total,146170
+99,Vichada,2038,Total,147394
+99,Vichada,2039,Total,148564
+99,Vichada,2040,Total,149678
+99,Vichada,2041,Total,150730
+99,Vichada,2042,Total,151722
+99,Vichada,2043,Total,152663
+99,Vichada,2044,Total,153547
+99,Vichada,2045,Total,154376
+99,Vichada,2046,Total,155150
+99,Vichada,2047,Total,155867
+99,Vichada,2048,Total,156528
+99,Vichada,2049,Total,157136
+99,Vichada,2050,Total,157691

@@ -1,0 +1,9 @@
+source,definition,domain,observations,concepts,earliest,latest
+GEIH Informalidad Agosto 2026/Ciudades,new_geih_employment_based,city,1650,25,2021-01-01,2026-08-01
+GEIH Informalidad Agosto 2026/Total nacional,new_geih_employment_based,national,66,1,2021-01-01,2026-08-01
+GEIH Informalidad Agosto 2026/Total nacional,new_geih_employment_based,rural,66,1,2021-01-01,2026-08-01
+GEIH Informalidad Agosto 2026/Total nacional,new_geih_employment_based,urban_cabeceras,66,1,2021-01-01,2026-08-01
+GEIH Informalidad Marzo 2021/Ciudades,old_small_firm_size,city,4225,25,2007-01-01,2021-03-01
+GEIH Informalidad Marzo 2021/Seguridad social T. nal,old_non_pension_proxy_NOT_equivalent_to_new_informality,national,169,1,2007-01-01,2021-03-01
+GEIH Informalidad Marzo 2021/Seguridad social T. nal,old_non_pension_proxy_NOT_equivalent_to_new_informality,rural,169,1,2007-01-01,2021-03-01
+GEIH Informalidad Marzo 2021/Seguridad social T. nal,old_non_pension_proxy_NOT_equivalent_to_new_informality,urban_cabeceras,169,1,2007-01-01,2021-03-01

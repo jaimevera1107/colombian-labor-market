@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "software_base": "ICML 2.2.30.dev0 H30",
+  "period_through": "2026-08",
+  "source_root": ".",
+  "activation_mode": "frozen_snapshot",
+  "original_annual_binary_xls": {
+    "path": "legacy/archivo_original_duplicado/2025/Anexo_GEIH_Departamentos_2025.xls",
+    "sha256": "159372274a790e9189f1de9738b8a888e5c42bf8430ec098d04b6380f0975fa2"
+  },
+  "sources": {
+    "departmental.annex": {
+      "path": "datos/1_ingesta/geih_departamentos/geih_departamentos_2025.xlsx",
+      "sha256": "c6e3cd7751d85e26382b72eb5edb947102fd5fbce4d95bf5c1f9e75e76ab5e00",
+      "type": "publicacion_anual",
+      "status": "active_2026-08",
+      "source_provenance": "DANE_GEIH_xlsx_conversion_user_provided",
+      "original_file": "Anexo GEIH Departamentos 2025.xlsx (aportado por usuario)"
+    },
+    "departmental.population_projections": {
+      "path": "datos/2_procesamiento/fuentes_preparadas/departamental/proyecciones_poblacion_original.csv",
+      "sha256": "263aa63d00de5ae356b98079dcf97e7361eaf157efabcbe7f7ff9f6de519b246",
+      "type": "historica",
+      "status": "active_2026-08",
+      "source_provenance": "H25_RC2",
+      "original_file": "fases/03_departamentos/fuentes/proyecciones_poblacion_original.csv"
+    },
+    "integration.geih_monthly_annex": {
+      "path": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-08.xlsx",
+      "sha256": "ade9b213c799e967c121091438a53617f3a3ab8d85d311f5cada08e2461473d9",
+      "type": "publicacion_mensual",
+      "status": "active_2026-08",
+      "source_provenance": "DANE_GEIH",
+      "original_file": "datos/2_procesamiento/fuentes_preparadas/sectorial/Anexo_GEIH_Agosto_2026.xlsx"
+    },
+    "national.enh_annual": {
+      "path": "datos/2_procesamiento/fuentes_preparadas/nacional/source_enh_annual.csv",
+      "sha256": "72a39aca24b93bcdd2a949e32a465cb085f62574ee3cb398f6de4e611807bd22",
+      "type": "historica",
+      "status": "active_2026-08",
+      "source_provenance": "H25_RC2",
+      "original_file": "fases/01_nacional/data/historico/source_enh_annual.csv"
+    },
+    "national.geih_annual": {
+      "path": "datos/2_procesamiento/fuentes_preparadas/nacional/official_geih_annual.csv",
+      "sha256": "ca9143d73a32fefee357a1150ce9761b4e2010215903a6f1af1732d7732623fc",
+      "type": "historica",
+      "status": "active_2026-08",
+      "source_provenance": "H25_RC2",
+      "original_file": "fases/01_nacional/data/historico/official_geih_annual.csv"
+    },
+    "national.geih_monthly_annex": {
+      "path": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-08.xlsx",
+      "sha256": "ade9b213c799e967c121091438a53617f3a3ab8d85d311f5cada08e2461473d9",
+      "type": "publicacion_mensual",
+      "status": "active_2026-08",
+      "source_provenance": "DANE_GEIH",
+      "original_file": "datos/2_procesamiento/fuentes_preparadas/sectorial/Anexo_GEIH_Agosto_2026.xlsx"
+    },
+    "national.monthly_indicators": {
+      "path": "datos/2_procesamiento/fuentes_preparadas/nacional/indicadores_mensuales_1993_2003.csv",
+      "sha256": "ec0503916a346d4b3fd18049663973ec6d9a1f2cd472049aeb002b0a2fef7e15",
+      "type": "historica",
+      "status": "active_2026-08",
+      "source_provenance": "H25_RC2",
+      "original_file": "fases/01_nacional/data/historico/indicadores_mensuales_1993_2003.csv"
+    },
+    "urban.historical_signals": {
+      "path": "datos/2_procesamiento/fuentes_preparadas/urbano/senales_historicas_23_y_donantes.csv",
+      "sha256": "bed64e54d103de4e07ffb46f7657b6061cd5e5fce6d8ec614c73ffe0bc6418ef",
+      "type": "historica",
+      "status": "active_2026-08",
+      "source_provenance": "H25_RC2",
+      "original_file": "fases/02_ciudades/datos/senales_historicas_23_y_donantes.csv"
+    },
+    "urban.reference_donors": {
+      "path": "datos/2_procesamiento/fuentes_preparadas/urbano/donantes_congelados_referencia.csv",
+      "sha256": "ef039646930f25298fa5030a5d59d2d9a34d31f5c762a01499a55d1e0a091c2b",
+      "type": "historica",
+      "status": "active_2026-08",
+      "source_provenance": "H25_RC2",
+      "original_file": "fases/02_ciudades/datos/donantes_congelados_referencia.csv"
+    },
+    "urban.synthetic_donor": {
+      "path": "datos/2_procesamiento/fuentes_preparadas/urbano/cundinamarca_25_donante_congelado.json",
+      "sha256": "8ec852f61d3423f049c3cd181dead1449f27b7c1c7ea8930280e3da02b7132c5",
+      "type": "historica",
+      "status": "active_2026-08",
+      "source_provenance": "H25_RC2",
+      "original_file": "fases/02_ciudades/config/cundinamarca_25_donante_congelado.json"
+    },
+    "urban.window_proxies": {
+      "path": "datos/2_procesamiento/fuentes_preparadas/urbano/proxies_anuales_ventanas_2026_08.csv",
+      "sha256": "16451ee2c3c61c308c528eaadb388a6162774b87980b5c969a55859f8fa4cd38",
+      "type": "historica",
+      "status": "active_2026-08",
+      "source_provenance": "H25_RC2",
+      "original_file": "fases/02_ciudades/datos/proxies_anuales_ventanas_2026_08.csv"
+    },
+    "urban.frozen_selection": {
+      "path": "datos/2_procesamiento/fuentes_preparadas/urbano/donantes_pareto_congelados_h30.json",
+      "sha256": "fc6a7c4a2ff5212581c71d07ff6478ea8c797f7cc7656c5a41e6fc76aeed11c1",
+      "type": "historica",
+      "status": "frozen_methodological_decision",
+      "source_provenance": "H30_verified_RC2_Pareto_study",
+      "original_file": "RC2/fases/02_ciudades/docs/02_ESTUDIO_PARETO_EVIDENCIA.md; independent H30 manifest"
+    }
+  },
+  "two_annex_monthly_rule": "GEIH and Informality/Social Security must have the same closing month before a new vintage; no automatic activation",
+  "note": "Do not change frozen products; changing a source requires explicit new vintage and independent quality checks.",
+  "auxiliary_inputs": [
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/anclas_dane/anclas_dane_agregado_13_areas_2001_2009.csv",
+      "sha256": "802438db6af861c0f9e8b69709b19bcbe7fdce8295075038b3bb111d110f1a91",
+      "type": "other_source_auxiliary"
+    },
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/anclas_dane/anclas_dane_ciudades_13_2005_2006.csv",
+      "sha256": "a59ad200d504658096c945c02129784f6e364a5dc59f33d9f53453d239c3f99e",
+      "type": "other_source_auxiliary"
+    },
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/anclas_dane/comparacion_universos_2006.csv",
+      "sha256": "fb79f0e810c8ef159967a2fa8b110ad3703c3e56796914f1a1c62fe2b8ec0059",
+      "type": "other_source_auxiliary"
+    },
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/anclas_dane/inventario_coberturas_dane.csv",
+      "sha256": "0bdea12194a87eb34d9b9fc9b79a247e0771a5736db6e5940eddd05657e80360",
+      "type": "other_source_auxiliary"
+    },
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/censo_derivado/censo_detalle_municipal_ajustado_nueve.csv",
+      "sha256": "116969dddf59b54db8b5f765a91e0a59f3a1eca752c3d45da5ae7cf3e68c883e",
+      "type": "census_auxiliary"
+    },
+    {
+      "path": "datos/1_ingesta/censo_original/CNPV-2018-Poblacion-Ajustada-por-Cobertura.xls",
+      "sha256": "a8efb9e801564faa004e01e4a685d42087592a899c4a59c2237f0808260ec8c1",
+      "type": "census_auxiliary"
+    },
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/censo_derivado/cnpv_2018_capitales_ajustado.csv",
+      "sha256": "3a1139f70c69bc937e747138eecb350eb0085cf38fb0c2e2f24d6243c33a0827",
+      "type": "census_auxiliary"
+    },
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/demografia/population_projections_legacy.csv",
+      "sha256": "263aa63d00de5ae356b98079dcf97e7361eaf157efabcbe7f7ff9f6de519b246",
+      "type": "demographic_auxiliary"
+    },
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/informalidad/informality_source_observations.csv",
+      "sha256": "d4413b08c8b4b5dbd75c9af144b39fa5e2e57815bfe9396bfc48ef4156bbd70d",
+      "type": "informality_auxiliary"
+    },
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/informalidad/national_informality_monthly_2021_2026.csv",
+      "sha256": "f4d5ed92945f40368bcbb35914e2865a51ab46fbdbc8112b1ee045f62d6fcba1",
+      "type": "informality_auxiliary"
+    },
+    {
+      "path": "datos/2_procesamiento/productos_congelados/laboral/ciudades.csv",
+      "sha256": "773ebcfb4fa4288f10744b8912c1c03244179d17e2cce8a8926123a66d7e9405",
+      "type": "laboral_product_frozen"
+    },
+    {
+      "path": "datos/2_procesamiento/productos_congelados/laboral/departamentos.csv",
+      "sha256": "99847e18d4e1d3c37b8aaa280823c42a246e269eea4c8a9435e1cc78717c8fea",
+      "type": "laboral_product_frozen"
+    },
+    {
+      "path": "datos/2_procesamiento/productos_congelados/laboral/nacionales.csv",
+      "sha256": "fc003be8875716ef19e49a3a7d1a3898998e3e0d7a120421498a60eb4a8f362f",
+      "type": "laboral_product_frozen"
+    },
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/sectorial/anexos_historicos/01_observaciones_ramas_2001_2015_trimestres.csv",
+      "sha256": "18badf9b7b98f469c1c5921b28f36a77cf3499656c110589a10200b40f64d35a",
+      "type": "sectoral_auxiliary"
+    },
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/sectorial/anexos_historicos/07_totales_laborales_mensuales_misma_vintage.csv",
+      "sha256": "378cc2c14566f737dceabe8661c016cb0dd334317c7009f0bad9b26cd74426ee",
+      "type": "sectoral_auxiliary"
+    },
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/sectorial/anexos_historicos/10_PLANTILLA_EXTRACCION_ANEXO.csv",
+      "sha256": "e08cf4c478762dd7026935cd92e5b4335f03d0a20db460f9c6ef6789a69a0032",
+      "type": "sectoral_auxiliary"
+    },
+    {
+      "path": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexos sectoriales historicos/anexo_empleo_dic_15.xls",
+      "sha256": "5e532c30a9f96df88ded4f3b5ec0fab8e981c9cfcb284840814cf95bdd9d2ada",
+      "type": "sectoral_auxiliary"
+    },
+    {
+      "path": "datos/1_ingesta/excel_originales/Mercado Laboral/Anexos sectoriales historicos/anexo_empleo_mar_15.xls",
+      "sha256": "bd808ab6a5f2a1323862e79febfbd3f1151747a4180c04aa52065c0404587aa2",
+      "type": "sectoral_auxiliary"
+    },
+    {
+      "path": "datos/2_procesamiento/fuentes_preparadas/sectorial/legacy_sector_national_checks.csv",
+      "sha256": "ff61b3dd429548e8436cc634d84745f35988b6c73125d54d9a6fac88f7f40fb0",
+      "type": "sectoral_auxiliary"
+    }
+  ],
+  "external_frozen_bundles": [
+    {
+      "path": "datos/2_procesamiento/sectorial_h16",
+      "role": "frozen_predictor_evidence",
+      "hashes": "internal_manifest_sha256"
+    },
+    {
+      "path": "datos/2_procesamiento/sectorial_h11",
+      "role": "frozen_historical_sources",
+      "hashes": "internal_manifest_sha256"
+    },
+    {
+      "path": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9",
+      "role": "frozen_informality_evidence",
+      "hashes": "internal_manifest_sha256"
+    }
+  ]
+}

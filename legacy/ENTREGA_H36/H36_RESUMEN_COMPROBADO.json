@@ -1,0 +1,59 @@
+{
+  "stage": "H36_FULL_AUGUST_2026_RECOMPUTATION",
+  "period": "2026-08",
+  "software_version": "2.2.35.dev0",
+  "integral_status": "RECOMPUTED_ALL_EIGHT_AUDITED",
+  "nine_excel_generators": {
+    "cutoff": "2026-08",
+    "generators": 9,
+    "manifest_sha256": "b10d1046a173324859917c4c216cbcae5b18271b0d7493f1c43cff6bda2d8171",
+    "source_policy": "VALIDATED_EXCEL_ONLY_AND_FROZEN_HISTORICAL_EVIDENCE",
+    "status": "PASS"
+  },
+  "recalculated_components": [
+    "labor",
+    "informality_H5_H6_H9",
+    "sectoral_H16"
+  ],
+  "recalculated_from_sources": true,
+  "eight_product_equivalence_passed": true,
+  "eight_product_statuses": {
+    "informalidad.ciudades": "EQUIVALENT_WITHIN_TOLERANCES",
+    "informalidad.departamentos": "EQUIVALENT_WITHIN_TOLERANCES",
+    "informalidad.nacionales": "EQUIVALENT_WITHIN_TOLERANCES",
+    "labor.ciudades": "EQUIVALENT_WITHIN_TOLERANCES",
+    "labor.departamentos": "EQUIVALENT_WITHIN_TOLERANCES",
+    "labor.nacionales": "EQUIVALENT_WITHIN_TOLERANCES",
+    "sectorial.departamental": "EQUIVALENT_WITHIN_TOLERANCES",
+    "sectorial.nacional": "EQUIVALENT_WITHIN_TOLERANCES"
+  },
+  "cross_audit_status": "PASS",
+  "cross_audit_metrics": {
+    "max_city_frozen_employed_vs_informality_city_people": 4.981178790330887e-06,
+    "max_department_full_labor_vs_informality_people": 4.998873919248581e-06,
+    "max_department_full_labor_vs_sector_people": 2.8440263122320175e-05,
+    "max_department_informal_geih_identity_people": 1.0000541806221008e-05,
+    "max_department_informal_identity_people": 1.0000541806221008e-05,
+    "max_department_sector_represented_vs_labor_people": 2.8440263122320175e-05,
+    "max_department_sector_share_error": 1.2501111257279263e-11,
+    "max_informality_geih_vs_labor_represented_people_DIAGNOSTIC": 65732.31038860335,
+    "max_informality_national_full_aggregate_people": 5.8690086007118225e-05,
+    "max_labor_full_national_aggregate_people": 7.450580596923828e-09,
+    "max_sector_national_full_aggregate_people": 4.999805241823196e-06,
+    "max_sector_national_proxy_aggregate_people": 5.00003807246685e-06,
+    "represented_domain_comparability": "NOT_IDENTICAL_BY_CONSTRUCTION",
+    "represented_domain_nonidentical_rows_DIAGNOSTIC": 2232
+  },
+  "informality_numeric_quality_passed": true,
+  "informality_independent_scientific_quality_passed": false,
+  "publication_authorized": false,
+  "source_audit": "PASS_SOURCES_AND_JULY_REVISION_CHECK",
+  "july_revisions_in_august_geih": 0,
+  "pytest": {
+    "passed": 406,
+    "skipped": 131,
+    "exit_code": 0
+  },
+  "golden_rc1_status": "NOT_VERIFIED_131_SKIPPED",
+  "tempdisagg_wheel_sha256": "ae7593b90db9e32d9860d07b7be439490fb66fee61a0e0a7d53910ab12d68a29"
+}

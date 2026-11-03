@@ -1,0 +1,332 @@
+{
+  "status": "SOURCE_ARCHIVE_VERIFIED_H29",
+  "vintage": "2026-08",
+  "rules": {
+    "manual_xlsx_inputs": [
+      "GEIH labor monthly",
+      "GEIH informal employment/social security same-ending-month rolling quarter",
+      "Annual departmental GEIH",
+      "Demographic projections x3"
+    ],
+    "other_independent_auxiliary": "PIB by department and activity is independent of the 6 inputs and currently frozen at 2024",
+    "legacy_xls": "Historical 2021 source retained byte-for-byte only for provenance; not a user-upload requirement",
+    "no_manual_csv": "All generated CSVs in this component are staged outputs, not user-maintained inputs",
+    "no_vintage_promotion": "H29 source-preparation does not authorize a new month or overwrite frozen results"
+  },
+  "active_roles": {
+    "enh_historical": {
+      "path": "datos/1_ingesta/excel_originales/Mercado Laboral/Reconstrucción ENH Anual 1993-2001.xlsx",
+      "sha256": "48dea3f2eb53aad512bb4e983c57f127a420c9851e6cba9f74482a1daa38d604"
+    },
+    "population_1993_2004": {
+      "path": "datos/1_ingesta/excel_originales/Población/Proyecciones de Población 1993-2004.xlsx",
+      "sha256": "600cb7a1d1d2d7c045bf80270bca54f4ca12fd40691da6794f1c633eac15252a"
+    },
+    "population_2005_2019": {
+      "path": "datos/1_ingesta/excel_originales/Población/Proyecciones de Población 2005-2019.xlsx",
+      "sha256": "1801d00d96a7a496ad16b76f1ea6ef31204308e39359eaab7bc48079a47f56cf"
+    },
+    "population_2020_2050": {
+      "path": "datos/1_ingesta/excel_originales/Población/Proyecciones de Población 2020-2050.xlsx",
+      "sha256": "0c8f36937e28d0b22711941648098a32e4ec20cefa6facf10923ece070f0c213"
+    },
+    "gdp_2005_2024": {
+      "path": "datos/1_ingesta/excel_originales/Producción/PIB Departamentos 2024.xlsx",
+      "sha256": "486ed3139a4223b3cf02ec075a3590396be0a8ebaee6f2c1e4910bd7d9891cbb"
+    },
+    "departments_2025": {
+      "path": "datos/1_ingesta/geih_departamentos/geih_departamentos_2025.xlsx",
+      "sha256": "c6e3cd7751d85e26382b72eb5edb947102fd5fbce4d95bf5c1f9e75e76ab5e00"
+    },
+    "informality_old_archive": {
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2021-03.xls",
+      "sha256": "451907808e5636044f69c401aea9a3924a2949cdd18cc30141685afc6b7bcfdb"
+    },
+    "informality_current": {
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-08.xlsx",
+      "sha256": "3da594e046a2c67deeeaaaed1bd0d0f81f243ea48429be6481ca426044d28ffc"
+    }
+  },
+  "files": [
+    {
+      "name": "Salarios.xlsx",
+      "path": "datos/1_ingesta/excel_originales/Economía/Salarios.xlsx",
+      "sha256": "26cc4e80a2a03a2b0e3b0fc3b1e8dd11e371df3417d65c885e36f9a43ead1483",
+      "type": "historico",
+      "policy": "referencia_excel_historica_congelada",
+      "size_bytes": 9854
+    },
+    {
+      "name": "Indicadores Económicos Externos Mensuales.xlsx",
+      "path": "datos/1_ingesta/excel_originales/Economía/Indicadores Económicos Externos Mensuales.xlsx",
+      "sha256": "ce8f207879bed43236a47a5c243127f8a71ac43a2c84b67b98ba4de20fda2f91",
+      "type": "historico",
+      "policy": "referencia_excel_historica_congelada",
+      "size_bytes": 39543
+    },
+    {
+      "name": "Anexo GEIH Departamentos 2024.xls",
+      "path": "datos/1_ingesta/geih_departamentos/geih_departamentos_2024.xls",
+      "sha256": "7b953c83b805f5599d062fa8d583649a5c923d73a21847913cfe2198f236abe0",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 1285632
+    },
+    {
+      "name": "Anexo GEIH Informalidad Marzo 2021.xls",
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2021-03.xls",
+      "sha256": "451907808e5636044f69c401aea9a3924a2949cdd18cc30141685afc6b7bcfdb",
+      "type": "historico-seguridad-social-2021-03",
+      "policy": "legado_xls_congelado_no_actualizable",
+      "size_bytes": 2089984
+    },
+    {
+      "name": "Departamental  and National Population Projections Colombia 1993-2030.xlsx",
+      "path": "datos/1_ingesta/excel_originales/Mercado Laboral/Departamental  and National Population Projections Colombia 1993-2030.xlsx",
+      "sha256": "3e4f374dc3b5fa0a4ac768ff60f279bcc50d35dbe86fce4038fb5037c878ba43",
+      "type": "historico",
+      "policy": "referencia_excel_historica_congelada",
+      "size_bytes": 115727
+    },
+    {
+      "name": "Departamental and National Population Projections Colombia 1993-2030.xlsx",
+      "path": "datos/1_ingesta/excel_originales/Mercado Laboral/Departamental and National Population Projections Colombia 1993-2030.xlsx",
+      "sha256": "36b3e12c7143ea598097a47c66bee59c3f7f1272f658f0c83c9d93e48c4a61eb",
+      "type": "historico",
+      "policy": "referencia_excel_historica_congelada",
+      "size_bytes": 122635
+    },
+    {
+      "name": "Reconstruction National Labor Market Colombia 1993-2001.xlsx",
+      "path": "datos/1_ingesta/excel_originales/Mercado Laboral/Reconstruction National Labor Market Colombia 1993-2001.xlsx",
+      "sha256": "d48ccceea3a90e1810a1432981e4d8fbc8808376a887eebbe84474dc42b698d0",
+      "type": "historico",
+      "policy": "referencia_excel_historica_congelada",
+      "size_bytes": 32931
+    },
+    {
+      "name": "Ind_empleo_1958_2018.xls",
+      "path": "datos/1_ingesta/excel_originales/Mercado Laboral/Ind_empleo_1958_2018.xls",
+      "sha256": "5fcb321c9d347a2c37b74fae9df670d046bc96e5b3ee7ea9a9426adec6b2cbf9",
+      "type": "historico",
+      "policy": "referencia_excel_historica_congelada",
+      "size_bytes": 107008
+    },
+    {
+      "name": "Reconstrucción ENH Anual 1993-2001.xlsx",
+      "path": "datos/1_ingesta/excel_originales/Mercado Laboral/Reconstrucción ENH Anual 1993-2001.xlsx",
+      "sha256": "48dea3f2eb53aad512bb4e983c57f127a420c9851e6cba9f74482a1daa38d604",
+      "type": "historico",
+      "policy": "referencia_excel_historica_congelada",
+      "size_bytes": 35037
+    },
+    {
+      "name": "Anexo GEIH Informalidad Mayo 2025.xlsx",
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2025-05.xlsx",
+      "sha256": "440a44ba7fb2598f463bc7b5aa90b7668a86233084d16df9b678b1d9bb4f8de1",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 1417454
+    },
+    {
+      "name": "Anexo GEIH Mayo 2025.xlsx",
+      "path": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2025-05.xlsx",
+      "sha256": "7772b63712936750285c3f25cb59382061e298c1ffd6c0c647d16b71137613cf",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 3240452
+    },
+    {
+      "name": "Anexo GEIH Septiembre 2025.xlsx",
+      "path": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2025-09.xlsx",
+      "sha256": "e7af037e11845ed97cbae625dcffaace7194e0a71dafd17bfc21ff61bfcb115f",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 3365896
+    },
+    {
+      "name": "Anexo GEIH Informalidad Septiembre 2025.xlsx",
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2025-09.xlsx",
+      "sha256": "401c7972c4dcd05c4b54c0a4b01080248a18c579b9d8a3b72a6a9fdb8062f85e",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 1490656
+    },
+    {
+      "name": "Anexo GEIH Enero 2026.xlsx",
+      "path": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-01.xlsx",
+      "sha256": "f7df301ae5813c897381e0ec40566a586ff056bce08ebea2c73ed03b4f494940",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 3485687
+    },
+    {
+      "name": "Anexo GEIH Informalidad Diciembre 2025.xlsx",
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2025-12.xlsx",
+      "sha256": "361bdd2300f4ed36997e3b9eb17b169c4a634f16da59c30087858958855c98f4",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 1525506
+    },
+    {
+      "name": "Anexo GEIH Informalidad Enero 2026.xlsx",
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-01.xlsx",
+      "sha256": "1d05b5ea20bd1aebd240d28022866c2e268f930d1ba2cf11e3e2f9941da3b320",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 1538128
+    },
+    {
+      "name": "Anexo GEIH Febrero 2026.xlsx",
+      "path": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-02.xlsx",
+      "sha256": "3d74d2fd1687ca90bd4fa0065e5292b8c15752e9ab9d0344748b966328a346d0",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 3516877
+    },
+    {
+      "name": "Anexo GEIH Informalidad Febrero 2026.xlsx",
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-02.xlsx",
+      "sha256": "abf8fe1fed5cd184fcaffcfc5d9e12e5c38d3a5db7ab4d81c39d65beadc9f87d",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 1549425
+    },
+    {
+      "name": "Anexo GEIH Informalidad Marzo 2026.xlsx",
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-03.xlsx",
+      "sha256": "f68bc10f0f364c6e5119f900ac14879df23a22a0be58e36380e11ee4bafe38a2",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 1529231
+    },
+    {
+      "name": "Anexo GEIH Informalidad Abril 2026.xlsx",
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-04.xlsx",
+      "sha256": "442a8c4ca1516d949ad05e96ffb47b121f98f5a2cb9d6cb07a20335fdcc78ee5",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 1539596
+    },
+    {
+      "name": "Anexo GEIH Abril 2026.xlsx",
+      "path": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-04.xlsx",
+      "sha256": "4292064d37dfa789ee45442135e9d751ab0aaaa317c101107004a3d10deab4da",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 3576012
+    },
+    {
+      "name": "Anexo GEIH Mayo 2026.xlsx",
+      "path": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-05.xlsx",
+      "sha256": "c894509e9ad91824302b2ca689e6de6bfdbe4559378e748dd4cd08610b85514c",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 3604183
+    },
+    {
+      "name": "Anexo GEIH Informalidad Mayo 2026.xlsx",
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-05.xlsx",
+      "sha256": "43a27fc887f643f2595420118ac5299b9e5c5855b7e0a44560ca1c7712b36c9a",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 1550694
+    },
+    {
+      "name": "Anexo GEIH Junio 2026.xlsx",
+      "path": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-06.xlsx",
+      "sha256": "85a800b97a7bc55d2b7d0bed0cbf21e9662518b524f4cdc369724abce8bf0db1",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 3631333
+    },
+    {
+      "name": "Anexo GEIH Informalidad Junio 2026.xlsx",
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-06.xlsx",
+      "sha256": "1f1112b993ba9dc1b47245aa999cd31b9a163c9a26f86305af6066cbaba55a84",
+      "type": "mensual-anterior",
+      "policy": "historico_excel_congelado",
+      "size_bytes": 1559649
+    },
+    {
+      "name": "Anexo GEIH Departamentos 2025.xls",
+      "path": "datos/1_ingesta/geih_departamentos/geih_departamentos_2025.xls",
+      "sha256": "159372274a790e9189f1de9738b8a888e5c42bf8430ec098d04b6380f0975fa2",
+      "type": "anual-departamentos-2025",
+      "policy": "anual_excel",
+      "size_bytes": 1230848
+    },
+    {
+      "name": "Anexo GEIH Informalidad Agosto 2026.xlsx",
+      "path": "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-08.xlsx",
+      "sha256": "3da594e046a2c67deeeaaaed1bd0d0f81f243ea48429be6481ca426044d28ffc",
+      "type": "mensual-seguridad-social-2026-08",
+      "policy": "periodico_excel_sincronizado",
+      "size_bytes": 1595993
+    },
+    {
+      "name": "Anexo GEIH Agosto 2026.xlsx",
+      "path": "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-08.xlsx",
+      "sha256": "ade9b213c799e967c121091438a53617f3a3ab8d85d311f5cada08e2461473d9",
+      "type": "mensual-mercado-laboral-2026-08",
+      "policy": "periodico_excel_sincronizado",
+      "size_bytes": 3692971
+    },
+    {
+      "name": "Proyecciones de Población 1993-2004.xlsx",
+      "path": "datos/1_ingesta/excel_originales/Población/Proyecciones de Población 1993-2004.xlsx",
+      "sha256": "600cb7a1d1d2d7c045bf80270bca54f4ca12fd40691da6794f1c633eac15252a",
+      "type": "proyeccion-poblacion",
+      "policy": "revision_demografica_no_mensual",
+      "size_bytes": 77783
+    },
+    {
+      "name": "Proyecciones de Población 2005-2019.xlsx",
+      "path": "datos/1_ingesta/excel_originales/Población/Proyecciones de Población 2005-2019.xlsx",
+      "sha256": "1801d00d96a7a496ad16b76f1ea6ef31204308e39359eaab7bc48079a47f56cf",
+      "type": "proyeccion-poblacion",
+      "policy": "revision_demografica_no_mensual",
+      "size_bytes": 85745
+    },
+    {
+      "name": "Proyecciones de Población 2020-2050.xlsx",
+      "path": "datos/1_ingesta/excel_originales/Población/Proyecciones de Población 2020-2050.xlsx",
+      "sha256": "0c8f36937e28d0b22711941648098a32e4ec20cefa6facf10923ece070f0c213",
+      "type": "proyeccion-poblacion",
+      "policy": "revision_demografica_no_mensual",
+      "size_bytes": 94483
+    },
+    {
+      "name": "PIB Departamental Oferta Anual.xlsx",
+      "path": "datos/1_ingesta/excel_originales/Producción/PIB Departamental Oferta Anual.xlsx",
+      "sha256": "ca002cb0f70ab4992d420f411d6e26e5403ece7ff1c1a7edb27138bc0a0f3b8d",
+      "type": "pib-sectorial-auxiliar",
+      "policy": "auxiliar_pib_independiente_requiere_revision",
+      "size_bytes": 940413
+    },
+    {
+      "name": "ISE 12 Actividades - Diciembre 2025.xlsx",
+      "path": "datos/1_ingesta/excel_originales/Producción/ISE 12 Actividades - Diciembre 2025.xlsx",
+      "sha256": "318d1ec1f777bdafc6090062048cce4971a18c26deb1dc80923aa2dbacbd1c9a",
+      "type": "historico",
+      "policy": "referencia_excel_historica_congelada",
+      "size_bytes": 602857
+    },
+    {
+      "name": "PIB Departamentos 2024.xlsx",
+      "path": "datos/1_ingesta/excel_originales/Producción/PIB Departamentos 2024.xlsx",
+      "sha256": "486ed3139a4223b3cf02ec075a3590396be0a8ebaee6f2c1e4910bd7d9891cbb",
+      "type": "pib-sectorial-auxiliar",
+      "policy": "auxiliar_pib_independiente_requiere_revision",
+      "size_bytes": 941125
+    },
+    {
+      "name": "Anexo GEIH Departamentos 2025.xlsx",
+      "path": "datos/1_ingesta/geih_departamentos/geih_departamentos_2025.xlsx",
+      "sha256": "c6e3cd7751d85e26382b72eb5edb947102fd5fbce4d95bf5c1f9e75e76ab5e00",
+      "type": "departments_2025_converted_verified",
+      "policy": "anual_excel",
+      "size_bytes": 568875
+    }
+  ]
+}

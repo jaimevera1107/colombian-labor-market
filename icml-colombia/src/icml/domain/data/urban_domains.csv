@@ -1,0 +1,34 @@
+dane_code,name,kind,legacy_unit_type
+5,Medellín A.M.,observed_city,CIUDAD_O_AREA_METROPOLITANA
+8,Barranquilla A.M.,observed_city,CIUDAD_O_AREA_METROPOLITANA
+11,Bogotá D.C.,observed_city,CIUDAD_O_AREA_METROPOLITANA
+13,Cartagena,observed_city,CIUDAD_O_AREA_METROPOLITANA
+15,Tunja,observed_city,CIUDAD_O_AREA_METROPOLITANA
+17,Manizales A.M.,observed_city,CIUDAD_O_AREA_METROPOLITANA
+18,Florencia,observed_city,CIUDAD_O_AREA_METROPOLITANA
+19,Popayán,observed_city,CIUDAD_O_AREA_METROPOLITANA
+20,Valledupar,observed_city,CIUDAD_O_AREA_METROPOLITANA
+23,Montería,observed_city,CIUDAD_O_AREA_METROPOLITANA
+25,Cundinamarca — señal urbana sintética,synthetic_signal,URBANA_SINTETICA_PARA_MODELO_DEPARTAMENTAL
+27,Quibdó,observed_city,CIUDAD_O_AREA_METROPOLITANA
+41,Neiva,observed_city,CIUDAD_O_AREA_METROPOLITANA
+44,Riohacha,observed_city,CIUDAD_O_AREA_METROPOLITANA
+47,Santa Marta,observed_city,CIUDAD_O_AREA_METROPOLITANA
+50,Villavicencio,observed_city,CIUDAD_O_AREA_METROPOLITANA
+52,Pasto,observed_city,CIUDAD_O_AREA_METROPOLITANA
+54,Cúcuta A.M.,observed_city,CIUDAD_O_AREA_METROPOLITANA
+63,Armenia,observed_city,CIUDAD_O_AREA_METROPOLITANA
+66,Pereira A.M.,observed_city,CIUDAD_O_AREA_METROPOLITANA
+68,Bucaramanga A.M.,observed_city,CIUDAD_O_AREA_METROPOLITANA
+70,Sincelejo,observed_city,CIUDAD_O_AREA_METROPOLITANA
+73,Ibagué,observed_city,CIUDAD_O_AREA_METROPOLITANA
+76,Cali A.M.,observed_city,CIUDAD_O_AREA_METROPOLITANA
+81,Arauca,observed_city,CIUDAD_O_AREA_METROPOLITANA
+85,Yopal,observed_city,CIUDAD_O_AREA_METROPOLITANA
+86,Mocoa,observed_city,CIUDAD_O_AREA_METROPOLITANA
+88,San Andrés,observed_city,CIUDAD_O_AREA_METROPOLITANA
+91,Leticia,observed_city,CIUDAD_O_AREA_METROPOLITANA
+94,Inírida,observed_city,CIUDAD_O_AREA_METROPOLITANA
+95,San José del Guaviare,observed_city,CIUDAD_O_AREA_METROPOLITANA
+97,Mitú,observed_city,CIUDAD_O_AREA_METROPOLITANA
+99,Puerto Carreño,observed_city,CIUDAD_O_AREA_METROPOLITANA

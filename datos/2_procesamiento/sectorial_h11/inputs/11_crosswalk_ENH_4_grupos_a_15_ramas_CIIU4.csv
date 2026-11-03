@@ -1,0 +1,16 @@
+sector_code,modern_label,dane_group,legacy_CIIU3_bucket,crosswalk_basis,confidence,qualification
+A,"Agricultura, ganadería, caza, silvicultura y pesca",Agricultura,AGRICULTURA_PESCA,AGGREGATE_CONCEPT_MATCH,HIGH,Changes in CIIU vintages mean approximate not statistical identity
+B,Explotación de minas y canteras,Otros,MINERIA,RESIDUAL_OF_FOUR_DANE_GROUPS,MEDIUM_LOW,Residual includes other productive activities not identified one by one
+C,Industrias manufactureras,Industria,INDUSTRIA,AGGREGATE_CONCEPT_MATCH,HIGH,Assumed that historic industry means manufacturing
+D_E,"Electricidad, gas, agua, residuos",Otros,SERVICIOS_PUBLICOS,RESIDUAL_OF_FOUR_DANE_GROUPS,MEDIUM_LOW,Residual includes public utilities but also other unspecified differences
+F,Construcción,Otros,CONSTRUCCION,RESIDUAL_OF_FOUR_DANE_GROUPS,MEDIUM_LOW,Not directly reported as one of the four original sector trends
+G,Comercio al por mayor y menor,Comercio,COMERCIO_HOTELES,REV3_TO_REV4_COMMON_BUCKET,MEDIUM,Internal fraction based on H11 July 2001 not historically observed
+H,Transporte y almacenamiento,Servicios,TRANSPORTE_COMUNICACIONES,OFFICIAL_SERVICES_FOOTNOTE_AND_H10_BRIDGE,MEDIUM,Includes part of historic transport and communications category
+I,Alojamiento y servicios de comida,Comercio,COMERCIO_HOTELES,REV3_TO_REV4_COMMON_BUCKET,MEDIUM,Hotels and restaurants allocated to modern I
+J,Información y comunicaciones,Servicios,TRANSPORTE_COMUNICACIONES,OFFICIAL_SERVICES_FOOTNOTE_AND_H10_BRIDGE,MEDIUM,Historic communications activities can shift revision codes
+K,Actividades financieras y de seguros,Servicios,FINANCIERAS,OFFICIAL_SERVICES_FOOTNOTE_AND_H10_BRIDGE,MEDIUM,Historic financial intermediary category
+L,Actividades inmobiliarias,Servicios,INMOBILIARIAS_EMPRESARIALES,OFFICIAL_SERVICES_FOOTNOTE_AND_H10_BRIDGE,MEDIUM,Historic real estate and rentals regrouped
+M_N,Actividades profesionales y administrativas,Servicios,INMOBILIARIAS_EMPRESARIALES,OFFICIAL_SERVICES_FOOTNOTE_AND_H10_BRIDGE,MEDIUM,Modern professional and administrative service boundaries differ
+O_P_Q,"Administración pública, educación y salud",Servicios,COMUNITARIOS_PERSONALES,OFFICIAL_SERVICES_FOOTNOTE_AND_H10_BRIDGE,MEDIUM,Historic communal and social services regrouped
+R_S_T_U,Otras actividades de servicios,Servicios,COMUNITARIOS_PERSONALES,OFFICIAL_SERVICES_FOOTNOTE_AND_H10_BRIDGE,MEDIUM,Modern personal arts household and other services regrouped
+NO_INFO,Sin información de actividad,SIN_CLASIFICAR,NO_INFO,SEPARATE_NON_ECONOMIC_CLASS,NOT_ECONOMIC_SECTOR,Held at H11 link share as explicit assumption

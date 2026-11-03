@@ -1,0 +1,27 @@
+{
+  "method": "Pareto five criteria with holdout and seam guards (RC2)",
+  "study": "fases/02_ciudades/docs/02_ESTUDIO_PARETO_EVIDENCIA.md",
+  "status": "FROZEN_RESEARCH_SELECTION",
+  "reference_years": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "proxy_context_sha256": "c352b4cb7a2136053efe595616008512cc4fa219ff7d3bbbee559c3bf15ba767",
+  "policy_sha256": "03875ff2a593101a06651c7485118508f1e1ba4fa840f6896522e9d7471858cf",
+  "historical_signals_sha256": "bed64e54d103de4e07ffb46f7657b6061cd5e5fce6d8ec614c73ffe0bc6418ef",
+  "reference_donors_sha256": "ef039646930f25298fa5030a5d59d2d9a34d31f5c762a01499a55d1e0a091c2b",
+  "selected_donors": {
+    "81": 63,
+    "85": 50,
+    "86": 63,
+    "88": 27,
+    "91": 17,
+    "94": 5,
+    "95": 44,
+    "97": 63,
+    "99": 68
+  }
+}

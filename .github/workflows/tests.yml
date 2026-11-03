@@ -1,0 +1,37 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: icml-colombia/requirements/lock-py312.txt
+
+      - name: Install (pinned versions)
+        run: |
+          python -m pip install -U pip setuptools wheel
+          python -m pip install --no-deps ./dependencias/tempdisagg-0.6.3-py3-none-any.whl
+          python -m pip install -r icml-colombia/requirements/lock-py312.txt
+          python -m pip install --no-deps -e ./icml-colombia
+
+      - name: The checkout is complete and intact
+        run: python icml-colombia/tools/release/verify_checkout.py
+
+      - name: Tests, with the RC1 references
+        working-directory: icml-colombia
+        env:
+          ICML_GOLDEN_DIR: ${{ github.workspace }}/legacy/validacion/rc1_original
+        run: python -m pytest -q
+
+      - name: The monthly plan runs on the repository data
+        run: python -m icml recalcular --root . --simulacro

@@ -1,0 +1,76 @@
+﻿codigo_divipola,codigo_departamento,departamento,municipio_o_anm,cnpv_ajustado_total,cnpv_ajustado_cabecera,cnpv_ajustado_cp_rural,es_municipio_capital,incluido_estrictamente_geih_por_cabecera
+81001,81,Arauca,Arauca,85585,74195,11390,True,True
+81065,81,Arauca,Arauquita,49841,13720,36121,False,False
+81220,81,Arauca,Cravo Norte,3925,2682,1243,False,False
+81300,81,Arauca,Fortul,18938,9886,9052,False,False
+81591,81,Arauca,Puerto Rondón,4399,2952,1447,False,False
+81736,81,Arauca,Saravena,55554,42415,13139,False,False
+81794,81,Arauca,Tame,43932,26784,17148,False,False
+85001,85,Casanare,Yopal,168433,143619,24814,True,True
+85010,85,Casanare,Aguazul,36915,26517,10398,False,False
+85015,85,Casanare,Chameza,2500,1499,1001,False,False
+85125,85,Casanare,Hato Corozal,12328,5167,7161,False,False
+85136,85,Casanare,La Salina,1417,636,781,False,False
+85139,85,Casanare,Maní,17211,11216,5995,False,False
+85162,85,Casanare,Monterrey,17537,12178,5359,False,False
+85225,85,Casanare,Nunchía,8826,1904,6922,False,False
+85230,85,Casanare,Orocué,12340,5376,6964,False,False
+85250,85,Casanare,Paz de Ariporo,36277,24933,11344,False,False
+85263,85,Casanare,Pore,11967,6822,5145,False,False
+85279,85,Casanare,Recetor,1634,312,1322,False,False
+85300,85,Casanare,Sabanalarga,3625,1781,1844,False,False
+85315,85,Casanare,Sácama,2090,1020,1070,False,False
+85325,85,Casanare,San Luis de Palenque,8466,3058,5408,False,False
+85400,85,Casanare,Támara,6873,1634,5239,False,False
+85410,85,Casanare,Tauramena,23527,14549,8978,False,False
+85430,85,Casanare,Trinidad,13233,6891,6342,False,False
+85440,85,Casanare,Villanueva,35305,26322,8983,False,False
+86001,86,Putumayo,Mocoa,56398,38457,17941,True,True
+86219,86,Putumayo,Colón,5407,3419,1988,False,False
+86320,86,Putumayo,Orito,37745,19833,17912,False,False
+86568,86,Putumayo,Puerto Asís,64867,38901,25966,False,False
+86569,86,Putumayo,Puerto Caicedo,16095,6089,10006,False,False
+86571,86,Putumayo,Puerto Guzmán,35390,4629,30761,False,False
+86573,86,Putumayo,Leguízamo,28468,12755,15713,False,False
+86749,86,Putumayo,Sibundoy,14940,10059,4881,False,False
+86755,86,Putumayo,San Francisco,5645,3385,2260,False,False
+86757,86,Putumayo,San Miguel,18780,4912,13868,False,False
+86760,86,Putumayo,Santiago,7290,3476,3814,False,False
+86865,86,Putumayo,Valle del Guamuez,33457,14882,18575,False,False
+86885,86,Putumayo,Villagarzón,23700,13742,9958,False,False
+88001,88,Archipiélago de San Andrés,San Andrés,55291,41400,13891,True,True
+88564,88,Archipiélago de San Andrés,Providencia,5989,3493,2496,False,False
+91001,91,Amazonas,Leticia,48144,33503,14641,True,True
+91263,91,Amazonas,El Encanto (ANM),2100,0,2100,False,False
+91405,91,Amazonas,La Chorrera (ANM),2967,0,2967,False,False
+91407,91,Amazonas,La Pedrera (ANM),3820,0,3820,False,False
+91430,91,Amazonas,La Victoria (ANM),644,0,644,False,False
+91460,91,Amazonas,Miriti - Paraná (ANM),1850,0,1850,False,False
+91530,91,Amazonas,Puerto Alegría (ANM),748,0,748,False,False
+91536,91,Amazonas,Puerto Arica (ANM),1013,0,1013,False,False
+91540,91,Amazonas,Puerto Nariño,9744,3544,6200,False,False
+91669,91,Amazonas,Puerto Santander (ANM),1758,0,1758,False,False
+91798,91,Amazonas,Tarapacá (ANM),3801,0,3801,False,False
+94001,94,Guainía,Inírida,31514,20279,11235,True,True
+94343,94,Guainía,Barranco Minas (ANM),8088,0,8088,False,False
+94663,94,Guainía,Mapiripana (ANM),1022,0,1022,False,False
+94883,94,Guainía,San Felipe (ANM),1667,0,1667,False,False
+94884,94,Guainía,Puerto Colombia (ANM),1874,0,1874,False,False
+94885,94,Guainía,La Guadalupe (ANM),279,0,279,False,False
+94886,94,Guainía,Cacahual (ANM),863,0,863,False,False
+94887,94,Guainía,Pana Pana (ANM),1899,0,1899,False,False
+94888,94,Guainía,Morichal (ANM),908,0,908,False,False
+95001,95,Guaviare,San José del Guaviare,52815,36354,16461,True,True
+95015,95,Guaviare,Calamar,9528,4339,5189,False,False
+95025,95,Guaviare,El Retorno,13653,3355,10298,False,False
+95200,95,Guaviare,Miraflores,6771,1943,4828,False,False
+97001,97,Vaupés,Mitú,29850,9746,20104,True,True
+97161,97,Vaupés,Caruru,2915,1387,1528,False,False
+97511,97,Vaupés,Pacoa (ANM),4042,0,4042,False,False
+97666,97,Vaupés,Taraira,2215,957,1258,False,False
+97777,97,Vaupés,Papunaua (ANM),727,0,727,False,False
+97889,97,Vaupés,Yavaraté (ANM),1048,0,1048,False,False
+99001,99,Vichada,Puerto Carreño,20936,14974,5962,True,True
+99524,99,Vichada,La Primavera,10122,5586,4536,False,False
+99624,99,Vichada,Santa Rosalía,4059,2383,1676,False,False
+99773,99,Vichada,Cumaribo,72691,2890,69801,False,False

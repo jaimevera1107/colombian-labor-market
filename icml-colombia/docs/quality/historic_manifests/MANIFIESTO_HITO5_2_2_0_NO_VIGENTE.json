@@ -1,0 +1,1021 @@
+{
+  "version": "2.2.0.dev0",
+  "artifact": "ICML_BloqueII_Hito5",
+  "files": [
+    {
+      "path": "LEER_PRIMERO.md",
+      "sha256": "138861926daf113eb2473a206d2b7e9cea6f8927a498a50184ed3126e1c4fa83",
+      "bytes": 2454
+    },
+    {
+      "path": "MANIFIESTO_RESPALDO_SHA256.json",
+      "sha256": "a51cc9eee2310da7b772ce089e98949b3edb8cb1fc45c7fd04c61817b7ea9a34",
+      "bytes": 33520
+    },
+    {
+      "path": "icml-colombia/.github/workflows/ci.yml",
+      "sha256": "383d736080c3e49dfe72fc3b6e076b462b730d8e179fd6395be883a461b4b92b",
+      "bytes": 773
+    },
+    {
+      "path": "icml-colombia/.gitignore",
+      "sha256": "00968ba0c8e16f97e1152c080bb17b8c7c3a941cc643188062188e12aaf1f024",
+      "bytes": 422
+    },
+    {
+      "path": "icml-colombia/CHANGELOG.md",
+      "sha256": "19b86863839e17f32bf8b7b3465a336bab93721641ff4157da7d6bdd4132ce48",
+      "bytes": 5460
+    },
+    {
+      "path": "icml-colombia/README.md",
+      "sha256": "957c25d92db896853a69a0c951062e877cc7b3bbc85596a68985a91d4a3c22f5",
+      "bytes": 10345
+    },
+    {
+      "path": "icml-colombia/configs/golden/rc1_catalog.toml",
+      "sha256": "20fe90a103b84ebd9322d6361b03d40ca4db44579de763247fcb7fbc193f38e6",
+      "bytes": 32574
+    },
+    {
+      "path": "icml-colombia/configs/rc1/departmental.toml",
+      "sha256": "c3b9494a355af7a778ea602ff4430f3ed29eff7707e042799ca773d4e15ca9dc",
+      "bytes": 2083
+    },
+    {
+      "path": "icml-colombia/configs/rc1/evaluation.toml",
+      "sha256": "0bf8e7e124a5300f82ab87aafef9114825f9db7ddb55c9faf5d29262b4a6e7bf",
+      "bytes": 720
+    },
+    {
+      "path": "icml-colombia/configs/rc1/informality.toml",
+      "sha256": "c958cb730a2fb506adb5c2a5c009a61cf8d1fbe79333c82d3d622814c02a8acb",
+      "bytes": 512
+    },
+    {
+      "path": "icml-colombia/configs/rc1/integration.toml",
+      "sha256": "3b3465cda162637f1069beb0c6494251db874fce7d9473ca592c512b5301ca78",
+      "bytes": 1784
+    },
+    {
+      "path": "icml-colombia/configs/rc1/modeling.toml",
+      "sha256": "eb149c5201dfa4bd2feb3fb4b21e0e1b2ef41f4b434262fa11f8ec90901367fc",
+      "bytes": 2300
+    },
+    {
+      "path": "icml-colombia/configs/rc1/national.toml",
+      "sha256": "12711d23f4f7b1cd526b91d262995ebf9adc392eb307771cb67a6ee655a0a24f",
+      "bytes": 2223
+    },
+    {
+      "path": "icml-colombia/configs/rc1/quality.toml",
+      "sha256": "ff15248b7527b62153e5416de2e40121745149af6e1df962b8aff2a207a497bd",
+      "bytes": 265
+    },
+    {
+      "path": "icml-colombia/configs/rc1/reconciliation.toml",
+      "sha256": "c67f1380b56724ffc920731bba963a3dbed6c003c6896a0654ca5492e50a427b",
+      "bytes": 1367
+    },
+    {
+      "path": "icml-colombia/configs/rc1/urban.toml",
+      "sha256": "9d8658c631ac18f5569419ea1b6f80f9545f434168b5cee6dc263590faf255fd",
+      "bytes": 1877
+    },
+    {
+      "path": "icml-colombia/data/README.md",
+      "sha256": "b2f5d78108f7e938a77806ee077dda0e170584068a4a93d2c31a69babe0698dc",
+      "bytes": 796
+    },
+    {
+      "path": "icml-colombia/data/sources/.keep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "icml-colombia/data/sources/informality/informality_source_observations.csv",
+      "sha256": "d4413b08c8b4b5dbd75c9af144b39fa5e2e57815bfe9396bfc48ef4156bbd70d",
+      "bytes": 1405745
+    },
+    {
+      "path": "icml-colombia/data/sources/informality/source_coverage_original.csv",
+      "sha256": "099d04bcf9dca9eaed977584b297b327d96829eeee7d9a2e88bd02c8bff3f865",
+      "bytes": 1023
+    },
+    {
+      "path": "icml-colombia/data/sources/informality/source_report_original.json",
+      "sha256": "3b2543bd4db3855f7425c060b1f9e88eb37c94109e3aadadba6904ffcdababbb",
+      "bytes": 779
+    },
+    {
+      "path": "icml-colombia/docs/METHODOLOGY_BACKLOG.md",
+      "sha256": "553aa30565a75ed00e80ac151024ba0bb507b9ab9a12b133c51d704b3c1888e4",
+      "bytes": 2732
+    },
+    {
+      "path": "icml-colombia/docs/evaluation/01_TRANSFER_BASELINE.md",
+      "sha256": "c2f14c05480df3c337f4a060e5b98fb6a3313a025b3e6852ff245269e0015904",
+      "bytes": 4482
+    },
+    {
+      "path": "icml-colombia/docs/evaluation/02_DENOMINATOR_VARIANTS.md",
+      "sha256": "90ce89263abc859a64782f4996cb575b3bd56f205bbeaa6dfca439a2d4adb010",
+      "bytes": 4709
+    },
+    {
+      "path": "icml-colombia/docs/evaluation/03_REPRESENTATIVENESS_FACTORS.md",
+      "sha256": "ef3791befb71051d999e05f2f9b10493f9c187eed06aed93f86ef12b085be05c",
+      "bytes": 4772
+    },
+    {
+      "path": "icml-colombia/docs/evaluation/04_UPDATE_POLICY.md",
+      "sha256": "149b9080370350e5f580c6a40ee59b4b5904f973a2c73d4e545d94bde53ad3d8",
+      "bytes": 2753
+    },
+    {
+      "path": "icml-colombia/docs/evaluation/05_RESIDUAL_ALLOCATION.md",
+      "sha256": "047921e490e62e324216206e57aa3015a52f75b4a4c6d0927c9f6fc4a805860c",
+      "bytes": 2920
+    },
+    {
+      "path": "icml-colombia/docs/evaluation/06_OFFICIAL_DEVIATION.md",
+      "sha256": "413532de90b094156ea1699922eb19c5a888d29d2efe478c9fc6ca3cf4f2b9ed",
+      "bytes": 1896
+    },
+    {
+      "path": "icml-colombia/docs/informality/HITO5_NACIONAL.md",
+      "sha256": "a47b98596e60c03fb5ade4a8e4671f19cf3294f092414347682fb182eec735ba",
+      "bytes": 5600
+    },
+    {
+      "path": "icml-colombia/docs/migration/00_RC1_LINEAGE.md",
+      "sha256": "02f2f42ecf18a408ef4d408c0726a5715961468e8fff0a9c3f3e2c4c5b5cc97e",
+      "bytes": 3719
+    },
+    {
+      "path": "icml-colombia/docs/migration/01_MIGRATION_PLAN.md",
+      "sha256": "be04577ec7468cbcc8b0b3df26cdbee6a18c28075b5f68f6ae5448f97fb774ce",
+      "bytes": 13674
+    },
+    {
+      "path": "icml-colombia/docs/quality/01_ULTIMA_PUERTA_DE_CALIDAD.md",
+      "sha256": "c730e988de51f428b9d7ddb3f925c043b6cbf7058e75833dfed13ea6bf8b15d9",
+      "bytes": 7825
+    },
+    {
+      "path": "icml-colombia/docs/quality/02_RESPALDO_2_1_2.md",
+      "sha256": "c7df7e7a363be3f7d83d40f76d832f7b2dd8bfa436f93a8b4962a3232e88e1e5",
+      "bytes": 1437
+    },
+    {
+      "path": "icml-colombia/docs/quality/TRES_BASES.md",
+      "sha256": "a70327d0e4c5f535b91c26ec6c299ab65262a4d40d79b16804568d98f0d26985",
+      "bytes": 4605
+    },
+    {
+      "path": "icml-colombia/pyproject.toml",
+      "sha256": "9d0949019565ea8f3e343622f9cdd49912a451c9b927cac6213f32ca8c6b0c81",
+      "bytes": 1908
+    },
+    {
+      "path": "icml-colombia/requirements/lock-py312.txt",
+      "sha256": "3e350c987d68b8ae67fb48a89769bd412dcbf64ad3042d48e1da2c247f396daa",
+      "bytes": 742
+    },
+    {
+      "path": "icml-colombia/src/icml/__init__.py",
+      "sha256": "a127342c2e4dcd4e83a79995b75cbf055002576459fae80c45193566162fe767",
+      "bytes": 105
+    },
+    {
+      "path": "icml-colombia/src/icml/__main__.py",
+      "sha256": "49dfef1796e62cccfe66f475d1b7b74370120cd679af316021e8f7348b126c44",
+      "bytes": 85
+    },
+    {
+      "path": "icml-colombia/src/icml/cli.py",
+      "sha256": "e34e0fd01198fbd92b2d89fb5466e37cab69c45a83e76c94172f7e5cec91ec54",
+      "bytes": 5596
+    },
+    {
+      "path": "icml-colombia/src/icml/config.py",
+      "sha256": "ad9cf9598207db20de1abe9d40451ef5faadce59e282fbcbe95d6242cd2c0b31",
+      "bytes": 2942
+    },
+    {
+      "path": "icml-colombia/src/icml/departmental/__init__.py",
+      "sha256": "4ac6d1590092386f3bcc79822bf9ce30e40993bbcd7043a18cb96a8185ffe547",
+      "bytes": 80
+    },
+    {
+      "path": "icml-colombia/src/icml/departmental/anchors.py",
+      "sha256": "14a19262c80f52d9e582587a64f03e8b03fc6489f9ab25205891d0f16e499cfe",
+      "bytes": 4491
+    },
+    {
+      "path": "icml-colombia/src/icml/departmental/annex.py",
+      "sha256": "978da797dd9489a7fd2f9e55e6f1ac43dd9b527783aebf45622fc860a67e7187",
+      "bytes": 13105
+    },
+    {
+      "path": "icml-colombia/src/icml/departmental/pipeline.py",
+      "sha256": "88c7128d4b41aee1c8c20dcbbb6adc2da0a5947482f77cfd5d752e5a52a401bd",
+      "bytes": 7694
+    },
+    {
+      "path": "icml-colombia/src/icml/departmental/population.py",
+      "sha256": "852b320b965b6166950194026e072888e04942dc829ac8702f4f57cf938a24f3",
+      "bytes": 15914
+    },
+    {
+      "path": "icml-colombia/src/icml/departmental/reconstruction.py",
+      "sha256": "87e1cc0bdc75f5d1adcabaeb08732a2235e3c92053eabe002c925cee48f55c7b",
+      "bytes": 7108
+    },
+    {
+      "path": "icml-colombia/src/icml/departmental/sensitivity.py",
+      "sha256": "a1ed43415043549edc849ea98508d681d984419583a6c1a7feae6640c5fa785a",
+      "bytes": 5140
+    },
+    {
+      "path": "icml-colombia/src/icml/domain/__init__.py",
+      "sha256": "659afbf18070e5ece8e9f0b05f50d6149d6e3e4e0e1c371e2ebb9978e302e9df",
+      "bytes": 72
+    },
+    {
+      "path": "icml-colombia/src/icml/domain/_resources.py",
+      "sha256": "82ebd3667bccb163f8975c1fd9feaead93e2e411066f8d85b1b5c10d71a6726b",
+      "bytes": 986
+    },
+    {
+      "path": "icml-colombia/src/icml/domain/contracts.py",
+      "sha256": "d265bbd3ded33b6a6654fd0837e824faeb377785d6243fdd50d432fcb012379c",
+      "bytes": 3204
+    },
+    {
+      "path": "icml-colombia/src/icml/domain/data/provenance_labels.csv",
+      "sha256": "42630fbe449811c1250e76ba86cfb64507bbf92d5ca1aca5c50d889b8a4c4c3f",
+      "bytes": 3694
+    },
+    {
+      "path": "icml-colombia/src/icml/domain/data/territories.csv",
+      "sha256": "798fb3228f93a5d1df1994707950f8e583c36195ade1dea5b0b6ae02d190766d",
+      "bytes": 648
+    },
+    {
+      "path": "icml-colombia/src/icml/domain/data/urban_domains.csv",
+      "sha256": "29770e7008411758ee4aaece7990cf8778c9467a3d7f05627d93163513558e52",
+      "bytes": 1924
+    },
+    {
+      "path": "icml-colombia/src/icml/domain/periods.py",
+      "sha256": "e0f4152b1cd0aa31bb757964c41cf7be95c2e3ca2f657fd9ccaad91e7b4c564f",
+      "bytes": 3329
+    },
+    {
+      "path": "icml-colombia/src/icml/domain/provenance.py",
+      "sha256": "e42a80dad301d5173c7ba92d206fae1568207efcf4aa14a1d1ad553e18423619",
+      "bytes": 2298
+    },
+    {
+      "path": "icml-colombia/src/icml/domain/quantities.py",
+      "sha256": "f1d61d7657fbfc61653f5bdf3bca6a1577e4e696e5be5f8c8fa56b0f1f8723d0",
+      "bytes": 9136
+    },
+    {
+      "path": "icml-colombia/src/icml/domain/territories.py",
+      "sha256": "6982d561215dcd0fbaf73bd789e19eda11f51d4cd7ce963dc305e14e27831d73",
+      "bytes": 3137
+    },
+    {
+      "path": "icml-colombia/src/icml/evaluation/__init__.py",
+      "sha256": "8cf7ec8098480dda458f42352e8f1f71966a92f70b0c68ab95d6dcc06044f426",
+      "bytes": 60
+    },
+    {
+      "path": "icml-colombia/src/icml/evaluation/closures.py",
+      "sha256": "330d4c558a1aa5f953026596215cd16b7e890e0e68cd8b87f6d57d4aff82e80e",
+      "bytes": 6219
+    },
+    {
+      "path": "icml-colombia/src/icml/evaluation/complement.py",
+      "sha256": "c468ff835b798bbf439e22a14adedd3ef28bbd4befa2e793493f9c748a92cf83",
+      "bytes": 6525
+    },
+    {
+      "path": "icml-colombia/src/icml/evaluation/pipeline.py",
+      "sha256": "c4e14d58b116823cec9b8b150760b45e2d64c40e429cdc75101c1125a1115953",
+      "bytes": 5848
+    },
+    {
+      "path": "icml-colombia/src/icml/evaluation/transfer.py",
+      "sha256": "9919a209a427ec90e510a461c53bade77cf7b215818d638f3f4142bfb6259317",
+      "bytes": 12319
+    },
+    {
+      "path": "icml-colombia/src/icml/informality/__init__.py",
+      "sha256": "4647cdf38227ee96a853f51e200676a370c6e94cc123652dadb80166f21eeef8",
+      "bytes": 80
+    },
+    {
+      "path": "icml-colombia/src/icml/informality/extract_annexes.py",
+      "sha256": "bae0da9f217371b70926d3b92fa1546574dc36bb5edaefc8b2cf1ae2faee615e",
+      "bytes": 12018
+    },
+    {
+      "path": "icml-colombia/src/icml/informality/legacy_biff.py",
+      "sha256": "f7e2f0b24c98d32afca21d8b79feea4b47e140451cae7773a248b986503d025a",
+      "bytes": 7528
+    },
+    {
+      "path": "icml-colombia/src/icml/informality/national.py",
+      "sha256": "fff48e0452a50c3fe019004bc1daf2545c00fa9e011d9735062d23e6178843a2",
+      "bytes": 16376
+    },
+    {
+      "path": "icml-colombia/src/icml/integration/__init__.py",
+      "sha256": "276b8666bda9efaa301510a36e429e28c701fc89e69ea540df5e37080eff580e",
+      "bytes": 76
+    },
+    {
+      "path": "icml-colombia/src/icml/integration/pipeline.py",
+      "sha256": "5988b50bb0a09406a9dae38085e9a40f25ce54a1b4e82b9d8153e332ec62fa25",
+      "bytes": 10602
+    },
+    {
+      "path": "icml-colombia/src/icml/integration/propagation.py",
+      "sha256": "382f1c599a92b0c4a44b52e1366b7914fe8f6d6048ad7513e8b9da83a5305679",
+      "bytes": 13212
+    },
+    {
+      "path": "icml-colombia/src/icml/integration/recent.py",
+      "sha256": "1af66453d540e02df0df7468fd2b8ec0b1a56ee6a5207ca2e9c890fddc849d49",
+      "bytes": 15409
+    },
+    {
+      "path": "icml-colombia/src/icml/integration/regularization.py",
+      "sha256": "740fe54c3400b98a8fc349b014c3ac9aad1742ade1df5b1b828618442f58bec2",
+      "bytes": 24056
+    },
+    {
+      "path": "icml-colombia/src/icml/integration/windows.py",
+      "sha256": "4d50933dcc0c56786958a31a942c08281475ab1c1370bdcd81a754f425506485",
+      "bytes": 10071
+    },
+    {
+      "path": "icml-colombia/src/icml/io/__init__.py",
+      "sha256": "4df6c585f04a82b7577a10f05e2f74290855f305658e77a2a3d3bfae2eb183c2",
+      "bytes": 73
+    },
+    {
+      "path": "icml-colombia/src/icml/io/artifacts.py",
+      "sha256": "3dff194060e72e2befc3f400cec81b9ba64a2f4a843c49c939477e7d30839823",
+      "bytes": 4646
+    },
+    {
+      "path": "icml-colombia/src/icml/io/hashing.py",
+      "sha256": "80899ea12661cf1dec9f8ef7db6da11233c4df9268d0af7799be7a3811dc8878",
+      "bytes": 774
+    },
+    {
+      "path": "icml-colombia/src/icml/io/tables.py",
+      "sha256": "634bd95ab41b875fb2a53d4af9442683c937dad4bdee3136499f8da27193d426",
+      "bytes": 3340
+    },
+    {
+      "path": "icml-colombia/src/icml/modeling/__init__.py",
+      "sha256": "149992d474b8e205ed015912a341a50ac8556381369f85c62fe1de899db03147",
+      "bytes": 74
+    },
+    {
+      "path": "icml-colombia/src/icml/modeling/clustering.py",
+      "sha256": "cb93d2d2568f02678e8cc31d8141b824d86d065ad3508f08fb2fb51dce1eddbb",
+      "bytes": 8590
+    },
+    {
+      "path": "icml-colombia/src/icml/modeling/features.py",
+      "sha256": "176d51839101bfcdb82414f194c69d254c8937b1263d3c8b4c2194304decad01",
+      "bytes": 10396
+    },
+    {
+      "path": "icml-colombia/src/icml/modeling/folds.py",
+      "sha256": "74b80107dd73f3f70a5f7239ece59aed58103468120e5a4b6032c6c02ed4a0c7",
+      "bytes": 2907
+    },
+    {
+      "path": "icml-colombia/src/icml/modeling/pipeline.py",
+      "sha256": "b6aa8dad8f401f67f11561b86a865e1486a872f1b23477638ac52286246583d7",
+      "bytes": 12661
+    },
+    {
+      "path": "icml-colombia/src/icml/modeling/selection.py",
+      "sha256": "05cbb6b209a90e966d9feb20fab8258778f0974cbc12a4719cfd86c6649158d0",
+      "bytes": 29950
+    },
+    {
+      "path": "icml-colombia/src/icml/modeling/training.py",
+      "sha256": "d5a892199daf54c0124c10c3035627bbfff25f8e388fff3f7da3aaf673354515",
+      "bytes": 19439
+    },
+    {
+      "path": "icml-colombia/src/icml/national/__init__.py",
+      "sha256": "9e00cae95b829f83bb93d8459902859b36f5fdb1aac41592e4298605b2ae239d",
+      "bytes": 78
+    },
+    {
+      "path": "icml-colombia/src/icml/national/combination.py",
+      "sha256": "dc7cd4770597940421c5198ad263485bd7a216d2616a12c17e86bef4cbdf87e1",
+      "bytes": 2538
+    },
+    {
+      "path": "icml-colombia/src/icml/national/disaggregation.py",
+      "sha256": "36623548d8fffad11b8ddf4917aefff8413e4d168e299339a2d4808f413b872b",
+      "bytes": 15695
+    },
+    {
+      "path": "icml-colombia/src/icml/national/geih_annex.py",
+      "sha256": "cf0bab998592e62dc43daac0d4138ef46b7f44f5f769906e1c73041cda949a4f",
+      "bytes": 8302
+    },
+    {
+      "path": "icml-colombia/src/icml/national/pipeline.py",
+      "sha256": "eec0882e35a40dc0435231596cd4dc02042aef064ee223abbc1ce7d459150313",
+      "bytes": 9385
+    },
+    {
+      "path": "icml-colombia/src/icml/national/reconciliation.py",
+      "sha256": "da7fccab29329768cdf9b3a460d45d2e1c7219665bccf7ef7c45d728186269a0",
+      "bytes": 16246
+    },
+    {
+      "path": "icml-colombia/src/icml/national/reference.py",
+      "sha256": "3c0d2b66c5d72e92b0d4fb714db7058066ce890e392baad5d2f8fd0cc74224af",
+      "bytes": 2130
+    },
+    {
+      "path": "icml-colombia/src/icml/national/schema.py",
+      "sha256": "5370eb9414ec7bb447e86607eba9bf32d346458862a657732a1cdd4fe8380183",
+      "bytes": 1108
+    },
+    {
+      "path": "icml-colombia/src/icml/national/seasonality.py",
+      "sha256": "fe6426448f8a9971bbc366a474040ca35f5da62ec719dc4fb63ff5d8867d0eff",
+      "bytes": 16684
+    },
+    {
+      "path": "icml-colombia/src/icml/pipeline/__init__.py",
+      "sha256": "e4460f4e67d69f58b8fbe889900354f7849f9bbacfd7215531ff81379ee66038",
+      "bytes": 75
+    },
+    {
+      "path": "icml-colombia/src/icml/pipeline/chain.py",
+      "sha256": "6e8f5beb80b5901ebf94b4a1a7c0f159177163df408c15789f7d3a922c1dfaa7",
+      "bytes": 9943
+    },
+    {
+      "path": "icml-colombia/src/icml/pipeline/manifest.py",
+      "sha256": "82ced3bc268f80075e4c8a98557f0a85d3faefae167e4a06cacb640030b44389",
+      "bytes": 3571
+    },
+    {
+      "path": "icml-colombia/src/icml/pipeline/stage.py",
+      "sha256": "e69ad2a45f40a0f43b55197bf3be124f610dfab5b6dd066c88ec87bca68d8ba2",
+      "bytes": 634
+    },
+    {
+      "path": "icml-colombia/src/icml/pipeline/vintage.py",
+      "sha256": "d285b4577f0fd25a57fc907b90584fe8b913c0382d415070456f1cea1f8f5444",
+      "bytes": 7914
+    },
+    {
+      "path": "icml-colombia/src/icml/quality/__init__.py",
+      "sha256": "57437235b2c41f5ee59173551f8f9090e3499ca1069ea268ebaceae894fd6419",
+      "bytes": 73
+    },
+    {
+      "path": "icml-colombia/src/icml/quality/consolidated.py",
+      "sha256": "9f3d404a89b0dfad3fa94499449a2b3d90ce1db3121e60200d1d6a4b3a50c3f1",
+      "bytes": 9040
+    },
+    {
+      "path": "icml-colombia/src/icml/quality/gate.py",
+      "sha256": "9552325ad374e19858d74b650cd8cc72317f5544a416e19ce3bd50d467a043a2",
+      "bytes": 25788
+    },
+    {
+      "path": "icml-colombia/src/icml/quality/pipeline.py",
+      "sha256": "11caf2d442e9e5e446e2911d8cd663d2cbc3b9435aef01a72b2878b4af108155",
+      "bytes": 3826
+    },
+    {
+      "path": "icml-colombia/src/icml/reconciliation/__init__.py",
+      "sha256": "21c9a7b3665799e2ed7149275df1d21f18f548925686d92903b6158744ee756d",
+      "bytes": 72
+    },
+    {
+      "path": "icml-colombia/src/icml/reconciliation/hierarchical.py",
+      "sha256": "8d652f5a81d91f9ec956d2caa6853edd5bc6abd28065ec90b6cd01ec6b30ab3b",
+      "bytes": 24822
+    },
+    {
+      "path": "icml-colombia/src/icml/reconciliation/linearization.py",
+      "sha256": "6eb5a44ec593b15d4e4e7fa1ecd78fb751f8ea44e0292e1249dae29f1b7f4748",
+      "bytes": 13986
+    },
+    {
+      "path": "icml-colombia/src/icml/reconciliation/pipeline.py",
+      "sha256": "c670b5ab68c59533604d040c350217df15d2da9cc81e7b360648f1cb3bf1fae7",
+      "bytes": 7901
+    },
+    {
+      "path": "icml-colombia/src/icml/reconciliation/representativeness.py",
+      "sha256": "3b9d9e83c7ea24add2eac33ab4f266eefd9a066a60419dd400f3f8f2d5ea92f4",
+      "bytes": 26366
+    },
+    {
+      "path": "icml-colombia/src/icml/reconciliation/solvers.py",
+      "sha256": "7fbe8027695d928b7f653c6ac411cc1ae2cf026c2d3f6195a7a8e569d849214f",
+      "bytes": 6421
+    },
+    {
+      "path": "icml-colombia/src/icml/regression/__init__.py",
+      "sha256": "41e51ba52bfb2d0121049d6b8b0feef90452234562fe5116dea988ac66872cf1",
+      "bytes": 74
+    },
+    {
+      "path": "icml-colombia/src/icml/regression/catalog.py",
+      "sha256": "2ed54844f37e18403662427906412fa9d55b279d04a04338af8af5da352a07c4",
+      "bytes": 3508
+    },
+    {
+      "path": "icml-colombia/src/icml/regression/compare.py",
+      "sha256": "cb7fbd382a9fad81234c3adc05f5f7f8648a9739c515cfef9452f955a1e9c617",
+      "bytes": 7868
+    },
+    {
+      "path": "icml-colombia/src/icml/regression/golden.py",
+      "sha256": "edb695340e1f8b47fd21a33c1b5b01a90a3cea2a710502d2d6fc2ce7d664d438",
+      "bytes": 3281
+    },
+    {
+      "path": "icml-colombia/src/icml/urban/__init__.py",
+      "sha256": "7c847d2253a10ef4d7cb86bb8109f98d9b30b356b49ff7bb5eaf20aa439594b9",
+      "bytes": 76
+    },
+    {
+      "path": "icml-colombia/src/icml/urban/accounting.py",
+      "sha256": "b9a53e29d41ab56cd97b0dba6a728d406882b0bb794d68c63741b6735365bdf8",
+      "bytes": 2961
+    },
+    {
+      "path": "icml-colombia/src/icml/urban/closure.py",
+      "sha256": "11d6a9384396f1a6bf42628981e907dfdebf9aa216140b223349dd9254b3f432",
+      "bytes": 9880
+    },
+    {
+      "path": "icml-colombia/src/icml/urban/donors.py",
+      "sha256": "3a6327b72bf3ab42f42ad9dfe9e37246a8a0756c032adfc4a37247d36cfebf0f",
+      "bytes": 19903
+    },
+    {
+      "path": "icml-colombia/src/icml/urban/inputs.py",
+      "sha256": "cf6f0ec6911e4903dea50969a2c2d3e0309cab1df55df59655f7b433ffaa53cf",
+      "bytes": 4447
+    },
+    {
+      "path": "icml-colombia/src/icml/urban/pipeline.py",
+      "sha256": "8934ceadd657f64afe71c0b0637d4d8c901cec9effd3193ce0ad2de28c01d657",
+      "bytes": 11414
+    },
+    {
+      "path": "icml-colombia/src/icml/urban/retropolation.py",
+      "sha256": "d0db0f61898def6c30ca56716f044940306dd15df535246bb23801296992d063",
+      "bytes": 16669
+    },
+    {
+      "path": "icml-colombia/src/icml/urban/synthetic.py",
+      "sha256": "c0bd22dcaa1eb0120d076a6a1deea97b29419ba5376bfff0b72fb18b0ee031ec",
+      "bytes": 14507
+    },
+    {
+      "path": "icml-colombia/tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "icml-colombia/tests/regression/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "icml-colombia/tests/regression/conftest.py",
+      "sha256": "bb67e3149f1256bb3a2b738f956991cfbbbf7dace968e6449b8883e8f3031f93",
+      "bytes": 4428
+    },
+    {
+      "path": "icml-colombia/tests/regression/departmental_rc1_map.py",
+      "sha256": "dc8a3c9d7cda7cf18e673c409ca99ee83d9e1e665da30762dbc5175779a245f4",
+      "bytes": 5585
+    },
+    {
+      "path": "icml-colombia/tests/regression/equivalence.py",
+      "sha256": "67d7c728ed2f51db0f35f22817581010f1b63926ba54ade1656b404a07c6d0bf",
+      "bytes": 4850
+    },
+    {
+      "path": "icml-colombia/tests/regression/integration_rc1_map.py",
+      "sha256": "aa07ac21276c0af94d0c21c0df3b0516596b127f06c083fa8cde0f0118db8c2d",
+      "bytes": 8338
+    },
+    {
+      "path": "icml-colombia/tests/regression/modeling_rc1_map.py",
+      "sha256": "2cbe45aefd2e106a4ce8ca6fbd66e448cac0b869d35e9d1265f98c8c9583ee0e",
+      "bytes": 15948
+    },
+    {
+      "path": "icml-colombia/tests/regression/reconciliation_rc1_map.py",
+      "sha256": "a4654ac261d1ad363642b2f7dc166b393d92efac8073d239982cc9dc16eddadf",
+      "bytes": 4153
+    },
+    {
+      "path": "icml-colombia/tests/regression/test_departmental_stage.py",
+      "sha256": "c32bba8dbe80a817cdeebb5a37432595712ada47567c9be1818d6cc8ef2767e4",
+      "bytes": 4273
+    },
+    {
+      "path": "icml-colombia/tests/regression/test_incremental_update.py",
+      "sha256": "abace2cb4e6215d58c70712eed3e104a50efa515ddc84b34698e3bd332fbeeea",
+      "bytes": 4369
+    },
+    {
+      "path": "icml-colombia/tests/regression/test_integration_stage.py",
+      "sha256": "7108b9f4d27632b2c75c076a1f8d980443037325dc58890eedda759263823199",
+      "bytes": 5526
+    },
+    {
+      "path": "icml-colombia/tests/regression/test_modeling_stage.py",
+      "sha256": "5a7a5476d18ce4659c5cc0f7574fca34d67e26810eae3a266977719bb49d0ca0",
+      "bytes": 6150
+    },
+    {
+      "path": "icml-colombia/tests/regression/test_national_stage.py",
+      "sha256": "561ddff25a898fdbb743eeac83c22118422b484dc203b37013f7843a61afa576",
+      "bytes": 3461
+    },
+    {
+      "path": "icml-colombia/tests/regression/test_rc1_golden.py",
+      "sha256": "d88e448bf858f368a227a200c0a7c05f7216e9e4efe11f166492b5b1d3536935",
+      "bytes": 3818
+    },
+    {
+      "path": "icml-colombia/tests/regression/test_reconciliation_stage.py",
+      "sha256": "f9ba0382f7df2bbd67fad586136d5cc21df730e9866a351e38e89d25c5bf658c",
+      "bytes": 7221
+    },
+    {
+      "path": "icml-colombia/tests/regression/test_representativeness.py",
+      "sha256": "fb557764afed5a255f046704b677c4f59e6e6ba93d73d56d9c615f016675d2e4",
+      "bytes": 4741
+    },
+    {
+      "path": "icml-colombia/tests/regression/test_transfer_evaluation.py",
+      "sha256": "930946587d9d68679853b2846e01af7828b8659ffd67443b605b3f0b7e28f23b",
+      "bytes": 3279
+    },
+    {
+      "path": "icml-colombia/tests/regression/test_urban_stage.py",
+      "sha256": "d40ff22ffcc86c18abdf55b4a2fbf3955516459d30edb2f199cede8fd222fc53",
+      "bytes": 4252
+    },
+    {
+      "path": "icml-colombia/tests/regression/urban_rc1_map.py",
+      "sha256": "6f93ee66437487977275f27668f64c89d381d16bfab81e695a7bb1203dd75398",
+      "bytes": 13134
+    },
+    {
+      "path": "icml-colombia/tests/unit/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "icml-colombia/tests/unit/departmental/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "icml-colombia/tests/unit/departmental/test_anchors_population.py",
+      "sha256": "fddc124c3de850e84aeb2486e19989fdf0a333bbe9f65c89ba43c93513a77d41",
+      "bytes": 4396
+    },
+    {
+      "path": "icml-colombia/tests/unit/departmental/test_annex.py",
+      "sha256": "c359e6cca3212eb2a4d144da365a0308b53f75ad4d000acc5299d2851b24d9bc",
+      "bytes": 2876
+    },
+    {
+      "path": "icml-colombia/tests/unit/integration/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "icml-colombia/tests/unit/integration/test_windows_regularization.py",
+      "sha256": "5f19102fd0a5bddb59959107f4768baa21926c3f12da04d38b33620442bcb6c7",
+      "bytes": 3860
+    },
+    {
+      "path": "icml-colombia/tests/unit/modeling/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "icml-colombia/tests/unit/modeling/test_modeling_components.py",
+      "sha256": "d54cc30466c4ad6cf5e30baeadfda15669b7cb429b5b65cf8316dfba81be5db9",
+      "bytes": 2793
+    },
+    {
+      "path": "icml-colombia/tests/unit/national/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "icml-colombia/tests/unit/national/conftest.py",
+      "sha256": "632169a847247f5f886df6d13befc6d881a1cc11e833f0f3d95ae6895c18b2b3",
+      "bytes": 1190
+    },
+    {
+      "path": "icml-colombia/tests/unit/national/test_disaggregation.py",
+      "sha256": "9126368ae2590af99229378f9bc5c2b069bdff5222415e87cbc04d66b84675b7",
+      "bytes": 4165
+    },
+    {
+      "path": "icml-colombia/tests/unit/national/test_geih_annex.py",
+      "sha256": "3ebc5f33e36909b26abfa205d75d5016d0356023515f292ac0e688b8b6e6cb2d",
+      "bytes": 3965
+    },
+    {
+      "path": "icml-colombia/tests/unit/national/test_reconciliation.py",
+      "sha256": "c684663f911505492d692baadf2ff1277115e2a5d77d90ea8418b2fd54da659a",
+      "bytes": 3854
+    },
+    {
+      "path": "icml-colombia/tests/unit/national/test_seasonality.py",
+      "sha256": "4c84e2257c99e8c9d8439d368bee935a61249af1f0ad772f14eaef8b3b28f2e9",
+      "bytes": 4438
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_catalogs.py",
+      "sha256": "3d12d3e650d82051561f8f407dfc754f7b46c91ced349ae3981cb10e8f7bfeab",
+      "bytes": 1510
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_closure_variants.py",
+      "sha256": "57f0b589b6821c7e6c69586db92d3235908b8d9b1c0c369fa5bc60d47d6af217",
+      "bytes": 2242
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_complement.py",
+      "sha256": "3717885e4d00f370eb7193b569bb8beae175445d0377ad018ce7410c35e54848",
+      "bytes": 4238
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_config.py",
+      "sha256": "bb1543054d80598687efca5fa893f4313969c75de9613e2d4c04c4ee5dcd5bf2",
+      "bytes": 1524
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_contracts.py",
+      "sha256": "ac3d1a986c5d42a130ac2ef2cb675309e730c58a095cc4bf99b01468f84cdc93",
+      "bytes": 1740
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_informality_national.py",
+      "sha256": "a25b6b9dc9e4ac5679d7c2ecdecd7fcad334493f18085ed7ec382925567fc0b8",
+      "bytes": 3776
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_io.py",
+      "sha256": "813c874590ded430fe84d5420371770c1219ab2d6ffbd52d6c874dae43227a15",
+      "bytes": 3736
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_periods.py",
+      "sha256": "ff21714d14ecb83948b64253f9c88c583967667c07d31f8fbed0efb6524b3656",
+      "bytes": 1518
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_quality_gate.py",
+      "sha256": "8e56654c0de68692eaa8972007f3a8e4fd987d34c3ad4a46c05d708a7f384d99",
+      "bytes": 4988
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_quantities.py",
+      "sha256": "9182f65f522a72250c7086522af768a82716b2bff8253cec01d1d516969b9e3d",
+      "bytes": 3669
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_reconciliation_solvers.py",
+      "sha256": "2b8afd0d0b8171d9eef2444ae80d056700dc40bf14a992ad9a24adb38dbd12e5",
+      "bytes": 4153
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_regression_tools.py",
+      "sha256": "99c9204f5bf29dc41e4fd5081b433902fbe919acdae2f6fd6b0ca0649dc135a3",
+      "bytes": 5608
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_three_bases.py",
+      "sha256": "2ba7c8e9206c3e9873cbb8927abd8140087c4ff460b467f3b15f4cf9d527984a",
+      "bytes": 3627
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_transfer_evaluation.py",
+      "sha256": "5f91cda20fa31a5a1d981462f2988d7e28a6a407d948fbc6a4677743e9653801",
+      "bytes": 3670
+    },
+    {
+      "path": "icml-colombia/tests/unit/test_vintage.py",
+      "sha256": "9b84a49cd3d5f3f6eaf3781250d38191fa03332b2dd33104e7ed38aa1d593e27",
+      "bytes": 3253
+    },
+    {
+      "path": "icml-colombia/tests/unit/urban/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "icml-colombia/tests/unit/urban/test_accounting_and_closure.py",
+      "sha256": "16c339ef952c5d42b1028c214563cfcd0a453468e6ff34de536d719eddcc485b",
+      "bytes": 4171
+    },
+    {
+      "path": "icml-colombia/tests/unit/urban/test_donors.py",
+      "sha256": "37c4cdc1a4dd9b4f50ad2d725f31ce254043dcf4adc4b9f7cb55adb6aec64b59",
+      "bytes": 3227
+    },
+    {
+      "path": "icml-colombia/tests/unit/urban/test_synthetic_and_pipeline.py",
+      "sha256": "5dee1ea80d51e3f2057ed2a912c4303ca0dde5d48f3a4a2c108665eb99b152d8",
+      "bytes": 2034
+    },
+    {
+      "path": "icml-colombia/tools/legacy/build_rc1_catalog.py",
+      "sha256": "f23e821ed8e958caaf9456e714c4ad85a243299474bc2de49be13ca0ab14e7af",
+      "bytes": 25490
+    },
+    {
+      "path": "icml-colombia/tools/release/reproduce_hito5.py",
+      "sha256": "db6865dc188c2a9720af0b4485210314886930bef52005f3d8cbb903a2efa802",
+      "bytes": 2149
+    },
+    {
+      "path": "icml-colombia/tools/release/verify_backup.py",
+      "sha256": "2b13e74d4eeb1349585dc7936a521a07f756c29e5eed34211e61b62b58e18d77",
+      "bytes": 5726
+    },
+    {
+      "path": "informalidad/hito5_nacional_v001/audit/definition_overlap.csv",
+      "sha256": "3479e0ffd09ad8e096678726f6a488d3810f2edf0913cb797c47bd2cd68c117d",
+      "bytes": 309
+    },
+    {
+      "path": "informalidad/hito5_nacional_v001/audit/labor_alignment.csv",
+      "sha256": "e3f9ed6b208cb545e86474bbd70a3e3f92fcf249b2ff52d1f08f618fd2d0d9e8",
+      "bytes": 61146
+    },
+    {
+      "path": "informalidad/hito5_nacional_v001/audit/source_domain_closure.csv",
+      "sha256": "a24956306347373109f68b075abdb1b72293148a7e8e54e16d81028e279b0c2a",
+      "bytes": 18768
+    },
+    {
+      "path": "informalidad/hito5_nacional_v001/audit/source_inventory.csv",
+      "sha256": "9b1132fe4582284acd10f8913abd8598ac710261c1faf1d8577cdc6b520f8332",
+      "bytes": 1081
+    },
+    {
+      "path": "informalidad/hito5_nacional_v001/audit/summary.json",
+      "sha256": "577b604c1cad0097db038fcd820b97e4151ee7d56f0c83d0540aa2ccb937c660",
+      "bytes": 1037
+    },
+    {
+      "path": "informalidad/hito5_nacional_v001/audit/window_reproduction.csv",
+      "sha256": "275489bd202c0292e3e2665004505a240747b0c158ecafdab72cd799108928d2",
+      "bytes": 12758
+    },
+    {
+      "path": "informalidad/hito5_nacional_v001/candidates/national_informality_monthly_2021_2026.csv",
+      "sha256": "f4d5ed92945f40368bcbb35914e2865a51ab46fbdbc8112b1ee045f62d6fcba1",
+      "bytes": 12116
+    },
+    {
+      "path": "informalidad/hito5_nacional_v001/manifest.json",
+      "sha256": "e0e0d2a209f65754e9c2347d48c3a0123d03c9e6f6dd671c87861cd17be0ae74",
+      "bytes": 2750
+    },
+    {
+      "path": "informalidad/hito5_nacional_v001/sources/national_windows.csv",
+      "sha256": "64c9c6b1b3714d0182a6d5463e3fa0fb24bf28b33e0af2f47deab0928538863b",
+      "bytes": 178104
+    },
+    {
+      "path": "insumos/ICML_2_1_2_Proyecto_Actualizado.zip",
+      "sha256": "27fbf9aba63ab6ddbd5e6c5e3713a8b092d244fb4c94c4c5106511dccc3a9779",
+      "bytes": 306063
+    },
+    {
+      "path": "insumos/anexos_informalidad/Anexo GEIH Informalidad Agosto 2026.xlsx",
+      "sha256": "3da594e046a2c67deeeaaaed1bd0d0f81f243ea48429be6481ca426044d28ffc",
+      "bytes": 1595993
+    },
+    {
+      "path": "insumos/anexos_informalidad/Anexo GEIH Informalidad Marzo 2021.xls",
+      "sha256": "451907808e5636044f69c401aea9a3924a2949cdd18cc30141685afc6b7bcfdb",
+      "bytes": 2089984
+    },
+    {
+      "path": "insumos/icml-2.1.0-productos.zip",
+      "sha256": "db9c57887f16c0d1e4b64903c9ad12ad1d4173b60cf10b95fbbdb86392f5be3a",
+      "bytes": 6774744
+    },
+    {
+      "path": "insumos/icml-colombia-2.1.0.zip",
+      "sha256": "0ff4f968e5342ee1e54781f61c52badcd791b9a617e09c1bf6ac725e79718d47",
+      "bytes": 1014647
+    },
+    {
+      "path": "productos/CONTRATO_TRES_BASES.md",
+      "sha256": "a70327d0e4c5f535b91c26ec6c299ab65262a4d40d79b16804568d98f0d26985",
+      "bytes": 4605
+    },
+    {
+      "path": "productos/LEER_PRIMERO.md",
+      "sha256": "99171838ffe2938898eafe16be668b45ca61a3c33f8d221fdc8dc09ae631fdb6",
+      "bytes": 2694
+    },
+    {
+      "path": "productos/auditoria/annual_linearity.csv",
+      "sha256": "e4f2b311dcac3b30da43a15e76770ae04caed7de9bbbe977846cf12ac48dcfe3",
+      "bytes": 511228
+    },
+    {
+      "path": "productos/auditoria/demographic_jumps.csv",
+      "sha256": "dde7fe13ba2fe1fc4927ac752502ef04db98e05a4c695e733bf82c967797188b",
+      "bytes": 185250
+    },
+    {
+      "path": "productos/auditoria/extreme_changes.csv",
+      "sha256": "66967a5567ddf976911f45ff06a2057df9d6e05a67717cbc81682e725e173e24",
+      "bytes": 2421
+    },
+    {
+      "path": "productos/auditoria/official_accuracy_summary.csv",
+      "sha256": "61af9f95dd83d4df496224aaf7f037fed5769d429f3bf8a4296e679cf1812876",
+      "bytes": 1185
+    },
+    {
+      "path": "productos/auditoria/official_deviation_check.csv",
+      "sha256": "dfc14c9dccea61aedfa781f01e58bc7ce89fd0430565b81e7aafd9aa54b21f56",
+      "bytes": 406767
+    },
+    {
+      "path": "productos/auditoria/reference_alignment.csv",
+      "sha256": "486da57fa35a5c7d89aa4ff060bf813e2696918f0d810dae7b20a037964556b9",
+      "bytes": 312151
+    },
+    {
+      "path": "productos/auditoria/structural_breaks.csv",
+      "sha256": "ec2e661b21eccfc449f362e7546faaa23830c0e7b4f5413d8198912f291104ca",
+      "bytes": 52490
+    },
+    {
+      "path": "productos/auditoria/summary.json",
+      "sha256": "dd245022ba5219689789cb8fd1fdcd67374f6779f25215637991fb87061a2bb0",
+      "bytes": 1704
+    },
+    {
+      "path": "productos/auditoria/territories.csv",
+      "sha256": "c49e25eef80603c6882ae8b464a31a4a209812a027c7821e7d93a2d7cc7f9b42",
+      "bytes": 1434296
+    },
+    {
+      "path": "productos/auditoria/urban.csv",
+      "sha256": "e52c3ea403c4bc2ec1527cb56b1c264c884c94419f66fd57d10f693bd7f68001",
+      "bytes": 475356
+    },
+    {
+      "path": "productos/bases/ciudades.csv",
+      "sha256": "773ebcfb4fa4288f10744b8912c1c03244179d17e2cce8a8926123a66d7e9405",
+      "bytes": 3383305
+    },
+    {
+      "path": "productos/bases/departamentos.csv",
+      "sha256": "99847e18d4e1d3c37b8aaa280823c42a246e269eea4c8a9435e1cc78717c8fea",
+      "bytes": 5503388
+    },
+    {
+      "path": "productos/bases/nacionales.csv",
+      "sha256": "fc003be8875716ef19e49a3a7d1a3898998e3e0d7a120421498a60eb4a8f362f",
+      "bytes": 241899
+    }
+  ]
+}

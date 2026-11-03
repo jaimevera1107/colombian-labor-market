@@ -1,0 +1,6 @@
+[census_bridge]
+# CNPV adjusted, nine capital cabeceras, source file in --sources directory.
+anchor_file = "cnpv_2018_capitales_ajustado.csv"
+mode = "full_primary_geih_component_transfer"
+census_anchor_year = 2018
+status = "experimental_read_only"

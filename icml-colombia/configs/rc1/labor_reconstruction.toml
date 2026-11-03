@@ -1,0 +1,26 @@
+# Restoration of the 1993-2000 labor reconstruction: a linear PET and generated components.
+#
+# Before the first GEIH month the series are a reconstruction. This draws the working-age population as a
+# straight line (a demographic projection cannot go up and down) and gives the history the dynamics of
+# the GEIH era: noise scaled to the irregular component of the official rates and the 2001-2018 seasonal
+# pattern. Every accounting identity holds exactly; from splice_month on the national series do not change and the
+# territories only change in their PET, population and inactive.
+#
+# ADOPTED (v2.4.0.dev0): a methodological change, not part of the equivalence refactor. It supersedes labor_base_splice (do not
+# enable both). Set enabled = false to reproduce the previous vintage exactly.
+[labor_reconstruction]
+enabled = true
+splice_month = "2001-01"
+scaling_factor = 0.45
+base_seed = 42
+stl_period = 12
+stl_seasonal = 13
+stl_robust = true
+reference_first_year = 2001
+reference_last_year = 2018
+floor_share = 0.05
+# The population is drawn as a line before splice_month too (the original notebook did).
+linearize_population = true
+# After splice_month the national series are official and stay; the PET and the population of the departments and
+# cities are smoothed (minimum curvature keeping their annual means; departments still add to the national figure).
+smooth_territories = true

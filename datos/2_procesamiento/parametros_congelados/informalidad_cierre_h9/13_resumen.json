@@ -1,0 +1,28 @@
+{
+  "version": "2.2.13.dev0",
+  "urban_rows": 13332,
+  "department_rows": 13332,
+  "national_rows": 808,
+  "month_count": 404,
+  "gap_method": "interpolated",
+  "full_closure_max_people": 5.587935447692871e-09,
+  "geih_vs_full_rate_mae_pp": 0.18899171106979162,
+  "geih_vs_full_rate_max_pp": 0.2597171134835152,
+  "2020_max_range_scenarios_pp": 12.241672556764193,
+  "urban_monthly_jumps_over_5pp": 328,
+  "department_monthly_jumps_over_5pp": 4,
+  "numeric_quality_passed": true,
+  "independent_scientific_quality_passed": false,
+  "publication_status": "RECONSTRUCTED_RESEARCH_CANDIDATE_NOT_OFFICIAL",
+  "frozen_sha256": {
+    "ciudades.csv": "773ebcfb4fa4288f10744b8912c1c03244179d17e2cce8a8926123a66d7e9405",
+    "departamentos.csv": "99847e18d4e1d3c37b8aaa280823c42a246e269eea4c8a9435e1cc78717c8fea",
+    "nacionales.csv": "fc003be8875716ef19e49a3a7d1a3898998e3e0d7a120421498a60eb4a8f362f"
+  },
+  "assumptions": [
+    "2020 interpolated latent MLP prior",
+    "pre-2021 definition bridge reconstructed",
+    "geih informal rate transferred under equal domain/complement rate assumption",
+    "city series are nonadditive signals; national sums only full departments"
+  ]
+}

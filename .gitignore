@@ -1,0 +1,21 @@
+# Entornos y cachés (lo único que no se versiona: se recrea con el instalador)
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Archivos temporales de Excel y del sistema operativo
+~$*
+.DS_Store
+Thumbs.db
+
+# Espacio temporal de cada recálculo (la carpeta existe, su contenido no)
+datos/2_procesamiento/_corridas/*
+!datos/2_procesamiento/_corridas/.gitkeep

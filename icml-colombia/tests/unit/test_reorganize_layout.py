@@ -32,8 +32,6 @@ def project(tmp_path: Path) -> Path:
     _write(tmp_path, "insumos/catalogo_fuentes.json", '{"p": "insumos/laboral/c.csv"}')
     _write(tmp_path, "insumos/laboral/c.csv", "lab")
     _write(tmp_path, "informalidad/secuencia_v003/02_nacionales.csv", "seq")
-    _write(tmp_path, "validacion/rc1_original/fases/g.csv", "gold")
-    _write(tmp_path, "ENTREGA_H36/leer.md", "doc")
     _write(tmp_path, "LEER_PRIMERO.md", "root doc")
     _write(tmp_path, "dependencias/w.whl", "wheel")
     _write(
@@ -42,7 +40,6 @@ def project(tmp_path: Path) -> Path:
         'A = "insumos/fuentes/historicas/nacional/enh.csv"\n'
         'B = root / "informalidad/secuencia_v003"\n'
         'C = rel.endswith("secuencia_v003/02_nacionales.csv")\n'
-        'D = "validacion/rc1_original"\n',
     )
     return tmp_path
 
@@ -55,8 +52,6 @@ def project(tmp_path: Path) -> Path:
         ("insumos/sectorial/anexos_historicos/b.csv", "datos/2_procesamiento/fuentes_preparadas/sectorial/anexos_historicos/b.csv"),
         ("informalidad/secuencia_v003/02_nacionales.csv", "datos/2_procesamiento/parametros_congelados/informalidad_secuencia_h5_h6/02_nacionales.csv"),
         ("insumos/laboral/ciudades.csv", "datos/2_procesamiento/productos_congelados/laboral/ciudades.csv"),
-        ("validacion/rc1_original/x.csv", "legacy/validacion/rc1_original/x.csv"),
-        ("research/sectoral/h16/src/m.py", "legacy/research_h16_src_copia/m.py"),
         ("research/sectoral/h16/inputs/d.csv", "datos/2_procesamiento/sectorial_h16/inputs/d.csv"),
     ],
 )
@@ -99,13 +94,11 @@ def test_rewrite_follows_files_and_is_idempotent(project):
     code = (project / "icml-colombia/src/icml/m.py").read_text()
     assert 'A = "datos/2_procesamiento/fuentes_preparadas/nacional/enh.csv"' in code
     assert 'B = root / "datos/2_procesamiento/parametros_congelados/informalidad_secuencia_h5_h6"' in code
-    assert 'D = "legacy/validacion/rc1_original"' in code
     assert any(k.endswith("m.py") for k in changed)
     catalog = project / "datos/2_procesamiento/catalogos/catalogo_fuentes.json"
     assert "datos/2_procesamiento/productos_congelados/laboral/c.csv" in catalog.read_text()
     # Running again must change nothing (no stacked ``legacy/legacy``).
     assert layout.rewrite_references(project, moves) == {}
-    assert "legacy/legacy" not in (project / "icml-colombia/src/icml/m.py").read_text()
 
 
 def test_partial_check_with_an_old_folder_name_is_reported(project):

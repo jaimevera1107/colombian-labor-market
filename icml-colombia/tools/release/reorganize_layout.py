@@ -39,9 +39,6 @@ PREPARED = f"{PROC}/fuentes_preparadas"
 RULES: tuple[tuple[str, str], ...] = (
     # --- legacy: unused duplicates, past deliveries and RC1 references
     ("insumos/fuentes/archivo_original/**", f"{LEGACY}/archivo_original_duplicado"),
-    ("ENTREGA_H36/**", f"{LEGACY}/ENTREGA_H36"),
-    ("research/sectoral/h16/src/**", f"{LEGACY}/research_h16_src_copia"),
-    ("validacion/**", f"{LEGACY}/validacion"),
     # --- ingesta: Excel the user maintains
     ("insumos/fuentes/dane/**", f"{INGESTA}/dane"),
     ("insumos/fuentes/excel_originales/**", f"{INGESTA}/excel_originales"),

@@ -1,7 +1,0 @@
-variable,donor_code,donor_name,target_code,target_name,calibration_start,calibration_end,ratio,donor_average_2021_2024,cundinamarca_official_average_2021_2024,max_calibration_ratio_variation_pct
-employed,11,Bogotá D.C.,25,Cundinamarca — señal sintética,2021,2024,0.4106870814620659,3910562.5,1606017.5,3.019535502666404
-unemployed,11,Bogotá D.C.,25,Cundinamarca — señal sintética,2021,2024,0.4415852185971053,533021.125,235374.25,11.1049875780723
-inactive,11,Bogotá D.C.,25,Cundinamarca — señal sintética,2021,2024,0.45397003497450933,2025518.05,919524.5,12.553067822868226
-pea,11,Bogotá D.C.,25,Cundinamarca — señal sintética,2021,2024,0.41483987863571653,4438801.8,1841392.0,3.4099108870715433
-pet,11,Bogotá D.C.,25,Cundinamarca — señal sintética,2021,2024,0.42733656918424656,6460752.95,2760916.0,2.9690371586347575
-population,11,Bogotá D.C.,25,Cundinamarca — señal sintética,2021,2024,0.4499290203535667,7897889.0875,3553489.5,3.1005234576705787

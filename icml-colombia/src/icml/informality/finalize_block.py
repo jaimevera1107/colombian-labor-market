@@ -75,6 +75,43 @@ _BRIDGE_REFRESH_TOLERANCE = 1e-3
 _EMPLOYED_TOTAL_GUARD = 1e-2
 
 
+def _align_partial_factors_with_labor(bridge: pd.DataFrame, labor: pd.DataFrame) -> pd.DataFrame:
+    """Give the nine partial territories the GEIH factors of the labor product.
+
+    The labor product carries one smooth GEIH factor per partial territory
+    (shared by all labor components) and a smooth demographic factor for
+    population. Using the same factors here makes the GEIH employed of the
+    informality product identical to the GEIH employed of the labor product
+    in every month, so both products describe one and the same universe.
+    """
+    out = bridge.copy()
+    lab = labor[['period', 'dep_code', 'factor_employed', 'factor_population']].copy()
+    lab['_k'] = lab['dep_code'].astype(int)
+    out['_k'] = out['dep_code'].astype(int)
+    merged = out[['period', '_k']].merge(lab.drop(columns='dep_code'), on=['period', '_k'],
+                                         how='left', validate='one_to_one')
+    rows = out['_k'].isin(NINE).to_numpy()
+    f_lab = merged['factor_employed'].to_numpy(float)
+    f_pop = merged['factor_population'].to_numpy(float)
+    if not (np.isfinite(f_lab[rows]).all() and np.isfinite(f_pop[rows]).all()):
+        raise ValueError('Labor factors missing for the partial territories')
+    for name in ('employed', 'unemployed', 'inactive'):
+        out.loc[rows, f'factor_geih_{name}'] = f_lab[rows]
+        out.loc[rows, f'geih_{name}'] = out.loc[rows, name].to_numpy(float) * f_lab[rows]
+    out.loc[rows, 'geih_labor_force'] = (out.loc[rows, 'geih_employed'].to_numpy(float)
+                                         + out.loc[rows, 'geih_unemployed'].to_numpy(float))
+    out.loc[rows, 'geih_working_age'] = (out.loc[rows, 'geih_labor_force'].to_numpy(float)
+                                         + out.loc[rows, 'geih_inactive'].to_numpy(float))
+    out.loc[rows, 'factor_geih_labor_force'] = f_lab[rows]
+    out.loc[rows, 'factor_geih_working_age'] = f_lab[rows]
+    out.loc[rows, 'factor_geih_population'] = f_pop[rows]
+    out.loc[rows, 'geih_population'] = out.loc[rows, 'population'].to_numpy(float) * f_pop[rows]
+    if 'geih_domain_status' in out.columns:
+        zero = rows & out['geih_domain_status'].eq('FUERA_GEIH_2001_2013_FACTOR_CERO').to_numpy()
+        out.loc[zero, 'geih_domain_status'] = 'CAPITAL_2001_2013_FACTOR_LABORAL_SUAVIZADO'
+    return out.drop(columns='_k')
+
+
 def _refresh_bridge_levels(bridge: pd.DataFrame, labor: pd.DataFrame,
                            tolerance: float = _BRIDGE_REFRESH_TOLERANCE
                            ) -> tuple[pd.DataFrame, dict]:
@@ -354,6 +391,7 @@ def run(root:Path, output:Path, *,gap_method='interpolated',splice:RegimeSplice|
     _keys(b,['period','dep_code'],ROWS_33,'census bridge')
     _keys(city_lab,['period','city_code'],ROWS_33,'frozen city signals')
     b,bridge_refresh=_refresh_bridge_levels(b,dept_lab)
+    b=_align_partial_factors_with_labor(b,dept_lab)
     priors=_one_model_prior(p,r,gap_method)
     splice_report=None
     if splice is not None and splice.enabled:

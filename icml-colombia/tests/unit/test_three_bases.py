@@ -74,7 +74,10 @@ def test_wrong_national_sum_hard_error():
 
 def test_corrupted_official_weighted_sum_hard_error():
     deps,cities,national=example()
-    deps.loc[(deps.period=='2001-02')&(deps.dep_code==81),'factor_employed']=0.5
-    deps.loc[(deps.period=='2001-02')&(deps.dep_code==81),'employed_represented']=45.0
+    # Corrupt anchored territories (the nine partial ones are rebuilt from one
+    # smooth factor, so a corruption there is overwritten by construction).
+    rows=(deps.period=='2001-02')&deps.dep_code.isin([5,8,11,13,15,17])
+    deps.loc[rows,'factor_employed']=0.5
+    deps.loc[rows,'employed_represented']=deps.loc[rows,'employed']*0.5
     with pytest.raises(QualityContractError,match='represented below DANE'):
         build_three_bases(deps,cities,national)

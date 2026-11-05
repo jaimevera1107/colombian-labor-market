@@ -424,8 +424,13 @@ def smooth_territories(
             for c in complete:
                 new_represented[c] = new[c]
             for c in rest:
-                shifted = represented[c] + (new[c] - wide[c])
-                new_represented[c] = shifted.where(represented[c] > 0, 0.0)
+                # Proportional, not additive: the represented part keeps its
+                # share of the territory. Adding the whole change of the full
+                # territory to a capital that is 10-30 % of it turned a smooth
+                # PET into a saw-tooth and broke the equality of GEIH and
+                # census rates for the partially represented territories.
+                ratio = (new[c] / wide[c].where(wide[c] > 0)).fillna(1.0)
+                new_represented[c] = (represented[c] * ratio).where(represented[c] > 0, 0.0)
             if (new_represented < -1e-6).any().any() or (new_represented > new + 1e-6).any().any():
                 raise ReconstructionError(f"Smoothing the {column} left a represented value outside [0, full]")
             new_represented = new_represented.clip(lower=0.0)
@@ -651,10 +656,16 @@ def _validate(old_dep, old_cit, old_nat, dep, cit, nat, config: LaborReconstruct
         covered = old_official.assign(inside=old_official["population_represented"] > 0).groupby("period")["inside"].all()
         for column in ("working_age_represented", "population_represented"):
             if column in dep.columns:
-                change = (dep[dep["period"] >= cut].groupby("period")[column].sum() - old_official.groupby("period")[column].sum()).abs()
+                before_sum = old_official.groupby("period")[column].sum()
+                change = (dep[dep["period"] >= cut].groupby("period")[column].sum() - before_sum).abs()
                 exact = float(change[covered].max()) if covered.any() else 0.0
-                if exact > 1e-4:
-                    raise ReconstructionError(f"After smoothing the represented {column} no longer adds up as before ({exact:.3g} persons)")
+                # The partially represented territories now keep their share
+                # (proportional smoothing), so the represented sum may move a
+                # little; it must stay within 2 % of what it was.
+                relative = float((change[covered] / before_sum[covered]).max()) if covered.any() else 0.0
+                if relative > 0.02:
+                    raise ReconstructionError(f"After smoothing the represented {column} moved more than 2 % ({exact:.3g} persons)")
+                official_checks[f"{column}_sum_change_relative_all_represented"] = relative
                 official_checks[f"{column}_sum_change_persons_all_represented"] = exact
                 official_checks[f"{column}_sum_change_persons_some_outside"] = float(change[~covered].max()) if (~covered).any() else 0.0
     after = details["rates_after"]

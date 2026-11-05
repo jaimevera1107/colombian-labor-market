@@ -45,6 +45,43 @@ def _normalize_codes(df: pd.DataFrame, key: str, label: str) -> pd.DataFrame:
     return out
 
 
+def _smooth_partial_factor(periods: np.ndarray, factor: np.ndarray) -> np.ndarray:
+    """Return one smooth monthly GEIH factor for a partially covered territory.
+
+    The reconciliation factor moves 4-5 % from one month to the next, which
+    turns a smooth census PET into a saw-tooth GEIH PET. The annual mean of
+    the observed factor (2001 onwards) keeps each year's level; it is
+    interpolated linearly between mid-year anchors and held flat outside
+    them, so 1993-2000 uses the 2001 level (the GEIH series then follows the
+    census shape exactly, with no break at the 2001 splice).
+
+    Parameters
+    ----------
+    periods : numpy.ndarray
+        Month labels ``YYYY-MM`` in chronological order.
+    factor : numpy.ndarray
+        Observed monthly factor (capital share) for the same months.
+
+    Returns
+    -------
+    numpy.ndarray
+        Smooth factor, strictly positive, one value per month.
+    """
+    years = np.array([int(p[:4]) for p in periods])
+    months = np.array([int(p[5:7]) for p in periods])
+    index = years * 12 + (months - 1)
+    observed = (periods >= OFFICIAL_FROM) & np.isfinite(factor) & (factor > 0)
+    if not observed.any():
+        raise QualityContractError("partial territory without an observed GEIH factor")
+    anchor_years = np.unique(years[observed])
+    anchor_index = anchor_years * 12 + 5.5  # mid-year
+    anchor_value = np.array([factor[observed & (years == y)].mean() for y in anchor_years])
+    smooth = np.interp(index, anchor_index, anchor_value)
+    if not (np.isfinite(smooth).all() and (smooth > 0).all() and (smooth <= 1).all()):
+        raise QualityContractError("smoothed partial factor out of (0, 1]")
+    return smooth
+
+
 def _validate_calendar(df: pd.DataFrame, key: str, name: str, expected: list[str] | None = None) -> list[str]:
     months = sorted(df['period'].astype(str).unique().tolist())
     if not months or months != list(pd.period_range(months[0], months[-1], freq='M').astype(str)):
@@ -91,88 +128,33 @@ def build_three_bases(departments: pd.DataFrame, urban: pd.DataFrame, national: 
     is_partial_early = early & dep['dep_code'].isin(partial_set)
     is_full_early    = early & ~dep['dep_code'].isin(partial_set)
 
-    # For the nine partially-covered territories: use factor_employed as the
-    # single factor for all three labor components — rates cancel and become
-    # identical to census. Pre-2001 the factor is retropolated using the census
-    # trend (Retropolarizer), anchored to the 2001-01 level, so the GEIH series
-    # follows the census shape before the GEIH existed with no artificial jump.
-    from tempdisagg import Retropolarizer  # noqa: PLC0415
-    SPLICE = OFFICIAL_FROM  # '2001-01'
+    # Nine partially-covered territories: ONE smooth factor per territory,
+    # applied to every component (employed, unemployed, inactive, working
+    # age, population). Rates are therefore identical to the census universe,
+    # and the GEIH levels inherit the census shape (linear PET before 2001,
+    # smooth afterwards) with no seasonal saw-tooth and no jump at 2001/2014.
     for code in partial_set:
         mask = dep['dep_code'] == code
         if not mask.any():
             continue
-        pre_mask  = mask & early
-        post_mask = mask & ~early
-        f_lab = dep.loc[mask, 'factor_employed'].values.astype(float)
-        f_pop = dep.loc[mask, 'factor_population'].values.astype(float)
-
-        # Apply factor_employed uniformly to all labor components
-        for q in ('employed', 'unemployed', 'inactive'):
-            dep.loc[mask, f'{q}_represented'] = (
-                dep.loc[mask, q].values.astype(float) * f_lab
-            )
-        emp  = dep.loc[mask, 'employed_represented'].values
-        unem = dep.loc[mask, 'unemployed_represented'].values
-        dep.loc[mask, 'labor_force_represented']  = emp + unem
-        # Scale working_age directly by f_lab so TO = emp/wa (factors cancel)
-        dep.loc[mask, 'working_age_represented']  = (
-            dep.loc[mask, 'working_age'].values.astype(float) * f_lab
+        months = dep.loc[mask, 'period'].astype(str).to_numpy()
+        # Labor factor: shared by every labor component so rates match census.
+        smooth = _smooth_partial_factor(months, dep.loc[mask, 'factor_employed'].to_numpy(dtype=float))
+        # Population keeps its own (smoothed) demographic share; PET <= population holds.
+        smooth_pop = _smooth_partial_factor(months, dep.loc[mask, 'factor_population'].to_numpy(dtype=float))
+        for q in ('employed', 'unemployed', 'inactive', 'working_age'):
+            dep.loc[mask, f'{q}_represented'] = dep.loc[mask, q].to_numpy(dtype=float) * smooth
+            dep.loc[mask, f'factor_{q}'] = smooth
+        dep.loc[mask, 'labor_force_represented'] = (
+            dep.loc[mask, 'employed_represented'].to_numpy(dtype=float)
+            + dep.loc[mask, 'unemployed_represented'].to_numpy(dtype=float)
         )
-        pop  = dep.loc[mask, 'population'].values.astype(float)
-        dep.loc[mask, 'population_represented']   = pop * f_pop
+        dep.loc[mask, 'factor_labor_force'] = smooth
+        dep.loc[mask, 'population_represented'] = dep.loc[mask, 'population'].to_numpy(dtype=float) * smooth_pop
+        dep.loc[mask, 'factor_population'] = smooth_pop
+        if (dep.loc[mask, 'working_age_represented'] > dep.loc[mask, 'population_represented'] + 1e-5).any():
+            raise QualityContractError(f'departamentos {code}: GEIH working age exceeds population')
 
-        # Retropolate pre-2001: ratio splice using census as indicator.
-        # Retropolarizer(df, new_col, old_col).retropolarize('proportion')
-        # = ratio splice: extends new_col backward using old_col trend.
-        if pre_mask.any() and post_mask.any():
-            periods_all = dep.loc[mask, 'period'].values
-            pre_idx     = periods_all < SPLICE
-            for q in ('employed', 'unemployed', 'inactive',
-                      'labor_force', 'population'):
-                # Note: working_age_represented is kept as wa*f_lab (set above)
-                col       = f'{q}_represented'
-                geih_all  = dep.loc[mask, col].values.astype(float)
-                census_all = dep.loc[mask, q].values.astype(float)
-                # Build a single DataFrame with the full series
-                import pandas as _pd
-                df_sp = _pd.DataFrame({
-                    'geih':   np.where(periods_all >= SPLICE, geih_all,   np.nan),
-                    'census': census_all,
-                }, index=range(len(periods_all)))
-                try:
-                    backcasted = (
-                        Retropolarizer(df_sp, 'geih', 'census')
-                        .retropolarize('proportion')
-                    )
-                    filled = backcasted.values
-                    geih_all[pre_idx] = np.clip(filled[pre_idx], 0.0, None)
-                    dep.loc[mask, col] = geih_all
-                except Exception:
-                    pass  # keep existing values if retropolation fails
-
-        # Recompute derived represented quantities from the retropolated components.
-        # working_age_represented = working_age × f_lab for ALL periods (pre and
-        # post 2001) so that PET in the GEIH delivery is the capital share and
-        # the employment rate is consistent with the represented universe.
-        emp  = dep.loc[mask, 'employed_represented'].values
-        unem = dep.loc[mask, 'unemployed_represented'].values
-        dep.loc[mask, 'labor_force_represented']  = emp + unem
-        dep.loc[mask, 'working_age_represented'] = (
-            dep.loc[mask, 'working_age'].values.astype(float) * f_lab
-        )
-        dep.loc[mask, 'population_represented'] = (
-            dep.loc[mask, 'population'].values.astype(float) * f_pop
-        )
-
-        # Update all factors: factor = represented / full
-        for q in ('employed', 'unemployed', 'inactive',
-                  'labor_force', 'working_age'):
-            full_v = dep.loc[mask, q].values.astype(float)
-            rep_v  = dep.loc[mask, f'{q}_represented'].values.astype(float)
-            dep.loc[mask, f'factor_{q}'] = np.where(
-                full_v > 0, rep_v / full_v, 0.0
-            )
     for q in LEVELS:
         represented = f'{q}_represented'
         factor      = f'factor_{q}'
@@ -193,23 +175,6 @@ def build_three_bases(departments: pd.DataFrame, urban: pd.DataFrame, national: 
             raise QualityContractError(f'departamentos: nonfinite factor/represented {q}')
         if (dep[represented] - dep[q] * dep[factor]).abs().max() > 1e-5:
             raise QualityContractError(f'departamentos: inconsistent factor {q}')
-    # Post-LEVELS fix: for the nine partial territories pre-2001,
-    # working_age_represented and population_represented must follow the
-    # same factor as the labor components (f_lab / f_pop) so that the
-    # GEIH delivery shows consistent PET/PEA levels without scale breaks.
-    for code in partial_set:
-        pre_code = (dep['dep_code'] == code) & early
-        if not pre_code.any():
-            continue
-        f_lab = dep.loc[pre_code, 'factor_employed'].values.astype(float)
-        f_pop = dep.loc[pre_code, 'factor_population'].values.astype(float)
-        wa  = dep.loc[pre_code, 'working_age'].values.astype(float)
-        pop = dep.loc[pre_code, 'population'].values.astype(float)
-        dep.loc[pre_code, 'working_age_represented']  = wa  * f_lab
-        dep.loc[pre_code, 'factor_working_age']       = f_lab
-        dep.loc[pre_code, 'population_represented']   = pop * f_pop
-        dep.loc[pre_code, 'factor_population']        = f_pop
-
     dep['factor_reference_status'] = np.where(
         is_partial_early,
         'DEMOGRAFICO_RETROPOLADO_SIN_REFERENCIA_GEIH',

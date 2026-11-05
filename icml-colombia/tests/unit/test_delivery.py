@@ -30,7 +30,10 @@ EXPECTED_COLUMNS: dict[str, list[str]] = {
         "factor_inactive,factor_labor_force,factor_working_age,"
         "factor_population,year,unemployment_rate,employment_rate,"
         "participation_rate,territory_id,territory_name,territory_level,"
-        "is_additive_member,factor_is_assumed"
+        "is_additive_member,factor_is_assumed,factor_employed_demographic,"
+        "factor_unemployed_demographic,factor_inactive_demographic,"
+        "factor_labor_force_demographic,factor_working_age_demographic,"
+        "factor_population_demographic"
     ).split(","),
     "informalidad.departamentos": (
         "period,dep_code,geographic_employed,geih_domain_status,population,"

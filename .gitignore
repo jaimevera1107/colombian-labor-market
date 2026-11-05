@@ -20,3 +20,13 @@ Thumbs.db
 datos/2_procesamiento/_corridas/*
 !datos/2_procesamiento/_corridas/.gitkeep
 datos/2_procesamiento/productos_congelados/graficas_auditoria/
+
+# --- Outputs generados por icml consolidar / actualizar ---
+datos/2_procesamiento/vigente/
+datos/2_procesamiento/productos_congelados/laboral/
+datos/2_procesamiento/productos_congelados/pruebas_calidad/
+datos/2_procesamiento/productos_congelados/sectorial/
+datos/2_procesamiento/productos_congelados/catalogo_h19/
+datos/2_procesamiento/productos_congelados/graficas_auditoria/
+datos/2_procesamiento/_corridas/
+datos/3_salida/*/

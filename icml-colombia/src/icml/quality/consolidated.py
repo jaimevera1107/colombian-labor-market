@@ -151,12 +151,19 @@ def build_three_bases(departments: pd.DataFrame, urban: pd.DataFrame, national: 
                 except Exception:
                     pass  # keep existing values if retropolation fails
 
-        # Recompute derived represented quantities from the retropolated components
+        # Recompute derived represented quantities from the retropolated components.
+        # working_age_represented = working_age × f_lab for ALL periods (pre and
+        # post 2001) so that PET in the GEIH delivery is the capital share and
+        # the employment rate is consistent with the represented universe.
         emp  = dep.loc[mask, 'employed_represented'].values
         unem = dep.loc[mask, 'unemployed_represented'].values
         dep.loc[mask, 'labor_force_represented']  = emp + unem
-        # working_age_represented stays as f_lab * working_age (set above)
-        # so the Retropolarizer backcast for working_age already handled it
+        dep.loc[mask, 'working_age_represented'] = (
+            dep.loc[mask, 'working_age'].values.astype(float) * f_lab
+        )
+        dep.loc[mask, 'population_represented'] = (
+            dep.loc[mask, 'population'].values.astype(float) * f_pop
+        )
 
         # Update all factors: factor = represented / full
         for q in ('employed', 'unemployed', 'inactive',
@@ -186,6 +193,23 @@ def build_three_bases(departments: pd.DataFrame, urban: pd.DataFrame, national: 
             raise QualityContractError(f'departamentos: nonfinite factor/represented {q}')
         if (dep[represented] - dep[q] * dep[factor]).abs().max() > 1e-5:
             raise QualityContractError(f'departamentos: inconsistent factor {q}')
+    # Post-LEVELS fix: for the nine partial territories pre-2001,
+    # working_age_represented and population_represented must follow the
+    # same factor as the labor components (f_lab / f_pop) so that the
+    # GEIH delivery shows consistent PET/PEA levels without scale breaks.
+    for code in partial_set:
+        pre_code = (dep['dep_code'] == code) & early
+        if not pre_code.any():
+            continue
+        f_lab = dep.loc[pre_code, 'factor_employed'].values.astype(float)
+        f_pop = dep.loc[pre_code, 'factor_population'].values.astype(float)
+        wa  = dep.loc[pre_code, 'working_age'].values.astype(float)
+        pop = dep.loc[pre_code, 'population'].values.astype(float)
+        dep.loc[pre_code, 'working_age_represented']  = wa  * f_lab
+        dep.loc[pre_code, 'factor_working_age']       = f_lab
+        dep.loc[pre_code, 'population_represented']   = pop * f_pop
+        dep.loc[pre_code, 'factor_population']        = f_pop
+
     dep['factor_reference_status'] = np.where(
         is_partial_early,
         'DEMOGRAFICO_RETROPOLADO_SIN_REFERENCIA_GEIH',

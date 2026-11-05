@@ -22,12 +22,9 @@ datos/2_procesamiento/_corridas/*
 datos/2_procesamiento/productos_congelados/graficas_auditoria/
 
 # --- Outputs generados por icml consolidar / actualizar ---
+# NOTA: productos_congelados/ NO se ignora — el pipeline lo necesita como
+# input en el primer arranque. Solo se ignoran los outputs transitorios.
 datos/2_procesamiento/vigente/
-# productos_congelados/laboral/ NO se ignora: los tres CSVs laborales
-# son input requerido del preflight de informalidad (REQUIRED_INF_FILES)
-datos/2_procesamiento/productos_congelados/pruebas_calidad/
-datos/2_procesamiento/productos_congelados/sectorial/
-datos/2_procesamiento/productos_congelados/catalogo_h19/
 datos/2_procesamiento/productos_congelados/graficas_auditoria/
 datos/2_procesamiento/_corridas/
 datos/3_salida/*/

@@ -91,8 +91,10 @@ def graft_frozen_years(
         new_n = pd.to_numeric(new, errors="coerce")
         numeric = old_n.notna() & new_n.notna()
         differs = pd.Series(False, index=merged.index)
+        differs = differs.astype(object)
         differs[numeric] = (old_n[numeric] - new_n[numeric]).abs() > tolerance
         differs[~numeric] = old[~numeric].astype(str) != new[~numeric].astype(str)
+        differs = differs.astype(bool)
         changed += int(differs.sum())
     report = {
         "frozen_through_year": policy.last_anchor_year,

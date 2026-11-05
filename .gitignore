@@ -23,7 +23,8 @@ datos/2_procesamiento/productos_congelados/graficas_auditoria/
 
 # --- Outputs generados por icml consolidar / actualizar ---
 datos/2_procesamiento/vigente/
-datos/2_procesamiento/productos_congelados/laboral/
+# productos_congelados/laboral/ NO se ignora: los tres CSVs laborales
+# son input requerido del preflight de informalidad (REQUIRED_INF_FILES)
 datos/2_procesamiento/productos_congelados/pruebas_calidad/
 datos/2_procesamiento/productos_congelados/sectorial/
 datos/2_procesamiento/productos_congelados/catalogo_h19/

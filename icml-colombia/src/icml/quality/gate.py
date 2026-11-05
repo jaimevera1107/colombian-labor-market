@@ -35,6 +35,12 @@ class QualityPolicy:
     accounting_tolerance_persons: float = 1e-5
     reference_tolerance_persons: float = 1.1
     reference_from: str = OFFICIAL_FROM
+    #: Kink of the straight GEIH capital factor of the nine partial territories
+    #: (the month their capitals enter the DANE national total).
+    partial_factor_break: str = "2014-01"
+    #: Last year covered by the departmental annex; the factor line ends in its
+    #: December and later months follow the same slope. Read from departmental.toml.
+    last_anchor_year: int | None = None
 
 
 def _validate(frame: pd.DataFrame, keys: list[str], name: str) -> None:

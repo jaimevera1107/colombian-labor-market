@@ -7,3 +7,7 @@ structural_participation_pp = 4.0
 accounting_tolerance_persons = 0.00001
 reference_tolerance_persons = 1.1
 reference_from = "2001-01"
+# GEIH capital factor of the nine partial territories: straight segments
+# 2001-01 -> partial_factor_break -> December of the last anchored year
+# (read from departmental.toml); later months follow the last slope.
+partial_factor_break = "2014-01"

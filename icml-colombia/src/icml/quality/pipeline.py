@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 from typing import Any
 
@@ -14,8 +14,19 @@ from icml.reconciliation.pipeline import OUTPUTS as RECONCILIATION_OUTPUTS
 
 
 def load_quality_config(path: Path) -> QualityPolicy:
-    """Strict read of the quality policy."""
-    return build_dataclass(QualityPolicy, section(load_toml(path), "quality"), context="quality")
+    """Strict read of the quality policy.
+
+    The last anchored year is not repeated here: it is read from the
+    ``departmental.toml`` beside this file (``[departmental.annex] last_year``),
+    so the annual annex update moves it in one place only.
+    """
+    policy = build_dataclass(QualityPolicy, section(load_toml(path), "quality"), context="quality")
+    departmental = Path(path).with_name("departmental.toml")
+    if policy.last_anchor_year is None and departmental.is_file():
+        annex = load_toml(departmental).get("departmental", {}).get("annex", {})
+        if "last_year" in annex:
+            policy = replace(policy, last_anchor_year=int(annex["last_year"]))
+    return policy
 
 
 OUTPUTS = {
@@ -54,7 +65,7 @@ class QualityPipeline:
         nat = upstream.read(RECONCILIATION_OUTPUTS["national_icml"])
         urban = upstream.read(RECONCILIATION_OUTPUTS["urban_signals"])
         official = upstream.read(RECONCILIATION_OUTPUTS["official_deviation"])
-        bases = build_three_bases(deps,urban,nat)
+        bases = build_three_bases(deps,urban,nat,self.policy)
         unified = unify_territories(bases["departamentos"],nat)
         diagnostics,summary = audit_products(unified,bases["ciudades"],nat,self.policy,official)
         records = [output.write(OUTPUTS[key],bases[key]) for key in ("ciudades","departamentos","nacionales")]

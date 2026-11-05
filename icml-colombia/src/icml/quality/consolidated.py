@@ -7,6 +7,8 @@ for pre-2001 refers only to the archived *reconstructed* national comparator.
 """
 from __future__ import annotations
 
+from typing import Any
+
 import numpy as np
 import pandas as pd
 
@@ -45,15 +47,43 @@ def _normalize_codes(df: pd.DataFrame, key: str, label: str) -> pd.DataFrame:
     return out
 
 
-def _smooth_partial_factor(periods: np.ndarray, factor: np.ndarray) -> np.ndarray:
-    """Return one smooth monthly GEIH factor for a partially covered territory.
+def _month_index(periods: np.ndarray) -> np.ndarray:
+    """Months since year 0 for ``YYYY-MM`` labels."""
+    return np.array([int(p[:4]) * 12 + int(p[5:7]) - 1 for p in periods])
 
-    The reconciliation factor moves 4-5 % from one month to the next, which
-    turns a smooth census PET into a saw-tooth GEIH PET. The annual mean of
-    the observed factor (2001 onwards) keeps each year's level; it is
-    interpolated linearly between mid-year anchors and held flat outside
-    them, so 1993-2000 uses the 2001 level (the GEIH series then follows the
-    census shape exactly, with no break at the 2001 splice).
+
+def _partial_factor_knots(periods: np.ndarray, policy: Any | None) -> tuple[str, ...] | None:
+    """Kinks of the straight GEIH capital factor: 2001-01, the break, last anchored December.
+
+    Without a policy (tests) the last knot is the December before the final
+    year present, which equals the last anchored year in a monthly update.
+    Knots outside the calendar are dropped; with fewer than two left the
+    annual-mean curve is used as it is (``None``).
+    """
+    brk = getattr(policy, "partial_factor_break", "2014-01") if policy is not None else "2014-01"
+    year = getattr(policy, "last_anchor_year", None) if policy is not None else None
+    if year is None:
+        year = int(str(periods[-1])[:4]) - 1
+    last = min(f"{int(year)}-12", str(periods[-1]))
+    knots: list[str] = []
+    for knot in (OFFICIAL_FROM, brk, last):
+        if str(periods[0]) <= knot <= str(periods[-1]) and (not knots or knot > knots[-1]):
+            knots.append(knot)
+    return tuple(knots) if len(knots) >= 2 else None
+
+
+def _smooth_partial_factor(periods: np.ndarray, factor: np.ndarray,
+                           knots: tuple[str, ...] | None = None) -> np.ndarray:
+    """Return the GEIH capital factor of a partially covered territory.
+
+    The observed monthly factor moves 4-5 % from one month to the next. Its
+    annual means (2001 onwards) are interpolated to monthly values; with
+    ``knots`` that curve is then replaced by straight segments through its
+    values at the knots: flat before the first knot (1993-2000 take the 2001
+    level, so the GEIH series follows the census shape), linear between them
+    and, after the last knot (the December of the last anchored year), the
+    same slope as the last segment, so a monthly update never rewrites the
+    anchored years.
 
     Parameters
     ----------
@@ -61,24 +91,31 @@ def _smooth_partial_factor(periods: np.ndarray, factor: np.ndarray) -> np.ndarra
         Month labels ``YYYY-MM`` in chronological order.
     factor : numpy.ndarray
         Observed monthly factor (capital share) for the same months.
+    knots : tuple of str, optional
+        Ascending ``YYYY-MM`` kinks of the straight factor.
 
     Returns
     -------
     numpy.ndarray
-        Smooth factor, strictly positive, one value per month.
+        Factor, strictly positive and at most one, one value per month.
     """
     years = np.array([int(p[:4]) for p in periods])
-    months = np.array([int(p[5:7]) for p in periods])
-    index = years * 12 + (months - 1)
+    index = _month_index(periods)
     observed = (periods >= OFFICIAL_FROM) & np.isfinite(factor) & (factor > 0)
     if not observed.any():
         raise QualityContractError("partial territory without an observed GEIH factor")
     anchor_years = np.unique(years[observed])
-    anchor_index = anchor_years * 12 + 5.5  # mid-year
     anchor_value = np.array([factor[observed & (years == y)].mean() for y in anchor_years])
-    smooth = np.interp(index, anchor_index, anchor_value)
+    smooth = np.interp(index, anchor_years * 12 + 5.5, anchor_value)
+    if knots:
+        k = _month_index(np.asarray(knots))
+        kv = np.interp(k, index, smooth)
+        line = np.interp(index, k, kv)
+        after = index > k[-1]
+        line[after] = kv[-1] + (kv[-1] - kv[-2]) / (k[-1] - k[-2]) * (index[after] - k[-1])
+        smooth = line
     if not (np.isfinite(smooth).all() and (smooth > 0).all() and (smooth <= 1).all()):
-        raise QualityContractError("smoothed partial factor out of (0, 1]")
+        raise QualityContractError("partial factor out of (0, 1]")
     return smooth
 
 
@@ -93,7 +130,8 @@ def _validate_calendar(df: pd.DataFrame, key: str, name: str, expected: list[str
     return months
 
 
-def build_three_bases(departments: pd.DataFrame, urban: pd.DataFrame, national: pd.DataFrame) -> dict[str, pd.DataFrame]:
+def build_three_bases(departments: pd.DataFrame, urban: pd.DataFrame, national: pd.DataFrame,
+                      policy: Any | None = None) -> dict[str, pd.DataFrame]:
     """Make 33 departmental, 33 urban and 2 distinct national time series.
 
     Does not alter the six reconstructed labor quantities. Historical coverage
@@ -138,10 +176,11 @@ def build_three_bases(departments: pd.DataFrame, urban: pd.DataFrame, national: 
         if not mask.any():
             continue
         months = dep.loc[mask, 'period'].astype(str).to_numpy()
+        knots = _partial_factor_knots(months, policy)
         # Labor factor: shared by every labor component so rates match census.
-        smooth = _smooth_partial_factor(months, dep.loc[mask, 'factor_employed'].to_numpy(dtype=float))
+        smooth = _smooth_partial_factor(months, dep.loc[mask, 'factor_employed'].to_numpy(dtype=float), knots)
         # Population keeps its own (smoothed) demographic share; PET <= population holds.
-        smooth_pop = _smooth_partial_factor(months, dep.loc[mask, 'factor_population'].to_numpy(dtype=float))
+        smooth_pop = _smooth_partial_factor(months, dep.loc[mask, 'factor_population'].to_numpy(dtype=float), knots)
         for q in ('employed', 'unemployed', 'inactive', 'working_age'):
             dep.loc[mask, f'{q}_represented'] = dep.loc[mask, q].to_numpy(dtype=float) * smooth
             dep.loc[mask, f'factor_{q}'] = smooth

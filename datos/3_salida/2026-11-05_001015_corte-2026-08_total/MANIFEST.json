@@ -1,0 +1,90 @@
+{
+  "golden_102": "NOT_CERTIFIED",
+  "period_through": "2026-08",
+  "products": [
+    {
+      "bytes": 3383305,
+      "delivery_path": "productos/datos/2_procesamiento/productos_congelados/pruebas_calidad/ciudades.csv",
+      "evidence": "reconstruido/urbano",
+      "path": "datos/2_procesamiento/productos_congelados/pruebas_calidad/ciudades.csv",
+      "product": "labor.ciudades",
+      "sha256": "773ebcfb4fa4288f10744b8912c1c03244179d17e2cce8a8926123a66d7e9405",
+      "status": "BASE_LABORAL_CONGELADA",
+      "universe": "ICML urbano"
+    },
+    {
+      "bytes": 5503388,
+      "delivery_path": "productos/datos/2_procesamiento/productos_congelados/pruebas_calidad/departamentos.csv",
+      "evidence": "reconstruido, anclado y sintético",
+      "path": "datos/2_procesamiento/productos_congelados/pruebas_calidad/departamentos.csv",
+      "product": "labor.departamentos",
+      "sha256": "99847e18d4e1d3c37b8aaa280823c42a246e269eea4c8a9435e1cc78717c8fea",
+      "status": "BASE_LABORAL_CONGELADA",
+      "universe": "ICML completo y representado"
+    },
+    {
+      "bytes": 241899,
+      "delivery_path": "productos/datos/2_procesamiento/productos_congelados/pruebas_calidad/nacionales.csv",
+      "evidence": "reconstrucción + referencia GEIH",
+      "path": "datos/2_procesamiento/productos_congelados/pruebas_calidad/nacionales.csv",
+      "product": "labor.nacionales",
+      "sha256": "fc003be8875716ef19e49a3a7d1a3898998e3e0d7a120421498a60eb4a8f362f",
+      "status": "BASE_LABORAL_CONGELADA",
+      "universe": "ICML_COMPLETO y DANE_REFERENCIA"
+    },
+    {
+      "bytes": 3936913,
+      "delivery_path": "productos/datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_ciudades_33_1993_2026_RECONSTRUIDAS.csv",
+      "evidence": "estimación experimental",
+      "path": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_ciudades_33_1993_2026_RECONSTRUIDAS.csv",
+      "product": "informalidad.ciudades",
+      "sha256": "5f18a78eed167bd47e70daa4a4c84d502f17fc90d11c3fd08b02f1cfb1e7ba22",
+      "status": "NO_OFICIAL",
+      "universe": "universos derivados"
+    },
+    {
+      "bytes": 7324091,
+      "delivery_path": "productos/datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_departamentos_33_dos_universos_1993_2026_RECONSTRUIDOS.csv",
+      "evidence": "estimación experimental",
+      "path": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_departamentos_33_dos_universos_1993_2026_RECONSTRUIDOS.csv",
+      "product": "informalidad.departamentos",
+      "sha256": "b0f2764c48957d58bd5337da482136b034330ce212e0ea31c9f7f45d8ee9fc23",
+      "status": "NO_OFICIAL",
+      "universe": "completo/GEIH"
+    },
+    {
+      "bytes": 254926,
+      "delivery_path": "productos/datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_nacionales_2_universos_1993_2026_RECONSTRUIDOS.csv",
+      "evidence": "estimación experimental",
+      "path": "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9/13_nacionales_2_universos_1993_2026_RECONSTRUIDOS.csv",
+      "product": "informalidad.nacionales",
+      "sha256": "c67799b5af371981c263555c3f7fa160d238edead0bdfb78367e08e57c2435ec",
+      "status": "NO_OFICIAL",
+      "universe": "completo/GEIH"
+    },
+    {
+      "bytes": 34487916,
+      "delivery_path": "productos/datos/2_procesamiento/productos_congelados/sectorial/sectorial_departamental_1993_2026_EXPERIMENTAL.csv",
+      "evidence": "H16 ensamble + reconciliación",
+      "path": "datos/2_procesamiento/productos_congelados/sectorial/sectorial_departamental_1993_2026_EXPERIMENTAL.csv",
+      "product": "sectorial.departamental",
+      "sha256": "fd65d43b1eceda180a811c4e20e4cd56d2ad3bfaf2389163e1adc1dff9f09ebe",
+      "status": "INVESTIGACION_CONGELADA",
+      "universe": "completo y representado"
+    },
+    {
+      "bytes": 839492,
+      "delivery_path": "productos/datos/2_procesamiento/productos_congelados/sectorial/sectorial_nacional_1993_2026_EXPERIMENTAL.csv",
+      "evidence": "derivado H16",
+      "path": "datos/2_procesamiento/productos_congelados/sectorial/sectorial_nacional_1993_2026_EXPERIMENTAL.csv",
+      "product": "sectorial.nacional",
+      "sha256": "a8287b090c31bce1ecb58d03746ed0a736500bd7f198733779e28e927e2a4370",
+      "status": "INVESTIGACION_CONGELADA",
+      "universe": "completo/proxy representado"
+    }
+  ],
+  "publication_authorized": false,
+  "real_month_update": "NOT_TESTED",
+  "software_version": "2.2.21.dev0",
+  "status": "RESEARCH_SNAPSHOT_FROZEN_NON_OFFICIAL"
+}

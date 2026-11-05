@@ -327,29 +327,45 @@ def _finish(root: Path, folder: Path, *, make_simple: bool) -> int:
 # ----------------------------------------------------------------------------- graficos / verificar
 
 
-def _plots_tool():
-    path = Path(__file__).resolve().parents[2] / "tools" / "plots" / "graficar_entrega.py"
+def _audit_plots_tool():
+    """Load graficar_auditoria — reads quality products directly, no MANIFEST needed."""
+    path = Path(__file__).resolve().parents[2] / "tools" / "plots" / "graficar_auditoria.py"
     if not path.is_file():
-        raise FileNotFoundError(f"No encuentro la herramienta de gráficos: {path}")
-    spec = importlib.util.spec_from_file_location("graficar_entrega", path)
+        raise FileNotFoundError(f"No encuentro la herramienta de gráficos de auditoría: {path}")
+    spec = importlib.util.spec_from_file_location("graficar_auditoria", path)
     module = importlib.util.module_from_spec(spec)
-    sys.modules[spec.name] = module  # dataclasses look the module up by name
+    sys.modules[spec.name] = module
     spec.loader.exec_module(module)
     return module
 
 
 def command_graficos(root: Path, args: argparse.Namespace) -> int:
-    folder = _delivery_folder(root, args.carpeta)
-    argv = ["--carpeta", str(folder), "--formato", args.formato]
-    for flag, value in (("--solo", args.solo), ("--universo", args.universo), ("--departamentos", args.departamentos)):
-        if value:
-            argv += [flag, value]
-    if args.forzar:
-        argv.append("--forzar")
-    print(f"Dibujando {folder.name} ...")
-    code = _plots_tool().main(argv)
+    """Generate audit plots for all 33 territories and national.
+
+    Reads directly from the frozen quality products so no delivery MANIFEST
+    is required.  Output goes to datos/2_procesamiento/productos_congelados/
+    laboral/graficas_auditoria/ unless --carpeta overrides the source folder.
+    """
+    if args.carpeta:
+        productos = Path(args.carpeta)
+    else:
+        productos = root / "datos/2_procesamiento/productos_congelados/laboral"
+
+    salida = productos.parent / "graficas_auditoria"
+    if salida.exists() and not args.forzar:
+        print(
+            f"Ya existe {salida}. Use --forzar para regenerar.",
+            file=sys.stderr,
+        )
+        return 2
+    if salida.exists() and args.forzar:
+        import shutil as _shutil
+        _shutil.rmtree(salida)
+
+    print(f"Generando gráficas de auditoría desde {productos} ...")
+    code = _audit_plots_tool().run(productos, salida, dpi=args.formato == "pdf" and 150 or 100)
     if code == 0:
-        print(f"\nAbra {folder.with_name(folder.name + '_graficos') / 'INDICE.html'} en el navegador.")
+        print(f"\nGráficas en {salida}")
     return code
 
 

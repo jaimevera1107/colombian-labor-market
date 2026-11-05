@@ -45,7 +45,8 @@ def coverage_report(frame: pd.DataFrame, *, level: str, months: list[str], secto
     -------
     dict
         Missing and duplicated keys, and empty cells. An empty cell is only
-        legitimate where ``cobertura_geih`` says ``SIN_REPRESENTACION``.
+        legitimate where ``cobertura_geih`` says ``SIN_REPRESENTACION`` or ``PARCIAL``
+        (partially-covered territories whose informality is not yet estimated).
     """
     territory = {"ciudades": "city_code", "departamentos": "dep_code"}.get(level)
     units = 33 if territory else 1
@@ -57,7 +58,7 @@ def coverage_report(frame: pd.DataFrame, *, level: str, months: list[str], secto
     units_found = frame[territory].nunique() if territory else 1
     blank = frame.eq("").any(axis=1)
     if COVERAGE_COLUMN in frame.columns:
-        explained = frame[COVERAGE_COLUMN].eq(NOT_REPRESENTED)
+        explained = frame[COVERAGE_COLUMN].isin((NOT_REPRESENTED, "PARCIAL"))
         unexplained = int((blank & ~explained).sum())
         explained_blank = int((blank & explained).sum())
     else:

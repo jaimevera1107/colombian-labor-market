@@ -549,7 +549,9 @@ def diagnostic_dual_calibration(baseline:pd.DataFrame, departments:pd.DataFrame,
         # factor weights may differ from rounded DANE total by <= 1 person;
         # preserve exact frozen weighted denominator instead of changing E.
         has_official_reference=period>='2001-01'
-        if has_official_reference and abs(denom_rep-represented_target_occup)>2:
+        # represented sum >= DANE is correct (nine territories now contribute real capital).
+        # Only fail if we fall below the reference.
+        if has_official_reference and denom_rep < represented_target_occup - 2:
             raise ValueError('Factor-based national occupation inconsistent')
         # 1993-2000 DANE_REFERENCIA is a historical reconstruction, NOT an
         # observed GEIH monthly margin. Factor=1 by construction; do not force

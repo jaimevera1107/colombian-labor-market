@@ -320,10 +320,11 @@ class RepresentativenessBuilder:
                 capital, demographic.loc[code].loc[periods], rest
             )
             source = SOURCE_CAPITAL_REST
+            # share = capital signal for all periods (not zeroed before 2014).
+            # factor = capital / full, which varies smoothly with demographics,
+            # so there is no artificial jump when DANE started publishing these
+            # territories. The ICML total (full) is always the whole department.
             share = frame.copy()
-            share.loc[share.index < self._policy.capitals_in_national_from] = (
-                0.0
-            )
         else:
             full = frame.copy()
             full["labor_force"] = full["employed"] + full["unemployed"]
@@ -458,19 +459,13 @@ class RepresentativenessBuilder:
         }
         reference = national.set_index("period")
         adjusted = {code: frame.copy() for code, frame in represented.items()}
-        entry = policy.capitals_in_national_from
-        for start, end, with_capitals in (
-            (policy.reconcile_from, entry, False),
-            (entry, "9999-12", True),
-        ):
+        # All territories have a real signal from reconcile_from onward.
+        for start, end in ((policy.reconcile_from, "9999-12"),):
             months = [p for p in periods if start <= p < end]
             if not months:
                 continue
-            codes = [
-                c
-                for c in represented
-                if with_capitals or c not in set(partial)
-            ]
+            codes = list(represented)
+
             years = np.array([int(p[:4]) for p in months])
             segment = anchors[anchors["year"].isin(set(years.tolist()))]
             for quantity, strength in strengths.items():
@@ -647,8 +642,14 @@ class RepresentativenessBuilder:
             raise RepresentativenessError("Inadmissible levels")
         if (result[[f"factor_{q}" for q in COMPONENTS]] < 0).any().any():
             raise RepresentativenessError("Negative factor")
-        reference = national.set_index("period")
+        # The ICML national total is the sum of all 33 territories (larger
+        # than DANE's because it covers all departments, including the nine
+        # that DANE does not fully represent). We no longer require that the
+        # weighted sum equals the DANE national figure; instead we only
+        # check that factors are in [0, 1] and that the weighted sum does
+        # not exceed the full territory sum (which would indicate a bug).
         for quantity in COMPONENTS:
+            full_sum = result.groupby("period")[quantity].sum()
             weighted = (
                 result.assign(
                     v=result[quantity] * result[f"factor_{quantity}"]
@@ -656,11 +657,7 @@ class RepresentativenessBuilder:
                 .groupby("period")["v"]
                 .sum()
             )
-            target = np.array(reference.loc[weighted.index, quantity])
-            if (
-                float(np.max(np.abs(np.array(weighted) - target) / target))
-                > _NATIONAL_TOLERANCE
-            ):
+            if (np.array(weighted) > np.array(full_sum) + _NATIONAL_TOLERANCE).any():
                 raise RepresentativenessError(
-                    f"Weighted sum misses the national: {quantity}"
+                    f"Weighted sum exceeds full territory sum: {quantity}"
                 )

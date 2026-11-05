@@ -63,17 +63,27 @@ En PowerShell:
 .\icml estado
 ```
 
-El comando identifica los anexos disponibles, la base publicada y el siguiente paso. El repositorio incluye una entrega con corte `2026-08`, junto con sus gráficos.
+El comando identifica los anexos disponibles, la base publicada y el siguiente paso.
 
-### 3. Ejecutar el flujo de prueba
+### 3. Ejecutar el flujo completo
 
-Para verificar la reconstrucción hasta julio de 2026, actualizar con agosto y producir gráficos:
+El repositorio distribuye el código y los insumos fuente; los productos se generan localmente. Para reconstruir desde cero hasta julio, actualizar con agosto y producir los gráficos:
 
 ```powershell
-.\icml consolidar --desde-cero --hasta 2026-07
+.\icml consolidar --desde-cero --hasta 2026-07 --si
 .\icml actualizar
 .\icml graficos
 ```
+
+O equivalentemente con `python -m icml` (útil si se trabaja directamente sobre el paquete sin el wrapper):
+
+```bash
+python -m icml consolidar --root . --hasta 2026-07 --desde-cero --si
+python -m icml actualizar --root .
+python -m icml graficos --root .
+```
+
+> **Nota:** `actualizar` no tiene flag `--si`; corre directo sin pedir confirmación.
 
 Este flujo **reconstruye y publica** una base. Sigue previamente las precauciones y las comprobaciones indicadas en [PRUEBAS.md](PRUEBAS.md). Si solo quieres inspeccionar lo que haría un comando, utiliza `--simulacro`.
 
@@ -204,7 +214,7 @@ Los archivos temporales de Excel con prefijo `~$` se ignoran. Las herramientas `
 └── legacy/                       # Referencias RC1 y material histórico
 ```
 
-El proyecto distribuido incluye código fuente, pruebas, documentación, anexos de entrada, parámetros congelados, referencias de validación RC1, la última entrega completa y sencilla, gráficos y bitácoras de trabajo. La guía original describe aproximadamente **798 archivos y 650 MB**, con un archivo máximo de **35 MB**, sin Git LFS.
+El repositorio distribuye código fuente, pruebas, documentación, anexos de entrada y parámetros congelados. Los productos (entregas, gráficos, bases vigentes) se generan localmente al correr `icml consolidar`. El tamaño descargado es aproximadamente **100 MB**, sin Git LFS.
 
 Para comprobar la integridad de una copia descargada:
 

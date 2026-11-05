@@ -327,6 +327,18 @@ def _finish(root: Path, folder: Path, *, make_simple: bool) -> int:
 # ----------------------------------------------------------------------------- graficos / verificar
 
 
+def _plots_tool():
+    """Load graficar_entrega — full per-department and comparative dashboards."""
+    path = Path(__file__).resolve().parents[2] / "tools" / "plots" / "graficar_entrega.py"
+    if not path.is_file():
+        raise FileNotFoundError(f"No encuentro la herramienta de gráficos: {path}")
+    spec = importlib.util.spec_from_file_location("graficar_entrega", path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module  # dataclasses look the module up by name
+    spec.loader.exec_module(module)
+    return module
+
+
 def _audit_plots_tool():
     """Load graficar_auditoria — reads quality products directly, no MANIFEST needed."""
     path = Path(__file__).resolve().parents[2] / "tools" / "plots" / "graficar_auditoria.py"
@@ -340,12 +352,43 @@ def _audit_plots_tool():
 
 
 def command_graficos(root: Path, args: argparse.Namespace) -> int:
-    """Generate audit plots for all 33 territories and national.
+    """Generate full delivery dashboards (per department + comparatives).
 
-    Reads directly from the frozen quality products so no delivery MANIFEST
-    is required.  Output goes to datos/2_procesamiento/productos_congelados/
-    laboral/graficas_auditoria/ unless --carpeta overrides the source folder.
+    Uses graficar_entrega.py when a delivery with MANIFEST is available
+    (the full per-department + comparative dashboards including informality
+    and sectors).  Falls back to graficar_auditoria.py (TD/TO/TGP only)
+    when no compatible delivery exists.
     """
+    # Try the full delivery tool first
+    try:
+        folder = _delivery_folder(root, args.carpeta)
+        import json as _json
+        manifest = _json.loads((folder / "MANIFEST.json").read_text("utf-8"))
+        if "outputs" not in manifest:
+            raise KeyError("outputs")
+        # Full delivery available — use the rich plot tool
+        argv = ["--carpeta", str(folder), "--formato", args.formato]
+        for flag, value in (
+            ("--solo", args.solo),
+            ("--universo", args.universo),
+            ("--departamentos", args.departamentos),
+        ):
+            if value:
+                argv += [flag, value]
+        if args.forzar:
+            argv.append("--forzar")
+        print(f"Dibujando {folder.name} ...")
+        code = _plots_tool().main(argv)
+        if code == 0:
+            print(
+                f"\nAbra {folder.with_name(folder.name + '_graficos') / 'INDICE.html'}"
+                " en el navegador."
+            )
+        return code
+    except (FileNotFoundError, KeyError, Exception):
+        pass
+
+    # Fallback: audit plots directly from frozen quality products
     if args.carpeta:
         productos = Path(args.carpeta)
     else:
@@ -353,17 +396,15 @@ def command_graficos(root: Path, args: argparse.Namespace) -> int:
 
     salida = productos.parent / "graficas_auditoria"
     if salida.exists() and not args.forzar:
-        print(
-            f"Ya existe {salida}. Use --forzar para regenerar.",
-            file=sys.stderr,
-        )
+        print(f"Ya existe {salida}. Use --forzar para regenerar.", file=sys.stderr)
         return 2
     if salida.exists() and args.forzar:
         import shutil as _shutil
         _shutil.rmtree(salida)
 
     print(f"Generando gráficas de auditoría desde {productos} ...")
-    code = _audit_plots_tool().run(productos, salida, dpi=args.formato == "pdf" and 150 or 100)
+    dpi = 150 if args.formato == "pdf" else 100
+    code = _audit_plots_tool().run(productos, salida, dpi=dpi)
     if code == 0:
         print(f"\nGráficas en {salida}")
     return code

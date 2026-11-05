@@ -19,3 +19,4 @@ Thumbs.db
 # Espacio temporal de cada recálculo (la carpeta existe, su contenido no)
 datos/2_procesamiento/_corridas/*
 !datos/2_procesamiento/_corridas/.gitkeep
+datos/2_procesamiento/productos_congelados/graficas_auditoria/

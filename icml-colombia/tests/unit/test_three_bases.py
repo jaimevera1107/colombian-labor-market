@@ -76,5 +76,5 @@ def test_corrupted_official_weighted_sum_hard_error():
     deps,cities,national=example()
     deps.loc[(deps.period=='2001-02')&(deps.dep_code==81),'factor_employed']=0.5
     deps.loc[(deps.period=='2001-02')&(deps.dep_code==81),'employed_represented']=45.0
-    with pytest.raises(QualityContractError,match='represented not equal DANE'):
+    with pytest.raises(QualityContractError,match='represented below DANE'):
         build_three_bases(deps,cities,national)

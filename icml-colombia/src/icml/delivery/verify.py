@@ -235,29 +235,45 @@ def verify_delivery(folder: Path) -> dict:
             }
         )
 
-    # 8. No nulls: every numeric cell in every delivered CSV must be finite.
-    # Total coverage means 33 territories × all months × all columns — no exceptions.
+    # 8. No nulls or zeros in core columns: total coverage means every
+    # territory × every month × every column is present and positive.
+    # Columns that must be strictly positive (never null, never zero):
+    MUST_BE_POSITIVE = {
+        "laboral": ("employed", "unemployed", "inactive", "labor_force",
+                    "working_age", "population"),
+        "informalidad": ("employed", "labor_force", "working_age", "population"),
+    }
+    TEXT_COLS = (
+        "period", "dep_code", "city_code", "territory_id", "territory_name",
+        "territory_level", "national_type", "universe", "source", "sector_code",
+        "is_additive_member", "factor_reference_status", "factor_is_assumed",
+        "reference_status", "is_official_observation", "cobertura_geih",
+    )
     for entry in manifest["outputs"]:
         if not entry["path"].endswith(".csv"):
             continue
         frame = read_text_table(folder / entry["path"])
-        numeric_cols = [
-            c for c in frame.columns
-            if c not in ("period", "dep_code", "city_code", "territory_id",
-                         "territory_name", "territory_level", "national_type",
-                         "universe", "source", "sector_code", "is_additive_member",
-                         "factor_reference_status", "factor_is_assumed",
-                         "reference_status", "is_official_observation", "cobertura_geih")
-        ]
+        domain = entry["domain"]
+        # Null check: no numeric column may have nulls
+        numeric_cols = [c for c in frame.columns if c not in TEXT_COLS]
         null_counts = {
             c: int(frame[c].isnull().sum())
             for c in numeric_cols
             if c in frame.columns and frame[c].isnull().any()
         }
+        # Zero check: core population/labor columns must be strictly positive
+        zero_counts = {}
+        for c in MUST_BE_POSITIVE.get(domain, ()):
+            if c in frame.columns:
+                n = int((pd.to_numeric(frame[c], errors="coerce").fillna(0) <= 0).sum())
+                if n:
+                    zero_counts[c] = n
+        passed = len(null_counts) == 0 and len(zero_counts) == 0
         checks.append({
-            "check": f"no_nulls_{entry['universe']}_{entry['domain']}_{entry['level']}",
-            "passed": len(null_counts) == 0,
+            "check": f"no_nulls_or_zeros_{entry['universe']}_{domain}_{entry['level']}",
+            "passed": passed,
             "null_columns": null_counts,
+            "zero_columns": zero_counts,
         })
 
     report = {

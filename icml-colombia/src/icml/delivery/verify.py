@@ -235,6 +235,31 @@ def verify_delivery(folder: Path) -> dict:
             }
         )
 
+    # 8. No nulls: every numeric cell in every delivered CSV must be finite.
+    # Total coverage means 33 territories × all months × all columns — no exceptions.
+    for entry in manifest["outputs"]:
+        if not entry["path"].endswith(".csv"):
+            continue
+        frame = read_text_table(folder / entry["path"])
+        numeric_cols = [
+            c for c in frame.columns
+            if c not in ("period", "dep_code", "city_code", "territory_id",
+                         "territory_name", "territory_level", "national_type",
+                         "universe", "source", "sector_code", "is_additive_member",
+                         "factor_reference_status", "factor_is_assumed",
+                         "reference_status", "is_official_observation", "cobertura_geih")
+        ]
+        null_counts = {
+            c: int(frame[c].isnull().sum())
+            for c in numeric_cols
+            if c in frame.columns and frame[c].isnull().any()
+        }
+        checks.append({
+            "check": f"no_nulls_{entry['universe']}_{entry['domain']}_{entry['level']}",
+            "passed": len(null_counts) == 0,
+            "null_columns": null_counts,
+        })
+
     report = {
         "run_id": manifest["run_id"],
         "status": "PASS" if all(c["passed"] for c in checks) else "FAIL",

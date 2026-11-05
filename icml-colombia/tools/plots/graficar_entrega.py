@@ -319,9 +319,10 @@ def plot_dashboard(
     informal = series(frames, universe, "informalidad", level, code)
     sector = series(frames, universe, "sectorial", level, code)
     labor = labor.copy()
+    # Mark periods with no GEIH representation for shading only —
+    # do NOT blank the data. All 33 territories cover the full
+    # 1993-to-present range in both universes.
     unrepresented = labor["PET"].fillna(0) <= 0
-    for column in ("PET", "PEA", "Ocupados", "Desocupados", "Inactivos", "Poblacion"):
-        labor.loc[unrepresented, column] = np.nan
     first, last = labor["Fecha"].min(), labor["Fecha"].max()
 
     fig = plt.figure(figsize=(12.5, 13.2), layout="constrained")

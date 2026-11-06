@@ -53,6 +53,15 @@ CANDIDATE_FILES = {
     "sectorial.departamental": "sectorial/sectorial_departamental_1993_2026_EXPERIMENTAL.csv",
     "sectorial.nacional": "sectorial/sectorial_nacional_1993_2026_EXPERIMENTAL.csv",
 }
+#: Equivalence tolerances of the reference comparison. They separate two
+#: things: floating-point noise between BLAS/solver builds (hundredths of a
+#: person, 1e-9 in a rate; different numpy/scipy/scikit-learn releases) and
+#: a different estimate (thousands of persons; a different xgboost major
+#: version changes the ten modelled territories). The first is accepted, the
+#: second is a mismatch that requires a deliberate refreeze.
+COUNT_TOLERANCE = 0.1
+RATE_TOLERANCE = 1e-6
+
 KEYS = {
     "labor.ciudades": ["period", "city_code"],
     "labor.departamentos": ["period", "dep_code"],
@@ -279,7 +288,8 @@ def compare_candidate(current: dict[str, Path], candidates: dict[str, Path]) -> 
     """Strict key/schema/categorical/numeric comparison of eight products.
 
     Numerical differences from serialization/solvers are allowed only within
-    predeclared absolute tolerances (counts: 1e-3 person, rates/shares: 1e-8).
+    predeclared absolute tolerances (``COUNT_TOLERANCE`` persons,
+    ``RATE_TOLERANCE`` for rates, shares and factors).
     This comparison NEVER promotes candidate data to the immutable vintage.
     """
     summary: dict[str, Any] = {}
@@ -347,7 +357,7 @@ def compare_candidate(current: dict[str, Path], candidates: dict[str, Path]) -> 
                 is_person_residual = col.lower().endswith('_residual_share')
                 strict_rate = (not is_person_residual and any(t in col.lower() for t in
                     ("rate", "share", "proportion", "probability", "factor")))
-                tolerance = 1e-8 if strict_rate else 1e-3
+                tolerance = RATE_TOLERANCE if strict_rate else COUNT_TOLERANCE
                 tolerances[col] = tolerance
                 if max_diff > tolerance:
                     numeric_exceeds[col] = max_diff

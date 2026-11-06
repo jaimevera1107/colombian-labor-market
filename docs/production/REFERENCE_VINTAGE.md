@@ -24,6 +24,18 @@ They are **not** the published base (`vigente/`) and not a delivery: those are g
 
 The frozen products were refreshed in the "Caso A" commits, and then one more code change (the straight GEIH factor of the nine partial territories, commit `92a9465`) changed the `*_represented` and `factor_*` columns of the labor departments, and through them the GEIH-universe informality and the sectoral proxies. Five of the eight frozen products no longer matched what the code produced; the gate reported `eight_product_equivalence_passed: false` on every run and nobody saw it because the status still counted as clean. The sectoral bundle was older still (trained on the labor base before 2.4.0). 2.5.0 refroze everything from one recompute.
 
+## Which dependency versions reproduce it
+
+The frozen products were measured against fresh recomputes under different dependency versions (2.6.0):
+
+| Environment | Result |
+|---|---|
+| the locked environment (`requirements/lock-py312.txt`) | 8/8 products byte-identical |
+| latest numpy, scipy, scikit-learn, pandas with **xgboost 3.1.x** | differences of at most 0.01 persons and 1e-9 in rates: floating-point noise, accepted by the gate |
+| latest everything with **xgboost 3.4** | the ten modelled territories change: up to 38,900 persons of departmental PET, 1,050 of national labor force, 1.3 pp of sectoral share |
+
+That is why `pyproject.toml` caps `xgboost>=3.1,<3.2` and leaves the other ranges open, and why the comparison tolerances are 0.1 persons and 1e-6 for rates. Raising the xgboost cap is a methodological change: recompute, read the differences, refreeze.
+
 ## When and how to refreeze
 
 Refreeze whenever a change is adopted that alters any number at the frozen cutoff: a methodological change, a new frozen parameter, a fix in a stage. Never for a layout, naming or performance change (those must leave the numbers byte-identical; prove it with `tools/compare_runs.py`).

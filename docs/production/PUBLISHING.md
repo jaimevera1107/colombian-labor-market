@@ -21,7 +21,7 @@ Earlier deliveries are never deleted locally: the latest one is the reference of
 
 ## Continuous integration
 
-`.github/workflows/tests.yml` installs the pinned versions, runs the test suite and the dry run of the monthly plan (`icml recalc --root . --dry-run`) on every push and pull request. The RC1 golden references are not in the repository, so the 46 golden regression tests skip automatically.
+`.github/workflows/tests.yml` installs the package from PyPI on Python 3.11, 3.12 and 3.13 (job `tests`) and also in the locked environment of the reference vintage (job `reproducible`); both run the test suite, and `tests` runs the dry run of the monthly plan (`icml recalc --root . --dry-run`), on every push and pull request. The RC1 golden references are not in the repository, so the 46 golden regression tests skip automatically.
 
 ## License
 

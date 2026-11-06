@@ -38,7 +38,7 @@ def test_categorical_drift_fails_gate(tmp_path):
 
 def test_large_numeric_or_rate_drift_fails_gate(tmp_path):
     original=_baseline(); changed=original.copy()
-    changed.loc[0,'employed']+=0.01
+    changed.loc[0,'employed']+=1.0        # a person: another estimate, not noise
     changed.loc[0,'unemployment_rate']+=0.00001
     old,new=_pair(tmp_path,original,changed)
     result=compare_candidate(old,new)['labor.nacionales']

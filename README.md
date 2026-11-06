@@ -8,7 +8,7 @@
 
   [![Version](https://img.shields.io/badge/version-2.6.0-183153?style=flat-square)](CHANGELOG.md)
   ![Cutoff](https://img.shields.io/badge/cutoff-2026--08-536779?style=flat-square)
-  ![Python](https://img.shields.io/badge/Python-3.12-376994?style=flat-square)
+  ![Python](https://img.shields.io/badge/Python-3.11%2B-376994?style=flat-square)
   [![License](https://img.shields.io/badge/license-MIT-536779?style=flat-square)](LICENSE)
   ![Use](https://img.shields.io/badge/use-research-687687?style=flat-square)
 
@@ -44,7 +44,7 @@ The repository holds the code, the inputs, the frozen processing parameters, the
 
 ### 1. Prepare the environment
 
-**Python 3.12** is required. From the project root, run the installer:
+**Python 3.11 or later.** From the project root, run the installer:
 
 | System | Install | Example |
 |:--|:--|:--|
@@ -52,7 +52,9 @@ The repository holds the code, the inputs, the frozen processing parameters, the
 | Windows · CMD | double-click `install.bat` | `icml status` |
 | Linux / macOS | `./install.sh` | `./icml.sh status` |
 
-The installer creates `.venv` with the pinned dependency versions. **You do not need to activate the environment to use the `icml` shortcut.**
+The installer creates `.venv` and installs ICML like any library: `pip install -e ".[dev]"`, with every dependency (including `tempdisagg`) resolved from PyPI within the ranges declared in `pyproject.toml`. **You do not need to activate the environment to use the `icml` shortcut.**
+
+To reproduce the exact environment the reference vintage was frozen with (Python 3.12, versions pinned in `requirements/lock-py312.txt`), run `./install.sh --locked` or `install.bat --locked`. The eight frozen products are the same under both environments (see CHANGELOG 2.6.0).
 
 ### 2. Check the status
 
@@ -197,8 +199,8 @@ Excel lock files (`~$` prefix) are ignored. `icml recalc` and `icml delivery` re
 ├── README.md, TESTING.md, CHANGELOG.md, LICENSE
 ├── install.sh / install.bat        # create .venv with the pinned versions
 ├── icml.sh / icml.bat              # run icml without activating .venv
-├── pyproject.toml, requirements/   # package and locked dependencies
-├── vendor/                         # vendored wheel (tempdisagg)
+├── pyproject.toml                  # package metadata and dependency ranges
+├── requirements/                   # locked environment of the reference vintage (optional, --locked)
 ├── SHA256SUMS                      # hash of every versioned file (icml checksums)
 ├── configs/                        # stage configurations of the reference vintage (rc1) and the golden catalog
 ├── src/icml/                       # the package (see docs/production/ARCHITECTURE.md)
@@ -220,7 +222,7 @@ sha256sum -c SHA256SUMS      # Linux / macOS
 icml checksums               # any system with Python
 ```
 
-The standard installer does not include `torch`; three tests of the informality MLP experiment need it. For that environment use `requirements/lock-py312-ml.txt`.
+The standard installer does not include `torch`; three tests of the informality MLP experiment need it: `pip install -e ".[ml]"`.
 
 ## Publishing and backups
 

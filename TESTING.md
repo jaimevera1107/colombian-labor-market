@@ -4,9 +4,9 @@ The repository is **complete**: code, data, frozen references, and everything ne
 
 ## 0. Install (once)
 
-1. Install **Python 3.12**.
+1. Install **Python 3.11 or later**.
 2. Clone the repository and enter its folder.
-3. Run the installer (needs internet and a few minutes; it creates `.venv` with the exact versions):
+3. Run the installer (needs internet and a few minutes; it creates `.venv` and installs the package from PyPI; add `--locked` for the exact pinned environment):
    * Linux or macOS: `./install.sh`
    * Windows: double-click `install.bat`
 4. Check:

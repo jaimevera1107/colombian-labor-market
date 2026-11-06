@@ -12,8 +12,9 @@ def test_departmental_residual_share_is_a_count_in_people(tmp_path):
         'unemployment_rate':.209}]).to_csv(b,index=False)
     report = compare_candidate({'labor.departamentos':a}, {'labor.departamentos':b})['labor.departamentos']
     assert report['status']=='EQUIVALENT_WITHIN_TOLERANCES'
-    assert report['numeric_absolute_tolerances']['unemployed_residual_share']==1e-3
-    assert report['numeric_absolute_tolerances']['unemployment_rate']==1e-8
+    from icml.operations.integral import COUNT_TOLERANCE, RATE_TOLERANCE
+    assert report['numeric_absolute_tolerances']['unemployed_residual_share']==COUNT_TOLERANCE
+    assert report['numeric_absolute_tolerances']['unemployment_rate']==RATE_TOLERANCE
 
 
 def test_dimensionless_rate_still_fails_on_drift(tmp_path):

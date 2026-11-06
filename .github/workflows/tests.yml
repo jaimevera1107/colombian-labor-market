@@ -8,26 +8,46 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
           cache: pip
-          cache-dependency-path: requirements/lock-py312.txt
 
-      - name: Install (pinned versions)
+      - name: Install (like any library, from PyPI)
         run: |
-          python -m pip install -U pip setuptools wheel
-          python -m pip install --no-deps ./vendor/tempdisagg-0.6.3-py3-none-any.whl
-          python -m pip install -r requirements/lock-py312.txt
-          python -m pip install --no-deps -e .
+          python -m pip install -U pip
+          python -m pip install -e ".[dev]"
 
-      - name: Tests, with the RC1 references
+      - name: Tests
         env:
-          ICML_GOLDEN_DIR: ""  # RC1 references removed with legacy/; tests skip automatically
+          ICML_GOLDEN_DIR: ""  # RC1 references are not in the repository; golden tests skip
         run: python -m pytest -q
 
       - name: The monthly plan runs on the repository data
         run: python -m icml recalc --root . --dry-run
+
+  reproducible:
+    # The exact environment the reference vintage was frozen with.
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements/lock-py312.txt
+      - name: Install the locked environment
+        run: |
+          python -m pip install -U pip
+          python -m pip install -r requirements/lock-py312.txt
+          python -m pip install --no-deps -e .
+      - name: Tests
+        run: python -m pytest -q

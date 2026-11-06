@@ -641,26 +641,30 @@ def run_integral(root: Path, output: Path, *, mode: str = "verify",
             else ["informality_H5_H6_H9", "sectoral_H16"])
         cross_ok = report["candidate_cross_audit"]["status"] == "PASS"
         report["cutoff"] = ACTIVE_CUTOFF
-        if splice_cfg.enabled or labor_change_from:
-            # The products differ from the frozen ones before the break month
-            # by design; the internal coherence of the eight is what decides,
-            # and the exact scope of the difference is checked by comparing
-            # the candidate against the unspliced run.
-            report["reference_equivalence"] = "DIFFERS_BY_DESIGN_BEFORE_" + (
-                splice_cfg.break_month if splice_cfg.enabled else labor_change_from)
-            report["status"] = (
-                "RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_WITH_SPLICES" if cross_ok
-                else "RECOMPUTED_BUT_CROSS_AUDIT_FAILED")
-        elif ACTIVE_CUTOFF != FROZEN_CUTOFF:
+        if ACTIVE_CUTOFF != FROZEN_CUTOFF:
             # Another cutoff is a new vintage: it is not expected to match the
             # frozen August products (months from 2021 are re-identified), so
             # the reference comparison is informative, and what decides is
             # the internal coherence of the eight products.
             report["reference_equivalence"] = "NOT_APPLICABLE_DIFFERENT_VINTAGE"
-            report["cutoff"] = ACTIVE_CUTOFF
             report["status"] = (
                 "RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_NEW_VINTAGE" if cross_ok
                 else "RECOMPUTED_BUT_CROSS_AUDIT_FAILED")
+        elif splice_cfg.enabled or labor_change_from:
+            # The frozen products are themselves the spliced vintage (since
+            # 2.4.0 they are regenerated with the adopted method), so at the
+            # frozen cutoff the candidate has to reproduce them. A mismatch
+            # means the code or the inputs changed after the last freeze:
+            # the products must be refrozen deliberately, never overwritten
+            # in silence. The splice-vs-unspliced comparison stays
+            # informative about the scope of the method.
+            report["reference_equivalence"] = (
+                "REPRODUCES_FROZEN_SPLICED_VINTAGE" if report["eight_product_equivalence_passed"]
+                else "FROZEN_VINTAGE_MISMATCH_REFREEZE_REQUIRED")
+            report["status"] = (
+                "RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_WITH_SPLICES"
+                if cross_ok and report["eight_product_equivalence_passed"]
+                else "RECOMPUTED_BUT_CROSS_AUDIT_OR_REFERENCE_EQUIVALENCE_FAILED")
         else:
             report["status"] = (
                 ("RECOMPUTED_ALL_EIGHT_AUDITED" if mode == "recompute"

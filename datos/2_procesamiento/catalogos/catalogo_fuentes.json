@@ -166,7 +166,7 @@
     },
     {
       "path": "datos/2_procesamiento/productos_congelados/laboral/departamentos.csv",
-      "sha256": "ff1ea47a8ae3e8369ddf3a4d778c946b3e6b7b3bfcfb9a77fb459fdeb04f6888",
+      "sha256": "c01af198fe8f87e574fafd751683996c055b2c9d2ff7c876d13da85160efb50c",
       "type": "laboral_product_frozen"
     },
     {

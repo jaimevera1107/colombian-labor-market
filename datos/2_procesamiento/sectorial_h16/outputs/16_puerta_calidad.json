@@ -8,10 +8,10 @@
   "ensemble_alpha_xgb": 0.5,
   "predefined_alpha_grid_logo_mae": {
     "0.0": 1.235527496169638,
-    "0.25": 1.1762819393805677,
-    "0.5": 1.1582740346295008,
-    "0.75": 1.1826326250286805,
-    "1.0": 1.2481256462815842
+    "0.25": 1.1771217423195304,
+    "0.5": 1.1597559346696602,
+    "0.75": 1.1856755749512364,
+    "1.0": 1.251180569953802
   },
   "original38_recovered": true,
   "original38_model_exact_reproduction": false,
@@ -22,14 +22,14 @@
   "n_months": 404,
   "n_sectors": 15,
   "n_departments": 33,
-  "max_monthly_dept_closure_people": 2.927379682660103e-05,
+  "max_monthly_dept_closure_people": 2.9198825359344482e-05,
   "max_monthly_national_closure_people": 2.7939677238464355e-09,
-  "max_adjustment_vs_monthly_prior_pp": 5.700152669735703,
-  "max_backcast_sensitivity_pp_vs_12year_reference": 23.144753800788788,
-  "geih_annual_mae_pp": 0.2034263950386628,
-  "geih_annual_max_pp": 2.973155616616774,
-  "bogota_geih_annual_mae_pp": 0.09239774647705834,
-  "bogota_model_external_pre_anchor_mae_pp": 1.8729468251698864,
+  "max_adjustment_vs_monthly_prior_pp": 5.723641693973821,
+  "max_backcast_sensitivity_pp_vs_12year_reference": 23.029511206868207,
+  "geih_annual_mae_pp": 0.20343138345484413,
+  "geih_annual_max_pp": 2.985982758376085,
+  "bogota_geih_annual_mae_pp": 0.09196717843702523,
+  "bogota_model_external_pre_anchor_mae_pp": 1.8658609804892219,
   "official_annual_exactly_imposed": false,
   "national_complete_monthly_exactly_constrained": true,
   "geih_represented_national_monthly_not_forced": true,
@@ -51,15 +51,15 @@
     {
       "model": "ensamble_h15_gdp_xgb38",
       "test_protocol": "LOGO_2015_2024",
-      "mae_pp": 1.1582740346295006,
-      "max_pp": 20.97400540248261,
+      "mae_pp": 1.1597559346696604,
+      "max_pp": 20.965995371279288,
       "n": 3220
     },
     {
       "model": "ensamble_h15_gdp_xgb38",
       "test_protocol": "LOGO_2025_HELD_OUT",
-      "mae_pp": 1.2673400633197929,
-      "max_pp": 17.093562875369475,
+      "mae_pp": 1.2680443873550402,
+      "max_pp": 16.914966910430042,
       "n": 322
     },
     {
@@ -79,43 +79,43 @@
     {
       "model": "ridge_original37_sin_id_gdp",
       "test_protocol": "LOGO_2015_2024",
-      "mae_pp": 1.2435796549774194,
-      "max_pp": 20.314349474884636,
+      "mae_pp": 1.2421467593049051,
+      "max_pp": 20.341455089089084,
       "n": 3220
     },
     {
       "model": "ridge_original37_sin_id_gdp",
       "test_protocol": "LOGO_2025_HELD_OUT",
-      "mae_pp": 1.329983551710142,
-      "max_pp": 14.552347217878925,
+      "mae_pp": 1.3282917789996895,
+      "max_pp": 14.536116400739502,
       "n": 322
     },
     {
       "model": "ridge_original38_gdp",
       "test_protocol": "LOGO_2015_2024",
-      "mae_pp": 1.2722182773162207,
-      "max_pp": 20.03160812442713,
+      "mae_pp": 1.2708301968292353,
+      "max_pp": 20.061184734284943,
       "n": 3220
     },
     {
       "model": "ridge_original38_gdp",
       "test_protocol": "LOGO_2025_HELD_OUT",
-      "mae_pp": 1.3627917257938984,
-      "max_pp": 14.555978859354003,
+      "mae_pp": 1.3613110758663645,
+      "max_pp": 14.53981599188885,
       "n": 322
     },
     {
       "model": "xgb14_original38_gdp",
       "test_protocol": "LOGO_2015_2024",
-      "mae_pp": 1.2481256462815842,
-      "max_pp": 21.453982416202976,
+      "mae_pp": 1.251180569953802,
+      "max_pp": 21.437962353796337,
       "n": 3220
     },
     {
       "model": "xgb14_original38_gdp",
       "test_protocol": "LOGO_2025_HELD_OUT",
-      "mae_pp": 1.308731748756986,
-      "max_pp": 14.856854172451389,
+      "mae_pp": 1.308059903891647,
+      "max_pp": 15.142278881111547,
       "n": 322
     }
   ]

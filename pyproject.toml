@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "icml"
-version = "2.4.0"
+version = "2.5.0"
 description = "Reconstruction of subnational labor market indicators for Colombia (ICML 2.0)."
 readme = "README.md"
 requires-python = ">=3.11,<3.16"

@@ -39,7 +39,7 @@ Cualquiera de estos funciona; no hace falta renombrar lo que baja del DANE:
 
 1. Se deja el anexo nuevo en `datos/1_ingesta/` (en la carpeta que corresponda, o
    incluso suelto: se busca por nombre en todo el árbol).
-2. `python -m icml recalcular --root . --simulacro` muestra el corte detectado.
+2. `python -m icml recalc --root . --dry-run` muestra el corte detectado.
 
 | Situación | Resultado |
 |---|---|

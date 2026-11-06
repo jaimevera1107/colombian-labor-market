@@ -189,14 +189,14 @@ def test_revision_of_frozen_years_blocks_with_a_clear_message():
     blocked = {"status": "BLOCKED", "n_revisions": 3}
     plan = _plan(observation_checks=(blocked,))
     assert plan["status"] == "BLOQUEADO"
-    assert "3 cifras oficiales" in plan["blockers"][0]
-    assert "recálculo total" in plan["blockers"][0]
+    assert "3 official figures" in plan["blockers"][0]
+    assert "total recalculation" in plan["blockers"][0]
 
 
 def test_total_mode_needs_explicit_confirmation():
     unconfirmed = _plan("total")
     assert unconfirmed["status"] == "BLOQUEADO"
-    assert "--confirmar-total" in unconfirmed["blockers"][0]
+    assert "--confirm-total" in unconfirmed["blockers"][0]
     assert _plan("total", confirm_total=True)["status"] == "EJECUTAR"
 
 

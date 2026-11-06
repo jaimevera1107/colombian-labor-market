@@ -50,7 +50,7 @@ icml informality consolidate-features \
   --nationals insumos/laboral/nacionales.csv \
   --urban-informality informalidad/secuencia_v003/03_ciudades_33.csv \
   --population insumos/demografia/population_projections_legacy.csv \
-  --modeling-config icml-colombia/configs/rc1/modeling.toml \
+  --modeling-config configs/rc1/modeling.toml \
   --output informalidad/NUEVO_VINTAGE_VACIO
 ```
 

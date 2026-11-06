@@ -50,7 +50,7 @@ def _args(**kw) -> argparse.Namespace:
 
 
 def _plan(status: str, **extra) -> dict:
-    return {"mode": "x", "status": status, "frozen_years": "congelados hasta 2025", "inputs": {}, "blockers": [], **extra}
+    return {"mode": "x", "status": status, "frozen_years": "frozen through 2025", "inputs": {}, "blockers": [], **extra}
 
 
 class Calls:
@@ -253,11 +253,11 @@ def test_a_blocked_plan_is_an_action_for_the_user_not_a_crash(project, capsys, m
     _publish(project, "2026-07")
 
     def blocked(root, mode, **kw):
-        return {"plan": _plan("BLOQUEADO", blockers=["Se modificó un insumo existente"])}
+        return {"plan": _plan("BLOQUEADO", blockers=["An existing input was modified"])}
 
     monkeypatch.setattr("icml.recalculation.service.run_recalculation", blocked)
     assert cli.command_run(project, "update", _args()) == cli.EXIT_ACTION
-    assert "BLOCKED: Se modificó un insumo existente" in capsys.readouterr().out
+    assert "BLOCKED: An existing input was modified" in capsys.readouterr().out
 
 
 # ------------------------------------------------------------------ plots, verify, mistakes

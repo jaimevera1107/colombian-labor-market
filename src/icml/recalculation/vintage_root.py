@@ -286,7 +286,7 @@ def build_vintage_root(root: Path, cutoff: str, workdir: Path) -> dict:
             resealed[f"configs/rc1/{path.name}"] = len(hits)
     actions["resealed_manifests"] = resealed
     (work / "RAIZ_DE_CORTE.json").write_text(json.dumps(actions, indent=2, ensure_ascii=False) + "\n", "utf-8")
-    print(f"Raíz de {cutoff}: {len(actions['truncated'])} paneles recortados, "
-          f"{len(resealed)} manifiestos resellados -> {work}")
+    print(f"Vintage root for {cutoff}: {len(actions['truncated'])} panels cut, "
+          f"{len(resealed)} manifests resealed -> {work}")
     return actions
 

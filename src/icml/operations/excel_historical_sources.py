@@ -129,7 +129,7 @@ def extract_window_proxies(path: Path, cutoff: str = ACTIVE_CUTOFF) -> list[dict
             for metric in ('employed','inactive','pea','pet','population','unemployed'):
                 numbers = [data[metric].get(_col(k)) for k in range(start, start+length)]
                 if any(not isinstance(v, (float,int)) or not math.isfinite(v) or v <= 0 for v in numbers):
-                    raise ValueError(f'Invalid/missing year-móvil values {city} {year} {metric}')
+                    raise ValueError(f'Invalid/missing moving-year values {city} {year} {metric}')
                 values[metric] = (sum(numbers) / length) * 1000.0
             out.append(values)
     expected_rows = 32 * (last_year - 2020)

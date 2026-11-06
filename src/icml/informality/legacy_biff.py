@@ -1,8 +1,8 @@
-"""Lector conservador y autónomo de celdas BIFF8 (.xls OLE2) para anexos DANE.
+"""Conservative, self-contained BIFF8 (.xls OLE2) cell reader for DANE annexes.
 
-No evalúa fórmulas: devuelve únicamente resultados numéricos almacenados por Excel.
-Rechaza cifrado, formatos no soportados y lecturas truncadas. Complementa xlrd,
-no pretende reemplazar un motor Excel general.
+It evaluates no formulas: it returns only the numeric results stored by Excel.
+It rejects encryption, unsupported formats and truncated reads. It complements xlrd;
+it does not try to replace a general Excel engine.
 """
 from __future__ import annotations
 import struct
@@ -20,10 +20,10 @@ class _OLE:
  def __init__(self,path):
   self.data=Path(path).read_bytes()
   b=self.data
-  if b[:8]!=bytes.fromhex('d0cf11e0a1b11ae1'):raise InvalidLegacyWorkbook('No es un contenedor OLE2')
-  if b[28:30] != b'\xfe\xff':raise InvalidLegacyWorkbook('Orden de bytes OLE no soportado')
+  if b[:8]!=bytes.fromhex('d0cf11e0a1b11ae1'):raise InvalidLegacyWorkbook('Not an OLE2 container')
+  if b[28:30] != b'\xfe\xff':raise InvalidLegacyWorkbook('Unsupported OLE byte order')
   self.sec=1<<_u16(b,30);self.minisec=1<<_u16(b,32)
-  if self.sec not in (512,4096):raise InvalidLegacyWorkbook('Tamaño sector no soportado')
+  if self.sec not in (512,4096):raise InvalidLegacyWorkbook('Unsupported sector size')
   self.cutoff=_u32(b,56)
   self.dir_sid=_u32(b,48)
   self.mini_fat_sid=_u32(b,60)
@@ -56,7 +56,7 @@ class _OLE:
  def chain(self,sid,fat):
   seen=set()
   while sid not in (EOC,FREE):
-   if sid in seen or sid>=len(fat):raise InvalidLegacyWorkbook('Cadena FAT cíclica/inválida')
+   if sid in seen or sid>=len(fat):raise InvalidLegacyWorkbook('Cyclic/invalid FAT chain')
    seen.add(sid);yield sid;sid=fat[sid]
  def read_big(self,sid,size):
   b=b''.join(self.sector(i) for i in self.chain(sid,self.fat))
@@ -64,7 +64,7 @@ class _OLE:
   return b if size is None else b[:size]
  def stream(self,name):
   e=next((e for e in self.entries if e[0].casefold()==name.casefold() and e[1]==2),None)
-  if e is None:raise InvalidLegacyWorkbook(f'Flujo {name} no encontrado')
+  if e is None:raise InvalidLegacyWorkbook(f'Stream {name} not found')
   if e[3]>=self.cutoff:return self.read_big(e[2],e[3])
   b=b''.join(self.mini_stream[i*self.minisec:(i+1)*self.minisec] for i in self.chain(e[2],self.mini_fat))
   if len(b)<e[3]:raise InvalidLegacyWorkbook('Miniflujo truncado')
@@ -79,7 +79,7 @@ def _records(b,start=0,end=None):
   p+=n+4
 
 def _sst(segments):
- """SST con saltos CONTINUE, incluidos cambios de codificación en texto."""
+ """SST with CONTINUE breaks, including encoding changes inside a string."""
  class Parts:
   def __init__(self,p):self.parts=p;self.i=0;self.k=0
   def read(self,n):
@@ -102,7 +102,7 @@ def _sst(segments):
      continue
     width=2 if wide else 1
     available=(len(segment)-self.k)//width
-    if not available:raise InvalidLegacyWorkbook('Carácter UTF16 dividido entre registros')
+    if not available:raise InvalidLegacyWorkbook('UTF-16 character split across records')
     take=min(n,available);v=self.read(take*width)
     chunks.append(v.decode('utf-16le' if wide else 'latin-1','replace'));n-=take
    return ''.join(chunks)
@@ -140,7 +140,7 @@ def sheets(path):
   elif op==0x3c and in_sst:segments.append(b)
   elif in_sst:in_sst=False
   if op==0xa and sheet_meta:break
- if encrypted:raise InvalidLegacyWorkbook('Workbook cifrado no soportado')
+ if encrypted:raise InvalidLegacyWorkbook('Encrypted workbook not supported')
  strings=_sst(segments) if segments else []
  result={}
  for off,name,sheettype in sheet_meta:
@@ -159,11 +159,11 @@ def sheets(path):
     r,c=_u16(b),_u16(b,2);cells[(r,c)]=_rk(_u32(b,6))
    elif op==0xbd and len(b)>=6:
     r,c=_u16(b),_u16(b,2);last=_u16(b,len(b)-2)
-    if len(b)!=6*(last-c+1)+6:raise InvalidLegacyWorkbook('MULRK de tamaño inesperado')
+    if len(b)!=6*(last-c+1)+6:raise InvalidLegacyWorkbook('MULRK of unexpected size')
     for j in range(last-c+1):cells[(r,c+j)]=_rk(_u32(b,6+j*6))
    elif op==0x6 and len(b)>=20:
     r,c=_u16(b),_u16(b,2)
-    # Resultados no numéricos o pendientes se omiten: no ejecutar fórmulas.
+    # Non-numeric or pending results are skipped: formulas are never evaluated.
     if b[12:14]!=b'\xff\xff':cells[(r,c)]=struct.unpack_from('<d',b,6)[0]
    elif op==0x204 and len(b)>=9:
     r,c=_u16(b),_u16(b,2);chars=_u16(b,6);flag=b[8];size=2 if flag&1 else 1
@@ -174,7 +174,7 @@ def sheets(path):
    if op in (0x203,0xfd,0x27e,0xbd,0x6,0x204,0x205):
     maxrow=max(maxrow,r);maxcol=max(maxcol,c)
   # Files can include styling thousands of rows beyond populated cells; never pad to formatting dimensions.
-  if maxrow>65535 or maxcol>255:raise InvalidLegacyWorkbook('Dimensiones BIFF inválidas')
+  if maxrow>65535 or maxcol>255:raise InvalidLegacyWorkbook('Invalid BIFF dimensions')
   rows=[[None]*(maxcol+1) for _ in range(maxrow+1)]
   for (r,c),v in cells.items():rows[r][c]=v
   result[name]=rows

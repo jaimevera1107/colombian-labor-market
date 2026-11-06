@@ -1,7 +1,7 @@
-"""ICML H16: evaluación fiel de señales originales + matriz mensual conciliada.
+"""Territorial-sectoral predictor: faithful evaluation of the original signals and a reconciled monthly matrix.
 
-Resultados experimentales, NO series canónicas. Se evita mezclar cuotas
-GEIH anuales con niveles nacionales del universo completo como restricciones duras.
+Experimental results, NOT canonical series. Annual GEIH shares are never
+mixed with full-universe national levels as hard constraints.
 """
 from __future__ import annotations
 import argparse, hashlib, json, sys, warnings
@@ -21,8 +21,8 @@ from icml.domain.cutoff import LAST_YEAR, N_MONTHS
 SECTORS14=['A','B','C','D_E','F','G','H','I','J','K','L','M_N','O_P_Q','R_S_T_U']
 SECTORS15=SECTORS14+['NO_INFO']
 ALIAS={'D+E':'D_E','M+N':'M_N','O+P+Q':'O_P_Q','R+S+T+U':'R_S_T_U'}
-# Copiados del notebook original: 38 características, incluidas las dos
-# problemáticas para transferencia (dep_code numérico e informalidad vintage).
+# Copied from the original notebook: 38 features, including the two that are
+# problematic for transfer (numeric dep_code and vintage informality).
 ORIGINAL38=['dep_code','year','month','population','pet','pea','employed','unemployed','inactive','informals','formals',
  'employment_rate','unemployment_rate','participation_rate','inactivity_rate','informality_rate',
  'participation_rate_cluster','employment_rate_cluster','unemployment_rate_cluster','inactivity_rate_cluster',
@@ -31,8 +31,8 @@ ORIGINAL38=['dep_code','year','month','population','pet','pea','employed','unemp
  'unemployed_resid_cluster','unemployed_cluster_ratio','inactive_cluster_mean','inactive_resid_cluster',
  'inactive_cluster_ratio','population_cluster_mean','population_resid_cluster','population_cluster_ratio']
 assert len(ORIGINAL38)==38
-# El diccionario original repetía 50 (Meta) y 20 (Cesar): Python retiene
-# la última asignación. Estas reglas conservan explícitamente la semántica real.
+# The original dictionary repeated 50 (Meta) and 20 (Cesar): Python keeps the
+# last assignment. These rules preserve the effective semantics explicitly.
 GROUPS={
  5:'core_observed',8:'core_observed',11:'core_observed',25:'core_observed',76:'core_observed',
  13:'large_consistent',23:'large_consistent',68:'large_consistent',47:'large_consistent',
@@ -55,7 +55,7 @@ def load_labor_features(root):
  d=pd.read_csv(root/'inputs/departamentos.csv',usecols=['period','dep_code','employed','unemployed','inactive','labor_force','working_age','population'])
  d=d.rename(columns={'labor_force':'pea','working_age':'pet'})
  d['date']=pd.to_datetime(d.period+'-01');d['year']=d.date.dt.year;d['month']=d.date.dt.month
- if d[['dep_code','period']].duplicated().any() or len(d)!=33*N_MONTHS:raise ValueError('Panel ICML inválido')
+ if d[['dep_code','period']].duplicated().any() or len(d)!=33*N_MONTHS:raise ValueError('Invalid ICML panel')
  old=pd.read_csv(root/'inputs/informalidad_departamental_vintage_original_2007_2025.csv',usecols=['dep_code','date','employed','informals','formals','informality_rate'])
  old['date']=pd.to_datetime(old.date)
  old['informality_rate']=np.where(old.employed>0,old.informals/old.employed,np.nan)
@@ -79,12 +79,12 @@ def load_labor_features(root):
   d[v+'_cluster_mean']=base
   d[v+'_resid_cluster']=d[v]-base
   d[v+'_cluster_ratio']=d[v]/base.where(base>0)
- # En vez de hacer pasar información mensual por una observación anual,
- # se agregan explícitamente las variables (media de las 12 mensualidades).
+ # Instead of passing monthly information off as an annual observation,
+ # the variables are aggregated explicitly (mean of the 12 months).
  cols=[x for x in ORIGINAL38 if x not in ('dep_code','year')]+['informality_missing']
  annual=d.groupby(['dep_code','year'],as_index=False)[cols].mean()
  annual['year']=annual.year.astype(int)
- if len(annual)!=33*(LAST_YEAR-1992): # 1993..2026 = 34 años pero 2026 incompleto
+ if len(annual)!=33*(LAST_YEAR-1992): # 1993..2026 = 34 years, but 2026 is incomplete
   raise ValueError(f'Panel anual ICML incompleto: {len(annual)}')
  return annual,d
 
@@ -99,10 +99,10 @@ def training_panel(root,annual):
  official['sector_code']=official.sector_code.replace(ALIAS)
  mapping=pd.read_csv(root/'inputs/15_candidatos_anuales_33_territorios.csv',usecols=['department','dep_code']).drop_duplicates('dep_code')
  official['dep_key']=official.department.map(_norm);mapping['dep_key']=mapping.department.map(_norm)
- # Exactitud geográfica: nombres del archivo oficial, NUNCA asignación por orden.
+ # Geographic exactness: names from the official file, NEVER assignment by position.
  names=mapping[['dep_key','dep_code']].drop_duplicates('dep_key')
  official=official.merge(names,on='dep_key',validate='many_to_one',how='left')
- if official.dep_code.isna().any():raise ValueError('Departamento DANE sin código homologado')
+ if official.dep_code.isna().any():raise ValueError('DANE department without a homologated code')
  pv=official.pivot(index=['dep_code','year'],columns='sector_code',values='employed_thousands').reindex(columns=SECTORS14)
  if pv.shape!=(23*11,14) or pv.isna().any().any():raise ValueError(f'Anclas DANE incompletas: {pv.shape}')
  pv=pv.div(pv.sum(axis=1),axis=0).reset_index()
@@ -126,15 +126,15 @@ def vector(df,gdp_cols,include_dep):
 
 
 def estimator(family='ridge'):
- # Parámetros predefinidos, sin ajuste usando folds retenidos ni el año 2025.
+ # Predefined parameters; no tuning on held-out folds nor on the year 2025.
  if family=='ridge':
   return make_pipeline(SimpleImputer(strategy='median',keep_empty_features=True),StandardScaler(),Ridge(alpha=75.))
  if family=='xgb':
   base=XGBRegressor(n_estimators=100,max_depth=3,learning_rate=.06,subsample=.8,
        colsample_bytree=.8,random_state=42,n_jobs=1,tree_method='hist',
        multi_strategy='one_output_per_tree',objective='reg:squarederror')
-  # XGBoost nativo entrena un árbol por rama y boosting round; evita la
-  # sobrecarga de 14 wrappers sin cambiar la independencia de salidas.
+  # Native XGBoost trains one tree per branch and boosting round; it avoids the
+  # overhead of 14 wrappers without changing the independence of the outputs.
   return make_pipeline(SimpleImputer(strategy='median',keep_empty_features=True),StandardScaler(),base)
  raise ValueError(family)
 
@@ -185,7 +185,7 @@ def evaluate(oof,root):
  wide=src.pivot(index=idx,columns='model',values='predicted_share')
  if wide.isna().any().any() or len(wide)!=23*11*14:raise ValueError('El ensamble no tiene exactamente las mismas celdas')
  y=src.drop_duplicates(idx).set_index(idx).loc[wide.index,'observed_share']
- # Malla de ponderaciones predefinida; 2025 no interviene en su elección.
+ # Predefined weight grid; 2025 plays no part in its choice.
  grid=np.array([0.,0.25,0.5,0.75,1.])
  train=(wide.index.get_level_values('year')<=2024)
  loss={float(alpha):float(100*np.mean(np.abs((1-alpha)*wide['ridge_h15_gdp_baseline'].to_numpy()[train]
@@ -228,9 +228,9 @@ def annual_candidates(root,feature,obs,gdp_cols,chosen,alpha):
 
 
 def annual_target_table(root,cand,anchor_strength=0.8):
- # Se conservan las anclas GEIH como evidencia; su inyección es SUAVE y
- # solo para elaboración histórica, nunca en la evaluación fuera de muestra.
- # En producción, el número anual observado no se interpreta como cuota ICML completa.
+ # The GEIH anchors are kept as evidence; their injection is SOFT and only for
+ # the historical elaboration, never in the out-of-sample evaluation.
+ # In production the observed annual figure is not read as a full ICML share.
  obs=pd.read_csv(root/'inputs/official_sectors_2015_2025.csv')
  obs['sector_code']=obs.sector_code.replace(ALIAS)
  names=pd.read_csv(root/'inputs/15_candidatos_anuales_33_territorios.csv',usecols=['department','dep_code']).drop_duplicates('department')
@@ -239,8 +239,8 @@ def annual_target_table(root,cand,anchor_strength=0.8):
  if obs.dep_code.isna().any() or obs.dep_code.nunique()!=23:raise ValueError('Mapeo anclas DANE 23 departamentos incorrecto')
  obs['obs_share']=obs.employed_thousands/obs.groupby(['dep_code','year']).employed_thousands.transform('sum')
  obs['reference_source']='DANE_GEIH_DEPARTMENT_23_FROM_ORIGINAL_ICML'
- # Bogotá NO se usa para entrenar/seleccionar: la evidencia independiente H14
- # sí puede informar la reconstrucción histórica después de la evaluación.
+ # Bogotá is NOT used to train/select: the independent evidence may inform the
+ # historical reconstruction only after the evaluation.
  bg=pd.read_csv(root/'inputs/14_referencia_externa_Bogota_DANE_GEIH_2015_2024.csv')
  bg=bg.rename(columns={'group_code':'sector_code'})
  bg['obs_share']=bg.observed_share_pct/bg.groupby('year').observed_share_pct.transform('sum')
@@ -248,7 +248,7 @@ def annual_target_table(root,cand,anchor_strength=0.8):
  obs=pd.concat([obs[['dep_code','year','sector_code','obs_share','reference_source']],
              bg[['dep_code','year','sector_code','obs_share','reference_source']]],ignore_index=True)
  if obs.duplicated(['dep_code','year','sector_code']).any() or len(obs)!=(23*11+10)*14:
-  raise ValueError('Anclas duplicadas o cobertura errónea de Bogotá')
+  raise ValueError('Duplicated anchors or wrong Bogotá coverage')
  d=cand.merge(obs,on=['dep_code','year','sector_code'],how='left',validate='one_to_one')
  strengths=np.where(d.reference_source.eq('DANE_GEIH_BOGOTA_ANUARIO_2015_2024_INDEPENDENT'),1.0,anchor_strength)
  d['share_anchored']=np.where(d.obs_share.notna(),(1-strengths)*d.share_model+strengths*d.obs_share,d.share_model)
@@ -264,8 +264,8 @@ def ipf(seed,row_targets,col_targets,tol=1e-10,max_iter=2000):
  Rows = departamento ocupados ICML completos. Columns = total*cuotas H11.
  """
  rows=np.asarray(row_targets,float);cols=np.asarray(col_targets,float);x=np.asarray(seed,float).copy()
- if np.any(rows<0) or np.any(cols<0) or not np.isfinite(x).all():raise ValueError('Márgenes inválidos')
- if not np.isclose(rows.sum(),cols.sum(),rtol=1e-11,atol=0):raise ValueError('Márgenes incompatibles')
+ if np.any(rows<0) or np.any(cols<0) or not np.isfinite(x).all():raise ValueError('Invalid margins')
+ if not np.isclose(rows.sum(),cols.sum(),rtol=1e-11,atol=0):raise ValueError('Incompatible margins')
  if rows.sum()==0:return np.zeros_like(x),0
  positive=cols>1e-13
  x[:,~positive]=0.
@@ -278,7 +278,7 @@ def ipf(seed,row_targets,col_targets,tol=1e-10,max_iter=2000):
   if it%10==0:
    e=max(np.max(np.abs(x.sum(axis=1)-rows)),np.max(np.abs(x.sum(axis=0)-cols)))/max(rows.sum(),1)
    if e<tol:break
- else:raise RuntimeError('IPF no convergió')
+ else:raise RuntimeError('IPF did not converge')
  # correction exact row final, national tolerance enforced at scale ~1e-9
  return x,it+1
 
@@ -291,18 +291,18 @@ def month_curve(base,annual,month_info,national,first=1993,last=LAST_YEAR,half_l
  """
  dep_codes=sorted(base.dep_code.unique());depi={x:i for i,x in enumerate(dep_codes)}
  years=sorted(base.year.unique())
- if years[0]!=first or years[-1]!=last:raise ValueError('Años ocupados inesperados')
+ if years[0]!=first or years[-1]!=last:raise ValueError('Unexpected employment years')
  tab=annual.pivot(index=['dep_code','year'],columns='sector_code',values='share_anchored').reindex(columns=SECTORS14)
  if tab.isna().any().any():raise ValueError('Candidatos anuales incompletos')
  nat=national.pivot(index='period',columns='sector_code',values='sector_share').reindex(columns=SECTORS15)
- if nat.isna().any().any():raise ValueError('Composición nacional incompleta')
+ if nat.isna().any().any():raise ValueError('Incomplete national composition')
  nat.index=nat.index.astype(str)
  # aggregate national proportions of classified employment by year (unweighted month approximation).
  nn=nat[SECTORS14].copy();nn=nn.div(nn.sum(axis=1),axis=0)
  nn['year']=nn.index.str[:4].astype(int)
  annualnat=nn.groupby('year')[SECTORS14].mean()
  for dep in dep_codes:
-  if (dep,2015) not in tab.index:raise ValueError('Falta 2015 para empalme')
+  if (dep,2015) not in tab.index:raise ValueError('2015 is missing for the splice')
  share2015=tab.loc[(dep,2015)].to_numpy(float)
  nat15=annualnat.loc[2015].to_numpy(float)
  offset=np.log(np.maximum(share2015,1e-10)/np.maximum(nat15,1e-10))
@@ -330,7 +330,7 @@ def monthly_reconciliation(root,annual,month_info,output,save=True):
   base=pd.read_csv(root/'inputs/departamentos.csv',usecols=['period','dep_code','employed','employed_represented'])
  nat=pd.read_csv(root/'inputs/12_composicion_nacional_unificada_1993_2026.csv')
  if len(nat)!=N_MONTHS*15 or len(base)!=N_MONTHS*33:raise ValueError('Panel nacional/departamental incompleto')
- if np.any(nat.sector_share<0) or not np.isfinite(nat.sector_share).all():raise ValueError('Cuotas nacionales inválidas')
+ if np.any(nat.sector_share<0) or not np.isfinite(nat.sector_share).all():raise ValueError('Invalid national shares')
  dep_codes=sorted(base.dep_code.unique());sect=SECTORS15
  pb=base.pivot(index='period',columns='dep_code',values='employed').reindex(columns=dep_codes)
  pr=base.pivot(index='period',columns='dep_code',values='employed_represented').reindex(columns=dep_codes)
@@ -369,8 +369,8 @@ def monthly_reconciliation(root,annual,month_info,output,save=True):
 
 
 def backcast_sensitivity(root,annual,output):
- """Sensibilidad hipotética de persistencia 2015→1993, NO bandas de confianza.
- Reconciliar en muestras de frontera para no atribuir variaciones a cierres distintos.
+ """Hypothetical persistence sensitivity 2015→1993, NOT confidence bands.
+ Reconcile on the frontier samples so variations are not attributed to different closures.
  """
  base=pd.read_csv(root/'inputs/departamentos.csv',usecols=['period','dep_code','employed'])
  nat=pd.read_csv(root/'inputs/12_composicion_nacional_unificada_1993_2026.csv')
@@ -401,9 +401,9 @@ def backcast_sensitivity(root,annual,output):
  return resumen
 
 def annual_observation_audit(root,monthly,annual):
- # Las cuotas observadas se refieren a la ocupación clasificada en GEIH.
- # Las proxis se agregan ponderadas con el empleo representado por MES;
- # NO se confunden con promedios simples de doce cuotas.
+ # The observed shares refer to the employment classified in the GEIH.
+ # The proxies are aggregated weighted by the represented employment per MONTH;
+ # they are NOT confused with simple averages of twelve shares.
  m=monthly[monthly.sector_code!='NO_INFO'].copy();m['year']=m.period.str[:4].astype(int)
  m['pred_annual']=m.employed_represented_sector_proxy
  a=m.groupby(['dep_code','year','sector_code'],as_index=False).pred_annual.sum()
@@ -427,13 +427,13 @@ def main(root):
  bydep.to_csv(out/'16_metricas_departamentos.csv',index=False,lineterminator='\n')
  eligible=scores[scores.test_protocol=='LOGO_2015_2024'].sort_values(['mae_pp','model'])
  chosen=str(eligible.iloc[0]['model'])
- # No elegir un estimador comparándolo con el año 2025 reservado.
+ # Never choose an estimator by comparing it against the reserved year 2025.
  candidate=annual_candidates(root,features,observed,gdp_cols,chosen,alpha)
  anchored=annual_target_table(root,candidate)
  anchored.to_csv(out/'16_candidatos_anuales_2015_2025.csv',index=False,lineterminator='\n')
  monthly,qa=monthly_reconciliation(root,anchored,labor,out)
  sens=backcast_sensitivity(root,anchored,out)
- # Evaluación externa ANTES del anclaje: no confundir con ajuste a referencias.
+ # External evaluation BEFORE anchoring: not to be confused with fitting to references.
  bgre=pd.read_csv(root/'inputs/14_referencia_externa_Bogota_DANE_GEIH_2015_2024.csv')
  bgre=bgre.rename(columns={'group_code':'sector_code'})
  bgre['obs_share']=bgre.observed_share_pct/bgre.groupby('year').observed_share_pct.transform('sum')

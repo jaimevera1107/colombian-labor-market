@@ -1,3 +1,16 @@
+## 2.5.0 — Software design refactor (no methodological change)
+
+Numbers are unchanged: a full `rebuild --through 2026-07` followed by `update` produces the same bytes as 2.4.0, delivery by delivery (see the equivalence note in the pull request of this version). Everything below is layout, naming and language.
+
+- **One project at the root.** `icml-colombia/` is gone: `src/`, `tests/`, `tools/`, `configs/`, `docs/`, `requirements/` and `pyproject.toml` live at the root; one `README`, one `LICENSE`, one CI workflow. Distribution name `icml`.
+- **Modules named by function, not by milestone.** `sectoral_*.py` and `sectoral_predictive/` → `icml.sectoral`; `census_bridge.py` → `icml.census.bridge`; `operations/hNN_*.py` → `frozen_products`, `geih_intake`, `monthly_cycle`, `certification`, `excel_staging`, `excel_historical_sources`, `urban_annex`, `prepared_sources`, `informality_lineage`, `informality_regeneration`, `social_annex`, `historical_lineage`, `monthly_staging`.
+- **One CLI, in English.** `icml.cli` is a package with one module per command group and a handler per parser. Everyday commands: `status`, `rebuild`, `update`, `plots`, `verify`, `checksums` (`estado`, `consolidar --desde-cero`, `actualizar`, `graficos`, `verificar`); flags `--through`, `--yes`, `--dry-run`, `--no-simple`, `--folder`, `--only`, `--universe`, `--departments`, `--force`. `rebuild` always starts over and asks for confirmation when a base is published (`--yes` answers it). Expert commands: `recalc`, `delivery build|simple|verify`, `run`, `<stage> run`, `informality`, `sectoral`, `census-bridge`, `operations`, `golden`.
+- `icml.recalculation.service` holds the orchestration that used to live in the console module; `icml.layout` centralizes the shared paths; `icml.plots` (delivery dashboards, audit charts) replaces `tools/plots/` with a function API.
+- **Integrity.** `catalogo_fuentes.json` and the H9 manifest are resynchronized with the frozen products regenerated after 2.4.0 (commits 0a6f316..92a9465 had changed the CSVs without updating the hashes). `SHA256SUMS` now lists exactly the versioned files (517): `icml checksums` skips the folders the pipeline generates. The resume-mode audit of the integral run is `xfail`: the frozen sectoral stage predates the current labor vintage (methodological review pending).
+- **Removed:** `tools/legacy/`, the one-time migration and release scripts, `scripts/production/`, `docs/historico/`, two unreachable informality modules, the nested `.github/` workflows.
+- **Language.** Code, CLI, installers (`install.sh`/`install.bat`), README, TESTING and the operational docs are English. Persisted values (plan statuses, mode names, folder suffixes, delivery columns), the text inside the figures and the methodological write-ups stay in Spanish.
+- Tests: 640 passed, 138 skipped (RC1 golden references not in the repository), 1 xfailed.
+
 ## 2.4.0 — PET lineal y componentes de 1993-2000 restaurados (cambio metodológico)
 
 Restaura dos propiedades de la reconstrucción histórica que se perdieron al migrar las etapas, según la estimación

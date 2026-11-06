@@ -143,18 +143,18 @@ def recalculate(
         reached = detected["cutoff"]
         if reached is None:
             plan["blockers"].append(
-                "No hay un par completo de anexos (mercado laboral e informalidad del "
-                f"mismo mes) en {INGESTA}."
+                "There is no complete pair of annexes (labor market and informality of "
+                f"the same month) in {INGESTA}."
             )
         elif reached > cutoff:
             plan["blockers"].append(
-                f"Los anexos llegan hasta {reached}, pero esta corrida calcula hasta {cutoff}. "
-                "Procesar un mes posterior a la vintage congelada exige extender el puente "
-                "censal y los priors del MLP a meses nuevos, y esa regla aún no está definida."
+                f"The annexes reach {reached}, but this run computes through {cutoff}. "
+                "Processing a month after the frozen vintage requires extending the census "
+                "bridge and the MLP priors to new months, and that rule is not defined yet."
             )
         elif reached < cutoff:
             plan["blockers"].append(
-                f"Faltan los anexos de {cutoff}: el último mes con ambos es {reached}."
+                f"The annexes of {cutoff} are missing: the last month with both is {reached}."
             )
         if verify_content and reached == cutoff:
             from icml.ingestion.validation import AnnexPeriodMismatch, verify_annex

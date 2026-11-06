@@ -1,7 +1,7 @@
-"""Ingesta auditable de informalidad, sin empalmar definiciones no comparables.
+"""Auditable informality intake, without splicing non-comparable definitions.
 
-Lee matrices de la fuente original desde ``legacy_biff.sheets`` o artifact_tool.
-Cada registro corresponde a un TRIMESTRE MÓVIL (tres meses), nunca a un mes puntual.
+Reads the matrices of the original source through ``legacy_biff.sheets`` or artifact_tool.
+Every record is a MOVING QUARTER (three months), never a single month.
 No fusiona definiciones 2007–2021 y 2021+ ni calibra a departamentos.
 """
 from __future__ import annotations
@@ -23,7 +23,7 @@ def _label(x):
 
 
 def _triple(rows, pos, idx, first_col, n, name, level, definition, source):
-    """Bloque ocupados/formales/informales; emite sólo períodos completos."""
+    """Employed/formal/informal block; emits complete periods only."""
     block=rows[pos:pos+3]
     if len(block)<3: raise ValueError(f'Bloque incompleto: {name}')
     d=[]
@@ -55,7 +55,7 @@ def extract_new(cities,national):
     for i,r in enumerate(cities):
         if len(r)<3 or _label(r[1])!='poblacion ocupada':continue
         if i+2>=len(cities) or _label(cities[i+1][1])!='formal' or _label(cities[i+2][1])!='informal':
-            raise ValueError(f'Se alteró estructura de ciudades GEIH en fila {i+1}')
+            raise ValueError(f'The GEIH city structure changed at row {i+1}')
         n=_count_numeric(r,2)
         if n<48:raise ValueError('Cobertura de ciudad reciente insuficiente')
         out.extend(_triple(cities,i,'2021-01-01',2,n,str(r[0]).strip(),'city',
@@ -71,7 +71,7 @@ def extract_new(cities,national):
         if tag!='poblacion ocupada':continue
         if domain in found or domain=='unknown':raise ValueError('Bloque nacional duplicado/no identificado')
         if _label(national[i+1][0])!='formal' or _label(national[i+2][0])!='informal':
-            raise ValueError(f'Se alteró estructura nacional GEIH en fila {i+1}')
+            raise ValueError(f'The GEIH national structure changed at row {i+1}')
         n=_count_numeric(r,1)
         if n<48:raise ValueError('Cobertura nacional insuficiente')
         out.extend(_triple(national,i,'2021-01-01',1,n,domain,domain,
@@ -84,9 +84,9 @@ def extract_new(cities,national):
 
 
 def extract_old(old_cities,old_social):
-    """Método antiguo basado en tamaño de empresa; agregado nacional proxy por pensiones.
+    """Old method based on firm size; national aggregate proxied by pensions.
 
-    No implica que empleo no pensionado == empleo informal en la metodología nueva.
+    It does not imply that non-pensioned employment == informal employment in the new methodology.
     """
     out=[]
     for i,r in enumerate(old_cities):
@@ -96,13 +96,13 @@ def extract_old(old_cities,old_social):
         for j in range(max(i-4,0),i):
             val=str(old_cities[j][0]).strip()
             if val and (str(old_cities[j][1]).strip()=='2007' or val in ('Total 13 ciudades y AM','Total 13 áreas')):name=val
-        if not name:raise ValueError(f'No se identificó ciudad vieja fila {i}')
+        if not name:raise ValueError(f'Old-method city not identified at row {i}')
         n=_count_numeric(r,1)
         if n<140:raise ValueError('Serie antigua ciudad incompleta')
         out.extend(_triple(old_cities,i,'2007-01-01',1,n,name,'city',
                            'old_small_firm_size', 'GEIH Informalidad Marzo 2021/Ciudades'))
-    if len({x['concept'] for x in out})<20:raise ValueError('Muy pocas ciudades de metodología antigua')
-    # SOLO sección de valores absolutos, nunca porcentajes subsecuentes.
+    if len({x['concept'] for x in out})<20:raise ValueError('Too few old-methodology cities')
+    # ONLY the absolute-values section, never the percentages that follow.
     search={'total nacional':'national','cabeceras':'urban_cabeceras','centro poblado y rural disperso':'rural'}
     found=set()
     for i,r in enumerate(old_social):
@@ -134,7 +134,7 @@ def run(old_path,new_path,output):
     output=Path(output)
     if output.exists():raise FileExistsError(f'Vintage inmutable: {output}')
     old=legacy_sheets(old_path)
-    # Lector compatible con Windows y sin depender de artifact_tool.
+    # Windows-compatible reader that does not depend on artifact_tool.
     def mat(name, rng):
         nrows=120 if name=='Ciudades' else 45
         cells=pd.read_excel(new_path,sheet_name=name,header=None,nrows=nrows)
@@ -172,8 +172,8 @@ def main():
     a=p.parse_args();print(json.dumps(run(a.old,a.new,a.output),indent=2,ensure_ascii=False))
 
 
-# Los nombres antiguos difieren de los nuevos; el mapeo se usa SOLO para diagnosticar
-# el empalme temporal, nunca para asumir que los estimandos son comparables.
+# The old names differ from the new ones; the mapping is used ONLY to diagnose
+# the temporal splice, never to assume that the estimands are comparable.
 _CITY_TO_CANONICAL={
     'total 13 areas':'13_ciudades', '13 ciudades y a.m.':'13_ciudades',
     '23 ciudades y areas':'23_ciudades', '23 ciudades y a.m.':'23_ciudades',
@@ -189,7 +189,7 @@ def canonical_city(name):
 
 
 def methodology_overlap_diagnostics(data):
-    """Brecha 2021 entre fuentes, NUNCA puente automático ni validación de igualdad."""
+    """2021 gap between sources, NEVER an automatic bridge nor an equality validation."""
     d=data.copy()
     d['match_key']=np.where(d.domain.eq('city'),d.concept.map(canonical_city),d.domain)
     old=d[d.definition.ne('new_geih_employment_based')]

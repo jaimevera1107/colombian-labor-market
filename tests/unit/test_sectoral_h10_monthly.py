@@ -7,7 +7,7 @@ from icml.sectoral.monthly import ensure_direct_monthly, reconcile_sector_matrix
 def test_only_direct_months():
     ensure_direct_monthly('monthly_direct',1)
     for kind,w in [('moving_quarter',3),('annual',12),('monthly_direct',3)]:
-        with pytest.raises(ValueError,match='BLOQUEADO'):
+        with pytest.raises(ValueError,match='BLOCKED'):
             ensure_direct_monthly(kind,w)
 
 

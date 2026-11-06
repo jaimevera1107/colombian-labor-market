@@ -67,7 +67,7 @@ def test_window_proxies_follow_the_cutoff_and_reject_incompatible_sources():
     for column in ("employed", "inactive", "pea", "pet", "population", "unemployed"):
         assert (merged[f"{column}_new"] - merged[f"{column}_old"]).abs().max() < 1e-6
     assert len(extract_window_proxies(JULY, "2026-07")) == 192
-    with pytest.raises(ValueError, match="year-móvil"):
+    with pytest.raises(ValueError, match="moving-year"):
         extract_window_proxies(JULY, "2026-08")  # July annex lacks August windows
     with pytest.raises(ValueError, match="2022"):
         extract_window_proxies(JULY, "2021-12")

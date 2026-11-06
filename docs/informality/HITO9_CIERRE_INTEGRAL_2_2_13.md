@@ -56,7 +56,7 @@ No confundir un cierre exacto con exactitud estadística del territorio. Permane
 
 ## Ejecución
 
-Desde `icml-colombia/` (con dependencias instaladas):
+Desde `root/` (con dependencias instaladas):
 
 ```bash
 icml informality finalize-block --root .. --output ../informalidad/nueva_corrida_v013

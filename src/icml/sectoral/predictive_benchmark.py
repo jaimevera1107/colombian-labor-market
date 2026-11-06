@@ -2,8 +2,8 @@
 
 No deserializa modelos ajenos ni modifica vintages previos.
 
-Original: 14 XGBoost independientes, datos de 14 ramas del proyecto ICML del autor.
-Reentrenamiento explícito, NUNCA se llama reproducción completa del vector original
+Original: 14 independent XGBoost models on the 14 branches of the author's ICML project.
+Explicit retraining; it is NEVER called a full reproduction of the original vector
 (urbana, informalidad, empalmes y donantes no auditados en todo 2015-2025).
 """
 from __future__ import annotations
@@ -81,7 +81,7 @@ def benchmark(records,trees=160):
 def features_all_33(root:Path):
     pop=pd.read_csv(root/'inputs/population_projections.csv');gdp=pd.read_csv(root/'inputs/gdp_groups_2005_2024.csv')
     pop['dep_key']=pop.dep_name.map(_norm);pop['area_key']=pop.area_type.str.lower().str.strip();gdp['dep_key']=gdp.department.map(_norm)
-    # Mapeo explícito y único de San Andrés entre nomenclaturas DANE distintas.
+    # Explicit, unique mapping of San Andrés across different DANE nomenclatures.
     gdp['dep_key']=gdp['dep_key'].replace({'sanandresprovidenciaysantacatalina(archipielago)':'archipielagodesanandres'})
     popv=pop.pivot(index=['dep_key','year'],columns='area_key',values='population')
     gdv=gdp.pivot(index=['dep_key','year'],columns='gdp_code',values='value_billion_cop')
@@ -92,7 +92,7 @@ def features_all_33(root:Path):
             key=(r.dep_key,year);gkey=(r.dep_key,year-1)
             if key not in popv.index or gkey not in gdv.index:raise ValueError(f'Cobertura faltante {r.dep_name}/{year}')
             p=popv.loc[key];g=gdv.loc[gkey]; gp=g[GDP_GROUPS].to_numpy(float)
-            if not np.isfinite(gp).all() or gp.sum()<=0 or np.any(gp<0):raise ValueError('PIB inválido')
+            if not np.isfinite(gp).all() or gp.sum()<=0 or np.any(gp<0):raise ValueError('Invalid GDP')
             pt=float(p['total']);cab=float(p['cabecera']);
             x=np.array([float(year),np.log(pt),cab/pt,np.log(gp.sum()*1e9/pt),*(gp/gp.sum())])
             if len(x)!=16:raise AssertionError('16 features')
@@ -150,22 +150,22 @@ def scores(oof, ref):
 
 
 def validate_bogota(pred33, root):
-    """Comprobación verdaderamente externa: Bogotá NO figura en los 23 fit/LOGO.
+    """Truly external check: Bogotá is NOT among the 23 fit/LOGO territories.
 
-    Su referencia H14 está redondeada a décimas, por lo que se normaliza por año
+    Its external reference is rounded to tenths, so it is normalized per year
     dentro de las 14 ramas. No se incorpora al entrenamiento ni se imputa a 2025.
     """
     ref=pd.read_csv(root/'inputs/14_referencia_externa_Bogota_DANE_GEIH_2015_2024.csv')
     ref['observed_share']=ref.observed_share_pct/ref.groupby('year').observed_share_pct.transform('sum')
     pred=pred33[(pred33.dep_code==11) & pred33.year.between(2015,2024)]
     joined=pred.merge(ref,left_on=['year','sector_code'],right_on=['year','group_code'],validate='many_to_one')
-    if len(joined)!=4*10*14:raise AssertionError('Bogotá: faltan ramas/años')
+    if len(joined)!=4*10*14:raise AssertionError('Bogotá: missing branches/years')
     joined['abs_error_pp']=(joined.predicted_share-joined.observed_share).abs()*100
     return joined[['model','year','sector_code','observed_share','predicted_share','abs_error_pp']],joined.groupby('model',as_index=False).agg(mae_pp=('abs_error_pp','mean'),max_error_pp=('abs_error_pp','max'),n=('abs_error_pp','size'))
 
 
 def audit_support(records, allfeatures):
-    """Distancias de soporte: rasgo diagnóstico, NO probabilidad ni error esperado."""
+    """Support distances: a diagnostic feature, NOT a probability nor an expected error."""
     from scipy.spatial.distance import cdist
     out=[]
     for yr in (2024,2025):
@@ -185,7 +185,7 @@ def audit_support(records, allfeatures):
 
 
 def model_disagreement(pred33):
-    """Dispersión de 3 familias sobre territorios sin anclas: sensibilidad, NO intervalos."""
+    """Dispersion of 3 families over territories without anchors: sensitivity, NOT intervals."""
     d=pred33[(pred33.model.isin(MODELS[1:])) & (pred33.data_status=='NO_DEPARTMENT_SECTOR_REFERENCE')]
     a=d.groupby(['year','dep_code','department','sector_code'],as_index=False).agg(
       min_share=('predicted_share','min'),max_share=('predicted_share','max'),
@@ -197,7 +197,7 @@ def model_disagreement(pred33):
 
 
 def paired_bootstrap(paired):
-    """Descriptivo por clúster departamento, evitando falsa independencia de 14 ramas."""
+    """Descriptive per department cluster, avoiding a false independence of 14 branches."""
     rng=np.random.default_rng(2026);res=[]
     competitors=['xgb_14_original_aprox_pib_rezagado','extratrees_clr_pib_rezagado','CONJUNTO:RURAL_PROXY_MODERATE','CONJUNTO:NEUTRAL_NATIONAL']
     for exp,g in paired.groupby('experiment'):

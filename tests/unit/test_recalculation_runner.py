@@ -147,7 +147,7 @@ def test_total_requires_confirmation_and_rewrites_frozen_years(root):
     first = _go(root)
     unconfirmed = _go(root, "total", step=5, shift=3.0)
     assert unconfirmed["plan"]["status"] == "BLOQUEADO"
-    assert "--confirmar-total" in unconfirmed["plan"]["blockers"][0]
+    assert "--confirm-total" in unconfirmed["plan"]["blockers"][0]
     total = _go(root, "total", step=6, shift=3.0, confirm_total=True)
     old = _delivered(root, first, "labor.departamentos", "censo").set_index(["period", "dep_code"])
     new = _delivered(root, total, "labor.departamentos", "censo").set_index(["period", "dep_code"])
@@ -171,7 +171,7 @@ def _annexes(root: Path, *names: str) -> None:
 def test_without_a_pair_of_annexes_nothing_runs(root):
     plan = _go(root, dry_run=True, require_annexes=True)["plan"]
     assert plan["status"] == "BLOQUEADO"
-    assert "par completo" in plan["blockers"][0]
+    assert "complete pair" in plan["blockers"][0]
 
 
 def test_the_cutoff_is_what_the_annexes_support(root):
@@ -195,14 +195,14 @@ def test_a_complete_pair_beyond_the_run_cutoff_is_not_silently_ignored(root):
     _annexes(root, "geih_mercado_laboral_2026-09.xlsx", "geih_informalidad_2026-09.xlsx")
     plan = _go(root, dry_run=True, require_annexes=True)["plan"]
     assert plan["status"] == "BLOQUEADO"
-    assert "2026-09" in plan["blockers"][0] and "extender" in plan["blockers"][0]
+    assert "2026-09" in plan["blockers"][0] and "extending" in plan["blockers"][0]
 
 
 def test_missing_the_annexes_of_the_run_cutoff_blocks(root):
     _annexes(root, "geih_mercado_laboral_2026-07.xlsx", "geih_informalidad_2026-07.xlsx")
     plan = _go(root, dry_run=True, require_annexes=True)["plan"]
     assert plan["status"] == "BLOQUEADO"
-    assert "Faltan los anexos de 2026-08" in plan["blockers"][0]
+    assert "annexes of 2026-08 are missing" in plan["blockers"][0]
 
 
 def test_a_workbook_that_declares_another_month_blocks_even_if_it_is_named_right(root, tmp_path):

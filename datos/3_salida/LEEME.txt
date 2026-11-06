@@ -1,7 +1,6 @@
-Cada ejecucion de "icml recalcular" crea aqui una carpeta AAAA-MM-DD_HHMMSS_corte-AAAA-MM_modo
-(modo: anclado o total) con universo_censo/ y universo_geih/, cada uno con laboral/, informalidad/ y sectorial/,
-mas MANIFEST.json, VERIFICACION.json e INFORME_RECALCULO_INTEGRAL.json.
-"icml entrega sencillo --carpeta <carpeta>" crea al lado <carpeta>_sencillo con las columnas basicas (CSV y XLSX).
-"python icml-colombia/tools/plots/graficar_entrega.py --carpeta <carpeta>" crea al lado <carpeta>_graficos con tableros y comparativos (opcional).
-La entrega mas reciente es la referencia del proximo recalculo y no se borra. Las anteriores se archivan en
-legacy/entregas_anteriores/ (la de 2.3.0 esta alli, comprimida).
+Every "icml rebuild" or "icml update" creates here a folder YYYY-MM-DD_HHMMSS_corte-YYYY-MM_<mode>
+(mode: anclado or total) with universo_censo/ and universo_geih/, each with laboral/, informalidad/ and sectorial/,
+plus MANIFEST.json, VERIFICACION.json and INFORME_RECALCULO_INTEGRAL.json.
+The simple files (basic columns, CSV and XLSX) are written next to it as <folder>_sencillo; "icml delivery simple --folder <folder>" rebuilds them.
+"icml plots --folder <folder>" creates <folder>_graficos with dashboards and comparatives (optional).
+The latest delivery is the reference of the next recalculation. Deliveries are generated locally and ignored by Git.

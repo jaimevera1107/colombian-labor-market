@@ -1,7 +1,8 @@
-"""Auditoría de secuencia metodológica de informalidad (13→Nacional→23→ML→cierre).
+"""Audit of the informality methodological sequence (13→National→23→ML→closure).
 
-No estima ni corrige cifras. Utiliza productos candidatos y el mercado laboral
-congelado. Diferencia puertas contables, evidencia histórica y preparación ML.
+It neither estimates nor corrects figures. It uses the candidate products and
+the frozen labor market, and separates accounting gates, historical evidence
+and ML readiness.
 """
 from __future__ import annotations
 
@@ -27,7 +28,7 @@ def _hash(p: Path) -> str:
 
 def _load(path: Path) -> pd.DataFrame:
     if not path.is_file():
-        raise FileNotFoundError(f'Archivo necesario para auditoría: {path}')
+        raise FileNotFoundError(f'File required by the audit: {path}')
     return pd.read_csv(path, encoding='utf-8-sig', dtype={'period': 'string'})
 
 
@@ -125,71 +126,71 @@ def audit(candidate:Path,cities_labor:Path,nationals_labor:Path,output:Path,
         checks.append({'gate':code,'stage':stage,'result':result,'evidence':evidence,'kind':kind})
     city_ok,city_bad=_complete(city,'city_code',33)
     nat_ok,nat_bad=_complete(nat,'national_type',2)
-    record('G1','Cobertura 33 ciudades, 2 nacionales','PASS' if city_ok and nat_ok else 'BLOCK',
-           f'ciudades={len(city)}, nacionales={len(nat)}, anomalías={city_bad+nat_bad}')
-    record('G1B','Rango y no nulos', 'PASS' if (
+    record('G1','Coverage: 33 cities, 2 nationals','PASS' if city_ok and nat_ok else 'BLOCK',
+           f'cities={len(city)}, nationals={len(nat)}, anomalies={city_bad+nat_bad}')
+    record('G1B','Range and no nulls', 'PASS' if (
         city[['informality_rate','informal_estimated','formal_estimated']].notna().all().all() and
         nat[['informality_rate_estimated','informal_estimated','formal_estimated']].notna().all().all() and
         city.informality_rate.between(0,1).all() and nat.informality_rate_estimated.between(0,1).all()) else 'BLOCK',
-        'Tasas en [0,1], sin nulos de cantidades')
+        'Rates in [0,1], no null quantities')
     cc=_counts_check(city,cl,['period','city_code'],'city_code')
     nc=_counts_check(nat,nl,['period','national_type'],'national_type',toler=1.1)
-    record('G4','Identidades y ocupados urbanos congelados','PASS' if cc['passed'] else 'BLOCK',str(cc))
-    record('G4B','Identidades y ocupados nacionales congelados','PASS' if nc['passed'] else 'BLOCK',str(nc))
+    record('G4','Identities and frozen urban employment','PASS' if cc['passed'] else 'BLOCK',str(cc))
+    record('G4B','Identities and frozen national employment','PASS' if nc['passed'] else 'BLOCK',str(nc))
     codes13=set(FIRST_13);direct=set(t5.city_code.dropna().astype(int))&set(new.city_code.dropna().astype(int))
     c13=city[city.city_code.isin(codes13)].copy()
     c23=city[city.city_code.isin(direct)].copy()
-    record('G2','13 áreas históricas: fuente y límite de evidencia',
-           'WARN','6 anclas agregadas T5 2001–2006; las individuales T10 no son T5. No se exigen observaciones DANE inexistentes.',
+    record('G2','13 historical areas: source and evidence limit',
+           'WARN','6 aggregate T5 anchors 2001–2006; the individual T10 ones are not T5. Non-existent DANE observations are not demanded.',
            'SOURCE_LIMITATION')
-    record('G2C','Etapa independiente de las 13 ciudades antes del nacional',
-           'BLOCK','2.2.2 genera primero el candidato urbano conjunto y después el nacional; no hay una puerta 13-ciudades aprobada y congelada antes de usarla',
+    record('G2C','Independent 13-city stage before the national one',
+           'BLOCK','2.2.2 generates the joint urban candidate first and the national one afterwards; there is no approved and frozen 13-city gate before using it',
            'PIPELINE_COMPLETENESS')
-    record('G2A','13 áreas agregadas: reproducción de anclas T5',
+    record('G2A','13 aggregate areas: reproduction of the T5 anchors',
            'PASS' if anchors.residual_pp.abs().max()<=0.1 else 'WARN',
-           f'6 anclas, max residuo={anchors.residual_pp.abs().max():.4f} pp; no validan 13 ciudades por separado')
-    record('G2B','13 áreas agregadas: validación año excluido',
+           f'6 anchors, max residual={anchors.residual_pp.abs().max():.4f} pp; they do not validate the 13 cities separately')
+    record('G2B','13 aggregate areas: held-out year validation',
            'PASS' if cv.holdout_error_pp.abs().mean()<=0.5 else 'WARN',
-           f'MAE={cv.holdout_error_pp.abs().mean():.3f} pp, max={cv.holdout_error_pp.abs().max():.3f} pp; solo 6 anclas')
-    record('G3','Nacional histórico: referencia 13 áreas + proxy antiguo',
-           'WARN','Existe candidato con puente de definición. La tasa DANE_REFERENCIA=ICML_COMPLETO por transferencia, no evidencia de igualdad')
+           f'MAE={cv.holdout_error_pp.abs().mean():.3f} pp, max={cv.holdout_error_pp.abs().max():.3f} pp; only 6 anchors')
+    record('G3','Historical national: 13-area reference + old proxy',
+           'WARN','A candidate with a definition bridge exists. The rate DANE_REFERENCIA=ICML_COMPLETO is a transfer, not evidence of equality')
     same=nat.pivot(index='period',columns='national_type',values='informality_rate_estimated')
     equal=bool(np.allclose(same['ICML_COMPLETO'],same['DANE_REFERENCIA'],atol=1e-12,rtol=0))
-    record('G3B','Diferencia de universos nacionales','WARN' if equal else 'PASS',
-           f'tasas nacionales idénticas={equal}; requieren evaluación de transferencia')
-    record('G3C','Nacional histórico reestimado después de validar 13 ciudades','BLOCK',
-           'Falta demostrar calidad individual de 13 áreas antes de promover el puente al nacional',
+    record('G3B','Difference between national universes','WARN' if equal else 'PASS',
+           f'identical national rates={equal}; they require a transfer evaluation')
+    record('G3C','Historical national re-estimated after validating the 13 cities','BLOCK',
+           'The individual quality of the 13 areas has to be shown before promoting the bridge to the national level',
            'METHODOLOGICAL_READINESS')
-    record('G4C','23 ciudades con ventanas T5 y definición reciente',
+    record('G4C','23 cities with T5 windows and recent definition',
            'PASS' if len(direct)==DIRECT_23 else 'BLOCK',
-           f'ciudades con fuentes individuales={len(direct)}; mapeo esperado=23')
-    record('G4D','10 territorios sintéticos/donantes','WARN' if len(donors)==10 else 'BLOCK',
-           f'donantes={len(donors)}, distancia máxima={donors.distance.max():.3f}; validez de transferencia no probada')
-    record('G4E','Segunda retropolación de 23 ciudades usando nacional previamente reconstruido',
-           'BLOCK','El original contiene SplicingInformalityCities con nacional como donante; 2.2.2 no ejecuta una etapa posterior nacional→23 ciudades',
+           f'cities with individual sources={len(direct)}; expected mapping=23')
+    record('G4D','10 synthetic/donor territories','WARN' if len(donors)==10 else 'BLOCK',
+           f'donors={len(donors)}, maximum distance={donors.distance.max():.3f}; transfer validity not proven')
+    record('G4E','Second backcast of the 23 cities using the previously reconstructed national',
+           'BLOCK','The original has SplicingInformalityCities with the national as donor; 2.2.2 runs no later national→23 cities stage',
            'PIPELINE_COMPLETENESS')
-    record('G5','Fidelidad ventanas históricas T5','WARN' if t5.residual_pp.abs().max()>1 else 'PASS',
-           f'{len(t5)} ventanas, MAE={t5.residual_pp.abs().mean():.3f} pp, max={t5.residual_pp.abs().max():.3f} pp')
-    record('G5B','Ventanas recientes GEIH (conteos exactos)','PASS' if new.residual_pp.abs().max()<1e-7 else 'BLOCK',
-           f'{len(new)} ventanas, error tasa máximo={new.residual_pp.abs().max():.2g} pp')
-    record('G5C','Mensualidades latentes: sensibilidad a suavidad','WARN' if trade.exact_max_monthly_rate_jump_pp.max()>5 else 'PASS',
-           f'pico exacto={trade.exact_max_monthly_rate_jump_pp.max():.2f} pp, alternativa={trade.regularized_max_monthly_rate_jump_pp.max():.2f} pp')
-    record('G6','Panel ciudades+departamentos, laboral, demografía y clústeres','BLOCK',
-           'No existe matriz feature-target de informalidad de 2.2.2; original usa LaborMarketRateCalculator y clústeres',
+    record('G5','Fidelity of the historical T5 windows','WARN' if t5.residual_pp.abs().max()>1 else 'PASS',
+           f'{len(t5)} windows, MAE={t5.residual_pp.abs().mean():.3f} pp, max={t5.residual_pp.abs().max():.3f} pp')
+    record('G5B','Recent GEIH windows (exact counts)','PASS' if new.residual_pp.abs().max()<1e-7 else 'BLOCK',
+           f'{len(new)} windows, maximum rate error={new.residual_pp.abs().max():.2g} pp')
+    record('G5C','Latent months: sensitivity to smoothness','WARN' if trade.exact_max_monthly_rate_jump_pp.max()>5 else 'PASS',
+           f'exact peak={trade.exact_max_monthly_rate_jump_pp.max():.2f} pp, alternative={trade.regularized_max_monthly_rate_jump_pp.max():.2f} pp')
+    record('G6','Cities+departments panel, labor, demography and clusters','BLOCK',
+           'There is no 2.2.2 informality feature-target matrix; the original uses LaborMarketRateCalculator and clusters',
            'PIPELINE_COMPLETENESS')
-    record('G6B','MLP vs señal urbana, LOGO temporal, después del cierre','BLOCK',
-           'No hay modelos entrenados/validados ni predicciones departamentales 2.2.2',
+    record('G6B','MLP vs urban signal, temporal LOGO, after the closure','BLOCK',
+           'No trained/validated models nor 2.2.2 departmental predictions',
            'PIPELINE_COMPLETENESS')
-    record('G7','Cierre por factores sobre 33 departamentos, sin tocar ocupados','BLOCK',
-           'Falta producto final de 33 departamentos x 404 meses',
+    record('G7','Closure by factors over 33 departments, without touching employment','BLOCK',
+           'The final product of 33 departments x 404 months is missing',
            'PIPELINE_COMPLETENESS')
     c_alert,c_break=_temporal(city,'city_code','informality_rate',level='city')
     n_alert,n_break=_temporal(nat,'national_type','informality_rate_estimated',level='national')
     alerts=pd.concat([df for df in (c_alert,n_alert) if not df.empty],ignore_index=True) if (len(c_alert)+len(n_alert)) else c_alert.copy()
     breaks=pd.concat([df for df in (c_break,n_break) if not df.empty],ignore_index=True) if (len(c_break)+len(n_break)) else c_break.copy()
     n200=int(alerts.greater_than_200pct_equiv.sum()) if len(alerts) else 0
-    record('G5D','Cambios extraordinarios y posibles quiebres','WARN' if len(alerts) else 'PASS',
-           f'alertas={len(alerts)}, >200% incremento o caída simétrica={n200}, quiebres 12m={len(breaks)}; no corrección automática')
+    record('G5D','Extraordinary changes and possible breaks','WARN' if len(alerts) else 'PASS',
+           f'alerts={len(alerts)}, >200% increase or symmetric fall={n200}, 12m breaks={len(breaks)}; no automatic correction')
     risk=[]
     for code,g in city.groupby('city_code'):
         a=c_alert[c_alert.unit==str(code)]
@@ -203,7 +204,7 @@ def audit(candidate:Path,cities_labor:Path,nationals_labor:Path,output:Path,
     risk=pd.DataFrame(risk).sort_values(['n_temporal_flags','max_abs_mom_pp'],ascending=False)
     status='NOT_CERTIFIED_PIPELINE_INCOMPLETE' if any(x['result']=='BLOCK' for x in checks) else 'REVIEW_REQUIRED'
     if output.exists() and any(output.iterdir()):
-        raise FileExistsError('La auditoría no sobrescribe ejecuciones previas')
+        raise FileExistsError('The audit does not overwrite previous runs')
     output.mkdir(parents=True,exist_ok=True)
     comparison=None
     if previous_national is not None:
@@ -221,9 +222,9 @@ def audit(candidate:Path,cities_labor:Path,nationals_labor:Path,output:Path,
             comparison.period.str[:4].astype(int).le(2006),
             comparison.period.str[:4].astype(int).le(2020)],
             ['1993-2000','2001-2006','2007-2020'],default='2021-2026')
-        record('G3D','Sensibilidad histórica frente al candidato 2.2.1','WARN',
-               f'máxima diferencia={comparison.change_pp.abs().max():.3f} pp, '
-               '2011–2020 y tramo anterior dependen de decisiones de puente')
+        record('G3D','Historical sensitivity against the 2.2.1 candidate','WARN',
+               f'maximum difference={comparison.change_pp.abs().max():.3f} pp, '
+               '2011–2020 and the earlier stretch depend on bridge decisions')
     artifacts={
        'auditoria_puertas.csv':pd.DataFrame(checks),
        'alertas_temporales.csv':alerts,
@@ -234,10 +235,10 @@ def audit(candidate:Path,cities_labor:Path,nationals_labor:Path,output:Path,
     }
     if comparison is not None:
         artifacts['comparacion_nacional_2_2_1_vs_2_2_2.csv']=comparison.drop(columns=['_merge'])
-    # Actualizar las puertas tras el contraste de vintages, si se solicitó.
+    # Refresh the gates after the vintage comparison, when requested.
     artifacts['auditoria_puertas.csv']=pd.DataFrame(checks)
     for name,df in artifacts.items(): df.to_csv(output/name,index=False,encoding='utf-8-sig',lineterminator='\n')
-    if any(_hash(Path(p))!=h for p,h in inputs.items()): raise RuntimeError('Algún insumo fue modificado')
+    if any(_hash(Path(p))!=h for p,h in inputs.items()): raise RuntimeError('An input was modified')
     report={'status':status,'version':'2.2.3.dev0-quality-only','source_candidate':'2.2.2.dev0',
         'audit_scope':'13_ciudades_nacional_23_ciudades_variables_MLP_departamentos',
         'n_cities':33,'n_direct_DANE_cities':len(direct),'n_donor_cities':len(donors),
@@ -249,6 +250,6 @@ def audit(candidate:Path,cities_labor:Path,nationals_labor:Path,output:Path,
         'max_abs_recent_exact_city_pp':float(trade.exact_max_monthly_rate_jump_pp.max()),
         'input_sha256':inputs,'output_sha256':{n:_hash(output/n) for n in artifacts},
         'immutable_inputs_verified':True,
-        'warning':'Las vistas 13 y 23 son cortes DIAGNOSTICOS de un candidato simultáneo, NO ejecución secuencial certificada.'}
+        'warning':'The 13 and 23 views are DIAGNOSTIC cuts of a simultaneous candidate, NOT a certified sequential execution.'}
     (output/'resumen.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     return report

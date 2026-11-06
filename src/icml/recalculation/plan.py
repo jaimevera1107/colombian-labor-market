@@ -58,32 +58,32 @@ def plan_recalculation(
     parameters = check_frozen_parameters(previous_parameters, current_parameters)
     blockers: list[str] = []
     if mode == TOTAL:
-        frozen_years = "se reescriben todos los años"
+        frozen_years = "every year is rewritten"
         if not confirm_total:
             blockers.append(
-                "El recálculo total reescribe también los años anclados "
-                f"(hasta {policy.last_anchor_year}); requiere --confirmar-total."
+                "A total recalculation also rewrites the anchored years "
+                f"(through {policy.last_anchor_year}); it requires --confirm-total."
             )
     else:
-        frozen_years = f"congelados hasta {policy.last_anchor_year}"
+        frozen_years = f"frozen through {policy.last_anchor_year}"
         if modified and not accept_modified:
             blockers.append(
-                "Se modificó un insumo existente (" + ", ".join(modified) + "): puede "
-                "tocar años congelados. Agregue el anexo nuevo como archivo nuevo, "
-                "use --aceptar-modificados si no afecta años anclados, o el "
-                "recálculo total."
+                "An existing input was modified (" + ", ".join(modified) + "): it may "
+                "touch frozen years. Add the new annex as a new file, use "
+                "--accept-modified if the anchored years are not affected, or run "
+                "a total recalculation."
             )
         if parameters["status"] == "BLOCKED":
             blockers.append(
-                "Cambió un parámetro congelado: " + ", ".join(parameters["changed"])
+                "A frozen parameter changed: " + ", ".join(parameters["changed"])
             )
         for report in observation_checks:
             if report["status"] == "BLOCKED":
                 changes = report.get("n_changes", report["n_revisions"])
                 blockers.append(
-                    f"{changes} cifras oficiales de años congelados cambiaron en la "
-                    f"fuente (revisadas, eliminadas o agregadas; hasta "
-                    f"{policy.last_anchor_year}); use el recálculo total si es intencional."
+                    f"{changes} official figures of frozen years changed in the "
+                    f"source (revised, removed or added; through "
+                    f"{policy.last_anchor_year}); use a total recalculation if intentional."
                 )
     if blockers:
         status = "BLOQUEADO"

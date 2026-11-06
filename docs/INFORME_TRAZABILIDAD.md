@@ -7,7 +7,7 @@
 Se examinó el repositorio consolidado (`icml-colombia` 2.4.0: 133 módulos en 18 subpaquetes, unas 33.600 líneas de código fuente, contando archivos `.py` sin `__init__`; 92 archivos de prueba; 15 configuraciones) junto con las corridas ejecutadas durante su construcción. Las cifras de módulos y líneas de la versión anterior de este informe (142, 20 y 39.000) no se pudieron reproducir con ningún método de conteo, así que se reemplazan por las medidas. Las principales evidencias de ejecución son:
 
 - la recalculación total adoptada (`2026-11-03_064801_corte-2026-08_total`), con la entrega verificada (36 de 36 comprobaciones);
-- las tres rutinas de uso (`consolidar --desde-cero --hasta 2026-07`, `actualizar` y `graficos`) ejecutadas de punta a punta en una copia limpia, con las evidencias de `docs/production/ACTUALIZACION_MENSUAL.md`;
+- las tres rutinas de uso (`rebuild --through 2026-07`, `actualizar` y `graficos`) ejecutadas de punta a punta en una copia limpia, con las evidencias de `docs/production/MONTHLY_UPDATE.md`;
 - la recalculación revertida (restauración apagada y empalme de la PET encendido), idéntica byte a byte en los ocho productos a la vintage de 2.3.0;
 - la vintage de julio de 2026;
 - la suite completa con referencias Golden: 801 pruebas pasan, 2 omitidas (una de ellas, de microdatos que viven fuera del árbol de fuentes).

@@ -135,7 +135,7 @@ ningún caso en la corrida de agosto).
 
 1. Poner `enabled = false` en `labor_reconstruction.toml` (y, si se quiere el empalme de 2.3.0, `enabled = true` en
    `labor_base_splice.toml`).
-2. Recalcular en modo total: `python -m icml recalcular --root . --modo total --confirmar-total`.
+2. Recalcular en modo total: `python -m icml recalc --root . --mode total --confirm-total`.
 
 Con la restauración apagada y el empalme de la PET encendido, la vintage coincide byte a byte con la de 2.3.0.
 

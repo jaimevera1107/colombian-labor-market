@@ -63,7 +63,7 @@ Se añade `src/icml/sectoral_historical_homologation.py` y el subcomando `icml s
 
 ```powershell
 python run_h11_homologacion.py
-python -m pytest -q patch/icml-colombia/tests/unit/test_sectoral_historical_homologation.py
+python -m pytest -q patch/tests/unit/test_sectoral_historical_homologation.py
 ```
 
 Desde el repositorio ICML completo una vez copiados `src/icml/sectoral_historical_homologation.py` y el `cli.py` de este parche:

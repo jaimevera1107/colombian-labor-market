@@ -40,9 +40,9 @@ MONTHS_ES = ('Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago',
 def ensure_direct_monthly(source_kind: str, window_months: int) -> None:
     """Prevent false promotion of moving windows/annual data to monthly facts."""
     if source_kind != 'monthly_direct' or window_months != 1:
-        raise ValueError('BLOQUEADO: no es una observación mensual directa; '
-                         'un trimestre móvil o anual solo puede ser restricción '+
-                         'de su ventana, no el valor de un mes')
+        raise ValueError('BLOCKED: not a direct monthly observation; a moving quarter '
+                         'or an annual figure can only constrain its window, never '
+                         'stand for the value of one month')
 
 
 def ingest_dane_workbook(workbook: Path) -> tuple[pd.DataFrame, pd.DataFrame, dict]:

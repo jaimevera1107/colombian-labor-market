@@ -50,7 +50,7 @@ estimador de quiebre no distingue un giro de un quiebre (daba -4,6 pp para la TD
 * Cambia 1993-01 a 2000-12 en laboral, informalidad y sectorial. **Desde 2001-01 todo queda idéntico.**
 * No cambian la población, las tasas laborales de departamentos, ciudades y referencia DANE (2e-16), ni los
   parámetros congelados. Las tasas del nacional ICML se recalculan desde sus niveles (cambian como máximo 6,3e-5).
-* Como cambia historia cerrada, la vintage se recalcula en modo total (`icml recalcular --modo total --confirmar-total`).
+* Como cambia historia cerrada, la vintage se recalcula en modo total (`icml recalc --modo total --confirmar-total`).
 * El puente censal sigue siendo un parámetro congelado: sus niveles departamentales se refrescan desde el laboral
   vigente cuando difieren, y su universo GEIH se reconstruye con los factores congelados.
 

@@ -41,7 +41,7 @@ La precisión contable no es precisión sectorial. La puerta de publicación que
 
 ## Archivos y reproducibilidad
 
-Paquete **incremental**; no duplica el checkpoint integral 2.2.18. Incluye un parche sobre `icml-colombia/` que conserva la CLI H11, módulo `sectoral_departmental_prior.py`, pruebas unitarias y los 7 insumos congelados, más los resultados calculados. Instalación en el entorno habitual ICML: copiar `patch/icml-colombia/...` sobre el repositorio correspondiente; sin ello, también se puede ejecutar aislado:
+Paquete **incremental**; no duplica el checkpoint integral 2.2.18. Incluye un parche sobre `root/` que conserva la CLI H11, módulo `sectoral_departmental_prior.py`, pruebas unitarias y los 7 insumos congelados, más los resultados calculados. Instalación en el entorno habitual ICML: copiar `patch/root/...` sobre el repositorio correspondiente; sin ello, también se puede ejecutar aislado:
 
 `python h12_bundle_runner.py --inputs inputs --output outputs_reproducidos`
 

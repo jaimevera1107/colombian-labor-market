@@ -1,11 +1,11 @@
 """Hito 4: benchmarking LOGO de 14 participaciones laborales sectoriales.
 
 No imputa ni recalibra series ICML. Objetivos = DANE anual departamental 2015-2024.
-Variables X = proyecciones de población, PIB de cuentas departamentales y (opcional)
-señal urbana observada por DANE (año móvil terminado en diciembre 2021-2024).
+X variables = population projections, departmental-accounts GDP and (optional)
+DANE-observed urban signal (moving year ending in December, 2021-2024).
 
-El año móvil Dic se usa como una observación de 12 meses, NO como diciembre mensual.
-Evaluación LOGO: elimina TODAS las etiquetas del departamento retenido antes de fit.
+The December moving year is used as a 12-month observation, NOT as monthly December.
+LOGO evaluation: ALL labels of the held-out department are removed before the fit.
 """
 from __future__ import annotations
 import argparse,csv,json,math,unicodedata
@@ -40,7 +40,7 @@ def load_data(sector_csv,pop_csv,gdp_csv,urban_csv=None,max_year=2024,gdp_lag_ye
  raw=defaultdict(dict)
  for q in _csv(sector_csv):
   key=(q['department'],int(q['year']));code=q['sector_code'];v=float(q['employed_thousands'])
-  if code not in SECTORS or not math.isfinite(v) or v<0:raise ValueError(f'Sector inválido: {q}')
+  if code not in SECTORS or not math.isfinite(v) or v<0:raise ValueError(f'Invalid sector: {q}')
   if code in raw[key]:raise ValueError(f'Sector duplicado {key} {code}')
   raw[key][code]=v
  pop=defaultdict(dict)
@@ -62,19 +62,19 @@ def load_data(sector_csv,pop_csv,gdp_csv,urban_csv=None,max_year=2024,gdp_lag_ye
   if not (2015<=yr<=max_year):continue  # Ajustar disponibilidad de PIB con max_year y rezago.
   pd=pop.get((_norm(dep),yr),{});gd=gdp.get((_norm(dep),yr-gdp_lag_years),{})
   if not all(c in gd for c in GDP_GROUPS) or not ('total' in pd and 'cabecera' in pd):
-   missing.append((dep,yr,'GDP o población'));continue
+   missing.append((dep,yr,'GDP or population'));continue
   gp=np.array([gd[c] for c in GDP_GROUPS],float)
-  if np.any(~np.isfinite(gp)) or np.any(gp<0) or gp.sum()<=0:raise ValueError(f'GDP inválido {dep}/{yr}')
+  if np.any(~np.isfinite(gp)) or np.any(gp<0) or gp.sum()<=0:raise ValueError(f'Invalid GDP {dep}/{yr}')
   sector=np.array([sectorvals[s] for s in SECTORS],float)
-  if sector.sum()<=0:raise ValueError(f'Ocupación sectorial no positiva {dep}/{yr}')
+  if sector.sum()<=0:raise ValueError(f'Non-positive sectoral employment {dep}/{yr}')
   urban=urb.get((CITY_MAP.get(dep,''),yr),{})
   have_urban=all(code in urban for code in URBAN_FEATURES)
-  # year, log-pop, urban-share, log PIB per cápita corriente, 12 shares PIB.
+  # year, log-pop, urban-share, log current GDP per capita, 12 GDP shares.
   features=[float(yr),math.log(pd['total']),pd['cabecera']/pd['total'],math.log(gp.sum()*1e9/pd['total'])]
   features.extend((gp/gp.sum()).tolist())
   if have_urban:
    features.extend([urban['city_tgp_pct'],urban['city_to_pct'],urban['city_td_pct'],
-     # Dividir magnitudes urbanas por población total del dept; evita efecto de escala.
+     # Divide urban magnitudes by the department's total population; avoids a scale effect.
      urban['city_employed_thousands']*1000/pd['total'],urban['city_pet_thousands']*1000/pd['total']])
   records.append({'department':dep,'year':yr,'y':sector/sector.sum(),
    'features_basic':np.asarray(features[:3],float),
@@ -88,13 +88,13 @@ def load_data(sector_csv,pop_csv,gdp_csv,urban_csv=None,max_year=2024,gdp_lag_ye
    'zero_sector_cells':sum(r['sector_zero_count'] for r in records)}
 
 def clr(y,epsilon=1e-6):
- """Transformación log-ratio centrada que admite ceros observados redondeados."""
+ """Centered log-ratio transform that tolerates rounded observed zeros."""
  x=np.maximum(np.asarray(y,float),epsilon);x=x/x.sum(axis=-1,keepdims=True)
  logs=np.log(x);return logs-logs.mean(axis=-1,keepdims=True)
 
 def inv_clr(z):
  v=np.asarray(z,float);v=v-v.max(axis=-1,keepdims=True);w=np.exp(v)
- # Garantía de positividad en valores continuos; evitar underflow numérico.
+ # Positivity guarantee on continuous values; avoid numeric underflow.
  w=np.maximum(w,1e-12);return w/w.sum(axis=-1,keepdims=True)
 
 def _metric(pred,actual):
@@ -107,8 +107,8 @@ def _metric(pred,actual):
 def benchmark(records,range_name,years,with_urban=False,seed=2026):
  subset=[r for r in records if r['year'] in years and (r['has_urban'] if with_urban else True)]
  depts=sorted({r['department'] for r in subset})
- if len(depts)<10:raise ValueError('Pocos departamentos para LOGO')
- if len(subset)!=len(depts)*len(years):raise ValueError('LOGO desbalanceado o años faltantes')
+ if len(depts)<10:raise ValueError('Too few departments for LOGO')
+ if len(subset)!=len(depts)*len(years):raise ValueError('Unbalanced LOGO or missing years')
  preds=[]
  specs=[('media_anual',None,'features_basic'),
         ('ridge_demografia',make_pipeline(StandardScaler(),Ridge(alpha=20)),'features_basic'),
@@ -169,8 +169,8 @@ def _save(path,items):
 def space_time_holdout_2025(rows,seed=2026):
  """2025 no aparece en entrenamiento, y se retira todo el departamento objetivo.
 
- La variable PIB es de AÑO ANTERIOR: 2014-2023 para train, 2024 para test.
- Es una prueba retrospectiva con PIB publicado, no 'as-of' producción en tiempo real.
+ The GDP variable is of the PREVIOUS YEAR: 2014-2023 for train, 2024 for test.
+ It is a retrospective test with published GDP, not 'as-of' real-time production.
  """
  depts=sorted({r['department'] for r in rows if r['year']==2025})
  predictions=[]
@@ -295,7 +295,7 @@ def support_diagnostics_2024(pop_csv,gdp_csv,observed_departments,out_csv):
 
 def paired_department_bootstrap(department_rows,exp='logo_sector_2015_2024',
        base='media_anual',candidate='ridge_pib',seed=2026,n_boot=2000):
- """CI diagnóstico de mejoría, remuestreando departamentos, no celdas correlacionadas."""
+ """Diagnostic CI of the improvement, resampling departments, not correlated cells."""
  src={(r['department'],r['model']):r for r in department_rows if r['experiment']==exp}
  dep=sorted({k[0] for k in src})
  differences=np.array([float(src[(d,base)]['mae_sector_pp'])-float(src[(d,candidate)]['mae_sector_pp']) for d in dep])
@@ -306,4 +306,4 @@ def paired_department_bootstrap(department_rows,exp='logo_sector_2015_2024',
   'bootstrap_ci95_low_pp':float(np.percentile(samples,2.5)),
   'bootstrap_ci95_high_pp':float(np.percentile(samples,97.5)),
   'departments_improved':int(np.count_nonzero(differences>0)),
-  'interpretation':'diagnóstico exploratorio, no inferencia causal ni selección final'}
+  'interpretation':'exploratory diagnostic, neither causal inference nor final selection'}

@@ -229,7 +229,6 @@ def run(departments_csv:Path, nationals_csv:Path, population_csv:Path,
              output/'12_covalidadores_departamentales.csv',index=False,
                 lineterminator='\n')
     all_shares=[];audits=[];margins=[]
-    nq=national.pivot(index='period',columns='sector_code',values='sector_share').reindex(columns=SECTORS)
     for scenario in SCENARIOS:
         prior=calculate_priors(national,cov,scenario)
         # Row simplex check BEFORE employment transfer

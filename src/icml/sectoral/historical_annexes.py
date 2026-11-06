@@ -111,7 +111,7 @@ def validate_annex_observations(data: pd.DataFrame, source_files: Path|None = No
     if df.duplicated(keys).any():
         raise ValueError('OBSERVACIONES_DUPLICADAS: '+','.join(keys))
     if not df.source_review_status.isin(['REVIEWED_OFFICIAL_ANNEX','UNREVIEWED']).all():
-        raise ValueError('REQUIERE_REVISION_DE_FUENTE')
+        raise ValueError('SOURCE_REVIEW_REQUIRED')
     df['sha256_checked']=False
     if source_files is not None:
         base=Path(source_files).resolve()

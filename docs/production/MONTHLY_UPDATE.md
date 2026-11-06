@@ -8,9 +8,15 @@ The commands (`icml status`, `rebuild`, `update`, `plots`, `verify`) are describ
 |---|---|---|
 | 1 | `icml rebuild --through 2026-07 --yes` | July base: 1993-01 to 2026-07 (806 national rows, 13,299 departmental). Audit 52 of 52. Simple files created. July becomes the published base |
 | 2 | `icml update` | `UPDATE ONLY through 2026-08`: detects the two August annexes as new, computes and publishes. Audit 52 of 52 |
-| 3 | `icml plots` | 87 figures and `INDICE.html` |
+| 3 | `icml plots` | 87 figures and `index.html` |
 
 Approximate times: test 1, 10 to 15 minutes (it builds a working copy cut at July and recomputes everything); test 2, 8 to 10; test 3, about 90 seconds.
+
+## What the new month gets, besides the audit
+
+* `MONTHLY_REPORT.md` / `.json` in the delivery (`icml report` rebuilds it): for 172 monitored series (national and departmental levels and rates, informality rate) the month-over-month change and its z-score against the last ten years (|z| > 3 is flagged, 5 series in August 2026), the year-over-year change, a seasonal-naive residual, and the revisions of the open years against the previous delivery. Evidence for whoever publishes; it never blocks.
+* `icml forecast` writes `<delivery>_forecasts/forecasts_EXPERIMENTAL.csv`: Holt-Winters forecasts, 12 months ahead with 80 % intervals, for the same series. Univariate and explicitly experimental: departments do not add to the national and rates are not derived from levels.
+* By default `rebuild`/`update` print progress only; `--verbose` keeps the solver and pandas warnings.
 
 ## What the update was checked for
 

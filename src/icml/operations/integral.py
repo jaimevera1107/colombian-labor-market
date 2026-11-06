@@ -53,6 +53,15 @@ CANDIDATE_FILES = {
     "sectorial.departamental": "sectorial/sectorial_departamental_1993_2026_EXPERIMENTAL.csv",
     "sectorial.nacional": "sectorial/sectorial_nacional_1993_2026_EXPERIMENTAL.csv",
 }
+#: Equivalence tolerances of the reference comparison. They separate two
+#: things: floating-point noise between BLAS/solver builds (hundredths of a
+#: person, 1e-9 in a rate; different numpy/scipy/scikit-learn releases) and
+#: a different estimate (thousands of persons; a different xgboost major
+#: version changes the ten modelled territories). The first is accepted, the
+#: second is a mismatch that requires a deliberate refreeze.
+COUNT_TOLERANCE = 0.1
+RATE_TOLERANCE = 1e-6
+
 KEYS = {
     "labor.ciudades": ["period", "city_code"],
     "labor.departamentos": ["period", "dep_code"],
@@ -279,7 +288,8 @@ def compare_candidate(current: dict[str, Path], candidates: dict[str, Path]) -> 
     """Strict key/schema/categorical/numeric comparison of eight products.
 
     Numerical differences from serialization/solvers are allowed only within
-    predeclared absolute tolerances (counts: 1e-3 person, rates/shares: 1e-8).
+    predeclared absolute tolerances (``COUNT_TOLERANCE`` persons,
+    ``RATE_TOLERANCE`` for rates, shares and factors).
     This comparison NEVER promotes candidate data to the immutable vintage.
     """
     summary: dict[str, Any] = {}
@@ -347,7 +357,7 @@ def compare_candidate(current: dict[str, Path], candidates: dict[str, Path]) -> 
                 is_person_residual = col.lower().endswith('_residual_share')
                 strict_rate = (not is_person_residual and any(t in col.lower() for t in
                     ("rate", "share", "proportion", "probability", "factor")))
-                tolerance = 1e-8 if strict_rate else 1e-3
+                tolerance = RATE_TOLERANCE if strict_rate else COUNT_TOLERANCE
                 tolerances[col] = tolerance
                 if max_diff > tolerance:
                     numeric_exceeds[col] = max_diff
@@ -641,26 +651,30 @@ def run_integral(root: Path, output: Path, *, mode: str = "verify",
             else ["informality_H5_H6_H9", "sectoral_H16"])
         cross_ok = report["candidate_cross_audit"]["status"] == "PASS"
         report["cutoff"] = ACTIVE_CUTOFF
-        if splice_cfg.enabled or labor_change_from:
-            # The products differ from the frozen ones before the break month
-            # by design; the internal coherence of the eight is what decides,
-            # and the exact scope of the difference is checked by comparing
-            # the candidate against the unspliced run.
-            report["reference_equivalence"] = "DIFFERS_BY_DESIGN_BEFORE_" + (
-                splice_cfg.break_month if splice_cfg.enabled else labor_change_from)
-            report["status"] = (
-                "RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_WITH_SPLICES" if cross_ok
-                else "RECOMPUTED_BUT_CROSS_AUDIT_FAILED")
-        elif ACTIVE_CUTOFF != FROZEN_CUTOFF:
+        if ACTIVE_CUTOFF != FROZEN_CUTOFF:
             # Another cutoff is a new vintage: it is not expected to match the
             # frozen August products (months from 2021 are re-identified), so
             # the reference comparison is informative, and what decides is
             # the internal coherence of the eight products.
             report["reference_equivalence"] = "NOT_APPLICABLE_DIFFERENT_VINTAGE"
-            report["cutoff"] = ACTIVE_CUTOFF
             report["status"] = (
                 "RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_NEW_VINTAGE" if cross_ok
                 else "RECOMPUTED_BUT_CROSS_AUDIT_FAILED")
+        elif splice_cfg.enabled or labor_change_from:
+            # The frozen products are themselves the spliced vintage (since
+            # 2.4.0 they are regenerated with the adopted method), so at the
+            # frozen cutoff the candidate has to reproduce them. A mismatch
+            # means the code or the inputs changed after the last freeze:
+            # the products must be refrozen deliberately, never overwritten
+            # in silence. The splice-vs-unspliced comparison stays
+            # informative about the scope of the method.
+            report["reference_equivalence"] = (
+                "REPRODUCES_FROZEN_SPLICED_VINTAGE" if report["eight_product_equivalence_passed"]
+                else "FROZEN_VINTAGE_MISMATCH_REFREEZE_REQUIRED")
+            report["status"] = (
+                "RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_WITH_SPLICES"
+                if cross_ok and report["eight_product_equivalence_passed"]
+                else "RECOMPUTED_BUT_CROSS_AUDIT_OR_REFERENCE_EQUIVALENCE_FAILED")
         else:
             report["status"] = (
                 ("RECOMPUTED_ALL_EIGHT_AUDITED" if mode == "recompute"

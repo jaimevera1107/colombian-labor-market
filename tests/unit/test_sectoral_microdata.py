@@ -72,7 +72,7 @@ def test_duplicates_rejected(tmp_path):
 def test_no_microdata_does_not_generate_split(tmp_path):
     # Actual normalized DANE snapshot from prior artifact, not synthetic shares.
     root=Path(__file__).resolve().parents[2]
-    path=root/'sectorial'/'hito10_mensual_v001'
+    path=root/'sectoral'/'hito10_mensual_v001'
     if not path.exists():pytest.skip('integration snapshot is outside source tree')
     result=run(observations_csv=path/'10_observaciones_oficiales_mensuales_13_grupos.csv',
         totals_csv=path/'10_totales_oficiales_mensuales.csv',output=tmp_path)
@@ -83,7 +83,7 @@ def test_no_microdata_does_not_generate_split(tmp_path):
 
 def test_single_supported_month_without_inventing_others(tmp_path):
     root=Path(__file__).resolve().parents[2]
-    path=root/'sectorial'/'hito10_mensual_v001'
+    path=root/'sectoral'/'hito10_mensual_v001'
     if not path.exists():pytest.skip('integration snapshot is outside source tree')
     prev=pd.read_csv(path/'10_totales_oficiales_mensuales.csv')
     old=pd.read_csv(path/'10_observaciones_oficiales_mensuales_13_grupos.csv')

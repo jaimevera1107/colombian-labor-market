@@ -156,7 +156,6 @@ class MLPInformality:
         if val is not None:
             xv,yv=self._xy(val)
             vx=torch.from_numpy(self.scaler.transform(xv).astype(np.float32))
-            vy=torch.from_numpy(yv)
             vg=val.dep_code.to_numpy()
         opt=torch.optim.Adam(self.model.parameters(),lr=self.cfg.lr,weight_decay=self.cfg.weight_decay)
         rng=torch.Generator().manual_seed(self.cfg.seed)

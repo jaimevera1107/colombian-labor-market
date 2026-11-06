@@ -1,8 +1,8 @@
 """Simple files: only the columns of each thing, no traceability.
 
 They are cut from the full delivery, so both sets come from exactly the same
-data and universes. Headers are short Spanish names (``Fecha``, ``Año``,
-``Mes``, ``DPT``, ``Codigo``, ``Ocupados`` ...), with no audit or provenance columns.
+data and universes. Headers are short names (``Date``, ``Year``, ``Month``,
+``Department``, ``Code``, ``Employed`` ...), with no audit or provenance columns.
 """
 
 from __future__ import annotations
@@ -17,43 +17,43 @@ from icml.delivery.builder import _numbers, _ratio, _write_xlsx, read_text_table
 from icml.domain.territories import load_territories
 
 #: Columns kept as text in Excel (codes keep their leading zero).
-TEXT = frozenset({"DPT", "CIUDAD", "Codigo", "Sector"})
+TEXT = frozenset({"Department", "City", "Code", "Sector"})
 
 #: Columns written as real dates in Excel.
-DATES = frozenset({"Fecha"})
+DATES = frozenset({"Date"})
 
 LABOR_COUNTS = (
-    ("Ocupados", "employed"),
-    ("Desocupados", "unemployed"),
-    ("Inactivos", "inactive"),
-    ("PEA", "labor_force"),
-    ("PET", "working_age"),
-    ("Poblacion", "population"),
+    ("Employed", "employed"),
+    ("Unemployed", "unemployed"),
+    ("Inactive", "inactive"),
+    ("LaborForce", "labor_force"),
+    ("WorkingAge", "working_age"),
+    ("Population", "population"),
 )
 LABOR_RATES = (
-    ("TD", "unemployment_rate"),
-    ("TO", "employment_rate"),
-    ("TGP", "participation_rate"),
+    ("UnemploymentRate", "unemployment_rate"),
+    ("EmploymentRate", "employment_rate"),
+    ("ParticipationRate", "participation_rate"),
 )
 INFORMALITY = (
-    ("Poblacion", "population"),
-    ("PET", "working_age"),
-    ("PEA", "labor_force"),
-    ("Ocupados", "employed"),
-    ("Desocupados", "unemployed"),
-    ("Inactivos", "inactive"),
-    ("Informales", "informal"),
-    ("Formales", "formal"),
-    ("TI", "informality_rate"),
+    ("Population", "population"),
+    ("WorkingAge", "working_age"),
+    ("LaborForce", "labor_force"),
+    ("Employed", "employed"),
+    ("Unemployed", "unemployed"),
+    ("Inactive", "inactive"),
+    ("Informal", "informal"),
+    ("Formal", "formal"),
+    ("InformalityRate", "informality_rate"),
 )
 INFORMALITY_CITIES = (
-    ("Ocupados", "employed_frozen"),
-    ("Informales", "informal_estimated"),
-    ("Formales", "formal_estimated"),
-    ("TI", "informality_rate"),
+    ("Employed", "employed_frozen"),
+    ("Informal", "informal_estimated"),
+    ("Formal", "formal_estimated"),
+    ("InformalityRate", "informality_rate"),
 )
-SECTOR_DEPARTMENTS = (("Sector", "sector_code"), ("Ocupados", "employed_sector"), ("Participacion", "sector_share"))
-SECTOR_NATIONAL = (("Sector", "sector_code"), ("Ocupados", "occupied"), ("Participacion", "share"))
+SECTOR_DEPARTMENTS = (("Sector", "sector_code"), ("Employed", "employed_sector"), ("Share", "sector_share"))
+SECTOR_NATIONAL = (("Sector", "sector_code"), ("Employed", "occupied"), ("Share", "share"))
 
 
 def _department_names() -> dict[str, str]:
@@ -90,31 +90,31 @@ def simple_frame(domain: str, level: str, source: pd.DataFrame) -> pd.DataFrame:
     """
     period = source["period"]
     data: dict[str, pd.Series] = {
-        "Fecha": period + "-01",  # first day of the month, ISO date
-        "Año": period.str[:4],
-        "Mes": period.str[5:7].astype(int).astype(str),
+        "Date": period + "-01",  # first day of the month, ISO date
+        "Year": period.str[:4],
+        "Month": period.str[5:7].astype(int).astype(str),
     }
-    if level == "departamentos":
+    if level == "departments":
         codes = source["dep_code"].astype(str).str.zfill(2)
         names = _department_names()
-        data["DPT"] = codes.map(names)
-        data["Codigo"] = codes
-    elif level == "ciudades":
-        data["CIUDAD"] = source["city_name"]
-        data["Codigo"] = source["city_code"].astype(str).str.zfill(2)
-    if domain == "laboral":
+        data["Department"] = codes.map(names)
+        data["Code"] = codes
+    elif level == "cities":
+        data["City"] = source["city_name"]
+        data["Code"] = source["city_code"].astype(str).str.zfill(2)
+    if domain == "labor":
         source = _with_rates(source)
         data |= _columns(source, LABOR_COUNTS + LABOR_RATES)
-    elif domain == "informalidad":
-        data |= _columns(source, INFORMALITY_CITIES if level == "ciudades" else INFORMALITY)
-    elif domain == "sectorial":
-        data |= _columns(source, SECTOR_DEPARTMENTS if level == "departamentos" else SECTOR_NATIONAL)
+    elif domain == "informality":
+        data |= _columns(source, INFORMALITY_CITIES if level == "cities" else INFORMALITY)
+    elif domain == "sectoral":
+        data |= _columns(source, SECTOR_DEPARTMENTS if level == "departments" else SECTOR_NATIONAL)
     else:
         raise ValueError(f"Unknown domain {domain!r}")
     frame = pd.DataFrame(data)
-    if frame.get("DPT") is not None and frame["DPT"].isna().any():
+    if frame.get("Department") is not None and frame["Department"].isna().any():
         raise ValueError("A department code has no name in the territory catalog")
-    order = [c for c in ("Codigo", "Sector", "Fecha") if c in frame.columns]
+    order = [c for c in ("Code", "Sector", "Date") if c in frame.columns]
     return frame.sort_values(order, kind="stable").reset_index(drop=True)
 
 
@@ -132,10 +132,10 @@ def build_simple(
     delivery : Path
         A delivery folder (the one that holds ``MANIFEST.json``).
     output : Path, optional
-        Destination; defaults to ``<delivery>_sencillo`` beside it.
+        Destination; defaults to ``<delivery>_simple`` beside it.
     excel : bool
         Also write ``.xlsx``. CSV files use UTF-8 with BOM, so Excel shows the
-        accents; the workbooks keep codes as text and ``Fecha`` as a real date.
+        accents; the workbooks keep codes as text and ``Date`` as a real date.
 
     Returns
     -------
@@ -144,7 +144,7 @@ def build_simple(
     """
     delivery = Path(delivery)
     manifest = json.loads((delivery / "MANIFEST.json").read_text("utf-8"))
-    output = Path(output) if output else delivery.parent / f"{delivery.name}_sencillo"
+    output = Path(output) if output else delivery.parent / f"{delivery.name}_simple"
     if output.exists():
         raise FileExistsError(f"Refusing to overwrite {output}")
     stamp = manifest["run_id"][:17]
@@ -153,9 +153,9 @@ def build_simple(
         if not entry["path"].endswith(".csv"):
             continue
         frame = simple_frame(entry["domain"], entry["level"], read_text_table(delivery / entry["path"]))
-        folder = output / f"universo_{entry['universe']}" / entry["domain"]
+        folder = output / f"universe_{entry['universe']}" / entry["domain"]
         folder.mkdir(parents=True, exist_ok=True)
-        name = f"{entry['domain']}_{entry['level']}_{entry['universe']}_corte-{manifest['cutoff']}_{stamp}_sencillo"
+        name = f"{entry['domain']}_{entry['level']}_{entry['universe']}_cutoff-{manifest['cutoff']}_{stamp}_simple"
         frame.to_csv(folder / f"{name}.csv", index=False, lineterminator="\n", encoding="utf-8-sig")
         files = [folder / f"{name}.csv"]
         if excel:

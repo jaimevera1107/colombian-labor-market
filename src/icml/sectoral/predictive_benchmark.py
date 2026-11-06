@@ -105,7 +105,6 @@ def predict_33(records,allfeatures,trees=160):
     train=[r for r in records if r['year']<=2024]
     observed={(_norm(r['department']),r['year']):r['y'] for r in records}
     # Train 2015-2024 only: no label 2025 to fit parameters, including inference 2025.
-    estimators={}
     X=np.stack([r['features_gdp'] for r in train]); y=np.stack([r['y'] for r in train]);Xt=np.stack([r['features_gdp'] for r in allfeatures])
     results=[]
     for model in MODELS:

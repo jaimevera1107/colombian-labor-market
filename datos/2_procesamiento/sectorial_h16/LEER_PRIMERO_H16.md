@@ -1,4 +1,6 @@
-# ICML 2.2.18 — H16, predictor sectorial recuperado y matriz mensual conciliada
+# ICML 2.5.0 — H16, predictor sectorial recuperado y matriz mensual conciliada
+
+> Bundle regenerado en 2.5.0 a partir de la base laboral vigente (2.4.0 + factor GEIH recto por tramos), con la misma rutina que usa `icml rebuild`. Las cifras de desempeño cambian en la tercera cifra decimal respecto al bundle anterior (entrenado con la base laboral previa a 2.4.0).
 
 **Estado: EXPERIMENTAL, NO CANÓNICO.** Implementación reproducible a partir del ICML 2.2.18/H11-H15 y del proyecto original del autor. No reemplaza datos históricos del ICML, no modifica los ZIP de origen ni constituye un anexo DANE oficial.
 
@@ -18,14 +20,14 @@ Todas las cifras son MAE de participación sectorial por celda, en puntos porcen
 | Modelo | LOGO 2015–2024 | 2025 reservado |
 |---|---:|---:|
 | Ridge del H15 con PIB rezagado | 1,2355 | 1,3702 |
-| Ridge con 37 variables originales + PIB | 1,2436 | 1,3300 |
-| Ridge con 38 variables originales + PIB | 1,2722 | 1,3628 |
-| XGBoost 14 ramas y 38 variables + PIB | 1,2481 | 1,3087 |
-| **Ensamble 50 % Ridge H15 / 50 % XGBoost 38** | **1,1583** | **1,2673** |
+| Ridge con 37 variables originales + PIB | 1,2421 | 1,3283 |
+| Ridge con 38 variables originales + PIB | 1,2708 | 1,3613 |
+| XGBoost 14 ramas y 38 variables + PIB | 1,2512 | 1,3081 |
+| **Ensamble 50 % Ridge H15 / 50 % XGBoost 38** | **1,1598** | **1,2680** |
 
 El ensamble usa ponderaciones de una malla preespecificada `{0, 0.25, 0.5, 0.75, 1}`, elegidas según el MAE LOGO 2015–2024. Esto **no es validación anidada de la selección de hiperparámetros** y el desempeño LOGO puede ser algo optimista por escoger la ponderación sobre esos mismos folds. El año 2025 sí queda separado de esa selección. Las variables macroeconómicas y de informalidad son vintages retrospectivos: esto tampoco es una simulación *as-of* de datos disponibles en tiempo real.
 
-**Bogotá, importante:** antes de usar el Anuario como ancla histórica, el ensamble predice Bogotá 2015–2024 con MAE de aproximadamente **1,873 pp**; después de incorporar la referencia de Bogotá (2015–2024) y reconciliar H11, su error frente a esas mismas anclas cae a ~**0,092 pp**. La segunda cifra es **ajuste a datos históricos observados, no desempeño predictivo**. Para agricultura en Bogotá 2024 el valor conciliado es aproximadamente 0,395 % frente al 0,400 % de la referencia anual clasificada.
+**Bogotá, importante:** antes de usar el Anuario como ancla histórica, el ensamble predice Bogotá 2015–2024 con MAE de aproximadamente **1,866 pp**; después de incorporar la referencia de Bogotá (2015–2024) y reconciliar H11, su error frente a esas mismas anclas cae a ~**0,092 pp**. La segunda cifra es **ajuste a datos históricos observados, no desempeño predictivo**. Para agricultura en Bogotá 2024 el valor conciliado es aproximadamente 0,395 % frente al 0,400 % de la referencia anual clasificada.
 
 ## Conciliación y evaluación
 
@@ -33,8 +35,8 @@ El ensamble usa ponderaciones de una malla preespecificada `{0, 0.25, 0.5, 0.75,
 2. Restricciones NO impuestas: la suma nacional GEIH representada contra DANE en 1993–2000, o la exactitud de los 24 conjuntos de anclas GEIH anuales frente a márgenes completos; son dominios de referencia parcialmente distintos y la igualdad puede ser imposible.
 3. Auditoría de anclas: cotejo de participaciones anuales ponderadas con empleo representado de la matriz, antes de excluir `NO_INFO`. El denominador del contraste se restringe correctamente a las 14 actividades clasificadas.
 4. H11: 1993–2014 reconstrucción nacional con supuestos; 2015–2026 conserva las 13 agrupaciones publicadas del DANE, con desdoblamiento `B/D_E` previamente identificado como supuesto. Las anomalías originales de `NO_INFO` y los supuestos de enlace no quedan resueltos por este paquete.
-5. El algoritmo reporta correcciones mensuales de hasta ~5,70 pp respecto al prior, sobre todo en 2020. Estas modificaciones no son automáticamente errores: indican que la reconciliación es sustantiva y requiere revisión.
-6. La sensibilidad de retropolación desde 2015 alcanza ~23,14 pp en una celda de enero 1993 al comparar la ausencia de atenuación con la semivida de 12 años; **no es un intervalo de confianza**.
+5. El algoritmo reporta correcciones mensuales de hasta ~5,72 pp respecto al prior, sobre todo en 2020. Estas modificaciones no son automáticamente errores: indican que la reconciliación es sustantiva y requiere revisión.
+6. La sensibilidad de retropolación desde 2015 alcanza ~23,03 pp en una celda de enero 1993 al comparar la ausencia de atenuación con la semivida de 12 años; **no es un intervalo de confianza**.
 
 ## Relación con el notebook original
 

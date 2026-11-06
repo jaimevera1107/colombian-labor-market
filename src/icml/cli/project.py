@@ -17,6 +17,7 @@ import argparse
 import importlib
 import json
 import os
+import warnings
 import re
 import subprocess
 import sys
@@ -32,7 +33,7 @@ from icml.layout import (
     find_project_root,
 )
 
-COMMANDS = ("status", "rebuild", "update", "plots", "verify", "checksums")
+COMMANDS = ("status", "rebuild", "update", "plots", "verify", "checksums", "report", "forecast")
 _MONTH = re.compile(r"^\d{4}-(0[1-9]|1[0-2])$")
 #: Environment variable that fixes the calendar of a process (see ``_relaunch``).
 CUTOFF_ENV = "ICML_CUTOFF"
@@ -63,6 +64,7 @@ def register(commands: Commands) -> None:
     rebuild.add_argument("--yes", action="store_true", help="Do not ask for confirmation")
     rebuild.add_argument("--dry-run", action="store_true", help="Only show what would be done, without computing")
     rebuild.add_argument("--no-simple", action="store_true", help="Do not create the simple files")
+    rebuild.add_argument("--verbose", action="store_true", help="Show library warnings and the full plan")
     rebuild.set_defaults(handler=run_command)
 
     update = common(commands.add_parser(
@@ -79,12 +81,25 @@ def register(commands: Commands) -> None:
     )
     update.add_argument("--dry-run", action="store_true", help="Only show what would be done, without computing")
     update.add_argument("--no-simple", action="store_true", help="Do not create the simple files")
+    update.add_argument("--verbose", action="store_true", help="Show library warnings and the full plan")
     update.set_defaults(handler=run_command)
+
+    report = common(commands.add_parser("report", help="Statistical diagnostics of the newest month of a delivery"))
+    report.add_argument("--folder", type=Path, help="Delivery to diagnose (default: the published one)")
+    report.add_argument("--previous", type=Path, help="Earlier delivery to measure revisions against (default: the one before)")
+    report.set_defaults(handler=run_command)
+
+    forecast = common(commands.add_parser("forecast", help="EXPERIMENTAL univariate forecasts of the delivered series"))
+    forecast.add_argument("--folder", type=Path, help="Delivery to forecast from (default: the published one)")
+    forecast.add_argument("--horizon", type=int, default=12, help="Months ahead (default 12)")
+    forecast.add_argument("--fit-years", type=int, default=10, help="Years of history used to fit (default 10)")
+    forecast.add_argument("--force", action="store_true", help="Replace existing forecasts")
+    forecast.set_defaults(handler=run_command)
 
     plots = common(commands.add_parser("plots", help="Draw the latest delivery (dashboards per territory and comparatives)"))
     plots.add_argument("--folder", type=Path, help="Delivery to draw (default: the published one)")
-    plots.add_argument("--only", help="nacional, departamentos, comparativos (comma-separated)")
-    plots.add_argument("--universe", help="censo or geih (default both)")
+    plots.add_argument("--only", help="national, departments, comparatives (comma-separated)")
+    plots.add_argument("--universe", help="census or geih (default both)")
     plots.add_argument("--departments", help="Comma-separated DANE codes (default all)")
     plots.add_argument("--format", choices=("png", "pdf", "svg"), default="png")
     plots.add_argument("--force", action="store_true", help="Replace existing figures")
@@ -111,7 +126,9 @@ def deliveries(root: Path) -> list[Path]:
 
 def current_vintage(root: Path) -> dict | None:
     """The published vintage: run id, mode and cutoff, or ``None`` when nothing is published."""
-    path = root / CURRENT_DIR / "vigente.json"
+    path = root / CURRENT_DIR / "current.json"
+    if not path.is_file():
+        path = root / CURRENT_DIR / "vigente.json"  # bases published before 2.6.0
     if not path.is_file():
         return None
     info = json.loads(path.read_text("utf-8"))
@@ -174,9 +191,6 @@ def command_status(root: Path) -> int:
     reached = detected["cutoff"]
     if reached is None:
         print(f"  Copy both annexes of the same month into {INGESTION_DIR}/ (see {INGESTION_DIR}/LEEME.md).")
-    elif reached > FROZEN_CUTOFF:
-        print(f"  There are annexes for {reached}, later than {FROZEN_CUTOFF}: that month cannot be processed yet.")
-        print(f"  To work through {FROZEN_CUTOFF}: icml update --through {FROZEN_CUTOFF}")
     elif vintage is None:
         print(f"  First time: icml rebuild   (through {reached}; use --through YYYY-MM for another month)")
     elif (vintage.get("cutoff") or "") < reached:
@@ -184,6 +198,8 @@ def command_status(root: Path) -> int:
     else:
         print("  Everything is up to date. To draw the latest delivery: icml plots")
         print("  To start over from scratch: icml rebuild")
+    if reached is not None and reached > FROZEN_CUTOFF:
+        print(f"  Note: {reached} is later than the frozen vintage ({FROZEN_CUTOFF}); frozen parameters are carried forward.")
     return EXIT_OK
 
 
@@ -197,7 +213,7 @@ def _relaunch(root: Path, command: str, args: argparse.Namespace, target: str) -
     other than the default needs a fresh process.
     """
     cmd = [sys.executable, "-m", "icml", command, "--root", str(root), "--through", target]
-    for flag in ("yes", "dry_run", "no_simple"):
+    for flag in ("yes", "dry_run", "no_simple", "verbose"):
         if getattr(args, flag, False):
             cmd.append("--" + flag.replace("_", "-"))
     print(f"Computing through {target} requires starting with that cutoff; restarting the program...\n")
@@ -248,11 +264,10 @@ def command_run(root: Path, command: str, args: argparse.Namespace) -> int:
         return EXIT_ACTION
     if target > FROZEN_CUTOFF:
         print(
-            f"The annexes reach {target}, but the newest month that can be processed is {FROZEN_CUTOFF}: "
-            "extending the frozen parameters to new months has no defined rule yet.\n"
-            f"To work through {FROZEN_CUTOFF} ignoring later months: icml {command} --through {FROZEN_CUTOFF}"
+            f"{target} is later than the frozen vintage ({FROZEN_CUTOFF}): the frozen parameters "
+            "(census bridge, informality priors, national sectoral composition) are carried forward "
+            "to the new months and the products say so (docs/production/EXTENSION_BEYOND_FROZEN_CUTOFF.md).\n"
         )
-        return EXIT_ACTION
 
     if command == "rebuild":
         mode = TOTAL
@@ -287,6 +302,11 @@ def command_run(root: Path, command: str, args: argparse.Namespace) -> int:
         else f"UPDATE ONLY through {target}: the anchored years are kept and only the open ones are recomputed."
     )
     print(headline + "\n")
+    if not getattr(args, "verbose", False):
+        # Progress only: the solver and pandas warnings of a full run are noise for the person
+        # who runs the month; --verbose keeps them (they are informative when something fails).
+        warnings.simplefilter("ignore")
+        print("Recomputing (10 to 15 minutes for a rebuild, 8 to 10 for an update)...", flush=True)
     result = service.run_recalculation(
         root,
         mode,
@@ -296,9 +316,9 @@ def command_run(root: Path, command: str, args: argparse.Namespace) -> int:
     )
     plan = result["plan"]
     _print_plan(plan, frozenset(p.name for p in annexes_after(root / INGESTION_DIR, target)))
-    if plan["status"] == "BLOQUEADO":
+    if plan["status"] == "BLOCKED":
         return EXIT_ACTION
-    if plan["status"] == "SIN_CAMBIOS":
+    if plan["status"] == "NO_CHANGES":
         print("\nAlready up to date: no new annexes since the last update.")
         return EXIT_OK
     if args.dry_run:
@@ -321,8 +341,62 @@ def _finish(root: Path, folder: Path, *, make_simple: bool) -> int:
     if make_simple:
         simple = build_simple(folder)
         print(f"Simple files: {simple['folder']}")
-    print("\nNext step: icml plots")
+    try:
+        _write_monthly_report(root, folder)
+    except Exception as exc:  # the diagnostics never block a delivery
+        print(f"Monthly diagnostics not written: {exc}", file=sys.stderr)
+    print("\nNext step: icml plots   (diagnostics: icml report)")
     return EXIT_OK if report["status"] == "PASS" else EXIT_ERROR
+
+
+# ----------------------------------------------------------------------------- report / forecast
+
+
+def _previous_delivery(root: Path, folder: Path) -> Path | None:
+    found = deliveries(root)
+    earlier = [d for d in found if d.name < folder.name]
+    return earlier[-1] if earlier else None
+
+
+def _write_monthly_report(root: Path, folder: Path, previous: Path | None = None) -> dict:
+    from icml.delivery.monthly_report import monthly_report
+    from icml.recalculation.service import anchor_year
+
+    previous = previous or _previous_delivery(root, folder)
+    try:
+        frozen_through = anchor_year(root)
+    except Exception:
+        frozen_through = None
+    report = monthly_report(folder, previous, frozen_through)
+    print(f"Monthly diagnostics: {folder / 'MONTHLY_REPORT.md'} ({report['flags']} series flagged of {len(report['series'])})")
+    return report
+
+
+def command_report(root: Path, args: argparse.Namespace) -> int:
+    """Write the statistical diagnostics of a delivery's newest month."""
+    folder = _delivery_folder(root, args.folder)
+    _write_monthly_report(root, folder, args.previous)
+    return EXIT_OK
+
+
+def command_forecast(root: Path, args: argparse.Namespace) -> int:
+    """EXPERIMENTAL univariate forecasts next to a delivery."""
+    import shutil
+
+    from icml.forecast import FORECAST_SUFFIX, forecast_delivery
+
+    folder = _delivery_folder(root, args.folder)
+    output = folder.parent / f"{folder.name}{FORECAST_SUFFIX}"
+    if output.exists():
+        if not args.force:
+            print(f"{output} already exists. Use --force to replace it.", file=sys.stderr)
+            return EXIT_ACTION
+        shutil.rmtree(output)
+    print(f"Forecasting {folder.name} ({args.horizon} months ahead, EXPERIMENTAL)...")
+    summary = forecast_delivery(folder, horizon=args.horizon, fit_years=args.fit_years, output=output)
+    print(f"{summary['series_forecast']} series forecast, {summary['series_skipped']} skipped -> {output}")
+    print("These are univariate forecasts: departments do not add to the national and rates are not derived from levels.")
+    return EXIT_OK
 
 
 # ----------------------------------------------------------------------------- plots / verify
@@ -354,7 +428,7 @@ def command_plots(root: Path, args: argparse.Namespace) -> int:
         print(exc, file=sys.stderr)
         return EXIT_ACTION
     print(f"{count} figures in {output}")
-    print(f"\nOpen {output / 'INDICE.html'} in the browser.")
+    print(f"\nOpen {output / 'index.html'} in the browser.")
     return EXIT_OK
 
 
@@ -402,6 +476,10 @@ def run_command(args: argparse.Namespace) -> int:
             return command_plots(root, args)
         if args.command == "checksums":
             return command_checksums(root, args)
+        if args.command == "report":
+            return command_report(root, args)
+        if args.command == "forecast":
+            return command_forecast(root, args)
         return command_verify(root, args)
     except (FileNotFoundError, ValueError) as exc:
         print(f"\n{exc}", file=sys.stderr)

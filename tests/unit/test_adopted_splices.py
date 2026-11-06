@@ -38,10 +38,10 @@ def test_the_methodological_change_bumped_the_version_consistently():
 
 
 def test_the_methodology_note_exists():
-    note = (PROJECT / "docs" / "production" / "EMPALMES_2001.md").read_text("utf-8")
-    assert "Para revertir" in note and "2.3.0" in note
-    rebuilt = (PROJECT / "docs" / "production" / "RECONSTRUCCION_LABORAL.md").read_text("utf-8")
-    assert "Para revertir" in rebuilt and "2.4.0" in rebuilt and "PET" in rebuilt
+    note = (PROJECT / "docs" / "production" / "SPLICES_2001.md").read_text("utf-8")
+    assert "To revert" in note and "2.3.0" in note
+    rebuilt = (PROJECT / "docs" / "production" / "LABOR_RECONSTRUCTION.md").read_text("utf-8")
+    assert "To revert" in rebuilt and "2.4.0" in rebuilt and "PET" in rebuilt
 
 
 def test_a_recompute_is_clean_in_either_state():

@@ -10,8 +10,8 @@ draws, for both universes:
   the last month and departmental dispersion around the national value.
 
 It never modifies the delivery and is not needed to compute anything: it
-only reads results. The output folder ``<delivery>_graficos/`` keeps its
-published name and holds an ``INDICE.html`` to browse everything.
+only reads results. The output folder ``<delivery>_plots/`` keeps its
+published name and holds an ``index.html`` to browse everything.
 
     icml plots
     icml plots --only nacional,comparativos --universe censo
@@ -36,43 +36,43 @@ import pandas as pd
 
 from icml.layout import PLOTS_SUFFIX
 
-UNIVERSES = ("censo", "geih")
-UNIVERSE_LABEL = {"censo": "Universo censo (territorio completo)", "geih": "Universo GEIH (parte representada)"}
-UNIVERSE_COLOR = {"censo": "#1F4E79", "geih": "#D55E00"}
+UNIVERSES = ("census", "geih")
+UNIVERSE_LABEL = {"census": "Census universe (whole territory)", "geih": "GEIH universe (represented part)"}
+UNIVERSE_COLOR = {"census": "#1F4E79", "geih": "#D55E00"}
 #: Census thick and behind, GEIH thin and on top: where they coincide both stay visible.
-UNIVERSE_WIDTH = {"censo": 2.6, "geih": 1.1}
-UNIVERSE_ORDER = {"censo": 2, "geih": 3}
+UNIVERSE_WIDTH = {"census": 2.6, "geih": 1.1}
+UNIVERSE_ORDER = {"census": 2, "geih": 3}
 SPLICE = pd.Timestamp("2001-01-01")
 
 #: Rate -> (domain, column, label, color). Colors are the Okabe-Ito palette (readable with color blindness).
 RATES = {
-    "TD": ("laboral", "TD", "Desempleo (TD)", "#D55E00"),
-    "TO": ("laboral", "TO", "Ocupación (TO)", "#0072B2"),
-    "TGP": ("laboral", "TGP", "Participación (TGP)", "#009E73"),
-    "TI": ("informalidad", "TI", "Informalidad (TI)", "#CC79A7"),
+    "UnemploymentRate": ("labor", "UnemploymentRate", "Unemployment rate (TD)", "#D55E00"),
+    "EmploymentRate": ("labor", "EmploymentRate", "Employment rate (TO)", "#0072B2"),
+    "ParticipationRate": ("labor", "ParticipationRate", "Participation rate (TGP)", "#009E73"),
+    "InformalityRate": ("informality", "InformalityRate", "Informality rate (TI)", "#CC79A7"),
 }
 
 SECTORS = ("A", "B", "C", "D_E", "F", "G", "H", "I", "J", "K", "L", "M_N", "O_P_Q", "R_S_T_U", "NO_INFO")
-#: Short labels of the CIIU Rev. 4 A.C. sections the ICML uses (docs/sectoral/HITO10_*).
+#: Short labels of the CIIU Rev. 4 A.C. sections the ICML uses (docs/sectoral/README.md).
 SECTOR_NAMES = {
-    "A": "Agricultura y pesca",
-    "B": "Minas y canteras",
-    "C": "Industria",
-    "D_E": "Electricidad, gas y agua",
-    "F": "Construcción",
-    "G": "Comercio",
-    "H": "Transporte",
-    "I": "Alojamiento y comidas",
-    "J": "Información y comunicaciones",
-    "K": "Financieras y seguros",
-    "L": "Inmobiliarias",
-    "M_N": "Profesionales y administrativas",
-    "O_P_Q": "Administración pública, educación y salud",
-    "R_S_T_U": "Otros servicios",
-    "NO_INFO": "Sin información",
+    "A": "Agriculture and fishing",
+    "B": "Mining and quarrying",
+    "C": "Manufacturing",
+    "D_E": "Electricity, gas and water",
+    "F": "Construction",
+    "G": "Trade",
+    "H": "Transport",
+    "I": "Accommodation and food",
+    "J": "Information and communication",
+    "K": "Finance and insurance",
+    "L": "Real estate",
+    "M_N": "Professional and administrative",
+    "O_P_Q": "Public administration, education and health",
+    "R_S_T_U": "Other services",
+    "NO_INFO": "No information",
 }
-TEXT_COLUMNS = {"DPT", "CIUDAD", "Codigo", "Sector"}
-GROUPS = ("nacional", "departamentos", "comparativos")
+TEXT_COLUMNS = {"Department", "City", "Code", "Sector"}
+GROUPS = ("national", "departments", "comparatives")
 FORMATS = ("png", "pdf", "svg")
 
 Frames = dict[tuple[str, str, str], pd.DataFrame]
@@ -150,14 +150,14 @@ def slug(text: str) -> str:
 
 
 def scale_units(maximum: float) -> tuple[float, str]:
-    """Divisor and unit name that keep a level readable (millones, miles or personas)."""
+    """Divisor and unit name that keep a level readable (millions, thousands or people)."""
     if not np.isfinite(maximum):
-        return 1.0, "personas"
+        return 1.0, "people"
     if maximum >= 1e6:
-        return 1e6, "millones de personas"
+        return 1e6, "millions of people"
     if maximum >= 1e3:
-        return 1e3, "miles de personas"
-    return 1.0, "personas"
+        return 1e3, "thousands of people"
+    return 1.0, "people"
 
 
 def spans(mask: pd.Series, dates: pd.Series) -> list[tuple[pd.Timestamp, pd.Timestamp]]:
@@ -178,7 +178,7 @@ def spans(mask: pd.Series, dates: pd.Series) -> list[tuple[pd.Timestamp, pd.Time
 
 def annual_mean(frame: pd.DataFrame, column: str) -> pd.DataFrame:
     """Annual mean of ``column`` by territory code: rows = Codigo, columns = year."""
-    return frame.groupby(["Codigo", "Año"])[column].mean().unstack("Año")
+    return frame.groupby(["Code", "Year"])[column].mean().unstack("Year")
 
 
 def sector_label(code: str) -> str:
@@ -206,7 +206,7 @@ def load_frames(delivery: Path) -> tuple[Frames, Meta]:
     """Read a delivery into simple frames keyed by (universe, domain, level).
 
     The simple frames (Fecha, DPT, Codigo, rates...) are the same the simple files hold,
-    so the figures work whether or not the ``_sencillo`` folder exists.
+    so the figures work whether or not the ``_simple`` folder exists.
     """
     from icml.delivery.builder import read_text_table
     from icml.delivery.simple import simple_frame
@@ -218,9 +218,9 @@ def load_frames(delivery: Path) -> tuple[Frames, Meta]:
         if not entry["path"].endswith(".csv"):
             continue
         frame = simple_frame(entry["domain"], entry["level"], read_text_table(delivery / entry["path"]))
-        frame["Fecha"] = pd.to_datetime(frame["Fecha"])
+        frame["Date"] = pd.to_datetime(frame["Date"])
         for column in frame.columns:
-            if column not in TEXT_COLUMNS and column != "Fecha":
+            if column not in TEXT_COLUMNS and column != "Date":
                 frame[column] = pd.to_numeric(frame[column], errors="coerce")
         frames[(entry["universe"], entry["domain"], entry["level"])] = frame
     meta = Meta(manifest.get("cutoff", ""), manifest.get("software_version", ""), manifest.get("run_id", ""))
@@ -230,10 +230,10 @@ def load_frames(delivery: Path) -> tuple[Frames, Meta]:
 def departments(frames: Frames) -> pd.DataFrame:
     """Code and name of every department present, sorted by code."""
     for universe in UNIVERSES:
-        frame = frames.get((universe, "laboral", "departamentos"))
+        frame = frames.get((universe, "labor", "departments"))
         if frame is not None:
-            return frame[["Codigo", "DPT"]].drop_duplicates().sort_values("Codigo").reset_index(drop=True)
-    return pd.DataFrame(columns=["Codigo", "DPT"])
+            return frame[["Code", "Department"]].drop_duplicates().sort_values("Code").reset_index(drop=True)
+    return pd.DataFrame(columns=["Code", "Department"])
 
 
 def series(frames: Frames, universe: str, domain: str, level: str, code: str | None = None) -> pd.DataFrame | None:
@@ -242,8 +242,8 @@ def series(frames: Frames, universe: str, domain: str, level: str, code: str | N
     if frame is None:
         return None
     if code is not None:
-        frame = frame[frame["Codigo"] == code]
-    return frame.sort_values("Fecha").reset_index(drop=True)
+        frame = frame[frame["Code"] == code]
+    return frame.sort_values("Date").reset_index(drop=True)
 
 
 # ----------------------------------------------------------------------------- panels
@@ -253,7 +253,7 @@ def _heading(fig, title: str, meta: Meta, *notes: str) -> None:
     """Title, then a gray line with the notes and the provenance; space is reserved for both."""
     height = fig.get_figheight()
     fig.suptitle(title, fontsize=13, fontweight="bold", y=0.998, va="top")
-    lines = [*notes, f"ICML {meta.version} · corte {meta.cutoff}"]
+    lines = [*notes, f"ICML {meta.version} · cutoff {meta.cutoff}"]
     fig.text(0.5, 0.998 - 0.34 / height, "\n".join(lines), ha="center", va="top", fontsize=8, color="0.35", linespacing=1.4)
     engine = fig.get_layout_engine()
     if engine is not None:
@@ -280,7 +280,7 @@ def _style_time(ax, mdates, first: pd.Timestamp, last: pd.Timestamp, label_splic
         ax.text(SPLICE, 0.02, " empalme 2001-01", transform=ax.get_xaxis_transform(), rotation=90, va="bottom",
                 ha="left", fontsize=7.5, color="0.35")
     elif label_splice:
-        ax.text(first, 1.0, " reconstrucción 1993-2000", transform=ax.get_xaxis_transform(), va="top", ha="left",
+        ax.text(first, 1.0, " reconstruction 1993-2000", transform=ax.get_xaxis_transform(), va="top", ha="left",
                 fontsize=7.5, color="0.35")
         ax.text(SPLICE, 1.0, " empalme 2001-01", transform=ax.get_xaxis_transform(), va="top", ha="left",
                 fontsize=7.5, color="0.35")
@@ -290,7 +290,7 @@ def _mark_unrepresented(ax, dates: pd.Series, mask: pd.Series, label: bool = Fal
     for start, end in spans(mask, dates):
         ax.axvspan(start, end, color="#E8B4B4", alpha=0.35, lw=0, zorder=0)
         if label:
-            ax.text(start, 0.02, " sin representación GEIH", transform=ax.get_xaxis_transform(), va="bottom",
+            ax.text(start, 0.02, " not represented in the GEIH", transform=ax.get_xaxis_transform(), va="bottom",
                     ha="left", fontsize=7.5, color="#8A3A3A")
 
 
@@ -298,7 +298,7 @@ def _levels(ax, frame: pd.DataFrame, columns: Mapping[str, str], colors: Mapping
     peak = float(np.nanmax(frame[list(columns)].to_numpy(float))) if len(frame) else 0.0
     divisor, unit = scale_units(peak)
     for column, label in columns.items():
-        ax.plot(frame["Fecha"], frame[column] / divisor, label=label, color=colors[column], lw=1.4)
+        ax.plot(frame["Date"], frame[column] / divisor, label=label, color=colors[column], lw=1.4)
     ax.set_ylabel(unit)
     _legend_above(ax, len(columns))
     ax.set_ylim(bottom=0)
@@ -316,72 +316,72 @@ def plot_dashboard(
 ) -> bool:
     """Draw the dashboard of one territory (``code=None`` = national). ``False`` if there is no data."""
     plt, mdates, PercentFormatter, _ = _mpl()
-    level = "nacional" if code is None else "departamentos"
-    labor = series(frames, universe, "laboral", level, code)
+    level = "national" if code is None else "departments"
+    labor = series(frames, universe, "labor", level, code)
     if labor is None or labor.empty:
         return False
-    informal = series(frames, universe, "informalidad", level, code)
-    sector = series(frames, universe, "sectorial", level, code)
+    informal = series(frames, universe, "informality", level, code)
+    sector = series(frames, universe, "sectoral", level, code)
     labor = labor.copy()
     # Mark periods with no GEIH representation for shading only —
     # do NOT blank the data. All 33 territories cover the full
     # 1993-to-present range in both universes.
-    unrepresented = labor["PET"].fillna(0) <= 0
-    first, last = labor["Fecha"].min(), labor["Fecha"].max()
+    unrepresented = labor["WorkingAge"].fillna(0) <= 0
+    first, last = labor["Date"].min(), labor["Date"].max()
 
     fig = plt.figure(figsize=(12.5, 13.2), layout="constrained")
     grid = fig.add_gridspec(4, 2, height_ratios=[1.1, 1, 1, 1.2])
 
     ax = fig.add_subplot(grid[0, :])
-    for rate in ("TD", "TO", "TGP"):
+    for rate in ("UnemploymentRate", "EmploymentRate", "ParticipationRate"):
         _, column, label, color = RATES[rate]
-        ax.plot(labor["Fecha"], labor[column], label=label, color=color, lw=1.5)
+        ax.plot(labor["Date"], labor[column], label=label, color=color, lw=1.5)
     ax.yaxis.set_major_formatter(PercentFormatter(1.0, decimals=0))
-    ax.set_title("Mercado laboral: tasas")
+    ax.set_title("Labor market: rates")
     _legend_above(ax, 3)
     _style_time(ax, mdates, first, last, label_splice="full")
-    _mark_unrepresented(ax, labor["Fecha"], unrepresented, label=bool(unrepresented.any()))
+    _mark_unrepresented(ax, labor["Date"], unrepresented, label=bool(unrepresented.any()))
 
     ax = fig.add_subplot(grid[1, 0])
-    _levels(ax, labor, {"PET": "PET", "PEA": "PEA", "Ocupados": "Ocupados"},
-            {"PET": "#7F7F7F", "PEA": "#E69F00", "Ocupados": "#0072B2"})
-    ax.set_title("Población y ocupación")
+    _levels(ax, labor, {"WorkingAge": "WorkingAge", "LaborForce": "LaborForce", "Employed": "Employed"},
+            {"WorkingAge": "#7F7F7F", "LaborForce": "#E69F00", "Employed": "#0072B2"})
+    ax.set_title("Population and employment")
     _style_time(ax, mdates, first, last)
-    _mark_unrepresented(ax, labor["Fecha"], unrepresented)
+    _mark_unrepresented(ax, labor["Date"], unrepresented)
 
     ax = fig.add_subplot(grid[1, 1])
-    _levels(ax, labor, {"Desocupados": "Desocupados", "Inactivos": "Inactivos"},
-            {"Desocupados": "#D55E00", "Inactivos": "#56B4E9"})
-    ax.set_title("Desocupados e inactivos")
+    _levels(ax, labor, {"Unemployed": "Unemployed", "Inactive": "Inactive"},
+            {"Unemployed": "#D55E00", "Inactive": "#56B4E9"})
+    ax.set_title("Unemployed and inactive")
     _style_time(ax, mdates, first, last)
-    _mark_unrepresented(ax, labor["Fecha"], unrepresented)
+    _mark_unrepresented(ax, labor["Date"], unrepresented)
 
     ax = fig.add_subplot(grid[2, 0])
-    ax.set_title("Informalidad: tasa")
+    ax.set_title("Informality: rate")
     if informal is not None and not informal.empty:
-        ax.plot(informal["Fecha"], informal["TI"], color=RATES["TI"][3], lw=1.5)
+        ax.plot(informal["Date"], informal["InformalityRate"], color=RATES["InformalityRate"][3], lw=1.5)
         ax.yaxis.set_major_formatter(PercentFormatter(1.0, decimals=0))
         _style_time(ax, mdates, first, last)
-        _mark_unrepresented(ax, labor["Fecha"], unrepresented)
+        _mark_unrepresented(ax, labor["Date"], unrepresented)
     else:
-        ax.text(0.5, 0.5, "sin datos", transform=ax.transAxes, ha="center", color="0.5")
+        ax.text(0.5, 0.5, "no data", transform=ax.transAxes, ha="center", color="0.5")
 
     ax = fig.add_subplot(grid[2, 1])
-    ax.set_title("Informales y formales")
+    ax.set_title("Informal and formal")
     if informal is not None and not informal.empty:
-        peak = float(np.nanmax((informal["Informales"] + informal["Formales"]).to_numpy(float)))
+        peak = float(np.nanmax((informal["Informal"] + informal["Formal"]).to_numpy(float)))
         divisor, unit = scale_units(peak)
-        ax.stackplot(informal["Fecha"], informal["Informales"].fillna(0) / divisor, informal["Formales"].fillna(0) / divisor,
-                     labels=["Informales", "Formales"], colors=[RATES["TI"][3], "#BBD3E8"], lw=0)
+        ax.stackplot(informal["Date"], informal["Informal"].fillna(0) / divisor, informal["Formal"].fillna(0) / divisor,
+                     labels=["Informal", "Formal"], colors=[RATES["InformalityRate"][3], "#BBD3E8"], lw=0)
         ax.set_ylabel(unit)
         _legend_above(ax, 2)
         _style_time(ax, mdates, first, last)
-        _mark_unrepresented(ax, labor["Fecha"], unrepresented)
+        _mark_unrepresented(ax, labor["Date"], unrepresented)
 
     ax = fig.add_subplot(grid[3, :])
-    ax.set_title("Composición del empleo por sector")
+    ax.set_title("Employment composition by sector")
     if sector is not None and not sector.empty:
-        wide = sector.pivot(index="Fecha", columns="Sector", values="Participacion").reindex(columns=[c for c in SECTORS if c in set(sector["Sector"])])
+        wide = sector.pivot(index="Date", columns="Sector", values="Share").reindex(columns=[c for c in SECTORS if c in set(sector["Sector"])])
         wide = wide.loc[:, wide.max() > 0.0005].fillna(0.0)
         colors = sector_colors(wide.columns)
         ax.stackplot(wide.index, *[wide[c] for c in wide.columns], labels=[sector_label(c) for c in wide.columns],
@@ -390,7 +390,7 @@ def plot_dashboard(
         ax.set_ylim(0, 1)
         ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12), ncols=5, fontsize=8)
         _style_time(ax, mdates, first, last)
-        _mark_unrepresented(ax, labor["Fecha"], unrepresented)
+        _mark_unrepresented(ax, labor["Date"], unrepresented)
 
     notes = ["sombreado gris: tramo reconstruido (1993-2000)"]
     if unrepresented.any():
@@ -408,31 +408,31 @@ def plot_dashboard(
 def _rate_series(frames: Frames, universe: str, rate: str, level: str, code: str | None = None) -> pd.DataFrame | None:
     domain, column, *_ = RATES[rate]
     frame = series(frames, universe, domain, level, code)
-    return None if frame is None else frame[["Fecha", column]].rename(columns={column: "valor"})
+    return None if frame is None else frame[["Date", column]].rename(columns={column: "valor"})
 
 
 def plot_national_comparison(frames: Frames, path: Path, meta: Meta, dpi: int = 100) -> bool:
-    """Nacional: the four rates, censo against GEIH."""
+    """National: the four rates, census against GEIH."""
     plt, mdates, PercentFormatter, _ = _mpl()
     fig, axes = plt.subplots(2, 2, figsize=(12.5, 8), layout="constrained", sharex=True)
     drawn = False
     for ax, rate in zip(axes.ravel(), RATES, strict=True):
         for universe in UNIVERSES:
-            data = _rate_series(frames, universe, rate, "nacional")
+            data = _rate_series(frames, universe, rate, "national")
             if data is not None and not data.empty:
-                ax.plot(data["Fecha"], data["valor"], color=UNIVERSE_COLOR[universe], lw=UNIVERSE_WIDTH[universe],
+                ax.plot(data["Date"], data["valor"], color=UNIVERSE_COLOR[universe], lw=UNIVERSE_WIDTH[universe],
                         zorder=UNIVERSE_ORDER[universe], label=UNIVERSE_LABEL[universe])
                 drawn = True
         ax.set_title(RATES[rate][2])
         ax.yaxis.set_major_formatter(PercentFormatter(1.0, decimals=0))
-        lo = min((frames[(u, RATES[rate][0], "nacional")]["Fecha"].min() for u in UNIVERSES if (u, RATES[rate][0], "nacional") in frames), default=SPLICE)
-        hi = max((frames[(u, RATES[rate][0], "nacional")]["Fecha"].max() for u in UNIVERSES if (u, RATES[rate][0], "nacional") in frames), default=SPLICE)
-        _style_time(ax, mdates, lo, hi, label_splice="compact" if rate == "TD" else False)
+        lo = min((frames[(u, RATES[rate][0], "national")]["Date"].min() for u in UNIVERSES if (u, RATES[rate][0], "national") in frames), default=SPLICE)
+        hi = max((frames[(u, RATES[rate][0], "national")]["Date"].max() for u in UNIVERSES if (u, RATES[rate][0], "national") in frames), default=SPLICE)
+        _style_time(ax, mdates, lo, hi, label_splice="compact" if rate == "UnemploymentRate" else False)
     if not drawn:
         plt.close(fig)
         return False
     axes[0, 0].legend(loc="upper right", fontsize=8.5)
-    _heading(fig, "Tasas nacionales: universo censo frente a universo GEIH", meta, "línea discontinua: empalme de 2001-01")
+    _heading(fig, "National rates: census universe vs GEIH universe", meta, "dashed line: 2001-01 splice")
     path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(path, dpi=dpi)
     plt.close(fig)
@@ -449,16 +449,16 @@ def plot_department_grid(frames: Frames, rate: str, path: Path, meta: Meta, dpi:
     rows = int(np.ceil(len(deps) / cols))
     fig, axes = plt.subplots(rows, cols, figsize=(14, 2.05 * rows + 1.2), layout="constrained", sharex=True, sharey=True)
     flat = axes.ravel()
-    reference = _rate_series(frames, "censo", rate, "nacional")
+    reference = _rate_series(frames, "census", rate, "national")
     for ax, (_, dep) in zip(flat, deps.iterrows(), strict=False):
         if reference is not None:
-            ax.plot(reference["Fecha"], reference["valor"], color="0.7", lw=0.8)
+            ax.plot(reference["Date"], reference["valor"], color="0.7", lw=0.8)
         for universe in UNIVERSES:
-            data = _rate_series(frames, universe, rate, "departamentos", dep["Codigo"])
+            data = _rate_series(frames, universe, rate, "departments", dep["Code"])
             if data is not None and not data.empty:
-                ax.plot(data["Fecha"], data["valor"], color=UNIVERSE_COLOR[universe], lw=UNIVERSE_WIDTH[universe] * 0.6,
+                ax.plot(data["Date"], data["valor"], color=UNIVERSE_COLOR[universe], lw=UNIVERSE_WIDTH[universe] * 0.6,
                         zorder=UNIVERSE_ORDER[universe])
-        ax.set_title(dep["DPT"], fontsize=8)
+        ax.set_title(dep["Department"], fontsize=8)
         ax.axvline(SPLICE, color="0.4", lw=0.5, ls="--")
         ax.xaxis.set_major_locator(mdates.YearLocator(10))
         ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
@@ -467,9 +467,9 @@ def plot_department_grid(frames: Frames, rate: str, path: Path, meta: Meta, dpi:
     for ax in flat[len(deps):]:
         ax.set_visible(False)
     handles = [plt.Line2D([], [], color=UNIVERSE_COLOR[u], lw=UNIVERSE_WIDTH[u], label=UNIVERSE_LABEL[u]) for u in UNIVERSES]
-    handles.append(plt.Line2D([], [], color="0.7", lw=1.2, label="Nacional (censo)"))
+    handles.append(plt.Line2D([], [], color="0.7", lw=1.2, label="National (census)"))
     fig.legend(handles=handles, loc="outside lower center", ncols=3, fontsize=9)
-    _heading(fig, f"{RATES[rate][2]}: los 33 departamentos", meta, "misma escala vertical en todos los departamentos")
+    _heading(fig, f"{RATES[rate][2]}: the 33 departments", meta, "same vertical scale in every department")
     path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(path, dpi=dpi)
     plt.close(fig)
@@ -480,7 +480,7 @@ def plot_heatmap(frames: Frames, universe: str, rate: str, path: Path, meta: Met
     """Department by year (annual mean) heat map, sorted by the latest year."""
     plt, mdates, PercentFormatter, _ = _mpl()
     domain, column, label, _ = RATES[rate]
-    frame = frames.get((universe, domain, "departamentos"))
+    frame = frames.get((universe, domain, "departments"))
     deps = departments(frames)
     if frame is None or deps.empty:
         return False
@@ -491,7 +491,7 @@ def plot_heatmap(frames: Frames, universe: str, rate: str, path: Path, meta: Met
     last_full = table.columns[-1]
     order = table.sort_values(last_full, ascending=True, na_position="first").index
     table = table.loc[order]
-    names = deps.set_index("Codigo")["DPT"].reindex(table.index)
+    names = deps.set_index("Code")["Department"].reindex(table.index)
     fig, ax = plt.subplots(figsize=(12.5, 0.27 * len(table) + 2.2), layout="constrained")
     cmap = plt.get_cmap("viridis").copy()
     cmap.set_bad("#EDEDED")
@@ -505,7 +505,7 @@ def plot_heatmap(frames: Frames, universe: str, rate: str, path: Path, meta: Met
     bar = fig.colorbar(mesh, ax=ax, shrink=0.8, pad=0.01)
     bar.ax.yaxis.set_major_formatter(PercentFormatter(1.0, decimals=0))
     notes = ["gris = sin dato (la GEIH no representa el territorio)"] if universe == "geih" else []
-    _heading(fig, f"{label}: promedio anual por departamento · {UNIVERSE_LABEL[universe]}", meta, *notes, "el último año es parcial")
+    _heading(fig, f"{label}: annual average by department · {UNIVERSE_LABEL[universe]}", meta, *notes, "the last year is partial")
     path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(path, dpi=dpi)
     plt.close(fig)
@@ -518,31 +518,31 @@ def plot_ranking(frames: Frames, rate: str, path: Path, meta: Meta, dpi: int = 1
     domain, column, label, _ = RATES[rate]
     values: dict[str, pd.Series] = {}
     for universe in UNIVERSES:
-        frame = frames.get((universe, domain, "departamentos"))
+        frame = frames.get((universe, domain, "departments"))
         if frame is not None and not frame.empty:
-            latest = frame["Fecha"].max()
-            values[universe] = frame[frame["Fecha"] == latest].set_index("Codigo")[column]
-    if "censo" not in values:
+            latest = frame["Date"].max()
+            values[universe] = frame[frame["Date"] == latest].set_index("Code")[column]
+    if "census" not in values:
         return False
-    deps = departments(frames).set_index("Codigo")["DPT"]
-    order = values["censo"].sort_values().index
+    deps = departments(frames).set_index("Code")["Department"]
+    order = values["census"].sort_values().index
     fig, ax = plt.subplots(figsize=(10, 0.3 * len(order) + 2), layout="constrained")
     y = np.arange(len(order))
     for universe in UNIVERSES:
         if universe in values:
-            ax.scatter(values[universe].reindex(order), y, color=UNIVERSE_COLOR[universe], s=90 if universe == "censo" else 24,
-                       label=UNIVERSE_LABEL[universe], zorder=3 if universe == "censo" else 4)
+            ax.scatter(values[universe].reindex(order), y, color=UNIVERSE_COLOR[universe], s=90 if universe == "census" else 24,
+                       label=UNIVERSE_LABEL[universe], zorder=3 if universe == "census" else 4)
     if "geih" in values:
-        ax.hlines(y, values["censo"].reindex(order), values["geih"].reindex(order), color="0.8", lw=1.2, zorder=2)
+        ax.hlines(y, values["census"].reindex(order), values["geih"].reindex(order), color="0.8", lw=1.2, zorder=2)
     for universe in UNIVERSES:
-        national = _rate_series(frames, universe, rate, "nacional")
+        national = _rate_series(frames, universe, rate, "national")
         if national is not None and not national.empty:
-            ax.axvline(national.sort_values("Fecha")["valor"].iloc[-1], color=UNIVERSE_COLOR[universe], lw=1, ls=":", alpha=0.8)
+            ax.axvline(national.sort_values("Date")["valor"].iloc[-1], color=UNIVERSE_COLOR[universe], lw=1, ls=":", alpha=0.8)
     ax.set_yticks(y, labels=deps.reindex(order).to_numpy(), fontsize=8)
     ax.xaxis.set_major_formatter(PercentFormatter(1.0, decimals=0))
-    month = frames[("censo", domain, "departamentos")]["Fecha"].max().strftime("%Y-%m")
+    month = frames[("census", domain, "departments")]["Date"].max().strftime("%Y-%m")
     ax.legend(loc="lower right", fontsize=8.5)
-    _heading(fig, f"{label} por departamento · {month}", meta, "líneas punteadas: valor nacional")
+    _heading(fig, f"{label} by department · {month}", meta, "dotted lines: national value")
     path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(path, dpi=dpi)
     plt.close(fig)
@@ -556,26 +556,26 @@ def plot_dispersion(frames: Frames, universe: str, path: Path, meta: Meta, dpi: 
     drawn = False
     for ax, rate in zip(axes.ravel(), RATES, strict=True):
         domain, column, label, color = RATES[rate]
-        frame = frames.get((universe, domain, "departamentos"))
-        national = _rate_series(frames, universe, rate, "nacional")
+        frame = frames.get((universe, domain, "departments"))
+        national = _rate_series(frames, universe, rate, "national")
         if frame is None or frame.empty:
             continue
-        wide = frame.pivot(index="Fecha", columns="Codigo", values=column)
+        wide = frame.pivot(index="Date", columns="Code", values=column)
         low, high = wide.quantile(0.1, axis=1), wide.quantile(0.9, axis=1)
-        ax.fill_between(wide.index, wide.min(axis=1), wide.max(axis=1), color=color, alpha=0.12, lw=0, label="mínimo a máximo")
-        ax.fill_between(wide.index, low, high, color=color, alpha=0.3, lw=0, label="percentil 10 a 90")
-        ax.plot(wide.index, wide.median(axis=1), color=color, lw=1.2, ls="--", label="mediana departamental")
+        ax.fill_between(wide.index, wide.min(axis=1), wide.max(axis=1), color=color, alpha=0.12, lw=0, label="minimum to maximum")
+        ax.fill_between(wide.index, low, high, color=color, alpha=0.3, lw=0, label="10th to 90th percentile")
+        ax.plot(wide.index, wide.median(axis=1), color=color, lw=1.2, ls="--", label="departmental median")
         if national is not None:
-            ax.plot(national["Fecha"], national["valor"], color="black", lw=1.4, label="nacional")
+            ax.plot(national["Date"], national["valor"], color="black", lw=1.4, label="national")
         ax.set_title(label)
         ax.yaxis.set_major_formatter(PercentFormatter(1.0, decimals=0))
-        _style_time(ax, mdates, wide.index.min(), wide.index.max(), label_splice="compact" if rate == "TD" else False)
+        _style_time(ax, mdates, wide.index.min(), wide.index.max(), label_splice="compact" if rate == "UnemploymentRate" else False)
         drawn = True
     if not drawn:
         plt.close(fig)
         return False
     axes[0, 0].legend(loc="upper right", fontsize=8)
-    _heading(fig, f"Dispersión departamental alrededor del nacional · {UNIVERSE_LABEL[universe]}", meta)
+    _heading(fig, f"Departmental dispersion around the national value · {UNIVERSE_LABEL[universe]}", meta)
     path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(path, dpi=dpi)
     plt.close(fig)
@@ -596,50 +596,50 @@ def build_all(frames: Frames, output: Path, meta: Meta, options: Options | None 
     output = Path(output)
     deps = departments(frames)
     wanted = set(options.departments)
-    if "nacional" in options.groups:
+    if "national" in options.groups:
         for universe in options.universes:
-            path = output / f"universo_{universe}" / f"nacional.{ext}"
-            if plot_dashboard(frames, universe, code=None, name="Nacional", path=path, meta=meta, dpi=options.dpi):
-                _record(options, path, "nacional", "Nacional", universe)
-    if "departamentos" in options.groups:
+            path = output / f"universe_{universe}" / f"national.{ext}"
+            if plot_dashboard(frames, universe, code=None, name="National", path=path, meta=meta, dpi=options.dpi):
+                _record(options, path, "national", "National", universe)
+    if "departments" in options.groups:
         for universe in options.universes:
             for _, dep in deps.iterrows():
-                if wanted and dep["Codigo"] not in wanted:
+                if wanted and dep["Code"] not in wanted:
                     continue
-                path = output / f"universo_{universe}" / "departamentos" / f"{dep['Codigo']}_{slug(dep['DPT'])}.{ext}"
-                if plot_dashboard(frames, universe, code=dep["Codigo"], name=dep["DPT"], path=path, meta=meta, dpi=options.dpi):
-                    _record(options, path, "departamentos", dep["DPT"], universe)
-    if "comparativos" in options.groups:
-        folder = output / "comparativos"
-        path = folder / f"nacional_censo_vs_geih.{ext}"
-        if {"censo", "geih"} <= set(options.universes) and plot_national_comparison(frames, path, meta, options.dpi):
-            _record(options, path, "comparativos", "Tasas nacionales: censo frente a GEIH")
+                path = output / f"universe_{universe}" / "departments" / f"{dep['Code']}_{slug(dep['Department'])}.{ext}"
+                if plot_dashboard(frames, universe, code=dep["Code"], name=dep["Department"], path=path, meta=meta, dpi=options.dpi):
+                    _record(options, path, "departments", dep["Department"], universe)
+    if "comparatives" in options.groups:
+        folder = output / "comparatives"
+        path = folder / f"national_census_vs_geih.{ext}"
+        if {"census", "geih"} <= set(options.universes) and plot_national_comparison(frames, path, meta, options.dpi):
+            _record(options, path, "comparatives", "National rates: census vs GEIH")
         for rate in RATES:
-            if {"censo", "geih"} <= set(options.universes):
-                path = folder / f"departamentos_{rate}_censo_vs_geih.{ext}"
+            if {"census", "geih"} <= set(options.universes):
+                path = folder / f"departments_{rate}_census_vs_geih.{ext}"
                 if plot_department_grid(frames, rate, path, meta, options.dpi):
-                    _record(options, path, "comparativos", f"{RATES[rate][2]}: los 33 departamentos")
+                    _record(options, path, "comparatives", f"{RATES[rate][2]}: the 33 departments")
                 path = folder / f"ranking_{rate}.{ext}"
                 if plot_ranking(frames, rate, path, meta, options.dpi):
-                    _record(options, path, "comparativos", f"{RATES[rate][2]}: ranking del último mes")
+                    _record(options, path, "comparatives", f"{RATES[rate][2]}: ranking of the last month")
             for universe in options.universes:
-                path = folder / f"mapa_calor_{rate}_{universe}.{ext}"
+                path = folder / f"heatmap_{rate}_{universe}.{ext}"
                 if plot_heatmap(frames, universe, rate, path, meta, options.dpi):
-                    _record(options, path, "comparativos", f"{RATES[rate][2]}: mapa de calor anual", universe)
+                    _record(options, path, "comparatives", f"{RATES[rate][2]}: annual heat map", universe)
         for universe in options.universes:
-            path = folder / f"dispersion_departamental_{universe}.{ext}"
+            path = folder / f"departmental_dispersion_{universe}.{ext}"
             if plot_dispersion(frames, universe, path, meta, options.dpi):
-                _record(options, path, "comparativos", "Dispersión departamental", universe)
+                _record(options, path, "comparatives", "Departmental dispersion", universe)
     return options.done
 
 
 def write_index(output: Path, items: list[Output], meta: Meta) -> Path:
-    """INDICE.html (thumbnails grouped by section) and LEEME.md."""
+    """index.html (thumbnails grouped by section) and README.md."""
     output = Path(output)
     sections = {
-        "comparativos": "Comparativos de tasas",
-        "nacional": "Tableros nacionales",
-        "departamentos": "Tableros por departamento",
+        "comparatives": "Rate comparatives",
+        "national": "National dashboards",
+        "departments": "Dashboards by department",
     }
     body = []
     for group, heading in sections.items():
@@ -654,25 +654,25 @@ def write_index(output: Path, items: list[Output], meta: Meta) -> Path:
             body.append(f"<figure><a href='{html.escape(rel)}'>{thumb}</a><figcaption>{label}</figcaption></figure>")
         body.append("</div>")
     page = (
-        "<!doctype html><html lang='es'><meta charset='utf-8'><title>ICML: gráficos</title>"
+        "<!doctype html><html lang='en'><meta charset='utf-8'><title>ICML: figures</title>"
         "<style>body{font-family:system-ui,sans-serif;margin:24px;color:#222}h1{margin-bottom:0}"
         ".sub{color:#666;margin-top:4px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}"
         "figure{margin:0}img{width:100%;border:1px solid #ddd;border-radius:4px}figcaption{font-size:13px;margin-top:4px}"
         "small{color:#888;font-weight:normal}</style>"
-        f"<h1>ICML: gráficos de la entrega</h1><p class='sub'>Versión {html.escape(meta.version)} · corte {html.escape(meta.cutoff)}"
+        f"<h1>ICML: figures of the delivery</h1><p class='sub'>Version {html.escape(meta.version)} · cutoff {html.escape(meta.cutoff)}"
         f" · {html.escape(meta.run_id)}</p>" + "".join(body) + "</html>"
     )
-    index = output / "INDICE.html"
+    index = output / "index.html"
     index.write_text(page, encoding="utf-8")
-    (output / "LEEME.md").write_text(
-        f"# Gráficos de la entrega {meta.run_id}\n\nVersión {meta.version} · corte {meta.cutoff}. Abra `INDICE.html` en el navegador.\n\n"
-        "* `universo_censo/` y `universo_geih/`: un tablero del nacional y uno por departamento "
-        "(tasas laborales, niveles, informalidad y composición sectorial).\n"
-        "* `comparativos/`: nacional censo contra GEIH, los 33 departamentos en miniatura por tasa, mapas de calor anuales, "
-        "ranking del último mes y dispersión departamental.\n\n"
-        "Sombreado gris: tramo reconstruido (1993-2000). Línea discontinua: empalme de 2001-01. Franja rosada (GEIH): "
-        "meses sin representación del territorio en la GEIH.\n\n"
-        "Se generan con `icml plots --folder <entrega>`; no cambian ninguna cifra.\n",
+    (output / "README.md").write_text(
+        f"# Figures of the delivery {meta.run_id}\n\nVersion {meta.version} · cutoff {meta.cutoff}. Open `index.html` in the browser.\n\n"
+        "* `universe_census/` and `universe_geih/`: one national dashboard and one per department "
+        "(labor rates, levels, informality and sectoral composition).\n"
+        "* `comparatives/`: national census vs GEIH, the 33 departments as small multiples per rate, annual heat maps, "
+        "ranking of the last month and departmental dispersion.\n\n"
+        "Grey shading: reconstructed stretch (1993-2000). Dashed line: 2001-01 splice. Pink band (GEIH): "
+        "months in which the territory is not represented in the GEIH.\n\n"
+        "Generated with `icml plots --folder <delivery>`; no number is changed.\n",
         encoding="utf-8",
     )
     return index
@@ -751,7 +751,7 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     except ValueError as exc:
         parser.error(str(exc))
-    print(f"{count} figures in {output} (open INDICE.html)")
+    print(f"{count} figures in {output} (open index.html)")
     return 0
 
 

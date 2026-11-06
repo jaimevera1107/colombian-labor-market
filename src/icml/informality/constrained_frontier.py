@@ -143,9 +143,8 @@ def run(closure_root:Path, labor_path:Path, national_path:Path, output:Path,
     if labor[['dep_code','period']].duplicated().any():raise ValueError('Duplicate labor keys')
     national['period']=national.period.astype(str)
     n=national.set_index(['period','national_type'])
-    expected=set(n.index.get_level_values(0).unique())
     if national[['period','national_type']].duplicated().any():raise ValueError('Duplicated national')
-    outputs=[];stats=[];flags=[];monthly=[];audit=[]
+    outputs=[];stats=[];monthly=[];audit=[]
     for candidate in candidates:
         src=closure_root/candidate/'08_department_informality_CALIBRATION_EXPERIMENTAL.csv'
         frame=pd.read_csv(src)

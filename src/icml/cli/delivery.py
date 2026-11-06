@@ -18,12 +18,12 @@ from icml.recalculation.policy import ANCHORED, TOTAL
 #: Console names of the recalculation modes, mapped to the persisted values.
 MODE_NAMES = {"anchored": ANCHORED, "total": TOTAL}
 #: Console names of the delivery modes, mapped to the persisted values.
-DELIVERY_MODES = {"delivery": "entrega", "verification": "verificacion"}
+DELIVERY_MODES = {"delivery": "delivery", "verification": "verification"}
 
 
 def register(commands: Commands) -> None:
     """Register ``delivery`` and ``recalc`` on the main parser."""
-    delivery = commands.add_parser("delivery", help="Two-universe deliverables (censo / geih)")
+    delivery = commands.add_parser("delivery", help="Two-universe deliverables (census / geih)")
     sub = delivery.add_subparsers(dest="delivery_command", required=True)
 
     build = sub.add_parser("build", help="Build a timestamped delivery")
@@ -34,7 +34,7 @@ def register(commands: Commands) -> None:
     build.add_argument("--cutoff", default=ACTIVE_CUTOFF, help="Last month, YYYY-MM")
     build.add_argument("--mode", default="delivery", choices=tuple(DELIVERY_MODES))
     build.add_argument("--excel", action="store_true", help="Also write .xlsx files")
-    build.add_argument("--simple", action="store_true", help="Also write the simple files (Fecha, DPT, Codigo, ...)")
+    build.add_argument("--simple", action="store_true", help="Also write the simple files (Date, Department, Code, ...)")
     build.set_defaults(handler=_build)
 
     simple = sub.add_parser("simple", help="Simple files (only the columns of each thing) from a delivery")
@@ -119,4 +119,4 @@ def _recalc(args: argparse.Namespace) -> int:
     print_json(result["plan"])
     if "manifest" in result:
         print(f"Delivery written: {root / OUTPUT_DIR / result['manifest']['run_id']}")
-    return EXIT_INTEGRITY_FAILURE if result["plan"]["status"] == "BLOQUEADO" else EXIT_OK
+    return EXIT_INTEGRITY_FAILURE if result["plan"]["status"] == "BLOCKED" else EXIT_OK

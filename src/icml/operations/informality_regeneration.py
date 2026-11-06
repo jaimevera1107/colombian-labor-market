@@ -109,17 +109,7 @@ def run(root: Path, prepared: Path, labor_quality: Path, output: Path,
     comparisons=compare_candidate(baseline,candidates)
     gate=comparisons
     if strict_from is not None and strict_reference:
-        window=output/'strict_window'
-        window.mkdir()
-        frozen_window,rebuilt_window={},{}
-        for key,filename in paths.items():
-            for source_path,store,tag in ((baseline[key],frozen_window,'frozen'),
-                                          (candidates[key],rebuilt_window,'rebuilt')):
-                table=pd.read_csv(source_path,dtype=str,keep_default_na=False)
-                target=window/f'{tag}_{filename}'
-                table[table['period']>=strict_from].to_csv(target,index=False,lineterminator='\n')
-                store[key]=target
-        gate=compare_candidate(frozen_window,rebuilt_window)
+        gate=strict_window_gate(baseline,candidates,strict_from,output/'strict_window')
     if strict_reference and any(
             x.get('status')!='EQUIVALENT_WITHIN_TOLERANCES' for x in gate.values()
         ):
@@ -138,3 +128,25 @@ def run(root: Path, prepared: Path, labor_quality: Path, output: Path,
     (output/'35_H5_H6_REGENERATION.json').write_text(
          json.dumps(manifest,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     return manifest
+
+
+def strict_window_gate(baseline: dict, candidates: dict, strict_from: str, window: Path) -> dict:
+    """Compare frozen and rebuilt H5/H6 tables only from ``strict_from`` onwards.
+
+    Before that month the labor reconstruction (2.4.0) legitimately changes
+    the history, so the hard gate of the frozen vintage applies to the
+    anchored stretch only. Both sides are cut to the window and written
+    next to each other for inspection; the comparison is the usual
+    tolerance-based one.
+    """
+    window=Path(window); window.mkdir(parents=True,exist_ok=False)
+    frozen_window,rebuilt_window={},{}
+    for key in baseline:
+        filename=Path(baseline[key]).name
+        for source_path,store,tag in ((baseline[key],frozen_window,'frozen'),
+                                      (candidates[key],rebuilt_window,'rebuilt')):
+            table=pd.read_csv(source_path,dtype=str,keep_default_na=False)
+            target=window/f'{tag}_{filename}'
+            table[table['period']>=strict_from].to_csv(target,index=False,lineterminator='\n')
+            store[key]=target
+    return compare_candidate(frozen_window,rebuilt_window)

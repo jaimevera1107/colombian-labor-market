@@ -96,11 +96,11 @@ def test_audit_fails_wrong_represented_reference_but_does_not_mutate():
     x=unified.copy(deep=True)
     u=urban.copy(deep=True)
     diag,summary=audit_products(x,u,nat)
-    assert summary['status']=='REQUIERE_REVISION_METODOLOGICA'
+    assert summary['status']=='REQUIRES_METHODOLOGICAL_REVIEW'
     assert summary['hard_failures']==[]
     x.loc[(x.dep_code=='05') & (x.period=='2001-01'),'employed_represented']+=50
     _,bad=audit_products(x,u,nat)
-    assert bad['status']=='BLOQUEADO'
+    assert bad['status']=='BLOCKED'
     assert any('represented' in msg for msg in bad['hard_failures'])
     assert (unified.employed_represented==unify_territories(deps,nat).employed_represented).all()
 

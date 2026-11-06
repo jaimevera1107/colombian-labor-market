@@ -107,8 +107,9 @@ def _sst(segments):
     chunks.append(v.decode('utf-16le' if wide else 'latin-1','replace'));n-=take
    return ''.join(chunks)
  p=Parts(segments)
- total=_u32(p.read(4));count=_u32(p.read(4));texts=[]
- if count>500000:raise InvalidLegacyWorkbook('SST excesivo')
+ p.read(4)  # total string count: not needed, the unique count follows
+ count=_u32(p.read(4));texts=[]
+ if count>500000:raise InvalidLegacyWorkbook('SST too large')
  for _ in range(count):
   cch=_u16(p.read(2));flags=p.read(1)[0];wide=bool(flags&1)
   rich=_u16(p.read(2)) if flags&8 else 0

@@ -1,12 +1,12 @@
-# ICML v2.5.0 — How to test it and publish it
+# ICML v2.6.0 — How to test it and publish it
 
 The repository is **complete**: code, data, frozen references, and everything needed to rebuild the August 2026 delivery and its figures. Tests are reviewed and undone with Git.
 
 ## 0. Install (once)
 
-1. Install **Python 3.12**.
+1. Install **Python 3.11 or later**.
 2. Clone the repository and enter its folder.
-3. Run the installer (needs internet and a few minutes; it creates `.venv` with the exact versions):
+3. Run the installer (needs internet and a few minutes; it creates `.venv` and installs the package from PyPI; add `--locked` for the exact pinned environment):
    * Linux or macOS: `./install.sh`
    * Windows: double-click `install.bat`
 4. Check:
@@ -47,7 +47,7 @@ What to expect (checked on a clean copy): between the July base and the August b
 ./icml.sh plots
 ```
 
-Draws the published delivery (87 images, about 90 seconds) into `datos/3_salida/<delivery>_graficos/`; open `INDICE.html` in the browser. Options: `--only nacional,comparativos`, `--universe censo`, `--departments 05,11`, `--force` (replace).
+Draws the published delivery (87 images, about 90 seconds) into `datos/3_salida/<delivery>_plots/`; open `index.html` in the browser. Options: `--only nacional,comparativos`, `--universe census`, `--departments 05,11`, `--force` (replace).
 
 ## Other commands
 

@@ -28,7 +28,7 @@ from icml.delivery.spec import (
 #: Colombia has no daylight saving time, so the offset is constant (-05:00).
 TIMEZONE = ZoneInfo("America/Bogota")
 MODES: frozenset[str] = frozenset(
-    {"entrega", "anclado", "total", "verificacion"}
+    {"delivery", "anchored", "total", "verification"}
 )
 _REPRESENTED_QUANTITIES = (
     "employed",
@@ -109,7 +109,7 @@ def _split_columns(spec: ProductSpec, frame: pd.DataFrame) -> dict[str, pd.DataF
             f"unassigned={extra}); update icml.delivery.spec"
         )
     out: dict[str, pd.DataFrame] = {}
-    for universe, mapping in (("censo", spec.census), ("geih", spec.geih)):
+    for universe, mapping in (("census", spec.census), ("geih", spec.geih)):
         part = frame[[*spec.keys, *mapping, *spec.both]].copy()
         part.columns = [*spec.keys, *mapping.values(), *spec.both]
         out[universe] = part
@@ -266,7 +266,7 @@ def _write_xlsx(
 
 def _file_name(spec: ProductSpec, universe: str, cutoff: str, stamp: str) -> str:
     return (
-        f"{spec.domain}_{spec.level}_{universe}_corte-{cutoff}_{stamp}"
+        f"{spec.domain}_{spec.level}_{universe}_cutoff-{cutoff}_{stamp}"
     )
 
 
@@ -328,7 +328,7 @@ def build_delivery(
         raise ValueError(f"Missing products: {missing}")
     moment = (now or datetime.now(TIMEZONE)).astimezone(TIMEZONE)
     stamp = run_stamp(moment)
-    run_id = f"{stamp}_corte-{cutoff}_{mode}"
+    run_id = f"{stamp}_cutoff-{cutoff}_{mode}"
     folder = Path(output_root) / run_id
     if folder.exists():
         raise FileExistsError(f"Refusing to overwrite {folder}")
@@ -357,7 +357,7 @@ def build_delivery(
                     part.copy(), frames["labor.departamentos"]
                 )
             part.insert(0, "universe", universe)
-            target_dir = folder / f"universo_{universe}" / spec.domain
+            target_dir = folder / f"universe_{universe}" / spec.domain
             target_dir.mkdir(parents=True, exist_ok=True)
             name = _file_name(spec, universe, cutoff, stamp)
             csv_path = target_dir / f"{name}.csv"
@@ -368,7 +368,7 @@ def build_delivery(
                 _write_xlsx(part, xlsx_path)
                 files.append(xlsx_path)
             if spec.split == "columns":
-                mapping = spec.census if universe == "censo" else spec.geih
+                mapping = spec.census if universe == "census" else spec.geih
                 column_map = {
                     **{k: k for k in spec.keys},
                     **dict(mapping),
@@ -404,7 +404,7 @@ def build_delivery(
         "mode": mode,
         "software_version": software_version,
         "universes": {
-            "censo": "Complete territory (CNPV 2018 population).",
+            "census": "Complete territory (CNPV 2018 population).",
             "geih": "Part of the territory represented by the GEIH.",
         },
         "inputs": {

@@ -50,8 +50,8 @@ LOCK_FILE = "requirements/lock-py312.txt"
 
 #: Folder suffixes of the two companions of a delivery. They are part of the
 #: published layout, so they are not translated.
-SIMPLE_SUFFIX = "_sencillo"
-PLOTS_SUFFIX = "_graficos"
+SIMPLE_SUFFIX = "_simple"
+PLOTS_SUFFIX = "_plots"
 
 
 def package_root() -> Path:

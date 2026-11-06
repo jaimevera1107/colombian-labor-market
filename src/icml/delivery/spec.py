@@ -19,9 +19,9 @@ from dataclasses import dataclass, field
 
 from icml.domain.cutoff import N_MONTHS, ROWS_33, ROWS_NATIONAL
 
-UNIVERSES: tuple[str, str] = ("censo", "geih")
-DOMAINS: tuple[str, ...] = ("laboral", "informalidad", "sectorial")
-LEVELS: tuple[str, ...] = ("nacional", "ciudades", "departamentos")
+UNIVERSES: tuple[str, str] = ("census", "geih")
+DOMAINS: tuple[str, ...] = ("labor", "informality", "sectoral")
+LEVELS: tuple[str, ...] = ("national", "cities", "departments")
 
 #: Columns that identify a territory or a period; kept as text in Excel.
 TEXT_COLUMNS: frozenset[str] = frozenset(
@@ -111,12 +111,12 @@ _CITIES_NOTE = (
 SPECS: tuple[ProductSpec, ...] = (
     ProductSpec(
         "labor.nacionales",
-        "laboral",
-        "nacional",
+        "labor",
+        "national",
         "rows",
         ROWS_NATIONAL,
         row_column="national_type",
-        row_values={"censo": "ICML_COMPLETO", "geih": "DANE_REFERENCIA"},
+        row_values={"census": "ICML_COMPLETO", "geih": "DANE_REFERENCIA"},
         note=(
             "GEIH universe = national figure published by DANE. Columns "
             "represented_sum_* and gap_published_minus_sum_* compare it with "
@@ -125,8 +125,8 @@ SPECS: tuple[ProductSpec, ...] = (
     ),
     ProductSpec(
         "labor.departamentos",
-        "laboral",
-        "departamentos",
+        "labor",
+        "departments",
         "columns",
         ROWS_33,
         keys=(
@@ -182,25 +182,25 @@ SPECS: tuple[ProductSpec, ...] = (
     ),
     ProductSpec(
         "labor.ciudades",
-        "laboral",
-        "ciudades",
+        "labor",
+        "cities",
         "shared",
         ROWS_33,
         note=_CITIES_NOTE,
     ),
     ProductSpec(
         "informalidad.nacionales",
-        "informalidad",
-        "nacional",
+        "informality",
+        "national",
         "rows",
         ROWS_NATIONAL,
         row_column="national_type",
-        row_values={"censo": "ICML_COMPLETO", "geih": "GEIH_REPRESENTADO_CNPV2018"},
+        row_values={"census": "ICML_COMPLETO", "geih": "GEIH_REPRESENTADO_CNPV2018"},
     ),
     ProductSpec(
         "informalidad.departamentos",
-        "informalidad",
-        "departamentos",
+        "informality",
+        "departments",
         "columns",
         ROWS_33,
         keys=("period", "dep_code"),
@@ -261,16 +261,16 @@ SPECS: tuple[ProductSpec, ...] = (
     ),
     ProductSpec(
         "informalidad.ciudades",
-        "informalidad",
-        "ciudades",
+        "informality",
+        "cities",
         "shared",
         ROWS_33,
         note=_CITIES_NOTE,
     ),
     ProductSpec(
         "sectorial.nacional",
-        "sectorial",
-        "nacional",
+        "sectoral",
+        "national",
         "columns",
         N_MONTHS * 15,
         keys=("period", "sector_code"),
@@ -284,8 +284,8 @@ SPECS: tuple[ProductSpec, ...] = (
     ),
     ProductSpec(
         "sectorial.departamental",
-        "sectorial",
-        "departamentos",
+        "sectoral",
+        "departments",
         "columns",
         ROWS_33 * 15,
         keys=("period", "dep_code", "sector_code"),

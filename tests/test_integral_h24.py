@@ -28,8 +28,10 @@ def test_2026_08_full_vintage_cross_checks(frozen_root):
     c = audit_products(p)
     assert c["status"] == "PASS", c["issues"]
     assert c["rows"]["sectorial.departamental"] == 199980
-    # Represented informality is NOT numerically the same vintage as labor.
-    assert c["metrics"]["represented_domain_nonidentical_rows_DIAGNOSTIC"] > 0
+    # Since 2.5.0 the eight products are frozen from one and the same recompute,
+    # so the GEIH-represented domain of informality equals the labor product's
+    # in every row (it used to differ: the products came from different vintages).
+    assert c["metrics"]["represented_domain_nonidentical_rows_DIAGNOSTIC"] == 0
 
 
 def test_verify_is_separate_from_recalculation(frozen_root, tmp_path):
@@ -86,17 +88,6 @@ def test_destination_cannot_be_inside_checkpoint(frozen_root):
         run_integral(frozen_root, frozen_root / "bad_output", mode="verify")
 
 
-@pytest.mark.xfail(
-    strict=True,
-    reason=(
-        "Known data-lineage inconsistency, not a software defect: the frozen "
-        "labor products were regenerated after v2.4.0 (commits 0a6f316.."
-        "92a9465) but the frozen H9 lineage (13_resumen.json) and the frozen "
-        "H16 stage inputs (sectorial_h16/inputs/departamentos.csv) still "
-        "point to the previous labor vintage. Resolving it requires re-running "
-        "H9/H16, which belongs to the methodological review, not the refactor."
-    ),
-)
 def test_resume_previously_completed_stages(frozen_root, tmp_path):
     from icml.operations.integral import run_integral
     completed_h9 = frozen_root / "datos/2_procesamiento/parametros_congelados/informalidad_cierre_h9"

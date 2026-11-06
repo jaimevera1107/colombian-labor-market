@@ -6,9 +6,9 @@
 
   *Reconstruction, monthly update and validation of Colombian labor-market series.*
 
-  [![Version](https://img.shields.io/badge/version-2.5.0-183153?style=flat-square)](CHANGELOG.md)
+  [![Version](https://img.shields.io/badge/version-2.6.0-183153?style=flat-square)](CHANGELOG.md)
   ![Cutoff](https://img.shields.io/badge/cutoff-2026--08-536779?style=flat-square)
-  ![Python](https://img.shields.io/badge/Python-3.12-376994?style=flat-square)
+  ![Python](https://img.shields.io/badge/Python-3.11%2B-376994?style=flat-square)
   [![License](https://img.shields.io/badge/license-MIT-536779?style=flat-square)](LICENSE)
   ![Use](https://img.shields.io/badge/use-research-687687?style=flat-square)
 
@@ -26,7 +26,7 @@ ICML assembles monthly series of **labor market, informality and sectoral employ
 The repository holds the code, the inputs, the frozen processing parameters, the tests and the delivery pipeline, so research results can be **rebuilt and verified** without any external file.
 
 > [!IMPORTANT]
-> **ICML results are research products and are not official DANE statistics.** This is version **2.5.0**, with cutoff **2026-08**.
+> **ICML results are research products and are not official DANE statistics.** This is version **2.6.0**, with cutoff **2026-08**.
 
 ## At a glance
 
@@ -38,13 +38,13 @@ The repository holds the code, the inputs, the frozen processing parameters, the
 | **Content** | Labor market, informality and employment by sector |
 | **Periodic inputs** | Two DANE annexes of the same month |
 | **Quality** | 52 automatic checks per delivery |
-| **Latest documented version** | `2.5.0` · cutoff `2026-08` |
+| **Latest documented version** | `2.6.0` · cutoff `2026-08` |
 
 ## Quick start
 
 ### 1. Prepare the environment
 
-**Python 3.12** is required. From the project root, run the installer:
+**Python 3.11 or later.** From the project root, run the installer:
 
 | System | Install | Example |
 |:--|:--|:--|
@@ -52,7 +52,9 @@ The repository holds the code, the inputs, the frozen processing parameters, the
 | Windows · CMD | double-click `install.bat` | `icml status` |
 | Linux / macOS | `./install.sh` | `./icml.sh status` |
 
-The installer creates `.venv` with the pinned dependency versions. **You do not need to activate the environment to use the `icml` shortcut.**
+The installer creates `.venv` and installs ICML like any library: `pip install -e ".[dev]"`, with every dependency (including `tempdisagg`) resolved from PyPI within the ranges declared in `pyproject.toml`. **You do not need to activate the environment to use the `icml` shortcut.**
+
+To reproduce the exact environment the reference vintage was frozen with (Python 3.12, versions pinned in `requirements/lock-py312.txt`), run `./install.sh --locked` or `install.bat --locked`. The eight frozen products are the same under both environments (see CHANGELOG 2.6.0).
 
 ### 2. Check the status
 
@@ -94,6 +96,8 @@ This flow **rebuilds and publishes** a base. Read the precautions and checks in 
 | Update the published base with the processable months | `icml update` |
 | Draw the latest delivery | `icml plots` |
 | Run the delivery audits again | `icml verify` |
+| Statistical diagnostics of the newest month (z-scores, YoY, revisions) | `icml report` |
+| EXPERIMENTAL 12-month univariate forecasts of every series | `icml forecast` |
 | Verify the checkout against `SHA256SUMS` | `icml checksums` |
 | Show what a command would do | `icml <command> --dry-run` |
 | Options of a command | `icml <command> --help` |
@@ -125,7 +129,7 @@ The routine uses **two official DANE Excel files of the same month**:
 1. Download both annexes of the **same month**. The informality annex may be published after the labor-market one; without both, that month is not computed.
 2. Place each file in its folder. Renaming is not required: the month is read inside the workbook. Keep the annexes of earlier periods.
 3. Check the inputs with `icml status` and, if the month is supported by the model, run `icml update`.
-4. Review the audit result (`PASS` or the detail of the failures). They can be repeated with `icml verify`.
+4. Review the audit result (`PASS` or the detail of the failures) and the monthly diagnostics (`MONTHLY_REPORT.md` next to the delivery: which series moved beyond their usual range, year-over-year changes, revisions against the previous delivery). They can be repeated with `icml verify` and `icml report`. Add `--verbose` to see the solver warnings during a run.
 5. Optionally run `icml plots` and keep the folders of the full delivery, the simple files and the figures.
 
 ```powershell
@@ -135,25 +139,25 @@ The routine uses **two official DANE Excel files of the same month**:
 .\icml plots
 ```
 
-> [!WARNING]
-> **Current methodological limit: August 2026.** Even when both annexes of September 2026 or later exist, this version **blocks their processing**. The monthly informality parameters and the census bridge are frozen only through `2026-08`; their extension has to be defined before updating past that cutoff. `icml update` is not an unlimited update to any future month.
+> [!NOTE]
+> **Months after August 2026.** The frozen parameters (census bridge, informality priors, national sectoral composition) are frozen through `2026-08`. For a later month they are carried forward with explicit rules and the products say so (`prior_provenance`, `source_status`); see [EXTENSION_BEYOND_FROZEN_CUTOFF.md](docs/production/EXTENSION_BEYOND_FROZEN_CUTOFF.md). The first real month after August is the first end-to-end test of that path: run `icml update --dry-run` first and review the manifest.
 
 ### Figures
 
 ```bash
 icml plots
-icml plots --only nacional,comparativos --universe censo
+icml plots --only national,comparatives --universe census
 icml plots --departments 05,11
 ```
 
-A `<delivery>_graficos/` folder is created with national, departmental and comparative figures; `INDICE.html` browses them. **Drawing never changes a number.** See [PLOTS.md](docs/production/PLOTS.md).
+A `<delivery>_plots/` folder is created with national, departmental and comparative figures; `index.html` browses them. **Drawing never changes a number.** See [PLOTS.md](docs/production/PLOTS.md).
 
 ## Scope and limits
 
 The validity of the series depends on the universe, the historical coverage and the documented methodological decisions. In particular:
 
 - **Representativeness differences:** in the GEIH universe the rates of nine territories stay empty between 2001 and 2013 (Arauca, Casanare, Putumayo, San Andrés, Amazonas, Guainía, Guaviare, Vaupés and Vichada) because the survey did not represent them then. **They are not accidental gaps.**
-- **Months after `2026-08`:** blocked until the informality and census-bridge parameters are extended methodologically.
+- **Months after `2026-08`:** processed with frozen parameters carried forward and tagged; no re-estimation of the informality priors or the census bridge.
 - **A new annual departmental annex:** the anchored year comes from the configured file (`geih_departamentos_2025.xlsx`). Adding a new annex is **not** a matter of copying it: the configuration has to change and a total recalculation has to run.
 - **Methodological changes:** changes that touch closed years need a new version, a changelog entry and a controlled total recalculation.
 
@@ -180,7 +184,7 @@ icml recalc --root . --mode total --confirm-total
 | Rebuild asks for confirmation | A base is already published. Use `update` to add a month, or confirm (`--yes`) to rebuild. |
 | There is no published base to update | Run `rebuild` first. |
 | Both annexes of the month are not available | Add the missing annex before processing. |
-| The annexes reach past `2026-08` | The current version cannot process those months; use `--through 2026-08`. |
+| The annexes reach past `2026-08` | They are processed; the frozen parameters are carried forward and the products say so. |
 | "Already up to date" | No new processable months. |
 | `BLOCKED: An existing input was modified` | If it is an intentional DANE correction, see `icml recalc --root . --accept-modified`. |
 | The file name and the month inside the workbook disagree | Fix the name or use the file of the right month. |
@@ -197,8 +201,8 @@ Excel lock files (`~$` prefix) are ignored. `icml recalc` and `icml delivery` re
 ├── README.md, TESTING.md, CHANGELOG.md, LICENSE
 ├── install.sh / install.bat        # create .venv with the pinned versions
 ├── icml.sh / icml.bat              # run icml without activating .venv
-├── pyproject.toml, requirements/   # package and locked dependencies
-├── vendor/                         # vendored wheel (tempdisagg)
+├── pyproject.toml                  # package metadata and dependency ranges
+├── requirements/                   # locked environment of the reference vintage (optional, --locked)
 ├── SHA256SUMS                      # hash of every versioned file (icml checksums)
 ├── configs/                        # stage configurations of the reference vintage (rc1) and the golden catalog
 ├── src/icml/                       # the package (see docs/production/ARCHITECTURE.md)
@@ -220,7 +224,7 @@ sha256sum -c SHA256SUMS      # Linux / macOS
 icml checksums               # any system with Python
 ```
 
-The standard installer does not include `torch`; three tests of the informality MLP experiment need it. For that environment use `requirements/lock-py312-ml.txt`.
+The standard installer does not include `torch`; three tests of the informality MLP experiment need it: `pip install -e ".[ml]"`.
 
 ## Publishing and backups
 
@@ -240,11 +244,11 @@ See [PUBLISHING.md](docs/production/PUBLISHING.md) for the first push and the or
 | Document | Content |
 |:--|:--|
 | [TESTING.md](TESTING.md) | Guided exercise: rebuild through July, update with August, draw and publish |
-| [Processing framework](docs/MARCO_GENERAL_PROCESAMIENTO.md) | Rules and operation of the processing (Spanish) |
+| [Processing framework](docs/PROCESSING_FRAMEWORK.md) | Rules, gates and operation of the processing |
 | [Technical index](docs/README.md) | Navigation of the project documentation |
 | [Architecture](docs/production/ARCHITECTURE.md) | Package layout, command groups and data flow |
 | [Monthly update](docs/production/MONTHLY_UPDATE.md) | Operational guide of the monthly cycle |
-| [Labor reconstruction](docs/production/RECONSTRUCCION_LABORAL.md) | PET, population and 1993–2000 components (Spanish) |
+| [Labor reconstruction](docs/production/LABOR_RECONSTRUCTION.md) | PET, population and 1993–2000 components |
 | [Changelog](CHANGELOG.md) | Version history |
 
 ---

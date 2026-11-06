@@ -253,3 +253,52 @@ def run(workbook: Path | None, national: Path, output: Path,
     return {'monthly_observations':len(monthly), 'months':len(totals),
             'max_rounding_residual_persons':float(totals.rounding_residual_persons.abs().max()),
             'unresolved_monthly_final_branches':('B','D_E')}
+
+
+# ---------------------------------------------------------------- new months from the annex (no artifact_tool)
+
+def extract_monthly_composition(workbook: Path, months: list[str], b_share_of_b_de: float) -> list[dict]:
+    """Read the national sectoral shares of ``months`` from a labor annex with openpyxl.
+
+    Same sheet and layout as ``ingest_dane_workbook`` (``Ocupados TN_T13_rama``,
+    one column per calendar month from 2015-01), read through the cached
+    values of the workbook so no external Excel tool is needed. The 13
+    published groups become the 15 codes of the national composition: the
+    combined mining-and-utilities group is split with the fixed H11 ratio
+    (``b_share_of_b_de``, the 2015-03 ratio of the frozen composition) and
+    ``NO_INFO`` is the published remainder. Every row is tagged
+    ``DANE_13_PUBLISHED_PLUS_NO_INFO_REMAINDER_EXTENDED`` so a month taken
+    from the annex is distinguishable from the frozen rows.
+    """
+    import openpyxl
+
+    wb = openpyxl.load_workbook(workbook, read_only=True, data_only=True)
+    if 'Ocupados TN_T13_rama' not in wb.sheetnames:
+        raise ValueError(f'{workbook.name}: sheet Ocupados TN_T13_rama not found')
+    ws = wb['Ocupados TN_T13_rama']
+    rows = [list(r) for r in ws.iter_rows(min_row=13, max_row=30, min_col=1, max_col=400, values_only=True)]
+    if len(rows) != 18:
+        raise ValueError('DANE monthly sheet shape changed; inspect source version')
+    out = []
+    for period in months:
+        year, month = int(period[:4]), int(period[5:7])
+        idx = (year - 2015) * 12 + (month - 1) + 1
+        if idx >= len(rows[1]) or rows[1][idx] is None or str(rows[1][idx]).strip().title() != MONTHS_ES[month - 1]:
+            raise ValueError(f'{workbook.name}: no published column for {period}')
+        total, no_info = float(rows[3][idx]), float(rows[4][idx])
+        groups = {code: float(rows[5 + j][idx]) for j, code in enumerate(MONTHLY_GROUPS)}
+        if total <= 0 or any(v < 0 for v in groups.values()):
+            raise ValueError(f'{workbook.name}: invalid counts for {period}')
+        if abs(total - no_info - sum(groups.values())) > 0.01 * total:
+            raise ValueError(f'{workbook.name}: the 13 groups do not add to the total for {period}')
+        shares = {code: v / total for code, v in groups.items()}
+        combined = shares.pop('B_D_E_COMBINED')
+        shares['B'] = combined * b_share_of_b_de
+        shares['D_E'] = combined * (1 - b_share_of_b_de)
+        shares['NO_INFO'] = max(1.0 - sum(shares.values()), 0.0)
+        for code in sorted(shares):
+            split = ('ASSUMED_FIXED_H11_2015_03_B_D_E_RATIO' if code in ('B', 'D_E')
+                     else 'NO_INFO_RESIDUAL_FROM_OFFICIAL_TOTAL' if code == 'NO_INFO' else 'DANE_PUBLISHED_13_GROUP')
+            out.append({'period': period, 'sector_code': code, 'sector_share': shares[code],
+                        'source_status': 'DANE_13_PUBLISHED_PLUS_NO_INFO_REMAINDER_EXTENDED', 'split_status': split})
+    return out

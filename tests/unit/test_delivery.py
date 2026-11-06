@@ -152,7 +152,7 @@ def _build(products, tmp_path, **kwargs):
         products,
         tmp_path / "salida",
         cutoff="2026-08",
-        mode="entrega",
+        mode="delivery",
         now=BOGOTA_MOMENT,
         check_shapes=False,
         **kwargs,
@@ -179,7 +179,7 @@ def test_run_stamp_uses_bogota_time():
 
 def test_folder_name_and_manifest_identify_the_run(products, tmp_path):
     manifest = _build(products, tmp_path, software_version="9.9")
-    assert manifest["run_id"] == "2026-11-02_163045_corte-2026-08_entrega"
+    assert manifest["run_id"] == "2026-11-02_163045_cutoff-2026-08_delivery"
     assert manifest["created_at_bogota"] == "2026-11-02T16:30:45-05:00"
     assert manifest["created_at_utc"] == "2026-11-02T21:30:45+00:00"
     assert manifest["publication_authorized"] is False
@@ -191,12 +191,12 @@ def test_layout_has_both_universes_and_three_domains(products, tmp_path):
     manifest = _build(products, tmp_path)
     folder = tmp_path / "salida" / manifest["run_id"]
     for universe in UNIVERSES:
-        for domain in ("laboral", "informalidad", "sectorial"):
-            assert any((folder / f"universo_{universe}" / domain).glob("*.csv"))
+        for domain in ("labor", "informality", "sectoral"):
+            assert any((folder / f"universe_{universe}" / domain).glob("*.csv"))
     assert len(manifest["outputs"]) == 2 * len(SPECS)
     for entry in manifest["outputs"]:
         assert "2026-11-02_163045" in entry["path"]
-        assert entry["path"].startswith(f"universo_{entry['universe']}/")
+        assert entry["path"].startswith(f"universe_{entry['universe']}/")
 
 
 def test_column_split_is_lossless_and_text_exact(products, tmp_path):
@@ -254,8 +254,8 @@ def test_cities_are_identical_in_both_universes(products, tmp_path):
             for e in manifest["outputs"]
             if e["source_product"] == product
         }
-        assert frames["censo"].equals(frames["geih"])
-        assert set(hashes) == {"censo", "geih"}
+        assert frames["census"].equals(frames["geih"])
+        assert set(hashes) == {"census", "geih"}
 
 
 def test_geih_labor_rates_are_derived_from_represented_counts(products, tmp_path):
@@ -337,7 +337,7 @@ def test_rejects_unknown_mode_missing_product_and_changed_columns(
 def test_rejects_unexpected_row_counts_by_default(products, tmp_path):
     with pytest.raises(ValueError, match="rows, expected"):
         build_delivery(
-            products, tmp_path / "salida", cutoff="2026-08", mode="entrega",
+            products, tmp_path / "salida", cutoff="2026-08", mode="delivery",
             now=BOGOTA_MOMENT,
         )
 
@@ -351,7 +351,7 @@ def test_excel_keeps_codes_as_text_and_numbers_numeric(products, tmp_path):
         for e in manifest["outputs"]
         if e["path"].endswith(".xlsx")
         and e["source_product"] == "labor.departamentos"
-        and e["universe"] == "censo"
+        and e["universe"] == "census"
     )
     sheet = openpyxl.load_workbook(folder / entry["path"], read_only=True)["datos"]
     rows = list(sheet.iter_rows(values_only=True))
@@ -362,7 +362,7 @@ def test_excel_keeps_codes_as_text_and_numbers_numeric(products, tmp_path):
 
 
 def test_modes_are_the_documented_ones():
-    assert MODES == {"entrega", "anclado", "total", "verificacion"}
+    assert MODES == {"delivery", "anchored", "total", "verification"}
 
 
 def _frame(rows):
@@ -374,14 +374,14 @@ def test_coverage_report_accepts_a_complete_table_and_flags_gaps():
 
     months = ["2026-01", "2026-02"]
     full = _frame([{"dep_code": str(d), "period": m, "x": "1"} for d in range(33) for m in months])
-    assert coverage_report(full, level="departamentos", months=months)["complete"]
+    assert coverage_report(full, level="departments", months=months)["complete"]
     short = full[full.dep_code != "7"]
-    report = coverage_report(short, level="departamentos", months=months)
+    report = coverage_report(short, level="departments", months=months)
     assert not report["complete"] and report["missing_keys"] == 2 and report["territories"] == 32
     shifted = full.assign(period=full.period.replace({"2026-02": "2026-03"}))
-    assert not coverage_report(shifted, level="departamentos", months=months)["complete"]
+    assert not coverage_report(shifted, level="departments", months=months)["complete"]
     duplicated = _frame([*full.to_dict("records"), full.iloc[0].to_dict()])
-    assert coverage_report(duplicated, level="departamentos", months=months)["duplicated_keys"] == 1
+    assert coverage_report(duplicated, level="departments", months=months)["duplicated_keys"] == 1
 
 
 def test_a_blank_is_only_valid_where_the_geih_does_not_represent_the_territory():
@@ -391,11 +391,11 @@ def test_a_blank_is_only_valid_where_the_geih_does_not_represent_the_territory()
     rows = [{"dep_code": str(d), "period": "2026-01", "rate": "0.1", "cobertura_geih": "COMPLETA"} for d in range(33)]
     ok = _frame(rows)
     ok.loc[0, ["rate", "cobertura_geih"]] = ["", "SIN_REPRESENTACION"]
-    report = coverage_report(ok, level="departamentos", months=months)
+    report = coverage_report(ok, level="departments", months=months)
     assert report["complete"] and report["blank_rows_explained_by_no_representation"] == 1
     bad = _frame(rows)
     bad.loc[0, "rate"] = ""  # blank although the GEIH says it represents the territory
-    report = coverage_report(bad, level="departamentos", months=months)
+    report = coverage_report(bad, level="departments", months=months)
     assert not report["complete"] and report["blank_rows_unexplained"] == 1
 
 
@@ -404,10 +404,10 @@ def test_sectoral_and_national_coverage_expectations():
 
     months = ["2026-01", "2026-02"]
     national = _frame([{"period": m, "x": "1"} for m in months])
-    assert coverage_report(national, level="nacional", months=months)["complete"]
+    assert coverage_report(national, level="national", months=months)["complete"]
     sectoral = _frame([{"sector_code": f"S{s}", "period": m, "x": "1"} for s in range(15) for m in months])
-    assert coverage_report(sectoral, level="nacional", months=months, sectors=15)["complete"]
-    assert not coverage_report(sectoral.iloc[:-1], level="nacional", months=months, sectors=15)["complete"]
+    assert coverage_report(sectoral, level="national", months=months, sectors=15)["complete"]
+    assert not coverage_report(sectoral.iloc[:-1], level="national", months=months, sectors=15)["complete"]
 
 
 # ----------------------------------------------------------- simple files
@@ -443,58 +443,58 @@ def test_delivery_and_file_names_use_a_single_underscore(products, tmp_path):
 
 def test_simple_laboral_departments_have_only_the_labor_columns(products, tmp_path):
     _, _, result = _simple(products, tmp_path, excel=False)
-    path, entry = _simple_file(result, "censo", "laboral", "departamentos")
+    path, entry = _simple_file(result, "census", "labor", "departments")
     assert entry["columns"] == [
-        "Fecha", "Año", "Mes", "DPT", "Codigo", "Ocupados", "Desocupados", "Inactivos",
-        "PEA", "PET", "Poblacion", "TD", "TO", "TGP",
+        "Date", "Year", "Month", "Department", "Code", "Employed", "Unemployed", "Inactive",
+        "LaborForce", "WorkingAge", "Population", "UnemploymentRate", "EmploymentRate", "ParticipationRate",
     ]
     frame = pd.read_csv(path, dtype=str, encoding="utf-8-sig")
     assert list(frame.columns) == entry["columns"]
-    assert set(frame.Codigo) == {"05", "08"}  # two-digit codes, leading zero kept
-    assert set(frame.DPT) == {"Antioquia", "Atlántico"}
-    assert len(frame) == 4 and frame.Fecha.tolist()[:2] == ["2026-07-01", "2026-08-01"]  # by code, then date
-    assert frame["Año"].tolist()[:2] == ["2026", "2026"] and frame["Mes"].tolist()[:2] == ["7", "8"]
+    assert set(frame.Code) == {"05", "08"}  # two-digit codes, leading zero kept
+    assert set(frame.Department) == {"Antioquia", "Atlántico"}
+    assert len(frame) == 4 and frame.Date.tolist()[:2] == ["2026-07-01", "2026-08-01"]  # by code, then date
+    assert frame["Year"].tolist()[:2] == ["2026", "2026"] and frame["Month"].tolist()[:2] == ["7", "8"]
 
 
 def test_simple_files_match_the_full_delivery_value_for_value(products, tmp_path):
     manifest, folder, result = _simple(products, tmp_path, excel=False)
-    for universe in ("censo", "geih"):
+    for universe in ("census", "geih"):
         full_entry = next(
             e for e in manifest["outputs"]
             if (e["universe"], e["source_product"]) == (universe, "labor.departamentos") and e["path"].endswith(".csv")
         )
         full = read_text_table(folder / full_entry["path"])
-        path, _ = _simple_file(result, universe, "laboral", "departamentos")
+        path, _ = _simple_file(result, universe, "labor", "departments")
         simple = pd.read_csv(path, dtype=str, encoding="utf-8-sig")
         merged = simple.merge(
-            full.assign(Codigo=full.dep_code.str.zfill(2), Fecha=full.period + "-01"),
-            on=["Codigo", "Fecha"],
+            full.assign(Code=full.dep_code.str.zfill(2), Date=full.period + "-01"),
+            on=["Code", "Date"],
         )
         assert len(merged) == len(full)
-        for new, old in (("Ocupados", "employed"), ("PEA", "labor_force"), ("TD", "unemployment_rate")):
+        for new, old in (("Employed", "employed"), ("LaborForce", "labor_force"), ("UnemploymentRate", "unemployment_rate")):
             assert merged[new].tolist() == merged[old].tolist()
 
 
 def test_simple_city_labor_gets_its_rates_and_informality_its_own_columns(products, tmp_path):
     _, _, result = _simple(products, tmp_path, excel=False)
-    path, entry = _simple_file(result, "geih", "laboral", "ciudades")
-    assert entry["columns"][:5] == ["Fecha", "Año", "Mes", "CIUDAD", "Codigo"] and entry["columns"][-3:] == ["TD", "TO", "TGP"]
-    frame = pd.read_csv(path, encoding="utf-8-sig", dtype={"Codigo": str})
-    assert (frame.Desocupados / frame.PEA - frame.TD).abs().max() < 1e-12
-    _, inf = _simple_file(result, "censo", "informalidad", "ciudades")
-    assert inf["columns"] == ["Fecha", "Año", "Mes", "CIUDAD", "Codigo", "Ocupados", "Informales", "Formales", "TI"]
-    _, nat = _simple_file(result, "censo", "informalidad", "nacional")
-    assert nat["columns"] == ["Fecha", "Año", "Mes", "Poblacion", "PET", "PEA", "Ocupados", "Desocupados", "Inactivos", "Informales", "Formales", "TI"]
+    path, entry = _simple_file(result, "geih", "labor", "cities")
+    assert entry["columns"][:5] == ["Date", "Year", "Month", "City", "Code"] and entry["columns"][-3:] == ["UnemploymentRate", "EmploymentRate", "ParticipationRate"]
+    frame = pd.read_csv(path, encoding="utf-8-sig", dtype={"Code": str})
+    assert (frame.Unemployed / frame.LaborForce - frame.UnemploymentRate).abs().max() < 1e-12
+    _, inf = _simple_file(result, "census", "informality", "cities")
+    assert inf["columns"] == ["Date", "Year", "Month", "City", "Code", "Employed", "Informal", "Formal", "InformalityRate"]
+    _, nat = _simple_file(result, "census", "informality", "national")
+    assert nat["columns"] == ["Date", "Year", "Month", "Population", "WorkingAge", "LaborForce", "Employed", "Unemployed", "Inactive", "Informal", "Formal", "InformalityRate"]
 
 
 def test_simple_sectorial_and_national_columns(products, tmp_path):
     _, _, result = _simple(products, tmp_path, excel=False)
-    _, dept = _simple_file(result, "geih", "sectorial", "departamentos")
-    assert dept["columns"] == ["Fecha", "Año", "Mes", "DPT", "Codigo", "Sector", "Ocupados", "Participacion"]
-    _, nat = _simple_file(result, "censo", "sectorial", "nacional")
-    assert nat["columns"] == ["Fecha", "Año", "Mes", "Sector", "Ocupados", "Participacion"]
-    _, labor = _simple_file(result, "censo", "laboral", "nacional")
-    assert labor["columns"][:3] == ["Fecha", "Año", "Mes"] and "DPT" not in labor["columns"] and "Codigo" not in labor["columns"]
+    _, dept = _simple_file(result, "geih", "sectoral", "departments")
+    assert dept["columns"] == ["Date", "Year", "Month", "Department", "Code", "Sector", "Employed", "Share"]
+    _, nat = _simple_file(result, "census", "sectoral", "national")
+    assert nat["columns"] == ["Date", "Year", "Month", "Sector", "Employed", "Share"]
+    _, labor = _simple_file(result, "census", "labor", "national")
+    assert labor["columns"][:3] == ["Date", "Year", "Month"] and "Department" not in labor["columns"] and "Code" not in labor["columns"]
 
 
 def test_simple_files_have_no_traceability_columns(products, tmp_path):
@@ -507,15 +507,15 @@ def test_simple_files_have_no_traceability_columns(products, tmp_path):
 def test_simple_excel_has_a_real_date_year_and_month_as_numbers_and_codes_as_text(products, tmp_path):
     openpyxl = pytest.importorskip("openpyxl")
     _, _, result = _simple(products, tmp_path, excel=True)
-    path, _ = _simple_file(result, "censo", "laboral", "departamentos", ".xlsx")
+    path, _ = _simple_file(result, "census", "labor", "departments", ".xlsx")
     rows = list(openpyxl.load_workbook(path, read_only=True)["datos"].iter_rows(values_only=True))
     header, first = rows[0], rows[1]
     import datetime
 
-    assert first[header.index("Codigo")] == "05"
-    assert first[header.index("Fecha")] == datetime.datetime(2026, 7, 1)  # a real Excel date
-    assert first[header.index("Año")] == 2026 and first[header.index("Mes")] == 7
-    assert isinstance(first[header.index("Ocupados")], float)
+    assert first[header.index("Code")] == "05"
+    assert first[header.index("Date")] == datetime.datetime(2026, 7, 1)  # a real Excel date
+    assert first[header.index("Year")] == 2026 and first[header.index("Month")] == 7
+    assert isinstance(first[header.index("Employed")], float)
 
 
 def test_simple_never_overwrites(products, tmp_path):
@@ -524,3 +524,24 @@ def test_simple_never_overwrites(products, tmp_path):
     manifest, folder, _ = _simple(products, tmp_path, excel=False)
     with pytest.raises(FileExistsError):
         build_simple(folder)
+
+
+# ------------------------------------------------------------------ verify_delivery on a synthetic delivery
+
+
+def test_verify_delivery_runs_its_checks_on_a_synthetic_delivery_and_detects_tampering(products, tmp_path):
+    from icml.delivery.verify import verify_delivery
+
+    manifest = _build(products, tmp_path)
+    folder = tmp_path / "salida" / manifest["run_id"]
+    report = verify_delivery(folder)
+    assert report["status"] in {"PASS", "FAIL"} and len(report["checks"]) >= 36
+    assert (folder / "VERIFICATION.json").is_file()
+    hash_checks = [c for c in report["checks"] if "hash" in c["check"].lower() or "sha" in c["check"].lower()]
+    assert hash_checks and all(c["passed"] for c in hash_checks)
+    # Tamper with one delivered file: the hash gate must fail and the status must not be PASS.
+    target = next(p for p in folder.rglob("*.csv"))
+    target.write_bytes(target.read_bytes() + b"x")
+    tampered = verify_delivery(folder)
+    assert tampered["status"] != "PASS"
+    assert any(not c["passed"] for c in tampered["checks"])

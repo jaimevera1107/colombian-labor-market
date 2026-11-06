@@ -393,7 +393,6 @@ def run(source_path:Path,city_path:Path,national_path:Path,recent_path:Path,
                            'source':'DANE_T5_13_AREAS_APR_JUN','independent_holdout':True})
     anchor_cv=pd.DataFrame(validation)
     dates=MONTHS
-    start2021=int(dates.get_loc(pd.Timestamp('2021-01-01')))
     for code in sorted(labor):
         old=old_values[code]
         if code in latest:

@@ -524,3 +524,24 @@ def test_simple_never_overwrites(products, tmp_path):
     manifest, folder, _ = _simple(products, tmp_path, excel=False)
     with pytest.raises(FileExistsError):
         build_simple(folder)
+
+
+# ------------------------------------------------------------------ verify_delivery on a synthetic delivery
+
+
+def test_verify_delivery_runs_its_checks_on_a_synthetic_delivery_and_detects_tampering(products, tmp_path):
+    from icml.delivery.verify import verify_delivery
+
+    manifest = _build(products, tmp_path)
+    folder = tmp_path / "salida" / manifest["run_id"]
+    report = verify_delivery(folder)
+    assert report["status"] in {"PASS", "FAIL"} and len(report["checks"]) >= 36
+    assert (folder / "VERIFICATION.json").is_file()
+    hash_checks = [c for c in report["checks"] if "hash" in c["check"].lower() or "sha" in c["check"].lower()]
+    assert hash_checks and all(c["passed"] for c in hash_checks)
+    # Tamper with one delivered file: the hash gate must fail and the status must not be PASS.
+    target = next(p for p in folder.rglob("*.csv"))
+    target.write_bytes(target.read_bytes() + b"x")
+    tampered = verify_delivery(folder)
+    assert tampered["status"] != "PASS"
+    assert any(not c["passed"] for c in tampered["checks"])

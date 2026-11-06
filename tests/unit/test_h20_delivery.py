@@ -19,7 +19,7 @@ def fixture_bundle(tmp_path):
             rel = Path("inputs") / (name.replace('.', '_')+".csv")
             (root / rel).parent.mkdir(exist_ok=True)
             (root / rel).write_text(name+"\n", encoding="utf-8")
-            writer.writerow({"producto":name,"ruta":str(rel),"sha256":file_hash(root / rel),
+            writer.writerow({"producto":name,"ruta":rel.as_posix(),"sha256":file_hash(root / rel),
                              "evidencia":"historical","estatus":"RESEARCH", "universo":"completo"})
     return root, cat
 

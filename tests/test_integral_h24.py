@@ -49,7 +49,7 @@ def test_recompute_missing_inputs_blocks_before_compute(frozen_root, tmp_path):
     missing_sources.mkdir()
     pre = preflight(frozen_root, "recompute", sources=missing_sources)
     assert pre["status"] == "BLOCKED_MISSING_INPUTS"
-    assert any("datos/2_procesamiento/fuentes_preparadas/nacional/" in x for x in pre["missing"])
+    assert any("datos/2_procesamiento/fuentes_preparadas/nacional/" in Path(x).as_posix() for x in pre["missing"])
     assert not any("informalidad_secuencia_h5_h6" in x for x in pre["missing"])
     report = run_integral(
         frozen_root, tmp_path / "blocked", mode="recompute", sources=missing_sources

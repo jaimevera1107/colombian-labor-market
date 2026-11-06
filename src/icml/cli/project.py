@@ -83,8 +83,8 @@ def register(commands: Commands) -> None:
 
     plots = common(commands.add_parser("plots", help="Draw the latest delivery (dashboards per territory and comparatives)"))
     plots.add_argument("--folder", type=Path, help="Delivery to draw (default: the published one)")
-    plots.add_argument("--only", help="nacional, departamentos, comparativos (comma-separated)")
-    plots.add_argument("--universe", help="censo or geih (default both)")
+    plots.add_argument("--only", help="national, departments, comparatives (comma-separated)")
+    plots.add_argument("--universe", help="census or geih (default both)")
     plots.add_argument("--departments", help="Comma-separated DANE codes (default all)")
     plots.add_argument("--format", choices=("png", "pdf", "svg"), default="png")
     plots.add_argument("--force", action="store_true", help="Replace existing figures")
@@ -111,7 +111,9 @@ def deliveries(root: Path) -> list[Path]:
 
 def current_vintage(root: Path) -> dict | None:
     """The published vintage: run id, mode and cutoff, or ``None`` when nothing is published."""
-    path = root / CURRENT_DIR / "vigente.json"
+    path = root / CURRENT_DIR / "current.json"
+    if not path.is_file():
+        path = root / CURRENT_DIR / "vigente.json"  # bases published before 2.6.0
     if not path.is_file():
         return None
     info = json.loads(path.read_text("utf-8"))
@@ -294,9 +296,9 @@ def command_run(root: Path, command: str, args: argparse.Namespace) -> int:
     )
     plan = result["plan"]
     _print_plan(plan, frozenset(p.name for p in annexes_after(root / INGESTION_DIR, target)))
-    if plan["status"] == "BLOQUEADO":
+    if plan["status"] == "BLOCKED":
         return EXIT_ACTION
-    if plan["status"] == "SIN_CAMBIOS":
+    if plan["status"] == "NO_CHANGES":
         print("\nAlready up to date: no new annexes since the last update.")
         return EXIT_OK
     if args.dry_run:
@@ -352,7 +354,7 @@ def command_plots(root: Path, args: argparse.Namespace) -> int:
         print(exc, file=sys.stderr)
         return EXIT_ACTION
     print(f"{count} figures in {output}")
-    print(f"\nOpen {output / 'INDICE.html'} in the browser.")
+    print(f"\nOpen {output / 'index.html'} in the browser.")
     return EXIT_OK
 
 

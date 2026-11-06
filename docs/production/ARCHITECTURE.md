@@ -41,7 +41,7 @@ Run `icml rebuild --through 2026-07 --yes` and `icml update` on the current `mai
 ## Rules
 
 * The data tree keeps its Spanish folder names: manifests, catalogs and migration maps record those paths and the hash gates depend on them.
-* Persisted values (plan statuses such as `BLOQUEADO`/`SIN_CAMBIOS`, mode names `anclado`/`total`, folder suffixes `_sencillo`/`_graficos`, delivery column names) are part of the published contract and are not translated.
+* Since 2.6.0 every generated name and value is English: plan statuses (`RUN`, `BLOCKED`, `NO_CHANGES`), modes (`anchored`/`total`), delivery folders (`<stamp>_cutoff-YYYY-MM_<mode>`), universes (`census`/`geih`), subfolders (`labor`/`informality`/`sectoral`), companions (`_simple`, `_plots`), simple-file columns and figure text. The folder names under `datos/`, the product identifiers of the frozen catalogs (`labor.departamentos`, …) and the frozen file names are unchanged because versioned manifests record them.
 * Bug fix: bump the version and add a regression test; never change frozen data silently.
 * Ordinary update: a new vintage that adds a month within the revisable window.
 * DANE revision: a new vintage with the documented cause and the difference against the history.

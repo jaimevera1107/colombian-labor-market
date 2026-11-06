@@ -48,7 +48,7 @@ def coverage_report(frame: pd.DataFrame, *, level: str, months: list[str], secto
         legitimate where ``cobertura_geih`` says ``SIN_REPRESENTACION`` or ``PARCIAL``
         (partially-covered territories whose informality is not yet estimated).
     """
-    territory = {"ciudades": "city_code", "departamentos": "dep_code"}.get(level)
+    territory = {"cities": "city_code", "departments": "dep_code"}.get(level)
     units = 33 if territory else 1
     keys = [c for c in (territory, "sector_code" if sectors else None, "period") if c]
     expected = units * len(months) * (sectors or 1)
@@ -144,7 +144,7 @@ def verify_delivery(folder: Path) -> dict:
 
     def both(product: str) -> tuple[pd.DataFrame, pd.DataFrame]:
         return (
-            _load(folder, manifest, product, "censo"),
+            _load(folder, manifest, product, "census"),
             _load(folder, manifest, product, "geih"),
         )
 
@@ -179,7 +179,7 @@ def verify_delivery(folder: Path) -> dict:
 
     # 5. Sectors agree with labor in each universe.
     for universe, labor_frame, sector in (
-        ("censo", census, both("sectorial.departamental")[0]),
+        ("census", census, both("sectorial.departamental")[0]),
         ("geih", geih, both("sectorial.departamental")[1]),
     ):
         total = _num(sector, "employed_sector").groupby([sector["period"], sector["dep_code"]]).sum()
@@ -223,7 +223,7 @@ def verify_delivery(folder: Path) -> dict:
     for entry in manifest["outputs"]:
         if not entry["path"].endswith(".csv"):
             continue
-        sectors = 15 if entry["domain"] == "sectorial" else 0
+        sectors = 15 if entry["domain"] == "sectoral" else 0
         coverage = coverage_report(
             read_text_table(folder / entry["path"]), level=entry["level"], months=months, sectors=sectors
         )
@@ -239,9 +239,9 @@ def verify_delivery(folder: Path) -> dict:
     # territory × every month × every column is present and positive.
     # Columns that must be strictly positive (never null, never zero):
     MUST_BE_POSITIVE = {
-        "laboral": ("employed", "unemployed", "inactive", "labor_force",
+        "labor": ("employed", "unemployed", "inactive", "labor_force",
                     "working_age", "population"),
-        "informalidad": ("employed", "labor_force", "working_age", "population"),
+        "informality": ("employed", "labor_force", "working_age", "population"),
     }
     TEXT_COLS = (
         "period", "dep_code", "city_code", "territory_id", "territory_name",
@@ -281,7 +281,7 @@ def verify_delivery(folder: Path) -> dict:
         "status": "PASS" if all(c["passed"] for c in checks) else "FAIL",
         "checks": checks,
     }
-    (folder / "VERIFICACION.json").write_text(
+    (folder / "VERIFICATION.json").write_text(
         json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
     return report

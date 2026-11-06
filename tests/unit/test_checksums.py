@@ -55,8 +55,8 @@ def test_a_missing_file_is_reported_and_an_extra_one_is_only_a_warning(repo):
 def test_generated_outputs_are_never_listed(repo):
     (repo / "datos/2_procesamiento/vigente").mkdir(parents=True)
     (repo / "datos/2_procesamiento/vigente/labor.csv").write_text("generated")
-    (repo / "datos/3_salida/2026-11-05_000000_corte-2026-07_total").mkdir(parents=True)
-    (repo / "datos/3_salida/2026-11-05_000000_corte-2026-07_total/MANIFEST.json").write_text("{}")
+    (repo / "datos/3_salida/2026-11-05_000000_cutoff-2026-07_total").mkdir(parents=True)
+    (repo / "datos/3_salida/2026-11-05_000000_cutoff-2026-07_total/MANIFEST.json").write_text("{}")
     (repo / "datos/3_salida/LEEME.txt").write_text("placeholder")
     names = {p.as_posix() for p in tool.tracked_files(repo)}
     assert "datos/3_salida/LEEME.txt" in names

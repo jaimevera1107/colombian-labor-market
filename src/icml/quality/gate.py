@@ -469,9 +469,9 @@ def audit_products(
     annual_plateaus = linearity["annual_plateau"] & linearity["quantity"].eq("population")
     methodological_warnings = int(severe_linearity.sum() + annual_plateaus.sum())
     summary = {
-        "status": ("BLOQUEADO" if hard else
-                   "REQUIERE_REVISION_METODOLOGICA" if methodological_warnings else
-                   "APTO_CON_ALERTAS_POR_REVISAR" if any(len(diagnostics[k]) for k in ("extreme_changes", "structural_breaks", "demographic_jumps")) else "APTO"),
+        "status": ("BLOCKED" if hard else
+                   "REQUIRES_METHODOLOGICAL_REVIEW" if methodological_warnings else
+                   "FIT_WITH_ALERTS_TO_REVIEW" if any(len(diagnostics[k]) for k in ("extreme_changes", "structural_breaks", "demographic_jumps")) else "FIT"),
         "hard_failures": list(dict.fromkeys(hard)),
         "rows": {"unified":len(unified),"departmental":len(dep),"national":len(nation),"urban":len(urban)},
         "period_range": [str(min(reference.period)),str(max(reference.period))],

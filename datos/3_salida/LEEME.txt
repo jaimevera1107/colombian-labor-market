@@ -1,6 +1,6 @@
-Every "icml rebuild" or "icml update" creates here a folder YYYY-MM-DD_HHMMSS_corte-YYYY-MM_<mode>
-(mode: anclado or total) with universo_censo/ and universo_geih/, each with laboral/, informalidad/ and sectorial/,
-plus MANIFEST.json, VERIFICACION.json and INFORME_RECALCULO_INTEGRAL.json.
-The simple files (basic columns, CSV and XLSX) are written next to it as <folder>_sencillo; "icml delivery simple --folder <folder>" rebuilds them.
-"icml plots --folder <folder>" creates <folder>_graficos with dashboards and comparatives (optional).
+Every "icml rebuild" or "icml update" creates here a folder YYYY-MM-DD_HHMMSS_cutoff-YYYY-MM_<mode>
+(mode: anchored or total) with universe_census/ and universe_geih/, each with labor/, informality/ and sectoral/,
+plus MANIFEST.json, VERIFICATION.json and INTEGRAL_RECOMPUTE_REPORT.json.
+The simple files (basic columns, CSV and XLSX) are written next to it as <folder>_simple; "icml delivery simple --folder <folder>" rebuilds them.
+"icml plots --folder <folder>" creates <folder>_plots with dashboards and comparatives (optional).
 The latest delivery is the reference of the next recalculation. Deliveries are generated locally and ignored by Git.

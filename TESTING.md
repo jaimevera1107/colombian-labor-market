@@ -47,7 +47,7 @@ What to expect (checked on a clean copy): between the July base and the August b
 ./icml.sh plots
 ```
 
-Draws the published delivery (87 images, about 90 seconds) into `datos/3_salida/<delivery>_graficos/`; open `INDICE.html` in the browser. Options: `--only nacional,comparativos`, `--universe censo`, `--departments 05,11`, `--force` (replace).
+Draws the published delivery (87 images, about 90 seconds) into `datos/3_salida/<delivery>_plots/`; open `index.html` in the browser. Options: `--only nacional,comparativos`, `--universe census`, `--departments 05,11`, `--force` (replace).
 
 ## Other commands
 

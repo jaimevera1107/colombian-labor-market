@@ -142,11 +142,11 @@ The routine uses **two official DANE Excel files of the same month**:
 
 ```bash
 icml plots
-icml plots --only nacional,comparativos --universe censo
+icml plots --only national,comparatives --universe census
 icml plots --departments 05,11
 ```
 
-A `<delivery>_graficos/` folder is created with national, departmental and comparative figures; `INDICE.html` browses them. **Drawing never changes a number.** See [PLOTS.md](docs/production/PLOTS.md).
+A `<delivery>_plots/` folder is created with national, departmental and comparative figures; `index.html` browses them. **Drawing never changes a number.** See [PLOTS.md](docs/production/PLOTS.md).
 
 ## Scope and limits
 

@@ -28,7 +28,7 @@ CLEAN_STATUSES = frozenset({
 NEW_VINTAGE_STATUS = "RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_NEW_VINTAGE"
 
 #: Name of the integral audit report kept next to each delivery.
-INTEGRAL_REPORT_NAME = "INFORME_RECALCULO_INTEGRAL.json"
+INTEGRAL_REPORT_NAME = "INTEGRAL_RECOMPUTE_REPORT.json"
 
 
 def require_clean_recompute(report: dict) -> None:
@@ -151,7 +151,7 @@ def run_recalculation(
         if ACTIVE_CUTOFF != FROZEN_CUTOFF:
             from icml.recalculation.vintage_root import build_vintage_root
 
-            source_root = workdir / "raiz_de_corte"
+            source_root = workdir / "vintage_root"
             actions = build_vintage_root(root, ACTIVE_CUTOFF, source_root)
             if actions.get("extended"):
                 methodology["frozen_parameters_extension"] = "; ".join(

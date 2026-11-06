@@ -8,7 +8,7 @@ The commands (`icml status`, `rebuild`, `update`, `plots`, `verify`) are describ
 |---|---|---|
 | 1 | `icml rebuild --through 2026-07 --yes` | July base: 1993-01 to 2026-07 (806 national rows, 13,299 departmental). Audit 52 of 52. Simple files created. July becomes the published base |
 | 2 | `icml update` | `UPDATE ONLY through 2026-08`: detects the two August annexes as new, computes and publishes. Audit 52 of 52 |
-| 3 | `icml plots` | 87 figures and `INDICE.html` |
+| 3 | `icml plots` | 87 figures and `index.html` |
 
 Approximate times: test 1, 10 to 15 minutes (it builds a working copy cut at July and recomputes everything); test 2, 8 to 10; test 3, about 90 seconds.
 

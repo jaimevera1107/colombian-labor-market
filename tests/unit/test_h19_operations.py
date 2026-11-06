@@ -118,11 +118,11 @@ def test_do_not_overwrite_output(tmp_path):
 def test_preflight_rejects_hash_modified(tmp_path):
     root = tmp_path / "checkpoint"
     closure = root / "datos/2_procesamiento/productos_congelados"
-    (closure / "sectorial").mkdir(parents=True)
+    (closure / "sectoral").mkdir(parents=True)
     (root / "datos/2_procesamiento/sectorial_h16/outputs").mkdir(parents=True)
     name = "sectorial_departamental_1993_2026_EXPERIMENTAL.csv"
     source = root / "datos/2_procesamiento/sectorial_h16/outputs/16_matriz_mensual_1993_2026_EXPERIMENTAL.csv"
-    export = closure / "sectorial" / name
+    export = closure / "sectoral" / name
     source.write_text("a,b\\n1,2\\n")
     export.write_text("different")
     (closure / "MANIFIESTO_CIERRE_SHA256.json").write_text(json.dumps({"files_sha256": {"sectorial/" + name: "bad_hash"}}))

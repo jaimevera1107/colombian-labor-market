@@ -355,7 +355,7 @@ def run_all(configs: Path, sources: Path, runs_dir: Path, run_id: str,
         "run_id": run_id,
         "quality_gate": {
             "status": gate_summary["status"],
-            "certified_for_publication": gate_summary["status"] == "APTO",
+            "certified_for_publication": gate_summary["status"] == "FIT",
             "report_path": "quality/audit/summary.json",
             "report_sha256": sha256_file(folders["quality"] / "audit/summary.json"),
         },

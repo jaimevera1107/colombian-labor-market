@@ -14,7 +14,7 @@ from dataclasses import dataclass
 
 from icml.domain.periods import MonthlyPeriod
 
-ANCHORED = "anclado"
+ANCHORED = "anchored"
 TOTAL = "total"
 MODES: tuple[str, str] = (ANCHORED, TOTAL)
 

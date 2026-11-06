@@ -87,7 +87,7 @@ def recalculate(
     root : Path
         Project root (the folder that holds ``datos``).
     mode : str
-        ``anclado`` keeps every year covered by the departmental annex;
+        ``anchored`` keeps every year covered by the departmental annex;
         ``total`` rewrites everything and needs ``confirm_total``.
     anchor_year : int
         Last year covered by the departmental annex.
@@ -169,11 +169,11 @@ def recalculate(
                 except Exception as exc:  # noqa: BLE001 - an unreadable annex blocks
                     plan["blockers"].append(f"No se pudo leer {annex.path.name}: {exc}")
         if plan["blockers"]:
-            plan["status"] = "BLOQUEADO"
-    if previous is None and mode == ANCHORED and plan["status"] == "SIN_CAMBIOS":
-        plan["status"] = "EJECUTAR"  # nothing published yet: first delivery
+            plan["status"] = "BLOCKED"
+    if previous is None and mode == ANCHORED and plan["status"] == "NO_CHANGES":
+        plan["status"] = "RUN"  # nothing published yet: first delivery
     result: dict = {"plan": plan}
-    if dry_run or plan["status"] != "EJECUTAR":
+    if dry_run or plan["status"] != "RUN":
         return result
 
     moment = (now or datetime.now(TIMEZONE)).astimezone(TIMEZONE)
@@ -183,9 +183,12 @@ def recalculate(
     current_dir = root / CURRENT
     graft_reports: dict[str, dict] = {}
     products: dict[str, Path] = {}
-    use_graft = mode == ANCHORED and (current_dir / "vigente.json").is_file()
+    pointer = current_dir / "current.json"
+    if not pointer.is_file() and (current_dir / "vigente.json").is_file():
+        pointer = current_dir / "vigente.json"  # bases published before 2.6.0
+    use_graft = mode == ANCHORED and pointer.is_file()
     if use_graft:
-        grafted_dir = staging / "injertados"
+        grafted_dir = staging / "grafted"
         grafted_dir.mkdir()
         for spec in SPECS:
             published = read_text_table(current_dir / f"{spec.product_id}.csv")
@@ -221,7 +224,7 @@ def recalculate(
     current_dir.mkdir(parents=True, exist_ok=True)
     for spec in SPECS:
         shutil.copy2(products[spec.product_id], current_dir / f"{spec.product_id}.csv")
-    (current_dir / "vigente.json").write_text(
+    (current_dir / "current.json").write_text(
         json.dumps(
             {"run_id": manifest["run_id"], "mode": mode, "anchor_year": anchor_year, "cutoff": cutoff},
             indent=2,

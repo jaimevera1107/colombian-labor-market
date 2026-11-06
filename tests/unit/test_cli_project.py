@@ -37,11 +37,11 @@ def project(tmp_path: Path) -> Path:
 
 
 def _publish(root: Path, cutoff: str, mode: str = "total") -> None:
-    run_id = f"2026-11-03_000000_corte-{cutoff}_{mode}"
+    run_id = f"2026-11-03_000000_cutoff-{cutoff}_{mode}"
     (root / "datos/3_salida" / run_id).mkdir(parents=True)
     (root / "datos/3_salida" / run_id / "MANIFEST.json").write_text(json.dumps({"cutoff": cutoff}))
     (root / "datos/2_procesamiento/vigente").mkdir(parents=True, exist_ok=True)
-    (root / "datos/2_procesamiento/vigente/vigente.json").write_text(json.dumps({"run_id": run_id, "mode": mode}))
+    (root / "datos/2_procesamiento/vigente/current.json").write_text(json.dumps({"run_id": run_id, "mode": mode}))
 
 
 def _args(**kw) -> argparse.Namespace:
@@ -56,14 +56,14 @@ def _plan(status: str, **extra) -> dict:
 class Calls:
     """Replaces ``run_recalculation`` and records how it was called."""
 
-    def __init__(self, status: str = "EJECUTAR") -> None:
+    def __init__(self, status: str = "RUN") -> None:
         self.status, self.calls = status, []
 
     def __call__(self, root, mode, **kw):
         self.calls.append({"mode": mode, **kw})
         result = {"plan": _plan(self.status, mode=mode)}
-        if self.status == "EJECUTAR" and not kw.get("dry_run"):
-            result["manifest"] = {"run_id": "2026-11-03_010101_corte-2026-08_total"}
+        if self.status == "RUN" and not kw.get("dry_run"):
+            result["manifest"] = {"run_id": "2026-11-03_010101_cutoff-2026-08_total"}
         return result
 
 
@@ -91,7 +91,7 @@ def test_the_published_vintage_reports_its_cutoff_even_if_an_old_file_lacks_it(p
     assert cli.current_vintage(project) is None
     _publish(project, "2026-07")
     assert cli.current_vintage(project)["cutoff"] == "2026-07"
-    (project / "datos/2_procesamiento/vigente/vigente.json").write_text(json.dumps({"run_id": "x", "mode": "total", "cutoff": "2026-06"}))
+    (project / "datos/2_procesamiento/vigente/current.json").write_text(json.dumps({"run_id": "x", "mode": "total", "cutoff": "2026-06"}))
     assert cli.current_vintage(project)["cutoff"] == "2026-06"
 
 
@@ -150,13 +150,13 @@ def test_an_annex_added_after_a_run_is_a_new_input_not_something_it_already_used
     )
     listed = set(first["manifest"]["fingerprints"]["ingesta"])
     assert not any("2026-08" in name for name in listed) and any("2026-07" in name for name in listed)
-    vigente = json.loads((project / "datos/2_procesamiento/vigente/vigente.json").read_text())
+    vigente = json.loads((project / "datos/2_procesamiento/vigente/current.json").read_text())
     assert vigente["cutoff"] == "2026-07"
     second = recalculate(
-        project, "anclado", anchor_year=2025, runner=_runner(1.0), now=now + timedelta(minutes=5), check_shapes=False,
+        project, "anchored", anchor_year=2025, runner=_runner(1.0), now=now + timedelta(minutes=5), check_shapes=False,
         require_annexes=False, verify_content=False, dry_run=True,
     )
-    assert second["plan"]["status"] == "EJECUTAR"  # not SIN_CAMBIOS
+    assert second["plan"]["status"] == "RUN"  # not SIN_CAMBIOS
     assert {Path(p).name for p in second["plan"]["inputs"]["added"]} == {"geih_mercado_laboral_2026-08.xlsx", "geih_informalidad_2026-08.xlsx"}
 
 
@@ -234,7 +234,7 @@ def test_update_needs_a_published_vintage(project, recalc, capsys):
 def test_update_only_updates_and_says_so(project, recalc, capsys):
     _publish(project, "2026-07")
     assert cli.command_run(project, "update", _args()) == 0
-    assert recalc.calls[0]["mode"] == "anclado" and recalc.calls[0]["confirm_total"] is False
+    assert recalc.calls[0]["mode"] == "anchored" and recalc.calls[0]["confirm_total"] is False
     assert "UPDATE ONLY" in capsys.readouterr().out
 
 
@@ -246,7 +246,7 @@ def test_update_does_not_go_back(project, recalc, capsys):
 
 def test_nothing_new_is_reported_as_up_to_date(project, capsys, monkeypatch):
     _publish(project, "2026-08")
-    monkeypatch.setattr("icml.recalculation.service.run_recalculation", Calls("SIN_CAMBIOS"))
+    monkeypatch.setattr("icml.recalculation.service.run_recalculation", Calls("NO_CHANGES"))
     assert cli.command_run(project, "update", _args()) == 0
     assert "up to date" in capsys.readouterr().out
 
@@ -255,7 +255,7 @@ def test_a_blocked_plan_is_an_action_for_the_user_not_a_crash(project, capsys, m
     _publish(project, "2026-07")
 
     def blocked(root, mode, **kw):
-        return {"plan": _plan("BLOQUEADO", blockers=["An existing input was modified"])}
+        return {"plan": _plan("BLOCKED", blockers=["An existing input was modified"])}
 
     monkeypatch.setattr("icml.recalculation.service.run_recalculation", blocked)
     assert cli.command_run(project, "update", _args()) == cli.EXIT_ACTION
@@ -270,23 +270,23 @@ def test_plots_draws_the_published_delivery_and_passes_the_options(project, monk
     received = {}
 
     class Tool:
-        GROUPS = ("nacional", "departamentos", "comparativos")
-        UNIVERSES = ("censo", "geih")
+        GROUPS = ("national", "departments", "comparativos")
+        UNIVERSES = ("census", "geih")
         PlotsExist = FileExistsError
 
         @staticmethod
         def render_delivery(folder, output=None, **options):
             received["folder"], received["options"] = folder, options
-            return folder.with_name(folder.name + "_graficos"), 3
+            return folder.with_name(folder.name + "_plots"), 3
 
     monkeypatch.setitem(__import__("sys").modules, "icml.plots.delivery", Tool)
-    args = argparse.Namespace(folder=None, only="nacional", universe="censo", departments="05,11", format="pdf", force=True)
+    args = argparse.Namespace(folder=None, only="national", universe="census", departments="05,11", format="pdf", force=True)
     assert cli.command_plots(project, args) == 0
-    assert received["folder"].name.endswith("corte-2026-08_total")
+    assert received["folder"].name.endswith("cutoff-2026-08_total")
     options = received["options"]
-    assert options["groups"] == ("nacional",) and options["universes"] == ("censo",)
+    assert options["groups"] == ("national",) and options["universes"] == ("census",)
     assert options["departments"] == ("05", "11") and options["fmt"] == "pdf" and options["force"] is True
-    assert "INDICE.html" in capsys.readouterr().out
+    assert "index.html" in capsys.readouterr().out
 
 
 def test_plots_without_any_delivery_says_what_to_do_first(project, monkeypatch):

@@ -154,7 +154,7 @@ def test_frozen_parameter_change_is_reported():
     assert report["changed"] == ["b.csv"]
 
 
-def _plan(mode="anclado", **kwargs):
+def _plan(mode="anchored", **kwargs):
     base = {
         "previous_inputs": {"geih.xlsx": "a", "dept.xlsx": "b"},
         "current_inputs": {"geih.xlsx": "a", "dept.xlsx": "b"},
@@ -167,37 +167,37 @@ def _plan(mode="anclado", **kwargs):
 
 def test_nothing_changed_means_nothing_to_do_in_anchored_mode():
     plan = _plan()
-    assert plan["status"] == "SIN_CAMBIOS"
+    assert plan["status"] == "NO_CHANGES"
     assert plan["inputs"]["unchanged"] == 2
     assert "2025" in plan["frozen_years"]
 
 
 def test_new_annex_means_run_in_anchored_mode():
     plan = _plan(current_inputs={"geih.xlsx": "a", "dept.xlsx": "b", "dept2026.xlsx": "c"})
-    assert plan["status"] == "EJECUTAR"
+    assert plan["status"] == "RUN"
     assert plan["inputs"]["added"] == ["dept2026.xlsx"]
 
 
 def test_changed_parameter_blocks_anchored_mode_but_not_total():
     changed = {"current_parameters": {"priors.csv": "other"}}
-    assert _plan(**changed)["status"] == "BLOQUEADO"
+    assert _plan(**changed)["status"] == "BLOCKED"
     total = _plan("total", confirm_total=True, **changed)
-    assert total["status"] == "EJECUTAR"
+    assert total["status"] == "RUN"
 
 
 def test_revision_of_frozen_years_blocks_with_a_clear_message():
     blocked = {"status": "BLOCKED", "n_revisions": 3}
     plan = _plan(observation_checks=(blocked,))
-    assert plan["status"] == "BLOQUEADO"
+    assert plan["status"] == "BLOCKED"
     assert "3 official figures" in plan["blockers"][0]
     assert "total recalculation" in plan["blockers"][0]
 
 
 def test_total_mode_needs_explicit_confirmation():
     unconfirmed = _plan("total")
-    assert unconfirmed["status"] == "BLOQUEADO"
+    assert unconfirmed["status"] == "BLOCKED"
     assert "--confirm-total" in unconfirmed["blockers"][0]
-    assert _plan("total", confirm_total=True)["status"] == "EJECUTAR"
+    assert _plan("total", confirm_total=True)["status"] == "RUN"
 
 
 def test_unknown_mode_is_rejected():

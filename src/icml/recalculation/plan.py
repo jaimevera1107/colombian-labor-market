@@ -25,7 +25,7 @@ def plan_recalculation(
     Parameters
     ----------
     mode : str
-        ``anclado`` or ``total``.
+        ``anchored`` or ``total``.
     policy : AnchorPolicy
         Frozen years.
     previous_inputs, current_inputs : Mapping[str, str]
@@ -43,7 +43,7 @@ def plan_recalculation(
     Returns
     -------
     dict
-        ``status``: ``SIN_CAMBIOS``, ``EJECUTAR`` or ``BLOQUEADO``.
+        ``status``: ``NO_CHANGES``, ``RUN`` or ``BLOCKED``.
     """
     if mode not in MODES:
         raise ValueError(f"mode must be one of {MODES}, got {mode!r}")
@@ -86,11 +86,11 @@ def plan_recalculation(
                     f"{policy.last_anchor_year}); use a total recalculation if intentional."
                 )
     if blockers:
-        status = "BLOQUEADO"
+        status = "BLOCKED"
     elif not changed and mode == ANCHORED:
-        status = "SIN_CAMBIOS"
+        status = "NO_CHANGES"
     else:
-        status = "EJECUTAR"
+        status = "RUN"
     return {
         "mode": mode,
         "status": status,

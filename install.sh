@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Crea el entorno del ICML con las versiones fijadas (reproducible).
-# Requiere Python 3.11, 3.12 o 3.13.
+# Create the ICML environment with the pinned versions (reproducible).
+# Requires Python 3.11, 3.12 or 3.13.
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -11,16 +11,16 @@ for V in python3.12 python3.13 python3.14 python3.11 python3; do
     fi
 done
 if [ -z "$PYEXE" ]; then
-    echo "ERROR: No se encontró Python 3.11, 3.12 ni 3.13." >&2
-    echo "Instálalo desde https://www.python.org/downloads/" >&2
+    echo "ERROR: Python 3.11, 3.12 or 3.13 was not found." >&2
+    echo "Install it from https://www.python.org/downloads/" >&2
     exit 1
 fi
-echo "Usando: $PYEXE ($($PYEXE --version))"
+echo "Using: $PYEXE ($($PYEXE --version))"
 "$PYEXE" -m venv .venv
 .venv/bin/python -m pip install -U pip setuptools wheel
-.venv/bin/python -m pip install --no-deps ./dependencias/tempdisagg-0.6.3-py3-none-any.whl
+.venv/bin/python -m pip install --no-deps ./vendor/tempdisagg-0.6.3-py3-none-any.whl
 .venv/bin/python -m pip install -r requirements/lock-py312.txt
 .venv/bin/python -m pip install --no-deps -e .
-# Opcional: torch para las pruebas del modelo de informalidad (MLP).
+# Optional: torch for the informality MLP experiments.
 #   .venv/bin/python -m pip install -r requirements/lock-py312-ml.txt
-printf 'Entorno listo. Revise README.md\n'
+printf 'Environment ready. See README.md\n'

@@ -17,8 +17,6 @@ PATTERN = re.compile(r"2026[-_]08")
 ALLOWED = {
     # Definition of the constant and its documentation.
     "domain/cutoff.py": 3,
-    # CLI help strings describing the frozen vintage.
-    "cli.py": 2,
     # Docstrings describing the frozen vintage or source window.
     "operations/integral.py": 1,
     "sectoral/monthly.py": 1,

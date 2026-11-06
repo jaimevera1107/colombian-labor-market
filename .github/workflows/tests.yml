@@ -20,7 +20,7 @@ jobs:
       - name: Install (pinned versions)
         run: |
           python -m pip install -U pip setuptools wheel
-          python -m pip install --no-deps ./dependencias/tempdisagg-0.6.3-py3-none-any.whl
+          python -m pip install --no-deps ./vendor/tempdisagg-0.6.3-py3-none-any.whl
           python -m pip install -r requirements/lock-py312.txt
           python -m pip install --no-deps -e .
 
@@ -30,4 +30,4 @@ jobs:
         run: python -m pytest -q
 
       - name: The monthly plan runs on the repository data
-        run: python -m icml recalcular --root . --simulacro
+        run: python -m icml recalc --root . --dry-run

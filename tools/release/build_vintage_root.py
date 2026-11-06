@@ -2,7 +2,7 @@
 
     ICML_CUTOFF=2026-07 python build_vintage_root.py --root . --cutoff 2026-07 --workdir ../raiz_julio
 
-The logic lives in ``icml.recalculation.vintage_root`` (it is what ``icml consolidar --hasta`` uses).
+The logic lives in ``icml.recalculation.vintage_root`` (it is what ``icml rebuild --through`` uses).
 """
 
 from __future__ import annotations

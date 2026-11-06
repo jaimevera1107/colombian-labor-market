@@ -105,7 +105,7 @@ def main(argv: list[str] | None = None) -> int:
         print("Si es 'Annual anchor not kept' por unos 1e-4 personas, use --tolerancia-ancla 1e-3.")
         return 3
     # 4. Checks on real figures.
-    from icml.cli_delivery import _anchor_year
+    from icml.recalculation.service import anchor_year as _anchor_year
 
     policy = AnchorPolicy(_anchor_year(root))
     annexes = compare_annex_releases(

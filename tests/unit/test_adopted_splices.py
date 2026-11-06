@@ -9,7 +9,7 @@ from pathlib import Path
 import pytest
 
 import icml
-from icml.cli_delivery import CLEAN_STATUSES, require_clean_recompute, splice_notes
+from icml.recalculation.service import CLEAN_STATUSES, require_clean_recompute, splice_notes
 from icml.informality.regime_splice import RegimeSplice
 from icml.pipeline.labor_base_splice import LaborBaseSplice
 from icml.pipeline.labor_reconstruction import LaborReconstruction

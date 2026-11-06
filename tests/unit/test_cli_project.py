@@ -1,4 +1,4 @@
-"""Friendly commands: what each one decides, with a synthetic project and a simulated recalculation."""
+"""Everyday commands: what each one decides, with a synthetic project and a simulated recalculation."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pytest
 
-from icml import cli_amigable as cli
+from icml.cli import project as cli
 from icml.domain.cutoff import ACTIVE_CUTOFF, FROZEN_CUTOFF
 from icml.ingestion.discovery import annexes_after, detect_cutoff
 from icml.recalculation.runner import _ingestion_files, recalculate
@@ -45,7 +45,7 @@ def _publish(root: Path, cutoff: str, mode: str = "total") -> None:
 
 
 def _args(**kw) -> argparse.Namespace:
-    base = {"root": None, "hasta": None, "desde_cero": False, "si": False, "simulacro": False, "sin_sencillo": True}
+    base = {"root": None, "through": None, "yes": False, "dry_run": False, "no_simple": True}
     return argparse.Namespace(**{**base, **kw})
 
 
@@ -70,7 +70,7 @@ class Calls:
 @pytest.fixture
 def recalc(monkeypatch):
     fake = Calls()
-    monkeypatch.setattr("icml.cli_delivery.run_recalculation", fake)
+    monkeypatch.setattr("icml.recalculation.service.run_recalculation", fake)
     monkeypatch.setattr(cli, "_finish", lambda root, folder, make_simple: 0)
     return fake
 
@@ -81,10 +81,10 @@ def recalc(monkeypatch):
 def test_the_project_is_found_from_a_subfolder_and_a_wrong_folder_is_explained(project, tmp_path, monkeypatch):
     sub = project / "datos/1_ingesta"
     monkeypatch.chdir(sub)
-    assert cli.find_root(None) == project.resolve()
-    assert cli.find_root(project) == project.resolve()
-    with pytest.raises(FileNotFoundError, match="carpeta del proyecto"):
-        cli.find_root(tmp_path / "otro")
+    assert cli.find_project_root(None) == project.resolve()
+    assert cli.find_project_root(project) == project.resolve()
+    with pytest.raises(FileNotFoundError, match="Project folder"):
+        cli.find_project_root(tmp_path / "otro")
 
 
 def test_the_published_vintage_reports_its_cutoff_even_if_an_old_file_lacks_it(project):
@@ -98,37 +98,37 @@ def test_the_published_vintage_reports_its_cutoff_even_if_an_old_file_lacks_it(p
 def test_a_month_must_look_like_a_month():
     assert cli._check_month("2026-07") == "2026-07" and cli._check_month(None) is None
     for bad in ("2026-7", "julio", "2026-13"):
-        with pytest.raises(ValueError, match="AAAA-MM"):
+        with pytest.raises(ValueError, match="YYYY-MM"):
             cli._check_month(bad)
 
 
 @pytest.mark.parametrize(
     ("setup", "expected"),
     [
-        (lambda p: None, "icml consolidar --desde-cero"),
-        (lambda p: _publish(p, "2026-07"), "icml actualizar"),
-        (lambda p: _publish(p, "2026-08"), "Todo está al día"),
+        (lambda p: None, "icml rebuild"),
+        (lambda p: _publish(p, "2026-07"), "icml update"),
+        (lambda p: _publish(p, "2026-08"), "up to date"),
     ],
 )
-def test_estado_suggests_the_next_step(project, capsys, setup, expected):
+def test_status_suggests_the_next_step(project, capsys, setup, expected):
     setup(project)
-    assert cli.command_estado(project) == 0
+    assert cli.command_status(project) == 0
     assert expected in capsys.readouterr().out
 
 
-def test_estado_says_when_there_is_nothing_to_compute(tmp_path, capsys):
+def test_status_says_when_there_is_nothing_to_compute(tmp_path, capsys):
     (tmp_path / "pyproject.toml").write_text("[project]\nname = \"icml\"\n")
     (tmp_path / "datos/1_ingesta").mkdir(parents=True)
-    cli.command_estado(tmp_path)
-    assert "Copie en datos/1_ingesta" in capsys.readouterr().out
+    cli.command_status(tmp_path)
+    assert "Copy both annexes" in capsys.readouterr().out
 
 
-def test_estado_warns_about_annexes_beyond_what_can_be_processed(project, capsys):
+def test_status_warns_about_annexes_beyond_what_can_be_processed(project, capsys):
     for kind in ("ml", "inf"):
         _annex(project, kind, "2026-09")
-    cli.command_estado(project)
+    cli.command_status(project)
     out = capsys.readouterr().out
-    assert "2026-09" in out and f"--hasta {FROZEN_CUTOFF}" in out
+    assert "2026-09" in out and f"--through {FROZEN_CUTOFF}" in out
 
 
 # ------------------------------------------------------------------ the cutoff cap
@@ -165,94 +165,88 @@ def test_without_a_cap_later_annexes_count_as_inputs(project):
     assert len(_ingestion_files(project / "datos/1_ingesta", "2026-07")) == 4
 
 
-# ------------------------------------------------------------------ consolidar
+# ------------------------------------------------------------------ rebuild
 
 
-def test_consolidar_refuses_to_replace_a_published_vintage_unless_asked(project, recalc, capsys):
-    _publish(project, "2026-08")
-    assert cli.command_run(project, "consolidar", _args(hasta="2026-08")) == cli.EXIT_ACTION
-    out = capsys.readouterr().out
-    assert "icml actualizar" in out and "--desde-cero" in out and not recalc.calls
-
-
-def test_consolidar_from_scratch_runs_the_total_mode_and_confirms_it(project, recalc, monkeypatch):
+def test_rebuild_over_a_published_vintage_asks_for_confirmation(project, recalc, capsys, monkeypatch):
     _publish(project, "2026-08")
     monkeypatch.setattr("sys.stdin", type("NoTty", (), {"isatty": lambda self: False})())
-    assert cli.command_run(project, "consolidar", _args(desde_cero=True, hasta="2026-08")) == cli.EXIT_ACTION
-    assert not recalc.calls  # no terminal to confirm and no --si: nothing runs
-    assert cli.command_run(project, "consolidar", _args(desde_cero=True, hasta="2026-08", si=True)) == 0
+    assert cli.command_run(project, "rebuild", _args(through="2026-08")) == cli.EXIT_ACTION
+    out = capsys.readouterr().out
+    assert "icml update" in out and "--yes" in out and not recalc.calls  # no terminal and no --yes: nothing runs
+    assert cli.command_run(project, "rebuild", _args(through="2026-08", yes=True)) == 0
     call = recalc.calls[0]
     assert call["mode"] == "total" and call["confirm_total"] is True and call["dry_run"] is False
 
 
-def test_the_first_consolidation_needs_no_confirmation(project, recalc):
-    assert cli.command_run(project, "consolidar", _args(hasta="2026-08")) == 0
+def test_the_first_rebuild_needs_no_confirmation(project, recalc):
+    assert cli.command_run(project, "rebuild", _args(through="2026-08")) == 0
     assert recalc.calls[0]["mode"] == "total"
 
 
-def test_a_simulation_never_asks_and_never_computes(project, recalc, capsys):
+def test_a_dry_run_never_asks_and_never_computes(project, recalc, capsys):
     _publish(project, "2026-08")
-    assert cli.command_run(project, "consolidar", _args(desde_cero=True, hasta="2026-08", simulacro=True)) == 0
-    assert recalc.calls[0]["dry_run"] is True and "Simulacro" in capsys.readouterr().out
+    assert cli.command_run(project, "rebuild", _args(through="2026-08", dry_run=True)) == 0
+    assert recalc.calls[0]["dry_run"] is True and "Dry run" in capsys.readouterr().out
 
 
 def test_another_month_restarts_the_program_with_that_cutoff(project, monkeypatch):
     seen = []
     monkeypatch.setattr(cli, "_relaunch", lambda root, command, args, target: seen.append((command, target)) or 0)
     assert ACTIVE_CUTOFF == FROZEN_CUTOFF
-    assert cli.command_run(project, "consolidar", _args(hasta="2026-07")) == 0
-    assert seen == [("consolidar", "2026-07")]
+    assert cli.command_run(project, "rebuild", _args(through="2026-07")) == 0
+    assert seen == [("rebuild", "2026-07")]
 
 
-def test_without_hasta_it_uses_the_last_complete_month(project, monkeypatch):
+def test_without_through_it_uses_the_last_complete_month(project, monkeypatch):
     for kind in ("ml", "inf"):
         for month in ("2026-07", "2026-08"):
             (project / f"datos/1_ingesta/geih_{'mercado_laboral' if kind == 'ml' else 'informalidad'}/geih_{'mercado_laboral' if kind == 'ml' else 'informalidad'}_{month}.xlsx").unlink()
     seen = []
     monkeypatch.setattr(cli, "_relaunch", lambda root, command, args, target: seen.append(target) or 0)
-    cli.command_run(project, "consolidar", _args())
+    cli.command_run(project, "rebuild", _args())
     assert seen == ["2026-06"]
 
 
 def test_a_month_without_both_annexes_is_explained(project, recalc, capsys):
     (project / "datos/1_ingesta/geih_informalidad/geih_informalidad_2026-07.xlsx").unlink()
-    assert cli.command_run(project, "consolidar", _args(hasta="2026-07")) == cli.EXIT_ACTION
-    assert "No tengo los dos anexos de 2026-07" in capsys.readouterr().out and not recalc.calls
+    assert cli.command_run(project, "rebuild", _args(through="2026-07")) == cli.EXIT_ACTION
+    assert "Both annexes of 2026-07" in capsys.readouterr().out and not recalc.calls
 
 
 def test_a_month_after_the_frozen_vintage_is_not_processed_and_says_how_to_continue(project, recalc, capsys):
     for kind in ("ml", "inf"):
         _annex(project, kind, "2026-09")
-    assert cli.command_run(project, "consolidar", _args()) == cli.EXIT_ACTION
-    assert f"--hasta {FROZEN_CUTOFF}" in capsys.readouterr().out and not recalc.calls
+    assert cli.command_run(project, "rebuild", _args()) == cli.EXIT_ACTION
+    assert f"--through {FROZEN_CUTOFF}" in capsys.readouterr().out and not recalc.calls
 
 
-# ------------------------------------------------------------------ actualizar
+# ------------------------------------------------------------------ update
 
 
-def test_actualizar_needs_a_published_vintage(project, recalc, capsys):
-    assert cli.command_run(project, "actualizar", _args()) == cli.EXIT_ACTION
-    assert "icml consolidar --desde-cero" in capsys.readouterr().out and not recalc.calls
+def test_update_needs_a_published_vintage(project, recalc, capsys):
+    assert cli.command_run(project, "update", _args()) == cli.EXIT_ACTION
+    assert "icml rebuild" in capsys.readouterr().out and not recalc.calls
 
 
-def test_actualizar_only_updates_and_says_so(project, recalc, capsys):
+def test_update_only_updates_and_says_so(project, recalc, capsys):
     _publish(project, "2026-07")
-    assert cli.command_run(project, "actualizar", _args()) == 0
+    assert cli.command_run(project, "update", _args()) == 0
     assert recalc.calls[0]["mode"] == "anclado" and recalc.calls[0]["confirm_total"] is False
-    assert "SOLO ACTUALIZAR" in capsys.readouterr().out
+    assert "UPDATE ONLY" in capsys.readouterr().out
 
 
-def test_actualizar_does_not_go_back(project, recalc, capsys):
+def test_update_does_not_go_back(project, recalc, capsys):
     _publish(project, "2026-08")
-    assert cli.command_run(project, "actualizar", _args(hasta="2026-07")) == cli.EXIT_ACTION
-    assert "no retrocede" in capsys.readouterr().out and not recalc.calls
+    assert cli.command_run(project, "update", _args(through="2026-07")) == cli.EXIT_ACTION
+    assert "does not go back" in capsys.readouterr().out and not recalc.calls
 
 
 def test_nothing_new_is_reported_as_up_to_date(project, capsys, monkeypatch):
     _publish(project, "2026-08")
-    monkeypatch.setattr("icml.cli_delivery.run_recalculation", Calls("SIN_CAMBIOS"))
-    assert cli.command_run(project, "actualizar", _args()) == 0
-    assert "al día" in capsys.readouterr().out
+    monkeypatch.setattr("icml.recalculation.service.run_recalculation", Calls("SIN_CAMBIOS"))
+    assert cli.command_run(project, "update", _args()) == 0
+    assert "up to date" in capsys.readouterr().out
 
 
 def test_a_blocked_plan_is_an_action_for_the_user_not_a_crash(project, capsys, monkeypatch):
@@ -261,61 +255,66 @@ def test_a_blocked_plan_is_an_action_for_the_user_not_a_crash(project, capsys, m
     def blocked(root, mode, **kw):
         return {"plan": _plan("BLOQUEADO", blockers=["Se modificó un insumo existente"])}
 
-    monkeypatch.setattr("icml.cli_delivery.run_recalculation", blocked)
-    assert cli.command_run(project, "actualizar", _args()) == cli.EXIT_ACTION
-    assert "BLOQUEADO: Se modificó un insumo existente" in capsys.readouterr().out
+    monkeypatch.setattr("icml.recalculation.service.run_recalculation", blocked)
+    assert cli.command_run(project, "update", _args()) == cli.EXIT_ACTION
+    assert "BLOCKED: Se modificó un insumo existente" in capsys.readouterr().out
 
 
-# ------------------------------------------------------------------ graficos, verificar, mistakes
+# ------------------------------------------------------------------ plots, verify, mistakes
 
 
-def test_graficos_draws_the_published_delivery_and_passes_the_options(project, monkeypatch, capsys):
+def test_plots_draws_the_published_delivery_and_passes_the_options(project, monkeypatch, capsys):
     _publish(project, "2026-08")
     received = {}
 
     class Tool:
+        GROUPS = ("nacional", "departamentos", "comparativos")
+        UNIVERSES = ("censo", "geih")
+        PlotsExist = FileExistsError
+
         @staticmethod
-        def main(argv):
-            received["argv"] = argv
-            return 0
+        def render_delivery(folder, output=None, **options):
+            received["folder"], received["options"] = folder, options
+            return folder.with_name(folder.name + "_graficos"), 3
 
-    monkeypatch.setattr(cli, "_plots_tool", lambda: Tool)
-    args = argparse.Namespace(carpeta=None, solo="nacional", universo="censo", departamentos="05,11", formato="pdf", forzar=True)
-    assert cli.command_graficos(project, args) == 0
-    argv = received["argv"]
-    assert argv[0] == "--carpeta" and argv[1].endswith("corte-2026-08_total")
-    for pair in (("--solo", "nacional"), ("--universo", "censo"), ("--departamentos", "05,11"), ("--formato", "pdf")):
-        assert argv[argv.index(pair[0]) + 1] == pair[1]
-    assert "--forzar" in argv and "INDICE.html" in capsys.readouterr().out
+    monkeypatch.setitem(__import__("sys").modules, "icml.plots.delivery", Tool)
+    args = argparse.Namespace(folder=None, only="nacional", universe="censo", departments="05,11", format="pdf", force=True)
+    assert cli.command_plots(project, args) == 0
+    assert received["folder"].name.endswith("corte-2026-08_total")
+    options = received["options"]
+    assert options["groups"] == ("nacional",) and options["universes"] == ("censo",)
+    assert options["departments"] == ("05", "11") and options["fmt"] == "pdf" and options["force"] is True
+    assert "INDICE.html" in capsys.readouterr().out
 
 
-def test_graficos_without_any_delivery_says_what_to_do_first(project):
-    args = argparse.Namespace(carpeta=None, solo=None, universo=None, departamentos=None, formato="png", forzar=False)
-    with pytest.raises(FileNotFoundError, match="icml consolidar"):
-        cli.command_graficos(project, args)
+def test_plots_without_any_delivery_says_what_to_do_first(project, monkeypatch):
+    pytest.importorskip("matplotlib")
+    args = argparse.Namespace(folder=None, only=None, universe=None, departments=None, format="png", force=False)
+    with pytest.raises(FileNotFoundError, match="icml rebuild"):
+        cli.command_plots(project, args)
 
 
 def test_a_user_mistake_prints_a_plain_message_and_not_a_traceback(tmp_path, capsys):
-    args = argparse.Namespace(command="estado", root=tmp_path)
+    args = argparse.Namespace(command="status", root=tmp_path)
     assert cli.run_command(args) == cli.EXIT_ERROR
-    assert "carpeta del proyecto" in capsys.readouterr().err
-    bad = argparse.Namespace(command="consolidar", root=None, hasta="julio")
+    assert "Project folder" in capsys.readouterr().err
+    bad = argparse.Namespace(command="rebuild", root=None, through="july")
     assert cli.run_command(argparse.Namespace(**{**vars(bad), "root": tmp_path})) == cli.EXIT_ERROR
 
 
 def test_the_commands_are_registered_in_the_main_program():
-    from icml.cli import _build_parser
+    from icml.cli import build_parser
 
-    parser = _build_parser()
+    parser = build_parser()
     for command in cli.COMMANDS:
         assert parser.parse_args([command]).command == command
-    parsed = parser.parse_args(["consolidar", "--desde-cero", "--hasta", "2026-07", "--si"])
-    assert parsed.desde_cero and parsed.hasta == "2026-07" and parsed.si
+    parsed = parser.parse_args(["rebuild", "--through", "2026-07", "--yes"])
+    assert parsed.through == "2026-07" and parsed.yes and parsed.handler is cli.run_command
 
 
-def test_actualizar_accepts_mes_as_the_month_to_include():
-    from icml.cli import _build_parser
+def test_update_accepts_month_as_the_month_to_include():
+    from icml.cli import build_parser
 
-    parsed = _build_parser().parse_args(["actualizar", "--mes", "2026-08", "--simulacro"])
-    assert parsed.hasta == "2026-08" and parsed.simulacro
-    assert _build_parser().parse_args(["actualizar", "--hasta", "2026-08"]).hasta == "2026-08"
+    parsed = build_parser().parse_args(["update", "--month", "2026-08", "--dry-run"])
+    assert parsed.through == "2026-08" and parsed.dry_run
+    assert build_parser().parse_args(["update", "--through", "2026-08"]).through == "2026-08"

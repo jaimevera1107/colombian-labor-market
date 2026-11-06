@@ -1,6 +1,6 @@
 """Build a project root as it would have been at an earlier monthly cutoff (library form).
 
-Used by ``icml consolidar --hasta`` and ``icml actualizar --hasta``; the command line tool
+Used by ``icml rebuild --through`` and ``icml update --through``; the command line tool
 ``tools/release/build_vintage_root.py`` is a thin wrapper around ``build_vintage_root``.
 
 The frozen vintage is never touched. The new root shares the

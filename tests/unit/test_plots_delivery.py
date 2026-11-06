@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-import importlib.util
-import sys
 from pathlib import Path
 
 import numpy as np
@@ -12,12 +10,9 @@ import pytest
 
 pytest.importorskip("matplotlib")
 
+from icml.plots import delivery as tool
+
 PROJECT = Path(__file__).resolve().parents[2]
-TOOL = Path(__file__).resolve().parents[2] / "tools" / "plots" / "graficar_entrega.py"
-spec = importlib.util.spec_from_file_location("graficar_entrega", TOOL)
-tool = importlib.util.module_from_spec(spec)
-sys.modules[spec.name] = tool  # dataclasses look the module up by name
-spec.loader.exec_module(tool)
 
 PNG = b"\x89PNG\r\n\x1a\n"
 DEPARTMENTS = {"05": "Antioquia", "11": "Bogotá D.C.", "99": "Vichada"}
@@ -167,13 +162,13 @@ def test_the_index_links_every_figure_and_escapes_titles(frames, tmp_path):
 def test_the_command_refuses_to_overwrite_and_validates_options(frames, tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(tool, "load_frames", lambda path: (frames, META))
     out = tmp_path / "salida"
-    args = ["--carpeta", str(tmp_path), "--salida", str(out), "--solo", "nacional", "--dpi", "40"]
+    args = ["--folder", str(tmp_path), "--output", str(out), "--only", "nacional", "--dpi", "40"]
     assert tool.main(args) == 0 and (out / "INDICE.html").is_file()
-    assert tool.main(args) == 2 and "--forzar" in capsys.readouterr().err
+    assert tool.main(args) == 2 and "--force" in capsys.readouterr().err
     (out / "viejo.txt").write_text("x")
-    assert tool.main([*args, "--forzar"]) == 0 and not (out / "viejo.txt").exists()
+    assert tool.main([*args, "--force"]) == 0 and not (out / "viejo.txt").exists()
     with pytest.raises(SystemExit) as exc:
-        tool.main(["--carpeta", str(tmp_path), "--solo", "mapas"])
+        tool.main(["--folder", str(tmp_path), "--only", "mapas"])
     assert exc.value.code == 2
 
 
@@ -191,6 +186,6 @@ def test_the_real_delivery_loads_and_the_national_dashboards_draw(tmp_path):
     assert len(real) == 16 and len(tool.departments(real)) == 33
     assert meta.cutoff and meta.version
     out = tmp_path / "graficos"
-    assert tool.main(["--carpeta", str(_delivery()), "--salida", str(out), "--solo", "nacional", "--dpi", "40"]) == 0
+    assert tool.main(["--folder", str(_delivery()), "--output", str(out), "--only", "nacional", "--dpi", "40"]) == 0
     assert (out / "universo_censo" / "nacional.png").read_bytes().startswith(PNG)
     assert (out / "universo_geih" / "nacional.png").is_file() and (out / "INDICE.html").is_file()

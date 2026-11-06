@@ -1,12 +1,11 @@
-"""Gráficas de auditoría visual del ICML: 33 territorios + nacional.
+"""Visual audit charts of the labor products: 33 territories plus the national series.
 
-Lee directamente los productos de quality (departamentos.csv, nacionales.csv)
-y genera una gráfica por indicador (TD, TO, TGP) con los 33 departamentos
-paginados en grupos de 11, más el comparativo nacional.
+Reads the quality products directly (``departamentos.csv``, ``nacionales.csv``)
+and draws one figure per indicator (TD, TO, TGP) with the 33 departments
+paginated in groups of 11, plus the national comparison.
 
-Uso:
-    python graficar_auditoria.py --productos /tmp/out/labor/quality/products --salida /tmp/graficas
-    python graficar_auditoria.py --root .    --salida /tmp/graficas
+    icml audit-plots --products /tmp/out/labor/quality/products --output /tmp/figures
+    icml audit-plots --root . --output /tmp/figures
 """
 from __future__ import annotations
 
@@ -22,6 +21,8 @@ import pandas as pd
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
+
+from icml.layout import FROZEN_PRODUCTS_DIR  # noqa: E402
 
 
 INDICATORS: list[tuple[str, str, str]] = [
@@ -148,27 +149,28 @@ def plot_national(nat: pd.DataFrame, output: Path, dpi: int = 110) -> Path:
     return out
 
 
-def run(productos: Path, salida: Path, dpi: int = 100) -> int:
-    dep_path = productos / "departamentos.csv"
-    nat_path = productos / "nacionales.csv"
+def run(products: Path, output: Path, dpi: int = 100) -> int:
+    """Draw every audit figure into ``output``; return a process exit code."""
+    dep_path = products / "departamentos.csv"
+    nat_path = products / "nacionales.csv"
     if not dep_path.exists() or not nat_path.exists():
-        print(f"Error: no se encontraron productos en {productos}", file=sys.stderr)
+        print(f"Error: no products found in {products}", file=sys.stderr)
         return 1
 
     dep = pd.read_csv(dep_path)
     nat = pd.read_csv(nat_path)
-    salida.mkdir(parents=True, exist_ok=True)
+    output.mkdir(parents=True, exist_ok=True)
 
     all_files: list[Path] = []
     for ind_col, ind_label, slug in INDICATORS:
-        files = plot_departments(dep, ind_col, ind_label, slug, salida, dpi=dpi)
+        files = plot_departments(dep, ind_col, ind_label, slug, output, dpi=dpi)
         all_files.extend(files)
-        print(f"  {slug}: {len(files)} páginas")
+        print(f"  {slug}: {len(files)} pages")
 
-    nat_file = plot_national(nat, salida, dpi=dpi + 10)
+    nat_file = plot_national(nat, output, dpi=dpi + 10)
     all_files.append(nat_file)
-    print(f"  nacional: 1 gráfica")
-    print(f"\nTotal: {len(all_files)} gráficas en {salida}")
+    print("  nacional: 1 figure")
+    print(f"\nTotal: {len(all_files)} figures in {output}")
     return 0
 
 
@@ -176,27 +178,27 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument(
-        "--productos", type=Path,
-        help="Carpeta con departamentos.csv y nacionales.csv (p.ej. labor/quality/products)",
+        "--products", type=Path,
+        help="Folder with departamentos.csv and nacionales.csv (e.g. labor/quality/products)",
     )
     group.add_argument(
         "--root", type=Path,
-        help="Raíz del proyecto; busca los productos en datos/2_procesamiento/productos_congelados/laboral/",
+        help="Project root; the products are read from the frozen labor products folder",
     )
     parser.add_argument(
-        "--salida", type=Path,
-        help="Carpeta de salida (por defecto <productos>/../graficas_auditoria)",
+        "--output", type=Path,
+        help="Output folder (default <products>/../graficas_auditoria)",
     )
     parser.add_argument("--dpi", type=int, default=100)
     args = parser.parse_args(argv)
 
     if args.root is not None:
-        productos = args.root / "datos/2_procesamiento/productos_congelados/laboral"
+        products = args.root / FROZEN_PRODUCTS_DIR / "laboral"
     else:
-        productos = args.productos
+        products = args.products
 
-    salida = args.salida or productos.parent / "graficas_auditoria"
-    return run(productos, salida, dpi=args.dpi)
+    output = args.output or products.parent / "graficas_auditoria"
+    return run(products, output, dpi=args.dpi)
 
 
 if __name__ == "__main__":

@@ -1,20 +1,21 @@
-"""Gráficos de una entrega del ICML (herramienta opcional).
+"""Figures of an ICML delivery (optional tool).
 
-Lee una entrega ya generada (la carpeta con ``MANIFEST.json``) y dibuja, para los dos universos:
+Reads a finished delivery (the folder that holds ``MANIFEST.json``) and
+draws, for both universes:
 
-* un **tablero** del nacional y de **cada departamento** (tasas laborales, niveles, informalidad
-  y composición sectorial);
-* **comparativos** de las tasas importantes (TD, TO, TGP, TI): nacional censo contra GEIH, los 33
-  departamentos en miniatura, mapas de calor por año, ranking del último mes y dispersión
-  departamental alrededor del nacional.
+* a **dashboard** of the national series and of **every department**
+  (labor rates, levels, informality and sectoral composition);
+* **comparatives** of the main rates (TD, TO, TGP, TI): national census vs
+  GEIH, the 33 departments as small multiples, yearly heat maps, ranking of
+  the last month and departmental dispersion around the national value.
 
-No cambia nada de la entrega y no es necesaria para calcular: solo lee resultados.
+It never modifies the delivery and is not needed to compute anything: it
+only reads results. The output folder ``<delivery>_graficos/`` keeps its
+published name and holds an ``INDICE.html`` to browse everything.
 
-    python graficar_entrega.py --carpeta datos/3_salida/<entrega>
-    python graficar_entrega.py --carpeta ... --solo nacional,comparativos --universo censo
-    python graficar_entrega.py --carpeta ... --departamentos 05,11 --formato pdf
-
-Escribe ``<entrega>_graficos/`` con un ``INDICE.html`` para recorrer todo en el navegador.
+    icml plots
+    icml plots --only nacional,comparativos --universe censo
+    icml plots --departments 05,11 --format pdf
 """
 
 from __future__ import annotations
@@ -32,6 +33,8 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+from icml.layout import PLOTS_SUFFIX
 
 UNIVERSES = ("censo", "geih")
 UNIVERSE_LABEL = {"censo": "Universo censo (territorio completo)", "geih": "Universo GEIH (parte representada)"}
@@ -70,6 +73,7 @@ SECTOR_NAMES = {
 }
 TEXT_COLUMNS = {"DPT", "CIUDAD", "Codigo", "Sector"}
 GROUPS = ("nacional", "departamentos", "comparativos")
+FORMATS = ("png", "pdf", "svg")
 
 Frames = dict[tuple[str, str, str], pd.DataFrame]
 
@@ -668,7 +672,7 @@ def write_index(output: Path, items: list[Output], meta: Meta) -> Path:
         "ranking del último mes y dispersión departamental.\n\n"
         "Sombreado gris: tramo reconstruido (1993-2000). Línea discontinua: empalme de 2001-01. Franja rosada (GEIH): "
         "meses sin representación del territorio en la GEIH.\n\n"
-        "Se generan con `python tools/plots/graficar_entrega.py --carpeta <entrega>`; no cambian ninguna cifra.\n",
+        "Se generan con `icml plots --folder <entrega>`; no cambian ninguna cifra.\n",
         encoding="utf-8",
     )
     return index
@@ -678,37 +682,76 @@ def _csv_list(text: str | None) -> tuple[str, ...]:
     return tuple(part.strip() for part in text.split(",") if part.strip()) if text else ()
 
 
-def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--carpeta", type=Path, required=True, help="Carpeta de la entrega (la que trae MANIFEST.json)")
-    parser.add_argument("--salida", type=Path, help="Destino; por defecto <carpeta>_graficos")
-    parser.add_argument("--solo", help=f"Grupos separados por coma: {', '.join(GROUPS)}")
-    parser.add_argument("--universo", help="censo, geih o ambos (por defecto ambos)")
-    parser.add_argument("--departamentos", help="Códigos DANE separados por coma (por defecto todos)")
-    parser.add_argument("--dpi", type=int, default=100)
-    parser.add_argument("--formato", choices=("png", "pdf", "svg"), default="png")
-    parser.add_argument("--forzar", action="store_true", help="Reemplazar la carpeta de salida si existe")
-    args = parser.parse_args(argv)
-    groups = _csv_list(args.solo) or GROUPS
-    universes = _csv_list(args.universo) or UNIVERSES
-    for value, allowed, what in ((groups, GROUPS, "--solo"), (universes, UNIVERSES, "--universo")):
+class PlotsExist(FileExistsError):
+    """The output folder exists and ``force`` was not given."""
+
+
+def render_delivery(
+    folder: Path,
+    output: Path | None = None,
+    *,
+    groups: tuple[str, ...] = GROUPS,
+    universes: tuple[str, ...] = UNIVERSES,
+    departments: tuple[str, ...] = (),
+    dpi: int = 100,
+    fmt: str = "png",
+    force: bool = False,
+) -> tuple[Path, int]:
+    """Draw the figures of ``folder`` and return the output folder and the count.
+
+    Raises
+    ------
+    ValueError
+        For an unknown group, universe or format.
+    PlotsExist
+        When ``output`` exists and ``force`` is false.
+    """
+    for value, allowed, what in ((groups, GROUPS, "groups"), (universes, UNIVERSES, "universes")):
         bad = [v for v in value if v not in allowed]
         if bad:
-            parser.error(f"{what}: valores no válidos {bad}; use {list(allowed)}")
-    output = args.salida or args.carpeta.parent / f"{args.carpeta.name}_graficos"
+            raise ValueError(f"{what}: invalid values {bad}; use {list(allowed)}")
+    if fmt not in FORMATS:
+        raise ValueError(f"format: invalid value {fmt!r}; use {list(FORMATS)}")
+    output = output or folder.parent / f"{folder.name}{PLOTS_SUFFIX}"
     if output.exists():
-        if not args.forzar:
-            print(f"Ya existe {output}. Use --forzar para reemplazarla.", file=sys.stderr)
-            return 2
+        if not force:
+            raise PlotsExist(f"{output} already exists. Use --force to replace it.")
         shutil.rmtree(output)
-    frames, meta = load_frames(args.carpeta)
-    options = Options(groups, universes, tuple(_csv_list(args.departamentos)), args.dpi, args.formato)
+    frames, meta = load_frames(folder)
+    options = Options(tuple(groups), tuple(universes), tuple(departments), dpi, fmt)
     items = build_all(frames, output, meta, options)
     if not items:
-        print("No se pudo dibujar nada con esas opciones.", file=sys.stderr)
-        return 1
+        raise ValueError("Nothing could be drawn with those options.")
     write_index(output, items, meta)
-    print(f"{len(items)} gráficos en {output} (abra INDICE.html)")
+    return output, len(items)
+
+
+def main(argv: list[str] | None = None) -> int:
+    """Standalone entry point (``python -m icml.plots.delivery``)."""
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--folder", type=Path, required=True, help="Delivery folder (the one with MANIFEST.json)")
+    parser.add_argument("--output", type=Path, help=f"Destination; by default <folder>{PLOTS_SUFFIX}")
+    parser.add_argument("--only", help=f"Comma-separated groups: {', '.join(GROUPS)}")
+    parser.add_argument("--universe", help="censo, geih or both (default both)")
+    parser.add_argument("--departments", help="Comma-separated DANE codes (default all)")
+    parser.add_argument("--dpi", type=int, default=100)
+    parser.add_argument("--format", choices=FORMATS, default="png")
+    parser.add_argument("--force", action="store_true", help="Replace the output folder if it exists")
+    args = parser.parse_args(argv)
+    try:
+        output, count = render_delivery(
+            args.folder, args.output,
+            groups=_csv_list(args.only) or GROUPS,
+            universes=_csv_list(args.universe) or UNIVERSES,
+            departments=_csv_list(args.departments),
+            dpi=args.dpi, fmt=args.format, force=args.force,
+        )
+    except PlotsExist as exc:
+        print(exc, file=sys.stderr)
+        return 2
+    except ValueError as exc:
+        parser.error(str(exc))
+    print(f"{count} figures in {output} (open INDICE.html)")
     return 0
 
 

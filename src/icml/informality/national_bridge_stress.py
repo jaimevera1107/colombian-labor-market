@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 from scipy.special import expit, logit
 
-from .national_closure import calibrate_month, InfeasibleClosure
+from .national_closure import calibrate_month
 from .urban_backcast import _national_historical
 from icml.domain.cutoff import ROWS_NATIONAL
 

@@ -8,7 +8,6 @@ import pytest
 from icml.urban.frozen_donors import (
     FrozenDonorError, frozen_manifest, selection_context_hash, verify_frozen,
 )
-from icml.urban.pipeline import load_urban_config
 
 
 def test_2026_updates_do_not_change_locked_reference_hash():

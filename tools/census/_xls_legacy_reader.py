@@ -1,7 +1,7 @@
 """Minimal read-only OLE2/BIFF8 extractor for a legacy DANE .xls.
 Pure stdlib; never modifies source. Only supports numeric/string cell records.
 """
-import struct, collections
+import struct
 
 def ole_streams(path):
     b=open(path,'rb').read()

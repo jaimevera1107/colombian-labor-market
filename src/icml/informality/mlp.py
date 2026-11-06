@@ -8,7 +8,6 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass
 import copy
-import math
 import random
 from typing import Literal
 

@@ -4,7 +4,7 @@ Experimental results, NOT canonical series. Annual GEIH shares are never
 mixed with full-universe national levels as hard constraints.
 """
 from __future__ import annotations
-import argparse, hashlib, json, sys, warnings
+import argparse, hashlib, json
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -12,10 +12,9 @@ from sklearn.pipeline import make_pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Ridge
-from sklearn.multioutput import MultiOutputRegressor
 from xgboost import XGBRegressor
 from .predictive_benchmark import features_all_33, clamp_simplex
-from .predictive_reference import SECTORS, _norm, clr, inv_clr
+from .predictive_reference import _norm, clr, inv_clr
 from icml.domain.cutoff import LAST_YEAR, N_MONTHS
 
 SECTORS14=['A','B','C','D_E','F','G','H','I','J','K','L','M_N','O_P_Q','R_S_T_U']

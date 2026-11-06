@@ -1,5 +1,4 @@
 """Reader of cached XLSX cell values, standard-library only; not a formula calculator."""
-from pathlib import Path
 from zipfile import ZipFile
 import posixpath, re, xml.etree.ElementTree as ET
 M='{http://schemas.openxmlformats.org/spreadsheetml/2006/main}'

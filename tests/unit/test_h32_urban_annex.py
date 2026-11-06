@@ -1,5 +1,4 @@
 """H32 regression from the real 2026-08 DANE 23-city annex."""
-import csv
 from pathlib import Path
 
 import pytest

@@ -5,7 +5,6 @@ promotion. Unknown legacy processed sources are preserved separately.
 """
 from __future__ import annotations
 import json
-import os
 import tempfile
 from pathlib import Path
 from icml.domain.cutoff import ACTIVE_CUTOFF

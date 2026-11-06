@@ -20,10 +20,9 @@ import unicodedata
 import zipfile
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 
-from .monthly import MONTHLY_GROUPS, REQUIRED_FINAL_14, read_normalized_monthly
+from .monthly import read_normalized_monthly
 
 IDENTIFIERS = ("DIRECTORIO", "SECUENCIA_P", "ORDEN")
 CLASS_COLS = ("RAMA2D_R4", "RAMA4D_R4")

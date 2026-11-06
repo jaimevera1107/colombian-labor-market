@@ -1,7 +1,6 @@
 """Non-destructive H21 certification gates and failure-mode tests."""
 import csv
 from pathlib import Path
-from tempfile import TemporaryDirectory
 
 import pytest
 

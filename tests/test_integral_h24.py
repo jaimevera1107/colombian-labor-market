@@ -1,11 +1,9 @@
 """Unified H24: historical-vintage verification vs genuine recomputation."""
-import json
 from pathlib import Path
 
 import pytest
 
 from icml.operations.integral import (
-    REQUIRED_INF_FILES,
     audit_products,
     expected_source_files,
     preflight,
@@ -23,7 +21,6 @@ def frozen_root():
 
 
 def test_2026_08_full_vintage_cross_checks(frozen_root):
-    import csv
     from icml.operations.frozen_products import verify_products
     a = verify_products(frozen_root)
     assert not a["issues"]

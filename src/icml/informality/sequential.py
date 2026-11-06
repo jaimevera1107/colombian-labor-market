@@ -9,7 +9,6 @@ signals are never passed off as monthly observed data. This is experimental.
 """
 from __future__ import annotations
 
-import hashlib
 import json
 import tomllib
 from dataclasses import dataclass
@@ -21,7 +20,7 @@ from scipy.special import expit, logit
 
 from icml.informality.national import OLD_CITY, NEW
 from icml.informality.urban_backcast import (
-    ALIAS, FIRST_13, LABOR, MONTHS, OLD_MONTHS, NEW_MONTHS,
+    ALIAS, FIRST_13, MONTHS, OLD_MONTHS, NEW_MONTHS,
     _apply_13_anchors, _check_labor, _city_windows, _hash,
     _nearest_donor, _national_historical, _normal, _pre2007_trajectory,
     _rate_13, _urban_table,

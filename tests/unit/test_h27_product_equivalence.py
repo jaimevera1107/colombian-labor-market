@@ -1,5 +1,4 @@
 """Regression tests for the H27 gate against silent categorical/numeric drift."""
-from pathlib import Path
 
 import pandas as pd
 

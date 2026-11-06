@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import pandas as pd
-import numpy as np
 import pytest
 from icml.informality.feature_consolidation import _cluster_context, _shares, _validate_labor
 

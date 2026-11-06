@@ -10,7 +10,6 @@ paginated in groups of 11, plus the national comparison.
 from __future__ import annotations
 
 import argparse
-import shutil
 import sys
 from pathlib import Path
 

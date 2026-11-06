@@ -1,6 +1,5 @@
 """H13 regression tests, identity + zero structural categories + universe guardrails."""
 import numpy as np
-import pandas as pd
 import pytest
 from icml.sectoral.reconciliation import solve_joint_margins
 

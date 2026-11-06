@@ -99,7 +99,7 @@ def _read_xlsx_cells(path: Path, sheet_names: list[str], cell_names: set[str]) -
     """
     import posixpath
     import xml.etree.ElementTree as ET
-    from zipfile import ZipFile, BadZipFile
+    from zipfile import ZipFile
 
     MAIN = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
     REL = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"

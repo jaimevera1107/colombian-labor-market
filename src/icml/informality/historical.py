@@ -25,7 +25,7 @@ from icml.domain.cutoff import (
 from scipy.optimize import lsq_linear
 from scipy.special import expit, logit
 
-from icml.informality.national import NEW, OLD_NAT
+from icml.informality.national import OLD_NAT
 
 LABOR_FIELDS = ('population', 'working_age', 'labor_force', 'employed', 'unemployed', 'inactive')
 

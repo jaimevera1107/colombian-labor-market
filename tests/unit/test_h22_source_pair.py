@@ -1,5 +1,4 @@
 """Tests of the non-negotiable dual-annex monthly time-matching rule."""
-from pathlib import Path
 
 import pytest
 

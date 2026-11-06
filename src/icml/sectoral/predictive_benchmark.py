@@ -7,11 +7,10 @@ Explicit retraining; it is NEVER called a full reproduction of the original vect
 (urbana, informalidad, empalmes y donantes no auditados en todo 2015-2025).
 """
 from __future__ import annotations
-import argparse, hashlib, json, sys, platform, importlib.metadata
+import argparse, hashlib, json, platform, importlib.metadata
 from pathlib import Path
 import numpy as np
 import pandas as pd
-from sklearn.base import clone
 from sklearn.linear_model import Ridge
 from sklearn.ensemble import ExtraTreesRegressor
 from sklearn.multioutput import MultiOutputRegressor

@@ -8,7 +8,6 @@ Future-month ingestion is a separate H23 workflow with its own two-annex gate.
 """
 from __future__ import annotations
 
-import csv
 import hashlib
 import json
 import shutil
@@ -24,7 +23,7 @@ from icml.domain.cutoff import (
     N_MONTHS,
 )
 
-from icml.operations.frozen_products import EXPECTED_IDS, verify_products
+from icml.operations.frozen_products import verify_products
 from icml.sectoral.integral import validate_bundle
 
 PERIOD_END = ACTIVE_CUTOFF

@@ -214,7 +214,6 @@ def build_23_and_33(cities13:pd.DataFrame,national:pd.DataFrame,sources:pd.DataF
         raise ValueError('Expected precisely 13+10 DANE city domains')
     nat=national[national.national_type=='DANE_REFERENCIA'].sort_values('period')
     nat_rate=nat.informality_rate_estimated.to_numpy(float)
-    nat_labor=nat.employed_frozen.to_numpy(float)
     if len(nat_rate)!=N_MONTHS:raise ValueError('National history missing')
     # National unemployment is a frozen labor indicator, not informal target.
     all_emp=np.vstack([frozen[c].employed.to_numpy(float) for c in frozen])
@@ -222,7 +221,7 @@ def build_23_and_33(cities13:pd.DataFrame,national:pd.DataFrame,sources:pd.DataF
     national_u=all_unemp.sum(axis=0)/(all_emp.sum(axis=0)+all_unemp.sum(axis=0))
     iold=MONTHS.get_indexer(OLD_MONTHS)
     inew=MONTHS.get_indexer(NEW_MONTHS)
-    m0=int(iold[0]); start21=int(inew[0]); series={}
+    m0=int(iold[0]); series={}
     table13=cities13.copy()
     for c in FIRST_13:
         z=table13[table13.city_code==c].sort_values('period')

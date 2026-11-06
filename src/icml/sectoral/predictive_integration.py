@@ -288,7 +288,7 @@ def month_curve(base,annual,month_info,national,first=1993,last=LAST_YEAR,half_l
  territorial difference relative to H11 at 2015 is transferred backward
  with documented exponential attenuation (sensitivity hypothesis).
  """
- dep_codes=sorted(base.dep_code.unique());depi={x:i for i,x in enumerate(dep_codes)}
+ dep_codes=sorted(base.dep_code.unique())
  years=sorted(base.year.unique())
  if years[0]!=first or years[-1]!=last:raise ValueError('Unexpected employment years')
  tab=annual.pivot(index=['dep_code','year'],columns='sector_code',values='share_anchored').reindex(columns=SECTORS14)
@@ -302,9 +302,6 @@ def month_curve(base,annual,month_info,national,first=1993,last=LAST_YEAR,half_l
  annualnat=nn.groupby('year')[SECTORS14].mean()
  for dep in dep_codes:
   if (dep,2015) not in tab.index:raise ValueError('2015 is missing for the splice')
- share2015=tab.loc[(dep,2015)].to_numpy(float)
- nat15=annualnat.loc[2015].to_numpy(float)
- offset=np.log(np.maximum(share2015,1e-10)/np.maximum(nat15,1e-10))
  for period,group in base.groupby('period',sort=True):
   yr=int(period[:4]);sectors_n=nat.loc[period].to_numpy(float)
   if yr<=2014:
@@ -343,7 +340,6 @@ def monthly_reconciliation(root,annual,month_info,output,save=True):
   x,n_iter=ipf(prior*employed[:,None],employed,totals)
   share=np.divide(x,employed[:,None],out=np.zeros_like(x),where=employed[:,None]>0)
   if not np.isfinite(share).all():raise AssertionError('Cuota no finita')
-  gap=max(abs(x.sum(axis=1)-employed).max(),abs(x.sum(axis=0)-totals).max())
   audit.append({'period':period,'max_row_error_people':float(abs(x.sum(axis=1)-employed).max()),
          'max_national_sector_error_people':float(abs(x.sum(axis=0)-totals).max()),
          'max_prior_adjustment_pp':float((100*np.abs(prior-share)).max()),'iterations':n_iter,

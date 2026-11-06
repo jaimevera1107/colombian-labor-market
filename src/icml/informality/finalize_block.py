@@ -385,7 +385,6 @@ def run(root:Path, output:Path, *,gap_method='interpolated',splice:RegimeSplice|
     stress=root/'datos/2_procesamiento/parametros_congelados/stress_puente_nacional'
     city_lab=_read(lab/'ciudades.csv')
     dept_lab=_read(lab/'departamentos.csv')
-    national_lab=_read(lab/'nacionales.csv')
     b=_read(census/'02_puente_dos_universos_33_territorios.csv')
     anchors=_read(census/'01_ancla_cnpv_2018_nueve.csv')
     n=_read(seq/'02_nacionales.csv')

@@ -189,7 +189,7 @@ def prepare_intake(root: Path, output: Path, period: str, labor_annex: Path | No
     baseline_hash=_digest(frozen)
     from datetime import date
     try:
-        check=date.fromisoformat(period+'-01')
+        date.fromisoformat(period+'-01')  # raises on a malformed period
     except ValueError as exc:
         raise ValueError(f"Invalid monthly period: {period}") from exc
     registered = next_month(FROZEN_CUTOFF)

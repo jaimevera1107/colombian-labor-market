@@ -111,7 +111,7 @@ def solve_joint_margins(p0: np.ndarray, full: np.ndarray, geih: np.ndarray,
         return x,grad,J
 
     par=np.zeros(m*(2 if fit_geih else 1))
-    converged=False; last=1e10
+    converged=False
     for iteration in range(max_iter+1):
         x,grad,J=evaluate(par,jac=True)
         # With the reference-sector normalization, omitted sector residual equals
@@ -143,7 +143,6 @@ def solve_joint_margins(p0: np.ndarray, full: np.ndarray, geih: np.ndarray,
                 break
             step*=0.5
         else:raise RuntimeError('KL dual line search failed')
-        last=err
     if not converged:
         raise RuntimeError(f'H13 margins did not converge: max error {err}, iterations={iteration}, joint={fit_geih}')
     final=np.zeros_like(p0);final[:,active]=x

@@ -34,6 +34,10 @@ One Python package, `icml`, installed from `src/`, drives everything: the stage 
 4. `recalculation.runner.recalculate` grafts the frozen years (anchored mode) or takes everything (total mode), writes the delivery under `datos/3_salida/` and points `datos/2_procesamiento/vigente/` at it.
 5. `delivery.verify` runs the 52 checks; `delivery.simple` writes the simple files.
 
+## Proving that a change keeps the numbers
+
+Run `icml rebuild --through 2026-07 --yes` and `icml update` on the current `main` and on the branch (same clean clone each), then `python tools/compare_runs.py <datos A> <datos B>`. It pairs the deliveries by name, requires byte-identical CSVs, compares the manifests after dropping run ids, timestamps, the software version and the checkout path, and compares the `.xlsx` files member by member. The 2.5.0 refactor was accepted on that basis (see CHANGELOG).
+
 ## Rules
 
 * The data tree keeps its Spanish folder names: manifests, catalogs and migration maps record those paths and the hash gates depend on them.

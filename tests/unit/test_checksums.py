@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import pytest
 
 from icml.operations import checksums as tool
@@ -82,3 +84,13 @@ def test_the_command_line_exit_codes(repo, capsys):
 def test_verifying_without_a_listing_is_an_error(tmp_path):
     with pytest.raises(FileNotFoundError):
         tool.verify(tmp_path)
+
+
+def test_the_repository_listing_is_current():
+    """SHA256SUMS must be regenerated (icml checksums --write) whenever a versioned file changes."""
+    root = Path(__file__).resolve().parents[2]
+    if not (root / tool.LISTING).is_file():
+        pytest.skip("not a repository checkout")
+    result = tool.verify(root)
+    assert result["complete"], {"missing": result["missing"][:5], "altered": result["altered"][:5]}
+    assert not result["extra"], result["extra"][:5]

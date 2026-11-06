@@ -134,6 +134,10 @@ def monthly_report(delivery: Path, previous: Path | None = None, frozen_through:
     return report
 
 
+def _num(value, digits: int = 2, suffix: str = "") -> str:
+    return "" if value is None else f"{value:+.{digits}f}{suffix}"
+
+
 def render_markdown(report: dict) -> str:
     """A short, readable version of the report."""
     lines = [f"# Monthly diagnostics — {report['run_id']} (cutoff {report['cutoff']})", ""]
@@ -144,20 +148,22 @@ def render_markdown(report: dict) -> str:
     if flagged:
         lines += ["| Product | Unit | Variable | Value | MoM | z | YoY | Seasonal-naive residual |", "|---|---|---|---:|---:|---:|---:|---:|"]
         for s in sorted(flagged, key=lambda x: -abs(x["mom_zscore"] or 0)):
-            lines.append(f"| {s['product']} | {s['unit']} | {s['variable']} | {s['value']:.4g} | {s['mom_change']:+.2f} {s['measure_unit']} | {s['mom_zscore']:+.1f} | "
-                         f"{'' if s['yoy_change'] is None else f'{s['yoy_change']:+.2f}'} | {'' if s['seasonal_naive_residual'] is None else f'{s['seasonal_naive_residual']:+.2f}'} |")
+            lines.append("| " + " | ".join([s["product"], s["unit"], s["variable"], f"{s['value']:.4g}",
+                                            _num(s["mom_change"], 2, " " + s["measure_unit"]), _num(s["mom_zscore"], 1),
+                                            _num(s["yoy_change"]), _num(s["seasonal_naive_residual"])]) + " |")
         lines.append("")
     nat = [s for s in report["series"] if s["product"] == "labor.nacionales" and s["unit"] == "ICML_COMPLETO"]
     if nat:
         lines += ["## National (ICML, census universe)", "", "| Variable | Value | MoM | YoY | Seasonal-naive residual |", "|---|---:|---:|---:|---:|"]
         for s in nat:
-            lines.append(f"| {s['variable']} | {s['value']:.6g} | {s['mom_change']:+.2f} {s['measure_unit']} | "
-                         f"{'' if s['yoy_change'] is None else f'{s['yoy_change']:+.2f}'} | {'' if s['seasonal_naive_residual'] is None else f'{s['seasonal_naive_residual']:+.2f}'} |")
+            lines.append("| " + " | ".join([s["variable"], f"{s['value']:.6g}", _num(s["mom_change"], 2, " " + s["measure_unit"]),
+                                            _num(s["yoy_change"]), _num(s["seasonal_naive_residual"])]) + " |")
         lines.append("")
     if report["revisions"]:
         lines += [f"## Revisions against {report['previous_run_id']} (open years)", "", "| Product | Variable | Cells changed | Max change |", "|---|---|---:|---:|"]
         for product, columns in report["revisions"].items():
             for column, r in columns.items():
-                lines.append(f"| {product} | {column} | {r['cells_changed']} / {r['cells_compared']} | {'' if r['max_change'] is None else f'{r['max_change']:.3g} {r['unit']}'} |")
+                change = "" if r["max_change"] is None else f"{r['max_change']:.3g} {r['unit']}"
+                lines.append(f"| {product} | {column} | {r['cells_changed']} / {r['cells_compared']} | {change} |")
         lines.append("")
     return "\n".join(lines)

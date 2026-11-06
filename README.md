@@ -242,7 +242,7 @@ See [PUBLISHING.md](docs/production/PUBLISHING.md) for the first push and the or
 | Document | Content |
 |:--|:--|
 | [TESTING.md](TESTING.md) | Guided exercise: rebuild through July, update with August, draw and publish |
-| [Processing framework](docs/MARCO_GENERAL_PROCESAMIENTO.md) | Rules and operation of the processing (Spanish) |
+| [Processing framework](docs/PROCESSING_FRAMEWORK.md) | Rules, gates and operation of the processing |
 | [Technical index](docs/README.md) | Navigation of the project documentation |
 | [Architecture](docs/production/ARCHITECTURE.md) | Package layout, command groups and data flow |
 | [Monthly update](docs/production/MONTHLY_UPDATE.md) | Operational guide of the monthly cycle |

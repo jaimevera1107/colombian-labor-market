@@ -14,8 +14,8 @@ Operational guides are in English. The methodological write-ups of each mileston
 | [production/PUBLISHING.md](production/PUBLISHING.md) | Checksums, monthly backup, CI |
 | [production/REFERENCE_VINTAGE.md](production/REFERENCE_VINTAGE.md) | The frozen products: what they are for and how to refreeze them |
 | [production/EXTENSION_BEYOND_FROZEN_CUTOFF.md](production/EXTENSION_BEYOND_FROZEN_CUTOFF.md) | How months after the frozen vintage are processed |
-| [MARCO_GENERAL_PROCESAMIENTO.md](MARCO_GENERAL_PROCESAMIENTO.md) | Processing methodology: processes, rules, controls (Spanish) |
-| [INFORME_TRAZABILIDAD.md](INFORME_TRAZABILIDAD.md) | Traceability matrix, gaps, risks and recommendations (Spanish) |
+| [PROCESSING_FRAMEWORK.md](PROCESSING_FRAMEWORK.md) | Processing methodology: processes, rules, gates, delivery |
+| [TRACEABILITY_REPORT.md](TRACEABILITY_REPORT.md) | Traceability matrix, gaps, risks and recommendations, with their 2.6.0 status |
 
 ## Operation and current decisions (Spanish)
 

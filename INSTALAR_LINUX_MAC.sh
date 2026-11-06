@@ -19,8 +19,8 @@ echo "Usando: $PYEXE ($($PYEXE --version))"
 "$PYEXE" -m venv .venv
 .venv/bin/python -m pip install -U pip setuptools wheel
 .venv/bin/python -m pip install --no-deps ./dependencias/tempdisagg-0.6.3-py3-none-any.whl
-.venv/bin/python -m pip install -r icml-colombia/requirements/lock-py312.txt
-.venv/bin/python -m pip install --no-deps -e ./icml-colombia
+.venv/bin/python -m pip install -r requirements/lock-py312.txt
+.venv/bin/python -m pip install --no-deps -e .
 # Opcional: torch para las pruebas del modelo de informalidad (MLP).
-#   .venv/bin/python -m pip install -r icml-colombia/requirements/lock-py312-ml.txt
+#   .venv/bin/python -m pip install -r requirements/lock-py312-ml.txt
 printf 'Entorno listo. Revise README.md\n'

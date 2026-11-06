@@ -32,7 +32,7 @@ from icml.layout import (
     find_project_root,
 )
 
-COMMANDS = ("status", "rebuild", "update", "plots", "verify")
+COMMANDS = ("status", "rebuild", "update", "plots", "verify", "checksums")
 _MONTH = re.compile(r"^\d{4}-(0[1-9]|1[0-2])$")
 #: Environment variable that fixes the calendar of a process (see ``_relaunch``).
 CUTOFF_ENV = "ICML_CUTOFF"
@@ -93,6 +93,11 @@ def register(commands: Commands) -> None:
     verify = common(commands.add_parser("verify", help="Audit a delivery"))
     verify.add_argument("--folder", type=Path, help="Delivery to audit (default: the published one)")
     verify.set_defaults(handler=run_command)
+
+    checksums = common(commands.add_parser("checksums", help="Verify the checkout against SHA256SUMS, or regenerate it"))
+    checksums.add_argument("--write", action="store_true", help="Regenerate SHA256SUMS (before a commit)")
+    checksums.add_argument("--strict", action="store_true", help="Also fail on files not in the list")
+    checksums.set_defaults(handler=run_command)
 
 
 # ----------------------------------------------------------------------------- project state
@@ -366,6 +371,25 @@ def command_verify(root: Path, args: argparse.Namespace) -> int:
     return EXIT_OK if report["status"] == "PASS" else EXIT_ERROR
 
 
+def command_checksums(root: Path, args: argparse.Namespace) -> int:
+    """Verify the checkout against ``SHA256SUMS`` or regenerate the listing."""
+    from icml.operations import checksums
+
+    if args.write:
+        print(f"{checksums.LISTING}: {checksums.write_listing(root)} files")
+        return EXIT_OK
+    result = checksums.verify(root)
+    for label, key in (("MISSING", "missing"), ("ALTERED", "altered"), ("NOT LISTED", "extra")):
+        for name in result[key][:20]:
+            print(f"{label}: {name}")
+        if len(result[key]) > 20:
+            print(f"  ... and {len(result[key]) - 20} more")
+    ok = result["complete"] and not (args.strict and result["extra"])
+    print(f"{'COMPLETE AND INTACT' if ok else 'INCOMPLETE OR ALTERED'}: {result['listed']} files listed, "
+          f"{len(result['missing'])} missing, {len(result['altered'])} altered, {len(result['extra'])} not listed")
+    return EXIT_OK if ok else EXIT_ERROR
+
+
 def run_command(args: argparse.Namespace) -> int:
     """Dispatch an everyday command; a user mistake prints a plain message, never a traceback."""
     try:
@@ -376,6 +400,8 @@ def run_command(args: argparse.Namespace) -> int:
             return command_run(root, args.command, args)
         if args.command == "plots":
             return command_plots(root, args)
+        if args.command == "checksums":
+            return command_checksums(root, args)
         return command_verify(root, args)
     except (FileNotFoundError, ValueError) as exc:
         print(f"\n{exc}", file=sys.stderr)

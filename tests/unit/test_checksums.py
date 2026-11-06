@@ -1,16 +1,10 @@
-"""verify_checkout: a copy is complete and intact only if every listed byte is there."""
+"""checksums: a copy is complete and intact only if every listed byte is there."""
 
 from __future__ import annotations
 
-import importlib.util
-from pathlib import Path
-
 import pytest
 
-TOOL = Path(__file__).resolve().parents[2] / "tools" / "release" / "verify_checkout.py"
-spec = importlib.util.spec_from_file_location("verify_checkout", TOOL)
-tool = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(tool)
+from icml.operations import checksums as tool
 
 
 @pytest.fixture
@@ -56,15 +50,33 @@ def test_a_missing_file_is_reported_and_an_extra_one_is_only_a_warning(repo):
     assert tool.verify(repo)["complete"]  # an extra file alone does not make the copy incomplete
 
 
+def test_generated_outputs_are_never_listed(repo):
+    (repo / "datos/2_procesamiento/vigente").mkdir(parents=True)
+    (repo / "datos/2_procesamiento/vigente/labor.csv").write_text("generated")
+    (repo / "datos/3_salida/2026-11-05_000000_corte-2026-07_total").mkdir(parents=True)
+    (repo / "datos/3_salida/2026-11-05_000000_corte-2026-07_total/MANIFEST.json").write_text("{}")
+    (repo / "datos/3_salida/LEEME.txt").write_text("placeholder")
+    names = {p.as_posix() for p in tool.tracked_files(repo)}
+    assert "datos/3_salida/LEEME.txt" in names
+    assert not any(n.startswith(("datos/2_procesamiento/vigente/", "datos/3_salida/2026")) for n in names)
+
+
 def test_the_command_line_exit_codes(repo, capsys):
-    assert tool.main(["--raiz", str(repo), "--escribir"]) == 0
-    assert tool.main(["--raiz", str(repo)]) == 0
+    import argparse
+
+    from icml.cli.project import command_checksums
+
+    def run(*flags):
+        return command_checksums(repo, argparse.Namespace(write="--write" in flags, strict="--strict" in flags))
+
+    assert run("--write") == 0
+    assert run() == 0
     (repo / "nuevo.txt").write_text("extra")
-    assert tool.main(["--raiz", str(repo)]) == 0
-    assert tool.main(["--raiz", str(repo), "--estricto"]) == 1
+    assert run() == 0
+    assert run("--strict") == 1
     (repo / "README.md").write_text("cambiado")
-    assert tool.main(["--raiz", str(repo)]) == 1
-    assert "ALTERADO: README.md" in capsys.readouterr().out
+    assert run() == 1
+    assert "ALTERED: README.md" in capsys.readouterr().out
 
 
 def test_verifying_without_a_listing_is_an_error(tmp_path):

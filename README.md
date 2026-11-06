@@ -246,7 +246,7 @@ See [PUBLISHING.md](docs/production/PUBLISHING.md) for the first push and the or
 | [Technical index](docs/README.md) | Navigation of the project documentation |
 | [Architecture](docs/production/ARCHITECTURE.md) | Package layout, command groups and data flow |
 | [Monthly update](docs/production/MONTHLY_UPDATE.md) | Operational guide of the monthly cycle |
-| [Labor reconstruction](docs/production/RECONSTRUCCION_LABORAL.md) | PET, population and 1993–2000 components (Spanish) |
+| [Labor reconstruction](docs/production/LABOR_RECONSTRUCTION.md) | PET, population and 1993–2000 components |
 | [Changelog](CHANGELOG.md) | Version history |
 
 ---

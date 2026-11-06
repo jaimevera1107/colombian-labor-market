@@ -18,7 +18,7 @@ from sklearn.multioutput import MultiOutputRegressor
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from xgboost import XGBRegressor
-from .hito4_reference import load_data, SECTORS, GDP_GROUPS, _norm, clr, inv_clr
+from .predictive_reference import load_data, SECTORS, GDP_GROUPS, _norm, clr, inv_clr
 
 MAP={"D+E":"D_E","M+N":"M_N","O+P+Q":"O_P_Q","R+S+T+U":"R_S_T_U"}
 MODELS=['media_otros_departamentos','ridge_clr_pib_rezagado','extratrees_clr_pib_rezagado','xgb_14_original_aprox_pib_rezagado']

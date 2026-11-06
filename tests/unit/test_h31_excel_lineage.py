@@ -1,10 +1,10 @@
 """Source-ledger contracts for H31; never train estimators in these tests."""
 from pathlib import Path
 import pytest
-from icml.operations.h31_sources import (
+from icml.operations.excel_historical_sources import (
     _col,compare_numeric,extract_macro,extract_window_proxies,
 )
-from icml.operations.h31_prepare_all import run
+from icml.operations.excel_staging import run
 
 
 def test_excel_column_boundaries():

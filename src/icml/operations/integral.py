@@ -24,8 +24,8 @@ from icml.domain.cutoff import (
     N_MONTHS,
 )
 
-from icml.operations.h20 import EXPECTED_IDS, verify_products
-from icml.sectoral_integral import validate_bundle
+from icml.operations.frozen_products import EXPECTED_IDS, verify_products
+from icml.sectoral.integral import validate_bundle
 
 PERIOD_END = ACTIVE_CUTOFF
 REQUIRED_INF_FILES = (
@@ -446,7 +446,7 @@ def run_integral(root: Path, output: Path, *, mode: str = "verify",
             raise ValueError("Both completed H9/H16 runs required, exclusively with recompute-components")
         dest.mkdir(parents=True)
         try:
-            from icml.sectoral_integral import export_experimental
+            from icml.sectoral.integral import export_experimental
             labor_quality = dest / "labor" / "quality" / "products"
             labor_quality.mkdir(parents=True)
             for part in ("ciudades", "departamentos", "nacionales"):
@@ -485,9 +485,9 @@ def run_integral(root: Path, output: Path, *, mode: str = "verify",
     try:
         from icml.pipeline.chain import run_all
         from icml.informality.finalize_block import run as compute_informality
-        from icml.sectoral_integral import run_predictor, export_experimental
-        from icml.operations.h31_prepare_all import run as prepare_all_excel
-        from icml.operations.h34_prepared_sources import (
+        from icml.sectoral.integral import run_predictor, export_experimental
+        from icml.operations.excel_staging import run as prepare_all_excel
+        from icml.operations.prepared_sources import (
             stage_labor_source_view, stage_h16_inputs, sha256 as source_sha256,
         )
 
@@ -577,12 +577,12 @@ def run_integral(root: Path, output: Path, *, mode: str = "verify",
         # H35: prove the selected historical national latent H9 source derives
         # its occupied-level anchor from the official monthly GEIH Excel. This
         # does NOT turn the frozen latent informal rates into official data.
-        from icml.operations.h35_informality_lineage import audit_national_h9_lineage
+        from icml.operations.informality_lineage import audit_national_h9_lineage
         report['informality_source_lineage'] = audit_national_h9_lineage(root)
         # Recompute the H5/H6 actual models from H29 Excel-derived source and
         # the newly computed labor inputs, then strictly compare with the
         # frozen selected H6 reference before H9 consumes them.
-        from icml.operations.h35_regenerate_informality import run as rebuild_informality
+        from icml.operations.informality_regeneration import run as rebuild_informality
         regenerated = dest / 'informality_regenerated'
         report['informality_h5_h6'] = rebuild_informality(
             root, prepared_path, labor_quality, regenerated,

@@ -1,7 +1,7 @@
 """H22: source staging never promotes official monthly numbers to ICML estimates."""
 from pathlib import Path
 import pytest
-from icml.operations.h22 import (
+from icml.operations.geih_intake import (
     monthly_column, validate_observation, prepare_intake, inspect_annex
 )
 

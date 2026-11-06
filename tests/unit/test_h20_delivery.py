@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from icml.operations.h20 import EXPECTED_IDS, file_hash, verify_products, freeze_products
+from icml.operations.frozen_products import EXPECTED_IDS, file_hash, verify_products, freeze_products
 
 
 def fixture_bundle(tmp_path):

@@ -2,7 +2,7 @@
 import numpy as np
 import pandas as pd
 import pytest
-from icml.sectoral_vintage_bridge import (
+from icml.sectoral.vintage_bridge import (
     BUCKET_DEFINITION, FINAL_14, HIST_CODES, RECENT_CODES, check_old,check_recent,
     make_candidates,overlap_and_crosswalk,
 )

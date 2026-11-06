@@ -9,8 +9,8 @@ import pytest
 
 from icml import __version__
 from icml.pipeline.stage_registry import STAGE_SPECS
-from icml.sectoral_integral import validate_bundle, run_predictor, export_experimental
-from icml.sectoral_predictive import h16_integracion
+from icml.sectoral.integral import validate_bundle, run_predictor, export_experimental
+from icml.sectoral import predictive_integration as h16_integracion
 
 ROOT = Path(__file__).resolve().parents[2]
 FROZEN = ROOT / 'datos' / '2_procesamiento' / 'sectorial_h16'

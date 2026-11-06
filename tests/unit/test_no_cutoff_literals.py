@@ -21,12 +21,12 @@ ALLOWED = {
     "cli.py": 2,
     # Docstrings describing the frozen vintage or source window.
     "operations/integral.py": 1,
-    "sectoral_monthly.py": 1,
+    "sectoral/monthly.py": 1,
     # Identity of a frozen source role (name on disk), not a calendar: the
     # ``informality_current`` role of the original annex.
-    "operations/h31_sources.py": 1,  # docstring
+    "operations/excel_historical_sources.py": 1,  # docstring
     # Explicit months compared when checking official revisions.
-    "operations/h22.py": 1,
+    "operations/geih_intake.py": 1,
 }
 
 

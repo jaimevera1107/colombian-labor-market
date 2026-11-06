@@ -18,7 +18,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from icml.sectoral_vintage_bridge import FINAL_14
+from icml.sectoral.vintage_bridge import FINAL_14
 
 CATEGORIES = (*FINAL_14, 'NO_INFO')
 MONTHS = pd.period_range('2001-07', '2015-03', freq='M').strftime('%Y-%m').tolist()

@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from icml.operations.h34_prepared_sources import (
+from icml.operations.prepared_sources import (
     NON_MODEL_COMPARATORS, _merge_macro, stage_labor_source_view, sha256,
 )
 

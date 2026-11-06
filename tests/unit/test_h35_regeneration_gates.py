@@ -2,7 +2,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from icml.operations.h35_regenerate_informality import _compare_h5
+from icml.operations.informality_regeneration import _compare_h5
 
 
 def _source(path: Path, perturb: float = 0, rate_perturb: float = 0):

@@ -4,8 +4,8 @@ from pathlib import Path
 import pytest
 
 from tests.annexes import annex
-from icml.operations import h23
-from icml.operations.h23 import prepare_monthly_cycle, verify_monthly_cycle
+from icml.operations import monthly_cycle as h23
+from icml.operations.monthly_cycle import prepare_monthly_cycle, verify_monthly_cycle
 
 
 def _root(tmp_path):
@@ -99,7 +99,7 @@ def test_cli_fail_closed_even_when_no_files(tmp_path, monkey_integrity):
 def test_real_august_pair_is_content_validated_but_never_published(tmp_path, monkeypatch, monkey_integrity):
     # Simulate a prior July research checkpoint solely for source-intake test;
     # this does NOT create or change any actual ICML frozen vintage.
-    from icml.operations import h23
+    from icml.operations import monthly_cycle as h23
     root = _root(tmp_path)
     (root/'datos/2_procesamiento/productos_congelados/pruebas_calidad/nacionales.csv').write_text(
         'period,employed\n2026-06,123\n2026-07,124\n', encoding='utf-8')

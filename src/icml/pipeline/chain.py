@@ -187,7 +187,7 @@ def _census_bridge(
 ) -> StageResult:
     """Optional post-quality census anchor; never rewrite canonical products."""
     import tomllib
-    from icml.census_bridge import run as run_census
+    from icml.census.bridge import run as run_census
     from icml.io.artifacts import ArtifactRecord
     from types import SimpleNamespace
     from icml.quality.pipeline import OUTPUTS as QUALITY

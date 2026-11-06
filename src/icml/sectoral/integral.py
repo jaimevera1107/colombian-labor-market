@@ -98,7 +98,7 @@ def run_predictor(bundle_root: Path, output_root: Path) -> dict:
     if not source.is_dir():raise FileNotFoundError(source)
     output_root.mkdir(parents=True,exist_ok=True)
     shutil.copytree(source,output_root/"inputs",dirs_exist_ok=True)
-    from icml.sectoral_predictive.h16_integracion import main
+    from icml.sectoral.predictive_integration import main
     quality=main(output_root)
     validated=validate_bundle(output_root)
     return {"selection":quality.get("chosen_model"),"audit":validated,

@@ -28,7 +28,7 @@ from pathlib import Path
 
 from icml.delivery.builder import TIMEZONE
 from icml.ingestion.discovery import LABOR, annex_for
-from icml.operations.h31_sources import _write_csv, extract_window_proxies
+from icml.operations.excel_historical_sources import _write_csv, extract_window_proxies
 from icml.pipeline.chain import run_all
 from icml.recalculation.annex_checks import compare_annex_releases
 from icml.recalculation.policy import AnchorPolicy

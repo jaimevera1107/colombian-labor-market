@@ -14,7 +14,7 @@ import pandas as pd
 from icml.domain.cutoff import ACTIVE_CUTOFF, INFORMALITY_NEW_FIRST_MONTH, RECENT_MONTHS, month_labels
 from openpyxl import load_workbook
 
-from .h35_social_annex import inspect_social_annex, _assert_header
+from .social_annex import inspect_social_annex, _assert_header
 
 
 def _informality_annex(root: Path) -> str:

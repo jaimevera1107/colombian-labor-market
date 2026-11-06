@@ -66,7 +66,7 @@ La rama residual `No informa` **no** es una decimocuarta rama económica.
 
 ## Conciliador nuevo y puerta de márgenes
 
-Se implementó `icml.sectoral_monthly.reconcile_sector_matrix`:
+Se implementó `icml.sectoral.monthly.reconcile_sector_matrix`:
 
 - Hace RAS/IPFP en **personas** para `departamento × rama`, nunca en filas de
   participaciones con suma 1 contra columnas que suman 1 en total.

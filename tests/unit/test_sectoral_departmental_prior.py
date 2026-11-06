@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from icml.sectoral_departmental_prior import (
+from icml.sectoral.departmental_prior import (
     SECTORS, SCENARIOS, build_covariates, calculate_priors, national_composition,
 )
 

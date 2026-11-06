@@ -409,7 +409,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "operations":
         import json
         if args.operations_command == "audit-historical-lineage":
-            from icml.operations.h30_lineage import audit
+            from icml.operations.historical_lineage import audit
             result = audit(args.root)
             if args.report.exists():
                 raise FileExistsError(f"Audit report already exists: {args.report}")
@@ -419,10 +419,10 @@ def main(argv: Sequence[str] | None = None) -> int:
             return EXIT_OK if result["status"] == "PASS" else EXIT_INTEGRITY_FAILURE
         if args.operations_command in ('audit-social-annex', 'audit-informality-origin'):
             if args.operations_command == 'audit-social-annex':
-                from icml.operations.h35_social_annex import inspect_social_annex
+                from icml.operations.social_annex import inspect_social_annex
                 result = inspect_social_annex(args.annex, args.period)
             else:
-                from icml.operations.h35_informality_lineage import audit_national_h9_lineage
+                from icml.operations.informality_lineage import audit_national_h9_lineage
                 result = audit_national_h9_lineage(args.root)
             if args.report is not None:
                 if args.report.exists():
@@ -432,12 +432,12 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(result, indent=2, ensure_ascii=False))
             return EXIT_OK if result['status'].startswith('PASS') else EXIT_INTEGRITY_FAILURE
         if args.operations_command == "prepare-all-excel":
-            from icml.operations.h31_prepare_all import run as prepare_all
+            from icml.operations.excel_staging import run as prepare_all
             result = prepare_all(args.root, args.output)
             print(json.dumps({"status":result["status"], "verified_generators":result["verified_generators"], "reference_month":result["reference_month"]}, indent=2))
             return EXIT_OK if result["status"] == "PASS" else EXIT_INTEGRITY_FAILURE
         if args.operations_command == "prepare-historical-excel":
-            from icml.operations.h31_sources import run as prepare_h31
+            from icml.operations.excel_historical_sources import run as prepare_h31
             result = prepare_h31(args.root, args.output)
             print(json.dumps(result, indent=2, ensure_ascii=False))
             return EXIT_OK if result["status"] == "PASS" else EXIT_INTEGRITY_FAILURE
@@ -484,7 +484,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 "RECOMPUTED_H9_H16_FROM_VERIFIED_STAGE_RUNS",
             ) else EXIT_INTEGRITY_FAILURE
         if args.operations_command == "monthly-cycle":
-            from icml.operations.h23 import prepare_monthly_cycle
+            from icml.operations.monthly_cycle import prepare_monthly_cycle
             result = prepare_monthly_cycle(args.root, args.period, args.output,
                       args.geih_annex, args.social_annex, args.geih_month,
                       args.social_start, args.social_end)
@@ -492,12 +492,12 @@ def main(argv: Sequence[str] | None = None) -> int:
             # Deliberately return 2: source-only intake never clears computation gate.
             return EXIT_INTEGRITY_FAILURE
         if args.operations_command == "verify-monthly-cycle":
-            from icml.operations.h23 import verify_monthly_cycle
+            from icml.operations.monthly_cycle import verify_monthly_cycle
             result = verify_monthly_cycle(args.root, args.cycle)
             print(json.dumps(result, indent=2, ensure_ascii=False))
             return EXIT_OK if not result["issues"] else EXIT_INTEGRITY_FAILURE
         if args.operations_command in ("verify-products", "freeze-products"):
-            from icml.operations.h20 import verify_products, freeze_products
+            from icml.operations.frozen_products import verify_products, freeze_products
             if args.operations_command == "verify-products":
                 result = verify_products(args.root)
                 if args.report:
@@ -511,7 +511,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(result, indent=2, ensure_ascii=False))
             return EXIT_OK
         if args.operations_command == "intake-geih":
-            from icml.operations.h22 import prepare_intake
+            from icml.operations.geih_intake import prepare_intake
             result = prepare_intake(args.root, args.output, args.period, args.annex, args.previous_annex)
             print(json.dumps(result, indent=2, ensure_ascii=False))
             return EXIT_OK if result["status"].startswith("STAGED") else EXIT_INTEGRITY_FAILURE
@@ -528,11 +528,11 @@ def main(argv: Sequence[str] | None = None) -> int:
             # Metadata coherence never passes the full quality gate.
             return EXIT_OK if result["status"].startswith("PAIR_CALENDAR_COHERENT") else EXIT_INTEGRITY_FAILURE
         if args.operations_command == "certify":
-            from icml.operations.h21 import write_report
+            from icml.operations.certification import write_report
             result = write_report(args.root, args.report, args.golden_dir)
             print(json.dumps(result, indent=2, ensure_ascii=False))
             return EXIT_OK if result["release_gate"].startswith("ELIGIBLE") else EXIT_INTEGRITY_FAILURE
-        from icml.operations.h19 import preflight, stage_update
+        from icml.operations.monthly_staging import preflight, stage_update
         from icml.pipeline.vintage import VintagePolicy
         if args.operations_command == "preflight":
             result = preflight(args.root, args.output, args.golden_dir)
@@ -545,26 +545,26 @@ def main(argv: Sequence[str] | None = None) -> int:
         print(json.dumps(result, indent=2, ensure_ascii=False))
         return EXIT_OK if result["status"].startswith("ACCEPTED") else EXIT_INTEGRITY_FAILURE
     if args.command == "sectoral" and args.sectoral_command == "audit-monthly":
-        from icml.sectoral_monthly import run as sectoral_monthly_run
+        from icml.sectoral.monthly import run as sectoral_monthly_run
         r = sectoral_monthly_run(args.workbook, args.nationals, args.output, args.legacy_checks,
                 observations_csv=args.observations_csv, totals_csv=args.totals_csv)
         print(f"DANE true monthly sector H10: {r['months']} months, "
               f"{r['monthly_observations']} group-months; 14-branch split NOT observed")
         return EXIT_OK
     if args.command == "sectoral" and args.sectoral_command == "split-microdata":
-        from icml.sectoral_microdata import run as split_microdata_run
+        from icml.sectoral.microdata import run as split_microdata_run
         r=split_microdata_run(observations_csv=args.observations_csv,totals_csv=args.totals_csv,
               output=args.output,manifest_csv=args.manifest,workbook=args.workbook)
         print(f"DANE monthly H10 microdata split: {r['month_count_validated_14_estimated']} of {r['month_count_official_13']} months supported; no invented observations")
         return EXIT_OK
     if args.command == "sectoral" and args.sectoral_command == "historical-annexes":
-        from icml.sectoral_historical_annexes import run as run_historics
+        from icml.sectoral.historical_annexes import run as run_historics
         r=run_historics(args.output,args.recent_monthly,args.annex_csv,args.source_files)
         print(f"Historical DANE H10: {r['published_annex_entries_2007_2014']} listings, "
               f"{r['historic_verified_rows']} verified rows; state {r['status']}")
         return EXIT_OK
     if args.command == "sectoral" and args.sectoral_command == "bridge-vintages":
-        from icml.sectoral_vintage_bridge import run as run_vintage
+        from icml.sectoral.vintage_bridge import run as run_vintage
         report=run_vintage(historic_csv=args.historic_csv,
             recent_monthly_csv=args.recent_monthly_csv,
             recent_totals_csv=args.recent_totals_csv,nationals_csv=args.nationals_csv,
@@ -574,14 +574,14 @@ def main(argv: Sequence[str] | None = None) -> int:
               "NO historic directly observed CIIU4 monthly 14-sector observations.")
         return EXIT_OK
     if args.command == "sectoral" and args.sectoral_command == "reconstruct-monthly":
-        from icml.sectoral_monthly_backcast import run as backcast_run
+        from icml.sectoral.monthly_backcast import run as backcast_run
         report=backcast_run(rolling_csv=args.rolling_csv, recent_csv=args.recent_csv,
            totals_csv=args.totals_csv, nationals_csv=args.nationals_csv, output=args.output)
         print(f"Sectorial H11: {report['historical_months_estimated']} estimated historic months, "
               f"{report['windows_observed']} official rolling windows; NOT DIRECT DANE MONTHLY OBSERVATIONS")
         return EXIT_OK
     if args.command == "sectoral" and args.sectoral_command == "homologate-historical":
-        from icml.sectoral_historical_homologation import run as historical_homologate
+        from icml.sectoral.historical_homologation import run as historical_homologate
         q = historical_homologate(dane_csv=args.dane_csv, link_csv=args.link_csv,
                 totals_csv=args.totals_csv, mapping_csv=args.mapping_csv,
                 output=args.output, vintage=args.vintage, lam=args.lambda_smooth)
@@ -590,7 +590,7 @@ def main(argv: Sequence[str] | None = None) -> int:
               "three scenarios and two universes; NOT OFFICIAL MONTHLY DATA")
         return EXIT_OK
     if args.command == "sectoral" and args.sectoral_command == "predict-departments":
-        from icml.sectoral_departmental_prior import run as run_h12
+        from icml.sectoral.departmental_prior import run as run_h12
         result = run_h12(args.departments_csv, args.nationals_csv,
             args.population_csv, args.historical_csv, args.backcast_csv,
             args.observed_csv, args.recent_totals_csv, args.output)
@@ -599,7 +599,7 @@ def main(argv: Sequence[str] | None = None) -> int:
               "NO SUBNATIONAL SECTOR LABEL VALIDATION; H13 pending")
         return EXIT_OK
     if args.command == "sectoral" and args.sectoral_command == "reconcile-department-sectors":
-        from icml.sectoral_reconciliation import run as run_h13
+        from icml.sectoral.reconciliation import run as run_h13
         result = run_h13(args.priors_csv, args.national_csv, args.covariates_csv,
                          args.universe_csv, args.output)
         print(f"H13: {result['rows']} noncanonical reconciled rows; "
@@ -607,25 +607,25 @@ def main(argv: Sequence[str] | None = None) -> int:
               "DEPARTMENT-SECTOR VALIDATION PENDING")
         return EXIT_OK
     if args.command == "sectoral" and args.sectoral_command == "validate-panel":
-        from icml.sectoral_integral import validate_bundle
+        from icml.sectoral.integral import validate_bundle
         import json
         report=validate_bundle(args.bundle_root)
         print(json.dumps(report,ensure_ascii=False,indent=2))
         return EXIT_OK
     if args.command == "sectoral" and args.sectoral_command == "predict-monthly":
-        from icml.sectoral_integral import run_predictor
+        from icml.sectoral.integral import run_predictor
         import json
         report=run_predictor(args.bundle_root,args.output)
         print(json.dumps(report,ensure_ascii=False,indent=2))
         return EXIT_OK
     if args.command == "sectoral" and args.sectoral_command == "export-experimental":
-        from icml.sectoral_integral import export_experimental
+        from icml.sectoral.integral import export_experimental
         import json
         report=export_experimental(args.bundle_root,args.output)
         print(json.dumps(report,ensure_ascii=False,indent=2))
         return EXIT_OK
     if args.command == "census-bridge":
-        from icml.census_bridge import run as run_census_bridge
+        from icml.census.bridge import run as run_census_bridge
         result = run_census_bridge(args.departments,args.cities,args.nationals,args.census,args.output)
         print(f"CNPV bridge: {result['territorial_rows']} rows, 9 census anchors; labor candidates noncanonical.")
         return EXIT_OK

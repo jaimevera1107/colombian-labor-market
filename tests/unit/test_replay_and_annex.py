@@ -56,7 +56,7 @@ def test_naive_recomputation_would_change_frozen_years_and_graft_prevents_it(tmp
 
 @needs_annexes
 def test_window_proxies_follow_the_cutoff_and_reject_incompatible_sources():
-    from icml.operations.h31_sources import extract_window_proxies
+    from icml.operations.excel_historical_sources import extract_window_proxies
 
     august = pd.DataFrame(extract_window_proxies(AUGUST, "2026-08"))
     current = pd.read_csv(PROXIES_AUGUST)

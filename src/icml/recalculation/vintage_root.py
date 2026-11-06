@@ -42,8 +42,8 @@ from icml.domain.cutoff import (
     month_labels,
     vintage_suffix,
 )
-from icml.operations.h31_sources import _write_csv, extract_geih_annual, extract_window_proxies
-from icml.operations.h32_urban_annex import extract_urban_historical_annex
+from icml.operations.excel_historical_sources import _write_csv, extract_geih_annual, extract_window_proxies
+from icml.operations.urban_annex import extract_urban_historical_annex
 
 LABOR_DIR = "datos/1_ingesta/excel_originales/Mercado Laboral"
 PERIOD_COLUMNS = ("period", "period_end", "date")

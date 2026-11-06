@@ -14,9 +14,9 @@ import tempfile
 from pathlib import Path
 from icml.domain.cutoff import FROZEN_CUTOFF  # re-exported: operations.h23.FROZEN_CUTOFF
 
-from icml.operations.h20 import file_hash, verify_products
-from icml.operations.h22 import inspect_annex
-from icml.operations.h35_social_annex import inspect_social_annex
+from icml.operations.frozen_products import file_hash, verify_products
+from icml.operations.geih_intake import inspect_annex
+from icml.operations.social_annex import inspect_social_annex
 from icml.operations.source_pair import check_monthly_sources, _month, _shift_month
 
 SCHEMA = "icml.monthly_cycle.h23.v1"

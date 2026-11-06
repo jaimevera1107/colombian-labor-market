@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from icml.operations.h19 import preflight, stage_update
+from icml.operations.monthly_staging import preflight, stage_update
 from icml.pipeline.vintage import VintageError, VintagePolicy, with_revision_state
 
 KEYS = ["dep_code", "period"]

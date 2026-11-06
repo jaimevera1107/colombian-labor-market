@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from icml.sectoral_monthly_backcast import (
+from icml.sectoral.monthly_backcast import (
     CATEGORIES, anchored_monthly_recent, build_rolling_matrix, inverse_rolling,
 )
 

@@ -2,7 +2,7 @@
 import numpy as np
 import pandas as pd
 import pytest
-from icml.sectoral_reconciliation import solve_joint_margins
+from icml.sectoral.reconciliation import solve_joint_margins
 
 
 def fixture():

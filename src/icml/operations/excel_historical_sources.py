@@ -250,7 +250,7 @@ def run(root: Path, output: Path) -> dict:
     historical_rows=_records(historical)
     if len(historical_rows)!=33*(LAST_YEAR-2006):
         raise ValueError('Unexpected historical urban snapshot coverage')
-    from icml.operations.h32_urban_annex import (
+    from icml.operations.urban_annex import (
         extract_urban_historical_annex, compare_historical_annex, write_csv as write_h32_csv
     )
     departmental_annual = root/catalog['sources']['departmental.annex']['path']

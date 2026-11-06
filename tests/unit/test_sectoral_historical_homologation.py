@@ -6,7 +6,7 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from icml.sectoral_historical_homologation import (
+from icml.sectoral.historical_homologation import (
     GROUPS, SECTORS, load_inputs, monthlyize, reconcile, run,
     individual_internal_bounds, read_csv,
 )

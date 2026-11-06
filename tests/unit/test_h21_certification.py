@@ -5,8 +5,8 @@ from tempfile import TemporaryDirectory
 
 import pytest
 
-from icml.operations.h21 import audit, write_report
-from icml.operations.h20 import EXPECTED_IDS
+from icml.operations.certification import audit, write_report
+from icml.operations.frozen_products import EXPECTED_IDS
 
 
 def _fake_bundle(root: Path, catalog: Path, lock: Path) -> Path:

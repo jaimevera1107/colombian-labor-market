@@ -24,7 +24,7 @@ def frozen_root():
 
 def test_2026_08_full_vintage_cross_checks(frozen_root):
     import csv
-    from icml.operations.h20 import verify_products
+    from icml.operations.frozen_products import verify_products
     a = verify_products(frozen_root)
     assert not a["issues"]
     p = {x["product"]: frozen_root / x["path"] for x in a["products"]}

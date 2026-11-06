@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from icml.census_bridge import BASE, NINE, build
+from icml.census.bridge import BASE, NINE, build
 
 
 @pytest.fixture(scope="module")

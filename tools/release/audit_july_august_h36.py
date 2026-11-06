@@ -10,8 +10,8 @@ import csv
 import hashlib
 import json
 from pathlib import Path
-from icml.operations.h22 import inspect_annex
-from icml.operations.h35_social_annex import inspect_social_annex
+from icml.operations.geih_intake import inspect_annex
+from icml.operations.social_annex import inspect_social_annex
 
 
 def hash_file(path: Path) -> str:

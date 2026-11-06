@@ -14,8 +14,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Ridge
 from sklearn.multioutput import MultiOutputRegressor
 from xgboost import XGBRegressor
-from .h15_predictor import features_all_33, clamp_simplex
-from .hito4_reference import SECTORS, _norm, clr, inv_clr
+from .predictive_benchmark import features_all_33, clamp_simplex
+from .predictive_reference import SECTORS, _norm, clr, inv_clr
 from icml.domain.cutoff import LAST_YEAR, N_MONTHS
 
 SECTORS14=['A','B','C','D_E','F','G','H','I','J','K','L','M_N','O_P_Q','R_S_T_U']

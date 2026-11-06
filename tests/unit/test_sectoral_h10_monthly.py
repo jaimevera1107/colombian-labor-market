@@ -1,7 +1,7 @@
 """Tests of genuine-month provenance and feasible simultaneous RAS margins."""
 import numpy as np
 import pytest
-from icml.sectoral_monthly import ensure_direct_monthly, reconcile_sector_matrix,MONTHLY_GROUPS,REQUIRED_FINAL_14
+from icml.sectoral.monthly import ensure_direct_monthly, reconcile_sector_matrix,MONTHLY_GROUPS,REQUIRED_FINAL_14
 
 
 def test_only_direct_months():
@@ -44,7 +44,7 @@ def test_all_zero():
 
 def test_snapshot_compatibility_rejects_rolling(tmp_path):
     import pandas as pd
-    from icml.sectoral_monthly import read_normalized_monthly
+    from icml.sectoral.monthly import read_normalized_monthly
     # A frozen snapshot must have all 140 genuine calendar months and 13 groups.
     obs = tmp_path/'obs.csv'; totals = tmp_path/'totals.csv'
     pd.DataFrame({'period':['2020-04'],'sector_code':['A'],'employed_persons':[1.0],

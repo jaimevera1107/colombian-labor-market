@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pytest
 
-from icml.operations.h31_sources import _records
-from icml.operations.h32_urban_annex import (
+from icml.operations.excel_historical_sources import _records
+from icml.operations.urban_annex import (
     _annual_columns,
     compare_historical_annex,
     extract_urban_historical_annex,

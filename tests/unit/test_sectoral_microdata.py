@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from icml.sectoral_microdata import monthly_microdata_share, run, _division
+from icml.sectoral.microdata import monthly_microdata_share, run, _division
 
 
 def _write(path, rows):

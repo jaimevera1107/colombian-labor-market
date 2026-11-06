@@ -4,8 +4,8 @@ These are ground-truth source checks, NOT a scientific or publication gate.
 """
 from pathlib import Path
 
-from icml.operations.h22 import inspect_annex
-from icml.operations.h35_social_annex import inspect_social_annex
+from icml.operations.geih_intake import inspect_annex
+from icml.operations.social_annex import inspect_social_annex
 
 ROOT = Path(__file__).resolve().parents[2]
 from tests.annexes import annex

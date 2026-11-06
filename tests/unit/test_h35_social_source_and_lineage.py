@@ -3,9 +3,9 @@ from pathlib import Path
 
 import pytest
 
-from icml.operations.h35_social_annex import inspect_social_annex
+from icml.operations.social_annex import inspect_social_annex
 from tests.annexes import annex
-from icml.operations.h35_informality_lineage import audit_national_h9_lineage
+from icml.operations.informality_lineage import audit_national_h9_lineage
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = annex('informalidad', '2026-08')

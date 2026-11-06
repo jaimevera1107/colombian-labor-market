@@ -13,7 +13,7 @@ import re
 from pathlib import Path, PurePosixPath
 from icml.domain.cutoff import FROZEN_CUTOFF
 
-from icml.operations.h20 import verify_products
+from icml.operations.frozen_products import verify_products
 from icml.regression.catalog import load_catalog
 from icml.regression.golden import check_integrity
 

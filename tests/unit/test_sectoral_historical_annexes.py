@@ -2,7 +2,7 @@
 import hashlib
 import pandas as pd
 import pytest
-from icml.sectoral_historical_annexes import publication_inventory,validate_annex_observations,run
+from icml.sectoral.historical_annexes import publication_inventory,validate_annex_observations,run
 
 
 def sample(tmp_path):

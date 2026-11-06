@@ -109,7 +109,7 @@ def _products_from_run(run: Path) -> dict[str, Path]:
 
 
 def _products_from_frozen(root: Path) -> dict[str, Path]:
-    from icml.operations.h20 import verify_products
+    from icml.operations.frozen_products import verify_products
 
     audit = verify_products(root)
     return {item["product"]: root / item["path"] for item in audit["products"]}

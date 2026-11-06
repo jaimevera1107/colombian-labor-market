@@ -48,6 +48,11 @@ def _one_model_prior(priors:pd.DataFrame, retrospective:pd.DataFrame, mode:str) 
     x=x.rename(columns={'prior_census':'prior_rate'})
     x['prior_provenance']=np.where(x.year>=2021,'MLP_RECENT_GEIH_LATENT',
                           'MLP_HISTORICAL_T5_LATENT')
+    if 'extension_status' in priors.columns:
+        # Months past the frozen cutoff carry a forwarded prior (see
+        # icml.recalculation.extension); the product says so.
+        extended=priors['extension_status'].fillna('').astype(str).ne('').to_numpy()
+        x.loc[extended,'prior_provenance']=priors.loc[extended,'extension_status'].to_numpy()
     mask=x.year.eq(2020)
     x.loc[mask,'prior_rate']=np.nan
     repl=retrospective[(retrospective.candidate=='mlp_residual_92') &

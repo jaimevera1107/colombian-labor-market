@@ -149,8 +149,8 @@ def recalculate(
         elif reached > cutoff:
             plan["blockers"].append(
                 f"The annexes reach {reached}, but this run computes through {cutoff}. "
-                "Processing a month after the frozen vintage requires extending the census "
-                "bridge and the MLP priors to new months, and that rule is not defined yet."
+                f"Start the run with that cutoff (icml rebuild/update --through {reached}, "
+                f"or ICML_CUTOFF={reached}) to include it."
             )
         elif reached < cutoff:
             plan["blockers"].append(

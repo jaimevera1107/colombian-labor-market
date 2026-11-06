@@ -195,7 +195,7 @@ def test_a_complete_pair_beyond_the_run_cutoff_is_not_silently_ignored(root):
     _annexes(root, "geih_mercado_laboral_2026-09.xlsx", "geih_informalidad_2026-09.xlsx")
     plan = _go(root, dry_run=True, require_annexes=True)["plan"]
     assert plan["status"] == "BLOQUEADO"
-    assert "2026-09" in plan["blockers"][0] and "extending" in plan["blockers"][0]
+    assert "2026-09" in plan["blockers"][0] and "--through 2026-09" in plan["blockers"][0]
 
 
 def test_missing_the_annexes_of_the_run_cutoff_blocks(root):

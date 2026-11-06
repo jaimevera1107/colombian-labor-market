@@ -123,12 +123,12 @@ def test_status_says_when_there_is_nothing_to_compute(tmp_path, capsys):
     assert "Copy both annexes" in capsys.readouterr().out
 
 
-def test_status_warns_about_annexes_beyond_what_can_be_processed(project, capsys):
+def test_status_notes_that_annexes_beyond_the_frozen_vintage_carry_parameters_forward(project, capsys):
     for kind in ("ml", "inf"):
         _annex(project, kind, "2026-09")
     cli.command_status(project)
     out = capsys.readouterr().out
-    assert "2026-09" in out and f"--through {FROZEN_CUTOFF}" in out
+    assert "2026-09" in out and "carried forward" in out and "icml rebuild" in out
 
 
 # ------------------------------------------------------------------ the cutoff cap
@@ -214,11 +214,13 @@ def test_a_month_without_both_annexes_is_explained(project, recalc, capsys):
     assert "Both annexes of 2026-07" in capsys.readouterr().out and not recalc.calls
 
 
-def test_a_month_after_the_frozen_vintage_is_not_processed_and_says_how_to_continue(project, recalc, capsys):
+def test_a_month_after_the_frozen_vintage_restarts_with_that_cutoff_and_says_parameters_are_extended(project, monkeypatch, capsys):
     for kind in ("ml", "inf"):
         _annex(project, kind, "2026-09")
-    assert cli.command_run(project, "rebuild", _args()) == cli.EXIT_ACTION
-    assert f"--through {FROZEN_CUTOFF}" in capsys.readouterr().out and not recalc.calls
+    seen = []
+    monkeypatch.setattr(cli, "_relaunch", lambda root, command, args, target: seen.append(target) or 0)
+    assert cli.command_run(project, "rebuild", _args()) == 0
+    assert seen == ["2026-09"] and "carried forward" in capsys.readouterr().out
 
 
 # ------------------------------------------------------------------ update

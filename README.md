@@ -6,7 +6,7 @@
 
   *Reconstruction, monthly update and validation of Colombian labor-market series.*
 
-  [![Version](https://img.shields.io/badge/version-2.5.0-183153?style=flat-square)](CHANGELOG.md)
+  [![Version](https://img.shields.io/badge/version-2.6.0-183153?style=flat-square)](CHANGELOG.md)
   ![Cutoff](https://img.shields.io/badge/cutoff-2026--08-536779?style=flat-square)
   ![Python](https://img.shields.io/badge/Python-3.12-376994?style=flat-square)
   [![License](https://img.shields.io/badge/license-MIT-536779?style=flat-square)](LICENSE)
@@ -26,7 +26,7 @@ ICML assembles monthly series of **labor market, informality and sectoral employ
 The repository holds the code, the inputs, the frozen processing parameters, the tests and the delivery pipeline, so research results can be **rebuilt and verified** without any external file.
 
 > [!IMPORTANT]
-> **ICML results are research products and are not official DANE statistics.** This is version **2.5.0**, with cutoff **2026-08**.
+> **ICML results are research products and are not official DANE statistics.** This is version **2.6.0**, with cutoff **2026-08**.
 
 ## At a glance
 
@@ -38,7 +38,7 @@ The repository holds the code, the inputs, the frozen processing parameters, the
 | **Content** | Labor market, informality and employment by sector |
 | **Periodic inputs** | Two DANE annexes of the same month |
 | **Quality** | 52 automatic checks per delivery |
-| **Latest documented version** | `2.5.0` · cutoff `2026-08` |
+| **Latest documented version** | `2.6.0` · cutoff `2026-08` |
 
 ## Quick start
 
@@ -135,8 +135,8 @@ The routine uses **two official DANE Excel files of the same month**:
 .\icml plots
 ```
 
-> [!WARNING]
-> **Current methodological limit: August 2026.** Even when both annexes of September 2026 or later exist, this version **blocks their processing**. The monthly informality parameters and the census bridge are frozen only through `2026-08`; their extension has to be defined before updating past that cutoff. `icml update` is not an unlimited update to any future month.
+> [!NOTE]
+> **Months after August 2026.** The frozen parameters (census bridge, informality priors, national sectoral composition) are frozen through `2026-08`. For a later month they are carried forward with explicit rules and the products say so (`prior_provenance`, `source_status`); see [EXTENSION_BEYOND_FROZEN_CUTOFF.md](docs/production/EXTENSION_BEYOND_FROZEN_CUTOFF.md). The first real month after August is the first end-to-end test of that path: run `icml update --dry-run` first and review the manifest.
 
 ### Figures
 
@@ -153,7 +153,7 @@ A `<delivery>_graficos/` folder is created with national, departmental and compa
 The validity of the series depends on the universe, the historical coverage and the documented methodological decisions. In particular:
 
 - **Representativeness differences:** in the GEIH universe the rates of nine territories stay empty between 2001 and 2013 (Arauca, Casanare, Putumayo, San Andrés, Amazonas, Guainía, Guaviare, Vaupés and Vichada) because the survey did not represent them then. **They are not accidental gaps.**
-- **Months after `2026-08`:** blocked until the informality and census-bridge parameters are extended methodologically.
+- **Months after `2026-08`:** processed with frozen parameters carried forward and tagged; no re-estimation of the informality priors or the census bridge.
 - **A new annual departmental annex:** the anchored year comes from the configured file (`geih_departamentos_2025.xlsx`). Adding a new annex is **not** a matter of copying it: the configuration has to change and a total recalculation has to run.
 - **Methodological changes:** changes that touch closed years need a new version, a changelog entry and a controlled total recalculation.
 
@@ -180,7 +180,7 @@ icml recalc --root . --mode total --confirm-total
 | Rebuild asks for confirmation | A base is already published. Use `update` to add a month, or confirm (`--yes`) to rebuild. |
 | There is no published base to update | Run `rebuild` first. |
 | Both annexes of the month are not available | Add the missing annex before processing. |
-| The annexes reach past `2026-08` | The current version cannot process those months; use `--through 2026-08`. |
+| The annexes reach past `2026-08` | They are processed; the frozen parameters are carried forward and the products say so. |
 | "Already up to date" | No new processable months. |
 | `BLOCKED: An existing input was modified` | If it is an intentional DANE correction, see `icml recalc --root . --accept-modified`. |
 | The file name and the month inside the workbook disagree | Fix the name or use the file of the right month. |

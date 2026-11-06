@@ -148,8 +148,9 @@ def build_vintage_root(root: Path, cutoff: str, workdir: Path) -> dict:
     """
     if cutoff != ACTIVE_CUTOFF:
         raise ValueError(f"Run with ICML_CUTOFF={cutoff} (active cutoff is {ACTIVE_CUTOFF}).")
-    if cutoff >= FROZEN_CUTOFF:
-        raise ValueError(f"{cutoff} must precede the frozen vintage {FROZEN_CUTOFF}.")
+    if cutoff == FROZEN_CUTOFF:
+        raise ValueError(f"{cutoff} is the frozen vintage: no root to build.")
+    forward = cutoff > FROZEN_CUTOFF
     root, work = Path(root).resolve(), Path(workdir).resolve()
     if work.exists():
         raise FileExistsError(f"Refusing to overwrite {work}")
@@ -175,14 +176,28 @@ def build_vintage_root(root: Path, cutoff: str, workdir: Path) -> dict:
     proxies_rel = f"datos/2_procesamiento/fuentes_preparadas/urbano/proxies_anuales_ventanas_{vintage_suffix()}.csv"
     _write_csv(work / proxies_rel, extract_window_proxies(work / labor_rel, cutoff))
 
-    # 3. Cut the period-indexed panels; remember every hash that changes.
+    # 3. Cut the period-indexed panels (earlier cutoff) or extend the frozen
+    #    parameter panels (later cutoff); remember every hash that changes.
     reseal: dict[str, str] = {}
-    for path in sorted((work / "datos" / "2_procesamiento").rglob("*.csv")):
-        old_hash = sha256_file(path)
-        changed, before, after = _truncate(path, cutoff)
-        if changed:
+    if forward:
+        from icml.recalculation.extension import EXTENSION_RULES, extend_panel
+
+        actions["extended"] = {}
+        for rel, (rule, provenance) in EXTENSION_RULES.items():
+            path = work / "datos" / "2_procesamiento" / rel
+            old_hash = sha256_file(path)
+            frame = pd.read_csv(path, dtype=str, keep_default_na=False)
+            frame, added = extend_panel(frame, rule, FROZEN_CUTOFF, cutoff, provenance)
+            _replace_file(path, lambda t, f=frame: f.to_csv(t, index=False, lineterminator="\n"))
             reseal[old_hash] = sha256_file(path)
-            actions["truncated"][path.relative_to(work).as_posix()] = [before, after]
+            actions["extended"][rel] = {"rule": rule, "rows_added": added}
+    else:
+        for path in sorted((work / "datos" / "2_procesamiento").rglob("*.csv")):
+            old_hash = sha256_file(path)
+            changed, before, after = _truncate(path, cutoff)
+            if changed:
+                reseal[old_hash] = sha256_file(path)
+                actions["truncated"][path.relative_to(work).as_posix()] = [before, after]
 
     # 3b. Artifacts whose last year is partial are derived from the annex, so
     #     they are regenerated for the cutoff instead of cut: the annual
@@ -287,6 +302,6 @@ def build_vintage_root(root: Path, cutoff: str, workdir: Path) -> dict:
     actions["resealed_manifests"] = resealed
     (work / "RAIZ_DE_CORTE.json").write_text(json.dumps(actions, indent=2, ensure_ascii=False) + "\n", "utf-8")
     print(f"Vintage root for {cutoff}: {len(actions['truncated'])} panels cut, "
-          f"{len(resealed)} manifests resealed -> {work}")
+          f"{len(actions.get('extended', {}))} panels extended, {len(resealed)} manifests resealed -> {work}")
     return actions
 

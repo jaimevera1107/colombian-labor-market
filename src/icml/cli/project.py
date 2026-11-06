@@ -174,9 +174,6 @@ def command_status(root: Path) -> int:
     reached = detected["cutoff"]
     if reached is None:
         print(f"  Copy both annexes of the same month into {INGESTION_DIR}/ (see {INGESTION_DIR}/LEEME.md).")
-    elif reached > FROZEN_CUTOFF:
-        print(f"  There are annexes for {reached}, later than {FROZEN_CUTOFF}: that month cannot be processed yet.")
-        print(f"  To work through {FROZEN_CUTOFF}: icml update --through {FROZEN_CUTOFF}")
     elif vintage is None:
         print(f"  First time: icml rebuild   (through {reached}; use --through YYYY-MM for another month)")
     elif (vintage.get("cutoff") or "") < reached:
@@ -184,6 +181,8 @@ def command_status(root: Path) -> int:
     else:
         print("  Everything is up to date. To draw the latest delivery: icml plots")
         print("  To start over from scratch: icml rebuild")
+    if reached is not None and reached > FROZEN_CUTOFF:
+        print(f"  Note: {reached} is later than the frozen vintage ({FROZEN_CUTOFF}); frozen parameters are carried forward.")
     return EXIT_OK
 
 
@@ -248,11 +247,10 @@ def command_run(root: Path, command: str, args: argparse.Namespace) -> int:
         return EXIT_ACTION
     if target > FROZEN_CUTOFF:
         print(
-            f"The annexes reach {target}, but the newest month that can be processed is {FROZEN_CUTOFF}: "
-            "extending the frozen parameters to new months has no defined rule yet.\n"
-            f"To work through {FROZEN_CUTOFF} ignoring later months: icml {command} --through {FROZEN_CUTOFF}"
+            f"{target} is later than the frozen vintage ({FROZEN_CUTOFF}): the frozen parameters "
+            "(census bridge, informality priors, national sectoral composition) are carried forward "
+            "to the new months and the products say so (docs/production/EXTENSION_BEYOND_FROZEN_CUTOFF.md).\n"
         )
-        return EXIT_ACTION
 
     if command == "rebuild":
         mode = TOTAL

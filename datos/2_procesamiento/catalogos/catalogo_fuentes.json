@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "software_base": "ICML 2.2.30.dev0 H30",
+  "software_base": "ICML 2.4.0",
   "period_through": "2026-08",
   "source_root": ".",
   "activation_mode": "frozen_snapshot",
@@ -161,17 +161,17 @@
     },
     {
       "path": "datos/2_procesamiento/productos_congelados/laboral/ciudades.csv",
-      "sha256": "773ebcfb4fa4288f10744b8912c1c03244179d17e2cce8a8926123a66d7e9405",
+      "sha256": "3ce7f9d5626b2501df89e9ef9d24d994a9c2205f05d7f2e8d11911ac33424f48",
       "type": "laboral_product_frozen"
     },
     {
       "path": "datos/2_procesamiento/productos_congelados/laboral/departamentos.csv",
-      "sha256": "99847e18d4e1d3c37b8aaa280823c42a246e269eea4c8a9435e1cc78717c8fea",
+      "sha256": "ff1ea47a8ae3e8369ddf3a4d778c946b3e6b7b3bfcfb9a77fb459fdeb04f6888",
       "type": "laboral_product_frozen"
     },
     {
       "path": "datos/2_procesamiento/productos_congelados/laboral/nacionales.csv",
-      "sha256": "fc003be8875716ef19e49a3a7d1a3898998e3e0d7a120421498a60eb4a8f362f",
+      "sha256": "74704725373ab1066cbeffce977234bba21fa9749758455ca3df95968e4c6b78",
       "type": "laboral_product_frozen"
     },
     {

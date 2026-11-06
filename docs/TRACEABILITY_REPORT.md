@@ -55,7 +55,7 @@ States: **A** implemented and verified (code plus test or run); **B** partially 
 | # | Gap or risk | Type | Priority | Effect | Status 2.6.0 |
 | --- | --- | --- | --- | --- | --- |
 | 1 | No rule to extend the informality priors and the census bridge to new months; the model weights (`weights.pt`) are not in the repository, only its priors | Confirmed failure | High | September 2026 could not be computed | **Resolved** with explicit carried-forward rules (seasonal persistence for the priors and the national sectoral composition, last month for the bridge), tagged in the products. Pending: the end-to-end run with real annexes and wiring the H10 extraction of the new annex for the sectoral composition |
-| 2 | Three pieces without a unit test of their own: the census bridge refresh, the strict H5/H6 window and `verify_delivery` | Confirmed failure | Medium | A regression in them is only detected in a full run | `verify_delivery` covered in 2.6.0; the other two remain open |
+| 2 | Three pieces without a unit test of their own: the census bridge refresh, the strict H5/H6 window and `verify_delivery` | Confirmed failure | Medium | A regression in them is only detected in a full run | **Resolved** in 2.6.0: `test_bridge_refresh_and_strict_window.py`, `test_delivery.py` |
 | 3 | The RC1 references, the current vintage and the deliveries travelled inside the repository (about 600 MB) | Potential risk | Low | Dependence on the remote repository | **Changed:** deliveries and the current vintage are generated locally and ignored by git; the repository is about 100 MB; the RC1 references are outside it (46 golden tests skip) |
 | 4 | The cutoff is fixed at import time through `ICML_CUTOFF`, and an earlier vintage needed a separate tool | Potential risk | Medium | A process with the wrong variable would mix calendars | **Partly resolved:** the CLI relaunches with the right cutoff and the vintage root is a library function; the import-time variable remains |
 | 5 | The delivery READMEs are written at packaging time, not by the builder | Confirmed failure | Low | They can drift from the real delivery | Open |
@@ -76,8 +76,8 @@ States: **A** implemented and verified (code plus test or run); **B** partially 
 | Priority | Recommendation | Addresses | Status 2.6.0 |
 | --- | --- | --- | --- |
 | 1 | Define and approve the extension rule to new months (priors and bridge); validate with the first real month after August | Gap 1 | Rule implemented and tagged; the first real month is the validation |
-| 2 | Wire the H10 monthly sectoral extraction of the new annex into the recompute | Gap 1 | Open |
-| 3 | Add unit tests for the census bridge refresh, the strict H5/H6 window and `verify_delivery` | Gap 2 | Open |
+| 2 | Wire the H10 monthly sectoral extraction of the new annex into the recompute | Gap 1 | Done in 2.6.0 (`extract_monthly_composition`) |
+| 3 | Add unit tests for the census bridge refresh, the strict H5/H6 window and `verify_delivery` | Gap 2 | Done in 2.6.0 |
 | 4 | Generate the delivery READMEs from the builder, with cutoff, date, version and active methods | Gap 5 | Open |
 | 5 | Record the torch version, seeds and training configuration of the priors, and measure the multiple-optima warning | Gap 8 | Open |
 | 6 | Pass the cutoff as an explicit parameter of each run instead of an import-time variable | Gap 4 | Partly (CLI relaunch); open at the library level |

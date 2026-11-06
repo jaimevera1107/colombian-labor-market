@@ -12,6 +12,12 @@ The commands (`icml status`, `rebuild`, `update`, `plots`, `verify`) are describ
 
 Approximate times: test 1, 10 to 15 minutes (it builds a working copy cut at July and recomputes everything); test 2, 8 to 10; test 3, about 90 seconds.
 
+## What the new month gets, besides the audit
+
+* `MONTHLY_REPORT.md` / `.json` in the delivery (`icml report` rebuilds it): for 172 monitored series (national and departmental levels and rates, informality rate) the month-over-month change and its z-score against the last ten years (|z| > 3 is flagged, 5 series in August 2026), the year-over-year change, a seasonal-naive residual, and the revisions of the open years against the previous delivery. Evidence for whoever publishes; it never blocks.
+* `icml forecast` writes `<delivery>_forecasts/forecasts_EXPERIMENTAL.csv`: Holt-Winters forecasts, 12 months ahead with 80 % intervals, for the same series. Univariate and explicitly experimental: departments do not add to the national and rates are not derived from levels.
+* By default `rebuild`/`update` print progress only; `--verbose` keeps the solver and pandas warnings.
+
 ## What the update was checked for
 
 Comparing the August delivery (anchored) with the July one:

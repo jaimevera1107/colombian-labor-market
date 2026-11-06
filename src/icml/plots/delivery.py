@@ -53,7 +53,7 @@ RATES = {
 }
 
 SECTORS = ("A", "B", "C", "D_E", "F", "G", "H", "I", "J", "K", "L", "M_N", "O_P_Q", "R_S_T_U", "NO_INFO")
-#: Short labels of the CIIU Rev. 4 A.C. sections the ICML uses (docs/sectoral/HITO10_*).
+#: Short labels of the CIIU Rev. 4 A.C. sections the ICML uses (docs/sectoral/README.md).
 SECTOR_NAMES = {
     "A": "Agriculture and fishing",
     "B": "Mining and quarrying",

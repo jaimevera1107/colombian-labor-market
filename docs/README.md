@@ -1,6 +1,6 @@
 # ICML 2.0 documentation
 
-Operational guides, the framework, the traceability report and the production decisions are in English. The milestone write-ups under `informality/`, `sectoral/`, `census/` and `research/` were authored in Spanish and are kept as written until each is reviewed with its methodology.
+Everything is in English. The milestone write-ups of the informality, sectoral, census and research work (2.2.x, Spanish) were condensed into one README per folder; the originals remain in the git history.
 
 ## Start here
 
@@ -33,10 +33,10 @@ Operational guides, the framework, the traceability report and the production de
 
 | Folder | Content |
 |---|---|
-| [quality/](quality/) | Quality gate and the three bases (cities, departments, nationals) — English |
+| [quality/](quality/) | Quality gate and the three bases (cities, departments, nationals) |
 | [evaluation/](evaluation/) | Transfer evaluation, representativeness factors, update policy |
-| [census/](census/) | CNPV 2018 census bridge between the two universes — Spanish |
-| [informality/](informality/) | Informality milestones 5 to 9 (national, sequential, MLP, calibration, closure) — Spanish |
-| [sectoral/](sectoral/) | Sectoral milestones 10 to 13 (sources, CIIU bridge, homologation, priors, reconciliation) — Spanish |
-| [research/](research/) | Urban donor studies behind the RC2 decisions — Spanish |
+| [census/](census/) | CNPV 2018 census bridge between the two universes |
+| [informality/](informality/) | How the informality bases are built: sources, chain, evidence, limits |
+| [sectoral/](sectoral/) | How the experimental sectoral product is built: support, chain, evidence |
+| [research/](research/) | Donor choice for the nine cities without GEIH history |
 | [migration/](migration/) | RC1 lineage and the migration plan of the equivalence refactor |

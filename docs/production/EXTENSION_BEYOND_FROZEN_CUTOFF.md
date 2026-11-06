@@ -6,7 +6,7 @@ Until 2.5.0 `icml update` refused any month later than the frozen vintage (`2026
 |---|---|---|---|
 | `parametros_congelados/priors_mlp_h9/12_single_mlp_33_department_priors.csv` | same calendar month of the previous year | `EXTENDED_SEASONAL_PERSISTENCE` in `prior_provenance` of the departmental informality product | the priors only set the departmental pattern; the level is calibrated to the national target that comes from the new annex |
 | `parametros_congelados/puente_censal_cnpv2018/02_puente_dos_universos_33_territorios.csv` | copy of the last frozen month | `EXTENDED_LAST_MONTH_PERSISTENCE` in `factor_reference_status` | its levels are refreshed from the labor product at closure time and the nine partial territories take the labor product's GEIH factors (straight segments that extrapolate the last slope); only the factors of the 24 fully covered territories are carried |
-| `sectorial_h16/inputs/12_composicion_nacional_unificada_1993_2026.csv` | same calendar month of the previous year | `EXTENDED_SEASONAL_PERSISTENCE` in `source_status` | the national sectoral shares of a new month should come from the H10 extraction of the new labor annex; that extraction is not yet wired into the recompute, so the composition is carried forward and says so |
+| `sectorial_h16/inputs/12_composicion_nacional_unificada_1993_2026.csv` | **from the labor annex** of the cutoff when it publishes the month (sheet `Ocupados TN_T13_rama`, 13 groups → 15 codes with the fixed 2015-03 B/D_E ratio, `NO_INFO` as remainder), else same month of the previous year | `DANE_13_PUBLISHED_PLUS_NO_INFO_REMAINDER_EXTENDED` or `EXTENDED_SEASONAL_PERSISTENCE` in `source_status` | the reading reproduces the frozen August shares to 1e-16; a month the annex does not publish is carried forward and says so |
 | H5/H6 sequences (`informalidad_secuencia_h5_h6/`) | none needed | — | regenerated from the annexes in every recompute |
 
 The delivery manifest records the extension in its methodology notes (`frozen_parameters_extension`), and `icml status`/`rebuild`/`update` print a note when the target month is later than the frozen vintage.
@@ -19,6 +19,6 @@ The delivery manifest records the extension in its methodology notes (`frozen_pa
 
 ## What to decide next
 
-1. **Wire the H10 monthly sectoral extraction** of the new annex into the recompute so `12_composicion_nacional_unificada` stops being carried forward.
+1. ~~Wire the H10 monthly sectoral extraction~~ Done in 2.6.0 (`extract_monthly_composition`, read with openpyxl).
 2. **Refreeze on a new reference month.** When a later month becomes the reference vintage, run `refreeze_reference.py` on a recompute at that cutoff and change `FROZEN_CUTOFF` in `icml.domain.cutoff`; from then on the extension starts at the new cutoff.
 3. Whether the departmental informality priors should be re-estimated (MLP refit, `torch`) at some cadence instead of carried forward: a methodological decision, out of scope here.

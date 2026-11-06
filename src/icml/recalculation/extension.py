@@ -27,7 +27,12 @@ from __future__ import annotations
 
 import pandas as pd
 
+from typing import TYPE_CHECKING
+
 from icml.domain.cutoff import month_labels
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 SEASONAL = "EXTENDED_SEASONAL_PERSISTENCE"
 PERSISTENCE = "EXTENDED_LAST_MONTH_PERSISTENCE"
@@ -105,13 +110,65 @@ def extend_persistence(frame: pd.DataFrame, last_frozen: str, cutoff: str,
 EXTENSION_RULES: dict[str, tuple[str, str | None]] = {
     "parametros_congelados/priors_mlp_h9/12_single_mlp_33_department_priors.csv": ("seasonal", "extension_status"),
     "parametros_congelados/puente_censal_cnpv2018/02_puente_dos_universos_33_territorios.csv": ("persistence", "factor_reference_status"),
-    "sectorial_h16/inputs/12_composicion_nacional_unificada_1993_2026.csv": ("seasonal", "source_status"),
+    "sectorial_h16/inputs/12_composicion_nacional_unificada_1993_2026.csv": ("annex_or_seasonal", "source_status"),
 }
+
+ANNEX_EXTENDED = "DANE_13_PUBLISHED_PLUS_NO_INFO_REMAINDER_EXTENDED"
+
+
+def extend_composition_from_annex(frame: pd.DataFrame, last_frozen: str, cutoff: str,
+                                  workbooks: dict[str, "Path"]) -> tuple[pd.DataFrame, int, dict[str, str]]:
+    """Extend the national sectoral composition from the labor annexes of the new months.
+
+    ``workbooks`` maps each new month to the DANE labor annex that contains
+    it (the annex of month M publishes every month from 2015-01 through M,
+    so the latest annex normally covers all of them). Months the annexes do
+    not publish fall back to seasonal persistence. Returns the frame, the
+    rows added and, per month, which rule produced it.
+    """
+    from icml.sectoral.monthly import extract_monthly_composition
+
+    base = frame[frame["period"].astype(str) == "2015-03"].set_index("sector_code")["sector_share"].astype(float)
+    ratio = float(base["B"] / (base["B"] + base["D_E"]))
+    rules: dict[str, str] = {}
+    out = frame
+    added = 0
+    for month in _months_after(last_frozen, cutoff):
+        workbook = workbooks.get(month)
+        rows = None
+        if workbook is not None:
+            try:
+                rows = extract_monthly_composition(workbook, [month], ratio)
+            except ValueError:
+                rows = None
+        if rows:
+            new = pd.DataFrame(rows)
+            for column in out.columns:
+                if column not in new:
+                    new[column] = ""
+            out = pd.concat([out, new[list(out.columns)].astype(str)], ignore_index=True)
+            added += len(new)
+            rules[month] = "annex"
+        else:
+            out, n = extend_seasonal(out, _previous_month(month), month, "source_status")
+            added += n
+            rules[month] = "seasonal"
+    return out, added, rules
+
+
+def _previous_month(month: str) -> str:
+    year, m = int(month[:4]), int(month[5:7]) - 1
+    if m == 0:
+        year, m = year - 1, 12
+    return f"{year}-{m:02d}"
 
 
 def extend_panel(frame: pd.DataFrame, rule: str, last_frozen: str, cutoff: str,
-                 provenance: str | None) -> tuple[pd.DataFrame, int]:
-    """Dispatch on the rule name."""
+                 provenance: str | None, workbooks: dict[str, "Path"] | None = None) -> tuple[pd.DataFrame, int]:
+    """Dispatch on the rule name (``annex_or_seasonal`` needs ``workbooks``)."""
+    if rule == "annex_or_seasonal":
+        out, added, _ = extend_composition_from_annex(frame, last_frozen, cutoff, workbooks or {})
+        return out, added
     if rule == "seasonal":
         return extend_seasonal(frame, last_frozen, cutoff, provenance)
     if rule == "persistence":

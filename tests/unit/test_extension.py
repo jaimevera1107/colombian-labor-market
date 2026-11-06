@@ -66,3 +66,25 @@ def test_the_priors_carry_their_tag_into_the_product_provenance():
     x.loc[extended, "prior_provenance"] = base.loc[extended, "extension_status"].to_numpy()
     assert list(x.prior_provenance) == ["MLP_RECENT_GEIH_LATENT", SEASONAL]
     assert callable(_one_model_prior) and retro.empty
+
+
+def test_the_national_composition_is_taken_from_the_annex_when_it_publishes_the_month(tmp_path):
+    import glob
+    from pathlib import Path
+
+    from icml.recalculation.extension import ANNEX_EXTENDED, SEASONAL, extend_composition_from_annex
+
+    root = Path(__file__).resolve().parents[2]
+    annex = glob.glob(str(root / "datos/1_ingesta/geih_mercado_laboral/geih_mercado_laboral_2026-08.xlsx"))
+    if not annex:
+        pytest.skip("real August annex not in the checkout")
+    frozen = pd.read_csv(root / "datos/2_procesamiento/sectorial_h16/inputs/12_composicion_nacional_unificada_1993_2026.csv",
+                         dtype=str, keep_default_na=False)
+    cut = frozen[frozen.period <= "2026-07"]
+    out, added, rules = extend_composition_from_annex(cut, "2026-07", "2026-09", {"2026-08": Path(annex[0]), "2026-09": Path(annex[0])})
+    assert added == 30 and rules == {"2026-08": "annex", "2026-09": "seasonal"}
+    august = out[out.period == "2026-08"].set_index("sector_code")
+    reference = frozen[frozen.period == "2026-08"].set_index("sector_code")
+    assert (august.source_status == ANNEX_EXTENDED).all()
+    assert (august.sector_share.astype(float) - reference.sector_share.astype(float)).abs().max() < 1e-12
+    assert (out[out.period == "2026-09"].source_status == SEASONAL).all()

@@ -20,10 +20,11 @@ One Python package, `icml`, installed from `src/`, drives everything: the stage 
 | `icml.operations` | Read-only gates and staging: frozen products, source catalog, GEIH intake, monthly cycle, certification, checkout checksums, Excel-derived sources. |
 | `icml.regression` | RC1 golden catalog and comparison helpers. |
 | `icml.plots` | Optional figures of a delivery and audit charts of the frozen products. |
+| `icml.delivery.monthly_report`, `icml.forecast` | Statistical diagnostics of the newest month (`icml report`) and experimental univariate forecasts (`icml forecast`). |
 
 ## Command groups
 
-* **Everyday** (`icml.cli.project`): `status`, `rebuild`, `update`, `plots`, `verify`, `checksums`. They never compute on their own: `rebuild` and `update` call `icml.recalculation.service`.
+* **Everyday** (`icml.cli.project`): `status`, `rebuild`, `update`, `plots`, `verify`, `checksums`, `report`, `forecast`. They never compute on their own: `rebuild` and `update` call `icml.recalculation.service`.
 * **Expert**: `recalc` (the planner with every knob), `delivery build|simple|verify`, `run` and `<stage> run`, `informality <experiment>`, `sectoral <tool>`, `census-bridge run`, `operations <gate>`, `golden capture|verify`.
 
 ## Data flow of a recalculation

@@ -96,6 +96,8 @@ This flow **rebuilds and publishes** a base. Read the precautions and checks in 
 | Update the published base with the processable months | `icml update` |
 | Draw the latest delivery | `icml plots` |
 | Run the delivery audits again | `icml verify` |
+| Statistical diagnostics of the newest month (z-scores, YoY, revisions) | `icml report` |
+| EXPERIMENTAL 12-month univariate forecasts of every series | `icml forecast` |
 | Verify the checkout against `SHA256SUMS` | `icml checksums` |
 | Show what a command would do | `icml <command> --dry-run` |
 | Options of a command | `icml <command> --help` |
@@ -127,7 +129,7 @@ The routine uses **two official DANE Excel files of the same month**:
 1. Download both annexes of the **same month**. The informality annex may be published after the labor-market one; without both, that month is not computed.
 2. Place each file in its folder. Renaming is not required: the month is read inside the workbook. Keep the annexes of earlier periods.
 3. Check the inputs with `icml status` and, if the month is supported by the model, run `icml update`.
-4. Review the audit result (`PASS` or the detail of the failures). They can be repeated with `icml verify`.
+4. Review the audit result (`PASS` or the detail of the failures) and the monthly diagnostics (`MONTHLY_REPORT.md` next to the delivery: which series moved beyond their usual range, year-over-year changes, revisions against the previous delivery). They can be repeated with `icml verify` and `icml report`. Add `--verbose` to see the solver warnings during a run.
 5. Optionally run `icml plots` and keep the folders of the full delivery, the simple files and the figures.
 
 ```powershell

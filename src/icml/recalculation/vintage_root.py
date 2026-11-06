@@ -183,11 +183,14 @@ def build_vintage_root(root: Path, cutoff: str, workdir: Path) -> dict:
         from icml.recalculation.extension import EXTENSION_RULES, extend_panel
 
         actions["extended"] = {}
+        # The labor annex of the cutoff publishes every month through the cutoff.
+        new_months = month_labels(FROZEN_CUTOFF, cutoff)[1:]
+        workbooks = {month: labor_annex.path for month in new_months}
         for rel, (rule, provenance) in EXTENSION_RULES.items():
             path = work / "datos" / "2_procesamiento" / rel
             old_hash = sha256_file(path)
             frame = pd.read_csv(path, dtype=str, keep_default_na=False)
-            frame, added = extend_panel(frame, rule, FROZEN_CUTOFF, cutoff, provenance)
+            frame, added = extend_panel(frame, rule, FROZEN_CUTOFF, cutoff, provenance, workbooks)
             _replace_file(path, lambda t, f=frame: f.to_csv(t, index=False, lineterminator="\n"))
             reseal[old_hash] = sha256_file(path)
             actions["extended"][rel] = {"rule": rule, "rows_added": added}

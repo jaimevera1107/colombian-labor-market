@@ -14,11 +14,11 @@
 - `datos/2_procesamiento/fuentes_preparadas/anclas_dane/`, `datos/1_ingesta/censo_original/`, `datos/2_procesamiento/fuentes_preparadas/demografia/`, `datos/2_procesamiento/fuentes_preparadas/informalidad/`, `datos/2_procesamiento/fuentes_preparadas/sectorial/`: insumos auxiliares especializados existentes; no son los productos finales.
 - `datos/2_procesamiento/productos_congelados/laboral/`: **bases laborales congeladas** usadas como entradas de otros componentes; son *outputs históricos*, no anexos que se sustituyen al actualizar.
 
-**Fuente única de rutas y hashes activos:** `datos/2_procesamiento/catalogos/catalogo_fuentes.json`. Cada entrada indica `role`, `path`, `sha256`, categoría y procedencia. Las configuraciones `icml-colombia/configs/rc1/{national,urban,departmental,integration}.toml` apuntan a estas mismas rutas; el auditor impide discrepancias. El anexo mensual aparece en dos roles pero corresponde a **un solo archivo físico**.
+**Fuente única de rutas y hashes activos:** `datos/2_procesamiento/catalogos/catalogo_fuentes.json`. Cada entrada indica `role`, `path`, `sha256`, categoría y procedencia. Las configuraciones `configs/rc1/{national,urban,departmental,integration}.toml` apuntan a estas mismas rutas; el auditor impide discrepancias. El anexo mensual aparece en dos roles pero corresponde a **un solo archivo físico**.
 
 ## Comandos
 
-Desde `icml-colombia/` con el paquete instalado en editable:
+Desde `root/` con el paquete instalado en editable:
 
 ```powershell
 python -m icml operations source-audit --root ..

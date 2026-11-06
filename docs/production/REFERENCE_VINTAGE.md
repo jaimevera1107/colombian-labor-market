@@ -34,7 +34,7 @@ The frozen products were measured against fresh recomputes under different depen
 | latest numpy, scipy, scikit-learn, pandas with **xgboost 3.1.x** | differences of at most 0.01 persons and 1e-9 in rates: floating-point noise, accepted by the gate |
 | latest everything with **xgboost 3.4** | the ten modelled territories change: up to 38,900 persons of departmental PET, 1,050 of national labor force, 1.3 pp of sectoral share |
 
-That is why `pyproject.toml` caps `xgboost>=3.1,<3.2` and leaves the other ranges open, and why the comparison tolerances are 0.1 persons and 1e-6 for rates. Raising the xgboost cap is a methodological change: recompute, read the differences, refreeze.
+That is why `pyproject.toml` pins `tempdisagg==0.6.3` exactly (a range let pip install 0.6.4, and the version guard then refused to run) and caps `xgboost>=3.1,<3.2` and leaves the other ranges open, and why the comparison tolerances are 0.1 persons and 1e-6 for rates. Raising the xgboost cap is a methodological change: recompute, read the differences, refreeze.
 
 ## When and how to refreeze
 

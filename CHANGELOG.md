@@ -1,4 +1,7 @@
-## 2.6.1 — tempdisagg guard agrees with the declared range
+## 2.6.1 — tempdisagg guard agrees with the declared range; platform-aware reference gate
+
+- **The reference gate knows which platform it was frozen on.** On Windows, with the same Python and library versions as the Linux reference, the xgboost-modelled territories differed by up to 15,288 persons and the gate blocked every update at the frozen cutoff. `REFERENCE_PLATFORM.json` records the reference platform; on another one a bounded, purely numeric difference (≤ 10 % of the cell's level, no structural or categorical change, cross audit passing) is accepted, measured and reported (`PLATFORM_DEPENDENT_MISMATCH_ACCEPTED`). `modeling.toml` runs xgboost single-threaded, which removes machine-dependent summation order and leaves the reference byte-identical. `refreeze_reference.py` lets any computer become the reference.
+- `update --dry-run` no longer announces a recompute.
 
 - A fresh install of 2.6.0 resolved tempdisagg 0.6.4 (allowed by `pyproject.toml`) and every recompute stopped at `require_tempdisagg_version()`, which accepted only 0.6.3. The guard now accepts exactly `>=0.6.3,<0.7`. Measured with tempdisagg 0.6.4: a full August recompute reproduces the eight frozen products (max difference 0.013 persons), and the suite passes under both releases. No number changes.
 

@@ -36,6 +36,15 @@ The frozen products were measured against fresh recomputes under different depen
 
 That is why `pyproject.toml` caps `xgboost>=3.1,<3.2`; `tempdisagg>=0.6.3,<0.7` stays open because 0.6.3 and 0.6.4 were both measured to reproduce the frozen products (max difference 0.013 persons) and the code guard accepts the same range and leaves the other ranges open, and why the comparison tolerances are 0.1 persons and 1e-6 for rates. Raising the xgboost cap is a methodological change: recompute, read the differences, refreeze.
 
+## The reference depends on the platform
+
+The frozen products were computed on Linux x86_64 (`productos_congelados/REFERENCE_PLATFORM.json`, written by `refreeze_reference.py`). Tree models are not bit-reproducible across operating systems and CPU builds: on Windows, with exactly the same Python and library versions, the ten territories modelled with xgboost came out different (up to 15,288 persons of departmental PET), while the cities and every identity were unchanged. Two measures follow:
+
+* `modeling.toml` runs xgboost single-threaded (`n_jobs = 1`): multi-threaded histogram building sums in a machine-dependent order. On the reference platform this changed nothing (byte-identical products).
+* On a platform other than the recorded one, the reference comparison accepts a **bounded, purely numeric** difference: no cell may move by more than `PLATFORM_RELATIVE_BOUND` (10 %) of its level, no key, column or category may differ, and the cross audit must pass. The run then ends in `RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_WITH_SPLICES_ON_ANOTHER_PLATFORM` with `reference_equivalence = PLATFORM_DEPENDENT_MISMATCH_ACCEPTED`, the measured maximum relative difference is in the report, and `rebuild`/`update` print it. Anything else is still a mismatch.
+
+To make your own computer the reference (strict comparison there from then on): `run-integral --mode recompute`, then `python tools/refreeze_reference.py --run <output>`, which also rewrites `REFERENCE_PLATFORM.json`.
+
 ## When and how to refreeze
 
 Refreeze whenever a change is adopted that alters any number at the frozen cutoff: a methodological change, a new frozen parameter, a fix in a stage. Never for a layout, naming or performance change (those must leave the numbers byte-identical; prove it with `tools/compare_runs.py`).

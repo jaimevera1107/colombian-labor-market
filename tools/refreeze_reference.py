@@ -17,7 +17,8 @@ What it copies, from the run folder into the checkout:
 * the sectoral exports and ``METADATOS_EXPERIMENTALES.json`` → ``productos_congelados/sectorial``;
 * the sectoral predictor bundle (``inputs/`` as used by the run, ``outputs/``) → ``sectorial_h16``.
 
-Then it recomputes the hashes in ``catalogo_h19/19_catalogo_unificado.csv``
+Then it records the platform in ``productos_congelados/REFERENCE_PLATFORM.json``,
+recomputes the hashes in ``catalogo_h19/19_catalogo_unificado.csv``
 and ``catalogos/catalogo_fuentes.json`` and checks that the H9 lineage
 (``13_resumen.json``) and manifests are consistent. It never runs a model.
 """
@@ -82,6 +83,10 @@ def refreeze(root: Path, run: Path) -> dict:
     for entry in list(data["sources"].values()) + data["auxiliary_inputs"]:
         entry["sha256"] = _sha(root / entry["path"])
     sources.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+    # The platform the reference was computed on (tree models are not bit-reproducible across platforms).
+    from icml.operations.integral import write_reference_platform
+    write_reference_platform(root)
 
     # Lineage checks.
     h9 = proc / "parametros_congelados/informalidad_cierre_h9"

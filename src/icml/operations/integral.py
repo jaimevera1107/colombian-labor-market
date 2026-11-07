@@ -53,6 +53,76 @@ CANDIDATE_FILES = {
     "sectorial.departamental": "sectorial/sectorial_departamental_1993_2026_EXPERIMENTAL.csv",
     "sectorial.nacional": "sectorial/sectorial_nacional_1993_2026_EXPERIMENTAL.csv",
 }
+#: Where the platform the reference vintage was computed on is recorded.
+REFERENCE_PLATFORM_FILE = "datos/2_procesamiento/productos_congelados/REFERENCE_PLATFORM.json"
+
+
+def current_platform() -> dict:
+    """The facts of this machine that can change a tree model's arithmetic."""
+    import platform
+    from importlib import metadata
+
+    return {
+        "system": platform.system(),
+        "machine": platform.machine(),
+        "python": platform.python_version(),
+        "xgboost": metadata.version("xgboost"),
+    }
+
+
+def read_reference_platform(root: Path) -> dict | None:
+    path = Path(root) / REFERENCE_PLATFORM_FILE
+    if not path.is_file():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def write_reference_platform(root: Path) -> dict:
+    """Record the current platform as the one the frozen products were computed on."""
+    record = {**current_platform(), "note": (
+        "The frozen products reproduce byte for byte on this system/machine. Tree models (xgboost) "
+        "are not bit-reproducible across operating systems and CPU builds; on another platform the "
+        "reference comparison accepts bounded model differences (PLATFORM_DEPENDENT_MISMATCH_ACCEPTED).")}
+    path = Path(root) / REFERENCE_PLATFORM_FILE
+    path.write_text(json.dumps(record, indent=2) + "\n", encoding="utf-8")
+    return record
+
+
+def platform_differs(reference: dict | None) -> bool:
+    """Only system and machine decide: Python and library versions are the person's choice."""
+    if reference is None:
+        return False
+    now = current_platform()
+    return (reference.get("system"), reference.get("machine")) != (now["system"], now["machine"])
+
+
+#: Bound for a model difference accepted on another platform: no cell may move by
+#: more than this share of its own level. The ten territories modelled with
+#: xgboost differ by up to a few percent between Windows and Linux builds; a
+#: method change moves them by far more and still fails.
+PLATFORM_RELATIVE_BOUND = 0.10
+
+
+def _platform_dependent_mismatch(results: dict[str, dict]) -> dict:
+    """Decide whether every mismatch is a bounded numeric difference (never a structural or categorical one)."""
+    verdict = {"accepted": True, "max_relative_difference": 0.0, "blocking": []}
+    for product, value in results.items():
+        if value.get("status") == "EQUIVALENT_WITHIN_TOLERANCES":
+            continue
+        issues = set(value.get("issues", []))
+        if issues - {"numeric_tolerance_exceeded"} or value.get("missing_keys") or value.get("new_keys") \
+                or value.get("old_only_columns") or value.get("candidate_only_columns"):
+            verdict["accepted"] = False
+            verdict["blocking"].append(product)
+            continue
+        rel = value.get("maximum_relative_difference", 0.0)
+        verdict["max_relative_difference"] = max(verdict["max_relative_difference"], rel)
+        if rel > PLATFORM_RELATIVE_BOUND:
+            verdict["accepted"] = False
+            verdict["blocking"].append(product)
+    return verdict
+
+
 #: Equivalence tolerances of the reference comparison. They separate two
 #: things: floating-point noise between BLAS/solver builds (hundredths of a
 #: person, 1e-9 in a rate; different numpy/scipy/scikit-learn releases) and
@@ -322,6 +392,7 @@ def compare_candidate(current: dict[str, Path], candidates: dict[str, Path]) -> 
         tolerances: dict[str, float] = {}
         text_mismatch: dict[str, int] = {}
         numeric_exceeds: dict[str, float] = {}
+        relative_max = 0.0
         for col in sorted(old_cols & new_cols):
             lhs, rhs = left[col], right[col]
             # Bool is a logical/categorical observation, not a measurable
@@ -361,6 +432,12 @@ def compare_candidate(current: dict[str, Path], candidates: dict[str, Path]) -> 
                 tolerances[col] = tolerance
                 if max_diff > tolerance:
                     numeric_exceeds[col] = max_diff
+                    a, b = lhs.to_numpy(float), rhs.to_numpy(float)
+                    scale = np.maximum(np.abs(a), np.abs(b))
+                    with np.errstate(divide="ignore", invalid="ignore"):
+                        rel = np.abs(a - b) / np.where(scale > 0, scale, np.nan)
+                    if np.isfinite(rel).any():
+                        relative_max = max(relative_max, float(np.nanmax(rel)))
             else:
                 a, b = lhs.astype("string").fillna("<NULL>"), rhs.astype("string").fillna("<NULL>")
                 wrong = int((a != b).sum())
@@ -383,6 +460,7 @@ def compare_candidate(current: dict[str, Path], candidates: dict[str, Path]) -> 
             "numeric_absolute_tolerances": tolerances,
             "numeric_tolerance_violations": numeric_exceeds,
             "categorical_mismatches_by_column": text_mismatch,
+            "maximum_relative_difference": relative_max,
         }
     return summary
 
@@ -668,13 +746,29 @@ def run_integral(root: Path, output: Path, *, mode: str = "verify",
             # the products must be refrozen deliberately, never overwritten
             # in silence. The splice-vs-unspliced comparison stays
             # informative about the scope of the method.
-            report["reference_equivalence"] = (
-                "REPRODUCES_FROZEN_SPLICED_VINTAGE" if report["eight_product_equivalence_passed"]
-                else "FROZEN_VINTAGE_MISMATCH_REFREEZE_REQUIRED")
-            report["status"] = (
-                "RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_WITH_SPLICES"
-                if cross_ok and report["eight_product_equivalence_passed"]
-                else "RECOMPUTED_BUT_CROSS_AUDIT_OR_REFERENCE_EQUIVALENCE_FAILED")
+            reference_platform = read_reference_platform(root)
+            report["reference_platform"] = reference_platform
+            report["current_platform"] = current_platform()
+            if report["eight_product_equivalence_passed"]:
+                report["reference_equivalence"] = "REPRODUCES_FROZEN_SPLICED_VINTAGE"
+                report["status"] = ("RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_WITH_SPLICES" if cross_ok
+                                    else "RECOMPUTED_BUT_CROSS_AUDIT_OR_REFERENCE_EQUIVALENCE_FAILED")
+            elif platform_differs(reference_platform):
+                # Tree models are not bit-reproducible across operating systems and
+                # CPU builds. On another platform a bounded, purely numeric difference
+                # is accepted and measured; a structural or categorical one, or a
+                # difference above the bound, is still a mismatch.
+                verdict = _platform_dependent_mismatch(report["comparison_eight_products"])
+                report["platform_dependent_mismatch"] = {**verdict, "relative_bound": PLATFORM_RELATIVE_BOUND}
+                if cross_ok and verdict["accepted"]:
+                    report["reference_equivalence"] = "PLATFORM_DEPENDENT_MISMATCH_ACCEPTED"
+                    report["status"] = "RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_WITH_SPLICES_ON_ANOTHER_PLATFORM"
+                else:
+                    report["reference_equivalence"] = "FROZEN_VINTAGE_MISMATCH_REFREEZE_REQUIRED"
+                    report["status"] = "RECOMPUTED_BUT_CROSS_AUDIT_OR_REFERENCE_EQUIVALENCE_FAILED"
+            else:
+                report["reference_equivalence"] = "FROZEN_VINTAGE_MISMATCH_REFREEZE_REQUIRED"
+                report["status"] = "RECOMPUTED_BUT_CROSS_AUDIT_OR_REFERENCE_EQUIVALENCE_FAILED"
         else:
             report["status"] = (
                 ("RECOMPUTED_ALL_EIGHT_AUDITED" if mode == "recompute"

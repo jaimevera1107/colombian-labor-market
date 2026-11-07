@@ -55,7 +55,7 @@ def test_a_recompute_is_clean_in_either_state():
     require_clean_recompute(
         {"status": "RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_WITH_SPLICES", "labor_reconstruction": {"enabled": True}}
     )
-    assert len(CLEAN_STATUSES) == 2
+    assert len(CLEAN_STATUSES) == 3  # audited, with splices, with splices on another platform
 
 
 @pytest.mark.parametrize(

@@ -20,6 +20,7 @@ from icml.recalculation.runner import OUTPUT
 CLEAN_STATUSES = frozenset({
     "RECOMPUTED_ALL_EIGHT_AUDITED",
     "RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_WITH_SPLICES",
+    "RECOMPUTED_ALL_EIGHT_CROSS_AUDITED_WITH_SPLICES_ON_ANOTHER_PLATFORM",
 })
 
 #: A month other than the frozen one is a new vintage: it is not expected to

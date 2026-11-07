@@ -306,7 +306,8 @@ def command_run(root: Path, command: str, args: argparse.Namespace) -> int:
         # Progress only: the solver and pandas warnings of a full run are noise for the person
         # who runs the month; --verbose keeps them (they are informative when something fails).
         warnings.simplefilter("ignore")
-        print("Recomputing (10 to 15 minutes for a rebuild, 8 to 10 for an update)...", flush=True)
+        if not args.dry_run:
+            print("Recomputing (10 to 15 minutes for a rebuild, 8 to 10 for an update)...", flush=True)
     result = service.run_recalculation(
         root,
         mode,
@@ -341,6 +342,17 @@ def _finish(root: Path, folder: Path, *, make_simple: bool) -> int:
     if make_simple:
         simple = build_simple(folder)
         print(f"Simple files: {simple['folder']}")
+    integral = folder / "INTEGRAL_RECOMPUTE_REPORT.json"
+    if integral.is_file():
+        info = json.loads(integral.read_text("utf-8"))
+        if info.get("reference_equivalence") == "PLATFORM_DEPENDENT_MISMATCH_ACCEPTED":
+            pdm = info.get("platform_dependent_mismatch", {})
+            ref = info.get("reference_platform") or {}
+            print(f"Note: this computer ({info['current_platform']['system']}/{info['current_platform']['machine']}) differs from the one "
+                  f"the reference vintage was frozen on ({ref.get('system')}/{ref.get('machine')}). The tree-model territories differ "
+                  f"by at most {100 * pdm.get('max_relative_difference', 0):.2f} % of their level (bound {100 * pdm.get('relative_bound', 0):.0f} %); "
+                  "the cross audit and the anchored years are unaffected. To make this computer the reference: "
+                  "python tools/refreeze_reference.py (see docs/production/REFERENCE_VINTAGE.md).")
     try:
         _write_monthly_report(root, folder)
     except Exception as exc:  # the diagnostics never block a delivery

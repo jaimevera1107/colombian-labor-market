@@ -88,3 +88,17 @@ def test_the_national_composition_is_taken_from_the_annex_when_it_publishes_the_
     assert (august.source_status == ANNEX_EXTENDED).all()
     assert (august.sector_share.astype(float) - reference.sector_share.astype(float)).abs().max() < 1e-12
     assert (out[out.period == "2026-09"].source_status == SEASONAL).all()
+
+
+@pytest.mark.parametrize("found, ok", [("0.6.3", True), ("0.6.4", True), ("0.6.10", True), ("0.6.2", False), ("0.7.0", False), ("1.0.0", False)])
+def test_the_tempdisagg_guard_accepts_the_declared_range_and_nothing_else(monkeypatch, found, ok):
+    from importlib import metadata
+
+    from icml.national import disaggregation
+
+    monkeypatch.setattr(metadata, "version", lambda name: found)
+    if ok:
+        disaggregation.require_tempdisagg_version()
+    else:
+        with pytest.raises(disaggregation.NationalSpecificationError, match="tempdisagg>=0.6.3,<0.7"):
+            disaggregation.require_tempdisagg_version()

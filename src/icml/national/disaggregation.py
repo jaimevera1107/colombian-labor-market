@@ -1,6 +1,6 @@
 """Annual splicing (ENH -> GEIH) and Chow-Lin temporal disaggregation.
 
-Both steps use only the public API of ``tempdisagg==0.6.3``. Each labor
+Both steps use only the public API of ``tempdisagg`` (0.6.3 or later in the 0.6 series). Each labor
 quantity is spliced and disaggregated independently, so the monthly result
 does not satisfy the accounting identities; closing them is the job of
 :mod:`icml.national.reconciliation`.
@@ -24,7 +24,12 @@ from icml.national.schema import (
     source_token,
 )
 
-REQUIRED_TEMPDISAGG_VERSION = "0.6.3"
+#: The public API this module uses exists from 0.6.3 and the 0.6 series.
+#: Measured: 0.6.3 and 0.6.4 reproduce the frozen reference vintage (max
+#: difference 0.013 persons). The equivalence gate of ``run-integral`` is
+#: what protects the numbers when a newer release changes them.
+MINIMUM_TEMPDISAGG_VERSION = (0, 6, 3)
+SUPPORTED_TEMPDISAGG_SERIES = (0, 6)
 # Methods that accept an autoregressive-parameter truncation.
 _RHO_METHOD_PREFIXES = ("chow-lin", "litterman")
 # Methods without a regression intercept.
@@ -125,12 +130,21 @@ class DisaggregationResult:
     gates: Mapping[str, bool]
 
 
+def _version_tuple(version: str) -> tuple[int, ...]:
+    parts = []
+    for piece in version.split(".")[:3]:
+        digits = "".join(ch for ch in piece if ch.isdigit())
+        parts.append(int(digits) if digits else 0)
+    return tuple(parts)
+
+
 def require_tempdisagg_version() -> None:
-    """Fail fast if the installed ``tempdisagg`` is not the pinned one."""
+    """Fail fast if the installed ``tempdisagg`` is outside the supported range (>=0.6.3, <0.7)."""
     found = metadata.version("tempdisagg")
-    if found != REQUIRED_TEMPDISAGG_VERSION:
+    parsed = _version_tuple(found)
+    if parsed[:2] != SUPPORTED_TEMPDISAGG_SERIES or parsed < MINIMUM_TEMPDISAGG_VERSION:
         raise NationalSpecificationError(
-            f"tempdisagg=={REQUIRED_TEMPDISAGG_VERSION} required, "
+            "tempdisagg>=0.6.3,<0.7 required, "
             f"found {found}"
         )
 

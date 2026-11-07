@@ -15,7 +15,7 @@ def _equivalent():
 
 def _numeric(rel):
     return {"status": "MISMATCH", "issues": ["numeric_tolerance_exceeded"], "missing_keys": [], "new_keys": [],
-            "old_only_columns": [], "candidate_only_columns": [], "maximum_relative_difference": rel}
+            "old_only_columns": [], "candidate_only_columns": [], "maximum_reported_platform_difference": rel}
 
 
 def test_bounded_numeric_mismatches_are_accepted_and_measured():

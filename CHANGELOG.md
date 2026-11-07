@@ -1,3 +1,7 @@
+## 2.6.1 — tempdisagg guard agrees with the declared range
+
+- A fresh install of 2.6.0 resolved tempdisagg 0.6.4 (allowed by `pyproject.toml`) and every recompute stopped at `require_tempdisagg_version()`, which accepted only 0.6.3. The guard now accepts exactly `>=0.6.3,<0.7`. Measured with tempdisagg 0.6.4: a full August recompute reproduces the eight frozen products (max difference 0.013 persons), and the suite passes under both releases. No number changes.
+
 ## 2.6.0 — Reference vintage refrozen, equivalence gate enforced, months after the frozen cutoff (methodological review, phase 2)
 
 Published deliveries at the August 2026 cutoff do not change: a recompute reproduces the eight products byte for byte. What changes is the reference, the gates and what the system can do after August.

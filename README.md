@@ -6,7 +6,7 @@
 
   *Reconstruction, monthly update and validation of Colombian labor-market series.*
 
-  [![Version](https://img.shields.io/badge/version-2.6.0-183153?style=flat-square)](CHANGELOG.md)
+  [![Version](https://img.shields.io/badge/version-2.6.1-183153?style=flat-square)](CHANGELOG.md)
   ![Cutoff](https://img.shields.io/badge/cutoff-2026--08-536779?style=flat-square)
   ![Python](https://img.shields.io/badge/Python-3.11%2B-376994?style=flat-square)
   [![License](https://img.shields.io/badge/license-MIT-536779?style=flat-square)](LICENSE)
@@ -26,7 +26,7 @@ ICML assembles monthly series of **labor market, informality and sectoral employ
 The repository holds the code, the inputs, the frozen processing parameters, the tests and the delivery pipeline, so research results can be **rebuilt and verified** without any external file.
 
 > [!IMPORTANT]
-> **ICML results are research products and are not official DANE statistics.** This is version **2.6.0**, with cutoff **2026-08**.
+> **ICML results are research products and are not official DANE statistics.** This is version **2.6.1**, with cutoff **2026-08**.
 
 ## At a glance
 
@@ -38,7 +38,7 @@ The repository holds the code, the inputs, the frozen processing parameters, the
 | **Content** | Labor market, informality and employment by sector |
 | **Periodic inputs** | Two DANE annexes of the same month |
 | **Quality** | 52 automatic checks per delivery |
-| **Latest documented version** | `2.6.0` · cutoff `2026-08` |
+| **Latest documented version** | `2.6.1` · cutoff `2026-08` |
 
 ## Quick start
 

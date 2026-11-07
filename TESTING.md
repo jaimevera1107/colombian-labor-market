@@ -1,4 +1,4 @@
-# ICML v2.6.0 — How to test it and publish it
+# ICML v2.6.1 — How to test it and publish it
 
 The repository is **complete**: code, data, frozen references, and everything needed to rebuild the August 2026 delivery and its figures. Tests are reviewed and undone with Git.
 

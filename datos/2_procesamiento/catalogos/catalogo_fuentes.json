@@ -161,17 +161,17 @@
     },
     {
       "path": "datos/2_procesamiento/productos_congelados/laboral/ciudades.csv",
-      "sha256": "3ce7f9d5626b2501df89e9ef9d24d994a9c2205f05d7f2e8d11911ac33424f48",
+      "sha256": "b4cf9aa07c041d654a4e845b541dbcd1917fba22efe69eaf981ea38987918cb6",
       "type": "laboral_product_frozen"
     },
     {
       "path": "datos/2_procesamiento/productos_congelados/laboral/departamentos.csv",
-      "sha256": "c01af198fe8f87e574fafd751683996c055b2c9d2ff7c876d13da85160efb50c",
+      "sha256": "633f3d1d1b4d380cb684905bae804fc36ba35bd9e5c15a0fad3d1f18f3d4a829",
       "type": "laboral_product_frozen"
     },
     {
       "path": "datos/2_procesamiento/productos_congelados/laboral/nacionales.csv",
-      "sha256": "74704725373ab1066cbeffce977234bba21fa9749758455ca3df95968e4c6b78",
+      "sha256": "99b8f3e01feff38814f0955360e40fe8586db650d341e6f0b19d0b15d131d25f",
       "type": "laboral_product_frozen"
     },
     {

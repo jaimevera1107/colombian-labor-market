@@ -8,10 +8,10 @@
   "ensemble_alpha_xgb": 0.5,
   "predefined_alpha_grid_logo_mae": {
     "0.0": 1.235527496169638,
-    "0.25": 1.1771217423195304,
-    "0.5": 1.1597559346696602,
-    "0.75": 1.1856755749512364,
-    "1.0": 1.251180569953802
+    "0.25": 1.1805672892790977,
+    "0.5": 1.1708894927068985,
+    "0.75": 1.207106988090758,
+    "1.0": 1.2840323643193123
   },
   "original38_recovered": true,
   "original38_model_exact_reproduction": false,
@@ -22,14 +22,14 @@
   "n_months": 404,
   "n_sectors": 15,
   "n_departments": 33,
-  "max_monthly_dept_closure_people": 2.9198825359344482e-05,
-  "max_monthly_national_closure_people": 2.7939677238464355e-09,
-  "max_adjustment_vs_monthly_prior_pp": 5.723641693973821,
-  "max_backcast_sensitivity_pp_vs_12year_reference": 23.029511206868207,
-  "geih_annual_mae_pp": 0.20343138345484413,
-  "geih_annual_max_pp": 2.985982758376085,
-  "bogota_geih_annual_mae_pp": 0.09196717843702523,
-  "bogota_model_external_pre_anchor_mae_pp": 1.8658609804892219,
+  "max_monthly_dept_closure_people": 3.0095688998699188e-05,
+  "max_monthly_national_closure_people": 3.725290298461914e-09,
+  "max_adjustment_vs_monthly_prior_pp": 5.698649417696636,
+  "max_backcast_sensitivity_pp_vs_12year_reference": 23.211932795604916,
+  "geih_annual_mae_pp": 0.20287899234758466,
+  "geih_annual_max_pp": 3.110603421788621,
+  "bogota_geih_annual_mae_pp": 0.09207560444346133,
+  "bogota_model_external_pre_anchor_mae_pp": 1.8711888701655417,
   "official_annual_exactly_imposed": false,
   "national_complete_monthly_exactly_constrained": true,
   "geih_represented_national_monthly_not_forced": true,
@@ -51,15 +51,15 @@
     {
       "model": "ensamble_h15_gdp_xgb38",
       "test_protocol": "LOGO_2015_2024",
-      "mae_pp": 1.1597559346696604,
-      "max_pp": 20.965995371279288,
+      "mae_pp": 1.1708894927068985,
+      "max_pp": 21.038226285918068,
       "n": 3220
     },
     {
       "model": "ensamble_h15_gdp_xgb38",
       "test_protocol": "LOGO_2025_HELD_OUT",
-      "mae_pp": 1.2680443873550402,
-      "max_pp": 16.914966910430042,
+      "mae_pp": 1.2773572325063682,
+      "max_pp": 17.44386301937501,
       "n": 322
     },
     {
@@ -79,43 +79,43 @@
     {
       "model": "ridge_original37_sin_id_gdp",
       "test_protocol": "LOGO_2015_2024",
-      "mae_pp": 1.2421467593049051,
-      "max_pp": 20.341455089089084,
+      "mae_pp": 1.242142727778353,
+      "max_pp": 20.34145547230815,
       "n": 3220
     },
     {
       "model": "ridge_original37_sin_id_gdp",
       "test_protocol": "LOGO_2025_HELD_OUT",
-      "mae_pp": 1.3282917789996895,
-      "max_pp": 14.536116400739502,
+      "mae_pp": 1.3283056394294595,
+      "max_pp": 14.536225243358636,
       "n": 322
     },
     {
       "model": "ridge_original38_gdp",
       "test_protocol": "LOGO_2015_2024",
-      "mae_pp": 1.2708301968292353,
-      "max_pp": 20.061184734284943,
+      "mae_pp": 1.2708259920749398,
+      "max_pp": 20.061185819143624,
       "n": 3220
     },
     {
       "model": "ridge_original38_gdp",
       "test_protocol": "LOGO_2025_HELD_OUT",
-      "mae_pp": 1.3613110758663645,
-      "max_pp": 14.53981599188885,
+      "mae_pp": 1.3613308781948774,
+      "max_pp": 14.539921245994353,
       "n": 322
     },
     {
       "model": "xgb14_original38_gdp",
       "test_protocol": "LOGO_2015_2024",
-      "mae_pp": 1.251180569953802,
-      "max_pp": 21.437962353796337,
+      "mae_pp": 1.2840323643193126,
+      "max_pp": 21.582424183073893,
       "n": 3220
     },
     {
       "model": "xgb14_original38_gdp",
       "test_protocol": "LOGO_2025_HELD_OUT",
-      "mae_pp": 1.308059903891647,
-      "max_pp": 15.142278881111547,
+      "mae_pp": 1.3301233905038756,
+      "max_pp": 14.175351023429208,
       "n": 322
     }
   ]

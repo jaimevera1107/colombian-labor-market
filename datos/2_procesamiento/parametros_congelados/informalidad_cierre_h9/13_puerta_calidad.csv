@@ -6,7 +6,7 @@ no_missing_rates,True,REQUIRED,0,PASS
 urban_people_identity,True,REQUIRED,1.0000541806221008e-05,PASS
 department_people_identity,True,REQUIRED,4.656612873077393e-10,PASS
 geih_people_identity,True,REQUIRED,4.656612873077393e-10,PASS
-full_national_kl_closure,True,REQUIRED,7.450580596923828e-09,PASS
+full_national_kl_closure,True,REQUIRED,5.587935447692871e-09,PASS
 subset_coverage,True,REQUIRED,0<=geih<=full,PASS
 universe_decomposition,True,REQUIRED,GEIH+outside=full,PASS
 2018_nine_capitals_anchored,True,REQUIRED,2.9103830456733704e-11,PASS
@@ -22,8 +22,8 @@ national_full_unemployed,True,REQUIRED,0.0,PASS
 national_geih_unemployed,True,REQUIRED,0.0,PASS
 national_full_inactive,True,REQUIRED,0.0,PASS
 national_geih_inactive,True,REQUIRED,0.0,PASS
-PEA_identity_complete,True,REQUIRED,1.862645149230957e-09,PASS
-PET_identity_complete,True,REQUIRED,1.3969838619232178e-09,PASS
+PEA_identity_complete,True,REQUIRED,1.3969838619232178e-09,PASS
+PET_identity_complete,True,REQUIRED,9.313225746154785e-10,PASS
 PEA_identity_geih_,True,REQUIRED,0.0,PASS
 PET_identity_geih_,True,REQUIRED,0.0,PASS
 2020_retrospective_no_official_claim,True,REQUIRED,12_months,PASS

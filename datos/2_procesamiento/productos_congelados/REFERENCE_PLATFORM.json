@@ -1,7 +1,7 @@
 {
-  "system": "Linux",
-  "machine": "x86_64",
-  "python": "3.12.3",
+  "system": "Windows",
+  "machine": "AMD64",
+  "python": "3.14.6",
   "xgboost": "3.1.3",
   "note": "The frozen products reproduce byte for byte on this system/machine. Tree models (xgboost) are not bit-reproducible across operating systems and CPU builds; on another platform the reference comparison accepts bounded model differences (PLATFORM_DEPENDENT_MISMATCH_ACCEPTED)."
 }

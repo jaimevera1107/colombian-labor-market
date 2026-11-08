@@ -1,15 +1,15 @@
 {
   "version": "2.2.13.dev0",
   "files_sha256": {
-    "13_2020_alternativas_33_departamentos.csv": "c87a11d44a2a817badef40c97e4020d98f0d00effc648499e32dd143d820367d",
-    "13_auditoria_mensual_de_cierre.csv": "34b8ec4f9dde16af2b341a94c3def697fb90457c2b889a509f7aa3320ee72ff8",
-    "13_ciudades_33_1993_2026_RECONSTRUIDAS.csv": "b7bc21ae1993809a386bdbc9c8c5de848a30e7d26adf0b512501983008373038",
-    "13_ciudades_serie_anual.csv": "18b056f84de924d14516fef68bda92d3daff7b8a7fbce6b74a4fbabcee0f85b4",
-    "13_departamentos_33_dos_universos_1993_2026_RECONSTRUIDOS.csv": "2dcf418e22605595de69f26bf5c2431db492c1777aa64154e024304eebd65dfc",
-    "13_departamentos_serie_anual.csv": "0099262414632837367d1cb42dba63cb3e39b18029c9725e7de6bf7af8229634",
-    "13_nacionales_2_universos_1993_2026_RECONSTRUIDOS.csv": "c802b053b7972d9e05364ea98b4f032c7c80d500e34dd7df31060de382bcf8ca",
-    "13_nacionales_serie_anual.csv": "ae518d7ed7075104450e883e0ad8f636522c03d69ee5a6c57a29c119848148d7",
-    "13_puerta_calidad.csv": "899931c3210a2f083797867a64f07b504748a0fdcb08459c944bffe453762f67",
-    "13_resumen.json": "2e027937f6d8e3c60c0fe48e07bef4b8b26e823afa7a2a815313ae4c7a08ad81"
+    "13_2020_alternativas_33_departamentos.csv": "6696bc986345a84f4f32562f9b5696a42e6b715b1ae182e63f1902ba1b42bc52",
+    "13_auditoria_mensual_de_cierre.csv": "2b4811baf3160ccdf6d979edf61844b1dc903d65f18353464f0ff7b53c48068b",
+    "13_ciudades_33_1993_2026_RECONSTRUIDAS.csv": "f81553a72de296a8171461328341851ac0fb171382404d024428c6db35ab64fe",
+    "13_ciudades_serie_anual.csv": "48e5370b4676bef9318a99fcf4112bcc3da0e0d40c0f6c097e6d80a6ce925279",
+    "13_departamentos_33_dos_universos_1993_2026_RECONSTRUIDOS.csv": "e957717b06ec3d5462bb42c7479e81768adeb97f5b24d4ecc5c5cbeeb5f9a4a4",
+    "13_departamentos_serie_anual.csv": "7acc8bf22378065c5e8979aa526aeed59cd15b971b2c5f1bfbcd1fcad72fdd79",
+    "13_nacionales_2_universos_1993_2026_RECONSTRUIDOS.csv": "385d49b66c53f0622ce34da5603b004e39320ef1ad52b31a0e6dffadaa1111a2",
+    "13_nacionales_serie_anual.csv": "cb452099396fd49ab92d62e3d3d3696a54d4c1cd537407411ba75e3f6e98bb9b",
+    "13_puerta_calidad.csv": "aca736376aa12be0d8f4bf711e8ce2eaf309091ae4fbfb7398d0edb2e8b7a421",
+    "13_resumen.json": "a8ce43c257cc90531d46ad4a09d47b2c4cc8ada9ed0bc277c18e82ee64ebd9f1"
   }
 }

@@ -158,6 +158,7 @@ The validity of the series depends on the universe, the historical coverage and 
 
 - **Representativeness differences:** in the GEIH universe the rates of nine territories stay empty between 2001 and 2013 (Arauca, Casanare, Putumayo, San Andrés, Amazonas, Guainía, Guaviare, Vaupés and Vichada) because the survey did not represent them then. **They are not accidental gaps.**
 - **Months after `2026-08`:** processed with frozen parameters carried forward and tagged; no re-estimation of the informality priors or the census bridge.
+- **The reference vintage depends on the machine:** the frozen products reproduce byte for byte on the platform they were frozen on (recorded in `datos/2_procesamiento/productos_congelados/REFERENCE_PLATFORM.json`). Tree models (XGBoost) are not bit-reproducible across operating systems, so on another platform the comparison accepts a small, bounded difference in the modelled territories and `rebuild`/`update` report it. To make a new machine the strict reference, recompute and run `tools/refreeze_reference.py` (see [REFERENCE_VINTAGE.md](docs/production/REFERENCE_VINTAGE.md)).
 - **A new annual departmental annex:** the anchored year comes from the configured file (`geih_departamentos_2025.xlsx`). Adding a new annex is **not** a matter of copying it: the configuration has to change and a total recalculation has to run.
 - **Methodological changes:** changes that touch closed years need a new version, a changelog entry and a controlled total recalculation.
 
@@ -199,7 +200,7 @@ Excel lock files (`~$` prefix) are ignored. `icml recalc` and `icml delivery` re
 ```text
 .
 ├── README.md, TESTING.md, CHANGELOG.md, LICENSE
-├── install.sh / install.bat        # create .venv with the pinned versions
+├── install.sh / install.bat        # create .venv and install from PyPI (--locked pins versions)
 ├── icml.sh / icml.bat              # run icml without activating .venv
 ├── pyproject.toml                  # package metadata and dependency ranges
 ├── requirements/                   # locked environment of the reference vintage (optional, --locked)
@@ -249,6 +250,7 @@ See [PUBLISHING.md](docs/production/PUBLISHING.md) for the first push and the or
 | [Architecture](docs/production/ARCHITECTURE.md) | Package layout, command groups and data flow |
 | [Monthly update](docs/production/MONTHLY_UPDATE.md) | Operational guide of the monthly cycle |
 | [Labor reconstruction](docs/production/LABOR_RECONSTRUCTION.md) | PET, population and 1993–2000 components |
+| [Reference vintage](docs/production/REFERENCE_VINTAGE.md) | What is frozen, the platform it depends on, and how to refreeze |
 | [Changelog](CHANGELOG.md) | Version history |
 
 ---
